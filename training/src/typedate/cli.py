@@ -205,13 +205,22 @@ def data_consensus(
     out: str = typer.Option(..., help="Output JSONL"),
     source: str = typer.Option("realistic"),
     split: str = typer.Option("train"),
+    meta: str = typer.Option("", help="JSON id -> {source,url,license} to attach to rows"),
 ) -> None:
     """Keep rows where two labelers agree and neither marked the row unsure."""
     from pathlib import Path
 
     from .consensus import consensus
 
-    stats = consensus(Path(inputs), Path(label_a), Path(label_b), Path(out), source, split)
+    stats = consensus(
+        Path(inputs),
+        Path(label_a),
+        Path(label_b),
+        Path(out),
+        source,
+        split,
+        Path(meta) if meta else None,
+    )
     typer.echo(json.dumps(stats))
 
 
@@ -266,6 +275,7 @@ def data_mix(
 
 @data_app.command("web-batch")
 def data_web_batch(
+    name: str = typer.Option("web", help="Batch name used in output file names"),
     pattern: str = typer.Option(
         "gen/external/web-*.jsonl", help="Web research files, relative to training/"
     ),
@@ -343,12 +353,12 @@ def data_web_batch(
             lines.append(json.dumps({"id": rid, "text": r["text"]}))
         (ext / name).write_text("\n".join(lines) + "\n")
 
-    write("web-heldout-inputs.jsonl", held, "whs")
-    write("web-sealed-inputs.jsonl", sealed_mixed, "wsm")
+    write(f"{name}-heldout-inputs.jsonl", held, f"{name}hs")
+    write(f"{name}-sealed-inputs.jsonl", sealed_mixed, f"{name}sm")
     chunks = [pool[i : i + chunk] for i in range(0, len(pool), chunk)]
     for k, c in enumerate(chunks):
-        write(f"web-pool-inputs-{k}.jsonl", c, f"wp{k}-")
-    (ext / "web-meta.json").write_text(json.dumps(meta))
+        write(f"{name}-pool-inputs-{k}.jsonl", c, f"{name}p{k}-")
+    (ext / f"{name}-meta.json").write_text(json.dumps(meta))
     typer.echo(json.dumps({
         "sources": {k: len(v) for k, v in sorted(by_src.items())},
         "picked": len(picked), "heldout_sources": len(held), "sealed_mixed": len(sealed_mixed),

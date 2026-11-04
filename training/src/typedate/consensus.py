@@ -25,8 +25,15 @@ def _read(path: Path) -> dict[str, dict]:
 
 
 def consensus(
-    inputs: Path, label_a: Path, label_b: Path, out: Path, source: str, split: str
+    inputs: Path,
+    label_a: Path,
+    label_b: Path,
+    out: Path,
+    source: str,
+    split: str,
+    meta: Path | None = None,
 ) -> dict:
+    metas = json.loads(meta.read_text()) if meta else {}
     ins = [json.loads(x) for x in inputs.read_text().splitlines() if x.strip()]
     a, b = _read(label_a), _read(label_b)
     ids = [r["id"] for r in ins if r["id"] in a and r["id"] in b]
@@ -51,6 +58,10 @@ def consensus(
             "parent_id": None,
             "group": f"real-{i}",
         }
+        if i in metas:
+            row["web_source"] = metas[i].get("source")
+            row["web_url"] = metas[i].get("url")
+            row["web_license"] = metas[i].get("license")
         if policy_flags(row, legacy_v2=False):
             stats["policy_ambiguous"] += 1
             continue
