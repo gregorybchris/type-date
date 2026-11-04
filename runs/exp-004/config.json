@@ -1,0 +1,29 @@
+{
+  "id": "exp-004",
+  "number": 4,
+  "title": "from-scratch enc-dec 8M, v001",
+  "created": "2026-11-04T03:25:47+00:00",
+  "dataset": "v001",
+  "format": "dsl-v1",
+  "notes": "T5-style, BPE vocab 1000, lowercase input, grammar-only data",
+  "parent": null,
+  "model": {
+    "family": "enc-dec-scratch",
+    "params": 9698944,
+    "d_model": 256,
+    "layers": "4+4",
+    "vocab": 1000
+  },
+  "train": {
+    "epochs": 10,
+    "batch_size": 128,
+    "lr": 0.001,
+    "seed": 0,
+    "device": "mps",
+    "n_train": 47332
+  },
+  "export": {
+    "format": "pending",
+    "quant": "none"
+  }
+}
