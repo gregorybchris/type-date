@@ -11,45 +11,45 @@ function localToday(): string {
   return `${n.getFullYear()}-${p(n.getMonth() + 1)}-${p(n.getDate())}`;
 }
 
-/** Engines shown in the demo. The default is the best solution so far (see `specs/research/experiments`). */
+/** Engines shown in the demo. The default is the best solution so far (see `specs/engines`). */
 const ENGINES = [
   {
-    id: "heuristic-full-8",
-    label: "Heuristic (full v8)",
-    note: "exp-018 · 21.9 kB + 10.7 kB lazy · typos, abbreviations, score and dozen counts, day of a relative month",
+    id: "h8",
+    label: "h8",
+    note: "21.9 kB + 10.7 kB lazy · typos, abbreviations, score and dozen counts, day of a relative month",
   },
   {
-    id: "heuristic-full-7",
-    label: "Heuristic (full v7)",
-    note: "exp-017 · 19.0 kB + 10.6 kB lazy · 93.1% exact on eval e7, 88.5% on sealed web phrases",
+    id: "h7",
+    label: "h7",
+    note: "19.0 kB + 10.6 kB lazy · 93.1% exact on eval e7, 88.5% on sealed web phrases",
   },
   {
-    id: "heuristic-full-6",
-    label: "Heuristic (full v6)",
-    note: "exp-016 · 24.0 kB · 92.9% exact on eval e7, 83.3% on sealed web phrases",
+    id: "h6",
+    label: "h6",
+    note: "24.0 kB · 92.9% exact on eval e7, 83.3% on sealed web phrases",
   },
   {
-    id: "heuristic-full-5",
-    label: "Heuristic (full v5)",
-    note: "exp-015 · 15.9 kB · 95.0% resolved on eval e4, 95.1% realistic, 90.2% hard external input",
+    id: "h5",
+    label: "h5",
+    note: "15.9 kB · 95.0% resolved on eval e4, 95.1% realistic, 90.2% hard external input",
   },
   {
-    id: "heuristic-full-4",
-    label: "Heuristic (full v4)",
-    note: "exp-014 · 14.6 kB · 95.1% resolved on eval e3, 94.5% realistic, 89.9% hard external input",
+    id: "h4",
+    label: "h4",
+    note: "14.6 kB · 95.1% resolved on eval e3, 94.5% realistic, 89.9% hard external input",
   },
   {
-    id: "heuristic-full-3",
-    label: "Heuristic (full v3)",
-    note: "exp-013 · 10.3 kB · 95.5% resolved on eval e2, 93.3% on realistic external input",
+    id: "h3",
+    label: "h3",
+    note: "10.3 kB · 95.5% resolved on eval e2, 93.3% on realistic external input",
   },
   {
-    id: "heuristic-full-2",
-    label: "Heuristic (full v2)",
-    note: "exp-009 · 8.8 kB · 94.9% resolved on eval e2, 70.7% on realistic external input",
+    id: "h2",
+    label: "h2",
+    note: "8.8 kB · 94.9% resolved on eval e2, 70.7% on realistic external input",
   },
-  { id: "heuristic-full-1", label: "Heuristic (full v1)", note: "exp-003 · 7.9 kB · 92.7% resolved on eval e2, 67.4% on realistic external input" },
-  { id: "chrono", label: "chrono-node", note: "exp-001 · 14.9 kB · 36.3% resolved on e2, no recurrence" },
+  { id: "h1", label: "h1", note: "7.9 kB · 92.7% resolved on eval e2, 67.4% on realistic external input" },
+  { id: "chrono", label: "chrono", note: "chrono-node 2.10.3 · 14.9 kB · 36.3% resolved on e2, no recurrence" },
 ] as const;
 
 const EXAMPLES = [
@@ -106,7 +106,7 @@ interface Prefs {
   engineId: string;
   details: boolean;
 }
-const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "heuristic-full-8", details: false };
+const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h8", details: false };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};
@@ -115,6 +115,9 @@ function loadPrefs(): Prefs {
   } catch {
     // storage blocked or corrupt: use defaults
   }
+  // Old saved names were `heuristic-full-N`. Map them to `hN` and keep the other preferences.
+  const legacy = /^heuristic-full-(\d)$/.exec(String(saved.engineId));
+  if (legacy) saved.engineId = `h${legacy[1]}`;
   const engineOk = ENGINES.some((e) => e.id === saved.engineId);
   const base: Prefs = {
     theme: saved.theme === "dark" ? "dark" : "light",

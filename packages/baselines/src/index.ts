@@ -1,35 +1,25 @@
 import type { Engine } from "./engine";
 export type { Engine, PredictOptions, PredictResult } from "./engine";
 import chronoEngine from "./chrono";
-import heuristicFull1 from "./heuristic-full-1";
-import heuristicFull2 from "./heuristic-full-2";
-import heuristicFull3 from "./heuristic-full-3";
-import heuristicFull4 from "./heuristic-full-4";
-import heuristicFull5 from "./heuristic-full-5";
-import heuristicFull6 from "./heuristic-full-6";
-import heuristicFull7 from "./heuristic-full-7";
-import heuristicFull8 from "./heuristic-full-8";
+import h1 from "./h1";
+import h2 from "./h2";
+import h3 from "./h3";
+import h4 from "./h4";
+import h5 from "./h5";
+import h6 from "./h6";
+import h7 from "./h7";
+import h8 from "./h8";
 
-export { chronoEngine, heuristicFull1, heuristicFull2, heuristicFull3, heuristicFull4, heuristicFull5, heuristicFull6, heuristicFull7, heuristicFull8 };
+export { chronoEngine, h1, h2, h3, h4, h5, h6, h7, h8 };
 export { chronoToDsl } from "./chrono";
-export { parseFull as parseFull1 } from "./heuristic-full-1";
-export { parseFull as parseFull2 } from "./heuristic-full-2";
-export { parseFull as parseFull3 } from "./heuristic-full-3";
-export { parseFull as parseFull4 } from "./heuristic-full-4";
-export { parseFull as parseFull5 } from "./heuristic-full-5";
-export { parseFull as parseFull6 } from "./heuristic-full-6";
-export { parseFull as parseFull7, parseFullAsync as parseFull7Async, loadV2 as loadFull7Lazy } from "./heuristic-full-7";
-export { parseFull8, parseFull8Async } from "./heuristic-full-8";
+export { parseH1 } from "./h1";
+export { parseH2 } from "./h2";
+export { parseH3 } from "./h3";
+export { parseH4 } from "./h4";
+export { parseH5 } from "./h5";
+export { parseH6 } from "./h6";
+export { parseH7, parseH7Async, loadV2 as loadH7Lazy } from "./h7";
+export { parseH8, parseH8Async } from "./h8";
 
-/** Non-model baselines by engine id. All implement the `Engine` interface. */
-export const baselines: Record<string, Engine> = {
-  chrono: chronoEngine,
-  "heuristic-full-1": heuristicFull1,
-  "heuristic-full-2": heuristicFull2,
-  "heuristic-full-3": heuristicFull3,
-  "heuristic-full-4": heuristicFull4,
-  "heuristic-full-5": heuristicFull5,
-  "heuristic-full-6": heuristicFull6,
-  "heuristic-full-7": heuristicFull7,
-  "heuristic-full-8": heuristicFull8,
-};
+/** Engines by id: `chrono` (third-party comparison) and `h1`..`h8` (heuristic parser generations). */
+export const baselines: Record<string, Engine> = { chrono: chronoEngine, h1, h2, h3, h4, h5, h6, h7, h8 };

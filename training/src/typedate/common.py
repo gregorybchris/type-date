@@ -1,6 +1,7 @@
 """Shared helpers: repo root, JSONL reading, resolved-date comparison with the TS resolver."""
 
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -25,3 +26,13 @@ def resolved_equal(pairs: list[dict]) -> list[bool]:
         check=True,
     )
     return json.loads(proc.stdout)
+
+
+def engine_dirs() -> list[Path]:
+    """Run folders `runs/<engine>`: `chrono` first, then `h1`, `h2`, ... by number."""
+
+    def key(d: Path) -> tuple[int, int, str]:
+        m = re.fullmatch(r"h(\d+)", d.name)
+        return (1, int(m.group(1)), "") if m else (0, 0, d.name)
+
+    return sorted((d for d in (ROOT / "runs").iterdir() if (d / "metrics.json").exists()), key=key)

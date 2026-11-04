@@ -1,4 +1,5 @@
 import { evalFor, realisticResolved } from "./evals";
+import { LIBRARY_ENGINE } from "./engines";
 import type { BenchEntry, Run } from "./types";
 
 export type XAxis = "size" | "p50" | "p95";
@@ -24,9 +25,8 @@ export const Y_AXES: AxisInfo<YAxis>[] = [
 
 export interface Point {
   runId: string;
-  number: number;
+  /** Engine id. */
   label: string;
-  title: string;
   description: string;
   library: boolean;
   x: number;
@@ -34,17 +34,17 @@ export interface Point {
 }
 
 /** chrono-node is the only third-party library. Everything else is a heuristic written here. */
-export const isLibrary = (run: Run): boolean => run.config.model.family === "library";
+export const isLibrary = (run: Run): boolean => run.config.id === LIBRARY_ENGINE;
 
 /** Engine id as used in @type-date/baselines. */
-export const engineId = (run: Run): string => run.config.model.engine ?? run.config.title;
+export const engineId = (run: Run): string => run.config.id;
 
-/** Desktop bench entry with the lowest p50, if the run has any. */
+/** Desktop latency entry with the lowest p50, if the run has any. */
 export function benchOf(run: Run): BenchEntry | undefined {
   return run.bench.filter((e) => (e.profile ?? "desktop") === "desktop").sort((a, b) => a.latency_ms.p50 - b.latency_ms.p50)[0];
 }
 
-/** Value on an x axis, or null when the run has no data for it (for example no latency bench). */
+/** Value on an x axis, or null when the run has no data for it (for example no latency data). */
 export function xValue(run: Run, axis: XAxis): number | null {
   if (axis === "size") return run.metrics.model.size_bytes / 1e3;
   const b = benchOf(run);
@@ -77,10 +77,10 @@ export function buildPoints(runs: Run[], o: { x: XAxis; y: YAxis; version: strin
       continue;
     }
     if (x === null) {
-      skipped.push({ run, reason: "no latency bench" });
+      skipped.push({ run, reason: "no latency data" });
       continue;
     }
-    points.push({ runId: run.config.id, number: run.config.number, label: String(run.config.number), title: run.config.title, description: run.config.description ?? "", library: isLibrary(run), x, y });
+    points.push({ runId: run.config.id, label: run.config.id, description: run.config.description ?? "", library: isLibrary(run), x, y });
   }
   return { points, skipped };
 }

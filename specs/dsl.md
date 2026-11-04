@@ -1,6 +1,6 @@
 # DSL v2 (superset of v1)
 
-The model emits one line of text. A deterministic resolver (`packages/core`) turns it into dates. The model never computes calendar dates. Rationale: `specs/research/background/output-format.md`.
+A parser engine emits one line of text. A deterministic resolver (`packages/core`) turns it into dates. The engine never computes calendar dates. Rationale: `specs/research/background/output-format.md`.
 
 The prompt is the raw typed text. Reference time (`now`), time zone, and week start are resolver settings.
 
@@ -61,7 +61,7 @@ Partial input: the output is the parse of the committed part of the text, or `x`
 
 Canonical form: weekday lists inside a recurrence are ordered `mo,tu,we,th,fr,sa,su`. Recurrence tokens are ordered: frequency, days or nth weekday or month days or year day, count, until, time, start.
 
-Input preprocessing: the model input is the typed text lowercased with whitespace collapsed. The component does this before calling the model.
+Input preprocessing: the engine input is the typed text lowercased with whitespace collapsed. The component does this before calling the engine.
 
 ## Resolver policy (defaults, configurable)
 

@@ -60,7 +60,7 @@ export function Breakdown({
   metric: Metric;
   selected?: string;
   onSelect?: (key: string) => void;
-  /** Same dimension for another experiment. Adds a change figure. */
+  /** Same dimension for another engine. Adds a change figure. */
   compare?: BreakRow[] | null;
 }) {
   const overall = totalN ? totalErrors / totalN : 0;

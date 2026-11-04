@@ -1,0 +1,7 @@
+{
+  "id": "chrono",
+  "title": "chrono",
+  "description": "chrono-node 2.10.3 English parser with an adapter to DSL lines. No recurrence support, so recurrence inputs output x.",
+  "created": "2026-11-04T04:20:45Z",
+  "format": "dsl-v1"
+}

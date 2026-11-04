@@ -33,11 +33,11 @@ export function kindOf(v: string): VersionKind {
   return "other";
 }
 
-/** Minimum scored experiments for a version to be the default. */
+/** Minimum scored engines for a version to be the default. */
 export const MIN_SCORED = 3;
 
 /**
- * Default version: the latest full version with at least MIN_SCORED experiments scored.
+ * Default version: the latest full version with at least MIN_SCORED engines scored.
  * Falls back to the best-covered full version, then quick versions, then anything.
  */
 export function defaultVersion(runs: Run[]): string {

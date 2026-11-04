@@ -1,6 +1,7 @@
 // Data layer: reads runs/ and data/ (or sample fixtures) from disk. Used by the Vite plugin and tests.
 import fs from "node:fs";
 import path from "node:path";
+import { compareEngines } from "../src/lib/engines";
 import type {
   EvalManifest,
   EvalsResponse,
@@ -41,7 +42,7 @@ function listDirs(dir: string, pattern: RegExp): string[] {
   }
 }
 
-const RUN_RE = /^exp-\d+/;
+const RUN_RE = /^(chrono|h\d+)$/;
 const EVAL_RE = /^[\w-]+$/;
 
 export function loadRuns(roots: Roots): RunsResponse {
@@ -52,14 +53,14 @@ export function loadRuns(roots: Roots): RunsResponse {
     const config = readJson<Run["config"]>(path.join(base, "config.json"));
     const metrics = readJson<Run["metrics"]>(path.join(base, "metrics.json"));
     if (!config || !metrics) continue;
-    // One latency source for every engine: the Node per-call timing that scripts/eval.ts writes into metrics.json.
+    // Latency: the Node per-call timing that scripts/eval.ts writes into metrics.json.
     const nl = (metrics as { node_latency_ms?: { p50: number; p95: number; p99: number; n?: number } }).node_latency_ms;
     const bench: Run["bench"] = nl
-      ? [{ engine: config.model?.engine ?? config.id, profile: "desktop", latency_ms: { p50: nl.p50, p95: nl.p95, p99: nl.p99 }, n: nl.n ?? 0 }]
-      : (readJson<Run["bench"]>(path.join(base, "bench.json")) ?? []);
+      ? [{ engine: config.id, profile: "desktop", latency_ms: { p50: nl.p50, p95: nl.p95, p99: nl.p99 }, n: nl.n ?? 0 }]
+      : [];
     runs.push({ config, metrics, bench });
   }
-  runs.sort((a, b) => a.config.number - b.config.number);
+  runs.sort((a, b) => compareEngines(a.config.id, b.config.id));
   return { runs };
 }
 

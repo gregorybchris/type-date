@@ -428,7 +428,7 @@ def data_decontaminate(
 
 @eval_app.command("coverage")
 def eval_coverage() -> None:
-    """Matrix of experiments by eval version, with the gaps marked."""
+    """Matrix of engines by eval version, with the gaps marked."""
     from .evalsets import coverage
 
     coverage()
@@ -474,23 +474,17 @@ def eval_cut_clean(
     typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
 
 
-exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")
-app.add_typer(exp_app, name="exp")
-
-
-@exp_app.command("table")
-def exp_table(
+@app.command("results")
+def results(
     eval_version: str = typer.Option("e10"),
 ) -> None:
     """Results table for one eval version: resolved accuracy overall and on realistic splits."""
-    from .common import ROOT
+    from .common import engine_dirs
 
     rows = []
-    for d in sorted((ROOT / "runs").glob("exp-*")):
-        mp, cp = d / "metrics.json", d / "config.json"
-        if not mp.exists():
-            continue
-        m, c = json.loads(mp.read_text()), json.loads(cp.read_text())
+    for d in engine_dirs():
+        m = json.loads((d / "metrics.json").read_text())
+        c = json.loads((d / "config.json").read_text())
         have = {}
         if m.get("eval", {}).get("version"):
             have[m["eval"]["version"]] = m["eval"]
@@ -506,10 +500,10 @@ def exp_table(
 
         size = m.get("model", {}).get("size_bytes") or 0
         rows.append(
-            (c["id"], c["title"], f"{size / 1e3:.1f} kB", f"{100 * e['resolved']:.1f}",
+            (c["id"], f"{size / 1e3:.1f} kB", f"{100 * e['resolved']:.1f}",
              r("test_external"), r("test_external_hard"), r("test_web_sealed"))
         )  # fmt: skip
-    head = ("exp", "title", "size", "all", "realistic", "hard", "web")
+    head = ("engine", "size", "all", "realistic", "hard", "web")
     typer.echo("| " + " | ".join(head) + " |")
     typer.echo("|" + "---|" * len(head))
     for row in rows:

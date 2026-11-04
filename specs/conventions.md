@@ -38,26 +38,18 @@ When the user states a preference, record it here or in the relevant spec. Add a
 
 ## Eval versioning
 
-Eval sets are versioned and immutable (`evals/e1`, ...). Cut a new version conservatively and compare models only within one version. Details: `specs/research/eval-versioning.md`.
-
-## Experiment titles and descriptions
-
-Every experiment has a short `title` and a one or two sentence `description` in its `config.json`. Experiment numbers alone are not informative on charts. Write them when the experiment is created (`--title ... --description ...` on `scripts/eval.ts`).
-
-## Time observability
-
-Wall-time buckets are not tracked any more: scoring a heuristic engine on an eval version takes seconds.
+Eval sets are versioned and immutable (`evals/e1`, ...). Cut a new version conservatively and compare engines only within one version. Details: `specs/research/eval-versioning.md`.
 
 ## Do not stall
 
-Never block on a long wait. Run long jobs in the background and keep working on something else. If there is nothing else to do, check status with a quick command and report. Prefer parallel work: queue the next experiments, prepare data, write docs, or improve the dashboard while jobs run.
+Never block on a long wait. Run long jobs in the background and keep working on something else. If there is nothing else to do, check status with a quick command and report.
 
-## Experiment method
+## Engine naming
 
-Decide coarse design questions with controlled one-factor experiments before fine-grained optimization. Time-box each factor. Do not rabbit-hole on one thing (for example mobile latency) while the broad design is open. See `specs/research/design-space.md`.
+Engines are `chrono` (the third-party comparison) and `h1`, `h2`, ... (heuristic parser generations). The engine id is the same everywhere: registry key, run folder `runs/<id>/`, `config.json` `id` and `title`, dashboard label, picker demo, notes in `specs/engines/<id>.md`.
 
-## Baseline engine naming
-
-One engine file per experiment: `packages/baselines/src/heuristic-full-N.ts` (N = parser generation). Parts of an engine that are split out (for example a lazily loaded module) go in a directory named after the engine, `src/full-N/`, and are not registered as engines. Do not add suffixes such as `-v2` to engine files; "v2" already means DSL v2.
-
-Experiment numbers follow history, not engine generation: `heuristic-full-1` is exp-003. exp-002 (`heuristic-small`) was removed on 2026-11-04 and its number is not reused.
+- One engine file per engine: `packages/baselines/src/hN.ts`. Exports: the engine object `hN` and the parse function `parseHN`.
+- Parts of an engine that are split out (for example a lazily loaded module) go in `src/hN/` and are not registered as engines.
+- No suffixes such as `-v2`; "v2" means DSL v2.
+- A new engine needs a one-sentence description in the `REGISTRY` of `packages/baselines/scripts/eval.ts`, an entry in `src/index.ts`, a test `test/hN.test.ts`, a note `specs/engines/hN.md` (first line: the id and one sentence), and an entry in `ENGINES` in the Makefile. Dashboard order: `chrono` first, then `h1`, `h2`, ... by number.
+- Score a new engine on every eval version: `make rescore-baselines EVAL=e10 ENGINES="h9"` for each version, or `make rescore-all`. Check with `td eval coverage`.

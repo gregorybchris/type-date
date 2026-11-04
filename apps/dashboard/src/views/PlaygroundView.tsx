@@ -18,7 +18,7 @@ import { useTheme } from "@/lib/theme";
 /** Inputs that tend to break parsers. Click to fill the picker. */
 const TRY_THESE = ["pls book fri 3pm", "every other sunday", "a week from tomorrow", "dentist thurs 3pm", "m/w/f 7a-9a", "tonite 8", "last friday", "oct 2 to oct 5"];
 
-const DEFAULT_ENGINE = "heuristic-full-8";
+const DEFAULT_ENGINE = "h8";
 
 interface Call {
   text: string;
@@ -43,7 +43,7 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
 
   /** Runs whose engine id exists in the baselines registry, newest first. */
   const entries = useMemo(() => (reg ? [...runs].reverse().filter((r) => reg[engineId(r)]) : []), [runs, reg]);
-  const wanted = params.get("exp");
+  const wanted = params.get("engine");
   const run = entries.find((r) => r.config.id === wanted) ?? entries.find((r) => engineId(r) === DEFAULT_ENGINE) ?? entries[0];
   const engine = run && reg ? reg[engineId(run)] : undefined;
 
@@ -72,7 +72,7 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
 
   const options: Option[] = entries.map((r) => {
     const e = evalFor(r, version);
-    return { value: r.config.id, label: `${r.config.id} ${r.config.title}`, hint: e ? `${(e.resolved * 100).toFixed(1)}%` : undefined };
+    return { value: r.config.id, label: r.config.id, hint: e ? `${(e.resolved * 100).toFixed(1)}%` : undefined };
   });
 
   const last = calls[calls.length - 1];
@@ -92,7 +92,7 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
         <div className="order-2 flex flex-col gap-4 self-start lg:order-1">
           <Card className="flex flex-col gap-4 p-4">
             <Field label="Engine">
-              <Select value={run?.config.id ?? ""} onChange={(v) => setParams({ exp: v })} options={options} placeholder={reg ? "No runnable engines" : "Loading"} />
+              <Select value={run?.config.id ?? ""} onChange={(v) => setParams({ engine: v })} options={options} placeholder={reg ? "No runnable engines" : "Loading"} />
             </Field>
             <Field label={`Today (${override ? "override" : "real date"})`}>
               <div className="flex gap-2">
@@ -115,10 +115,8 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
             <Card className="p-4">
               <div className="flex flex-wrap items-center gap-1.5">
                 <span className="num text-[13px] font-semibold">{run.config.id}</span>
-                <Badge tone="accent">{engineId(run)}</Badge>
                 <Badge>eval {version}</Badge>
               </div>
-              <div className="mt-1 text-[14px] font-medium text-fg">{run.config.title}</div>
               {run.config.description && <p className="mt-1 text-[12.5px] leading-5 text-muted">{run.config.description}</p>}
               <Dotted className="my-3" />
               {ev ? (

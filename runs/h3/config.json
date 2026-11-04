@@ -1,0 +1,7 @@
+{
+  "id": "h3",
+  "title": "h3",
+  "description": "h2 plus span extraction around unknown words, day parts, one-letter am/pm, slang and more recurrence forms.",
+  "created": "2026-11-04T04:49:05Z",
+  "format": "dsl-v1"
+}

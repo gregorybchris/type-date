@@ -1,16 +1,13 @@
 // Shapes of files in specs/contracts.md plus API wrappers.
 
 export interface RunConfig {
+  /** Engine id: `chrono`, `h1` ... `h8`. Same as the folder name under runs/ and the id in @type-date/baselines. */
   id: string;
-  number: number;
+  /** Same as `id`. */
   title: string;
-  /** One or two sentences: what the engine is and what changed. */
+  /** One sentence: what the engine is and what changed. */
   description?: string;
   created: string;
-  notes?: string;
-  parent: string | null;
-  /** `family` is "library" (chrono-node) or "heuristic". `engine` is the id in @type-date/baselines. */
-  model: { family: string; engine?: string };
 }
 
 export interface TagScore {
@@ -96,7 +93,7 @@ export interface ErrorsResponse {
 }
 
 export interface ErrorQuery {
-  /** Eval version whose failures to read: runs/exp-NNN/errors/<version>.jsonl. */
+  /** Eval version whose failures to read: runs/<engine>/errors/<version>.jsonl. */
   version?: string;
   offset?: number;
   limit?: number;

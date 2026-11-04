@@ -98,7 +98,7 @@ export function ParetoChart({
   const labels = useMemo(() => {
     const wide = w >= 700;
     return placeLabels(
-      points.map((p) => ({ key: p.runId, px: x.scale(p.x), py: y.scale(p.y), r: radius(p), text: wide && frontKeys.has(p.runId) ? `${p.label} ${p.title.length > 18 ? p.title.slice(0, 17) + "…" : p.title}` : p.label, short: p.label, front: frontKeys.has(p.runId) })),
+      points.map((p) => ({ key: p.runId, px: x.scale(p.x), py: y.scale(p.y), r: radius(p), text: p.label, short: p.label, front: frontKeys.has(p.runId) })),
       { w: iw, h: ih },
     );
   }, [points, x, y, frontKeys, iw, ih, w, many]);
@@ -163,7 +163,7 @@ export function ParetoChart({
                   style={{ cursor: "pointer", outline: "none" }}
                   tabIndex={0}
                   role="button"
-                  aria-label={`exp ${p.number}, ${p.title}`}
+                  aria-label={`${p.label}`}
                   onPointerDown={(e) => { touch.current = e.pointerType !== "mouse"; }}
                   onMouseEnter={() => !touch.current && setHover(p.runId)}
                   onMouseLeave={() => setHover(null)}
@@ -204,17 +204,16 @@ export function ParetoChart({
           }}
         >
           <div className="flex items-center justify-between">
-            <span className="font-semibold text-fg">exp-{String(hp.number).padStart(3, "0")}</span>
+            <span className="font-semibold text-fg">{hp.label}</span>
             <span className="text-subtle">{hp.library ? "library" : "heuristic"}</span>
           </div>
-          <div className="mt-0.5 text-[12px] font-medium text-fg">{hp.title}</div>
           {hp.description && <div className="mt-0.5 line-clamp-3 text-[11.5px] text-muted">{hp.description}</div>}
           <div className="dotted-t my-2" />
           <div className="flex justify-between"><span className="text-muted">{yInfo.label} {version}</span><span className="num font-medium">{(hp.y * 100).toFixed(1)}%</span></div>
           <div className="flex justify-between"><span className="text-muted">{xInfo.label}</span><span className="num font-medium">{fmtX(xAxis, hp.x)}</span></div>
           <div className="mt-1.5 text-[11px] text-subtle">{frontKeys.has(hp.runId) ? "On the Pareto front" : "Dominated"}.{!pin && " Click to open."}</div>
           {pin && (
-            <button onClick={() => onOpen(hp.runId)} className="mt-2 h-9 w-full cursor-pointer rounded-field bg-primary text-[13px] font-medium text-primary-fg">Open exp-{String(hp.number).padStart(3, "0")}</button>
+            <button onClick={() => onOpen(hp.runId)} className="mt-2 h-9 w-full cursor-pointer rounded-field bg-primary text-[13px] font-medium text-primary-fg">Open {hp.label}</button>
           )}
         </div>
       )}

@@ -1,5 +1,5 @@
-// Score a baseline engine on one eval version and write runs/exp-NNN/{config,metrics}.json and errors/<version>.jsonl.
-// Usage: pnpm --filter @type-date/baselines eval --engine chrono --exp 1 --title "chrono-node baseline"
+// Score an engine on one eval version and write runs/<engine>/{config,metrics}.json and errors/<version>.jsonl.
+// Usage: pnpm --filter @type-date/baselines eval --engine h8 [--eval-version e10] [--no-primary]
 // Metrics follow training/src/typedate/train.py `evaluate` (exact, resolved, by_split, by_tag, by_modifier).
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
@@ -13,17 +13,17 @@ import type { Engine } from "../src/engine";
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(here, "../../..");
 
-/** engine id -> source file, model family, and whether predictions depend on the reference day. */
-const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; notes: string }> = {
-  chrono: { file: "chrono.ts", family: "library", perDay: true, notes: "chrono-node 2.10.3 (en casual, forwardDate) plus DSL adapter. No recurrence support." },
-  "heuristic-full-2": { file: "heuristic-full-2.ts", family: "heuristic", perDay: false, notes: "heuristic-full-1 plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
-  "heuristic-full-5": { file: "heuristic-full-5.ts", family: "heuristic", perDay: false, notes: "heuristic-full-4 plus date validity checks, year-first and named numeric formats, two-digit years, seconds, relative offsets in more forms." },
-  "heuristic-full-6": { file: "heuristic-full-6.ts", family: "heuristic", perDay: false, notes: "heuristic-full-5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, windows, anchored and business-day offsets." },
-  "heuristic-full-7": { file: "heuristic-full-7.ts", family: "heuristic", perDay: false, notes: "heuristic-full-6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms." },
-  "heuristic-full-8": { file: "heuristic-full-8.ts", family: "heuristic", perDay: false, notes: "heuristic-full-7 behind a normalization layer for typos and abbreviations: weekday, month and unit misspellings, short forms, digits for words." },
-  "heuristic-full-4": { file: "heuristic-full-4.ts", family: "heuristic", perDay: false, notes: "heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand." },
-  "heuristic-full-3": { file: "heuristic-full-3.ts", family: "heuristic", perDay: false, notes: "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm and slang." },
-  "heuristic-full-1": { file: "heuristic-full-1.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },
+/** Engine id -> source file, whether predictions depend on the reference day, and a one-sentence description. */
+const REGISTRY: Record<string, { file: string; perDay: boolean; description: string }> = {
+  chrono: { file: "chrono.ts", perDay: true, description: "chrono-node 2.10.3 (en casual, forwardDate) plus a DSL adapter. No recurrence support." },
+  h1: { file: "h1.ts", perDay: false, description: "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms." },
+  h2: { file: "h2.ts", perDay: false, description: "h1 plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
+  h3: { file: "h3.ts", perDay: false, description: "h2 plus span extraction around unknown words, day parts, one-letter am/pm and slang." },
+  h4: { file: "h4.ts", perDay: false, description: "h3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand." },
+  h5: { file: "h5.ts", perDay: false, description: "h4 plus date validity checks, year-first and named numeric formats, two-digit years, seconds, relative offsets in more forms." },
+  h6: { file: "h6.ts", perDay: false, description: "h5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, windows, anchored and business-day offsets." },
+  h7: { file: "h7.ts", perDay: false, description: "h6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms." },
+  h8: { file: "h8.ts", perDay: false, description: "h7 behind a normalization layer for typos and abbreviations, plus day of a relative month, score and dozen." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
@@ -38,8 +38,6 @@ function splitsOf(version: string): string[] {
 const { values: args } = parseArgs({
   options: {
     engine: { type: "string" },
-    exp: { type: "string" },
-    title: { type: "string" },
     "eval-version": { type: "string", default: "e1" },
     description: { type: "string" },
     splits: { type: "string" },
@@ -50,12 +48,11 @@ const { values: args } = parseArgs({
   },
 });
 const reg = REGISTRY[args.engine ?? ""];
-if (!reg || !args.exp || !args.title) {
-  console.error(`usage: eval --engine <${Object.keys(REGISTRY).join("|")}> --exp <n> --title "<title>"`);
+if (!reg) {
+  console.error(`usage: eval --engine <${Object.keys(REGISTRY).join("|")}> [--eval-version eN] [--no-primary]`);
   process.exit(2);
 }
-const expNum = Number(args.exp);
-const expId = `exp-${String(expNum).padStart(3, "0")}`;
+const engineId = args.engine!;
 
 interface Row {
   id: string;
@@ -120,8 +117,6 @@ async function bundleSize(file: string): Promise<{ raw: number; gzip: number; la
 }
 
 async function main() {
-  const t0 = performance.now();
-  const started = new Date().toISOString();
   const mod = await import(join(here, "../src", reg!.file));
   const engine: Engine = mod.default;
   await engine.load({ baseUrl: "" });
@@ -132,7 +127,6 @@ async function main() {
   const warm = rowsBySplit[splitNames[0]!]!.slice(0, 300);
   for (let i = 0; i < 2; i++) for (const r of warm) await engine.predict(r.text, undefined, { today: DEFAULT_DAY });
 
-  const tLoad = performance.now();
   const latencies: number[] = [];
   const errors: Record<string, unknown>[] = [];
   const bySplit: Record<string, { n: number; exact: number; resolved: number }> = {};
@@ -177,7 +171,6 @@ async function main() {
     ok += sOk;
     resOk += sRes;
   }
-  const tScore = performance.now();
   latencies.sort((a, b) => a - b);
   const size = await bundleSize(reg!.file);
   const sortedObj = (m: Map<string, [number, number]>) =>
@@ -192,28 +185,20 @@ async function main() {
       by_modifier: sortedObj(mod_),
       version: args["eval-version"],
     },
-    model: { params: 0, size_bytes: size.gzip, size_bytes_minified: size.raw, size_bytes_lazy: size.lazyGzip, avg_output_tokens: null },
-    train: { seconds: 0, steps: 0, final_loss: null },
+    model: { size_bytes: size.gzip, size_bytes_minified: size.raw, size_bytes_lazy: size.lazyGzip },
     node_latency_ms: { p50: pct(latencies, 0.5), p95: pct(latencies, 0.95), p99: pct(latencies, 0.99), n: latencies.length },
   };
   const config = {
-    id: expId,
-    number: expNum,
-    title: args.title,
+    id: engineId,
+    title: engineId,
+    description: args.description ?? reg!.description,
     created: new Date().toISOString().replace(/\.\d+Z$/, "Z"),
-    description: args.description ?? reg!.notes,
-    dataset: null,
     format: "dsl-v1",
-    notes: reg!.notes,
-    parent: null,
-    model: { family: reg!.family, params: 0, engine: args.engine },
-    train: {},
-    export: { format: "none" },
   };
   console.log(`${args.engine}: exact ${metrics.eval.exact.toFixed(4)} resolved ${metrics.eval.resolved.toFixed(4)} n=${tot} gzip=${size.gzip}B lazy=${size.lazyGzip}B p50=${metrics.node_latency_ms.p50.toFixed(4)}ms`);
   for (const [s, v] of Object.entries(bySplit)) console.log(`  ${s.padEnd(14)} n=${String(v.n).padStart(5)} exact ${v.exact.toFixed(4)} resolved ${v.resolved.toFixed(4)}`);
   if (args["dry-run"]) return;
-  const dir = join(ROOT, "runs", expId);
+  const dir = join(ROOT, "runs", engineId);
   mkdirSync(join(dir, "errors"), { recursive: true });
   // Errors are kept per eval version, so every eval has its own failure list.
   writeFileSync(join(dir, "errors", `${args["eval-version"]}.jsonl`), errors.map((e) => JSON.stringify(e)).join("\n") + (errors.length ? "\n" : ""));
@@ -233,14 +218,5 @@ async function main() {
   const evals = { ...(prev.evals ?? {}) };
   delete evals[args["eval-version"]!];
   writeFileSync(mp0, JSON.stringify(Object.keys(evals).length ? { ...metrics, evals } : metrics, null, 2));
-  const total = (performance.now() - t0) / 1000;
-  const b = { load_data: (tLoad - t0) / 1000, eval_predict: (tScore - tLoad) / 1000, bundle_size: (performance.now() - tScore) / 1000 };
-  const stage = "eval";
-  const timing = {
-    stages: { [stage]: { stages: { started_at: started, finished_at: new Date().toISOString() }, total_s: total, buckets: b } },
-    total_s: total,
-    buckets: Object.fromEntries(Object.entries(b).map(([k, v]) => [`${stage}.${k}`, v])),
-  };
-  writeFileSync(join(dir, "timing.json"), JSON.stringify(timing, null, 2));
 }
 main();

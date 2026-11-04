@@ -6,7 +6,7 @@ import type { EvalBlock, Run } from "../src/lib/types";
 const block = (exact: number, version?: string): EvalBlock => ({ version, exact, resolved: exact, n: 10, by_split: {}, by_tag: {}, by_modifier: {} });
 function run(n: number, own: string | undefined, extra: Record<string, EvalBlock> = {}, family = "heuristic"): Run {
   return {
-    config: { id: `exp-00${n}`, number: n, title: "t", created: "", parent: null, model: { family } },
+    config: { id: family === "library" ? "chrono" : `h${n}`, title: "t", created: "" },
     metrics: { eval: block(0.5, own), evals: extra, model: { size_bytes: 1 } },
     bench: [],
   };

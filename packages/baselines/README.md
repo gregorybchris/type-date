@@ -4,35 +4,37 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 
 | Engine id | File | Idea | gzip |
 |---|---|---|---|
-| `chrono` | `src/chrono.ts` | chrono-node 2.10.3 plus an adapter. No recurrence. | 14.9 kB |
-| `heuristic-full-1` | `src/heuristic-full-1.ts` | Scanner, fuzzy words, recursive-descent readers. | 7.9 kB |
-| `heuristic-full-2` | `src/heuristic-full-2.ts` | heuristic-full-1 plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
-| `heuristic-full-3` | `src/heuristic-full-3.ts` | heuristic-full-2 plus span extraction around unknown words, day parts, slang. | 10.3 kB |
-| `heuristic-full-4` | `src/heuristic-full-4.ts` | heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases. | 14.6 kB |
-| `heuristic-full-5` | `src/heuristic-full-5.ts` | heuristic-full-4 plus date validity checks and developer-written date formats. | 15.9 kB |
-| `heuristic-full-6` | `src/heuristic-full-6.ts` | heuristic-full-5 plus DSL v2 forms (open ranges, day of month, durations, lists, bounds, windows, offsets). | see exp-016 |
-| `heuristic-full-7` | `src/heuristic-full-7.ts` | heuristic-full-6 plus web-pool fixes. DSL v2 families and the fixes sit in `src/full-7/v2-forms.ts`, loaded on demand (not an engine). | 19.0 kB eager + 10.6 kB lazy |
-| `heuristic-full-8` | `src/heuristic-full-8.ts` | heuristic-full-7 behind a normalization layer (`src/full-8/`: typo and abbreviation rewrites, day of a relative month, score and dozen). full-7 is unchanged except one `export`. | 21.9 kB eager + 10.7 kB lazy |
+| `chrono` | `src/chrono.ts` | chrono-node 2.10.3 plus an adapter. No recurrence. Third-party comparison. | 14.9 kB |
+| `h1` | `src/h1.ts` | Scanner, fuzzy words, recursive-descent readers. | 7.9 kB |
+| `h2` | `src/h2.ts` | h1 plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
+| `h3` | `src/h3.ts` | h2 plus span extraction around unknown words, day parts, slang. | 10.3 kB |
+| `h4` | `src/h4.ts` | h3 plus span composition for pasted messages, bounded recurrences, calendar phrases. | 14.6 kB |
+| `h5` | `src/h5.ts` | h4 plus date validity checks and developer-written date formats. | 15.9 kB |
+| `h6` | `src/h6.ts` | h5 plus DSL v2 forms (open ranges, day of month, durations, lists, bounds, windows, offsets). | 24.0 kB |
+| `h7` | `src/h7.ts` | h6 plus web-pool fixes. DSL v2 families and the fixes sit in `src/h7/v2-forms.ts`, loaded on demand (not an engine). | 19.0 kB eager + 10.6 kB lazy |
+| `h8` | `src/h8.ts` | h7 behind a normalization layer (`src/h8/`: typo and abbreviation rewrites, day of a relative month, score and dozen). h7 is unchanged except one `export`. | 21.9 kB eager + 10.7 kB lazy |
+
+Engine ids are the same in the registry (`src/index.ts`, `scripts/eval.ts`), `runs/<id>/`, the dashboard and the picker demo. Notes per engine: `specs/engines/<id>.md`. Each file exports the engine object `hN` and `parseHN`.
 
 `predict(text, signal?, { today })` takes an optional reference day. Only `chrono` uses it, because chrono returns absolute dates. The heuristics output relative DSL and ignore it.
 
 ## Commands
 
 ```sh
-pnpm --filter @type-date/baselines test                      # vitest, about 35 cases per engine
-pnpm --filter @type-date/baselines eval --engine heuristic-full-1 --exp 3 --title "heuristic-full-1"
-make eval-baselines                                          # all four, writes runs/exp-001..003 and 009 on eval e1
-make rescore-baselines EVAL=e1q [EXPS="1 9"]                 # another eval version, only adds metrics.json evals[e1q] (--no-primary)
-pnpm --filter @type-date/baselines exec tsx scripts/dev.ts heuristic-full-1 --split val --show 20   # failures, train or val only
+pnpm --filter @type-date/baselines test                      # vitest, about 50 cases per engine
+pnpm --filter @type-date/baselines eval --engine h8 --eval-version e10   # primary run: writes config, metrics, errors
+make rescore-baselines EVAL=e10 [ENGINES="h7 h8"]            # adds metrics.json evals[e10] for the listed engines (--no-primary)
+make rescore-all                                             # every engine on every eval version
+pnpm --filter @type-date/baselines exec tsx scripts/dev.ts h8 --split val --show 20   # failures, train or val only
 ```
 
-`scripts/eval.ts` writes `runs/exp-NNN/{config,metrics}.json` and `errors/<eval version>.jsonl` as in `specs/contracts.md`. It adds `by_split.<split>.resolved`, `model.size_bytes_minified` and `node_latency_ms` (p50, p95, p99 per call in Node). `model.size_bytes` is the esbuild minified and gzipped bundle, dependencies included.
+`scripts/eval.ts` writes `runs/<engine>/{config,metrics}.json` and `errors/<eval version>.jsonl` as in `specs/contracts.md`. It adds `by_split.<split>.resolved`, `model.size_bytes_minified` and `node_latency_ms` (p50, p95, p99 per call in Node). `model.size_bytes` is the esbuild minified and gzipped bundle, dependencies included. The one-sentence description of each engine is in its `REGISTRY` entry.
 
 For `chrono` the eval calls the engine once for each reference day in `score-resolved.ts` and resolves both expected and predicted DSL for that same day. For the others one call is enough.
 
 `scripts/dev.ts` reads only `train` and `val`. Use it to tune. Score the test splits with `eval.ts` for the final numbers only.
 
-`eval.ts` takes `--eval-version` (default `e1`, reads `evals/<version>`), `--description`, and `--no-primary`, which writes only `metrics.json` `evals[<version>]` and leaves `eval`, errors and config alone. It also writes `timing.json` (stage `eval`).
+`eval.ts` takes `--eval-version` (default `e1`, reads `evals/<version>`), `--description`, and `--no-primary`, which writes only `metrics.json` `evals[<version>]` and leaves `eval` and config alone.
 
 `eval.ts --file <abs path> --eval-version <label> --no-primary` scores one JSONL file (split name `file`) under `evals[<label>]`, used for `data/real/dev.jsonl`. A primary run keeps the `evals` already stored in `metrics.json`.
 
@@ -54,10 +56,10 @@ For `chrono` the eval calls the engine once for each reference day in `score-res
 - Another agent edited `packages/engines/src/index.ts` while this package was built, and the `PredictOptions` export was lost once. If `tsc` says `PredictOptions` is missing, re-add it.
 - pnpm needs `pnpm install` at the repo root after adding this package. The workspace link is how `@type-date/core` and `@type-date/engines` resolve.
 
-- heuristic-full-6: fuzzy match turned "reminder" into the `rest` token and the parse became `x`. `rest` is skipped in fuzzy matching and dropped before the base grammar.
-- heuristic-full-6 is at 23.97 kB gzip, close to the 24 kB budget. Add families as table entries or a lazy chunk.
+- h6: fuzzy match turned "reminder" into the `rest` token and the parse became `x`. `rest` is skipped in fuzzy matching and dropped before the base grammar.
+- h6 is at 23.97 kB gzip, close to the 24 kB budget. Add families as table entries or a lazy chunk.
 
-- heuristic-full-7: `src/full-7/v2-forms.ts` is a lazy chunk loaded by `import()` from `src/heuristic-full-7.ts`. Sync `parseFull7` runs the v2 layer only after `loadFull7Lazy()` (call it first in tests). `eval.ts` bundles with code splitting and reports the eager gzip as `size_bytes` and the lazy chunk as `size_bytes_lazy`.
+- h7: `src/h7/v2-forms.ts` is a lazy chunk loaded by `import()` from `src/h7.ts`. Sync `parseH7` runs the v2 layer only after `loadH7Lazy()` (call it first in tests). `eval.ts` bundles with code splitting and reports the eager gzip as `size_bytes` and the lazy chunk as `size_bytes_lazy`.
 - A shell `echo "$RE"` in zsh turns `\b` in a regex into a backspace. Use `printf '%s'` or write the regex from Python when moving it into a file.
 
-- heuristic-full-8: the typo layer must not rewrite words full-7 already reads (`exact()` is exported for that check). Skeleton matching needs the typo to be a subsequence of the target, else `form` becomes `from`. A word regex with a lookahead backtracks (`friday9am` became `fridayy9am`); exclude letters in the lookahead. `pst` is a time zone: rewrite it to `past` only before a count.
+- h8: the typo layer must not rewrite words h7 already reads (`exact()` is exported for that check). Skeleton matching needs the typo to be a subsequence of the target, else `form` becomes `from`. A word regex with a lookahead backtracks (`friday9am` became `fridayy9am`); exclude letters in the lookahead. `pst` is a time zone: rewrite it to `past` only before a count.

@@ -174,13 +174,6 @@ Inputs: DSL string, `now` (instant), `tz`, `weekStart`, options (`nextMeansSkipW
 7. Return a typed object for the picker: `{mode, kind: single|range|recurring, start, end, rrule, ambiguous: [fields], implied: [fields]}`. Track which fields were stated versus defaulted (chrono's known/implied split).
 8. Keep a golden test table (input, now, expected). The same table drives synthetic training data generation. Generate training data by sampling a symbolic spec, rendering text templates (and LLM paraphrases), and keeping only rows whose resolver output equals the spec. This is the execution-filter step that made the SCATE small-model result work.
 
-## Experiments
-
-1. Absolute ISO baseline. The prompt is `now=2026-11-03 Tue | text`; output is `d 2026-10-30`, `dt 2026-11-04T15:00`, ranges as `a>b`, recurrence as RRULE-lite with DTSTART. Measures how much a tiny model loses on date arithmetic and how many tokens it costs (about 12 per date). Use the same training texts. Expected: higher errors on weekday-offset and month-end cases, and a need for many reference dates.
-2. Chrono-style component bag with grammar-constrained slots. Output is a fixed-order tuple of fields with `_` for unknown, for example `d|_,10,02,_,_|_,10,05,_,_` (year, month, day, hour, minute). Relative parts use a small `rel` prefix (`+1d`, `fr-1`). Pro: fixed positions make constrained decoding trivial and enable parallel slot classification heads (a non-autoregressive alternative with 1 decode step). Con: more tokens than the DSL for rare fields and clumsy for recurrences. Also try a variant with per-field classification heads on the encoder, which would make latency independent of output length.
-
-Also worth a smaller ablation: dedicated single tokens for atoms (`fr-1`, `R w/2`) versus plain text, to measure the token and accuracy gain.
-
 ## Open questions
 
 - Should "next friday" skip a week? Decide with user tests.

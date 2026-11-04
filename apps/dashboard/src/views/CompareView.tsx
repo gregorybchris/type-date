@@ -63,9 +63,9 @@ export function CompareView() {
       <div>
         <div className="mb-1.5 text-[12px] font-medium text-muted">Engines ({shown.length} of {scored.length} shown, oldest to newest)</div>
         <div className="flex flex-wrap gap-1.5" role="group" aria-label="Engines">
-          {scored.map((r) => <Chip key={r.config.id} on={!off.has(r.config.id)} onClick={() => toggleEngine(r.config.id)} color={colors.get(r.config.id)!}>{r.config.title}</Chip>)}
+          {scored.map((r) => <Chip key={r.config.id} on={!off.has(r.config.id)} onClick={() => toggleEngine(r.config.id)} color={colors.get(r.config.id)!}>{r.config.id}</Chip>)}
         </div>
-        {unscored.length > 0 && <p className="mt-2 text-[12px] text-warn">Not evaluated on {version}: {unscored.map((r) => r.config.title).join(", ")}.</p>}
+        {unscored.length > 0 && <p className="mt-2 text-[12px] text-warn">Not evaluated on {version}: {unscored.map((r) => r.config.id).join(", ")}.</p>}
       </div>
 
       {shown.length === 0 || splits.length === 0 ? (
@@ -84,7 +84,7 @@ export function CompareView() {
           <Panel
             title="Accuracy by engine generation"
             version={version}
-            note={`Engines in order of experiment number, one line per split on ${version}. Lines break where an engine has no result. ${axis === "50" ? "The axis starts at 50%." : ""}`}
+            note={`Engines in order of engine generation, one line per split on ${version}. Lines break where an engine has no result. ${axis === "50" ? "The axis starts at 50%." : ""}`}
             right={<Segmented value={axis} onChange={setAxis} options={[{ value: "50", label: "From 50%" }, { value: "0", label: "From 0%" }]} />}
           >
             <div className="mb-3 flex flex-wrap gap-1.5 px-1">

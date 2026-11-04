@@ -1,10 +1,10 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo export bench serve serve-stop serve-status timing eval-baselines rescore-baselines
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo  serve serve-stop serve-status rescore-baselines rescore-all eval-coverage results robustness
 
 help:  ## List targets
-	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-18s %s\n", $$1, $$2}'
 
 setup:  ## Install Python deps (uv)
 	cd training && uv sync
@@ -27,7 +27,7 @@ js-test:  ## Vitest across workspaces
 js-typecheck:  ## tsc across workspaces
 	pnpm -r --if-present typecheck
 
-dashboard:  ## Dev server for the experiment dashboard (apps/dashboard)
+dashboard:  ## Dev server for the engine dashboard (apps/dashboard)
 	pnpm --filter @type-date/dashboard dev
 
 picker-demo:  ## Dev server for the picker demo (http://localhost:5199)
@@ -42,33 +42,22 @@ serve-stop:  ## Stop the supervised dev servers
 serve-status:  ## Check both dev servers
 	scripts/serve.sh status
 
-eval-baselines:  ## Score the non-model baselines into runs/exp-001..003 and 009 (eval e1)
-	pnpm --filter @type-date/baselines eval --engine chrono --exp 1 --title "chrono-node + DSL adapter" --description "chrono-node 2.10.3 English parser with an adapter to DSL lines. No recurrence support, so recurrence inputs output x."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-1 --exp 3 --title "heuristic-full-1" --description "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-2 --exp 9 --title "heuristic-full-2" --description "heuristic-full-1 plus clock words, filler and chat phrasing, spaced minutes, dotted times, more recurrence forms and 2-edit typos."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-3 --exp 13 --eval-version e2 --title "heuristic-full-3" --description "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm, slang and more recurrence forms."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-4 --exp 14 --eval-version e3 --title "heuristic-full-4" --description "heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-5 --exp 15 --eval-version e4 --title "heuristic-full-5" --description "heuristic-full-4 plus date validity checks, year-first and named numeric date formats, two-digit years, seconds and more relative offsets."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-6 --exp 16 --eval-version e6 --title "heuristic-full-6" --description "heuristic-full-5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, rolling windows, anchored and business-day offsets."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-7 --exp 17 --eval-version e6 --title "heuristic-full-7" --description "heuristic-full-6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-8 --exp 18 --eval-version e9 --title "heuristic-full-8" --description "heuristic-full-7 behind a normalization layer that rewrites misspelled and abbreviated words (weekdays, months, units, connectors, digits for words)."
-
-eval-coverage:  ## Matrix of experiments by eval version, gaps marked
+eval-coverage:  ## Matrix of engines by eval version, gaps marked
 	cd training && uv run td eval coverage
 
-# Baseline experiments: number:engine
-BASELINE_EXPS = 1:chrono 3:heuristic-full-1 9:heuristic-full-2 13:heuristic-full-3 14:heuristic-full-4 15:heuristic-full-5 16:heuristic-full-6 17:heuristic-full-7 18:heuristic-full-8
-rescore-baselines:  ## Re-score baselines on one eval: make rescore-baselines EVAL=e10 [EXPS="1 3 9 13 14 15 16 17 18"]
-	@test -n "$(EVAL)" || (echo "usage: make rescore-baselines EVAL=e1q [EXPS=...]"; exit 2)
-	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 3 9 13 14 15 16 17 18)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
+# Engines in dashboard order: chrono (comparison baseline), then h1..h8 (heuristic parser generations)
+ENGINES = chrono h1 h2 h3 h4 h5 h6 h7 h8
+rescore-baselines:  ## Score engines on one eval version: make rescore-baselines EVAL=e10 [ENGINES="h7 h8"]
+	@test -n "$(EVAL)" || (echo 'usage: make rescore-baselines EVAL=e10 [ENGINES="h7 h8"]'; exit 2)
+	$(foreach e,$(ENGINES),pnpm --filter @type-date/baselines eval --engine $(e) --eval-version $(EVAL) --no-primary &&) true
 
 # All eval versions, full and quick subsets
 EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10
-rescore-all:  ## Score every baseline on every eval version (fast, run after adding a baseline or eval)
+rescore-all:  ## Score every engine on every eval version (fast, run after adding an engine or eval)
 	$(foreach v,$(EVALS),$(MAKE) rescore-baselines EVAL=$(v) &&) true
 
 results:  ## Results table for an eval version: make results EVAL=e10
-	cd training && uv run td exp table --eval-version $(or $(EVAL),e10)
+	cd training && uv run td results --eval-version $(or $(EVAL),e10)
 
-robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=heuristic-full-5
-	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),heuristic-full-5)
+robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=h8
+	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),h8)

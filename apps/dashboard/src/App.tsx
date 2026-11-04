@@ -1,6 +1,6 @@
 import * as RT from "@radix-ui/react-tooltip";
 import { AnimatePresence, LazyMotion, MotionConfig, m } from "motion/react";
-import { Bug, ChartColumn, ChartScatter, Database, FlaskConical, Moon, Play, Sun } from "lucide-react";
+import { Bug, ChartColumn, ChartScatter, Cpu, Database, Moon, Play, Sun } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Toaster } from "sonner";
 import { CommandPalette, type Command } from "./components/CommandPalette";
@@ -12,15 +12,15 @@ import { ThemeProvider, useTheme } from "./lib/theme";
 import { CompareView } from "./views/CompareView";
 import { DataView } from "./views/DataView";
 import { ErrorsView } from "./views/ErrorsView";
-import { ExperimentDetail } from "./views/ExperimentDetail";
-import { ExperimentsView } from "./views/ExperimentsView";
+import { EngineDetail } from "./views/EngineDetail";
+import { EnginesView } from "./views/EnginesView";
 import { ParetoView } from "./views/ParetoView";
 import { PlaygroundView } from "./views/PlaygroundView";
 
 const loadFeatures = () => import("./features").then((r) => r.default);
 
 function Crumbs({ view, id }: { view: string; id: string }) {
-  const names: Record<string, string> = { compare: "Compare", experiments: "Experiments", pareto: "Pareto front", errors: "Error analysis", playground: "Playground", data: "Data" };
+  const names: Record<string, string> = { compare: "Compare", engines: "Engines", pareto: "Pareto front", errors: "Error analysis", playground: "Playground", data: "Data" };
   return (
     <span>
       <a className="hover:text-fg" href={href(view)}>{names[view] ?? view}</a>
@@ -52,7 +52,7 @@ function Routes() {
 
   const commands = useMemo<Command[]>(() => {
     const nav: Command[] = [
-      { id: "n-exp", label: "Experiments", group: "Views", icon: <FlaskConical />, run: () => navigate(href("experiments")) },
+      { id: "n-eng", label: "Engines", group: "Views", icon: <Cpu />, run: () => navigate(href("engines")) },
       { id: "n-cmp", label: "Compare", group: "Views", icon: <ChartColumn />, run: () => navigate(href("compare")) },
       { id: "n-par", label: "Pareto front", group: "Views", icon: <ChartScatter />, run: () => navigate(href("pareto")) },
       { id: "n-err", label: "Error analysis", group: "Views", icon: <Bug />, run: () => navigate(href("errors")) },
@@ -60,15 +60,15 @@ function Routes() {
       { id: "n-data", label: "Data", group: "Views", icon: <Database />, run: () => navigate(href("data")) },
       { id: "a-theme", label: theme === "dark" ? "Switch to light theme" : "Switch to dark theme", group: "Actions", icon: theme === "dark" ? <Sun /> : <Moon />, run: toggle },
     ];
-    const exps: Command[] = [...runs].reverse().map((r) => ({
+    const engines: Command[] = [...runs].reverse().map((r) => ({
       id: r.config.id,
       label: r.config.id,
-      hint: r.config.title,
+      hint: r.config.description,
       group: "Engines",
-      icon: <FlaskConical />,
-      run: () => navigate(href("experiments", r.config.id)),
+      icon: <Cpu />,
+      run: () => navigate(href("engines", r.config.id)),
     }));
-    return [...nav, ...exps];
+    return [...nav, ...engines];
   }, [runs, theme, toggle]);
 
   let page: React.ReactNode;
@@ -92,7 +92,7 @@ function Routes() {
         page = <DataView params={route.params} />;
         break;
       default:
-        page = route.id ? <ExperimentDetail id={route.id} params={route.params} /> : <ExperimentsView />;
+        page = route.id ? <EngineDetail id={route.id} params={route.params} /> : <EnginesView />;
     }
 
   return (

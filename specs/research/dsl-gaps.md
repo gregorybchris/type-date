@@ -1,6 +1,6 @@
 # DSL gaps and label-policy decisions
 
-Found while building eval e2 (labeler disagreements) and from the heuristic agent's report (exp-009). Decide with frequency data from the larger realistic set before extending the DSL.
+Found while building eval e2 (labeler disagreements) and from the h2 report. Decide with frequency data from the larger realistic set before extending the DSL.
 
 ## Inputs the DSL v1 cannot express
 
@@ -31,7 +31,7 @@ Two independent labelers disagreed on these, mostly because one wrote `x` and th
 
 Rows hit by the first, fourth, and fifth classes were removed from e1 to make e2 (rule-based, see `policy_flags` in `training/src/typedate/evalsets.py`). The grammar generator still produces them in training data (v003). Fix it in the next dataset version.
 
-## Frequency in hard-style realistic data (from the heuristic-full-4 report, exp-014)
+## Frequency in hard-style realistic data (from the h4 report)
 
 Counted over the 778 consensus rows in `data/real-hard`, by phrase pattern. Rows overlap with rows the labelers flattened to a plain date, so these are upper bounds on how often a user needs the feature.
 
@@ -43,4 +43,4 @@ Counted over the 778 consensus rows in `data/real-hard`, by phrase pattern. Rows
 | Last or penultimate day of the year or month | 5 | 0.6% | month-end and year-end forms |
 | Week of | 2 | 0.3% | whole-week range form |
 
-Together about 9% of hard-style rows. This is a larger share than the accuracy gap between heuristic versions in the last iteration. A DSL v2 with open ranges, day-of-month, and durations is worth deciding on after the model comparison, because a change to the DSL means regenerating training data and re-labeling eval rows (a new eval version).
+Together about 9% of hard-style rows. This is a larger share than the accuracy gap between heuristic versions in the last iteration. A DSL v2 with open ranges, day-of-month, and durations is worth deciding on because a change to the DSL means regenerating training data and re-labeling eval rows (a new eval version).

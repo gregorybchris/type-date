@@ -1,4 +1,4 @@
-// Usage: tsx scripts/robustness.ts --engine heuristic-full-5 --files data/real/dev.jsonl,data/real-hard/dev.jsonl [--show 5]
+// Usage: tsx scripts/robustness.ts --engine h8 --files data/real/dev.jsonl,data/real-hard/dev.jsonl [--show 5]
 // Applies meaning-preserving edits to rows the engine gets right and reports how often the answer flips.
 // Run it on DEV data, not on e1-e5 eval rows.
 import { readFileSync } from "node:fs";
@@ -9,7 +9,7 @@ import { baselines } from "../src/index";
 
 const { values: args } = parseArgs({
   options: {
-    engine: { type: "string", default: "heuristic-full-5" },
+    engine: { type: "string", default: "h8" },
     files: { type: "string", default: "data/real/dev.jsonl,data/real-hard/dev.jsonl,data/real-fmt/dev.jsonl" },
     show: { type: "string", default: "4" },
   },

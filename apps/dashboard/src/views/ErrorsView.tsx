@@ -65,8 +65,8 @@ async function copy(text: string) {
 export function ErrorsView({ id, params }: { id: string; params: URLSearchParams }) {
   const { runs, run: getRun, version } = useStore();
   const setParams = useSetParams();
-  const expId = id || runs[runs.length - 1]?.config.id || "";
-  const run = getRun(expId);
+  const engineId = id || runs[runs.length - 1]?.config.id || "";
+  const run = getRun(engineId);
   const tag = params.get("tag") ?? "";
   const modifier = params.get("modifier") ?? "";
   const split = params.get("split") ?? "";
@@ -80,10 +80,10 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
     const t = setTimeout(() => qDraft !== q && setParams({ q: qDraft || undefined }), 250);
     return () => clearTimeout(t);
   }, [qDraft, q, setParams]);
-  useEffect(() => setPage(0), [expId, version, tag, modifier, split, q]);
-  useEffect(() => setPicked(new Map()), [expId]);
+  useEffect(() => setPage(0), [engineId, version, tag, modifier, split, q]);
+  useEffect(() => setPicked(new Map()), [engineId]);
 
-  const list = useAsync(`${expId}|${version}|${tag}|${modifier}|${split}|${q}|${page}`, (s) => fetchErrors(expId, { version, tag, modifier, split, q, offset: page * PAGE, limit: PAGE }, s));
+  const list = useAsync(`${engineId}|${version}|${tag}|${modifier}|${split}|${q}|${page}`, (s) => fetchErrors(engineId, { version, tag, modifier, split, q, offset: page * PAGE, limit: PAGE }, s));
 
   const rows = list.data?.items ?? [];
   const [dim, setDim] = useState<Dim>("tag");
@@ -92,7 +92,7 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
   const resolved = useMemo(() => rows.map((r) => ({ exp: resolveText(r.expected, today0), got: resolveText(r.predicted, today0) })), [rows, today0]);
 
   const ev = run ? evalFor(run, version) : null;
-  if (!run) return <Empty>No experiment selected</Empty>;
+  if (!run) return <Empty>No engine selected</Empty>;
   if (!ev) return <Empty>{run.config.id} has no results on {version}</Empty>;
   const scores = dim === "tag" ? ev.by_tag : dim === "modifier" ? ev.by_modifier : ev.by_split;
   const rows_ = rowsFromScores(scores);
@@ -125,7 +125,7 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
     toast.success(`Copied ${out.length} failures as JSONL`);
   };
   const selectAllFiltered = async () => {
-    const all = await fetchErrors(expId, { version, tag, modifier, split, q, limit: 5000 });
+    const all = await fetchErrors(engineId, { version, tag, modifier, split, q, limit: 5000 });
     setPicked((p) => new Map([...p, ...all.items.map((r) => [r.id, r] as const)]));
     toast(`Selected ${all.items.length} failures`);
   };
@@ -135,10 +135,10 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
       <PageHeader title="Error analysis" subtitle="Failures by tag. Select rows and copy them as JSONL to steer data generation.">
         <Select
           className="w-full sm:w-64"
-          value={expId}
+          value={engineId}
           onChange={(v) => navigate(href("errors", v))}
-          options={runs.map((r) => ({ value: r.config.id, label: r.config.id, hint: r.config.title }))}
-          aria-label="Experiment"
+          options={runs.map((r) => ({ value: r.config.id, label: r.config.id}))}
+          aria-label="Engine"
         />
       </PageHeader>
 
@@ -146,7 +146,7 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <div>
             <h2 className="text-[13px] font-semibold">Where the errors are on {version}</h2>
-            <p className="text-[12px] text-muted">Whole experiment. Click a row to filter the table below.</p>
+            <p className="text-[12px] text-muted">Whole engine. Click a row to filter the table below.</p>
           </div>
           <div className="flex max-w-full flex-wrap items-center gap-2">
             <Segmented<Dim> value={dim} onChange={setDim} options={[{ value: "tag", label: "Tag" }, { value: "modifier", label: "Modifier" }, { value: "split", label: "Split" }]} />

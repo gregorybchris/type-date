@@ -54,10 +54,10 @@ export function GroupedBars({ runs, splits, version, colors, min }: { runs: Run[
                     const c = cellFor(r, version, s);
                     const bx = x0 + i * (bw + 1);
                     if (!c) {
-                      return <line key={r.config.id} x1={bx + bw / 2} x2={bx + bw / 2} y1={ih - 3} y2={ih} stroke="var(--warn)" strokeWidth={1.5} opacity={0.7}><title>{`${r.config.title}: no result on ${s}`}</title></line>;
+                      return <line key={r.config.id} x1={bx + bw / 2} x2={bx + bw / 2} y1={ih - 3} y2={ih} stroke="var(--warn)" strokeWidth={1.5} opacity={0.7}><title>{`${r.config.id}: no result on ${s}`}</title></line>;
                     }
                     if (c.acc < min) {
-                      return <path key={r.config.id} d={`M${bx},${ih - 7}L${bx + bw},${ih - 7}L${bx + bw / 2},${ih - 1}Z`} fill="var(--danger)"><title>{`${r.config.title}: ${pc(c.acc)}, below the axis`}</title></path>;
+                      return <path key={r.config.id} d={`M${bx},${ih - 7}L${bx + bw},${ih - 7}L${bx + bw / 2},${ih - 1}Z`} fill="var(--danger)"><title>{`${r.config.id}: ${pc(c.acc)}, below the axis`}</title></path>;
                     }
                     const top = y(c.acc);
                     return <rect key={r.config.id} x={bx} y={top} width={bw} height={Math.max(1, ih - top)} rx={Math.min(2, bw / 2)} fill="transparent" style={{ fill: colors.get(r.config.id) }} opacity={c.small ? 0.55 : 1} />;
@@ -80,7 +80,7 @@ export function GroupedBars({ runs, splits, version, colors, min }: { runs: Run[
             {rows.map(({ r, c }) => (
               <div key={r.config.id} className="flex items-center gap-2">
                 <span className="size-2 shrink-0 rounded-sm" style={{ background: colors.get(r.config.id) }} />
-                <span className="min-w-0 flex-1 truncate text-muted">{r.config.title}</span>
+                <span className="min-w-0 flex-1 truncate text-muted">{r.config.id}</span>
                 <span className="num font-medium text-fg">{c ? pc(c.acc) : "none"}</span>
               </div>
             ))}

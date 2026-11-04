@@ -26,7 +26,7 @@ describe("paretoFront", () => {
 
 function run(n: number, exact: number, family = "heuristic", p50?: number): Run {
   return {
-    config: { id: `exp-00${n}`, number: n, title: "t", created: "", parent: null, model: { family } },
+    config: { id: family === "library" ? "chrono" : `h${n}`, title: "t", created: "" },
     metrics: { eval: { version: "e1", exact, resolved: exact, n: 1, by_split: {}, by_tag: {}, by_modifier: {} }, model: { size_bytes: 9000 } },
     bench: p50 === undefined ? [] : [{ engine: "a", latency_ms: { p50, p95: p50 * 3, p99: p50 * 4 }, n: 1 }, { engine: "a", profile: "mobile-4x", latency_ms: { p50: 99, p95: 99, p99: 99 }, n: 1 }],
   };
@@ -34,14 +34,14 @@ function run(n: number, exact: number, family = "heuristic", p50?: number): Run 
 
 describe("buildPoints", () => {
   const runs = [run(1, 0.8, "heuristic", 5), run(2, 0.9, "library", 1), run(3, 0.7)];
-  it("plots latency from desktop bench entries", () => {
+  it("plots latency from desktop entries", () => {
     const { points } = buildPoints(runs, { x: "p95", y: "exact", version: "e1" });
     expect(points.map((q) => q.x)).toEqual([15, 3]);
     expect(points.map((q) => q.library)).toEqual([false, true]);
   });
-  it("reports runs without a bench instead of dropping them silently", () => {
+  it("reports runs without latency data instead of dropping them silently", () => {
     const { skipped } = buildPoints(runs, { x: "p50", y: "exact", version: "e1" });
-    expect(skipped.map((s) => [s.run.config.id, s.reason])).toEqual([["exp-003", "no latency bench"]]);
+    expect(skipped.map((s) => [s.run.config.id, s.reason])).toEqual([["h3", "no latency data"]]);
   });
   it("always has size", () => {
     expect(buildPoints(runs, { x: "size", y: "exact", version: "e1" }).points).toHaveLength(3);

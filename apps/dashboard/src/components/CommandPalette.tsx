@@ -82,7 +82,7 @@ export function CommandPalette({ open, onOpenChange, commands }: { open: boolean
               autoFocus
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Search views and experiments"
+              placeholder="Search views and engines"
               className="h-14 flex-1 bg-transparent text-[15px] text-fg outline-none placeholder:text-subtle"
             />
           </div>

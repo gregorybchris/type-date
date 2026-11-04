@@ -1,4 +1,4 @@
-import { Bug, ChartColumn, ChartScatter, Database, FlaskConical, Moon, Play, Search, Sun } from "lucide-react";
+import { Bug, ChartColumn, ChartScatter, Database, Cpu, Moon, Play, Search, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
 import { Tip } from "@/components/ui/tooltip";
@@ -9,7 +9,7 @@ import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 export const NAV = [
-  { view: "experiments", label: "Experiments", icon: FlaskConical },
+  { view: "engines", label: "Engines", icon: Cpu },
   { view: "compare", label: "Compare", icon: ChartColumn },
   { view: "pareto", label: "Pareto front", icon: ChartScatter },
   { view: "errors", label: "Error analysis", icon: Bug },
@@ -84,7 +84,7 @@ export function Sidebar({ view }: { view: string }) {
       <div className="mt-auto hidden px-1 lg:block">
         <div className="dotted-t mb-3" />
         <div className="px-1.5 text-[12px] text-subtle">
-          {runs.length} engines, latest exp-{String(Math.max(0, ...runs.map((r) => r.config.number))).padStart(3, "0")}
+          {runs.length} engines
         </div>
       </div>
     </aside>
@@ -98,7 +98,7 @@ export function TopBar({ onPalette, crumbs, view }: { onPalette: () => void; cru
     <div className="dotted-b sticky top-0 z-20 flex h-12 shrink-0 items-center justify-between gap-2 bg-surface/90 px-3 backdrop-blur md:px-5" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className="min-w-0 truncate text-[13px] text-muted">{crumbs}</div>
       <div className="flex items-center gap-2">
-        {["experiments", "compare", "pareto", "errors", "data"].includes(view) && <VersionSelect />}
+        {["engines", "compare", "pareto", "errors", "data"].includes(view) && <VersionSelect />}
         <Button variant="secondary" onClick={onPalette} className="gap-2 px-2 text-muted sm:px-3" aria-label="Open quick switcher">
           <Search />
           <span className="hidden sm:inline">Search</span>

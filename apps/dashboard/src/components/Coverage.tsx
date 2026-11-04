@@ -25,8 +25,8 @@ export function CoverageBanner() {
             <div className="grid gap-x-6 gap-y-1 pt-2 sm:grid-cols-2">
               {missing.map((r) => (
                 <li key={r.config.id} className="list-none truncate text-[12.5px]">
-                  <a href={href("experiments", r.config.id)} className="font-medium underline decoration-warn/40 underline-offset-2 hover:decoration-warn">{r.config.id}</a>{" "}
-                  <span className="opacity-80" title={notEvaluatedNote(r, version)}>{r.config.title}</span>
+                  <a href={href("engines", r.config.id)} className="font-medium underline decoration-warn/40 underline-offset-2 hover:decoration-warn">{r.config.id}</a>{" "}
+                  <span className="opacity-80">{notEvaluatedNote(r, version)}</span>
                 </li>
               ))}
             </div>
@@ -60,7 +60,7 @@ export function CoverageMatrix() {
           <tbody>
             {runs.map((r) => (
               <tr key={r.config.id} className="border-t border-border">
-                <td className="sticky left-0 bg-surface px-2 py-1.5 font-medium"><a href={href("experiments", r.config.id)} className="hover:underline">{r.config.title}</a></td>
+                <td className="sticky left-0 bg-surface px-2 py-1.5 font-medium"><a href={href("engines", r.config.id)} className="hover:underline">{r.config.title}</a></td>
                 {versions.map((v) => {
                   const ev = evalFor(r, v.version);
                   return ev ? (

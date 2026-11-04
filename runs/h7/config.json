@@ -1,0 +1,7 @@
+{
+  "id": "h7",
+  "title": "h7",
+  "description": "h6 plus web-pool fixes (years after day, zone and seconds strip, date-time joins, cron English, arithmetic, monthly day lists, recurrence starts). The v2 families load lazily.",
+  "created": "2026-11-04T07:55:24Z",
+  "format": "dsl-v1"
+}

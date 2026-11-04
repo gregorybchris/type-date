@@ -10,12 +10,12 @@ const widths = (process.env.WIDTHS ?? "1440").split(",").map(Number);
 fs.mkdirSync(out, { recursive: true });
 
 const views: Array<[string, string]> = [
-  ["experiments", "#/experiments"],
-  ["detail", "#/experiments/exp-018"],
+  ["engines", "#/engines"],
+  ["detail", "#/engines/h8"],
   ["compare", "#/compare"],
   ["pareto", "#/pareto"],
-  ["errors", "#/errors/exp-018"],
-  ["playground", "#/playground?exp=exp-018"],
+  ["errors", "#/errors/h8"],
+  ["playground", "#/playground?engine=h8"],
   ["data", "#/data"],
 ];
 

@@ -1,4 +1,4 @@
-// exp-001: chrono-node (English casual parser) plus an adapter to our DSL.
+// chrono: chrono-node (English casual parser) plus an adapter to our DSL.
 // chrono returns absolute dates for a reference instant. The adapter turns them back into
 // relative DSL forms using chrono's known/implied components and the matched text.
 import { casual } from "chrono-node";

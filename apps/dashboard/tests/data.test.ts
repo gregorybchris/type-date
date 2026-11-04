@@ -17,8 +17,8 @@ function write(file: string, v: unknown) {
   fs.writeFileSync(file, typeof v === "string" ? v : JSON.stringify(v));
 }
 
-function seedRun(dir: string, id: string, number: number) {
-  write(path.join(dir, id, "config.json"), { id, number, title: id, model: { family: "heuristic" } });
+function seedRun(dir: string, id: string) {
+  write(path.join(dir, id, "config.json"), { id, title: id });
   write(path.join(dir, id, "metrics.json"), { eval: { exact: 0.5 }, model: { size_bytes: 1 } });
 }
 
@@ -26,10 +26,12 @@ beforeAll(() => {
   tmp = fs.mkdtempSync(path.join(os.tmpdir(), "td-dash-"));
   roots = { repo: path.join(tmp, "repo") };
   fs.mkdirSync(roots.repo, { recursive: true });
-  seedRun(path.join(roots.repo, "runs"), "exp-002", 2);
-  seedRun(path.join(roots.repo, "runs"), "exp-001", 1);
+  seedRun(path.join(roots.repo, "runs"), "h10");
+  seedRun(path.join(roots.repo, "runs"), "h2");
+  seedRun(path.join(roots.repo, "runs"), "chrono");
+  seedRun(path.join(roots.repo, "runs"), "h1");
   const errs = [err("a", "t1", ["typo"], "val"), err("b", "t2", [], "val", "friday"), err("c", "t1", [], "test_noise")];
-  write(path.join(roots.repo, "runs", "exp-001", "errors", "e1.jsonl"), errs.map((e) => JSON.stringify(e)).join("\n") + "\nnot json\n");
+  write(path.join(roots.repo, "runs", "h1", "errors", "e1.jsonl"), errs.map((e) => JSON.stringify(e)).join("\n") + "\nnot json\n");
   write(path.join(roots.repo, "evals", "e1", "manifest.json"), { version: "e1", reason: "first" });
   const sample = (id: string, text: string, source: string) => ({ id, text, dsl: "d fr", primary_tag: "weekday-bare", modifier_tags: ["abbreviation"], source, split: "val", parent_id: null });
   write(path.join(roots.repo, "evals", "e1", "val.jsonl"), [sample("1", "fri", "grammar"), sample("2", "friday", "noise")].map((x) => JSON.stringify(x)).join("\n") + "\n");
@@ -38,10 +40,10 @@ beforeAll(() => {
 afterAll(() => fs.rmSync(tmp, { recursive: true, force: true }));
 
 describe("loadRuns", () => {
-  it("reads runs sorted by number", () => {
+  it("reads runs with chrono first, then h1, h2, ... by number", () => {
     const r = loadRuns(roots);
-    expect(r.runs.map((x) => x.config.id)).toEqual(["exp-001", "exp-002"]);
-    expect(r.runs[0]!.bench).toEqual([]);
+    expect(r.runs.map((x) => x.config.id)).toEqual(["chrono", "h1", "h2", "h10"]);
+    expect(r.runs[1]!.bench).toEqual([]);
   });
   it("returns no runs when runs/ is missing", () => {
     expect(loadRuns({ repo: path.join(tmp, "none") }).runs).toEqual([]);
@@ -62,16 +64,16 @@ describe("errors", () => {
     expect(f.by_modifier).toEqual({ typo: 1 });
   });
   it("paginates and skips malformed lines", () => {
-    const page = queryErrors(roots, "exp-001", "e1", { limit: 2, offset: 1 })!;
+    const page = queryErrors(roots, "h1", "e1", { limit: 2, offset: 1 })!;
     expect(page.total).toBe(3);
     expect(page.items.map((r) => r.id)).toEqual(["b", "c"]);
   });
   it("rejects bad ids and unknown runs", () => {
     expect(queryErrors(roots, "../etc", "e1", {})).toBeNull();
-    expect(queryErrors(roots, "exp-099", "e1", {})).toBeNull();
+    expect(queryErrors(roots, "h99", "e1", {})).toBeNull();
   });
   it("returns empty list when errors.jsonl is missing", () => {
-    expect(queryErrors(roots, "exp-002", "e1", {})!.total).toBe(0);
+    expect(queryErrors(roots, "h2", "e1", {})!.total).toBe(0);
   });
 });
 

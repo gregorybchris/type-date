@@ -227,7 +227,7 @@ _V2_DOM = re.compile(r"^\W*(?:on\s+)?(?:the\s+)?\d{1,2}(?:st|nd|rd|th)\W*$", re.
 
 
 def policy_flags(row: dict, legacy_v2: bool = True) -> list[str]:
-    """Label-policy classes in which the text does not determine the label (see exp-009 note)."""
+    """Label-policy classes where the text does not determine the label (specs/engines/h2.md)."""
     t, d = row["text"].lower(), row["dsl"]
     flags = []
     if re.search(r"(\d{2}:\d{2}|\d\?)", d):
@@ -306,23 +306,21 @@ def extend(version: str, parent: str, extra: dict[str, list[dict]], reason: str)
 
 
 def coverage() -> None:
-    """Print resolved accuracy per experiment and eval version. `-` means not scored."""
+    """Print resolved accuracy per engine and eval version. `-` means not scored."""
     from rich.console import Console
     from rich.table import Table
 
+    from .common import engine_dirs
+
     versions = sorted(p.name for p in (ROOT / "evals").iterdir() if p.is_dir())
     t = Table(title="Resolved accuracy by eval version (- = not scored)")
-    t.add_column("exp")
-    t.add_column("title")
+    t.add_column("engine")
     for v in versions:
         t.add_column(v, justify="right")
     t.add_column("other")
     missing = 0
-    for d in sorted((ROOT / "runs").glob("exp-*")):
-        mp = d / "metrics.json"
-        if not mp.exists():
-            continue
-        m = json.loads(mp.read_text())
+    for d in engine_dirs():
+        m = json.loads((d / "metrics.json").read_text())
         c = json.loads((d / "config.json").read_text())
         have = {}
         if m.get("eval", {}).get("version"):
@@ -336,7 +334,7 @@ def coverage() -> None:
                 cells.append("[red]-[/red]")
                 missing += 1
         other = ", ".join(k for k in have if k not in versions)
-        t.add_row(c["id"], c.get("title", "")[:34], *cells, other)
+        t.add_row(c["id"], *cells, other)
     Console().print(t)
     Console().print(f"{missing} missing cells")
 

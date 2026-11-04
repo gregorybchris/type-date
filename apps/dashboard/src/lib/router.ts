@@ -1,7 +1,8 @@
+import { LEGACY_ENGINE } from "./engines";
 import { useCallback, useEffect, useState } from "react";
 
 export interface Route {
-  /** First path segment: experiments, pareto, errors, playground, data. */
+  /** First path segment: engines, pareto, errors, playground, data. */
   view: string;
   /** Second segment, usually an id. */
   id: string;
@@ -11,8 +12,16 @@ export interface Route {
 function parse(): Route {
   const h = window.location.hash.replace(/^#\/?/, "");
   const [path = "", query = ""] = h.split("?");
-  const [view = "experiments", id = ""] = path.split("/");
-  return { view: view || "experiments", id, params: new URLSearchParams(query) };
+  const [view = "engines", id = ""] = path.split("/");
+  const params = new URLSearchParams(query);
+  // Old links: #/experiments, #/experiments/exp-018, #/errors/exp-018, #/playground?exp=exp-018.
+  const legacy = view === "experiments";
+  const exp = params.get("exp");
+  if (exp) {
+    params.delete("exp");
+    params.set("engine", LEGACY_ENGINE[exp] ?? exp);
+  }
+  return { view: legacy ? "engines" : view || "engines", id: LEGACY_ENGINE[id] ?? id, params };
 }
 
 export function href(view: string, id?: string, params?: Record<string, string | undefined>): string {

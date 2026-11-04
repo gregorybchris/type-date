@@ -42,7 +42,7 @@ export function SplitLines({ runs, allSplits, active, version, min }: { runs: Ru
             {runs.map((r, i) => (
               <g key={r.config.id} transform={`translate(${x(i)},${ih})`}>
                 <line y2={5} stroke="var(--border-strong)" />
-                <text transform="translate(0,14) rotate(-35)" textAnchor="end" fontSize={10.5} fill={sel === i ? "var(--fg)" : "var(--muted)"} fontWeight={sel === i ? 600 : 400}>{r.config.title.split(" ")[0]!.replace("heuristic-", "h-")}</text>
+                <text transform="translate(0,14) rotate(-35)" textAnchor="end" fontSize={10.5} fill={sel === i ? "var(--fg)" : "var(--muted)"} fontWeight={sel === i ? 600 : 400}>{r.config.id}</text>
               </g>
             ))}
             <line x2={iw} y1={ih} y2={ih} stroke="var(--border-strong)" />
@@ -66,7 +66,7 @@ export function SplitLines({ runs, allSplits, active, version, min }: { runs: Ru
       )}
       {sel !== null && runs[sel] && (
         <ChartTip left={M.left + x(sel)} top={20} bound={w} onClose={() => setSel(null)} width={244}>
-          <div className="font-semibold text-fg">{runs[sel]!.config.id} {runs[sel]!.config.title} <span className="font-normal text-subtle">{version}</span></div>
+          <div className="font-semibold text-fg">{runs[sel]!.config.id} <span className="font-normal text-subtle">{version}</span></div>
           <div className="dotted-t my-1.5" />
           <div className="flex max-h-60 flex-col gap-0.5 overflow-y-auto">
             {active.map((s) => {

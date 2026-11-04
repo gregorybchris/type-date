@@ -1,0 +1,7 @@
+{
+  "id": "h8",
+  "title": "h8",
+  "description": "h7 behind a normalization layer that rewrites misspelled and abbreviated words (weekdays, months, units, connectors, digits for words), plus day of a relative month.",
+  "created": "2026-11-04T08:45:20Z",
+  "format": "dsl-v1"
+}

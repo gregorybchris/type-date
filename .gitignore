@@ -6,10 +6,6 @@ __pycache__/
 .DS_Store
 dist/
 .cache/
-models/
-checkpoints/
 *.log
 .run/
-artifacts/
-training/.hf/
 training/.venv/

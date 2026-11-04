@@ -1,0 +1,7 @@
+{
+  "id": "h1",
+  "title": "h1",
+  "description": "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms.",
+  "created": "2026-11-04T04:20:52Z",
+  "format": "dsl-v1"
+}
