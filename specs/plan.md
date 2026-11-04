@@ -97,9 +97,14 @@ Whether a heuristic is good enough is an empirical question. Baselines run throu
 - [ ] Playground: pick experiment checkpoint, run picker in browser
 - [ ] Data view: dataset stats, tag counts, samples
 
-### Phase 8: iterate
-- [ ] Run experiments from the list below
-- [ ] Error analysis -> data fixes -> new dataset version
+### Phase 8: iterate (staged, see `specs/research/design-space.md`)
+Coarse decisions first. Do not optimize latency or size on one candidate before the broad design is chosen.
+- [ ] Stage 0: noise floor (R0 with 3 seeds)
+- [ ] Stage 1: data volume, data mix, output format, tokenization, architecture family, heuristics vs model
+- [ ] Stage 2: size sweep and training recipe
+- [ ] Stage 3: export precision, engine, backend (coarse cost, desktop and mobile-4x only)
+- [ ] Stage 4: error-driven data iteration to the accuracy target
+- [ ] Stage 5: fine-grained optimization (latency, size, mobile, loading) for the chosen candidates
 - [ ] Prune artifacts to stay under 10GB
 
 ### Phase 9: demo video (later, after a model works well)
@@ -112,24 +117,16 @@ Not started. The user wants an mp4 that shows a human-like typist entering examp
 - [ ] Encode to mp4 with ffmpeg. Keep the file small. Store it outside git (large file)
 - [ ] Add a `make demo-video` target
 
-## Experiment queue (initial)
+## Experiment queue
 
-Baselines first (they set the floor and need no training):
+The staged queue is in `specs/research/design-space.md`. Numbering so far:
 
-1. exp-001: chrono-node + DSL adapter
-2. exp-002: heuristic-small
-3. exp-003: heuristic-full
-
-Models:
-
-4. exp-004: from-scratch enc-dec ~8M, DSL output, dataset v001, ORT custom loop
-5. exp-005: same model, Transformers.js engine (benchmark only)
-6. exp-006: size sweep d=128 and d=384
-7. exp-007: from-scratch decoder-only ~6M
-8. exp-008: absolute ISO output with `now` in the prompt (format ablation)
-9. exp-009: t5-small with pruned vocab
-10. exp-010: wllama with a GGUF export of the decoder-only model
-11. Dataset ablations: more data, noise level, LLM vs template mix
+1. exp-001: chrono-node + DSL adapter (baseline)
+2. exp-002: heuristic-small (baseline)
+3. exp-003: heuristic-full (baseline)
+4. exp-004: first from-scratch model, v001. Invalid: tokenizer lowercased DSL labels
+5. exp-005: reference model R0 (v002, BPE merged digits, 20 epochs)
+6. exp-006: R0 with digit-split tokens (stage 1d)
 
 ## Disk budget
 

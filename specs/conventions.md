@@ -35,3 +35,7 @@ Turn actions we do often into CLI commands (`td ...`) or Makefile targets. Put t
 ## Recording preferences
 
 When the user states a preference, record it here or in the relevant spec. Add at most one short line to CLAUDE.md, and keep CLAUDE.md small. Pushing back is fine. If you agree, codify it.
+
+## Experiment method
+
+Decide coarse design questions with controlled one-factor experiments before fine-grained optimization. Time-box each factor. Do not rabbit-hole on one thing (for example mobile latency) while the broad design is open. See `specs/research/design-space.md`.
