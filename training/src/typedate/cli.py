@@ -391,6 +391,56 @@ exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")
 app.add_typer(exp_app, name="exp")
 
 
+@exp_app.command("table")
+def exp_table(
+    eval_version: str = typer.Option("e3"),
+    markdown: bool = typer.Option(True, help="Print a markdown table"),
+) -> None:
+    """Results table for one eval version: resolved accuracy overall and on realistic splits."""
+    from pathlib import Path
+
+    from .train import ROOT
+
+    rows = []
+    for d in sorted((ROOT / "runs").glob("exp-*")):
+        mp, cp = d / "metrics.json", d / "config.json"
+        if not mp.exists():
+            continue
+        m, c = json.loads(mp.read_text()), json.loads(cp.read_text())
+        have = {}
+        if m.get("eval", {}).get("version"):
+            have[m["eval"]["version"]] = m["eval"]
+        have.update(m.get("evals", {}))
+        e = have.get(eval_version)
+        if not e:
+            continue
+        sp = e["by_split"]
+
+        def r(name: str, sp: dict = sp) -> str:
+            v = sp.get(name)
+            return f"{100 * v.get('resolved', v['exact']):.1f}" if v else "-"
+
+        bench = d / "bench.json"
+        p50 = "-"
+        if bench.exists():
+            b = [
+                x for x in json.loads(bench.read_text()) if x.get("profile", "desktop") == "desktop"
+            ]
+            if b:
+                p50 = f"{b[0]['latency_ms']['p50']:.2f}"
+        size = m["model"].get("size_bytes") or 0
+        rows.append(
+            (c["id"], c["title"], c["model"]["family"], (f"{size / 1e3:.1f} kB" if size < 1e6 else f"{size / 1e6:.1f} MB"), f"{100 * e['resolved']:.1f}",
+             r("test_external"), r("test_external_hard"), p50)
+        )  # fmt: skip
+    head = ("exp", "title", "family", "size", "all", "realistic", "hard", "p50 ms")
+    typer.echo("| " + " | ".join(head) + " |")
+    typer.echo("|" + "---|" * len(head))
+    for row in rows:
+        typer.echo("| " + " | ".join(row) + " |")
+    _ = Path, markdown
+
+
 @exp_app.command("timing")
 def exp_timing(
     last: int = typer.Option(0, help="Only the last N experiments (0 = all)"),

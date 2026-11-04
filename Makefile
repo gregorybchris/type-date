@@ -67,3 +67,6 @@ BASELINE_EXPS = 1:chrono 2:heuristic-small 3:heuristic-full 9:heuristic-full-2 1
 rescore-baselines:  ## Re-score baselines on another eval: make rescore-baselines EVAL=e1q [EXPS="1 2 3 9 13 14"]
 	@test -n "$(EVAL)" || (echo "usage: make rescore-baselines EVAL=e1q [EXPS=...]"; exit 2)
 	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 2 3 9 13 14)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
+
+results:  ## Results table for an eval version: make results EVAL=e3
+	cd training && uv run td exp table --eval-version $(or $(EVAL),e3)
