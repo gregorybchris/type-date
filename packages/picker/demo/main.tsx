@@ -67,6 +67,10 @@ const EXAMPLES = [
   "noon",
   "four score and seven years ago",
   "13th of last month",
+  "may the fourth",
+  "pi day",
+  "next leap day",
+  "next friday the 13th",
 ];
 
 /** DSL v2 lines for a few phrases. The heuristic engines do not produce v2 yet. Enabled with `?parse=v2demo`. */
