@@ -92,6 +92,10 @@ Requirements:
 - The dashboard and the shipped datepicker share the same design language.
 - Think about animation and motion. Use libraries to do it well. Research new and popular animation libraries. Apply the findings to the dashboard and to the shipped picker.
 
+## Later: demo video
+
+Once something works well, make a demo mp4. A human-like typist enters examples and the video shows how quickly the model updates the picker with the right settings. Not needed now. Plan: `specs/plan.md`, Phase 9.
+
 ## Process
 
 - Developer preferences (uv, ruff, ty, pytest, typer; codify repeated actions as CLI commands and Makefile targets) are in `specs/conventions.md`.

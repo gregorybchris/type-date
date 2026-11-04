@@ -92,6 +92,16 @@ Whether a heuristic is good enough is an empirical question. Baselines run throu
 - [ ] Error analysis -> data fixes -> new dataset version
 - [ ] Prune artifacts to stay under 10GB
 
+### Phase 9: demo video (later, after a model works well)
+Not started. The user wants an mp4 that shows a human-like typist entering examples while the picker updates.
+- [ ] Script of example phrases (cover date, time, datetime, range, recurrence, relative, typos) with pauses
+- [ ] Human-like typing simulation: variable key delays, short pauses between words, an occasional typo and correction
+- [ ] Drive the real picker with the chosen model in Chromium (Playwright), at the real update speed
+- [ ] Record video (Playwright video or screen capture) at 1080p or higher with the painterly background and window frame from `specs/design.md`
+- [ ] Overlay a small latency readout per parse so the speed is visible
+- [ ] Encode to mp4 with ffmpeg. Keep the file small. Store it outside git (large file)
+- [ ] Add a `make demo-video` target
+
 ## Experiment queue (initial)
 
 Baselines first (they set the floor and need no training):
