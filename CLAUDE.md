@@ -17,13 +17,11 @@ Apply these to all docs, comments, commit messages, and UI copy.
 - Commit often to git with informative messages. Do not push. There is no remote.
 - Mobile matters: UI must be responsive and the parser must be fast on phones (see `specs/design.md`).
 - `design-ideas/` is gitignored. Look at the images there before doing UI work.
-- Eval sets are versioned and immutable (`evals/eN`). Compare only within one eval version. Cut a new one rarely. A new version must be scored on all baselines first. See `specs/research/eval-versioning.md`.
+- Eval sets are versioned and immutable (`evals/eN`). Compare only within one eval version. Cut a new one rarely. A new version must be scored on all engines first. See `specs/research/eval-versioning.md`.
 - Heuristic work uses the data reuse protocol in `specs/research/eval-versioning.md`: one labeled pool for error analysis, a sealed test per round, burn it after use, report accuracy per family and source.
 - Never let information from a held-out eval set (even failure categories you saw as eval owner) reach data briefs or tuning. If it does, record the issue in the eval manifest (`known_issues`) and cut a fresh independent set. This happened with e4 `test_public`.
-- Every experiment needs a short `title` and a 1-2 sentence `description` in `config.json` (shown in the dashboard).
-- Every experiment (one heuristic engine) gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
-- Every baseline is scored on every eval version, so the dashboard has no gaps. After adding an engine or an eval version run `make rescore-all`.
-- Engine files are named `heuristic-full-N.ts`; parts go in `src/full-N/`. See `specs/conventions.md`.
+- The project has one method: heuristic parser engines. Each generation is an engine `h1`, `h2`, ... (`packages/baselines/src/hN.ts`, helpers in `src/hN/`), compared with `chrono` (chrono-node). A new generation is a new engine, not an edit of an old one. Each engine has a note in `specs/engines/hN.md` and a one-sentence description in the registry in `packages/baselines/scripts/eval.ts`.
+- Every engine is scored on every eval version, so the dashboard has no gaps. After adding an engine or an eval version run `make rescore-all`.
 - Background research goes in `specs/research/background/` as markdown.
 
 ## Tooling preferences
@@ -45,8 +43,8 @@ Run `make help` for the full list.
 | `make py-fix` | ruff autofix and format |
 | `make py-test` | pytest |
 | `make td ARGS="--help"` | Run the `td` CLI |
-| `make rescore-all` | Score every baseline on every eval version |
-| `make rescore-baselines EVAL=e10` | Score every baseline on one eval version |
+| `make rescore-all` | Score every engine on every eval version |
+| `make rescore-baselines EVAL=e10 ENGINES="h8"` | Score engines on one eval version |
 | `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
 | `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
