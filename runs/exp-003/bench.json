@@ -6,18 +6,18 @@
     "profile": "desktop",
     "threads": 1,
     "load_ms": 0,
-    "cold_first_ms": 2.9,
+    "cold_first_ms": 0.9,
     "latency_ms": {
-      "p50": 0.02,
-      "p95": 0.205,
-      "p99": 1.285
+      "p50": 0.115,
+      "p95": 1.1,
+      "p99": 2.535
     },
     "tokens_per_s": 0,
-    "memory_mb": 0,
+    "memory_mb": 13,
     "download_bytes": 7859,
-    "n": 200,
-    "browser_accuracy": 0.835,
-    "data": "evals/e1q/test_llm.jsonl"
+    "n": 100,
+    "browser_accuracy": 0.42,
+    "data": "evals/e3q/test_external_hard.jsonl"
   },
   {
     "engine": "heuristic-full",
@@ -26,17 +26,17 @@
     "profile": "mobile-4x",
     "threads": 1,
     "load_ms": 1,
-    "cold_first_ms": 6.1,
+    "cold_first_ms": 3.5,
     "latency_ms": {
-      "p50": 0.015,
-      "p95": 0.82,
-      "p99": 2.345
+      "p50": 0.79,
+      "p95": 3.935,
+      "p99": 5.305
     },
     "tokens_per_s": 0,
     "memory_mb": 12,
     "download_bytes": 7859,
-    "n": 200,
-    "browser_accuracy": 0.835,
-    "data": "evals/e1q/test_llm.jsonl"
+    "n": 100,
+    "browser_accuracy": 0.42,
+    "data": "evals/e3q/test_external_hard.jsonl"
   }
 ]

@@ -27,7 +27,7 @@ const exp = Number(arg("exp"));
 if (!exp) throw new Error("--exp N required");
 const backend = (arg("backend", isBaselineArg() ? "js" : "wasm") as "wasm" | "webgpu" | "js");
 function isBaselineArg() {
-  return ["chrono", "heuristic-small", "heuristic-full", "heuristic-full-2"].includes(arg("engine") ?? "");
+  return ["chrono", "heuristic-small", "heuristic-full", "heuristic-full-2", "heuristic-full-3"].includes(arg("engine") ?? "");
 }
 const profile = arg("profile", "desktop") as "desktop" | "mobile-4x" | "mobile-6x";
 const dataPath = resolve(root, arg("data", "data/v002/test_llm.jsonl")!);
@@ -37,7 +37,7 @@ const name = `exp-${String(exp).padStart(3, "0")}`;
 const artDir = join(root, "artifacts", name);
 const engineArg = arg("engine");
 const manifestPath = join(artDir, "manifest.json");
-const baselineIds = ["chrono", "heuristic-small", "heuristic-full", "heuristic-full-2"];
+const baselineIds = ["chrono", "heuristic-small", "heuristic-full", "heuristic-full-2", "heuristic-full-3"];
 const isBaseline = !!engineArg && baselineIds.includes(engineArg);
 const manifest = isBaseline
   ? { experiment: name, engine: engineArg, quant: "none", files: {}, config: {} }

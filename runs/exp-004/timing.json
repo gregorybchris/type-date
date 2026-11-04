@@ -27,9 +27,22 @@
         "model_load": 0.086
       },
       "unaccounted_s": 0.03
+    },
+    "rerun-e3": {
+      "stages": {
+        "started_at": "2026-11-04T04:58:17+00:00",
+        "finished_at": "2026-11-04T04:58:32+00:00"
+      },
+      "total_s": 15.25,
+      "buckets": {
+        "eval_generate": 14.551,
+        "eval_score": 0.586,
+        "model_load": 0.083
+      },
+      "unaccounted_s": 0.03
     }
   },
-  "total_s": 20.819,
+  "total_s": 36.069,
   "buckets": {
     "bench-wasm-desktop.setup": 0.001,
     "bench-wasm-desktop.esbuild_bundle": 0.053,
@@ -42,6 +55,9 @@
     "bench-wasm-desktop.run_in_browser/predictions": 2.231,
     "rerun-e2.eval_generate": 15.354,
     "rerun-e2.eval_score": 0.524,
-    "rerun-e2.model_load": 0.086
+    "rerun-e2.model_load": 0.086,
+    "rerun-e3.eval_generate": 14.551,
+    "rerun-e3.eval_score": 0.586,
+    "rerun-e3.model_load": 0.083
   }
 }
