@@ -1,0 +1,2 @@
+PERSONA: a power user of quick-add boxes (Todoist, Things, Fantastical, Obsidian, Taskwarrior). Terse shorthand: "tmrw 3p", "fri 9-5", "+2w", "eow", "eom", "mon-fri 8:30", "every 2nd tue", "jan 5 - jan 9", "3d", "in 2h", "nxt mon", "1st of mo", symbols and abbreviations, no filler words, sometimes with a task title word before the date.
+pter

@@ -1,0 +1,2 @@
+PERSONA: speakers of regional English varieties, mixed across the file: British ("a fortnight on friday", "half seven", "the 3rd of November", "Monday week"), Irish, Australian ("arvo", "this arvo", "next Tuesday week"), Indian English ("on 3rd Nov", "coming Monday", "day after", "prepone"), South African, Canadian, and US regional habits. Include date formats native to each region (dd/mm/yy, dd.mm.yyyy).
+preg

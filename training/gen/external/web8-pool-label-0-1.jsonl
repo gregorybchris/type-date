@@ -1,0 +1,152 @@
+{"id": "web8p0-0000", "text": "quarter past 10 in the night", "dsl": "t 22:15"}
+{"id": "web8p0-0001", "text": "i would like to attend church every sunday at eleven am", "dsl": "dt R w/1 su 11:00"}
+{"id": "web8p0-0002", "text": "Around 6:00 pm", "dsl": "t 18:00"}
+{"id": "web8p0-0003", "text": "1 o'clock", "dsl": "t 1?"}
+{"id": "web8p0-0004", "text": "week from today", "dsl": "d +1w"}
+{"id": "web8p0-0005", "text": "7:00 on Tuesday", "dsl": "dt tu 7?"}
+{"id": "web8p0-0006", "text": "2nd of March", "dsl": "d 03-02"}
+{"id": "web8p0-0007", "text": "5:50 pm", "dsl": "t 17:50"}
+{"id": "web8p0-0008", "text": "Saturday at 6:30 pm", "dsl": "dt sa 18:30"}
+{"id": "web8p0-0009", "text": "Friday 3/29 at 7:30 pm", "dsl": "dt 03-29 19:30"}
+{"id": "web8p0-0010", "text": "quarter to 11 in the night", "dsl": "t 22:45"}
+{"id": "web8p0-0011", "text": "bring it in the morning", "dsl": "x"}
+{"id": "web8p0-0012", "text": "first fifteen days", "dsl": "x", "unsure": true}
+{"id": "web8p0-0013", "text": "5th of March 2019", "dsl": "d 2019-03-05"}
+{"id": "web8p0-0014", "text": "seven am today", "dsl": "dt +0d 07:00"}
+{"id": "web8p0-0015", "text": "weekday next week", "dsl": "x", "unsure": true}
+{"id": "web8p0-0016", "text": "tonight at 6pm", "dsl": "dt +0d 18:00"}
+{"id": "web8p0-0017", "text": "twelve pm", "dsl": "t 12:00"}
+{"id": "web8p0-0018", "text": "date today", "dsl": "d +0d"}
+{"id": "web8p0-0019", "text": "february one and march sixteen", "dsl": "d 02-01,03-16"}
+{"id": "web8p0-0020", "text": "night 9", "dsl": "t 21:00"}
+{"id": "web8p0-0021", "text": "1st of March 2019", "dsl": "d 2019-03-01"}
+{"id": "web8p0-0022", "text": "next saturdays", "dsl": "x", "unsure": true}
+{"id": "web8p0-0023", "text": "Friday next week", "dsl": "x", "unsure": true}
+{"id": "web8p0-0024", "text": "what is planned for today in my local area", "dsl": "d +0d"}
+{"id": "web8p0-0025", "text": "half past 4 in the evening", "dsl": "t 16:30"}
+{"id": "web8p0-0026", "text": "7:30 p.m", "dsl": "t 19:30"}
+{"id": "web8p0-0027", "text": "tomorrow night at 7PM", "dsl": "dt +1d 19:00"}
+{"id": "web8p0-0028", "text": "9:00pm for tonight", "dsl": "dt +0d 21:00"}
+{"id": "web8p0-0029", "text": "next Sunday around 1pm", "dsl": "dt su+1 13:00"}
+{"id": "web8p0-0030", "text": "5:00pm.", "dsl": "t 17:00"}
+{"id": "web8p0-0031", "text": "last ten minutes", "dsl": "x", "unsure": true}
+{"id": "web8p0-0032", "text": "10 o'clock", "dsl": "t 10?"}
+{"id": "web8p0-0033", "text": "a week before", "dsl": "x", "unsure": true}
+{"id": "web8p0-0034", "text": "saturday march twenty fifth", "dsl": "d 03-25"}
+{"id": "web8p0-0035", "text": "five in the evening", "dsl": "t 17:00"}
+{"id": "web8p0-0036", "text": "sunday after church", "dsl": "d su"}
+{"id": "web8p0-0037", "text": "what is happening in milwaukee today", "dsl": "d +0d"}
+{"id": "web8p0-0038", "text": "8 a.m", "dsl": "t 08:00"}
+{"id": "web8p0-0039", "text": "4:30 in the evening", "dsl": "t 16:30"}
+{"id": "web8p0-0040", "text": "next three days", "dsl": "x", "unsure": true}
+{"id": "web8p0-0041", "text": "what time is the alarm set for tomorrow morning", "dsl": "d +1d"}
+{"id": "web8p0-0042", "text": "8pm.", "dsl": "t 20:00"}
+{"id": "web8p0-0043", "text": "March 30, 2019 at 5pm", "dsl": "dt 2019-03-30 17:00"}
+{"id": "web8p0-0044", "text": "7 pm.", "dsl": "t 19:00"}
+{"id": "web8p0-0045", "text": "7:00 pm on friday April 11, 2019", "dsl": "dt 2019-04-11 19:00"}
+{"id": "web8p0-0046", "text": "tomorrow morning ten am", "dsl": "dt +1d 10:00"}
+{"id": "web8p0-0047", "text": "12:30.", "dsl": "t 12:30?"}
+{"id": "web8p0-0048", "text": "night 9:45", "dsl": "t 21:45"}
+{"id": "web8p0-0049", "text": "1 hour?", "dsl": "x", "unsure": true}
+{"id": "web8p0-0050", "text": "7:00.", "dsl": "t 7?"}
+{"id": "web8p0-0051", "text": "Wednesday 3/27 at 6:30 pm", "dsl": "dt 03-27 18:30"}
+{"id": "web8p0-0052", "text": "morning 8", "dsl": "t 08:00"}
+{"id": "web8p0-0053", "text": "ten in the night", "dsl": "t 22:00"}
+{"id": "web8p0-0054", "text": "10 o\"clock in the night", "dsl": "t 22:00"}
+{"id": "web8p0-0055", "text": "half past 1 in the morning", "dsl": "t 01:30"}
+{"id": "web8p0-0056", "text": "Wednesday, the 8th at 6:00PM", "dsl": "dt D@08 18:00"}
+{"id": "web8p0-0057", "text": "next month's", "dsl": "d M+1"}
+{"id": "web8p0-0058", "text": "Saturday at 7 pm.", "dsl": "dt sa 19:00"}
+{"id": "web8p0-0059", "text": "afternoon 12", "dsl": "t 12:00"}
+{"id": "web8p0-0060", "text": "night 9:30", "dsl": "t 21:30"}
+{"id": "web8p0-0061", "text": "today is", "dsl": "d +0d"}
+{"id": "web8p0-0062", "text": "day of the week", "dsl": "x"}
+{"id": "web8p0-0063", "text": "june fourteenth two thousand and seventeen", "dsl": "d 2017-06-14"}
+{"id": "web8p0-0064", "text": "4 o\"clock in the evening", "dsl": "t 16:00"}
+{"id": "web8p0-0065", "text": "the month", "dsl": "d M+0"}
+{"id": "web8p0-0066", "text": "until tomorrow", "dsl": "d >+1d"}
+{"id": "web8p0-0067", "text": "twentieth october ten thirty am", "dsl": "dt 10-20 10:30"}
+{"id": "web8p0-0068", "text": "morning 11:30", "dsl": "t 11:30"}
+{"id": "web8p0-0069", "text": "8.00", "dsl": "t 8?"}
+{"id": "web8p0-0070", "text": "Tuesday at 2pm", "dsl": "dt tu 14:00"}
+{"id": "web8p0-0071", "text": "17 Spartanburg Rd Lyman, SC", "dsl": "x"}
+{"id": "web8p0-0072", "text": "9;30", "dsl": "t 9:30?"}
+{"id": "web8p0-0073", "text": "the rest of the day", "dsl": "x", "unsure": true}
+{"id": "web8p0-0074", "text": "9pm on April 15", "dsl": "dt 04-15 21:00"}
+{"id": "web8p0-0075", "text": "fifteenth of every month", "dsl": "d R m/1 d15"}
+{"id": "web8p0-0076", "text": "an hour", "dsl": "x", "unsure": true}
+{"id": "web8p0-0077", "text": "evening 5", "dsl": "t 17:00"}
+{"id": "web8p0-0078", "text": "the 9th", "dsl": "d D@09"}
+{"id": "web8p0-0079", "text": "10th of March 2019", "dsl": "d 2019-03-10"}
+{"id": "web8p0-0080", "text": "in a hour", "dsl": "x", "unsure": true}
+{"id": "web8p0-0081", "text": "2nd of this month", "dsl": "d D02@M+0"}
+{"id": "web8p0-0082", "text": "March 25, 2019 at 7:00pm", "dsl": "dt 2019-03-25 19:00"}
+{"id": "web8p0-0083", "text": "half past 2 in the afternoon", "dsl": "t 14:30"}
+{"id": "web8p0-0084", "text": "March 21 at 6 pm", "dsl": "dt 03-21 18:00"}
+{"id": "web8p0-0085", "text": "tomorrow at 7:00 PM", "dsl": "dt +1d 19:00"}
+{"id": "web8p0-0086", "text": "the next three three days", "dsl": "x", "unsure": true}
+{"id": "web8p0-0087", "text": "after 12 noon", "dsl": "t 12:00>"}
+{"id": "web8p0-0088", "text": "six thirty am", "dsl": "t 06:30"}
+{"id": "web8p0-0089", "text": "twenty seventh of march twenty seventeen", "dsl": "d 2017-03-27"}
+{"id": "web8p0-0090", "text": "March 7th 2019", "dsl": "d 2019-03-07"}
+{"id": "web8p0-0091", "text": "the 2nd", "dsl": "d D@02"}
+{"id": "web8p0-0092", "text": "twelve noon to one p. m.", "dsl": "t 12:00>13:00"}
+{"id": "web8p0-0093", "text": "first week of june", "dsl": "x", "unsure": true}
+{"id": "web8p0-0094", "text": "next three weeks", "dsl": "x", "unsure": true}
+{"id": "web8p0-0095", "text": "six o'clock", "dsl": "t 6?"}
+{"id": "web8p0-0096", "text": "quarter past 3 in the afternoon", "dsl": "t 15:15"}
+{"id": "web8p0-0097", "text": "morning tomorrow", "dsl": "d +1d"}
+{"id": "web8p0-0098", "text": "11 o\"clock in the morning", "dsl": "t 11:00"}
+{"id": "web8p0-0099", "text": "Saturday night around 6:00", "dsl": "dt sa 18:00"}
+{"id": "web8p0-0100", "text": "eight pm", "dsl": "t 20:00"}
+{"id": "web8p0-0101", "text": "three p. m. tomorrow", "dsl": "dt +1d 15:00"}
+{"id": "web8p0-0102", "text": "No earlier than 8 PM", "dsl": "t 20:00>"}
+{"id": "web8p0-0103", "text": "8:00 p", "dsl": "t 8?"}
+{"id": "web8p0-0104", "text": "Friday, March 1", "dsl": "d 03-01"}
+{"id": "web8p0-0105", "text": "evening 5:30", "dsl": "t 17:30"}
+{"id": "web8p0-0106", "text": "next weeks", "dsl": "x", "unsure": true}
+{"id": "web8p0-0107", "text": "4:25pm", "dsl": "t 16:25"}
+{"id": "web8p0-0108", "text": "Friday at 10:00pm eastern standard time", "dsl": "dt fr 22:00"}
+{"id": "web8p0-0109", "text": "1 o'clock in the afternoon", "dsl": "t 13:00"}
+{"id": "web8p0-0110", "text": "3rd of March 2019", "dsl": "d 2019-03-03"}
+{"id": "web8p0-0111", "text": "quarter to 7 in the morning", "dsl": "t 06:45"}
+{"id": "web8p0-0112", "text": "evening 4:45", "dsl": "t 16:45"}
+{"id": "web8p0-0113", "text": "8 pm on March 1, 2019", "dsl": "dt 2019-03-01 20:00"}
+{"id": "web8p0-0114", "text": "five am tomorrow", "dsl": "dt +1d 05:00"}
+{"id": "web8p0-0115", "text": "a day before", "dsl": "x", "unsure": true}
+{"id": "web8p0-0116", "text": "in 30 minutes", "dsl": "x", "unsure": true}
+{"id": "web8p0-0117", "text": "0:45 in the morning", "dsl": "t 00:45"}
+{"id": "web8p0-0118", "text": "thirty minutes early", "dsl": "x", "unsure": true}
+{"id": "web8p0-0119", "text": "5 o\"clock in the evening", "dsl": "t 17:00"}
+{"id": "web8p0-0120", "text": "6:00 o'clock", "dsl": "t 6?"}
+{"id": "web8p0-0121", "text": ". 8:15", "dsl": "t 8:15?"}
+{"id": "web8p0-0122", "text": "Eleven in the morning", "dsl": "t 11:00"}
+{"id": "web8p0-0123", "text": "are there any events on my calendar for this week", "dsl": "d W+0"}
+{"id": "web8p0-0124", "text": "5 in the evening", "dsl": "t 17:00"}
+{"id": "web8p0-0125", "text": "12.00PM", "dsl": "t 12:00"}
+{"id": "web8p0-0126", "text": "next day's", "dsl": "d +1d"}
+{"id": "web8p0-0127", "text": "Sunday this week", "dsl": "x", "unsure": true}
+{"id": "web8p0-0128", "text": "11 o\"clock in the night", "dsl": "t 23:00"}
+{"id": "web8p0-0129", "text": "6.30 pm", "dsl": "t 18:30"}
+{"id": "web8p0-0130", "text": "9 a.m", "dsl": "t 09:00"}
+{"id": "web8p0-0131", "text": "do i need to wear a coat tomorrow when i leave for work", "dsl": "d +1d"}
+{"id": "web8p0-0132", "text": "every may fourth", "dsl": "x", "unsure": true}
+{"id": "web8p0-0133", "text": "quarter to 11 in the morning", "dsl": "t 10:45"}
+{"id": "web8p0-0134", "text": "March 9th 2019", "dsl": "d 2019-03-09"}
+{"id": "web8p0-0135", "text": "morning 11", "dsl": "t 11:00"}
+{"id": "web8p0-0136", "text": "quarter past 4 in the evening", "dsl": "t 16:15"}
+{"id": "web8p0-0137", "text": "12th of March 2019", "dsl": "d 2019-03-12"}
+{"id": "web8p0-0138", "text": "5 o'clock pm", "dsl": "t 17:00"}
+{"id": "web8p0-0139", "text": "305", "dsl": "x"}
+{"id": "web8p0-0140", "text": "half past 7 in the evening", "dsl": "t 19:30"}
+{"id": "web8p0-0141", "text": "6PM tonight", "dsl": "dt +0d 18:00"}
+{"id": "web8p0-0142", "text": "15 minutes", "dsl": "x", "unsure": true}
+{"id": "web8p0-0143", "text": "the 6th", "dsl": "d D@06"}
+{"id": "web8p0-0144", "text": "six in the evening", "dsl": "t 18:00"}
+{"id": "web8p0-0145", "text": "1600 hours", "dsl": "t 16:00"}
+{"id": "web8p0-0146", "text": "6 o\"clock in the evening", "dsl": "t 18:00"}
+{"id": "web8p0-0147", "text": "eleven and thirty am", "dsl": "t 11:30"}
+{"id": "web8p0-0148", "text": "doctor greens", "dsl": "x"}
+{"id": "web8p0-0149", "text": "four hours", "dsl": "x", "unsure": true}
+{"id": "web8p0-0150", "text": "my doctor", "dsl": "x"}
+{"id": "web8p0-0151", "text": "7:30 instead", "dsl": "t 7:30?"}

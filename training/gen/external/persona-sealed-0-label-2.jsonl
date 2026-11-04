@@ -1,0 +1,390 @@
+{"id": "preg0186", "text": "week after next", "dsl": "d W+2"}
+{"id": "pvoi0074", "text": "tomorrow at noon", "dsl": "dt +1d 12:00"}
+{"id": "pesl0186", "text": "every second week monday, until june", "dsl": "d R w/2 mo uM@06"}
+{"id": "pesl0064", "text": "1 of may", "dsl": "d 05-01"}
+{"id": "pter0080", "text": "rent 1st of mo", "dsl": "d D@01"}
+{"id": "pter0014", "text": "due fri", "dsl": "d fr"}
+{"id": "pvoi0016", "text": "the last day of february", "dsl": "x", "unsure": true}
+{"id": "pcas0090", "text": "spring break march 9-13", "dsl": "d 03-09>03-13"}
+{"id": "peml0058", "text": "the training session is on the third tuesday of every month", "dsl": "d R m/1 tu#3"}
+{"id": "pesl0110", "text": "07:05", "dsl": "t 07:05"}
+{"id": "pter0010", "text": "nxt mnday", "dsl": "d mo+1"}
+{"id": "pcas0204", "text": "around 11ish tmrw", "dsl": "dt +1d 11?"}
+{"id": "peml0022", "text": "please respond within 48 hours", "dsl": "x", "unsure": true}
+{"id": "peml0250", "text": "could you join us for the demo next thurs at 10:30", "dsl": "dt th+1 10:30?"}
+{"id": "pvoi0122", "text": "twice a week", "dsl": "x", "unsure": true}
+{"id": "pcas0070", "text": "nov 12 4pm", "dsl": "dt 11-12 16:00"}
+{"id": "pter0190", "text": "in 1mo", "dsl": "d +1m"}
+{"id": "pcas0044", "text": "4pm", "dsl": "t 16:00"}
+{"id": "pesl0144", "text": "from today until 25 of december", "dsl": "d +0d>12-25"}
+{"id": "peml0258", "text": "Building 7, Suite 300", "dsl": "x"}
+{"id": "preg0230", "text": "7.30 pm", "dsl": "t 19:30"}
+{"id": "peml0144", "text": "until 5pm today", "dsl": "dt >+0d 17:00"}
+{"id": "peml0062", "text": "the proposal is due a week from friday", "dsl": "d fr~+1w"}
+{"id": "pvoi0244", "text": "add milk and eggs to the grocery list", "dsl": "x"}
+{"id": "pesl0038", "text": "for 90 minutes starting from 7", "dsl": "t 7?>+90m"}
+{"id": "pesl0060", "text": "new year eve at 23 hours", "dsl": "dt 12-31 23:00"}
+{"id": "preg0016", "text": "next tues", "dsl": "d tu+1"}
+{"id": "pvoi0046", "text": "like two oh five p m", "dsl": "t 14:05"}
+{"id": "peml0070", "text": "our fiscal Q4 starts on 1 october", "dsl": "d 10-01"}
+{"id": "pesl0084", "text": "fryday 3pm", "dsl": "dt fr 15:00"}
+{"id": "preg0062", "text": "nov 3 to nov 7", "dsl": "d 11-03>11-07"}
+{"id": "pesl0066", "text": "28.12", "dsl": "d 12-28"}
+{"id": "pvoi0096", "text": "block off friday from one to three", "dsl": "dt fr 1?>3?"}
+{"id": "preg0220", "text": "Republic Day", "dsl": "x", "unsure": true}
+{"id": "peml0194", "text": "tomorrow morning at 9:30", "dsl": "dt +1d 09:30"}
+{"id": "pter0096", "text": "every 1st & 15th", "dsl": "d R m/1 d1,d15"}
+{"id": "pvoi0150", "text": "every third tuesday", "dsl": "d R m/1 tu#3"}
+{"id": "pvoi0110", "text": "the week of july fourth", "dsl": "x", "unsure": true}
+{"id": "pesl0192", "text": "deadline for the project is end of next week", "dsl": "x", "unsure": true}
+{"id": "pvoi0254", "text": "every other tuesday until december", "dsl": "d R w/2 tu uM@12"}
+{"id": "pvoi0118", "text": "from ate to five", "dsl": "t 8?>5?"}
+{"id": "pter0104", "text": "15th", "dsl": "d D@15"}
+{"id": "peml0052", "text": "I'll be back in the office on monday 23 november", "dsl": "d 11-23"}
+{"id": "pter0008", "text": "eoy", "dsl": "x", "unsure": true}
+{"id": "pter0048", "text": "every 3mo 15th", "dsl": "d R m/3 d15"}
+{"id": "pter0256", "text": "submit report by eom", "dsl": "x", "unsure": true}
+{"id": "peml0040", "text": "code freeze is friday the 6th, 6pm", "dsl": "dt fr&D06 18:00"}
+{"id": "pter0222", "text": "1st of mo", "dsl": "d D@01"}
+{"id": "peml0260", "text": "ticket JIRA-4471", "dsl": "x"}
+{"id": "pvoi0010", "text": "the first of december", "dsl": "d 12-01"}
+{"id": "pcas0102", "text": "every wknd", "dsl": "d R w/1 sa,su"}
+{"id": "pter0224", "text": "daily 7a", "dsl": "dt R d/1 07:00"}
+{"id": "pesl0148", "text": "all day friday", "dsl": "d fr"}
+{"id": "pvoi0142", "text": "every six months", "dsl": "x", "unsure": true}
+{"id": "preg0184", "text": "end of next week", "dsl": "x", "unsure": true}
+{"id": "pter0146", "text": "2p-4:30p", "dsl": "t 14:00>16:30"}
+{"id": "pter0166", "text": "tdy 5pm", "dsl": "dt +0d 17:00"}
+{"id": "pvoi0026", "text": "next week wednesday", "dsl": "x", "unsure": true}
+{"id": "pcas0026", "text": "nxt wk", "dsl": "d W+1"}
+{"id": "pesl0056", "text": "3 of next month", "dsl": "d D03@M+1"}
+{"id": "pesl0138", "text": "from 10 december to 20 december", "dsl": "d 12-10>12-20"}
+{"id": "preg0084", "text": "every second Wednesday", "dsl": "d R w/2 we"}
+{"id": "peml0068", "text": "the vendor call is set for 9:00-9:45 tomorrow", "dsl": "dt +1d 9?>9:45?"}
+{"id": "pesl0256", "text": "pick up the kids at 15h45 every weekday", "dsl": "dt R d/1 mo,tu,we,th,fr 15:45"}
+{"id": "pcas0122", "text": "yesterday", "dsl": "d -1d"}
+{"id": "pcas0252", "text": "no later than 4 fri", "dsl": "dt >fr 4?"}
+{"id": "pter0242", "text": "mtg tmrw @ 2", "dsl": "dt +1d 2?"}
+{"id": "pter0072", "text": "thru fri", "dsl": "d >fr"}
+{"id": "pter0144", "text": "nxt tue 10a", "dsl": "dt tu+1 10:00"}
+{"id": "pter0210", "text": "yrly jan 1", "dsl": "d 01-01"}
+{"id": "pter0150", "text": "+2h", "dsl": "x", "unsure": true}
+{"id": "preg0030", "text": "New Year's Day", "dsl": "d 01-01"}
+{"id": "pter0170", "text": "9a-12p", "dsl": "t 09:00>12:00"}
+{"id": "pvoi0040", "text": "midnight", "dsl": "t 00:00"}
+{"id": "peml0146", "text": "until friday noon", "dsl": "dt >fr 12:00"}
+{"id": "peml0106", "text": "every 3 months on the 15th starting in february", "dsl": "d R m/3 d15 sM@02"}
+{"id": "pter0124", "text": "tmrw 3 p", "dsl": "dt +1d 15:00"}
+{"id": "pvoi0218", "text": "set an alarm for ate a m on saturdays", "dsl": "dt R w/1 sa 08:00"}
+{"id": "pvoi0156", "text": "for ninety minutes starting at seven", "dsl": "t 7?>+90m"}
+{"id": "pvoi0240", "text": "route sixty six", "dsl": "x"}
+{"id": "pvoi0126", "text": "remind me every tuesday and thursday at six p m", "dsl": "dt R w/1 tu,th 18:00"}
+{"id": "peml0082", "text": "we are closed for new years day", "dsl": "d 01-01"}
+{"id": "pesl0218", "text": "Maria Fernanda Lopes", "dsl": "x"}
+{"id": "pesl0194", "text": "please remind me on friday in the evening to buy gift", "dsl": "d fr"}
+{"id": "preg0098", "text": "every Saturday morning", "dsl": "d R w/1 sa"}
+{"id": "peml0004", "text": "please send the draft over by EOD tomorrow", "dsl": "d +1d"}
+{"id": "preg0116", "text": "for 2 hours from half past 1", "dsl": "t 1:30?>+2h"}
+{"id": "pter0034", "text": "1st mon each mo", "dsl": "d R m/1 mo#1"}
+{"id": "preg0006", "text": "next Tuesday week", "dsl": "x", "unsure": true}
+{"id": "pesl0074", "text": "next tues", "dsl": "d tu+1"}
+{"id": "preg0092", "text": "every 2 weeks from 5th Jan", "dsl": "d R w/2 s01-05"}
+{"id": "preg0246", "text": "first Monday of every month for 6 months", "dsl": "d R m/1 mo#1 n6"}
+{"id": "pcas0084", "text": "dec 20 to jan 3", "dsl": "d 12-20>01-03"}
+{"id": "pesl0086", "text": "in 2 hour", "dsl": "x", "unsure": true}
+{"id": "preg0064", "text": "monday 9 to friday 5", "dsl": "dt mo 9?>fr 5?"}
+{"id": "peml0084", "text": "labor day is the deadline for the first draft", "dsl": "x", "unsure": true}
+{"id": "peml0006", "text": "can we move the standup to 9:15 on wednesday", "dsl": "dt we 9:15?"}
+{"id": "pter0160", "text": "dec 20 - jan 2", "dsl": "d 12-20>01-02"}
+{"id": "pter0018", "text": "until eom", "dsl": "d >M+0"}
+{"id": "pesl0150", "text": "whole weekend", "dsl": "d sa>su"}
+{"id": "preg0140", "text": "remind me to call mom next sunday evening", "dsl": "d su+1"}
+{"id": "pesl0022", "text": "every week on tuesday", "dsl": "d R w/1 tu"}
+{"id": "pter0238", "text": "2w ago", "dsl": "d -2w"}
+{"id": "pter0180", "text": "gate B22", "dsl": "x"}
+{"id": "pcas0096", "text": "1st mon of each month", "dsl": "d R m/1 mo#1"}
+{"id": "pter0098", "text": "dly 6:30p", "dsl": "dt R d/1 18:30"}
+{"id": "pesl0048", "text": "after 15 hours", "dsl": "x", "unsure": true}
+{"id": "preg0148", "text": "lunch with Priya 12:30 coming Friday", "dsl": "dt fr 12:30?"}
+{"id": "preg0124", "text": "until the end of the month", "dsl": "d >M+0"}
+{"id": "peml0116", "text": "rolling weekly check-in tuesdays 11-11:30 starting next week", "dsl": "dt R w/1 tu 11?>11:30? sW+1"}
+{"id": "pcas0248", "text": "before dinner", "dsl": "x", "unsure": true}
+{"id": "pesl0210", "text": "at the latest friday 10 hours", "dsl": "dt >fr 10:00"}
+{"id": "peml0072", "text": "we will need this finalised before the board meeting on the 10th", "dsl": "d >D@10"}
+{"id": "pcas0256", "text": "hw due mon pls", "dsl": "d mo"}
+{"id": "pvoi0188", "text": "um before next wednesday", "dsl": "d >we+1"}
+{"id": "peml0100", "text": "due date 11/20", "dsl": "d 11-20"}
+{"id": "pter0246", "text": "tmrw", "dsl": "d +1d"}
+{"id": "preg0110", "text": "in 3 days time", "dsl": "d +3d"}
+{"id": "pesl0120", "text": "in a week", "dsl": "d +1w"}
+{"id": "pcas0132", "text": "a month from now", "dsl": "d +1m"}
+{"id": "pesl0212", "text": "flight LH 1234", "dsl": "x"}
+{"id": "pcas0020", "text": "oct 31", "dsl": "d 10-31"}
+{"id": "pesl0230", "text": "on saturday at 20 hours 30", "dsl": "dt sa 20:30"}
+{"id": "pter0084", "text": "last day of mo", "dsl": "x", "unsure": true}
+{"id": "pter0184", "text": "dentist nxt thu 2p", "dsl": "dt th+1 14:00"}
+{"id": "pvoi0258", "text": "take two tablets", "dsl": "x"}
+{"id": "pesl0236", "text": "1 hour and 15 minutes from now", "dsl": "x", "unsure": true}
+{"id": "pesl0154", "text": "every weekend", "dsl": "d R w/1 sa,su"}
+{"id": "pcas0150", "text": "before noon tmrw", "dsl": "dt >+1d 12:00"}
+{"id": "pcas0218", "text": "agent 007", "dsl": "x"}
+{"id": "preg0224", "text": "Hogmanay", "dsl": "d 12-31"}
+{"id": "preg0106", "text": "for 90 minutes starting at 7", "dsl": "t 7?>+90m"}
+{"id": "pvoi0060", "text": "seven in the morning", "dsl": "t 07:00"}
+{"id": "peml0160", "text": "by the end of the first quarter", "dsl": "x", "unsure": true}
+{"id": "preg0032", "text": "half past two", "dsl": "t 2:30?"}
+{"id": "preg0024", "text": "Labour Day weekend", "dsl": "x", "unsure": true}
+{"id": "peml0114", "text": "every 6 months starting 1 january", "dsl": "d R m/6 s01-01"}
+{"id": "peml0156", "text": "after 3pm tomorrow", "dsl": "dt +1d 15:00>"}
+{"id": "pcas0172", "text": "tmrw,,, 10am", "dsl": "dt +1d 10:00"}
+{"id": "peml0208", "text": "tmrw at 7am", "dsl": "dt +1d 07:00"}
+{"id": "pter0012", "text": "3 days ago", "dsl": "d -3d"}
+{"id": "pter0134", "text": "meet @ 3", "dsl": "t 3?"}
+{"id": "peml0130", "text": "in 20 minutes", "dsl": "x", "unsure": true}
+{"id": "pter0092", "text": "biwkly", "dsl": "x", "unsure": true}
+{"id": "pesl0018", "text": "from 2 till 4:30", "dsl": "t 2?>4:30?"}
+{"id": "pesl0062", "text": "the day before christmas", "dsl": "d 12-25~-1d"}
+{"id": "pter0240", "text": "tdy 3p-4p", "dsl": "dt +0d 15:00>16:00"}
+{"id": "pcas0114", "text": "every day til the 30th", "dsl": "d R d/1 uD@30"}
+{"id": "pvoi0032", "text": "half past two", "dsl": "t 2:30?"}
+{"id": "preg0082", "text": "every 3 months on the 15th", "dsl": "d R m/3 d15"}
+{"id": "peml0246", "text": "the steering committee meets quarterly, the second week of march, june, sept and dec", "dsl": "x", "unsure": true}
+{"id": "preg0008", "text": "coming Monday", "dsl": "d mo"}
+{"id": "peml0136", "text": "a month from now", "dsl": "d +1m"}
+{"id": "preg0100", "text": "the 2nd Tuesday of each month", "dsl": "d R m/1 tu#2"}
+{"id": "pesl0214", "text": "page 3 of 7", "dsl": "x"}
+{"id": "pesl0054", "text": "wake me up tomorrow at 6 and half", "dsl": "dt +1d 6:30?"}
+{"id": "peml0074", "text": "following up on our call from last thursday", "dsl": "d th-1"}
+{"id": "pvoi0080", "text": "wednesday at midnight", "dsl": "dt we 00:00"}
+{"id": "peml0076", "text": "thanks, I'll have it to you by mid-afternoon", "dsl": "x", "unsure": true}
+{"id": "pter0044", "text": "0730", "dsl": "t 07:30"}
+{"id": "pesl0114", "text": "3 at night", "dsl": "t 03:00"}
+{"id": "pter0244", "text": "ticket #2026", "dsl": "x"}
+{"id": "pcas0260", "text": "zip 90210", "dsl": "x"}
+{"id": "peml0154", "text": "before the 1st of december", "dsl": "d >12-01"}
+{"id": "preg0160", "text": "mon 9am", "dsl": "dt mo 09:00"}
+{"id": "pvoi0038", "text": "quarter past four", "dsl": "t 4:15?"}
+{"id": "preg0194", "text": "Route 66", "dsl": "x"}
+{"id": "peml0044", "text": "tentatively thursday the 12th at 3:30 pm", "dsl": "dt th&D12 15:30"}
+{"id": "pter0154", "text": "oct 2 to oct 5", "dsl": "d 10-02>10-05"}
+{"id": "pcas0168", "text": "satrday nite", "dsl": "d sa"}
+{"id": "pter0162", "text": "bi-wkly fri", "dsl": "d R w/2 fr"}
+{"id": "pesl0146", "text": "during the next two weeks", "dsl": "d +0d>+2w"}
+{"id": "pesl0102", "text": "before dinner", "dsl": "x", "unsure": true}
+{"id": "pvoi0006", "text": "remind me on the third of next month", "dsl": "d D03@M+1"}
+{"id": "pvoi0154", "text": "three and a half hours from now", "dsl": "x", "unsure": true}
+{"id": "pcas0142", "text": "b4 6", "dsl": "t >6?"}
+{"id": "pvoi0204", "text": "by midnight tonight", "dsl": "dt >+1d 00:00"}
+{"id": "pvoi0068", "text": "october second at three p m", "dsl": "dt 10-02 15:00"}
+{"id": "pter0206", "text": "2h from now", "dsl": "x", "unsure": true}
+{"id": "pter0156", "text": "around 6p", "dsl": "t 18:00"}
+{"id": "pter0108", "text": "nov 3 - 7", "dsl": "d 11-03>11-07"}
+{"id": "preg0236", "text": "tonight at 8", "dsl": "dt +0d 20:00"}
+{"id": "pesl0068", "text": "5th of june 2026", "dsl": "d 2026-06-05"}
+{"id": "pvoi0056", "text": "sometime around lunchtime", "dsl": "x", "unsure": true}
+{"id": "pvoi0144", "text": "every night at ten p m", "dsl": "dt R d/1 22:00"}
+{"id": "pesl0090", "text": "at 12 hours midday", "dsl": "t 12:00"}
+{"id": "peml0138", "text": "yesterday afternoon", "dsl": "d -1d"}
+{"id": "pvoi0160", "text": "uh in about forty five minutes", "dsl": "x", "unsure": true}
+{"id": "preg0036", "text": "after lunch", "dsl": "x", "unsure": true}
+{"id": "pcas0030", "text": "last sat", "dsl": "d sa-1"}
+{"id": "pesl0206", "text": "before the end of year", "dsl": "x", "unsure": true}
+{"id": "pcas0028", "text": "july 4th", "dsl": "d 07-04"}
+{"id": "pter0252", "text": "review pr eod", "dsl": "x", "unsure": true}
+{"id": "pter0106", "text": "2nd fri of nov", "dsl": "d fr#2@11"}
+{"id": "pesl0252", "text": "within 3 days", "dsl": "d +0d>+3d"}
+{"id": "pter0116", "text": "555-0134", "dsl": "x"}
+{"id": "pter0114", "text": "nxt mo 3rd", "dsl": "d D03@M+1"}
+{"id": "pesl0028", "text": "three times by week", "dsl": "x", "unsure": true}
+{"id": "pcas0092", "text": "every fri", "dsl": "d R w/1 fr"}
+{"id": "peml0176", "text": "dec 1 - dec 4, all day", "dsl": "d 12-01>12-04"}
+{"id": "peml0178", "text": "the week of the 23rd", "dsl": "x", "unsure": true}
+{"id": "peml0232", "text": "call Dana Whitfield", "dsl": "x"}
+{"id": "preg0122", "text": "before the 15th", "dsl": "d >D@15"}
+{"id": "pvoi0036", "text": "set an alarm for six forty five a m", "dsl": "t 06:45"}
+{"id": "pcas0104", "text": "every tues til christmas", "dsl": "d R w/1 tu u12-25"}
+{"id": "peml0228", "text": "PO-48213", "dsl": "x"}
+{"id": "pcas0234", "text": "every other tues at 5", "dsl": "dt R w/2 tu 5?"}
+{"id": "peml0014", "text": "the fiscal year ends on june 30th", "dsl": "d 06-30"}
+{"id": "pvoi0190", "text": "by the thirtieth", "dsl": "d D@30"}
+{"id": "pter0136", "text": "2x/wk", "dsl": "x", "unsure": true}
+{"id": "preg0258", "text": "Version 2.3.1", "dsl": "x"}
+{"id": "pvoi0248", "text": "my password is one two three four", "dsl": "x"}
+{"id": "pesl0254", "text": "we have exam on 12 of june in the morning", "dsl": "d 06-12"}
+{"id": "pvoi0206", "text": "no earlier than two p m saturday", "dsl": "dt sa 14:00>"}
+{"id": "preg0090", "text": "alternate Mondays", "dsl": "d R w/2 mo"}
+{"id": "pter0070", "text": "tmrw 9:30a", "dsl": "dt +1d 09:30"}
+{"id": "preg0146", "text": "set alarm for 6 tomorrow", "dsl": "dt +1d 6?"}
+{"id": "pvoi0232", "text": "the party is on saturday the fourteenth at seven", "dsl": "dt sa&D14 7?"}
+{"id": "pter0228", "text": "flt 12/20 7a", "dsl": "dt 12-20 07:00"}
+{"id": "peml0012", "text": "budget submissions close at COB friday", "dsl": "d fr"}
+{"id": "pcas0178", "text": "the 3rd...tmrw?", "dsl": "d D@03", "unsure": true}
+{"id": "pesl0220", "text": "route 66", "dsl": "x"}
+{"id": "pvoi0064", "text": "friday no wait saturday at two", "dsl": "dt sa 2?", "unsure": true}
+{"id": "pcas0244", "text": "for 3 days starting mon", "dsl": "d R d/1 n3 smo"}
+{"id": "pcas0162", "text": "we goin out 2nite around 10", "dsl": "dt +0d 22:00"}
+{"id": "peml0174", "text": "between noon and 1", "dsl": "t 12:00>1?"}
+{"id": "pesl0196", "text": "lets meet the day after tomorrow at noon", "dsl": "dt +2d 12:00"}
+{"id": "pesl0034", "text": "three hours and half from now", "dsl": "x", "unsure": true}
+{"id": "preg0166", "text": "2morow 4pm", "dsl": "dt +1d 16:00"}
+{"id": "pesl0156", "text": "each morning at 7h", "dsl": "dt R d/1 07:00"}
+{"id": "pvoi0114", "text": "tomorrow from ten to eleven", "dsl": "dt +1d 10?>11?"}
+{"id": "pcas0034", "text": "half 7", "dsl": "t 7:30?", "unsure": true}
+{"id": "pcas0126", "text": "for 90 mins starting at 7", "dsl": "t 7?>+90m"}
+{"id": "preg0068", "text": "from half nine to quarter past eleven", "dsl": "t 9:30?>11:15?"}
+{"id": "pcas0074", "text": "nov 3 to nov 7", "dsl": "d 11-03>11-07"}
+{"id": "pter0234", "text": "every day", "dsl": "d R d/1"}
+{"id": "pvoi0098", "text": "from the first to the fifth of december", "dsl": "d 12-01>12-05"}
+{"id": "pter0152", "text": "dec 25", "dsl": "d 12-25"}
+{"id": "pesl0226", "text": "next month on the 10", "dsl": "d D10@M+1"}
+{"id": "preg0244", "text": "every month on the 2nd", "dsl": "d R m/1 d2"}
+{"id": "pter0050", "text": "b4 fri", "dsl": "d >fr"}
+{"id": "peml0222", "text": "valentine's day at 7pm", "dsl": "dt 02-14 19:00"}
+{"id": "pvoi0196", "text": "uh by like monday morning", "dsl": "d mo"}
+{"id": "preg0248", "text": "every 10 days", "dsl": "d R d/10"}
+{"id": "pcas0066", "text": "tues morning at 8", "dsl": "dt tu 08:00"}
+{"id": "pter0214", "text": "10a for 2h", "dsl": "t 10:00>+2h"}
+{"id": "pesl0208", "text": "not before monday", "dsl": "d mo>"}
+{"id": "pcas0060", "text": "mon 7am", "dsl": "dt mo 07:00"}
+{"id": "pvoi0138", "text": "the last friday of every month", "dsl": "d R m/1 fr#-1"}
+{"id": "preg0058", "text": "on 5th Dec at 4 pm", "dsl": "dt 12-05 16:00"}
+{"id": "pter0168", "text": "tth 3p", "dsl": "dt R w/1 tu,th 15:00", "unsure": true}
+{"id": "pvoi0002", "text": "um what about the day after tomorrow", "dsl": "d +2d"}
+{"id": "pcas0094", "text": "weekdays at 8", "dsl": "dt R d/1 mo,tu,we,th,fr 8?"}
+{"id": "pter0164", "text": "7p for 90m", "dsl": "t 19:00>+90m"}
+{"id": "pcas0222", "text": "sun mornin", "dsl": "d su"}
+{"id": "pcas0110", "text": "3x a week", "dsl": "x", "unsure": true}
+{"id": "pter0006", "text": "pay cc 15th", "dsl": "d D@15"}
+{"id": "pesl0100", "text": "in the middle of december", "dsl": "x", "unsure": true}
+{"id": "pcas0156", "text": "party is sat nite at 9 dont be late", "dsl": "dt sa 21:00"}
+{"id": "pesl0202", "text": "before 8 in the morning tomorrow", "dsl": "dt >+1d 08:00"}
+{"id": "pcas0152", "text": "by the end of the wk", "dsl": "x", "unsure": true}
+{"id": "pcas0134", "text": "last nite", "dsl": "d -1d"}
+{"id": "pcas0196", "text": "fri before 5", "dsl": "dt >fr 5?"}
+{"id": "pesl0116", "text": "quarter past 11", "dsl": "t 11:15?"}
+{"id": "pcas0182", "text": "mon aftn", "dsl": "d mo"}
+{"id": "pesl0112", "text": "9 p.m.", "dsl": "t 21:00"}
+{"id": "pvoi0124", "text": "um every day at seven a m", "dsl": "dt R d/1 07:00"}
+{"id": "pesl0092", "text": "tonight at 22 hours", "dsl": "dt +0d 22:00"}
+{"id": "pcas0146", "text": "until friday", "dsl": "d >fr"}
+{"id": "pcas0010", "text": "new years day", "dsl": "d 01-01"}
+{"id": "pesl0158", "text": "every 3 months on the 15", "dsl": "d R m/3 d15"}
+{"id": "pvoi0216", "text": "um what is on my calendar for monday", "dsl": "d mo"}
+{"id": "pvoi0062", "text": "tomorrow morning at nine thirty", "dsl": "dt +1d 09:30"}
+{"id": "preg0102", "text": "nightly at 10pm for a week", "dsl": "dt R d/1 n7 22:00"}
+{"id": "preg0200", "text": "PIN 4821", "dsl": "x"}
+{"id": "pter0028", "text": "by eow", "dsl": "x", "unsure": true}
+{"id": "pesl0122", "text": "in one week and 2 days", "dsl": "d +9d"}
+{"id": "pcas0242", "text": "15 mins from now", "dsl": "x", "unsure": true}
+{"id": "pvoi0008", "text": "like the fourth of july", "dsl": "d 07-04"}
+{"id": "pvoi0082", "text": "a week from thursday at one fifteen", "dsl": "dt th~+1w 1:15?"}
+{"id": "pter0218", "text": "tonight 8", "dsl": "dt +0d 20:00"}
+{"id": "peml0038", "text": "our next sync is in 3 days", "dsl": "d +3d"}
+{"id": "pesl0052", "text": "i have dentist at 16h30 on tuesday", "dsl": "dt tu 16:30"}
+{"id": "peml0214", "text": "wednesday the 4th", "dsl": "d we&D04"}
+{"id": "pvoi0120", "text": "weekdays at eight", "dsl": "dt R d/1 mo,tu,we,th,fr 8?"}
+{"id": "preg0234", "text": "Wednesday 4th at 10:15", "dsl": "dt we&D04 10:15?"}
+{"id": "pvoi0234", "text": "birthday dinner for mom the eighth of june at six thirty", "dsl": "dt 06-08 6:30?"}
+{"id": "pter0128", "text": "dinner sat 7:30p", "dsl": "dt sa 19:30"}
+{"id": "pesl0088", "text": "midnight", "dsl": "t 00:00"}
+{"id": "pvoi0200", "text": "due friday at five p m", "dsl": "dt fr 17:00"}
+{"id": "pter0036", "text": "tdy 9a-5p", "dsl": "dt +0d 09:00>17:00"}
+{"id": "pvoi0066", "text": "um tonight at eight", "dsl": "dt +0d 20:00"}
+{"id": "preg0150", "text": "mum's birthday is on 14th Aug", "dsl": "d 08-14"}
+{"id": "pvoi0094", "text": "october tenth through the fourteenth", "dsl": "d 10-10>10-14"}
+{"id": "pcas0206", "text": "kyle", "dsl": "x"}
+{"id": "pter0260", "text": "dr appt 11/12 10:30a", "dsl": "dt 11-12 10:30"}
+{"id": "peml0248", "text": "I need about 2 hours on wednesday afternoon, preferably after 1", "dsl": "d we"}
+{"id": "pvoi0130", "text": "once a week on wednesdays", "dsl": "d R w/1 we"}
+{"id": "pter0120", "text": "nxt mon 9-5", "dsl": "dt mo+1 9?>5?"}
+{"id": "pcas0258", "text": "pizza 2 for 1", "dsl": "x"}
+{"id": "pter0138", "text": "mtg 2h", "dsl": "x", "unsure": true}
+{"id": "preg0108", "text": "a couple of hours from now", "dsl": "x", "unsure": true}
+{"id": "pvoi0044", "text": "first thing in the morning", "dsl": "x", "unsure": true}
+{"id": "pesl0184", "text": "every thursday from january until march", "dsl": "d R w/1 th uM@03 sM@01"}
+{"id": "pesl0050", "text": "remind me to pay rent on the 1 of every month", "dsl": "d R m/1 d1"}
+{"id": "peml0142", "text": "for 3 days starting monday", "dsl": "d R d/1 n3 smo"}
+{"id": "pvoi0088", "text": "tonight at ten", "dsl": "dt +0d 22:00"}
+{"id": "pesl0152", "text": "the next weekend", "dsl": "x", "unsure": true}
+{"id": "preg0040", "text": "17:45", "dsl": "t 17:45"}
+{"id": "pcas0220", "text": "the 100", "dsl": "x"}
+{"id": "peml0018", "text": "quarterly business review on the first wednesday of each quarter", "dsl": "x", "unsure": true}
+{"id": "pter0186", "text": "midnight", "dsl": "t 00:00"}
+{"id": "pesl0176", "text": "every day except sunday", "dsl": "d R d/1 mo,tu,we,th,fr,sa"}
+{"id": "peml0148", "text": "no later than noon tuesday", "dsl": "dt >tu 12:00"}
+{"id": "pter0056", "text": "every 4 hrs", "dsl": "x", "unsure": true}
+{"id": "pvoi0050", "text": "nine a m", "dsl": "t 09:00"}
+{"id": "peml0096", "text": "add to calendar: product review, monday at 1:30", "dsl": "dt mo 1:30?"}
+{"id": "preg0168", "text": "end of month", "dsl": "x", "unsure": true}
+{"id": "preg0228", "text": "twenty to eleven", "dsl": "t 10:40?"}
+{"id": "pvoi0202", "text": "by tomorrow night", "dsl": "d +1d"}
+{"id": "pter0020", "text": "brkfst 8a", "dsl": "t 08:00"}
+{"id": "pvoi0106", "text": "saturday nine a m to five p m", "dsl": "dt sa 09:00>17:00"}
+{"id": "preg0074", "text": "from the 20th to the 24th of Dec", "dsl": "d 12-20>12-24"}
+{"id": "preg0162", "text": "  next   week   tuesday", "dsl": "x", "unsure": true}
+{"id": "pvoi0222", "text": "i have a doctors appointment the day after tomorrow at eleven", "dsl": "dt +2d 11?"}
+{"id": "peml0186", "text": "this friday", "dsl": "d fr"}
+{"id": "pvoi0022", "text": "yesterday", "dsl": "d -1d"}
+{"id": "peml0016", "text": "daily standup at 9:30 am, monday to friday", "dsl": "dt R d/1 mo,tu,we,th,fr 09:30"}
+{"id": "pvoi0018", "text": "um march the ninth", "dsl": "d 03-09"}
+{"id": "pcas0130", "text": "5 days ago", "dsl": "d -5d"}
+{"id": "preg0180", "text": "Wed. 5th", "dsl": "d we&D05"}
+{"id": "pcas0120", "text": "3 and a half hrs from now", "dsl": "x", "unsure": true}
+{"id": "pvoi0092", "text": "monday nine to friday five", "dsl": "dt mo 9?>fr 5?"}
+{"id": "pter0064", "text": "tomorow 9", "dsl": "dt +1d 9?"}
+{"id": "pter0140", "text": "daily", "dsl": "d R d/1"}
+{"id": "pvoi0184", "text": "after three p m", "dsl": "t 15:00>"}
+{"id": "pter0130", "text": "ev 3d", "dsl": "d R d/3"}
+{"id": "peml0020", "text": "are you free for a quick call tomorrow around 4ish?", "dsl": "dt +1d 4?"}
+{"id": "pesl0108", "text": "at 5 oclock in afternoon", "dsl": "t 17:00"}
+{"id": "preg0254", "text": "after the 20th", "dsl": "d D@20>"}
+{"id": "pter0230", "text": "every mon", "dsl": "d R w/1 mo"}
+{"id": "pvoi0104", "text": "lunch from twelve thirty to one thirty", "dsl": "t 12:30?>1:30?"}
+{"id": "preg0210", "text": "Tuesday next", "dsl": "d tu+1"}
+{"id": "pvoi0256", "text": "please set the meeting for wednesday from two to three thirty", "dsl": "dt we 2?>3:30?"}
+{"id": "preg0204", "text": "A4 paper", "dsl": "x"}
+{"id": "pesl0016", "text": "friday at 3 in the afternoon", "dsl": "dt fr 15:00"}
+{"id": "pesl0204", "text": "until tomorrow noon", "dsl": "dt >+1d 12:00"}
+{"id": "peml0064", "text": "please schedule it for the end of the sprint", "dsl": "x", "unsure": true}
+{"id": "pesl0072", "text": "thanksgiving day", "dsl": "x", "unsure": true}
+{"id": "pvoi0250", "text": "size ten shoes", "dsl": "x"}
+{"id": "pter0030", "text": "eom", "dsl": "x", "unsure": true}
+{"id": "peml0030", "text": "the team offsite runs from oct 14 to oct 16", "dsl": "d 10-14>10-16"}
+{"id": "peml0204", "text": "ten past ten in the morning", "dsl": "t 10:10"}
+{"id": "peml0002", "text": "the report is due by close of business on the last friday of the quarter", "dsl": "x", "unsure": true}
+{"id": "pvoi0164", "text": "for two hours", "dsl": "x", "unsure": true}
+{"id": "peml0206", "text": "17:30", "dsl": "t 17:30"}
+{"id": "preg0188", "text": "Q4 2026", "dsl": "d Q@4"}
+{"id": "peml0102", "text": "call with legal tues 10-11", "dsl": "dt tu 10?>11?"}
+{"id": "peml0158", "text": "anytime post 4:30 on friday", "dsl": "dt fr 4:30?>"}
+{"id": "pvoi0028", "text": "august eleventh", "dsl": "d 08-11"}
+{"id": "pesl0042", "text": "until end of the month", "dsl": "d >M+0"}
+{"id": "pcas0144", "text": "before skool", "dsl": "x"}
+{"id": "pesl0182", "text": "monthly on the 5th", "dsl": "d R m/1 d5"}
+{"id": "pvoi0042", "text": "twenty to eight", "dsl": "t 7:40?"}
+{"id": "pcas0188", "text": "nov 28 thanksgiving dinner 4pm", "dsl": "dt 11-28 16:00"}
+{"id": "preg0242", "text": "1st-5th Dec", "dsl": "d 12-01>12-05"}
+{"id": "pter0102", "text": "every mon,wed,fri", "dsl": "d R w/1 mo,we,fr"}
+{"id": "pesl0128", "text": "in next 5 minutes", "dsl": "x", "unsure": true}
+{"id": "preg0238", "text": "08/11/2026 at 3pm", "dsl": "dt 2026-08-11 15:00"}
+{"id": "preg0250", "text": "2 and a half hours ago", "dsl": "x", "unsure": true}
+{"id": "peml0166", "text": "starting 8 february, ending 12 february", "dsl": "d 02-08>02-12"}
+{"id": "pesl0008", "text": "03/11 at 15 hours", "dsl": "dt 03-11 15:00"}
+{"id": "pvoi0140", "text": "every day for the next two weeks", "dsl": "d R d/1 n14"}
+{"id": "pvoi0108", "text": "from noon to for p m", "dsl": "t 12:00>16:00"}
+{"id": "preg0114", "text": "last Monday", "dsl": "d mo-1"}
+{"id": "pter0002", "text": "ev other sun", "dsl": "d R w/2 su"}
+{"id": "pter0142", "text": "3 nov 26", "dsl": "x", "unsure": true}
+{"id": "pvoi0078", "text": "next week friday at four thirty", "dsl": "x", "unsure": true}
+{"id": "pesl0140", "text": "3-7 nov", "dsl": "d 11-03>11-07"}
+{"id": "peml0238", "text": "the 2026 Annual Report", "dsl": "x"}
+{"id": "pesl0248", "text": "before 10 hours tomorrow", "dsl": "dt >+1d 10:00"}
+{"id": "pvoi0014", "text": "halloween", "dsl": "d 10-31"}
+{"id": "pter0026", "text": "jul 4", "dsl": "d 07-04"}
+{"id": "pcas0018", "text": "tmrw nite", "dsl": "d +1d"}
+{"id": "peml0028", "text": "I can do any time after lunch on friday", "dsl": "d fr"}
+{"id": "pvoi0210", "text": "um set a reminder to pay rent on the first", "dsl": "d D@01"}
+{"id": "preg0076", "text": "from now till Christmas", "dsl": "d +0d>12-25"}
+{"id": "pvoi0158", "text": "a couple days ago", "dsl": "d -2d"}
+{"id": "pesl0250", "text": "until next tuesday 16 hours", "dsl": "dt >tu+1 16:00"}
+{"id": "pesl0002", "text": "the day after tomorrow", "dsl": "d +2d"}

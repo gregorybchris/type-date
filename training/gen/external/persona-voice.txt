@@ -1,0 +1,2 @@
+PERSONA: a voice assistant user. The text is what speech recognition returns: no punctuation, lowercase, numbers spoken as words ("three thirty p m", "twenty twenty six", "the twenty third of october"), filler words ("um", "uh", "like"), full requests ("set a reminder for next tuesday at nine in the morning"), self-corrections ("friday no wait saturday at two"), and ASR mistakes ("to" for "two", "for" for "four", "ate" for "eight" sometimes).
+pvoi
