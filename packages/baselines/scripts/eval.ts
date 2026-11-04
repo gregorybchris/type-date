@@ -18,6 +18,7 @@ const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; 
   chrono: { file: "chrono.ts", family: "library", perDay: true, notes: "chrono-node 2.10.3 (en casual, forwardDate) plus DSL adapter. No recurrence support." },
   "heuristic-small": { file: "heuristic-small.ts", family: "heuristic", perDay: false, notes: "Hand-written tokenizer and a few dozen regex rules. No dependencies." },
   "heuristic-full-2": { file: "heuristic-full-2.ts", family: "heuristic", perDay: false, notes: "heuristic-full plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
+  "heuristic-full-3": { file: "heuristic-full-3.ts", family: "heuristic", perDay: false, notes: "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm and slang." },
   "heuristic-full": { file: "heuristic-full.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },
 };
 
@@ -37,6 +38,7 @@ const { values: args } = parseArgs({
     limit: { type: "string" },
     "dry-run": { type: "boolean", default: false },
     "no-primary": { type: "boolean", default: false },
+    file: { type: "string" },
   },
 });
 const reg = REGISTRY[args.engine ?? ""];
@@ -56,6 +58,10 @@ interface Row {
 }
 
 function loadSplit(name: string): Row[] {
+  if (args.file) {
+    if (name !== "file") return [];
+    return readFileSync(resolve(args.file), "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l) as Row);
+  }
   const p = join(ROOT, "evals", args["eval-version"]!, `${name}.jsonl`);
   if (!existsSync(p)) return [];
   const rows = readFileSync(p, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l) as Row);
@@ -98,7 +104,7 @@ async function main() {
   const mod = await import(join(here, "../src", reg!.file));
   const engine: Engine = mod.default;
   await engine.load({ baseUrl: "" });
-  const splitNames = (args.splits ? args.splits.split(",") : SPLITS).filter((s) => loadSplit(s).length > 0);
+  const splitNames = (args.file ? ["file"] : args.splits ? args.splits.split(",") : SPLITS).filter((s) => loadSplit(s).length > 0);
   const rowsBySplit: Record<string, Row[]> = Object.fromEntries(splitNames.map((s) => [s, loadSplit(s)]));
 
   // warm up the JIT before timing
@@ -198,7 +204,12 @@ async function main() {
     return;
   }
   writeFileSync(join(dir, "config.json"), JSON.stringify(config, null, 2));
-  writeFileSync(join(dir, "metrics.json"), JSON.stringify(metrics, null, 2));
+  // keep results stored for other eval versions
+  const mp0 = join(dir, "metrics.json");
+  const prev = existsSync(mp0) ? JSON.parse(readFileSync(mp0, "utf8")) : {};
+  const evals = { ...(prev.evals ?? {}) };
+  delete evals[args["eval-version"]!];
+  writeFileSync(mp0, JSON.stringify(Object.keys(evals).length ? { ...metrics, evals } : metrics, null, 2));
   const total = (performance.now() - t0) / 1000;
   const b = { load_data: (tLoad - t0) / 1000, eval_predict: (tScore - tLoad) / 1000, bundle_size: (performance.now() - tScore) / 1000 };
   const stage = "eval";

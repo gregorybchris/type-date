@@ -25,15 +25,31 @@
         "model_load": 0.167
       },
       "unaccounted_s": 0.088
+    },
+    "rerun-e2": {
+      "stages": {
+        "started_at": "2026-11-04T04:42:58+00:00",
+        "finished_at": "2026-11-04T04:43:15+00:00"
+      },
+      "total_s": 17.626,
+      "buckets": {
+        "eval_generate": 16.998,
+        "eval_score": 0.485,
+        "model_load": 0.097
+      },
+      "unaccounted_s": 0.046
     }
   },
-  "total_s": 33.242,
+  "total_s": 50.868,
   "buckets": {
     "rerun-e1.eval_generate": 25.511,
     "rerun-e1.eval_score": 1.241,
     "rerun-e1.model_load": 0.135,
     "rerun-e1q.eval_generate": 4.68,
     "rerun-e1q.eval_score": 1.364,
-    "rerun-e1q.model_load": 0.167
+    "rerun-e1q.model_load": 0.167,
+    "rerun-e2.eval_generate": 16.998,
+    "rerun-e2.eval_score": 0.485,
+    "rerun-e2.model_load": 0.097
   }
 }

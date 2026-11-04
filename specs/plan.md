@@ -73,7 +73,7 @@ Whether a heuristic is good enough is an empirical question. Baselines run throu
 - [ ] Bench results written to `runs/exp-NNN/bench.json`
 
 ### Phase 6: picker component
-The demo page (`make picker-demo`, port 5199) uses the best solution so far. It is `heuristic-full-2` (exp-009) until a model beats it on the Pareto front. Update the demo's default engine when that changes.
+The demo page (`make picker-demo`, port 5199) uses the best solution so far. It is `heuristic-full-3` (exp-013) until a model beats it on the Pareto front. Update the demo's default engine when that changes.
 - [ ] Design tokens from `design-ideas/` (light and dark)
 - [ ] Calendar, time list, mode switching, range highlight, recurrence preview
 - [ ] Input with debounce, ambiguity toggle, keyboard hints

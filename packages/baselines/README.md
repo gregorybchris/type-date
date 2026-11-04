@@ -8,6 +8,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `heuristic-small` | `src/heuristic-small.ts` | About 40 regex rules, no dependencies. | 3.5 kB |
 | `heuristic-full` | `src/heuristic-full.ts` | Scanner, fuzzy words, recursive-descent readers. | 7.9 kB |
 | `heuristic-full-2` | `src/heuristic-full-2.ts` | heuristic-full plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
+| `heuristic-full-3` | `src/heuristic-full-3.ts` | heuristic-full-2 plus span extraction around unknown words, day parts, slang. | 10.3 kB |
 
 `predict(text, signal?, { today })` takes an optional reference day. Only `chrono` uses it, because chrono returns absolute dates. The heuristics output relative DSL and ignore it.
 
@@ -29,7 +30,12 @@ For `chrono` the eval calls the engine once for each reference day in `score-res
 
 `eval.ts` takes `--eval-version` (default `e1`, reads `evals/<version>`), `--description`, and `--no-primary`, which writes only `metrics.json` `evals[<version>]` and leaves `eval`, errors and config alone. It also writes `timing.json` (stage `eval`).
 
+`eval.ts --file <abs path> --eval-version <label> --no-primary` scores one JSONL file (split name `file`) under `evals[<label>]`, used for `data/real/dev.jsonl`. A primary run keeps the `evals` already stored in `metrics.json`.
+
 ## Baselines pitfalls
+
+- Span extraction drops unknown words, so every new LEX word that is also a common English word turns a filler word into date evidence (or into a skipped word). Check `non-date-noise` rows of `data/v004/train.jsonl` after adding words.
+- `data/dev1` and `data/v003` use the old `H:MM` label policy. Use `data/v004` and `data/real` for regression checks.
 
 - A broad regex or lexicon entry added for one phrasing can capture noise words through fuzzy matching (`yest` matched `test`, `start` matched `stars`, `tomo` matched `tom`). Keep short special words out of the fuzzy targets and re-check `non-date-noise`.
 - Allowing 2 edits for long words made `inthree` and `totomorrow` match `three` and `tomorrow` and lose the glued prefix. Cap the length gap at 1, with a narrow exception for month and weekday names.
