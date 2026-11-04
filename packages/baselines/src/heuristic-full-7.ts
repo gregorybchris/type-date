@@ -869,7 +869,7 @@ function parse(T: Tok[]): string | null {
       const eve = eat("eve");
       if (!eve && is("u") && T[i]!.s === "d") i++;
       r = { s: eve ? "12-31" : "01-01", k: "md", mo: eve ? 12 : 1, d: eve ? 31 : 1 };
-    } else if (t.k === "m" && ((T[i + 1]?.k === "n" && (T[i + 1]!.o || T[i + 1]!.w)) || (T[i + 1]?.k === "mod" && T[i + 1]!.v === -1)) && is("w", 2)) {
+    } else if (t.k === "m" && ((T[i + 1]?.k === "n" && (T[i + 1]!.o || T[i + 1]!.w) && T[i + 1]!.v! >= 1 && T[i + 1]!.v! <= 5) || (T[i + 1]?.k === "mod" && T[i + 1]!.v === -1)) && is("w", 2)) {
       r = { s: `${T[i + 2]!.s}#${T[i + 1]!.k === "mod" ? -1 : T[i + 1]!.v}@${p2(t.v!)}`, k: "other" };
       i += 3;
     } else if (t.k === "w" && is("n", 1) && !T[i + 1]!.o && T[i + 1]!.v! >= 1 && T[i + 1]!.v! <= 5 && (is("in", 2) || is("of", 2)) && is("m", 3)) {
