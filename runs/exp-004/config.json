@@ -1,7 +1,7 @@
 {
   "id": "exp-004",
   "number": 4,
-  "title": "from-scratch enc-dec 8M, v001",
+  "title": "scratch enc-dec 8M (bugged)",
   "created": "2026-11-04T03:25:47+00:00",
   "dataset": "v001",
   "format": "dsl-v1",
@@ -25,5 +25,6 @@
   "export": {
     "format": "onnx",
     "quant": "int8"
-  }
+  },
+  "description": "First from-scratch T5-style model on v001. Invalid: the tokenizer lowercased the DSL labels, so uppercase DSL tokens could not be produced."
 }

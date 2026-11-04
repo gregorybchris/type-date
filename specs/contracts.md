@@ -29,12 +29,14 @@ One directory per experiment. Committed to git. Small files only. `NNN` is a zer
 `config.json`:
 
 ```json
-{"id": "exp-001", "number": 1, "title": "from-scratch enc-dec 8M", "created": "2026-11-03T20:00:00Z",
+{"id": "exp-001", "number": 1, "title": "scratch enc-dec 8M", "description": "T5-style encoder-decoder trained from scratch on v002 with BPE tokens. Reference model R0.", "created": "2026-11-03T20:00:00Z",
  "dataset": "v001", "format": "dsl-v1", "notes": "...", "parent": null,
  "model": {"family": "enc-dec-scratch", "params": 8000000, "d_model": 256, "layers": "4+4", "vocab": 4000},
  "train": {"epochs": 10, "batch_size": 128, "lr": 0.0005, "seed": 0, "device": "mps"},
  "export": {"format": "onnx", "quant": "int8"}}
 ```
+
+`title` is a short label (about 40 characters or fewer) used on chart points, legends, and table rows. `description` is one or two plain sentences saying what the experiment is and why. Both are required for new experiments. The dashboard shows the title next to the experiment number everywhere and the description in tables, tooltips, and the detail page.
 
 `metrics.json`:
 

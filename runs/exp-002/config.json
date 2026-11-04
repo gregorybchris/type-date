@@ -1,7 +1,7 @@
 {
   "id": "exp-002",
   "number": 2,
-  "title": "heuristic-small (regex rules)",
+  "title": "heuristic-small",
   "created": "2026-11-04T03:55:04Z",
   "dataset": "v002",
   "format": "dsl-v1",
@@ -15,5 +15,6 @@
   "train": {},
   "export": {
     "format": "none"
-  }
+  },
+  "description": "Tiny hand-written regex rules, no dependencies, 3.5 kB gzipped. Covers common phrases only."
 }

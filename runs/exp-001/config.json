@@ -15,5 +15,6 @@
   "train": {},
   "export": {
     "format": "none"
-  }
+  },
+  "description": "Off-the-shelf rule-based date parser (chrono-node) with an adapter to our DSL. No recurrence support. A floor for what a library gives with no custom work."
 }

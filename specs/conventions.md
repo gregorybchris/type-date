@@ -40,6 +40,10 @@ When the user states a preference, record it here or in the relevant spec. Add a
 
 Eval sets are versioned and immutable (`evals/e1`, ...). Cut a new version conservatively and compare models only within one version. Details: `specs/research/eval-versioning.md`.
 
+## Experiment titles and descriptions
+
+Every experiment has a short `title` and a one or two sentence `description` in its `config.json`. Experiment numbers alone are not informative on charts. Write them when the experiment is created (`td train run --title ... --description ...`).
+
 ## Time observability
 
 Every experiment records where wall time goes (`runs/exp-NNN/timing.json`). Look at the biggest bucket first and optimize it to speed up the outer loop. Do not guess: measure, then optimize, then measure again. Time includes training, eval, export, benchmark, and the gaps between experiments.
