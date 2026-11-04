@@ -12,6 +12,11 @@ Policy (follow exactly, these decide ambiguous cases):
 - If the text is cut off mid-typing, label the committed part that is already a valid parse ("oct 2 t" -> `d 10-02`; "every tu" -> `d R w/1 tu`); if nothing valid yet, `x`.
 - Not a date or time (or too ambiguous to give one meaning, such as "fri or sat"): `x`.
 - Typos: read through them ("tomorow" is tomorrow).
+- Impossible dates are not dates: "February 30", "2024-13-01", "May 33", "8/32", "2012/80/10" -> `x` (not unsure).
+- Year-first numerics are absolute dates: "2012/8/10" and "2014-12-28" -> `2012-08-10`, `2014-12-28`. Two-digit years: 00-49 mean 2000-2049, 50-99 mean 1950-1999 ("3 Aug 96" -> `1996-08-03`, "12/28/24" -> `2024-12-28`). A day over 12 first means day first ("28.12.2024" -> `2024-12-28`).
+- Seconds in a time are ignored ("10:00:00" -> `10:00`).
+- Relative offsets: "2 days later", "3 weeks hence", "in 2 yrs", "next day" (= tomorrow) are future offsets (`+2d`, `+3w`, `+2y`, `+1d`); "ago", "before", "last night" are past. "a week before yesterday" -> `-8d`; "2 day after tomorrow" -> `+3d`. Use d, w, m, y units only; minutes, hours and seconds offsets -> `x` with unsure true.
+- Numbers that are not dates or times ("I'm at 10", "room 12", "101 points", "$10.99", "version 2.5") -> `x`.
 - If the text has no clear single meaning in the DSL, write `x` and add a field "unsure": true.
 
 Check your work: put your output file in its own empty directory and run

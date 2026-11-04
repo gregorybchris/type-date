@@ -1,0 +1,400 @@
+{"id": "ft0-0000", "text": "Code 2.5 is deprecated", "dsl": "x"}
+{"id": "ft0-0001", "text": "7.05pm", "dsl": "t 19:05"}
+{"id": "ft0-0002", "text": "Version 2.5 released 2024-12-28", "dsl": "d 2024-12-28"}
+{"id": "ft0-0003", "text": "31/1/20", "dsl": "d 2020-01-31"}
+{"id": "ft0-0004", "text": "Backup completed at 02:15:33 on 2023-11-04", "dsl": "dt 2023-11-04 02:15"}
+{"id": "ft0-0005", "text": "Expiry printed as 06/-31/2022", "dsl": "x"}
+{"id": "ft0-0006", "text": "Snapshot 2012/08/10 09:30 retained for 5d", "dsl": "dt 2012-08-10 09:30"}
+{"id": "ft0-0007", "text": "Ship by Dec 14th, please", "dsl": "d 12-14"}
+{"id": "ft0-0008", "text": "Prices change in 2 yrs", "dsl": "d +2y"}
+{"id": "ft0-0009", "text": "2018 November 5", "dsl": "d 2018-11-05"}
+{"id": "ft0-0010", "text": "3/3/20 2:15 PM", "dsl": "dt 2020-03-03 14:15"}
+{"id": "ft0-0011", "text": "Lease signed on 10-August-2012", "dsl": "d 2012-08-10"}
+{"id": "ft0-0012", "text": "8 days out", "dsl": "d +8d"}
+{"id": "ft0-0013", "text": "2021-10-00", "dsl": "x"}
+{"id": "ft0-0014", "text": "2023-02-30", "dsl": "x"}
+{"id": "ft0-0015", "text": "Bill dated 3 Aug 96", "dsl": "d 1996-08-03"}
+{"id": "ft0-0016", "text": "Filed 3 Aug 96 at 1430h", "dsl": "dt 1996-08-03 14:30"}
+{"id": "ft0-0017", "text": "half a year from now", "dsl": "d +6m"}
+{"id": "ft0-0018", "text": "Final exam Aug 9 '96", "dsl": "d 1996-08-09"}
+{"id": "ft0-0019", "text": "Letter of 8/Oct/2012", "dsl": "d 2012-10-08"}
+{"id": "ft0-0020", "text": "29.02.2021", "dsl": "x"}
+{"id": "ft0-0021", "text": "Aug 10 2012", "dsl": "d 2012-08-10"}
+{"id": "ft0-0022", "text": "Shipping takes a week from tomorrow", "dsl": "d +8d"}
+{"id": "ft0-0023", "text": "next Friday 5pm", "dsl": "dt fr+1 17:00"}
+{"id": "ft0-0024", "text": "Aug 10, 2012 at 3pm", "dsl": "dt 2012-08-10 15:00"}
+{"id": "ft0-0025", "text": "Edited 2:30:15 PM", "dsl": "t 14:30"}
+{"id": "ft0-0026", "text": "Due 2023-02-29 per the spreadsheet", "dsl": "x"}
+{"id": "ft0-0027", "text": "1 mon from now at noon", "dsl": "dt +1m 12:00"}
+{"id": "ft0-0028", "text": "Doors at 9 o'clock, show at 10", "dsl": "x", "unsure": true}
+{"id": "ft0-0029", "text": "Top 10 list", "dsl": "x"}
+{"id": "ft0-0030", "text": "half past 8", "dsl": "t 8:30?"}
+{"id": "ft0-0031", "text": "Report covers Q1 through 03/31/2022", "dsl": "x", "unsure": true}
+{"id": "ft0-0032", "text": "Sorry I missed your message from last night", "dsl": "d -1d"}
+{"id": "ft0-0033", "text": "Dated 3rd Feb 82, signed", "dsl": "d 1982-02-03"}
+{"id": "ft0-0034", "text": "Uptime 99 days", "dsl": "x"}
+{"id": "ft0-0035", "text": "Confirmation sent on 2012/8/10 at 14.30", "dsl": "dt 2012-08-10 14:30"}
+{"id": "ft0-0036", "text": "level 9", "dsl": "x"}
+{"id": "ft0-0037", "text": "v10.2.1", "dsl": "x"}
+{"id": "ft0-0038", "text": "12 hours hence", "dsl": "x", "unsure": true}
+{"id": "ft0-0039", "text": "Doors close at 11p", "dsl": "t 23:00"}
+{"id": "ft0-0040", "text": "2023-W60", "dsl": "x"}
+{"id": "ft0-0041", "text": "Billing cycle 00.13.2024", "dsl": "x"}
+{"id": "ft0-0042", "text": "Friday 13th", "dsl": "x", "unsure": true}
+{"id": "ft0-0043", "text": "Sent: Mon 3/9 at 08:05", "dsl": "dt 03-09 08:05"}
+{"id": "ft0-0044", "text": "the 0th of May", "dsl": "x"}
+{"id": "ft0-0045", "text": "Pushed back 2 days later", "dsl": "d +2d"}
+{"id": "ft0-0046", "text": "Take 2 tablets at 11p", "dsl": "t 23:00"}
+{"id": "ft0-0047", "text": "Visit scheduled for 20241228", "dsl": "d 2024-12-28"}
+{"id": "ft0-0048", "text": "Archive anything older than 5d", "dsl": "d -5d"}
+{"id": "ft0-0049", "text": "Slide deck from -3y", "dsl": "d -3y"}
+{"id": "ft0-0050", "text": "Jun 15 2023 12:00:01 AM", "dsl": "dt 2023-06-15 00:00"}
+{"id": "ft0-0051", "text": "1/32/2020", "dsl": "x"}
+{"id": "ft0-0052", "text": "24:30", "dsl": "x"}
+{"id": "ft0-0053", "text": "2023.03.17", "dsl": "d 2023-03-17"}
+{"id": "ft0-0054", "text": "in a couple of days", "dsl": "x", "unsure": true}
+{"id": "ft0-0055", "text": "Delivery estimate: 2024-13-01", "dsl": "x"}
+{"id": "ft0-0056", "text": "June 30, 2015", "dsl": "d 2015-06-30"}
+{"id": "ft0-0057", "text": "Expires 12/2027", "dsl": "d 2027-12-01>2027-12-31"}
+{"id": "ft0-0058", "text": "ttyl, a fortnight from now", "dsl": "d +2w"}
+{"id": "ft0-0059", "text": "March 2024", "dsl": "d 2024-03-01>2024-03-31"}
+{"id": "ft0-0060", "text": "Push notification: your order ships 28-12-2024", "dsl": "d 2024-12-28"}
+{"id": "ft0-0061", "text": "Stock closed at $10.99", "dsl": "x"}
+{"id": "ft0-0062", "text": "Interview set for Thu 10/3 at 4:45 PM", "dsl": "dt 10-03 16:45"}
+{"id": "ft0-0063", "text": "Exit code 12", "dsl": "x"}
+{"id": "ft0-0064", "text": "100%", "dsl": "x"}
+{"id": "ft0-0065", "text": "00/00/0000", "dsl": "x"}
+{"id": "ft0-0066", "text": "Tue 2024-10-15", "dsl": "d 2024-10-15"}
+{"id": "ft0-0067", "text": "yesterday 14:00", "dsl": "dt -1d 14:00"}
+{"id": "ft0-0068", "text": "May 33", "dsl": "x"}
+{"id": "ft0-0069", "text": "Seminar on Friday, Dec 30, 2016, 3 p.m.", "dsl": "dt 2016-12-30 15:00"}
+{"id": "ft0-0070", "text": "Jul 4 1976", "dsl": "d 1976-07-04"}
+{"id": "ft0-0071", "text": "Rent is due on the 1st of every month", "dsl": "d R m/1 d1"}
+{"id": "ft0-0072", "text": "2001/9/3", "dsl": "d 2001-09-03"}
+{"id": "ft0-0073", "text": "Check-out is 11a on Sun", "dsl": "dt su 11:00"}
+{"id": "ft0-0074", "text": "Back on Jan 3rd", "dsl": "d 01-03"}
+{"id": "ft0-0075", "text": "30-Jun-15", "dsl": "d 2015-06-30"}
+{"id": "ft0-0076", "text": "version 2.5", "dsl": "x"}
+{"id": "ft0-0077", "text": "Insurance lapsed 12/28/24", "dsl": "d 2024-12-28"}
+{"id": "ft0-0078", "text": "Please confirm by 28.12.2024 17:00", "dsl": "dt 2024-12-28 17:00"}
+{"id": "ft0-0079", "text": "9h", "dsl": "x", "unsure": true}
+{"id": "ft0-0080", "text": "meet 2morrow 9 o'clock", "dsl": "dt +1d 9?"}
+{"id": "ft0-0081", "text": "Mon, 3 Jun 2024 08:00", "dsl": "dt 2024-06-03 08:00"}
+{"id": "ft0-0082", "text": "Fri Aug 10 2012 09:30", "dsl": "dt 2012-08-10 09:30"}
+{"id": "ft0-0083", "text": "5 sept", "dsl": "d 09-05"}
+{"id": "ft0-0084", "text": "a fortnight ago", "dsl": "d -2w"}
+{"id": "ft0-0085", "text": "the 15th of March", "dsl": "d 03-15"}
+{"id": "ft0-0086", "text": "19h45", "dsl": "t 19:45"}
+{"id": "ft0-0087", "text": "She is 42", "dsl": "x"}
+{"id": "ft0-0088", "text": "page 12 of 40", "dsl": "x"}
+{"id": "ft0-0089", "text": "06-2011", "dsl": "d 2011-06-01>2011-06-30"}
+{"id": "ft0-0090", "text": "5 pm sharp", "dsl": "t 17:00"}
+{"id": "ft0-0091", "text": "Last seen 9 p.m. yesterday", "dsl": "dt -1d 21:00"}
+{"id": "ft0-0092", "text": "Grade 10", "dsl": "x"}
+{"id": "ft0-0093", "text": "a year out", "dsl": "d +1y"}
+{"id": "ft0-0094", "text": "Due the day after tomorrow", "dsl": "d +2d"}
+{"id": "ft0-0095", "text": "Group of 8 hikers", "dsl": "x"}
+{"id": "ft0-0096", "text": "3 weeks hence", "dsl": "d +3w"}
+{"id": "ft0-0097", "text": "Updated Jan 8, 2020 at 4:15 PM", "dsl": "dt 2020-01-08 16:15"}
+{"id": "ft0-0098", "text": "Sat 22.06.2019", "dsl": "d 2019-06-22"}
+{"id": "ft0-0099", "text": "25 Dec at 7:30", "dsl": "dt 12-25 7:30?"}
+{"id": "ft0-0100", "text": "4 pcs", "dsl": "x"}
+{"id": "ft0-0101", "text": "2022-11-31", "dsl": "x"}
+{"id": "ft0-0102", "text": "Package delivered Fri 12-30-16 at 3:05 PM", "dsl": "dt 2016-12-30 15:05"}
+{"id": "ft0-0103", "text": "27 pm", "dsl": "x"}
+{"id": "ft0-0104", "text": "6 months prior", "dsl": "d -6m"}
+{"id": "ft0-0105", "text": "June 31, 2020", "dsl": "x"}
+{"id": "ft0-0106", "text": "a day later", "dsl": "d +1d"}
+{"id": "ft0-0107", "text": "Created: 2019-03-04T11:22:33Z", "dsl": "dt 2019-03-04 11:22"}
+{"id": "ft0-0108", "text": "Port 8080 is open", "dsl": "x"}
+{"id": "ft0-0109", "text": "Effective date: 01.07.2018", "dsl": "d 2018-01-07"}
+{"id": "ft0-0110", "text": "1700h", "dsl": "t 17:00"}
+{"id": "ft0-0111", "text": "Mon 3/9", "dsl": "d 03-09"}
+{"id": "ft0-0112", "text": "Part no. 1024", "dsl": "x"}
+{"id": "ft0-0113", "text": "13h", "dsl": "t 13:00"}
+{"id": "ft0-0114", "text": "0745", "dsl": "t 07:45"}
+{"id": "ft0-0115", "text": "99:99", "dsl": "x"}
+{"id": "ft0-0116", "text": "1/2 cup", "dsl": "x"}
+{"id": "ft0-0117", "text": "deploy@2024-12-28T09:00 ok", "dsl": "dt 2024-12-28 09:00"}
+{"id": "ft0-0118", "text": "Checkout 05/31/2024 11am", "dsl": "dt 2024-05-31 11:00"}
+{"id": "ft0-0119", "text": "4th of July 2025", "dsl": "d 2025-07-04"}
+{"id": "ft0-0120", "text": "holiday inn express 2", "dsl": "x"}
+{"id": "ft0-0121", "text": "Option A is 2024-05-31 14:15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "ft0-0122", "text": "Last login: 09-JAN-2017 10:00:00", "dsl": "dt 2017-01-09 10:00"}
+{"id": "ft0-0123", "text": "half past midnight", "dsl": "t 00:30"}
+{"id": "ft0-0124", "text": "Roadmap shifted +2w", "dsl": "d +2w"}
+{"id": "ft0-0125", "text": "Scheduled maintenance 24 October 2 a.m.", "dsl": "dt 10-24 02:00"}
+{"id": "ft0-0126", "text": "Lunch at 12:30 tomorrow", "dsl": "dt +1d 12:30"}
+{"id": "ft0-0127", "text": "Q3 2025", "dsl": "x", "unsure": true}
+{"id": "ft0-0128", "text": "31 April 2022", "dsl": "x"}
+{"id": "ft0-0129", "text": "Order #88231", "dsl": "x"}
+{"id": "ft0-0130", "text": "Room 101", "dsl": "x"}
+{"id": "ft0-0131", "text": "20240531T141500", "dsl": "dt 2024-05-31 14:15"}
+{"id": "ft0-0132", "text": "April, 2023", "dsl": "d 2023-04-01>2023-04-30"}
+{"id": "ft0-0133", "text": "-18mo", "dsl": "d -18m"}
+{"id": "ft0-0134", "text": "File edited 5d ago", "dsl": "d -5d"}
+{"id": "ft0-0135", "text": "Session timed out 2:30:15 PM", "dsl": "t 14:30"}
+{"id": "ft0-0136", "text": "Monday 10 a.m.", "dsl": "dt mo 10:00"}
+{"id": "ft0-0137", "text": "2 for 1", "dsl": "x"}
+{"id": "ft0-0138", "text": "24 October", "dsl": "d 10-24"}
+{"id": "ft0-0139", "text": "-5/-5/2020", "dsl": "x"}
+{"id": "ft0-0140", "text": "1st of January 2000", "dsl": "d 2000-01-01"}
+{"id": "ft0-0141", "text": "Release 2.5 notes", "dsl": "x"}
+{"id": "ft0-0142", "text": "1999-12-32", "dsl": "x"}
+{"id": "ft0-0143", "text": "INFO [2023-11-04 02:15:33] job finished", "dsl": "dt 2023-11-04 02:15"}
+{"id": "ft0-0144", "text": "He won by 3", "dsl": "x"}
+{"id": "ft0-0145", "text": "10 items", "dsl": "x"}
+{"id": "ft0-0146", "text": "Password changed 2 days ago", "dsl": "d -2d"}
+{"id": "ft0-0147", "text": "Swap with a week before yesterday", "dsl": "d -8d"}
+{"id": "ft0-0148", "text": "12-31-1999", "dsl": "d 1999-12-31"}
+{"id": "ft0-0149", "text": "Anniversary: 3rd Feb 82", "dsl": "d 1982-02-03"}
+{"id": "ft0-0150", "text": "Mar 3 2020 1430h", "dsl": "dt 2020-03-03 14:30"}
+{"id": "ft0-0151", "text": "Newsletter issue of Nov. 3, 2026", "dsl": "d 2026-11-03"}
+{"id": "ft0-0152", "text": "Last backup was last night at 2", "dsl": "dt -1d 2?"}
+{"id": "ft0-0153", "text": "Your trial expires in 5d", "dsl": "d +5d"}
+{"id": "ft0-0154", "text": "Cron fired 20241228 0900", "dsl": "dt 2024-12-28 09:00"}
+{"id": "ft0-0155", "text": "lets do 24 October", "dsl": "d 10-24"}
+{"id": "ft0-0156", "text": "Parking permit valid to 31-12-2024", "dsl": "d 2024-12-31"}
+{"id": "ft0-0157", "text": "2012.10.08", "dsl": "d 2012-10-08"}
+{"id": "ft0-0158", "text": "Flight departs 2024-05-31 14:15 from gate 12", "dsl": "dt 2024-05-31 14:15"}
+{"id": "ft0-0159", "text": "gym at 0900 then dinner at 8 p.m.", "dsl": "x", "unsure": true}
+{"id": "ft0-0160", "text": "12-31-1999 23:59", "dsl": "dt 1999-12-31 23:59"}
+{"id": "ft0-0161", "text": "size 10 shoes", "dsl": "x"}
+{"id": "ft0-0162", "text": "1 week back", "dsl": "d -1w"}
+{"id": "ft0-0163", "text": "September 9th, 2009", "dsl": "d 2009-09-09"}
+{"id": "ft0-0164", "text": "a couple of days ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0165", "text": "Offset: +2w", "dsl": "d +2w"}
+{"id": "ft0-0166", "text": "-10d", "dsl": "d -10d"}
+{"id": "ft0-0167", "text": "Alert fired at 11p on Aug 9 '96", "dsl": "dt 1996-08-09 23:00"}
+{"id": "ft0-0168", "text": "2024-00-10", "dsl": "x"}
+{"id": "ft0-0169", "text": "1 a", "dsl": "t 01:00"}
+{"id": "ft0-0170", "text": "1430h", "dsl": "t 14:30"}
+{"id": "ft0-0171", "text": "Sep 31 2020", "dsl": "x"}
+{"id": "ft0-0172", "text": "two days after yesterday", "dsl": "d +1d"}
+{"id": "ft0-0173", "text": "Scene 3, take 2", "dsl": "x"}
+{"id": "ft0-0174", "text": "25:00", "dsl": "x"}
+{"id": "ft0-0175", "text": "tomorrow night", "dsl": "d +1d"}
+{"id": "ft0-0176", "text": "Saturday 4/20", "dsl": "d 04-20"}
+{"id": "ft0-0177", "text": "Sprint ends Fri 12-30-16", "dsl": "d 2016-12-30"}
+{"id": "ft0-0178", "text": "Reply received 2 days later", "dsl": "d +2d"}
+{"id": "ft0-0179", "text": "1,000 users", "dsl": "x"}
+{"id": "ft0-0180", "text": "Download 250 MB by 12/28/24", "dsl": "d 2024-12-28"}
+{"id": "ft0-0181", "text": "Doctor visit on 2024.12.28", "dsl": "d 2024-12-28"}
+{"id": "ft0-0182", "text": "Expires 00/00/0000", "dsl": "x"}
+{"id": "ft0-0183", "text": "Move-in date is May 33", "dsl": "x"}
+{"id": "ft0-0184", "text": "Bus 38 is delayed", "dsl": "x"}
+{"id": "ft0-0185", "text": "Feb 29 2023 is on the form", "dsl": "x"}
+{"id": "ft0-0186", "text": "Size 9 wide", "dsl": "x"}
+{"id": "ft0-0187", "text": "2024-02-30 10:00", "dsl": "x"}
+{"id": "ft0-0188", "text": "Download link valid for 3 weeks hence", "dsl": "d +3w"}
+{"id": "ft0-0189", "text": "the 45th of May", "dsl": "x"}
+{"id": "ft0-0190", "text": "Midyear review in a fortnight from now", "dsl": "d +2w"}
+{"id": "ft0-0191", "text": "T09:15", "dsl": "t 09:15"}
+{"id": "ft0-0192", "text": "T14:30", "dsl": "t 14:30"}
+{"id": "ft0-0193", "text": "brb back in 5d jk", "dsl": "d +5d"}
+{"id": "ft0-0194", "text": "04-Jul-2025", "dsl": "d 2025-07-04"}
+{"id": "ft0-0195", "text": "Check-in on April 31", "dsl": "x"}
+{"id": "ft0-0196", "text": "Re: invoice from 8/Oct/2012", "dsl": "d 2012-10-08"}
+{"id": "ft0-0197", "text": "Start date 2021/03/09 end date 2021/03/19", "dsl": "d 2021-03-09>2021-03-19"}
+{"id": "ft0-0198", "text": "Your subscription ended 8/Oct/2012", "dsl": "d 2012-10-08"}
+{"id": "ft0-0199", "text": "next Friday at 3", "dsl": "dt fr+1 3?"}
+{"id": "ft0-0200", "text": "15/06/2023 12:00 PM", "dsl": "dt 2023-06-15 12:00"}
+{"id": "ft0-0201", "text": "1999/12/31", "dsl": "d 1999-12-31"}
+{"id": "ft0-0202", "text": "at 4 o'clock", "dsl": "t 4?"}
+{"id": "ft0-0203", "text": "2024-05-31 14:15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "ft0-0204", "text": "Posted on 2022/14/03", "dsl": "x"}
+{"id": "ft0-0205", "text": "13.4.19", "dsl": "d 2019-04-13"}
+{"id": "ft0-0206", "text": "13/04/2019", "dsl": "d 2019-04-13"}
+{"id": "ft0-0207", "text": "13th month", "dsl": "x"}
+{"id": "ft0-0208", "text": "Trip starts June 31", "dsl": "x"}
+{"id": "ft0-0209", "text": "Call me in 2 days", "dsl": "d +2d"}
+{"id": "ft0-0210", "text": "Windows 11", "dsl": "x"}
+{"id": "ft0-0211", "text": "03:07:09", "dsl": "t 03:07"}
+{"id": "ft0-0212", "text": "Calendar: Team lunch Mon 3/9 12:30", "dsl": "dt 03-09 12:30"}
+{"id": "ft0-0213", "text": "28.12.2024", "dsl": "d 2024-12-28"}
+{"id": "ft0-0214", "text": "15:45:30", "dsl": "t 15:45"}
+{"id": "ft0-0215", "text": "a fortnight from now", "dsl": "d +2w"}
+{"id": "ft0-0216", "text": "this day next week", "dsl": "d +1w"}
+{"id": "ft0-0217", "text": "Thanks! See you at 1430h", "dsl": "t 14:30"}
+{"id": "ft0-0218", "text": "23:59:59", "dsl": "t 23:59"}
+{"id": "ft0-0219", "text": "14:70:00", "dsl": "x"}
+{"id": "ft0-0220", "text": "24:61", "dsl": "x"}
+{"id": "ft0-0221", "text": "14:30 pm", "dsl": "t 14:30"}
+{"id": "ft0-0222", "text": "06/15/2023 12:00:01", "dsl": "dt 2023-06-15 12:00"}
+{"id": "ft0-0223", "text": "Stamp reads 7/0/2022", "dsl": "x"}
+{"id": "ft0-0224", "text": "Cost: $10.99 per month", "dsl": "x"}
+{"id": "ft0-0225", "text": "Meeting invite: 3rd Feb 82, 9 o'clock", "dsl": "dt 1982-02-03 9?"}
+{"id": "ft0-0226", "text": "2100-02-29", "dsl": "x"}
+{"id": "ft0-0227", "text": "Slot 1: Aug 10 2012, 9:30", "dsl": "dt 2012-08-10 9:30?"}
+{"id": "ft0-0228", "text": "0630 hours", "dsl": "t 06:30"}
+{"id": "ft0-0229", "text": "flight lands 2:30:15 PM", "dsl": "t 14:30"}
+{"id": "ft0-0230", "text": "half an hour later", "dsl": "x", "unsure": true}
+{"id": "ft0-0231", "text": "ten to seven", "dsl": "t 6:50?"}
+{"id": "ft0-0232", "text": "Apt 7 on the left", "dsl": "x"}
+{"id": "ft0-0233", "text": "28-12-2024", "dsl": "d 2024-12-28"}
+{"id": "ft0-0234", "text": "Dec 25, 7 pm", "dsl": "dt 12-25 19:00"}
+{"id": "ft0-0235", "text": "0.5 mg", "dsl": "x"}
+{"id": "ft0-0236", "text": "+1y", "dsl": "d +1y"}
+{"id": "ft0-0237", "text": "29 Feb 2024", "dsl": "d 2024-02-29"}
+{"id": "ft0-0238", "text": "Flight departs Mon 14 Oct 06:25", "dsl": "dt 10-14 06:25"}
+{"id": "ft0-0239", "text": "Results released 3 weeks hence", "dsl": "d +3w"}
+{"id": "ft0-0240", "text": "4th Jul '76", "dsl": "d 1976-07-04"}
+{"id": "ft0-0241", "text": "12p", "dsl": "t 12:00"}
+{"id": "ft0-0242", "text": "in 3 hrs", "dsl": "x", "unsure": true}
+{"id": "ft0-0243", "text": "1947-08-15", "dsl": "d 1947-08-15"}
+{"id": "ft0-0244", "text": "20230615T120000", "dsl": "dt 2023-06-15 12:00"}
+{"id": "ft0-0245", "text": "Hi team, standup moved to 10:00:00 sharp", "dsl": "t 10:00"}
+{"id": "ft0-0246", "text": "Dinner reservation: Aug 9 '96 at 8 p.m.", "dsl": "dt 1996-08-09 20:00"}
+{"id": "ft0-0247", "text": "0900", "dsl": "t 09:00"}
+{"id": "ft0-0248", "text": "Dec 25 2019 midnight", "dsl": "dt 2019-12-25 00:00"}
+{"id": "ft0-0249", "text": "2020-1-31", "dsl": "d 2020-01-31"}
+{"id": "ft0-0250", "text": "Next run in 2 yrs", "dsl": "d +2y"}
+{"id": "ft0-0251", "text": "1:05:09 am", "dsl": "t 01:05"}
+{"id": "ft0-0252", "text": "in two fortnights", "dsl": "d +4w"}
+{"id": "ft0-0253", "text": "We need 15 chairs", "dsl": "x"}
+{"id": "ft0-0254", "text": "3/9 at noon", "dsl": "dt 03-09 12:00"}
+{"id": "ft0-0255", "text": "this day last month", "dsl": "d -1m"}
+{"id": "ft0-0256", "text": "day after next", "dsl": "d +2d"}
+{"id": "ft0-0257", "text": "2020-14-14", "dsl": "x"}
+{"id": "ft0-0258", "text": "Event time 0900 UTC", "dsl": "t 09:00"}
+{"id": "ft0-0259", "text": "ok see u at 7a lol", "dsl": "t 07:00"}
+{"id": "ft0-0260", "text": "Process 2.5 GB memory", "dsl": "x"}
+{"id": "ft0-0261", "text": "99/99/99", "dsl": "x"}
+{"id": "ft0-0262", "text": "quarter to 6", "dsl": "t 5:45?"}
+{"id": "ft0-0263", "text": "Slack: lunch at noon on Friday, Dec 30, 2016", "dsl": "dt 2016-12-30 12:00"}
+{"id": "ft0-0264", "text": "+1d", "dsl": "d +1d"}
+{"id": "ft0-0265", "text": "Oct 0", "dsl": "x"}
+{"id": "ft0-0266", "text": "23:59", "dsl": "t 23:59"}
+{"id": "ft0-0267", "text": "1 January 2000", "dsl": "d 2000-01-01"}
+{"id": "ft0-0268", "text": "in 45 mins", "dsl": "x", "unsure": true}
+{"id": "ft0-0269", "text": "7:75 pm", "dsl": "x"}
+{"id": "ft0-0270", "text": "Cutoff 2023-02-30 noon", "dsl": "x"}
+{"id": "ft0-0271", "text": "ISBN 978-3-16-148410-0", "dsl": "x"}
+{"id": "ft0-0272", "text": "Release date: 2024-12-28", "dsl": "d 2024-12-28"}
+{"id": "ft0-0273", "text": "5-NOV-2018", "dsl": "d 2018-11-05"}
+{"id": "ft0-0274", "text": "3 x 4", "dsl": "x"}
+{"id": "ft0-0275", "text": "+3d", "dsl": "d +3d"}
+{"id": "ft0-0276", "text": "Birthday party on 5 sept", "dsl": "d 09-05"}
+{"id": "ft0-0277", "text": "v3.1.4", "dsl": "x"}
+{"id": "ft0-0278", "text": "rev 3", "dsl": "x"}
+{"id": "ft0-0279", "text": "Stamp: 2024/00/12", "dsl": "x"}
+{"id": "ft0-0280", "text": "Born on 4 July 1990", "dsl": "d 1990-07-04"}
+{"id": "ft0-0281", "text": "The report was filed 1 mon from now", "dsl": "d +1m"}
+{"id": "ft0-0282", "text": "Our next sync is a fortnight from now", "dsl": "d +2w"}
+{"id": "ft0-0283", "text": "6.15 pm", "dsl": "t 18:15"}
+{"id": "ft0-0284", "text": "Packing list: 4 pcs", "dsl": "x"}
+{"id": "ft0-0285", "text": "Running version 2.5 of the app", "dsl": "x"}
+{"id": "ft0-0286", "text": "Febtober 12", "dsl": "x"}
+{"id": "ft0-0287", "text": "Wed Jan 4", "dsl": "d 01-04"}
+{"id": "ft0-0288", "text": "Wed 18/06/2025", "dsl": "d 2025-06-18"}
+{"id": "ft0-0289", "text": "Updated 2 hrs ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0290", "text": "the following day", "dsl": "d +1d"}
+{"id": "ft0-0291", "text": "+6m", "dsl": "d +6m"}
+{"id": "ft0-0292", "text": "Order shipped on 8/Oct/2012", "dsl": "d 2012-10-08"}
+{"id": "ft0-0293", "text": "Time: 14.30, Date: 2024/12/28", "dsl": "dt 2024-12-28 14:30"}
+{"id": "ft0-0294", "text": "about 3 or 4 people", "dsl": "x"}
+{"id": "ft0-0295", "text": "27-06-1998", "dsl": "d 1998-06-27"}
+{"id": "ft0-0296", "text": "Smarch 3", "dsl": "x"}
+{"id": "ft0-0297", "text": "4 July 1976", "dsl": "d 1976-07-04"}
+{"id": "ft0-0298", "text": "the weekend after next", "dsl": "x", "unsure": true}
+{"id": "ft0-0299", "text": "22nd December 1987", "dsl": "d 1987-12-22"}
+{"id": "ft0-0300", "text": "Dec 31 99", "dsl": "d 1999-12-31"}
+{"id": "ft0-0301", "text": "15/15/15", "dsl": "x"}
+{"id": "ft0-0302", "text": "Mon 03/09/2026", "dsl": "d 2026-03-09"}
+{"id": "ft0-0303", "text": "Lease ends 28.12.2024", "dsl": "d 2024-12-28"}
+{"id": "ft0-0304", "text": "sure, next day is fine", "dsl": "d +1d"}
+{"id": "ft0-0305", "text": "Call ext. 2214 for help", "dsl": "x"}
+{"id": "ft0-0306", "text": "Total came to $10.99", "dsl": "x"}
+{"id": "ft0-0307", "text": "negative 5 weeks", "dsl": "d -5w"}
+{"id": "ft0-0308", "text": "Mar 15 2021", "dsl": "d 2021-03-15"}
+{"id": "ft0-0309", "text": "I'll ship it the day after", "dsl": "x", "unsure": true}
+{"id": "ft0-0310", "text": "Interview at 99:99", "dsl": "x"}
+{"id": "ft0-0311", "text": "-2h", "dsl": "x", "unsure": true}
+{"id": "ft0-0312", "text": "31st Dec 1999", "dsl": "d 1999-12-31"}
+{"id": "ft0-0313", "text": "Clock showed 24:61 on arrival", "dsl": "x"}
+{"id": "ft0-0314", "text": "10/8/2012", "dsl": "d 2012-10-08"}
+{"id": "ft0-0315", "text": "Dec. 22nd", "dsl": "d 12-22"}
+{"id": "ft0-0316", "text": "90 min ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0317", "text": "x86_64", "dsl": "x"}
+{"id": "ft0-0318", "text": "9 Sep 2009", "dsl": "d 2009-09-09"}
+{"id": "ft0-0319", "text": "Updated 2019-04-31", "dsl": "x"}
+{"id": "ft0-0320", "text": "2024-10-00", "dsl": "x"}
+{"id": "ft0-0321", "text": "in 2 weeks on Wednesday", "dsl": "x", "unsure": true}
+{"id": "ft0-0322", "text": "30/Nov/2005", "dsl": "d 2005-11-30"}
+{"id": "ft0-0323", "text": "a month ago today", "dsl": "d -1m"}
+{"id": "ft0-0324", "text": "Weekly digest sent Fri 12-30-16", "dsl": "d 2016-12-30"}
+{"id": "ft0-0325", "text": "Log entry stamped 2012/80/10", "dsl": "x"}
+{"id": "ft0-0326", "text": "Mon, Jan 2", "dsl": "d 01-02"}
+{"id": "ft0-0327", "text": "Aug 15, 1947", "dsl": "d 1947-08-15"}
+{"id": "ft0-0328", "text": "2m ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0329", "text": "Dec 32 appointment", "dsl": "x"}
+{"id": "ft0-0330", "text": "2018-Nov-05", "dsl": "d 2018-11-05"}
+{"id": "ft0-0331", "text": "User 101 logged in", "dsl": "x"}
+{"id": "ft0-0332", "text": "Meeting on 2024-02-30 14:15", "dsl": "x"}
+{"id": "ft0-0333", "text": "Retry in 1 mon from now", "dsl": "d +1m"}
+{"id": "ft0-0334", "text": "Wed 1/4/2023", "dsl": "d 2023-01-04"}
+{"id": "ft0-0335", "text": "an hour ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0336", "text": "Let's meet a week before yesterday", "dsl": "d -8d"}
+{"id": "ft0-0337", "text": "Add 3 eggs and 2 cups flour", "dsl": "x"}
+{"id": "ft0-0338", "text": "15 August 1947", "dsl": "d 1947-08-15"}
+{"id": "ft0-0339", "text": "yesterday evening", "dsl": "d -1d"}
+{"id": "ft0-0340", "text": "3 sundays ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0341", "text": "in 3 yrs 2 mos", "dsl": "x", "unsure": true}
+{"id": "ft0-0342", "text": "Please arrive by 7a", "dsl": "t 07:00"}
+{"id": "ft0-0343", "text": "0/0/2020", "dsl": "x"}
+{"id": "ft0-0344", "text": "1999-01-05", "dsl": "d 1999-01-05"}
+{"id": "ft0-0345", "text": "Start 10:00:00 End 11:30:00", "dsl": "t 10:00>11:30"}
+{"id": "ft0-0346", "text": "Meet me 2 day after tomorrow at noon", "dsl": "dt +3d 12:00"}
+{"id": "ft0-0347", "text": "He ran 5 km in the park", "dsl": "x"}
+{"id": "ft0-0348", "text": "7/4/2025", "dsl": "d 07-04"}
+{"id": "ft0-0349", "text": "Sat 2020-02-29", "dsl": "d 2020-02-29"}
+{"id": "ft0-0350", "text": "Deadline: 31.02.2023", "dsl": "x"}
+{"id": "ft0-0351", "text": "+2w", "dsl": "d +2w"}
+{"id": "ft0-0352", "text": "Pay $1,250.00 now", "dsl": "x"}
+{"id": "ft0-0353", "text": "FYI the freeze starts 28.12.2024", "dsl": "d 2024-12-28"}
+{"id": "ft0-0354", "text": "Due in 3 weeks hence", "dsl": "d +3w"}
+{"id": "ft0-0355", "text": "5d ago it was fine", "dsl": "d -5d"}
+{"id": "ft0-0356", "text": "31/05/2024 14.15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "ft0-0357", "text": "Reopen 2 days later", "dsl": "d +2d"}
+{"id": "ft0-0358", "text": "7:60 pm", "dsl": "x"}
+{"id": "ft0-0359", "text": "Conference runs 24 October to 26 October", "dsl": "d 10-24>10-26"}
+{"id": "ft0-0360", "text": "Sun 2025-03-16", "dsl": "d 2025-03-16"}
+{"id": "ft0-0361", "text": "2023-04", "dsl": "d 2023-04-01>2023-04-30"}
+{"id": "ft0-0362", "text": "15/08/1947", "dsl": "d 1947-08-15"}
+{"id": "ft0-0363", "text": "Spoke at 3 Aug 96 event, 11p", "dsl": "dt 1996-08-03 23:00"}
+{"id": "ft0-0364", "text": "Sept. 45, 2025 is the deadline", "dsl": "x"}
+{"id": "ft0-0365", "text": "3 apples", "dsl": "x"}
+{"id": "ft0-0366", "text": "3:07", "dsl": "t 3:07?"}
+{"id": "ft0-0367", "text": "call 555-0199", "dsl": "x"}
+{"id": "ft0-0368", "text": "45 Jan 2020", "dsl": "x"}
+{"id": "ft0-0369", "text": "See you next Friday, Dec 30, 2016", "dsl": "d 2016-12-30"}
+{"id": "ft0-0370", "text": "Booking confirmed for Sept. 5, 2025", "dsl": "d 2025-09-05"}
+{"id": "ft0-0371", "text": "1 Apr", "dsl": "d 04-01"}
+{"id": "ft0-0372", "text": "today at noon", "dsl": "dt +0d 12:00"}
+{"id": "ft0-0373", "text": "Feb 29 2023", "dsl": "x"}
+{"id": "ft0-0374", "text": "Shipped 2021-06-31 apparently", "dsl": "x"}
+{"id": "ft0-0375", "text": "Locker 101", "dsl": "x"}
+{"id": "ft0-0376", "text": "Wifi password is 10", "dsl": "x"}
+{"id": "ft0-0377", "text": "a year and a day ago", "dsl": "x", "unsure": true}
+{"id": "ft0-0378", "text": "Dial 911", "dsl": "x"}
+{"id": "ft0-0379", "text": "Feb 29 2024", "dsl": "d 2024-02-29"}
+{"id": "ft0-0380", "text": "Memo dated Aug 9 '96", "dsl": "d 1996-08-09"}
+{"id": "ft0-0381", "text": "12/2019", "dsl": "d 2019-12-01>2019-12-31"}
+{"id": "ft0-0382", "text": "April 31", "dsl": "x"}
+{"id": "ft0-0383", "text": "Started at 10:00:00, ended at 10:45:12", "dsl": "t 10:00>10:45"}
+{"id": "ft0-0384", "text": "the 7th grade", "dsl": "x"}
+{"id": "ft0-0385", "text": "Oct. 31st, 2019", "dsl": "d 2019-10-31"}
+{"id": "ft0-0386", "text": "31/12/99", "dsl": "d 1999-12-31"}
+{"id": "ft0-0387", "text": "13:75", "dsl": "x"}
+{"id": "ft0-0388", "text": "29/02/2022", "dsl": "x"}
+{"id": "ft0-0389", "text": "30 Feb 2019", "dsl": "x"}
+{"id": "ft0-0390", "text": "Ref 4 pcs, room 12", "dsl": "x"}
+{"id": "ft0-0391", "text": "Invoice date 20241228, payment net 30", "dsl": "d 2024-12-28"}
+{"id": "ft0-0392", "text": "31-12-1999 23:59:59", "dsl": "dt 1999-12-31 23:59"}
+{"id": "ft0-0393", "text": "2023/06/15 12:00", "dsl": "dt 2023-06-15 12:00"}
+{"id": "ft0-0394", "text": "2025.07.04", "dsl": "d 2025-07-04"}
+{"id": "ft0-0395", "text": "The temperature is 72 degrees", "dsl": "x"}
+{"id": "ft0-0396", "text": "5d ago", "dsl": "d -5d"}
+{"id": "ft0-0397", "text": "Your appointment is the day after tomorrow", "dsl": "d +2d"}
+{"id": "ft0-0398", "text": "Ticket opened 5d ago by support", "dsl": "d -5d"}
+{"id": "ft0-0399", "text": "Reminder set for last night", "dsl": "d -1d"}
