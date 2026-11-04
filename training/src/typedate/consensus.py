@@ -51,7 +51,7 @@ def consensus(
             "parent_id": None,
             "group": f"real-{i}",
         }
-        if policy_flags(row):
+        if policy_flags(row, legacy_v2=False):
             stats["policy_ambiguous"] += 1
             continue
         rows.append(row)

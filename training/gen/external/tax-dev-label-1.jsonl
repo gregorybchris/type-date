@@ -73,7 +73,7 @@
 {"id": "taxd0072", "text": "fridays every september", "dsl": "d R w/1 fr M@09"}
 {"id": "taxd0073", "text": "3 tacos please", "dsl": "x"}
 {"id": "taxd0074", "text": "the day before new years eve", "dsl": "d 12-31~-1d"}
-{"id": "taxd0075", "text": "every year in june saturdays", "dsl": "d R w/1 M@06 sa"}
+{"id": "taxd0075", "text": "every year in june saturdays", "dsl": "d R w/1 sa M@06"}
 {"id": "taxd0076", "text": "next 5 weekdays", "dsl": "d +1b,+2b,+3b,+4b,+5b"}
 {"id": "taxd0077", "text": "weekends before christmas", "dsl": "d R w/1 sa,su u12-25"}
 {"id": "taxd0078", "text": "mornings last week", "dsl": "d W-1"}
@@ -128,7 +128,7 @@
 {"id": "taxd0127", "text": "order #4471", "dsl": "x"}
 {"id": "taxd0128", "text": "first business day of the quarter", "dsl": "x", "unsure": true}
 {"id": "taxd0129", "text": "mondays every may", "dsl": "d R w/1 mo M@05"}
-{"id": "taxd0130", "text": "saturdays at 4pm since september", "dsl": "dt R w/1 u+0d 16:00 sa sM@09<"}
+{"id": "taxd0130", "text": "saturdays at 4pm since september", "dsl": "dt R w/1 sa u+0d 16:00 sM@09<"}
 {"id": "taxd0131", "text": "dec 1, 2, 3 and 4 at 9am", "dsl": "dt 12-01,12-02,12-03,12-04 09:00"}
 {"id": "taxd0132", "text": "oct 12 13 14 15", "dsl": "x", "unsure": true}
 {"id": "taxd0133", "text": "apartment 15b", "dsl": "x"}

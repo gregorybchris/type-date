@@ -199,7 +199,7 @@ _V2_DURATION = re.compile(
 _V2_DOM = re.compile(r"^\W*(?:on\s+)?(?:the\s+)?\d{1,2}(?:st|nd|rd|th)\W*$", re.I)
 
 
-def policy_flags(row: dict) -> list[str]:
+def policy_flags(row: dict, legacy_v2: bool = True) -> list[str]:
     """Label-policy classes in which the text does not determine the label (see exp-009 note)."""
     t, d = row["text"].lower(), row["dsl"]
     flags = []
@@ -228,8 +228,10 @@ def policy_flags(row: dict) -> list[str]:
         flags.append("every-nth-weekday")
     if _TO_NOON.search(t) and re.search(r"(?<!\?)\b\d{2}:\d{2}>", d):
         flags.append("start-hour-before-noon")
-    if _V2_OPEN.search(t) or _V2_DURATION.search(t) or _V2_DOM.match(row["text"]):
-        flags.append("v2-feature")
+    if legacy_v2 and (_V2_OPEN.search(t) or _V2_DURATION.search(t) or _V2_DOM.match(row["text"])):
+        flags.append(
+            "v2-feature"
+        )  # legacy rows with these phrasings were labeled before DSL v2 existed
     return flags
 
 
