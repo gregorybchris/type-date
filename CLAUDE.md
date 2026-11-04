@@ -64,6 +64,7 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 
 - Tokenizer: do not add a `Lowercase` normalizer. The DSL has uppercase tokens (`R`, `W+1`, `M@10`). Lowercase the input text in code (`norm_in`) instead. This bug cost exp-004.
 - A typer app with one command collapses it into the root command. Add an `@app.callback()` or a second command.
+- Never stall. Do not block on a wait loop longer than about 30 seconds. Start long jobs in the background (nohup scripts or `run_in_background`), do other useful work, and check status with quick non-blocking commands. Long blocking waits made the user cancel a session.
 - Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
 - Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
 - WebGPU with the int8 ONNX model gave 0% accuracy and 1.5 s latency (exp-004). Use fp32 or fp16 for WebGPU.
