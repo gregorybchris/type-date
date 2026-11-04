@@ -1,0 +1,42 @@
+{"id":"n-0094281","text":"evey second weds. 10:40","split":"val","primary_tag":"recurrence-interval","modifier_tags":["abbreviation","typo"],"expected":"dt R w/2 we 10:40","predicted":"x","resolved_match":false}
+{"id":"n-0074814","text":"ydya ","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","spacing","typo"],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"g-0029725","text":"in 7 weeks at 10:30","split":"test_template","primary_tag":"datetime","modifier_tags":[],"expected":"dt +7w 10:30","predicted":"dt +7w 10:30?","resolved_match":false}
+{"id":"g-0005238","text":"next tues @ 11:00","split":"test_template","primary_tag":"datetime","modifier_tags":["abbreviation"],"expected":"dt tu+1 11:00","predicted":"dt tu+1 11?","resolved_match":false}
+{"id":"n-0078400","text":"tocayy","split":"test_template","primary_tag":"relative-date","modifier_tags":["typo","typo-keyboard"],"expected":"d +0d","predicted":"x","resolved_match":false}
+{"id":"p-0011325","text":"between 8:45 in","split":"test_template","primary_tag":"time-range","modifier_tags":["partial-prefix"],"expected":"x","predicted":"t 8:45?","resolved_match":false}
+{"id":"g-0053239","text":"every sunday/thursday/monday at 12:10 until 20/11","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":[],"expected":"dt R w/1 mo,th,su u11-20 12:10","predicted":"dt R w/1 mo,th,su u11-20 12:10?","resolved_match":false}
+{"id":"n-0025913","text":"tmrww","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","spacing","typo"],"expected":"d +1d","predicted":"x","resolved_match":false}
+{"id":"g-0027944","text":"between 12pm and 1:15pm","split":"test_template","primary_tag":"time-range","modifier_tags":[],"expected":"t 12:15>13:15","predicted":"t 12:00>13:15","resolved_match":false}
+{"id":"p-0093785","text":"1 on april.","split":"test_template","primary_tag":"datetime","modifier_tags":["ampm-ambiguous","partial-prefix"],"expected":"t 1?","predicted":"d M@04","resolved_match":false}
+{"id":"n-0092967","text":"yady","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","typo"],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"n-0064832","text":"past turs","split":"test_template","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"expected":"d th-1","predicted":"x","resolved_match":false}
+{"id":"n-0074599","text":"ydat","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","typo-keyboard"],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"g-0027113","text":"between 7:00am and 7am","split":"test_template","primary_tag":"time-range","modifier_tags":[],"expected":"t 07:00>07:30","predicted":"t 07:00>07:00","resolved_match":false}
+{"id":"n-0063393","text":"inadzy","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["spacing","typo-keyboard","word-numbers"],"expected":"d +1d","predicted":"x","resolved_match":false}
+{"id":"n-0064378","text":"jjly7through11th","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["spacing","typo-keyboard"],"expected":"d 07-07>07-11","predicted":"d 07-07","resolved_match":false}
+{"id":"n-0011768","text":"saytosun","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["spacing","typo-keyboard"],"expected":"d sa>su","predicted":"x","resolved_match":false}
+{"id":"n-0087334","text":"thisyezr","split":"test_noise","primary_tag":"period-relative","modifier_tags":["spacing","typo-keyboard"],"expected":"d Y+0","predicted":"x","resolved_match":false}
+{"id":"n-0024497","text":"nectsun","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["abbreviation","spacing","typo-keyboard"],"expected":"d su+1","predicted":"x","resolved_match":false}
+{"id":"n-0023086","text":"11/2408:15until6dec12:30.","split":"test_noise","primary_tag":"datetime-range","modifier_tags":["abbreviation","spacing"],"expected":"dt 11-24 08:15>12-06 12:30","predicted":"t 11?","resolved_match":false}
+{"id":"n-0078589","text":"latsweek","split":"test_noise","primary_tag":"period-relative","modifier_tags":["spacing","typo"],"expected":"d W-1","predicted":"x","resolved_match":false}
+{"id":"n-0061886","text":"27/1007:00","split":"test_noise","primary_tag":"datetime","modifier_tags":["casing","spacing"],"expected":"dt 10-27 07:00","predicted":"x","resolved_match":false}
+{"id":"l-i00718-4","text":"tomorrow 2030","split":"test_llm","primary_tag":"datetime","modifier_tags":[],"expected":"dt +1d 20:30","predicted":"d +1d","resolved_match":false}
+{"id":"l-i00086-4","text":"this mo","split":"test_llm","primary_tag":"period-relative","modifier_tags":[],"expected":"d M+0","predicted":"d mo","resolved_match":false}
+{"id":"l-i00481-1","text":"every day 11 till 11.30","split":"test_llm","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"dt R d/1 11?>11:30?","predicted":"dt R d/1 u11-30 11?","resolved_match":false}
+{"id":"l-i01093-4","text":"every 24 nov at 4 from 11 nov","split":"test_llm","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"expected":"dt R y/1 11-24 4? s11-11","predicted":"x","resolved_match":false}
+{"id":"l-i00921-3","text":"monthly 20th, ends sept 7","split":"test_llm","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"expected":"d R m/1 d20 u09-07","predicted":"d 09-07","resolved_match":false}
+{"id":"l-i00888-2","text":"every mon at 10 till aug 19th","split":"test_llm","primary_tag":"recurrence-weekly","modifier_tags":[],"expected":"dt R w/1 mo u08-19 10:00","predicted":"dt R w/1 mo u08-19 10?","resolved_match":false}
+{"id":"l-i00010-3","text":"ystdy","split":"test_llm","primary_tag":"relative-date","modifier_tags":[],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"l-i01001-3","text":"23 aug 1030-1130","split":"test_llm","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 08-23 10:30>11:30","predicted":"dt 08-23 10:30?>11:30?","resolved_match":false}
+{"id":"l-i00404-0","text":"pres day","split":"test_llm","primary_tag":"named-holiday","modifier_tags":[],"expected":"d mo#3@02","predicted":"x","resolved_match":false}
+{"id":"l-i01169-4","text":"previous wednesday eleven forty","split":"test_llm","primary_tag":"datetime","modifier_tags":[],"expected":"dt we-1 11:40","predicted":"dt we-1 11:40?","resolved_match":false}
+{"id":"l-i00113-3","text":"from 3 till 3.30","split":"test_llm","primary_tag":"time-range","modifier_tags":[],"expected":"t 3?>3:30?","predicted":"d 03-03>03-30","resolved_match":false}
+{"id":"l-i00662-4","text":"july 1 27","split":"test_llm","primary_tag":"basic-date-year","modifier_tags":[],"expected":"d 2027-07-01","predicted":"d 07-01","resolved_match":false}
+{"id":"l-i00939-4","text":"tomorrow from seven to eight","split":"test_llm","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt +1d 07:00>08:00","predicted":"dt +1d 7?>8?","resolved_match":false}
+{"id":"l-i00707-3","text":"weekdays at 2030, 3 days","split":"test_llm","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"dt R d/1 mo,tu,we,th,fr n3 20:30","predicted":"d R d/1 mo,tu,we,th,fr","resolved_match":false}
+{"id":"l-i00712-1","text":"4 daily","split":"test_llm","primary_tag":"recurrence-interval","modifier_tags":[],"expected":"d R d/4","predicted":"t 4?","resolved_match":false}
+{"id":"l-i00010-4","text":"the day before today","split":"test_llm","primary_tag":"relative-date","modifier_tags":[],"expected":"d -1d","predicted":"d -2d","resolved_match":false}
+{"id":"l-i00843-0","text":"columbus dy","split":"test_llm","primary_tag":"named-holiday","modifier_tags":[],"expected":"d mo#2@10","predicted":"x","resolved_match":false}
+{"id":"l-i00086-3","text":"the current month","split":"test_llm","primary_tag":"period-relative","modifier_tags":[],"expected":"d M+0","predicted":"x","resolved_match":false}
+{"id":"l-i00758-4","text":"9:30 - 12","split":"test_llm","primary_tag":"time-range","modifier_tags":[],"expected":"t 9:30?>12:00","predicted":"t 9:30?>12?","resolved_match":true}
+{"id":"l-i00806-4","text":"may (whole month)","split":"test_llm","primary_tag":"month-or-year-only","modifier_tags":[],"expected":"d M@05","predicted":"x","resolved_match":false}

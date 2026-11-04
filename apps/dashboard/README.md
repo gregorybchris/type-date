@@ -1,75 +1,51 @@
 # Dashboard
 
-Dev-only experiment dashboard for type-date. Vite, React 19, TypeScript, Tailwind v4, Radix primitives, Motion (`LazyMotion`), `@number-flow/react`, Sonner, d3 scales.
+Dev-only dashboard for comparing the heuristic engines (chrono-node and heuristic-small, heuristic-full, heuristic-full-2 ... 8). Vite, React 19, TypeScript, Tailwind v4, Radix primitives, Motion (`LazyMotion`), `@number-flow/react`, Sonner, d3 scales.
 
 ## Run
 
 ```
 make dashboard          # or: pnpm --filter @type-date/dashboard dev
-pnpm --filter @type-date/dashboard test        # Vitest: data layer, Pareto, DSL diff
+pnpm --filter @type-date/dashboard test        # Vitest: data layer, eval versions, Pareto, DSL diff
 pnpm --filter @type-date/dashboard typecheck
-pnpm --filter @type-date/dashboard fixtures    # regenerate fixtures/
-pnpm --filter @type-date/dashboard shots       # Playwright screenshots, needs the dev server (SHOTS_DIR to choose output)
+pnpm --filter @type-date/dashboard shots       # Playwright screenshots (BASE_URL, SHOTS_DIR, WIDTHS=390,1440)
 ```
 
 ## Views
 
 | Route | View |
 |---|---|
-| `#/experiments` | Table of runs, progress chart, sparklines |
-| `#/experiments/exp-NNN` | Detail: metrics, tag and split bars, config, bench, delta against a chosen run |
-| `#/pareto` | Scatter with selectable axes. Circles are models, diamonds are baselines (`library`, `heuristic`). Toggle each group |
-| `#/errors/exp-NNN` | Failure table with filters, DSL token diff, resolved dates for a chosen "today", JSONL copy |
-| `#/playground?exp=exp-NNN` | Load a checkpoint and try `@type-date/picker` |
-| `#/data` | Dataset counts and sample browser |
+| `#/experiments` | One row per engine: gzip size, latency, realistic accuracy, resolved accuracy on every full eval version. Coverage matrix below |
+| `#/experiments/exp-NNN` | Detail: metrics, accuracy by split, families (primary tags) and modifiers, delta against another engine |
+| `#/compare` | Grouped bars per split, accuracy by engine generation (line per split), heatmap of engines by split |
+| `#/pareto` | Accuracy against gzip size, p50 or p95 latency. Engines without a latency bench are listed, not plotted |
+| `#/errors/exp-NNN` | Failures of the selected eval version, rate / accuracy / share toggle, DSL token diff, JSONL copy |
+| `#/playground?exp=exp-NNN` | Runs the engine from `@type-date/baselines` in the browser and shows the result in `@type-date/picker` |
+| `#/data` | Eval sets: rows per split and source, row browser |
 
 Cmd/Ctrl+K opens the quick switcher.
 
-Breakdowns (error analysis, experiment detail) use `components/Breakdown.tsx`: a Tag/Modifier/Split switch and an Error rate / Accuracy / Share of errors toggle. The percentage is the headline, "errors of n" is grey, groups under 30 examples get a hatched bar and an `n=` flag, and a dotted line marks the overall rate. Error counts are derived from `metrics.json` (`n * (1 - exact)`), so the breakdown always covers the whole experiment, not the table filters.
+## Eval versions
 
-## Eval versions, families, titles
-
-- The Eval selector in the top bar (experiments, Pareto, detail, errors) picks the version for every metric. Default: the version with the most results, latest on ties. Runs without results for it are greyed with "Not evaluated on X" and left out of charts. Runs with `eval.version` `pre-*` are marked invalid. Deltas and comparisons only use runs scored on the same version.
-- Default version: the latest full version (`e3` over `e2` over `e1`) with at least 3 experiments scored; quick versions (`e3q`) only if no full one qualifies. The selector groups full and quick sets, shows coverage ("7 of 10") and the first sentence of `evals/<v>/manifest.json` `reason` (served at `/api/evals`). A banner on Experiments and Pareto lists experiments missing from the selected version. The store refreshes every 20 s and on tab focus.
-- Realistic accuracy: resolved accuracy on `test_external` and `test_external_hard`, weighted by row count (`lib/evals.ts`). It is the default Pareto Y axis, a column in the table, and the emphasized rows of the detail page's "Accuracy by split".
-- Family chips (heuristic, library, zero-shot, finetune, scratch) filter the table and the Pareto plot. Other `config.model.family` names are mapped by substring.
-- Titles show next to the experiment number; descriptions show in the table (truncated, full text on hover), cards, tooltips and the detail header.
-- Pareto labels are placed greedily; labels that would collide are dropped and the tooltip names the point.
-- Outer loop view and the "Where the time went" card read `timing.json` (see `lib/timing.ts`).
-
-## Mobile
-
-- Below 768 px the sidebar becomes a bottom bar (safe-area padding) and the window fills the screen (`dvh`). 768 to 1023 px uses an icon rail. Tables become stacked cards below 1024 px. Wide tables that remain scroll inside their container, never the page.
-- Chart tooltips work by tap: the first tap on a Pareto point pins its tooltip with an Open button, a second tap on the progress chart opens the run. Hit areas are at least 36 px.
-- `pnpm shots` takes `WIDTHS=360,390,768,1024,1440` and reports overflow. `DASHBOARD_SAMPLE=1 pnpm dev` forces fixtures when `runs/` has real data.
-- Bench entries have a `profile` (`desktop`, `mobile-4x`, `mobile-6x`; missing means `desktop`). The Pareto and detail views have a profile selector. Fixtures include emulated phone profiles for wasm/js entries.
+- The Eval selector in the top bar sets the version for every metric (experiments, compare, Pareto, detail, errors). Default: the latest full version (`e3` over `e2`) with at least 3 engines scored.
+- Each chart title carries an `eval eN` badge. No chart mixes versions. The per-version columns in the experiments table are separate numbers, one per version.
+- Missing results are shown: a dash in the table, a hatched `n/a` in the heatmap, an orange tick in the bar chart, a gap in the lines, a banner and the coverage matrix.
+- Realistic accuracy: resolved accuracy on splits with "external" or "public" in the name, weighted by rows (`lib/evals.ts`).
+- Groups under 30 rows are flagged (hatched bars, `n=`, faded bars, dagger in the heatmap).
 
 ## Data
 
-The Vite plugin (`server/plugin.ts`, logic in `server/data.ts`) serves:
+The Vite plugin (`server/plugin.ts`, logic in `server/data.ts`) reads the repo:
 
-- `GET /api/runs` reads `runs/*/{config,metrics,bench}.json` and `artifacts/<id>/manifest.json`
-- `GET /api/runs/:id/errors?offset&limit&tag&modifier&split&q`
-- `GET /api/datasets`, `GET /api/datasets/:version/samples?offset&limit&split&tag&modifier&source&q`
-- `/artifacts/*` from the repo `artifacts/` directory
+- `GET /api/runs`: `runs/*/{config,metrics,bench}.json`
+- `GET /api/runs/:id/errors?version&offset&limit&tag&modifier&split&q`: `runs/<id>/errors/<version>.jsonl`
+- `GET /api/evals`: `evals/<version>/manifest.json`
+- `GET /api/evals/:version/summary` and `/samples`: rows of `evals/<version>/*.jsonl`
 
-If `runs/` has no experiment, or `data/` has no version, the dashboard reads `fixtures/` instead and shows a "Sample data" badge. The two are decided separately. `fixtures/` is generated by `scripts/make-fixtures.ts` (seeded, synthetic, not real results; 14 runs including 3 baselines).
+## Playground and picker
 
-## Engines and picker
+`PlaygroundView` imports `@type-date/baselines` (the `baselines` registry) and runs `predict` in the page. `src/lib/picker.tsx` is the only import of `@type-date/picker`; Vite aliases it to `packages/picker/src`.
 
-`src/lib/engine.ts` has `getEngine(manifest)`. It imports `@type-date/engines` and calls `createEngine(manifest.engine)` or looks up `engines[manifest.engine]`. If neither exists, or loading fails, it uses `MockEngine` (a few hard-coded phrases, simulated latency) and the Playground says so. `src/lib/picker.tsx` is the only import of `@type-date/picker`; Vite aliases it to `packages/picker/src` so edits show without a rebuild.
+## Mobile
 
-## Dashboard pitfalls
-
-- Grid and flex children need `min-w-0`, or a `min-width` table inside an `overflow-x-auto` wrapper still widens the page on phones. Check with `scroller.scrollWidth - clientWidth`, since `html` has `overflow: hidden` and page-level checks pass anyway.
-- Real `runs/` data hides the fixtures. Use `DASHBOARD_SAMPLE=1` for screenshots.
-- Phone pointer events: hover handlers fire after a tap. Track `pointerType` on pointerdown and ignore `mouseenter` for touch.
-
-- Vite `alias` entries for `@type-date/picker/styles.css` must come before the bare package alias. Use the array form with a regex for the bare name.
-- A global `:focus-visible` rule outside `@layer` beats Tailwind utilities such as `outline-none`. Keep global rules in `@layer base`.
-- Radix Select rejects an empty-string item value. The `Select` wrapper maps `""` to a sentinel for the "All" choice.
-- Do not run `pkill -f vite`. Other packages run Vite too. Find the port owner with `lsof -ti tcp:5173`.
-- Playwright `hover()` on SVG `<g>` fails with "svg intercepts pointer events" when the group's center is empty. Move the mouse to a child circle's bounding box instead.
-- `motion/react` needs `domMax` for `layoutId` (segmented control). With `LazyMotion strict`, use `m.*` everywhere, never `motion.*`.
-- Vite warns that the config imports files without extensions (native config loader). Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` or ignore it.
-- `typescript` 7 is the latest on npm. The repo pins 5.9.3 to match the other packages.
+Below 768 px the sidebar is a bottom bar. Tables become cards below 1024 px. Wide charts scroll inside their card. Chart details open on tap (a group, a column, or a cell), with a close button.

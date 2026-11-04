@@ -1,4 +1,4 @@
-// Score a non-model baseline engine and write runs/exp-NNN/{config,metrics}.json and errors.jsonl.
+// Score a baseline engine on one eval version and write runs/exp-NNN/{config,metrics}.json and errors/<version>.jsonl.
 // Usage: pnpm --filter @type-date/baselines eval --engine chrono --exp 1 --title "chrono-node baseline"
 // Metrics follow training/src/typedate/train.py `evaluate` (exact, resolved, by_split, by_tag, by_modifier).
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -215,9 +215,11 @@ async function main() {
   for (const [s, v] of Object.entries(bySplit)) console.log(`  ${s.padEnd(14)} n=${String(v.n).padStart(5)} exact ${v.exact.toFixed(4)} resolved ${v.resolved.toFixed(4)}`);
   if (args["dry-run"]) return;
   const dir = join(ROOT, "runs", expId);
-  mkdirSync(dir, { recursive: true });
+  mkdirSync(join(dir, "errors"), { recursive: true });
+  // Errors are kept per eval version, so every eval has its own failure list.
+  writeFileSync(join(dir, "errors", `${args["eval-version"]}.jsonl`), errors.map((e) => JSON.stringify(e)).join("\n") + (errors.length ? "\n" : ""));
   if (args["no-primary"]) {
-    // Re-score on another eval version: only add metrics.evals[version]. Primary eval, errors and config stay.
+    // Re-score on another eval version: only add metrics.evals[version]. Primary eval and config stay.
     const mp = join(dir, "metrics.json");
     if (!existsSync(mp)) throw new Error(`${mp} missing: run the primary eval first`);
     const cur = JSON.parse(readFileSync(mp, "utf8"));
@@ -241,6 +243,5 @@ async function main() {
     buckets: Object.fromEntries(Object.entries(b).map(([k, v]) => [`${stage}.${k}`, v])),
   };
   writeFileSync(join(dir, "timing.json"), JSON.stringify(timing, null, 2));
-  writeFileSync(join(dir, "errors.jsonl"), errors.map((e) => JSON.stringify(e)).join("\n") + (errors.length ? "\n" : ""));
 }
 main();

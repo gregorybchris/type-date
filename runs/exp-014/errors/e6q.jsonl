@@ -1,0 +1,181 @@
+{"id":"n-0074814","text":"ydya ","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","spacing","typo"],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"n-0078400","text":"tocayy","split":"test_template","primary_tag":"relative-date","modifier_tags":["typo","typo-keyboard"],"expected":"d +0d","predicted":"x","resolved_match":false}
+{"id":"p-0011325","text":"between 8:45 in","split":"test_template","primary_tag":"time-range","modifier_tags":["partial-prefix"],"expected":"x","predicted":"t 8:45?","resolved_match":false}
+{"id":"n-0025913","text":"tmrww","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","spacing","typo"],"expected":"d +1d","predicted":"x","resolved_match":false}
+{"id":"p-0093785","text":"1 on april.","split":"test_template","primary_tag":"datetime","modifier_tags":["ampm-ambiguous","partial-prefix"],"expected":"t 1?","predicted":"d M@04","resolved_match":false}
+{"id":"g-0027944","text":"between 12pm and 1:15pm","split":"test_template","primary_tag":"time-range","modifier_tags":[],"expected":"t 12:15>13:15","predicted":"t 12:00>13:15","resolved_match":false}
+{"id":"n-0092967","text":"yady","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","typo"],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"g-0027113","text":"between 7:00am and 7am","split":"test_template","primary_tag":"time-range","modifier_tags":[],"expected":"t 07:00>07:30","predicted":"t 07:00>07:00","resolved_match":false}
+{"id":"n-0064832","text":"past turs","split":"test_template","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"expected":"d th-1","predicted":"x","resolved_match":false}
+{"id":"n-0074599","text":"ydat","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","typo-keyboard"],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"n-0063393","text":"inadzy","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["spacing","typo-keyboard","word-numbers"],"expected":"d +1d","predicted":"x","resolved_match":false}
+{"id":"n-0064378","text":"jjly7through11th","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["spacing","typo-keyboard"],"expected":"d 07-07>07-11","predicted":"d 07-07","resolved_match":false}
+{"id":"n-0011768","text":"saytosun","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["spacing","typo-keyboard"],"expected":"d sa>su","predicted":"x","resolved_match":false}
+{"id":"n-0087334","text":"thisyezr","split":"test_noise","primary_tag":"period-relative","modifier_tags":["spacing","typo-keyboard"],"expected":"d Y+0","predicted":"x","resolved_match":false}
+{"id":"n-0024497","text":"nectsun","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["abbreviation","spacing","typo-keyboard"],"expected":"d su+1","predicted":"x","resolved_match":false}
+{"id":"n-0078589","text":"latsweek","split":"test_noise","primary_tag":"period-relative","modifier_tags":["spacing","typo"],"expected":"d W-1","predicted":"x","resolved_match":false}
+{"id":"l-i00086-4","text":"this mo","split":"test_llm","primary_tag":"period-relative","modifier_tags":[],"expected":"d M+0","predicted":"d mo","resolved_match":false}
+{"id":"l-i01093-4","text":"every 24 nov at 4 from 11 nov","split":"test_llm","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"expected":"dt R y/1 11-24 4? s11-11","predicted":"x","resolved_match":false}
+{"id":"l-i00010-3","text":"ystdy","split":"test_llm","primary_tag":"relative-date","modifier_tags":[],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"l-i00404-0","text":"pres day","split":"test_llm","primary_tag":"named-holiday","modifier_tags":[],"expected":"d mo#3@02","predicted":"x","resolved_match":false}
+{"id":"l-i00758-4","text":"9:30 - 12","split":"test_llm","primary_tag":"time-range","modifier_tags":[],"expected":"t 9:30?>12:00","predicted":"t 9:30?>12?","resolved_match":true}
+{"id":"l-i00712-1","text":"4 daily","split":"test_llm","primary_tag":"recurrence-interval","modifier_tags":[],"expected":"d R d/4","predicted":"t 4?","resolved_match":false}
+{"id":"l-i00010-4","text":"the day before today","split":"test_llm","primary_tag":"relative-date","modifier_tags":[],"expected":"d -1d","predicted":"d -2d","resolved_match":false}
+{"id":"l-i00843-0","text":"columbus dy","split":"test_llm","primary_tag":"named-holiday","modifier_tags":[],"expected":"d mo#2@10","predicted":"x","resolved_match":false}
+{"id":"l-i00086-3","text":"the current month","split":"test_llm","primary_tag":"period-relative","modifier_tags":[],"expected":"d M+0","predicted":"x","resolved_match":false}
+{"id":"l-i00806-4","text":"may (whole month)","split":"test_llm","primary_tag":"month-or-year-only","modifier_tags":[],"expected":"d M@05","predicted":"x","resolved_match":false}
+{"id":"l-i00956-4","text":"9 everyday","split":"test_llm","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"dt R d/1 9?","predicted":"t 9?","resolved_match":false}
+{"id":"e-x0237","text":"next mon-fri","split":"test_external","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d mo+1>fr+1","predicted":"d mo+1","resolved_match":false}
+{"id":"e-x0110","text":"the week after next","split":"test_external","primary_tag":"period-relative","modifier_tags":[],"expected":"d W+2","predicted":"d W+1","resolved_match":false}
+{"id":"e-x0198","text":"every weekend","split":"test_external","primary_tag":"recurrence","modifier_tags":[],"expected":"d R w/1 sa,su","predicted":"x","resolved_match":false}
+{"id":"e-x0164","text":"bout 4","split":"test_external","primary_tag":"time-only","modifier_tags":[],"expected":"t 4?","predicted":"x","resolved_match":false}
+{"id":"e-x0389","text":"2026/12/04 15:00","split":"test_external","primary_tag":"datetime","modifier_tags":[],"expected":"dt 2026-12-04 15:00","predicted":"d Y@2026","resolved_match":false}
+{"id":"r-h0965","text":"Contractor will arrive Wednesday morning, Sept 16, between 8 and 10","split":"test_external_hard","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 09-16 08:00>10:00","predicted":"dt 09-16 8?>10?","resolved_match":false}
+{"id":"r-h0502","text":"all of next week","split":"test_external_hard","primary_tag":"period-relative","modifier_tags":[],"expected":"d W+1","predicted":"x","resolved_match":false}
+{"id":"r-h0056","text":"thru fri","split":"test_external_hard","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"d fr","resolved_match":false}
+{"id":"r-h1090","text":"first half of march","split":"test_external_hard","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 03-01>03-15","predicted":"x","resolved_match":false}
+{"id":"r-h0745","text":"four forty-five a.m.","split":"test_external_hard","primary_tag":"time-only","modifier_tags":[],"expected":"t 04:45","predicted":"t 04:40>05:00","resolved_match":false}
+{"id":"r-h0976","text":"Shared calendar: Maintenance crew on site Thu Dec 10 and Fri Dec 11, 7 AM - 3 PM","split":"test_external_hard","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 12-10 07:00>12-11 15:00","predicted":"dt 12-11 07:00>15:00","resolved_match":false}
+{"id":"r-h0633","text":"may day","split":"test_external_hard","primary_tag":"basic-date","modifier_tags":[],"expected":"d 05-01","predicted":"d M@05","resolved_match":false}
+{"id":"r-h0578","text":"in a fortnight's time","split":"test_external_hard","primary_tag":"relative-offset","modifier_tags":[],"expected":"d +2w","predicted":"x","resolved_match":false}
+{"id":"r-h0140","text":"Chemistry lab, Section 4: Mondays 1:00 PM - 3:50 PM, Hall 210","split":"test_external_hard","primary_tag":"recurrence","modifier_tags":[],"expected":"dt R w/1 mo 13:00>15:50","predicted":"dt R w/1 mo n4 13:00>15:50","resolved_match":false}
+{"id":"r-h0608","text":"2nite","split":"test_external_hard","primary_tag":"relative-offset","modifier_tags":[],"expected":"d +0d","predicted":"t 02:00","resolved_match":false}
+{"id":"r-p0368","text":"2014 12 28","split":"test_public","primary_tag":"basic-date","modifier_tags":[],"expected":"d 2014-12-28","predicted":"dt Y@2014 12?","resolved_match":false}
+{"id":"r-p0384","text":"August 32","split":"test_public","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"d M@08","resolved_match":false}
+{"id":"r-p0341","text":"3 week later","split":"test_public","primary_tag":"relative-offset","modifier_tags":[],"expected":"d +3w","predicted":"x","resolved_match":false}
+{"id":"r-p0155","text":"05/31/2024-14:15","split":"test_public","primary_tag":"datetime","modifier_tags":[],"expected":"dt 2024-05-31 14:15","predicted":"d 2024-05-31","resolved_match":false}
+{"id":"r-p0371","text":"May 99, 2021","split":"test_public","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"d M@05","resolved_match":false}
+{"id":"r-p0019","text":"2 days later","split":"test_public","primary_tag":"relative-offset","modifier_tags":[],"expected":"d +2d","predicted":"x","resolved_match":false}
+{"id":"r-p0042","text":"2014/22/29","split":"test_public","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"d Y@2014","resolved_match":false}
+{"id":"r-p0211","text":"The Deadline is 2012/aug/10","split":"test_public","primary_tag":"basic-date","modifier_tags":[],"expected":"d 2012-08-10","predicted":"d M@08","resolved_match":false}
+{"id":"r-p0246","text":"22-23 Feb at 7pm","split":"test_public","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 02-22 19:00>02-23 19:00","predicted":"dt 02-23 22:00>19:00","resolved_match":false}
+{"id":"r-q0147","text":"1w","split":"test_public2","primary_tag":"relative-offset","modifier_tags":[],"expected":"d +1w","predicted":"x","resolved_match":false}
+{"id":"r-q0071","text":"11:00:00 A.M.","split":"test_public2","primary_tag":"time-only","modifier_tags":[],"expected":"t 11:00","predicted":"t 11?","resolved_match":false}
+{"id":"r-q0038","text":"- 1 dy","split":"test_public2","primary_tag":"relative-offset","modifier_tags":[],"expected":"d -1d","predicted":"x","resolved_match":false}
+{"id":"r-v2x0153","text":"payday the 15th and 30th","split":"test_v2","primary_tag":"date-list","modifier_tags":[],"expected":"d D@15,D@30","predicted":"x","resolved_match":false}
+{"id":"r-v2x0099","text":"rent is due the 1st","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@01","predicted":"x","resolved_match":false}
+{"id":"r-v2x0230","text":"2pm for 2h","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 14:00>+2h","predicted":"t 14:00","resolved_match":false}
+{"id":"r-v2x0124","text":"uh before the 6th","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@06","predicted":"x","resolved_match":false}
+{"id":"r-v2x0095","text":"every 15 th","split":"test_v2","primary_tag":"recurrence","modifier_tags":[],"expected":"d R m/1 d15","predicted":"x","resolved_match":false}
+{"id":"r-v2x0182","text":"Hi all, timesheets are due the 15th and the 30th","split":"test_v2","primary_tag":"date-list","modifier_tags":[],"expected":"d D@15,D@30","predicted":"x","resolved_match":false}
+{"id":"r-v2x0085","text":"on the 30th okay","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@30","predicted":"x","resolved_match":false}
+{"id":"r-v2x0222","text":"five pm for thirty minutes","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 17:00>+30m","predicted":"t 17:00","resolved_match":false}
+{"id":"r-v2x0129","text":"only before noon","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t >12:00","predicted":"t 12:00","resolved_match":false}
+{"id":"r-v2x0115","text":"wedding is the 26th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@26","predicted":"x","resolved_match":false}
+{"id":"r-v2x0145","text":"quick call tomorrow at 4 for 15 mins about the budget","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt +1d 4?>+15m","predicted":"dt +1d 4?","resolved_match":false}
+{"id":"r-v2x0069","text":"untill dec 1","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >12-01","predicted":"d 12-01","resolved_match":false}
+{"id":"r-v2x0003","text":"im free the 21st","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@21","predicted":"x","resolved_match":false}
+{"id":"r-v2x0234","text":"oct 5 2pm for 3 hours","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt 10-05 14:00>+3h","predicted":"dt 10-05 14:00","resolved_match":false}
+{"id":"r-v2x0240","text":"startng nov 15","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d 11-15>","predicted":"d 11-15","resolved_match":false}
+{"id":"r-v2x0007","text":"the 15th pls","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@15","predicted":"x","resolved_match":false}
+{"id":"r-v2x0146","text":"noon for an hour","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 12:00>+1h","predicted":"t 12:00","resolved_match":false}
+{"id":"r-v2x0079","text":"Insurance premium of $212 is due by the 5th, autopay is off","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@05","predicted":"x","resolved_match":false}
+{"id":"r-v2x0235","text":"Renewal notice: policy ends the 31st, renew now","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@31","predicted":"x","resolved_match":false}
+{"id":"r-v2x0116","text":"saturday at noon for ninety minutes","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt sa 12:00>+90m","predicted":"dt sa 12:00","resolved_match":false}
+{"id":"r-v2x0244","text":"the 2 of us","split":"test_v2","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"t 2?","resolved_match":false}
+{"id":"r-v2x0136","text":"until the 12th","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@12","predicted":"x","resolved_match":false}
+{"id":"r-v2x0022","text":"can we do the 17th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@17","predicted":"x","resolved_match":false}
+{"id":"r-v2x0162","text":"dentist 2pm for 1 hr","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 14:00>+1h","predicted":"t 14:00","resolved_match":false}
+{"id":"r-v2x0121","text":"till the 28th","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@28","predicted":"x","resolved_match":false}
+{"id":"r-v2x0125","text":"bill due 28th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@28","predicted":"x","resolved_match":false}
+{"id":"r-v2x0159","text":"physio 9am (30 mins) monday","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt mo 09:00>+30m","predicted":"dt mo 09:00","resolved_match":false}
+{"id":"r-v2x0031","text":"by nov 30","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >11-30","predicted":"d 11-30","resolved_match":false}
+{"id":"r-v2x0076","text":"Hi, just a reminder your payment is due on the 21st","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@21","predicted":"x","resolved_match":false}
+{"id":"r-v2x0164","text":"at noon for 1 hour, lunch and learn","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 12:00>+1h","predicted":"t 12:00","resolved_match":false}
+{"id":"r-v2x0032","text":"by end of day friday","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >fr","predicted":"d fr","resolved_match":false}
+{"id":"r-v2x0175","text":"Hey, rent's due the 1st, venmo me","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@01","predicted":"x","resolved_match":false}
+{"id":"r-v2x0050","text":"gym 6am for an hour","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 06:00>+1h","predicted":"t 06:00","resolved_match":false}
+{"id":"r-v2x0172","text":"not before 10am please","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 10:00>","predicted":"t 10:00","resolved_match":false}
+{"id":"r-v2x0087","text":"Gentle reminder, tuition payment due the 20th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@20","predicted":"x","resolved_match":false}
+{"id":"r-v2x0036","text":"7pm for 3 hours","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 19:00>+3h","predicted":"t 19:00","resolved_match":false}
+{"id":"r-v2x0141","text":"anytime aftr 11","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 11?>","predicted":"x","resolved_match":false}
+{"id":"r-v2x0249","text":"remind me on the 28th to pay rent","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@28","predicted":"x","resolved_match":false}
+{"id":"r-v2x0096","text":"Planned outage the 12th, 1am for 4 hours","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt D@12 01:00>+4h","predicted":"t 01:00","resolved_match":false}
+{"id":"r-v2x0053","text":"from nov 5 onward","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d 11-05>","predicted":"d 11-05","resolved_match":false}
+{"id":"r-v2x0158","text":"Court date is the 19th at 9am","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"dt D@19 09:00","predicted":"t 09:00","resolved_match":false}
+{"id":"r-v2x0024","text":"sat 10am for 3 hours","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt sa 10:00>+3h","predicted":"dt sa 10:00","resolved_match":false}
+{"id":"r-v2x0004","text":"from the 10th on","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d D@10>","predicted":"x","resolved_match":false}
+{"id":"r-v2x0041","text":"lets do the 26th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@26","predicted":"x","resolved_match":false}
+{"id":"r-v2x0246","text":"interview tmrw 2pm for 45 minutes","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt +1d 14:00>+45m","predicted":"dt +1d 14:00","resolved_match":false}
+{"id":"r-v2x0019","text":"before the 3rd","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@03","predicted":"x","resolved_match":false}
+{"id":"r-v2x0008","text":"due the 14th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@14","predicted":"x","resolved_match":false}
+{"id":"r-v2x0093","text":"brunch sun 11 1.5h","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt su 11?>+90m","predicted":"d 01-05","resolved_match":false}
+{"id":"r-v2x0090","text":"free after 4:30 any day this week","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 4:30?>","predicted":"dt W+0 4:30?","resolved_match":false}
+{"id":"r-v2x0193","text":"remind me the 1st about rent","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@01","predicted":"x","resolved_match":false}
+{"id":"r-v2x0108","text":"Your haircut is wed 5pm for 45 minutes, see you","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt we 17:00>+45m","predicted":"dt we 17:00","resolved_match":false}
+{"id":"r-v2x0012","text":"by the twenty eighth","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@28","predicted":"x","resolved_match":false}
+{"id":"r-v2x0046","text":"dentist on the 5th at 9am","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"dt D@05 09:00","predicted":"t 09:00","resolved_match":false}
+{"id":"r-v2x0039","text":"Therapy session tomorrow 5pm (50 min), see you soon","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt +1d 17:00>+50m","predicted":"dt +1d 17:00","resolved_match":false}
+{"id":"r-v2x0155","text":"after 7pm on nov 8","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"dt 11-08 19:00>","predicted":"dt 11-08 19:00","resolved_match":false}
+{"id":"r-v2x0047","text":"FYI, rent is due the 1st and late fees start the 6th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@01","predicted":"x","resolved_match":false}
+{"id":"r-v2x0029","text":"Booking confirmed: haircut on the 9th at 2pm, 45 min","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt D@09 14:00>+45m","predicted":"t 14:00","resolved_match":false}
+{"id":"r-v2x0083","text":"through the 20th","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >D@20","predicted":"x","resolved_match":false}
+{"id":"r-v2x0101","text":"mom's birthday is on the 24th","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@24","predicted":"x","resolved_match":false}
+{"id":"r-v2x0013","text":"lunch twelve thirty one hour","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 12:30?>+1h","predicted":"t 12:30?","resolved_match":false}
+{"id":"r-taxx0050","text":"4 weeks after sept 8","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 09-08~+4w","predicted":"dt W+1 4?","resolved_match":false}
+{"id":"r-taxx0218","text":"during the past year","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -1y>+0d","predicted":"d Y-1","resolved_match":false}
+{"id":"r-taxx0054","text":"next working day","split":"test_tax","primary_tag":"business-day","modifier_tags":[],"expected":"d +1b","predicted":"x","resolved_match":false}
+{"id":"r-taxx0330","text":"show me last 3 sundays please","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d su-1,su-2,su-3","predicted":"x","resolved_match":false}
+{"id":"r-taxx0204","text":"next 6 months","split":"test_tax","primary_tag":"duration","modifier_tags":[],"expected":"d +0d>+6m","predicted":"x","resolved_match":false}
+{"id":"r-taxx0363","text":"q2","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q@2","predicted":"x","resolved_match":false}
+{"id":"r-taxx0148","text":"every monday in 2027","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 mo uY@2027 sY@2027","predicted":"d R w/1 mo","resolved_match":false}
+{"id":"r-taxx0133","text":"tuesdays every october","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R w/1 tu M@10","predicted":"d R w/1 tu sM@10","resolved_match":false}
+{"id":"r-taxx0333","text":"3 business days from 11/5","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 11-05~+3b","predicted":"t 3?","resolved_match":false}
+{"id":"r-taxx0112","text":"next biz day","split":"test_tax","primary_tag":"business-day","modifier_tags":[],"expected":"d +1b","predicted":"x","resolved_match":false}
+{"id":"r-taxx0000","text":"the lst 3 fridays","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d fr-1,fr-2,fr-3","predicted":"x","resolved_match":false}
+{"id":"r-taxx0139","text":"week after next","split":"test_tax","primary_tag":"period-relative","modifier_tags":[],"expected":"d W+2","predicted":"d W+1","resolved_match":false}
+{"id":"r-taxx0326","text":"this quarter","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q+0","predicted":"x","resolved_match":false}
+{"id":"r-taxx0217","text":"weekdays at 9am but not wednesday","split":"test_tax","primary_tag":"recurrence","modifier_tags":[],"expected":"dt R d/1 mo,tu,th,fr 09:00","predicted":"dt R d/1 mo,tu,we,th,fr 09:00","resolved_match":false}
+{"id":"r-taxx0049","text":"every day over the past 3 months","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 u+0d s-3m","predicted":"d R d/1","resolved_match":false}
+{"id":"r-taxx0310","text":"weekdays in september every year","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R d/1 mo,tu,we,th,fr M@09","predicted":"d R d/1 mo,tu,we,th,fr u09-30 s09-01","resolved_match":false}
+{"id":"r-taxx0134","text":"the day after labor day","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d mo#1@09~+1d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0274","text":"the next 8 weeks","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d +0d>+8w","predicted":"x","resolved_match":false}
+{"id":"r-taxx0343","text":"next business day","split":"test_tax","primary_tag":"business-day","modifier_tags":[],"expected":"d +1b","predicted":"x","resolved_match":false}
+{"id":"r-taxx0085","text":"next 9 mondays","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d mo+1,mo+2,mo+3,mo+4,mo+5,mo+6,mo+7,mo+8,mo+9","predicted":"x","resolved_match":false}
+{"id":"r-taxx0362","text":"next 4 quarters","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q+1>Q+4","predicted":"x","resolved_match":false}
+{"id":"r-taxx0021","text":"business days from nov 2 to nov 20","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 mo,tu,we,th,fr u11-20 s11-02","predicted":"d 11-02>11-20","resolved_match":false}
+{"id":"r-taxx0068","text":"tth 8a every september","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"dt R w/1 tu,th M@09 08:00","predicted":"dt M@09 08:00","resolved_match":false}
+{"id":"r-taxx0055","text":"20 business days from 1 feb","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 02-01~+20b","predicted":"x","resolved_match":false}
+{"id":"r-taxx0225","text":"hey can you pull the last 30 days","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -30d>+0d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0045","text":"next 4 thursdays","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d th+1,th+2,th+3,th+4","predicted":"x","resolved_match":false}
+{"id":"r-taxx0038","text":"weekend warrior","split":"test_tax","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"d sa>su","resolved_match":false}
+{"id":"r-taxx0124","text":"last quarter","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q-1","predicted":"x","resolved_match":false}
+{"id":"r-taxx0142","text":"weekdays except mondays","split":"test_tax","primary_tag":"recurrence","modifier_tags":[],"expected":"d R d/1 tu,we,th,fr","predicted":"d R d/1 tu,we,th,fr,sa,su","resolved_match":false}
+{"id":"r-taxx0254","text":"all my weekdays in the last 4 weeks","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 mo,tu,we,th,fr u+0d s-4w","predicted":"d R d/1 mo,tu,we,th,fr","resolved_match":false}
+{"id":"r-taxx0354","text":"saturdays in every december","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R w/1 sa M@12","predicted":"d R w/1 sa sM@12","resolved_match":false}
+{"id":"r-taxx0092","text":"3 days after next monday","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d mo+1~+3d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0143","text":"trailing 12 months","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -12m>+0d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0117","text":"the 15th and 30th","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d D@15,D@30","predicted":"x","resolved_match":false}
+{"id":"r-taxx0022","text":"q3 invoices","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q@3","predicted":"x","resolved_match":false}
+{"id":"r-taxx0216","text":"mwf for 6 weeks","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 mo,we,fr u+6w s+0d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0385","text":"fridays every july yearly","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R w/1 fr M@07","predicted":"d R w/1 fr sM@07","resolved_match":false}
+{"id":"r-taxx0340","text":"one day after fri oct 9","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 10-09~+1d","predicted":"d 10-10","resolved_match":true}
+{"id":"r-taxx0259","text":"prior 12 months","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -12m>+0d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0334","text":"last 4 tues","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d tu-1,tu-2,tu-3,tu-4","predicted":"x","resolved_match":false}
+{"id":"r-taxx0384","text":"2nd quarter","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q@2","predicted":"x","resolved_match":false}
+{"id":"r-taxx0372","text":"spin class tth 6pm","split":"test_tax","primary_tag":"recurrence","modifier_tags":[],"expected":"dt R w/1 tu,th 18:00","predicted":"t 18:00","resolved_match":false}
+{"id":"r-taxx0221","text":"weekends next month","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 sa,su uM+1 sM+1","predicted":"d R w/1 sa,su","resolved_match":false}
+{"id":"r-taxx0019","text":"every year in july on weekdays","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R d/1 mo,tu,we,th,fr M@07","predicted":"x","resolved_match":false}
+{"id":"r-taxx0307","text":"2 business days before nov 15","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 11-15~-2b","predicted":"t 2?","resolved_match":false}
+{"id":"r-taxx0238","text":"previous 6 days","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -6d>+0d","predicted":"x","resolved_match":false}
+{"id":"r-taxx0025","text":"jul 10 and 24","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d 07-10,07-24","predicted":"d 07-10>07-24","resolved_match":false}
+{"id":"r-taxx0339","text":"previous quarter","split":"test_tax","primary_tag":"quarter","modifier_tags":[],"expected":"d Q-1","predicted":"x","resolved_match":false}
+{"id":"r-taxx0072","text":"every day over the past 10 days","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 u+0d s-10d","predicted":"d R d/1","resolved_match":false}
+{"id":"r-taxx0360","text":"weekdays every august from 9 to 5","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"dt R d/1 mo,tu,we,th,fr M@08 9?>5?","predicted":"dt R d/1 mo,tu,we,th,fr 9?>5? sM@08","resolved_match":false}
+{"id":"r-taxx0076","text":"the first business day after the 15th","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d D@15~+1b","predicted":"x","resolved_match":false}
+{"id":"r-taxx0070","text":"sales tax due jan 20, apr 20, jul 20, oct 20","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d 01-20,04-20,07-20,10-20","predicted":"dt 04-20 20:00>10-20 20:00","resolved_match":false}
+{"id":"r-taxx0159","text":"schedule: first and third tuesday of every month","split":"test_tax","primary_tag":"recurrence","modifier_tags":[],"expected":"d R m/1 tu#1,tu#3","predicted":"d R m/1 tu#3","resolved_match":false}
+{"id":"r-taxx0287","text":"weekends in the month of july","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 sa,su uM@07 sM@07","predicted":"d R w/1 sa,su","resolved_match":false}
+{"id":"r-taxx0361","text":"sat and sun every june","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R w/1 sa,su M@06","predicted":"d R w/1 sa,su sM@06","resolved_match":false}
+{"id":"r-taxx0267","text":"10 days before the hearing on nov 18","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 11-18~-10d","predicted":"d 11-08","resolved_match":true}
+{"id":"r-taxx0365","text":"dates for the next 3 weeks","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d +0d>+3w","predicted":"x","resolved_match":false}
+{"id":"r-taxx0359","text":"the 3rd, 10th, 17th and 24th","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d D@03,D@10,D@17,D@24","predicted":"x","resolved_match":false}
+{"id":"r-taxx0125","text":"weekdays this month","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 mo,tu,we,th,fr uM+0 sM+0","predicted":"d R d/1 mo,tu,we,th,fr","resolved_match":false}
+{"id":"r-taxx0240","text":"fridays every august","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R w/1 fr M@08","predicted":"d R w/1 fr sM@08","resolved_match":false}
+{"id":"r-taxx0165","text":"6 days after jan 2","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 01-02~+6d","predicted":"d 01-08","resolved_match":true}
+{"id":"r-taxx0154","text":"rest of the week","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d +0d>W+0","predicted":"x","resolved_match":false}
+{"id":"r-taxx0397","text":"july 1, 2, 3 and 4","split":"test_tax","primary_tag":"date-list","modifier_tags":[],"expected":"d 07-01,07-02,07-03,07-04","predicted":"dt 07-01 2?","resolved_match":false}
+{"id":"r-taxx0341","text":"fridays for the next 7 weeks","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 fr u+7w s+0d","predicted":"d R w/1 fr n7","resolved_match":false}
+{"id":"r-taxx0040","text":"calving season weekdays every march","split":"test_tax","primary_tag":"recurrence-month-filter","modifier_tags":[],"expected":"d R d/1 mo,tu,we,th,fr M@03","predicted":"d R d/1 mo,tu,we,th,fr sM@03","resolved_match":false}
+{"id":"r-taxx0029","text":"setup day is 2 days before aug 20","split":"test_tax","primary_tag":"anchored-offset","modifier_tags":[],"expected":"d 08-20~-2d","predicted":"d 08-18","resolved_match":true}
+{"id":"r-taxx0375","text":"for the next 14 days","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d +0d>+14d","predicted":"x","resolved_match":false}

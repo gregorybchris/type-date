@@ -8,7 +8,6 @@
     "build": "vite build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "fixtures": "tsx scripts/make-fixtures.ts",
     "shots": "tsx scripts/screenshots.ts"
   },
   "dependencies": {
@@ -24,11 +23,9 @@
     "@radix-ui/react-tooltip": "1.4.1",
     "@type-date/baselines": "workspace:*",
     "@type-date/core": "workspace:*",
-    "@type-date/engines": "workspace:*",
     "@type-date/picker": "workspace:*",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
-    "d3-array": "3.2.5",
     "d3-scale": "4.0.3",
     "d3-shape": "3.2.1",
     "lucide-react": "1.67.0",
@@ -40,7 +37,6 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.4",
-    "@types/d3-array": "3.2.2",
     "@types/d3-scale": "4.0.9",
     "@types/d3-shape": "3.2.0",
     "@types/node": "22.20.5",

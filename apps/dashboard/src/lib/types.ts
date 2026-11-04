@@ -4,16 +4,13 @@ export interface RunConfig {
   id: string;
   number: number;
   title: string;
-  /** One or two sentences: what the experiment is and why. */
+  /** One or two sentences: what the engine is and what changed. */
   description?: string;
   created: string;
-  dataset: string;
-  format: string;
   notes?: string;
   parent: string | null;
-  model: { family: string; params: number; [k: string]: unknown };
-  train: Record<string, unknown>;
-  export?: { format?: string; quant?: string };
+  /** `family` is "library" (chrono-node) or "heuristic". `engine` is the id in @type-date/baselines. */
+  model: { family: string; engine?: string };
 }
 
 export interface TagScore {
@@ -36,55 +33,22 @@ export interface RunMetrics {
   eval: EvalBlock;
   /** Re-scores on other eval versions, keyed by version. */
   evals?: Record<string, EvalBlock>;
-  model: { params: number; size_bytes: number; avg_output_tokens?: number };
-  train?: { seconds?: number; steps?: number; final_loss?: number };
+  /** `size_bytes` is the gzipped source size. */
+  model: { size_bytes: number; size_bytes_minified?: number; size_bytes_lazy?: number };
 }
 
 export interface BenchEntry {
   engine: string;
-  backend: string;
-  browser?: string;
-  /** "desktop" when missing. */
+  /** "desktop" when missing. Only desktop entries are used. */
   profile?: string;
-  load_ms: number;
-  cold_first_ms: number;
   latency_ms: { p50: number; p95: number; p99: number };
-  tokens_per_s?: number;
-  memory_mb: number;
-  download_bytes: number;
   n: number;
-  browser_accuracy?: number;
-}
-
-export interface Manifest {
-  experiment: string;
-  engine: string;
-  quant?: string;
-  files: Record<string, string>;
-  config: Record<string, number | string>;
-}
-
-export interface StageTiming {
-  total_s: number;
-  stages?: { started_at?: string; finished_at?: string };
-  buckets: Record<string, number>;
-  unaccounted_s?: number;
-  train_profile?: { steps: number; step_ms: number; samples_per_s: number };
-  [k: string]: unknown;
-}
-
-export interface Timing {
-  total_s: number;
-  stages: Record<string, StageTiming>;
-  buckets?: Record<string, number>;
 }
 
 export interface Run {
-  timing?: Timing | null;
   config: RunConfig;
   metrics: RunMetrics;
   bench: BenchEntry[];
-  manifest: Manifest | null;
 }
 
 export interface EvalManifest {
@@ -95,16 +59,14 @@ export interface EvalManifest {
   subset_of?: string | null;
   added_splits?: string[];
   /** Rows per split. */
-  files?: Record<string, { n: number }>;
+  files?: Record<string, { n: number; sha256?: string }>;
 }
 
 export interface EvalsResponse {
-  sample: boolean;
   evals: EvalManifest[];
 }
 
 export interface RunsResponse {
-  sample: boolean;
   runs: Run[];
 }
 
@@ -116,6 +78,8 @@ export interface ErrorRow {
   modifier_tags: string[];
   expected: string;
   predicted: string;
+  /** True when the predicted DSL resolves to the same dates as the expected one. */
+  resolved_match?: boolean;
 }
 
 export interface Facets {
@@ -132,6 +96,8 @@ export interface ErrorsResponse {
 }
 
 export interface ErrorQuery {
+  /** Eval version whose failures to read: runs/exp-NNN/errors/<version>.jsonl. */
+  version?: string;
   offset?: number;
   limit?: number;
   tag?: string;
@@ -140,17 +106,14 @@ export interface ErrorQuery {
   q?: string;
 }
 
-export interface DatasetMeta {
-  version: string;
-  created: string;
-  counts: Record<string, number>;
-  by_tag: Record<string, Record<string, number>>;
-  notes?: string;
+export interface EvalSplitSummary {
+  n: number;
+  sources: Record<string, number>;
 }
 
-export interface DatasetsResponse {
-  sample: boolean;
-  datasets: DatasetMeta[];
+export interface EvalSummary {
+  version: string;
+  splits: Record<string, EvalSplitSummary>;
 }
 
 export interface Sample {
@@ -178,5 +141,5 @@ export interface SamplesResponse {
   total: number;
   offset: number;
   items: Sample[];
-  facets: { by_modifier: Record<string, number>; by_source: Record<string, number> };
+  facets: { by_tag: Record<string, number>; by_source: Record<string, number> };
 }

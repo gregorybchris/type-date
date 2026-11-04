@@ -1,5 +1,4 @@
-import { Bug, ChartScatter, Database, FlaskConical, Moon, Play, Search, Sun, Timer } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Bug, ChartColumn, ChartScatter, Database, FlaskConical, Moon, Play, Search, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
 import { Tip } from "@/components/ui/tooltip";
@@ -11,10 +10,10 @@ import { cn } from "@/lib/utils";
 
 export const NAV = [
   { view: "experiments", label: "Experiments", icon: FlaskConical },
+  { view: "compare", label: "Compare", icon: ChartColumn },
   { view: "pareto", label: "Pareto front", icon: ChartScatter },
   { view: "errors", label: "Error analysis", icon: Bug },
   { view: "playground", label: "Playground", icon: Play },
-  { view: "outer-loop", label: "Outer loop", icon: Timer },
   { view: "data", label: "Data", icon: Database },
 ] as const;
 
@@ -60,12 +59,7 @@ export function BottomNav({ view }: { view: string }) {
 export function Sidebar({ view }: { view: string }) {
   const { runs } = useStore();
   return (
-    <aside className="hidden w-[60px] shrink-0 flex-col px-2.5 pb-3 pt-3 md:flex lg:w-[228px] lg:px-3">
-      <div className="mb-4 flex items-center gap-1.5 px-2 pt-0.5" aria-hidden>
-        <span className="size-3 rounded-full bg-[#ff5f57]" />
-        <span className="size-3 rounded-full bg-[#febc2e]" />
-        <span className="size-3 rounded-full bg-[#28c840]" />
-      </div>
+    <aside className="hidden w-[60px] shrink-0 flex-col px-2.5 pb-3 pt-4 md:flex lg:w-[228px] lg:px-3">
       <Logo />
       <nav className="mt-5 flex flex-col gap-0.5">
         {NAV.map((n) => {
@@ -90,7 +84,7 @@ export function Sidebar({ view }: { view: string }) {
       <div className="mt-auto hidden px-1 lg:block">
         <div className="dotted-t mb-3" />
         <div className="px-1.5 text-[12px] text-subtle">
-          {runs.length} experiments, latest exp-{String(Math.max(0, ...runs.map((r) => r.config.number))).padStart(3, "0")}
+          {runs.length} engines, latest exp-{String(Math.max(0, ...runs.map((r) => r.config.number))).padStart(3, "0")}
         </div>
       </div>
     </aside>
@@ -99,18 +93,12 @@ export function Sidebar({ view }: { view: string }) {
 
 export function TopBar({ onPalette, crumbs, view }: { onPalette: () => void; crumbs: React.ReactNode; view: string }) {
   const { theme, toggle } = useTheme();
-  const { sampleRuns, sampleData } = useStore();
   const isMac = typeof navigator !== "undefined" && /Mac/.test(navigator.platform);
   return (
     <div className="dotted-b sticky top-0 z-20 flex h-12 shrink-0 items-center justify-between gap-2 bg-surface/90 px-3 backdrop-blur md:px-5" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className="min-w-0 truncate text-[13px] text-muted">{crumbs}</div>
       <div className="flex items-center gap-2">
-        {["experiments", "pareto", "errors"].includes(view) && <VersionSelect />}
-        {(view === "data" ? sampleData : sampleRuns) && (
-          <Tip label={view === "data" ? "No datasets in data/ yet. Showing generated fixtures from apps/dashboard/fixtures." : "No experiments in runs/ yet. Showing generated fixtures from apps/dashboard/fixtures."}>
-            <Badge tone="warn" className="cursor-default">Sample<span className="hidden sm:inline">&nbsp;data</span></Badge>
-          </Tip>
-        )}
+        {["experiments", "compare", "pareto", "errors", "data"].includes(view) && <VersionSelect />}
         <Button variant="secondary" onClick={onPalette} className="gap-2 px-2 text-muted sm:px-3" aria-label="Open quick switcher">
           <Search />
           <span className="hidden sm:inline">Search</span>

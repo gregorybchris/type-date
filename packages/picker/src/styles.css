@@ -430,9 +430,8 @@
     background: var(--td-hover);
   }
 }
-.td-cell[data-range] button:hover,
 @media (hover: hover) {
-  .td-cell[aria-selected="true"] button:hover {
+  .td-cell[data-range="mid"] button:hover {
     background: transparent;
   }
 }

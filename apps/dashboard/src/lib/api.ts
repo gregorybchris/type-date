@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type {
-  DatasetsResponse,
   EvalsResponse,
+  EvalSummary,
   ErrorQuery,
   ErrorsResponse,
   RunsResponse,
@@ -24,11 +24,11 @@ async function get<T>(url: string, signal?: AbortSignal): Promise<T> {
 
 export const fetchRuns = (signal?: AbortSignal) => get<RunsResponse>("/api/runs", signal);
 export const fetchEvals = (signal?: AbortSignal) => get<EvalsResponse>("/api/evals", signal);
-export const fetchDatasets = (signal?: AbortSignal) => get<DatasetsResponse>("/api/datasets", signal);
+export const fetchEvalSummary = (version: string, signal?: AbortSignal) => get<EvalSummary>(`/api/evals/${version}/summary`, signal);
 export const fetchErrors = (id: string, q: ErrorQuery, signal?: AbortSignal) =>
   get<ErrorsResponse>(`/api/runs/${id}/errors${qs(q)}`, signal);
 export const fetchSamples = (version: string, q: SampleQuery, signal?: AbortSignal) =>
-  get<SamplesResponse>(`/api/datasets/${version}/samples${qs(q)}`, signal);
+  get<SamplesResponse>(`/api/evals/${version}/samples${qs(q)}`, signal);
 
 export interface Async<T> {
   data: T | null;

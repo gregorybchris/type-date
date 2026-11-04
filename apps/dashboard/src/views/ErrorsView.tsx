@@ -12,7 +12,7 @@ import { Card, Empty, Field, Input, PageHeader, SectionTitle } from "@/component
 import { Select } from "@/components/ui/select";
 import { fetchErrors, useAsync } from "@/lib/api";
 import { diffDsl, type DiffToken } from "@/lib/diff";
-import { isInvalidVersion, ownVersion } from "@/lib/evals";
+import { evalFor } from "@/lib/evals";
 import { resolveText } from "@/lib/format";
 import { href, navigate, useSetParams } from "@/lib/router";
 import { useStore } from "@/lib/store";
@@ -80,10 +80,10 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
     const t = setTimeout(() => qDraft !== q && setParams({ q: qDraft || undefined }), 250);
     return () => clearTimeout(t);
   }, [qDraft, q, setParams]);
-  useEffect(() => setPage(0), [expId, tag, modifier, split, q]);
+  useEffect(() => setPage(0), [expId, version, tag, modifier, split, q]);
   useEffect(() => setPicked(new Map()), [expId]);
 
-  const list = useAsync(`${expId}|${tag}|${modifier}|${split}|${q}|${page}`, (s) => fetchErrors(expId, { tag, modifier, split, q, offset: page * PAGE, limit: PAGE }, s));
+  const list = useAsync(`${expId}|${version}|${tag}|${modifier}|${split}|${q}|${page}`, (s) => fetchErrors(expId, { version, tag, modifier, split, q, offset: page * PAGE, limit: PAGE }, s));
 
   const rows = list.data?.items ?? [];
   const [dim, setDim] = useState<Dim>("tag");
@@ -91,11 +91,13 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
   const today0 = today || localToday();
   const resolved = useMemo(() => rows.map((r) => ({ exp: resolveText(r.expected, today0), got: resolveText(r.predicted, today0) })), [rows, today0]);
 
+  const ev = run ? evalFor(run, version) : null;
   if (!run) return <Empty>No experiment selected</Empty>;
-  const scores = dim === "tag" ? run.metrics.eval.by_tag : dim === "modifier" ? run.metrics.eval.by_modifier : run.metrics.eval.by_split;
+  if (!ev) return <Empty>{run.config.id} has no results on {version}</Empty>;
+  const scores = dim === "tag" ? ev.by_tag : dim === "modifier" ? ev.by_modifier : ev.by_split;
   const rows_ = rowsFromScores(scores);
-  const totalErrors = Math.round(run.metrics.eval.n * (1 - run.metrics.eval.exact));
-  const overall = run.metrics.eval.n ? totalErrors / run.metrics.eval.n : 0;
+  const totalErrors = Math.round(ev.n * (1 - ev.exact));
+  const overall = ev.n ? totalErrors / ev.n : 0;
   const reliable = rows_.filter((r) => r.n >= SMALL_N && r.errors > 0);
   const worst = [...reliable].sort((a, b) => b.errors / b.n - a.errors / a.n)[0];
   const biggest = [...rows_].sort((a, b) => b.errors - a.errors)[0];
@@ -113,9 +115,9 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
       return n;
     });
 
-  const tagOptions = Object.keys(run.metrics.eval.by_tag).sort().map((t) => ({ value: t, label: t }));
-  const modOptions = Object.keys(run.metrics.eval.by_modifier).sort().map((t) => ({ value: t, label: t }));
-  const splitOptions = Object.keys(run.metrics.eval.by_split).map((t) => ({ value: t, label: t }));
+  const tagOptions = Object.keys(ev.by_tag).sort().map((t) => ({ value: t, label: t }));
+  const modOptions = Object.keys(ev.by_modifier).sort().map((t) => ({ value: t, label: t }));
+  const splitOptions = Object.keys(ev.by_split).map((t) => ({ value: t, label: t }));
 
   const copySelected = async () => {
     const out = [...picked.values()];
@@ -123,7 +125,7 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
     toast.success(`Copied ${out.length} failures as JSONL`);
   };
   const selectAllFiltered = async () => {
-    const all = await fetchErrors(expId, { tag, modifier, split, q, limit: 5000 });
+    const all = await fetchErrors(expId, { version, tag, modifier, split, q, limit: 5000 });
     setPicked((p) => new Map([...p, ...all.items.map((r) => [r.id, r] as const)]));
     toast(`Selected ${all.items.length} failures`);
   };
@@ -140,16 +142,10 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
         />
       </PageHeader>
 
-      {ownVersion(run) !== version && (
-        <p className="rounded-field border border-warn/30 bg-warn-soft px-3 py-2 text-[12.5px] text-warn">
-          errors.jsonl for {run.config.id} comes from eval {ownVersion(run)}, not {version}. {isInvalidVersion(ownVersion(run)) ? "This run is invalid. " : ""}Numbers below are for {ownVersion(run)}.
-        </p>
-      )}
-
       <section>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-[13px] font-semibold">Where the errors are on {ownVersion(run)}</h2>
+            <h2 className="text-[13px] font-semibold">Where the errors are on {version}</h2>
             <p className="text-[12px] text-muted">Whole experiment. Click a row to filter the table below.</p>
           </div>
           <div className="flex max-w-full flex-wrap items-center gap-2">
@@ -159,13 +155,13 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
         </div>
         <Card className="p-4">
           <div className="grid grid-cols-2 gap-y-4 md:grid-cols-4">
-            <Summary label="Error rate" first><Flow value={overall * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="text-[12px] text-muted">{totalErrors.toLocaleString()} of {run.metrics.eval.n.toLocaleString()}</div></Summary>
+            <Summary label="Error rate" first><Flow value={overall * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="text-[12px] text-muted">{totalErrors.toLocaleString()} of {ev.n.toLocaleString()}</div></Summary>
             <Summary label="Accuracy"><Flow value={(1 - overall) * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="text-[12px] text-muted">exact match</div></Summary>
             <Summary label="Highest rate">{worst ? <><Flow value={worst.errors / worst.n * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="break-words text-[12px] text-muted">{worst.key}, n={worst.n}</div></> : <span className="text-[22px] text-subtle">-</span>}</Summary>
             <Summary label="Largest share" last>{biggest ? <><Flow value={totalErrors ? biggest.errors / totalErrors * 100 : 0} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="break-words text-[12px] text-muted">{biggest.key}, {biggest.errors} errors</div></> : <span className="text-[22px] text-subtle">-</span>}</Summary>
           </div>
           <div className="dotted-t my-4" />
-          <Breakdown rows={rows_} totalErrors={totalErrors} totalN={run.metrics.eval.n} metric={metric} selected={selectedKey} onSelect={(k) => setParams({ [dim]: selectedKey === k ? undefined : k })} />
+          <Breakdown rows={rows_} totalErrors={totalErrors} totalN={ev.n} metric={metric} selected={selectedKey} onSelect={(k) => setParams({ [dim]: selectedKey === k ? undefined : k })} />
           <BreakdownLegend metric={metric} overall={overall} />
         </Card>
       </section>

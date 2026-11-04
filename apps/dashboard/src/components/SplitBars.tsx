@@ -42,7 +42,7 @@ export function SplitBars({ scores, compare }: { scores: Record<string, TagScore
               <Flow value={score(v) * 100} digits={1} suffix="%" />
             </span>
             <span className="num col-span-2 flex items-center gap-2 whitespace-nowrap text-[11.5px] text-subtle max-sm:row-start-3 sm:col-span-1">
-              n={v.n.toLocaleString()}
+              n={v.n.toLocaleString()}{v.n < 30 && <span className="rounded-chip border border-warn/30 bg-warn-soft px-1 text-[10.5px] font-medium text-warn" title="Under 30 rows: the rate is unreliable">small</span>}
               {c && <Delta value={(score(v) - score(c)) * 100} />}
             </span>
           </div>

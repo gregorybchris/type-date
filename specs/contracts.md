@@ -68,7 +68,7 @@ One directory per experiment. Committed to git. Small files only. `NNN` is a zer
 
 Buckets with `/` are sub-buckets of the parent and are not added into totals. `train_loop/*` shares come from sampled steps with device syncs, scaled to the loop total. `td exp timing` prints the summary.
 
-`errors.jsonl`: one line per failure on the eval sets.
+`errors/<eval version>.jsonl`: one line per failure on that eval version. Written for every version a run is scored on (2026-11-04); the old single `errors.jsonl` is gone.
 
 ```json
 {"id": "g-000123", "text": "oct 2 to oct 5", "split": "val", "primary_tag": "basic-date-range",

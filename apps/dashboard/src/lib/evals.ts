@@ -82,15 +82,20 @@ export function hardResolved(ev: EvalBlock | null | undefined): number | null {
   return weighted(ev, isHardSplit);
 }
 
-export const isInvalidVersion = (v: string) => v.startsWith("pre");
+export const notEvaluatedNote = (_run: Run, version: string): string => `Not evaluated on ${version}`;
 
-export interface Scored {
-  run: Run;
-  /** Null when the run has no results for the selected version. */
-  ev: EvalBlock | null;
+/** Full eval versions (e1, e2 ...) present in the runs, oldest first. */
+export const fullVersions = (runs: Run[]): string[] =>
+  versionsOf(runs).map((v) => v.version).filter((v) => kindOf(v) === "full");
+
+/** Splits scored on one version by any run: union, in first-seen order. */
+export function splitsOf(runs: Run[], version: string): string[] {
+  const seen: string[] = [];
+  for (const r of runs) {
+    for (const s of Object.keys(evalFor(r, version)?.by_split ?? {})) if (!seen.includes(s)) seen.push(s);
+  }
+  return seen;
 }
 
-export const scoreAll = (runs: Run[], version: string): Scored[] => runs.map((run) => ({ run, ev: evalFor(run, version) }));
-
-export const notEvaluatedNote = (run: Run, version: string): string =>
-  isInvalidVersion(ownVersion(run)) ? `Invalid run (${ownVersion(run)}). Not evaluated on ${version}.` : `Not evaluated on ${version}`;
+/** Resolved accuracy of a split, falling back to exact. */
+export const splitScore = (s: { exact: number; resolved?: number }): number => s.resolved ?? s.exact;

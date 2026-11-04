@@ -1,4 +1,4 @@
-// Screenshots every view in light and dark at several widths. Needs the dev server on :5173 (pnpm dev).
+// Screenshots every view in light and dark at several widths. Needs a dev server (BASE_URL, default :5173).
 // Output: $SHOTS_DIR or ./.shots. Env: WIDTHS=360,390,768,1024,1440 to choose widths. Usage: pnpm shots
 import fs from "node:fs";
 import path from "node:path";
@@ -11,10 +11,11 @@ fs.mkdirSync(out, { recursive: true });
 
 const views: Array<[string, string]> = [
   ["experiments", "#/experiments"],
-  ["detail", "#/experiments/exp-012"],
+  ["detail", "#/experiments/exp-018"],
+  ["compare", "#/compare"],
   ["pareto", "#/pareto"],
-  ["errors", "#/errors/exp-012"],
-  ["playground", "#/playground?exp=exp-012"],
+  ["errors", "#/errors/exp-018"],
+  ["playground", "#/playground?exp=exp-018"],
   ["data", "#/data"],
 ];
 
@@ -37,8 +38,6 @@ for (const width of widths) {
       await page.goto(`${base}/${hash}`);
       await page.waitForTimeout(1300);
       if (name === "playground") {
-        await page.getByRole("button", { name: "Load", exact: true }).click();
-        await page.waitForTimeout(900);
         await page.locator("input[placeholder='oct 2 to oct 5']").fill("oct 2 to oct 5");
         await page.waitForTimeout(700);
       }

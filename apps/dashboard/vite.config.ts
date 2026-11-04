@@ -9,7 +9,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repo = path.resolve(here, "../..");
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), typeDateApi({ repo, fixtures: path.join(here, "fixtures") })],
+  plugins: [react(), tailwindcss(), typeDateApi({ repo })],
   resolve: {
     // The picker is used from source so edits show up without a rebuild.
     alias: [

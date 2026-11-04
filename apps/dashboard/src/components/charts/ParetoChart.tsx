@@ -1,7 +1,6 @@
 import { m } from "motion/react";
-import { scaleSqrt } from "d3-scale";
 import { useMemo, useRef, useState } from "react";
-import { fmtMs } from "@/lib/format";
+import { fmtBytes, fmtMs } from "@/lib/format";
 import { frontPath, paretoFront, type AxisInfo, type Point, type XAxis, type YAxis } from "@/lib/pareto";
 import { useSize } from "@/lib/useSize";
 import { Marker } from "./Marker";
@@ -51,12 +50,9 @@ const MD = { top: 16, right: 24, bottom: 40, left: 62 };
 const MS = { top: 24, right: 30, bottom: 38, left: 40 };
 
 function fmtX(axis: XAxis, v: number): string {
-  if (axis === "latency") return fmtMs(v);
-  if (axis === "memory") return `${+v.toFixed(0)} MB`;
-  if (axis === "size") return v >= 1 ? `${+v.toFixed(1)} MB` : `${+(v * 1000).toFixed(0)} kB`;
-  return v === 0 ? "none" : `${+v.toFixed(1)}M`;
+  return axis === "size" ? fmtBytes(v * 1e3) : fmtMs(v);
 }
-const tickLabel = (axis: XAxis, v: number) => (axis === "latency" ? `${v}` : axis === "size" ? (v >= 1 ? `${v}` : `${v * 1000}k`) : `${v}`);
+const tickLabel = (_axis: XAxis, v: number) => `${v}`;
 
 export function ParetoChart({
   points,
@@ -65,6 +61,7 @@ export function ParetoChart({
   xInfo,
   yInfo,
   onOpen,
+  version,
   selected,
   height: heightProp = 420,
 }: {
@@ -74,6 +71,8 @@ export function ParetoChart({
   xInfo: AxisInfo<XAxis>;
   yInfo: AxisInfo<YAxis>;
   onOpen: (runId: string) => void;
+  /** Eval version shown in the axis caption. */
+  version: string;
   selected?: string;
   height?: number;
 }) {
@@ -88,29 +87,29 @@ export function ParetoChart({
   const ih = height - M.top - M.bottom;
 
   const front = useMemo(() => paretoFront(points), [points]);
-  const frontKeys = useMemo(() => new Set(front.map((p) => p.key)), [front]);
+  const frontKeys = useMemo(() => new Set(front.map((p) => p.runId)), [front]);
   const { x, y } = useMemo(() => {
-    const xs = makeXScale(xAxis, points.map((p) => p.x), iw);
+    const xs = makeXScale(points.map((p) => p.x), iw);
     const ys = makeYScale(points.map((p) => p.y), ih);
     return { x: xs, y: ys };
   }, [points, xAxis, iw, ih]);
   const many = points.length > 20;
-  const rScale = useMemo(() => scaleSqrt().domain([0, 500]).range(many ? [3.5, 8] : [4.5, 11]), [many]);
+  const radius = (p: Point) => (p.library ? (many ? 5 : 6) : many ? 5 : 6.5);
   const labels = useMemo(() => {
     const wide = w >= 700;
     return placeLabels(
-      points.map((p) => ({ key: p.key, px: x.scale(p.x), py: y.scale(p.y), r: p.kind === "baseline" ? (many ? 5 : 6) : rScale(p.paramsM), text: wide && frontKeys.has(p.key) && points.length <= 40 ? `${p.label} ${p.title.length > 18 ? p.title.slice(0, 17) + "…" : p.title}` : p.label, short: p.label, front: frontKeys.has(p.key) })),
+      points.map((p) => ({ key: p.runId, px: x.scale(p.x), py: y.scale(p.y), r: radius(p), text: wide && frontKeys.has(p.runId) ? `${p.label} ${p.title.length > 18 ? p.title.slice(0, 17) + "…" : p.title}` : p.label, short: p.label, front: frontKeys.has(p.runId) })),
       { w: iw, h: ih },
     );
-  }, [points, x, y, rScale, frontKeys, iw, ih, w, many]);
+  }, [points, x, y, frontKeys, iw, ih, w, many]);
   const d = useMemo(() => frontPath(front, x.scale, y.scale), [front, x, y]);
-  const frontSig = front.map((p) => p.key).join();
-  const hp = points.find((p) => p.key === (pin ?? hover));
+  const frontSig = front.map((p) => p.runId).join();
+  const hp = points.find((p) => p.runId === (pin ?? hover));
 
   return (
     <div ref={ref} className="relative w-full" style={{ height }} onPointerLeave={() => {}}>
       {w > 0 && (
-        <svg width={w} height={height} role="img" onPointerDown={(e) => { if (e.target === e.currentTarget) setPin(null); }} aria-label={`${yInfo.label} against ${xInfo.label}`}>
+        <svg width={w} height={height} role="img" onPointerDown={(e) => { if (e.target === e.currentTarget) setPin(null); }} aria-label={`${yInfo.label} on ${version} against ${xInfo.label}`}>
           <g transform={`translate(${M.left},${M.top})`}>
             {y.ticks.map((t) => (
               <g key={t} transform={`translate(0,${y.scale(t)})`}>
@@ -125,11 +124,11 @@ export function ParetoChart({
               </g>
             ))}
             <line x2={iw} y1={ih} y2={ih} stroke="var(--border-strong)" />
-            <text x={iw / 2} y={ih + 36} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{xInfo.label} ({xInfo.unit}{xAxis !== "params" ? ", log scale" : ""})</text>
+            <text x={iw / 2} y={ih + 36} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{xInfo.label} ({xInfo.unit}, log scale)</text>
             {w < 560 ? (
-              <text x={-M.left + 6} y={-10} fontSize={11.5} fill="var(--muted)">{yInfo.label}</text>
+              <text x={-M.left + 6} y={-10} fontSize={11.5} fill="var(--muted)">{yInfo.label} ({version})</text>
             ) : (
-              <text transform={`translate(${-M.left + 14},${ih / 2}) rotate(-90)`} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{yInfo.label}</text>
+              <text transform={`translate(${-M.left + 14},${ih / 2}) rotate(-90)`} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{yInfo.label} ({version})</text>
             )}
 
             {front.length > 1 && (
@@ -147,16 +146,16 @@ export function ParetoChart({
               />
             )}
 
-            {[...points].sort((a, b) => Number(frontKeys.has(a.key)) - Number(frontKeys.has(b.key))).map((p) => {
-              const onFront = frontKeys.has(p.key);
+            {[...points].sort((a, b) => Number(frontKeys.has(a.runId)) - Number(frontKeys.has(b.runId))).map((p) => {
+              const onFront = frontKeys.has(p.runId);
               const px = x.scale(p.x);
               const py = y.scale(p.y);
-              const r = p.kind === "baseline" ? (many ? 5 : 6) : rScale(p.paramsM);
-              const lab = labels.get(p.key);
-              const active = hover === p.key || selected === p.runId || pin === p.key;
+              const r = radius(p);
+              const lab = labels.get(p.runId);
+              const active = hover === p.runId || selected === p.runId || pin === p.runId;
               return (
                 <m.g
-                  key={p.key}
+                  key={p.runId}
                   initial={{ x: px, y: py, opacity: 0 }}
                   animate={{ x: px, y: py, opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -164,22 +163,22 @@ export function ParetoChart({
                   style={{ cursor: "pointer", outline: "none" }}
                   tabIndex={0}
                   role="button"
-                  aria-label={`exp ${p.number}, ${p.engine} ${p.backend}`}
+                  aria-label={`exp ${p.number}, ${p.title}`}
                   onPointerDown={(e) => { touch.current = e.pointerType !== "mouse"; }}
-                  onMouseEnter={() => !touch.current && setHover(p.key)}
+                  onMouseEnter={() => !touch.current && setHover(p.runId)}
                   onMouseLeave={() => setHover(null)}
-                  onFocus={() => setHover(p.key)}
+                  onFocus={() => setHover(p.runId)}
                   onBlur={() => setHover(null)}
                   onClick={() => {
-                    if (touch.current && pin !== p.key) setPin(p.key);
+                    if (touch.current && pin !== p.runId) setPin(p.runId);
                     else onOpen(p.runId);
                   }}
                   onKeyDown={(e) => e.key === "Enter" && onOpen(p.runId)}
                 >
                   <circle r={Math.max(r + 6, 18)} fill="transparent" />
-                  {(active || pin === p.key) && <circle r={r + 5} fill="var(--accent)" opacity={0.14} />}
+                  {(active || pin === p.runId) && <circle r={r + 5} fill="var(--accent)" opacity={0.14} />}
                   <Marker
-                    kind={p.kind}
+                    kind={p.library ? "baseline" : "model"}
                     r={r}
                     fill={onFront ? "var(--accent)" : "var(--surface)"}
                     stroke={onFront ? "var(--accent)" : "var(--chart-dim)"}
@@ -206,15 +205,14 @@ export function ParetoChart({
         >
           <div className="flex items-center justify-between">
             <span className="font-semibold text-fg">exp-{String(hp.number).padStart(3, "0")}</span>
-            <span className="text-subtle">{hp.family}</span>
+            <span className="text-subtle">{hp.library ? "library" : "heuristic"}</span>
           </div>
           <div className="mt-0.5 text-[12px] font-medium text-fg">{hp.title}</div>
           {hp.description && <div className="mt-0.5 line-clamp-3 text-[11.5px] text-muted">{hp.description}</div>}
-          <div className="mt-1 text-muted">{hp.engine} {hp.backend !== "-" && `/ ${hp.backend}`}</div>
           <div className="dotted-t my-2" />
-          <div className="flex justify-between"><span className="text-muted">{yInfo.label}</span><span className="num font-medium">{(hp.y * 100).toFixed(1)}%</span></div>
+          <div className="flex justify-between"><span className="text-muted">{yInfo.label} {version}</span><span className="num font-medium">{(hp.y * 100).toFixed(1)}%</span></div>
           <div className="flex justify-between"><span className="text-muted">{xInfo.label}</span><span className="num font-medium">{fmtX(xAxis, hp.x)}</span></div>
-          <div className="mt-1.5 text-[11px] text-subtle">{frontKeys.has(hp.key) ? "On the Pareto front" : "Dominated"}.{!pin && " Click to open."}</div>
+          <div className="mt-1.5 text-[11px] text-subtle">{frontKeys.has(hp.runId) ? "On the Pareto front" : "Dominated"}.{!pin && " Click to open."}</div>
           {pin && (
             <button onClick={() => onOpen(hp.runId)} className="mt-2 h-9 w-full cursor-pointer rounded-field bg-primary text-[13px] font-medium text-primary-fg">Open exp-{String(hp.number).padStart(3, "0")}</button>
           )}

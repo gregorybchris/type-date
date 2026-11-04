@@ -27,7 +27,7 @@ make rescore-baselines EVAL=e1q [EXPS="1 9"]                 # another eval vers
 pnpm --filter @type-date/baselines exec tsx scripts/dev.ts heuristic-full --split val --show 20   # failures, train or val only
 ```
 
-`scripts/eval.ts` writes `runs/exp-NNN/{config,metrics}.json` and `errors.jsonl` as in `specs/contracts.md`. It adds `by_split.<split>.resolved`, `model.size_bytes_minified` and `node_latency_ms` (p50, p95, p99 per call in Node). `model.size_bytes` is the esbuild minified and gzipped bundle, dependencies included.
+`scripts/eval.ts` writes `runs/exp-NNN/{config,metrics}.json` and `errors/<eval version>.jsonl` as in `specs/contracts.md`. It adds `by_split.<split>.resolved`, `model.size_bytes_minified` and `node_latency_ms` (p50, p95, p99 per call in Node). `model.size_bytes` is the esbuild minified and gzipped bundle, dependencies included.
 
 For `chrono` the eval calls the engine once for each reference day in `score-resolved.ts` and resolves both expected and predicted DSL for that same day. For the others one call is enough.
 

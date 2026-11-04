@@ -2,15 +2,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import type {
-  DatasetMeta,
-  DatasetsResponse,
   EvalManifest,
   EvalsResponse,
+  EvalSummary,
   ErrorQuery,
   ErrorRow,
   ErrorsResponse,
   Facets,
-  Manifest,
   Run,
   RunsResponse,
   Sample,
@@ -19,10 +17,8 @@ import type {
 } from "../src/lib/types";
 
 export interface Roots {
-  /** Repo root that holds runs/, data/, artifacts/. */
+  /** Repo root that holds runs/ and evals/. */
   repo: string;
-  /** Sample data used when the repo has no experiments or datasets. */
-  fixtures: string;
 }
 
 function readJson<T>(file: string): T | null {
@@ -46,48 +42,25 @@ function listDirs(dir: string, pattern: RegExp): string[] {
 }
 
 const RUN_RE = /^exp-\d+/;
-const DATA_RE = /^v\d+/;
-
-function hasRuns(dir: string): boolean {
-  return listDirs(dir, RUN_RE).some((d) => fs.existsSync(path.join(dir, d, "config.json")));
-}
-
-function hasDatasets(dir: string): boolean {
-  return listDirs(dir, DATA_RE).some((d) => fs.existsSync(path.join(dir, d, "meta.json")));
-}
-
-/** Directory of runs to use and whether it is sample data. DASHBOARD_SAMPLE=1 forces fixtures. */
-export function runsDir(roots: Roots): { dir: string; sample: boolean } {
-  if (process.env.DASHBOARD_SAMPLE === "1") return { dir: path.join(roots.fixtures, "runs"), sample: true };
-  const real = path.join(roots.repo, "runs");
-  if (hasRuns(real)) return { dir: real, sample: false };
-  return { dir: path.join(roots.fixtures, "runs"), sample: true };
-}
-
-export function dataDir(roots: Roots): { dir: string; sample: boolean } {
-  if (process.env.DASHBOARD_SAMPLE === "1") return { dir: path.join(roots.fixtures, "data"), sample: true };
-  const real = path.join(roots.repo, "data");
-  if (hasDatasets(real)) return { dir: real, sample: false };
-  return { dir: path.join(roots.fixtures, "data"), sample: true };
-}
+const EVAL_RE = /^[\w-]+$/;
 
 export function loadRuns(roots: Roots): RunsResponse {
-  const { dir, sample } = runsDir(roots);
+  const dir = path.join(roots.repo, "runs");
   const runs: Run[] = [];
   for (const id of listDirs(dir, RUN_RE)) {
     const base = path.join(dir, id);
     const config = readJson<Run["config"]>(path.join(base, "config.json"));
     const metrics = readJson<Run["metrics"]>(path.join(base, "metrics.json"));
     if (!config || !metrics) continue;
-    const bench = readJson<Run["bench"]>(path.join(base, "bench.json")) ?? [];
-    const manifest =
-      readJson<Manifest>(path.join(roots.repo, "artifacts", id, "manifest.json")) ??
-      readJson<Manifest>(path.join(base, "manifest.json"));
-    const timing = readJson<Run["timing"]>(path.join(base, "timing.json"));
-    runs.push({ config, metrics, bench, manifest, timing });
+    // One latency source for every engine: the Node per-call timing that scripts/eval.ts writes into metrics.json.
+    const nl = (metrics as { node_latency_ms?: { p50: number; p95: number; p99: number; n?: number } }).node_latency_ms;
+    const bench: Run["bench"] = nl
+      ? [{ engine: config.model?.engine ?? config.id, profile: "desktop", latency_ms: { p50: nl.p50, p95: nl.p95, p99: nl.p99 }, n: nl.n ?? 0 }]
+      : (readJson<Run["bench"]>(path.join(base, "bench.json")) ?? []);
+    runs.push({ config, metrics, bench });
   }
   runs.sort((a, b) => a.config.number - b.config.number);
-  return { sample, runs };
+  return { runs };
 }
 
 const jsonlCache = new Map<string, { mtime: number; rows: unknown[] }>();
@@ -142,10 +115,10 @@ export function facetErrors(rows: ErrorRow[]): Facets {
   return f;
 }
 
-export function queryErrors(roots: Roots, id: string, q: ErrorQuery): ErrorsResponse | null {
-  if (!RUN_RE.test(id)) return null;
-  const { dir } = runsDir(roots);
-  const file = path.join(dir, id, "errors.jsonl");
+export function queryErrors(roots: Roots, id: string, version: string, q: ErrorQuery): ErrorsResponse | null {
+  if (!RUN_RE.test(id) || !EVAL_RE.test(version)) return null;
+  const dir = path.join(roots.repo, "runs");
+  const file = path.join(dir, id, "errors", `${version}.jsonl`);
   if (!fs.existsSync(path.join(dir, id))) return null;
   const all = readJsonl<ErrorRow>(file);
   const filtered = filterErrors(all, q);
@@ -161,25 +134,35 @@ export function queryErrors(roots: Roots, id: string, q: ErrorQuery): ErrorsResp
 
 /** Eval set manifests from evals/<version>/manifest.json. */
 export function loadEvalManifests(roots: Roots): EvalsResponse {
-  const real = path.join(roots.repo, "evals");
-  const useFixtures = process.env.DASHBOARD_SAMPLE === "1" || listDirs(real, /^[\w-]+$/).length === 0;
-  const dir = useFixtures ? path.join(roots.fixtures, "evals") : real;
+  const dir = path.join(roots.repo, "evals");
   const evals: EvalManifest[] = [];
-  for (const v of listDirs(dir, /^[\w-]+$/)) {
+  for (const v of listDirs(dir, EVAL_RE)) {
     const m = readJson<EvalManifest>(path.join(dir, v, "manifest.json"));
     if (m) evals.push({ ...m, version: m.version ?? v });
   }
-  return { sample: useFixtures, evals };
+  return { evals };
 }
 
-export function loadDatasets(roots: Roots): DatasetsResponse {
-  const { dir, sample } = dataDir(roots);
-  const datasets: DatasetMeta[] = [];
-  for (const v of listDirs(dir, DATA_RE)) {
-    const meta = readJson<DatasetMeta>(path.join(dir, v, "meta.json"));
-    if (meta) datasets.push(meta);
+function evalSplits(roots: Roots, version: string): string[] {
+  const base = path.join(roots.repo, "evals", version);
+  try {
+    return fs.readdirSync(base).filter((f) => f.endsWith(".jsonl")).map((f) => f.replace(/\.jsonl$/, ""));
+  } catch {
+    return [];
   }
-  return { sample, datasets };
+}
+
+/** Rows per split and per source for one eval version. */
+export function evalSummary(roots: Roots, version: string): EvalSummary | null {
+  if (!EVAL_RE.test(version) || !fs.existsSync(path.join(roots.repo, "evals", version))) return null;
+  const splits: EvalSummary["splits"] = {};
+  for (const s of evalSplits(roots, version)) {
+    const rows = readJsonl<Sample>(path.join(roots.repo, "evals", version, `${s}.jsonl`));
+    const sources: Record<string, number> = {};
+    for (const r of rows) bump(sources, r.source ?? "unknown");
+    splits[s] = { n: rows.length, sources };
+  }
+  return { version, splits };
 }
 
 export function filterSamples(rows: Sample[], q: SampleQuery): Sample[] {
@@ -187,33 +170,25 @@ export function filterSamples(rows: Sample[], q: SampleQuery): Sample[] {
   return rows.filter(
     (r) =>
       (!q.tag || r.primary_tag === q.tag) &&
-      (!q.modifier || r.modifier_tags.includes(q.modifier)) &&
+      (!q.modifier || (r.modifier_tags ?? []).includes(q.modifier)) &&
       (!q.source || r.source === q.source) &&
       (!needle || r.text.toLowerCase().includes(needle) || r.dsl.toLowerCase().includes(needle)),
   );
 }
 
 export function querySamples(roots: Roots, version: string, q: SampleQuery): SamplesResponse | null {
-  if (!DATA_RE.test(version)) return null;
-  const { dir } = dataDir(roots);
-  const base = path.join(dir, version);
-  if (!fs.existsSync(base)) return null;
-  const splits = q.split
-    ? [q.split]
-    : fs
-        .readdirSync(base)
-        .filter((f) => f.endsWith(".jsonl"))
-        .map((f) => f.replace(/\.jsonl$/, ""));
+  if (!EVAL_RE.test(version) || !fs.existsSync(path.join(roots.repo, "evals", version))) return null;
+  const splits = q.split ? [q.split] : evalSplits(roots, version);
   let rows: Sample[] = [];
   for (const s of splits) {
-    if (!/^[a-z_]+$/.test(s)) continue;
-    rows = rows.concat(readJsonl<Sample>(path.join(base, `${s}.jsonl`)));
+    if (!EVAL_RE.test(s)) continue;
+    rows = rows.concat(readJsonl<Sample>(path.join(roots.repo, "evals", version, `${s}.jsonl`)));
   }
   const filtered = filterSamples(rows, q);
-  const facets = { by_modifier: {} as Record<string, number>, by_source: {} as Record<string, number> };
+  const facets = { by_tag: {} as Record<string, number>, by_source: {} as Record<string, number> };
   for (const r of filtered) {
     bump(facets.by_source, r.source);
-    for (const m of r.modifier_tags) bump(facets.by_modifier, m);
+    bump(facets.by_tag, r.primary_tag);
   }
   const offset = Math.max(0, q.offset ?? 0);
   const limit = Math.min(5000, Math.max(1, q.limit ?? 50));

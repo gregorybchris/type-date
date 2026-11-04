@@ -1,15 +1,12 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { fetchDatasets, fetchEvals, fetchRuns } from "./api";
+import { fetchEvals, fetchRuns } from "./api";
 import { defaultVersion } from "./evals";
-import type { DatasetMeta, EvalManifest, Run } from "./types";
+import type { EvalManifest, Run } from "./types";
 
 interface Store {
   runs: Run[];
-  datasets: DatasetMeta[];
   /** Eval set manifests by version. */
   evalInfo: Record<string, EvalManifest>;
-  sampleRuns: boolean;
-  sampleData: boolean;
   loading: boolean;
   error: string | null;
   reload: () => void;
@@ -22,14 +19,14 @@ interface Store {
 const Ctx = createContext<Store | null>(null);
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState({ runs: [] as Run[], datasets: [] as DatasetMeta[], evalInfo: {} as Record<string, EvalManifest>, sampleRuns: false, sampleData: false, loading: true, error: null as string | null });
+  const [state, setState] = useState({ runs: [] as Run[], evalInfo: {} as Record<string, EvalManifest>, loading: true, error: null as string | null });
   const [tick, setTick] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   useEffect(() => {
     const ctl = new AbortController();
-    Promise.all([fetchRuns(ctl.signal), fetchDatasets(ctl.signal), fetchEvals(ctl.signal).catch(() => ({ sample: false, evals: [] as EvalManifest[] }))])
-      .then(([r, d, ev]) =>
-        setState({ runs: r.runs, datasets: d.datasets, evalInfo: Object.fromEntries(ev.evals.map((m) => [m.version, m])), sampleRuns: r.sample, sampleData: d.sample, loading: false, error: null }),
+    Promise.all([fetchRuns(ctl.signal), fetchEvals(ctl.signal).catch(() => ({ evals: [] as EvalManifest[] }))])
+      .then(([r, ev]) =>
+        setState({ runs: r.runs, evalInfo: Object.fromEntries(ev.evals.map((m) => [m.version, m])), loading: false, error: null }),
       )
       .catch((e: unknown) => {
         if (!ctl.signal.aborted) setState((s) => ({ ...s, loading: false, error: String(e) }));
