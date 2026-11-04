@@ -49,7 +49,7 @@ Legend: stage in which the factor is decided (see "Stages").
 
 ### Stage 0: foundations (mostly done)
 
-- Eval sets, metrics, the resolver, the data generator, baselines (chrono, heuristic-small, heuristic-full), the browser benchmark harness.
+- Eval sets, metrics, the resolver, the data generator, baselines (chrono, heuristic-full-1), the browser benchmark harness.
 - Reference configuration R0 = exp-005: encoder-decoder from scratch, d_model 256, 4+4 layers, BPE vocab 1000 with merged digits, dataset v002, 20 epochs, DSL v1.
 - Noise floor: R0 with seeds 0, 1, 2. Output: seed standard deviation of resolved accuracy per eval set.
 - Note: exp-004 had a tokenizer bug (lowercased DSL labels) and is not a valid data point.

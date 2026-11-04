@@ -7,8 +7,7 @@ All rows are scored on eval e5 (e3 plus two public-phrase splits) (10,948 rows: 
 | exp | title | family | size | all | realistic | hard | p50 ms |
 |---|---|---|---|---|---|---|---|
 | exp-001 | chrono-node + DSL adapter | library | 14.9 kB | 36.1 | 39.6 | 16.3 | 0.03 |
-| exp-002 | heuristic-small (regex) | heuristic | 3.5 kB | 57.9 | 42.7 | 15.2 | 0.01 |
-| exp-003 | heuristic-full (grammar, fuzzy) | heuristic | 7.9 kB | 86.5 | 67.4 | 22.0 | 0.12 |
+| exp-003 | heuristic-full-1 | heuristic | 7.9 kB | 86.5 | 67.4 | 22.0 | 0.12 |
 | exp-005 | scratch enc-dec 10M R0 | enc-dec-scratch | 38.8 MB | 59.4 | 55.2 | 17.7 | - |
 | exp-009 | heuristic-full-2 | heuristic | 8.8 kB | 88.5 | 70.7 | 22.4 | 0.17 |
 | exp-010 | SmolLM2-135M fine-tuned (8k rows) | finetune | 269.0 MB | 71.9 | 74.1 | 63.8 | - |
@@ -32,7 +31,7 @@ All rows are scored on eval e5 (e3 plus two public-phrase splits) (10,948 rows: 
 
 ## Generalization check on developer-written phrases (eval e4)
 
-e4 adds `test_public`: 218 phrases mined from chrono-node's public test suite (written by library developers, relabeled with our DSL by two agreeing labelers). Resolved accuracy there: chrono-node 71.6%, heuristic-full-4 67.9%, heuristic-full-3 64.2%, heuristic-full 44.0%. Our heuristics score 94% on LLM-written input but about 68% on developer-written phrases. The gap comes from formats our data never covered: year-first and ISO-like dates (`2012/8/10`, `09-JAN-2017`), two-digit years, `later` / `next day` relative forms, and invalid dates that must return `x` (`February 30`). A formats-focused data round followed (see `specs/research/dsl-gaps.md`). Caveat: the example formats in that round's writer brief were chosen after looking at heuristic-full-4's failures on test_public, so `test_public` is a development set from exp-015 on, not an independent test. A fresh public set (`test_public2`, e5) replaces it as the independent check. chrono-node's number is flattered because these phrases come from its own tests.
+e4 adds `test_public`: 218 phrases mined from chrono-node's public test suite (written by library developers, relabeled with our DSL by two agreeing labelers). Resolved accuracy there: chrono-node 71.6%, heuristic-full-4 67.9%, heuristic-full-3 64.2%, heuristic-full-1 44.0%. Our heuristics score 94% on LLM-written input but about 68% on developer-written phrases. The gap comes from formats our data never covered: year-first and ISO-like dates (`2012/8/10`, `09-JAN-2017`), two-digit years, `later` / `next day` relative forms, and invalid dates that must return `x` (`February 30`). A formats-focused data round followed (see `specs/research/dsl-gaps.md`). Caveat: the example formats in that round's writer brief were chosen after looking at heuristic-full-4's failures on test_public, so `test_public` is a development set from exp-015 on, not an independent test. A fresh public set (`test_public2`, e5) replaces it as the independent check. chrono-node's number is flattered because these phrases come from its own tests.
 
 ## Caveats
 

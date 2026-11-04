@@ -1,7 +1,7 @@
 {
   "id": "exp-003",
   "number": 3,
-  "title": "heuristic-full (grammar, fuzzy)",
+  "title": "heuristic-full-1",
   "created": "2026-11-04T04:20:52Z",
   "description": "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms.",
   "dataset": null,
@@ -11,7 +11,7 @@
   "model": {
     "family": "heuristic",
     "params": 0,
-    "engine": "heuristic-full"
+    "engine": "heuristic-full-1"
   },
   "train": {},
   "export": {

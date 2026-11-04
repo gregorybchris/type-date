@@ -1,6 +1,6 @@
 # exp-009: heuristic-full-2
 
-Status: done. Baseline, no training. exp-003 (`heuristic-full`) is unchanged and kept for comparison.
+Status: done. Baseline, no training. exp-003 (`heuristic-full-1`) is unchanged and kept for comparison.
 
 ## Hypothesis
 
@@ -10,7 +10,7 @@ Most of exp-003's remaining errors come from phrasing it does not know (chat fil
 
 - Eval set e1 was not read row by row. Development used `data/v003/train.jsonl` (including its 3547 LLM-written rows, which exclude the held-out `l-` ids) and a new dev set `data/dev1/dev.jsonl`: `td data build dev1 --n 30000 --seed 777`, then rows whose lowercased text is in any `evals/e1` split removed, 10000 rows kept (8517 train, 836 test_template, 438 val, 209 test_noise). The category list (per-tag and per-modifier accuracy and the failure categories from exp-003) guided where to look. I did not read `training/gen/out` shards, because they contain the held-out intents; LLM style came from the LLM rows in v003 train.
 - e1 was scored only by `scripts/eval.ts`.
-- Dev accuracy (exact), heuristic-full to heuristic-full-2: v003 train sample 0.957 to 0.963, dev1 0.961 to 0.967, LLM rows of v003 train 0.883 to 0.932, dev1 held-out-template rows 0.938 to 0.946.
+- Dev accuracy (exact), heuristic-full-1 to heuristic-full-2: v003 train sample 0.957 to 0.963, dev1 0.961 to 0.967, LLM rows of v003 train 0.883 to 0.932, dev1 held-out-template rows 0.938 to 0.946.
 
 ## What changed (`packages/baselines/src/heuristic-full-2.ts`)
 

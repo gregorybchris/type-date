@@ -44,9 +44,8 @@ serve-status:  ## Check both dev servers
 
 eval-baselines:  ## Score the non-model baselines into runs/exp-001..003 and 009 (eval e1)
 	pnpm --filter @type-date/baselines eval --engine chrono --exp 1 --title "chrono-node + DSL adapter" --description "chrono-node 2.10.3 English parser with an adapter to DSL lines. No recurrence support, so recurrence inputs output x."
-	pnpm --filter @type-date/baselines eval --engine heuristic-small --exp 2 --title "heuristic-small (regex)" --description "About 40 hand-written regex rules, no dependencies, 3.5 kB gzipped. Common phrases only."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full --exp 3 --title "heuristic-full (grammar, fuzzy)" --description "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms."
-	pnpm --filter @type-date/baselines eval --engine heuristic-full-2 --exp 9 --title "heuristic-full-2" --description "heuristic-full plus clock words, filler and chat phrasing, spaced minutes, dotted times, more recurrence forms and 2-edit typos."
+	pnpm --filter @type-date/baselines eval --engine heuristic-full-1 --exp 3 --title "heuristic-full-1" --description "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms."
+	pnpm --filter @type-date/baselines eval --engine heuristic-full-2 --exp 9 --title "heuristic-full-2" --description "heuristic-full-1 plus clock words, filler and chat phrasing, spaced minutes, dotted times, more recurrence forms and 2-edit typos."
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-3 --exp 13 --eval-version e2 --title "heuristic-full-3" --description "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm, slang and more recurrence forms."
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-4 --exp 14 --eval-version e3 --title "heuristic-full-4" --description "heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand."
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-5 --exp 15 --eval-version e4 --title "heuristic-full-5" --description "heuristic-full-4 plus date validity checks, year-first and named numeric date formats, two-digit years, seconds and more relative offsets."
@@ -58,10 +57,10 @@ eval-coverage:  ## Matrix of experiments by eval version, gaps marked
 	cd training && uv run td eval coverage
 
 # Baseline experiments: number:engine
-BASELINE_EXPS = 1:chrono 2:heuristic-small 3:heuristic-full 9:heuristic-full-2 13:heuristic-full-3 14:heuristic-full-4 15:heuristic-full-5 16:heuristic-full-6 17:heuristic-full-7 18:heuristic-full-8
-rescore-baselines:  ## Re-score baselines on one eval: make rescore-baselines EVAL=e10 [EXPS="1 2 3 9 13 14 15 16 17 18"]
+BASELINE_EXPS = 1:chrono 3:heuristic-full-1 9:heuristic-full-2 13:heuristic-full-3 14:heuristic-full-4 15:heuristic-full-5 16:heuristic-full-6 17:heuristic-full-7 18:heuristic-full-8
+rescore-baselines:  ## Re-score baselines on one eval: make rescore-baselines EVAL=e10 [EXPS="1 3 9 13 14 15 16 17 18"]
 	@test -n "$(EVAL)" || (echo "usage: make rescore-baselines EVAL=e1q [EXPS=...]"; exit 2)
-	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 2 3 9 13 14 15 16 17 18)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
+	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 3 9 13 14 15 16 17 18)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
 
 # All eval versions, full and quick subsets
 EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10

@@ -889,5 +889,5 @@ export function parseFull(text: string): string {
   return "x";
 }
 
-export const heuristicFull = makeEngine("heuristic-full", parseFull);
-export default heuristicFull;
+export const heuristicFull1 = makeEngine("heuristic-full-1", parseFull);
+export default heuristicFull1;

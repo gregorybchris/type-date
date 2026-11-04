@@ -8,7 +8,7 @@ A hand-written grammar-style parser with fuzzy word matching handles typos, glue
 
 ## Setup
 
-- Code: `packages/baselines/src/heuristic-full.ts`. No dependencies.
+- Code: `packages/baselines/src/heuristic-full-1.ts`. No dependencies.
 - Normalize: lowercase, collapse whitespace, `a.m.` to `am`, dashes, apostrophes, `2morrow` to `tomorrow`.
 - Scanner: regexes for ISO dates, `m/d/y`, `m/d`, `h:mm`, 3-4 digit `hhmm`, ordinals, plain numbers, `+N`. Letter runs go through a lexicon of about 300 words (months, weekdays, number and ordinal words, units, keywords, holidays). An unknown run is matched in this order:
   1. exact word, or plural weekday (`tuesdays`);
@@ -21,7 +21,7 @@ A hand-written grammar-style parser with fuzzy word matching handles typos, glue
 - Partial input: if the whole token list does not parse, the longest parsable prefix is used. Unknown words are not skipped, so `oct 2 pizza` is `x`. A few cases are special: a bare number followed by a partial word is `x`, and `last friday of` is `x`.
 - Tuned on `train` and `val` only, including the 3684 LLM-written rows in `train`. Test splits were scored once at the end. One rule (24h evidence between the ends of a recurrence time range, shared with ordinary ranges) was fixed after a `test_template` error example showed it. The same gap was present in `train`, and the fix moved `train` by +0.0004.
 
-Run: `pnpm --filter @type-date/baselines eval --engine heuristic-full --exp 3 --title "heuristic-full (grammar parser, fuzzy words)"`.
+Run: `pnpm --filter @type-date/baselines eval --engine heuristic-full-1 --exp 3 --title "heuristic-full-1"`.
 
 ## Results
 
@@ -64,7 +64,7 @@ Examples (text, expected, got):
   2. Weekly recurrence phrasings in held-out templates: `on <weekday>` as a recurrence, weekday lists with typos, counts after glued times.
   3. Word-number clock phrases (`twenty to midnight`, `ten to nine`), year words, `up to`, `onwards`, and filler chat (`can we do three in the afternoon`).
   4. Typos with two edits.
-- It is clearly stronger than chrono (0.32) and exp-002 (0.58) at about half the size of chrono.
+- It is clearly stronger than chrono (0.32) and heuristic-small (exp-002, removed, 0.58) at about half the size of chrono.
 
 ## Next
 

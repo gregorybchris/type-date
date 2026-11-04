@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { parseDsl, resolveDsl } from "@type-date/core";
-import { heuristicFull, parseFull } from "../src";
+import { heuristicFull1, parseFull1 as parseFull } from "../src";
 
 const cases: [string, string][] = [
   ["oct 2 to oct 5", "d 10-02>10-05"],
@@ -44,7 +44,7 @@ const cases: [string, string][] = [
   ["every tu", "d R w/1 tu"],
 ];
 
-describe("heuristic-full", () => {
+describe("heuristic-full-1", () => {
   for (const [text, dsl] of cases) {
     it(`${text} -> ${dsl}`, () => {
       expect(parseFull(text)).toBe(dsl);
@@ -57,7 +57,7 @@ describe("heuristic-full", () => {
   });
 
   it("implements the Engine interface", async () => {
-    await heuristicFull.load({ baseUrl: "" });
-    expect((await heuristicFull.predict("Oct   2")).dsl).toBe("d 10-02");
+    await heuristicFull1.load({ baseUrl: "" });
+    expect((await heuristicFull1.predict("Oct   2")).dsl).toBe("d 10-02");
   });
 });

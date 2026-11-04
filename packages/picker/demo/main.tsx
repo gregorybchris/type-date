@@ -48,8 +48,7 @@ const ENGINES = [
     label: "Heuristic (full v2)",
     note: "exp-009 · 8.8 kB · 94.9% resolved on eval e2, 70.7% on realistic external input",
   },
-  { id: "heuristic-full", label: "Heuristic (full)", note: "exp-003 · 7.9 kB · 92.7% resolved on eval e2, 67.4% on realistic external input" },
-  { id: "heuristic-small", label: "Heuristic (small)", note: "exp-002 · 3.5 kB · 61.6% resolved on e2" },
+  { id: "heuristic-full-1", label: "Heuristic (full v1)", note: "exp-003 · 7.9 kB · 92.7% resolved on eval e2, 67.4% on realistic external input" },
   { id: "chrono", label: "chrono-node", note: "exp-001 · 14.9 kB · 36.3% resolved on e2, no recurrence" },
 ] as const;
 

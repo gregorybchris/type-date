@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { heuristicFull2, parseFull, parseFull2 } from "../src";
+import { heuristicFull2, parseFull1 as parseFull, parseFull2 } from "../src";
 
-// Everything heuristic-full handles must still work, plus the new phrasings.
+// Everything heuristic-full-1 handles must still work, plus the new phrasings.
 const same = ["oct 2 to oct 5", "last friday", "every other sunday", "4 to 4:30", "tomorrow at 3pm", "next monday 9am to 5pm", "in 2 weeks", "first monday of march", "monthly on the 15th", "from 2pm tomorrow to 4pm friday", "every other friday until dec 31", "labor day", "nextwednesday2Pm", "decenber 16", "oct 2 t", "every tu", "asdf"];
 
 const cases: [string, string][] = [

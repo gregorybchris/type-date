@@ -16,15 +16,14 @@ const ROOT = resolve(here, "../../..");
 /** engine id -> source file, model family, and whether predictions depend on the reference day. */
 const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; notes: string }> = {
   chrono: { file: "chrono.ts", family: "library", perDay: true, notes: "chrono-node 2.10.3 (en casual, forwardDate) plus DSL adapter. No recurrence support." },
-  "heuristic-small": { file: "heuristic-small.ts", family: "heuristic", perDay: false, notes: "Hand-written tokenizer and a few dozen regex rules. No dependencies." },
-  "heuristic-full-2": { file: "heuristic-full-2.ts", family: "heuristic", perDay: false, notes: "heuristic-full plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
+  "heuristic-full-2": { file: "heuristic-full-2.ts", family: "heuristic", perDay: false, notes: "heuristic-full-1 plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
   "heuristic-full-5": { file: "heuristic-full-5.ts", family: "heuristic", perDay: false, notes: "heuristic-full-4 plus date validity checks, year-first and named numeric formats, two-digit years, seconds, relative offsets in more forms." },
   "heuristic-full-6": { file: "heuristic-full-6.ts", family: "heuristic", perDay: false, notes: "heuristic-full-5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, windows, anchored and business-day offsets." },
   "heuristic-full-7": { file: "heuristic-full-7.ts", family: "heuristic", perDay: false, notes: "heuristic-full-6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms." },
   "heuristic-full-8": { file: "heuristic-full-8.ts", family: "heuristic", perDay: false, notes: "heuristic-full-7 behind a normalization layer for typos and abbreviations: weekday, month and unit misspellings, short forms, digits for words." },
   "heuristic-full-4": { file: "heuristic-full-4.ts", family: "heuristic", perDay: false, notes: "heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand." },
   "heuristic-full-3": { file: "heuristic-full-3.ts", family: "heuristic", perDay: false, notes: "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm and slang." },
-  "heuristic-full": { file: "heuristic-full.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },
+  "heuristic-full-1": { file: "heuristic-full-1.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.

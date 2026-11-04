@@ -1,6 +1,6 @@
 # Dashboard
 
-Dev-only dashboard for comparing the heuristic engines (chrono-node and heuristic-small, heuristic-full, heuristic-full-2 ... 8). Vite, React 19, TypeScript, Tailwind v4, Radix primitives, Motion (`LazyMotion`), `@number-flow/react`, Sonner, d3 scales.
+Dev-only dashboard for comparing the heuristic engines (chrono-node and heuristic-full-1, heuristic-full-2 ... 8). Vite, React 19, TypeScript, Tailwind v4, Radix primitives, Motion (`LazyMotion`), `@number-flow/react`, Sonner, d3 scales.
 
 ## Run
 

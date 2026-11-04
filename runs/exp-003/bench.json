@@ -1,6 +1,6 @@
 [
   {
-    "engine": "heuristic-full",
+    "engine": "heuristic-full-1",
     "backend": "js",
     "browser": "chromium",
     "profile": "desktop",
@@ -20,7 +20,7 @@
     "data": "evals/e3q/test_external_hard.jsonl"
   },
   {
-    "engine": "heuristic-full",
+    "engine": "heuristic-full-1",
     "backend": "js",
     "browser": "chromium",
     "profile": "mobile-4x",

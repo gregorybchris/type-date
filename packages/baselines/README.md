@@ -5,9 +5,8 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | Engine id | File | Idea | gzip |
 |---|---|---|---|
 | `chrono` | `src/chrono.ts` | chrono-node 2.10.3 plus an adapter. No recurrence. | 14.9 kB |
-| `heuristic-small` | `src/heuristic-small.ts` | About 40 regex rules, no dependencies. | 3.5 kB |
-| `heuristic-full` | `src/heuristic-full.ts` | Scanner, fuzzy words, recursive-descent readers. | 7.9 kB |
-| `heuristic-full-2` | `src/heuristic-full-2.ts` | heuristic-full plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
+| `heuristic-full-1` | `src/heuristic-full-1.ts` | Scanner, fuzzy words, recursive-descent readers. | 7.9 kB |
+| `heuristic-full-2` | `src/heuristic-full-2.ts` | heuristic-full-1 plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
 | `heuristic-full-3` | `src/heuristic-full-3.ts` | heuristic-full-2 plus span extraction around unknown words, day parts, slang. | 10.3 kB |
 | `heuristic-full-4` | `src/heuristic-full-4.ts` | heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases. | 14.6 kB |
 | `heuristic-full-5` | `src/heuristic-full-5.ts` | heuristic-full-4 plus date validity checks and developer-written date formats. | 15.9 kB |
@@ -21,10 +20,10 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 
 ```sh
 pnpm --filter @type-date/baselines test                      # vitest, about 35 cases per engine
-pnpm --filter @type-date/baselines eval --engine heuristic-full --exp 3 --title "heuristic-full"
+pnpm --filter @type-date/baselines eval --engine heuristic-full-1 --exp 3 --title "heuristic-full-1"
 make eval-baselines                                          # all four, writes runs/exp-001..003 and 009 on eval e1
 make rescore-baselines EVAL=e1q [EXPS="1 9"]                 # another eval version, only adds metrics.json evals[e1q] (--no-primary)
-pnpm --filter @type-date/baselines exec tsx scripts/dev.ts heuristic-full --split val --show 20   # failures, train or val only
+pnpm --filter @type-date/baselines exec tsx scripts/dev.ts heuristic-full-1 --split val --show 20   # failures, train or val only
 ```
 
 `scripts/eval.ts` writes `runs/exp-NNN/{config,metrics}.json` and `errors/<eval version>.jsonl` as in `specs/contracts.md`. It adds `by_split.<split>.resolved`, `model.size_bytes_minified` and `node_latency_ms` (p50, p95, p99 per call in Node). `model.size_bytes` is the esbuild minified and gzipped bundle, dependencies included.

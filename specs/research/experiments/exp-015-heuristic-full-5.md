@@ -1,6 +1,6 @@
 # exp-015: heuristic-full-5
 
-Status: done. Baseline, no training. heuristic-full to heuristic-full-4 (exp-003, 009, 013, 014) are unchanged.
+Status: done. Baseline, no training. heuristic-full-1 to heuristic-full-4 (exp-003, 009, 013, 014) are unchanged.
 
 ## Hypothesis
 

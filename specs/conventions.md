@@ -59,3 +59,5 @@ Decide coarse design questions with controlled one-factor experiments before fin
 ## Baseline engine naming
 
 One engine file per experiment: `packages/baselines/src/heuristic-full-N.ts` (N = parser generation). Parts of an engine that are split out (for example a lazily loaded module) go in a directory named after the engine, `src/full-N/`, and are not registered as engines. Do not add suffixes such as `-v2` to engine files; "v2" already means DSL v2.
+
+Experiment numbers follow history, not engine generation: `heuristic-full-1` is exp-003. exp-002 (`heuristic-small`) was removed on 2026-11-04 and its number is not reused.

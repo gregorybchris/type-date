@@ -60,8 +60,7 @@ Heuristics only. Model experiments are parked (exp-010 fine-tune was stopped). A
 Whether a heuristic is good enough is an empirical question. Baselines run through the same eval, bench, and dashboard as models, and appear on the same Pareto front.
 - [ ] `packages/baselines`: engines that implement the `Engine` interface with no model
 - [ ] chrono-node + adapter to DSL (existing library, rule-based)
-- [ ] `heuristic-small`: tokenizer plus a few regex rules, tiny code size
-- [ ] `heuristic-full`: broad rule set, fuzzy matching of month and weekday words for typos
+- [ ] `heuristic-full-1`: broad rule set, fuzzy matching of month and weekday words for typos
 - [ ] Score all of them on the same eval sets and bench harness (size = bundle bytes, memory, latency)
 
 ### Phase 3: data
@@ -147,8 +146,8 @@ Not started. The user wants an mp4 that shows a human-like typist entering examp
 The staged queue is in `specs/research/design-space.md`. Numbering so far:
 
 1. exp-001: chrono-node + DSL adapter (baseline)
-2. exp-002: heuristic-small (baseline)
-3. exp-003: heuristic-full (baseline)
+2. exp-002: heuristic-small (baseline, removed 2026-11-04)
+3. exp-003: heuristic-full-1 (baseline)
 4. exp-004: first from-scratch model, v001. Invalid: tokenizer lowercased DSL labels
 5. exp-005: from-scratch enc-dec R0 (v002, BPE merged digits, 20 epochs). 61% exact on e1
 6. exp-006: SmolLM2-135M few-shot, no training (e1q)
