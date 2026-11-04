@@ -76,8 +76,8 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   const [view, setView] = useState<View & { dir: -1 | 0 | 1 }>({ ...viewOf(today), dir: 0 });
   const seq = useRef(0);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const latest = useRef({ result, onChange: props.onChange });
-  latest.current = { result, onChange: props.onChange };
+  const latest = useRef({ result, onChange: props.onChange, onConfirm: props.onConfirm });
+  latest.current = { result, onChange: props.onChange, onConfirm: props.onConfirm };
   const root = useRef<HTMLDivElement>(null);
   const card = useRef<HTMLDivElement>(null);
 
@@ -215,6 +215,41 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   });
+
+  // Arrow keys and Page Up/Down move through the calendar or the time list after you have clicked or focused the
+  // picker, even when the browser left the focus on the page (Safari does not focus a button on click). Without this
+  // the keys scroll the page. Clicking outside the picker turns this off.
+  const engaged = useRef(false);
+  useEffect(() => {
+    const onDown = (e: Event) => {
+      engaged.current = !!root.current?.contains(e.target as Node);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (!engaged.current || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      const el = document.activeElement;
+      const idle = !el || el === document.body || el === document.documentElement || el === root.current || el === card.current;
+      if (e.key === "Enter" && idle && latest.current.result) {
+        e.preventDefault();
+        latest.current.onConfirm?.(latest.current.result);
+        return;
+      }
+      if (!["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(e.key)) return;
+      if (!idle) return;
+      const target = root.current?.querySelector<HTMLElement>('[role="gridcell"] [tabindex="0"], [role=option][tabindex="0"]');
+      if (!target) return;
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+      target.dispatchEvent(new KeyboardEvent("keydown", { key: e.key, bubbles: true, cancelable: true }));
+    };
+    document.addEventListener("pointerdown", onDown, true);
+    document.addEventListener("focusin", onDown, true);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown, true);
+      document.removeEventListener("focusin", onDown, true);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, []);
 
   const onInputKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {

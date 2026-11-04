@@ -1,7 +1,7 @@
 import { baselines } from "@type-date/baselines";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { TypeDatePicker } from "../src";
+import { TypeDatePicker, summarize } from "../src";
 import "../src/styles.css";
 import "./demo.css";
 
@@ -268,6 +268,7 @@ function App() {
   const set = (p: Partial<Prefs>) => setPrefs((cur) => ({ ...cur, ...p }));
   useEffect(() => savePrefs(prefs), [prefs]);
   const [last, setLast] = useState<{ dsl: string; ms: number } | null>(null);
+  const [confirmed, setConfirmed] = useState<string | null>(null);
   const [text, setText] = useState(q.get("q") ?? "");
   const engine = ENGINES.find((e) => e.id === engineId) ?? ENGINES[0];
 
@@ -299,8 +300,20 @@ function App() {
         today={TODAY}
         showRule={rule}
         defaultText={text}
-        onConfirm={(r) => console.log("confirm", r)}
+        onChange={() => setConfirmed(null)}
+        onClear={() => setConfirmed(null)}
+        onConfirm={(r) => setConfirmed(r ? summarize(r) : null)}
       />
+      {confirmed ? (
+        <div className="demo-confirmed" role="status">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+          <span>
+            <strong>Confirmed</strong> {confirmed}
+          </span>
+        </div>
+      ) : null}
       {details ? (
         <p className="demo-note">
           {engine.note}
@@ -312,14 +325,22 @@ function App() {
           ) : null}
         </p>
       ) : null}
-      <p className="demo-try">
-        Try:{" "}
-        {(V2 ? [...V2_CHIPS, ...EXAMPLES.slice(0, 4)] : EXAMPLES).map((ex) => (
-          <button key={ex} className="demo-chip" onClick={() => setText(ex)}>
-            {ex}
-          </button>
-        ))}
-      </p>
+      <section className="demo-try" aria-label="Examples">
+        <div className="demo-try-head">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" />
+            <path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z" />
+          </svg>
+          <h2>Try an example</h2>
+        </div>
+        <div className="demo-chips">
+          {(V2 ? [...V2_CHIPS, ...EXAMPLES.slice(0, 4)] : EXAMPLES).map((ex) => (
+            <button key={ex} type="button" className="demo-chip" onClick={() => setText(ex)}>
+              {ex}
+            </button>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
