@@ -72,7 +72,7 @@ const EXAMPLES = [
   "noon",
   "four score and seven years ago",
   "13th of last month",
-  "may the fourth",
+  "may the fourth be with you",
   "pi day",
   "next leap day",
   "next friday the 13th",
