@@ -1,0 +1,40 @@
+{
+  "parent": "e3",
+  "subset_of": null,
+  "reason": "e3 plus test_public: 218 phrases mined from chrono-node's public test suite (MIT licensed; written by library developers, not LLM writers), relabeled with our DSL by two agreeing labelers (not unsure, not policy-ambiguous). Used for evaluation only. All e3 rows unchanged, so e3 results stay comparable on the shared splits.",
+  "added_splits": [
+    "test_public"
+  ],
+  "version": "e4",
+  "created": "2026-11-04T05:54:22+00:00",
+  "files": {
+    "val": {
+      "n": 2510,
+      "sha256": "b83e1f39a84c336d6f4b3b73e78234395fc6a6974de4eeafb8631e9f105bc3d8"
+    },
+    "test_template": {
+      "n": 4541,
+      "sha256": "a82af091ce97a1c309f4132474874943854987645f14fc44b9c3d2142e7bb8f3"
+    },
+    "test_noise": {
+      "n": 1465,
+      "sha256": "bfad07857f65a1a995ced1e4044c0c5f0019dedc9c38f4927e6d9742ef925bb7"
+    },
+    "test_llm": {
+      "n": 1301,
+      "sha256": "7dc6995b71ead8a41ace862665ae89d6b7c8b1cb849ace6bc55a4051f6f7e2c5"
+    },
+    "test_external": {
+      "n": 328,
+      "sha256": "872bf9d89fbfa62beca5333ef627ff3e2ac58e2be4adaa3e853c4324058b5597"
+    },
+    "test_external_hard": {
+      "n": 803,
+      "sha256": "58a05acd6469b307226bb074143e0a48917d2b1b4b30adefbee73b5bfd00475a"
+    },
+    "test_public": {
+      "n": 218,
+      "sha256": "e5c0aa893c2e826bb9c25d2f1f75755df9939021113134cffa60cf6f6c11fee6"
+    }
+  }
+}

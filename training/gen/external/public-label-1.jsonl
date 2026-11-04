@@ -1,0 +1,397 @@
+{"id": "p0000", "text": "In 5 minutes A car need to move", "dsl": "x", "unsure": true}
+{"id": "p0001", "text": "12 seconds ago I did something", "dsl": "x", "unsure": true}
+{"id": "p0002", "text": "Published: 06/2004", "dsl": "x", "unsure": true}
+{"id": "p0003", "text": "Let's have a meeting on Friday next week", "dsl": "x", "unsure": true}
+{"id": "p0004", "text": "annual leave from today to tomorrow afternoon", "dsl": "d +0d>+1d"}
+{"id": "p0005", "text": "05/31/2024.14:15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "p0006", "text": "from 01/21/2021 10:00 to 01/01/2023 07:00", "dsl": "dt 2021-01-21 10:00>2023-01-01 07:00"}
+{"id": "p0007", "text": "The event is today - next friday", "dsl": "d +0d>fr+1"}
+{"id": "p0008", "text": "1h ago", "dsl": "x", "unsure": true}
+{"id": "p0009", "text": "Lets meet on Tuesday morning", "dsl": "d tu"}
+{"id": "p0010", "text": "end of this year", "dsl": "x", "unsure": true}
+{"id": "p0011", "text": "15 minute earlier", "dsl": "x", "unsure": true}
+{"id": "p0012", "text": "02/29/2022", "dsl": "x"}
+{"id": "p0013", "text": "The Deadline was yesterday", "dsl": "d -1d"}
+{"id": "p0014", "text": "24 October, 9 p.m.", "dsl": "dt 10-24 21:00"}
+{"id": "p0015", "text": "8pm - 11", "dsl": "t 20:00>23:00"}
+{"id": "p0016", "text": "a min before", "dsl": "x", "unsure": true}
+{"id": "p0017", "text": "The Deadline is past Friday...", "dsl": "d fr-1"}
+{"id": "p0018", "text": "Wednesday of this week", "dsl": "x", "unsure": true}
+{"id": "p0019", "text": "2 days later", "dsl": "d +2d"}
+{"id": "p0020", "text": "August 10 to 22, 2012", "dsl": "d 2012-08-10>2012-08-22"}
+{"id": "p0021", "text": "In  about 5 hours", "dsl": "x", "unsure": true}
+{"id": "p0022", "text": "within a few months", "dsl": "x", "unsure": true}
+{"id": "p0023", "text": "The Deadline is 8/10/2012", "dsl": "d 2012-08-10"}
+{"id": "p0024", "text": "next 2 days", "dsl": "x", "unsure": true}
+{"id": "p0025", "text": "a week before yesterday", "dsl": "d -8d"}
+{"id": "p0026", "text": "32 August 2014", "dsl": "x"}
+{"id": "p0027", "text": "May twenty-fourth", "dsl": "d 05-24"}
+{"id": "p0028", "text": "In around 5 hours", "dsl": "x", "unsure": true}
+{"id": "p0029", "text": "them ago", "dsl": "x"}
+{"id": "p0030", "text": "In about ~5 hours", "dsl": "x", "unsure": true}
+{"id": "p0031", "text": "15m from now", "dsl": "x", "unsure": true}
+{"id": "p0032", "text": "Monday to Friday", "dsl": "d mo>fr"}
+{"id": "p0033", "text": "23rd february, 2016", "dsl": "d 2016-02-23"}
+{"id": "p0034", "text": "2014/12/28", "dsl": "d 2014-12-28"}
+{"id": "p0035", "text": "Dec. 21", "dsl": "d 12-21"}
+{"id": "p0036", "text": "10pm to 2am", "dsl": "t 22:00>02:00"}
+{"id": "p0037", "text": "2 day before today", "dsl": "d -2d"}
+{"id": "p0038", "text": "06/31/2022", "dsl": "x"}
+{"id": "p0039", "text": "09-JAN-2017", "dsl": "d 2017-01-09"}
+{"id": "p0040", "text": "The Deadline is midnight", "dsl": "t 00:00"}
+{"id": "p0041", "text": "next weekend", "dsl": "x", "unsure": true}
+{"id": "p0042", "text": "2014/22/29", "dsl": "x"}
+{"id": "p0043", "text": "May eighth - tenth, 2010", "dsl": "d 2010-05-08>2010-05-10"}
+{"id": "p0044", "text": "12th of July at 19:00", "dsl": "dt 07-12 19:00"}
+{"id": "p0045", "text": "12 hours from now I did something", "dsl": "x", "unsure": true}
+{"id": "p0046", "text": "5 days ago, we did something", "dsl": "d -5d"}
+{"id": "p0047", "text": "+them", "dsl": "x"}
+{"id": "p0048", "text": "end of this week", "dsl": "x", "unsure": true}
+{"id": "p0049", "text": "Aug 10 to Nov 12", "dsl": "d 08-10>11-12"}
+{"id": "p0050", "text": "Tuesday of last week", "dsl": "x", "unsure": true}
+{"id": "p0051", "text": "3 Aug 96", "dsl": "d 1996-08-03"}
+{"id": "p0052", "text": "The Deadline was this evening", "dsl": "d +0d"}
+{"id": "p0053", "text": "10:00:00 through 21:45:00", "dsl": "t 10:00>21:45"}
+{"id": "p0054", "text": "last 2 weeks", "dsl": "x", "unsure": true}
+{"id": "p0055", "text": "3rd Feb 82", "dsl": "d 1982-02-03"}
+{"id": "p0056", "text": "Jan 1 2025, 9:30", "dsl": "dt 2025-01-01 9:30?"}
+{"id": "p0057", "text": "end of the past year", "dsl": "x", "unsure": true}
+{"id": "p0058", "text": "8/32/2014", "dsl": "x"}
+{"id": "p0059", "text": "I'm at 101,194 points!", "dsl": "x"}
+{"id": "p0060", "text": "February 29, 2014", "dsl": "x"}
+{"id": "p0061", "text": "2012/Aug/10", "dsl": "d 2012-08-10"}
+{"id": "p0062", "text": "February 29", "dsl": "d 02-29"}
+{"id": "p0063", "text": "next qtr", "dsl": "x", "unsure": true}
+{"id": "p0064", "text": "5 days from now, we did something", "dsl": "d +5d"}
+{"id": "p0065", "text": "3w later", "dsl": "d +3w"}
+{"id": "p0066", "text": "nowhere", "dsl": "x"}
+{"id": "p0067", "text": "2024-13-01", "dsl": "x"}
+{"id": "p0068", "text": "August 10 - November 12", "dsl": "d 08-10>11-12"}
+{"id": "p0069", "text": "2019 to 2020", "dsl": "d Y@2019>Y@2020"}
+{"id": "p0070", "text": "06/-31/2022", "dsl": "x"}
+{"id": "p0071", "text": ": 8/1/2012", "dsl": "d 2012-08-01"}
+{"id": "p0072", "text": "3m 49s ago", "dsl": "x", "unsure": true}
+{"id": "p0073", "text": "The Deadline is today", "dsl": "d +0d"}
+{"id": "p0074", "text": "18/13/2022", "dsl": "x"}
+{"id": "p0075", "text": "She is leaving in August.", "dsl": "d M@08"}
+{"id": "p0076", "text": "+15 minutes", "dsl": "x", "unsure": true}
+{"id": "p0077", "text": "-3y", "dsl": "d -3y"}
+{"id": "p0078", "text": "at 12.30", "dsl": "t 12:30?"}
+{"id": "p0079", "text": "1 at night", "dsl": "t 01:00"}
+{"id": "p0080", "text": "50/6/2018; next date: 7/2019", "dsl": "x", "unsure": true}
+{"id": "p0081", "text": "end of the month", "dsl": "x", "unsure": true}
+{"id": "p0082", "text": "10:00:00 - 15/15", "dsl": "x"}
+{"id": "p0083", "text": "15 hours 29 min ago", "dsl": "x", "unsure": true}
+{"id": "p0084", "text": "5. March 2019, 03:26 PM EDT", "dsl": "x", "unsure": true}
+{"id": "p0085", "text": "The Deadline is 2012/8/10", "dsl": "d 2012-08-10"}
+{"id": "p0086", "text": "5 h ago", "dsl": "x", "unsure": true}
+{"id": "p0087", "text": "tonight at 8", "dsl": "dt +0d 20:00"}
+{"id": "p0088", "text": "next tuesday +10 days", "dsl": "x", "unsure": true}
+{"id": "p0089", "text": "06/Nov/2023:06:36:02 +0200", "dsl": "x", "unsure": true}
+{"id": "p0090", "text": "2014/2/28", "dsl": "d 2014-02-28"}
+{"id": "p0091", "text": "past 2 days", "dsl": "x", "unsure": true}
+{"id": "p0092", "text": "5 minutes later", "dsl": "x", "unsure": true}
+{"id": "p0093", "text": "10 August - 12 September", "dsl": "d 08-10>09-12"}
+{"id": "p0094", "text": "8/32", "dsl": "x"}
+{"id": "p0095", "text": "10 days from now, we did something", "dsl": "d +10d"}
+{"id": "p0096", "text": "In 5 mins a car need to move", "dsl": "x", "unsure": true}
+{"id": "p0097", "text": "5 years ago, we did something", "dsl": "d -5y"}
+{"id": "p0098", "text": "5 May 12:00", "dsl": "dt 05-05 12:00"}
+{"id": "p0099", "text": "Jan 1, 2020 Morning UTC", "dsl": "x", "unsure": true}
+{"id": "p0100", "text": "give it 2 months", "dsl": "d +2m"}
+{"id": "p0101", "text": "25 minutes later", "dsl": "x", "unsure": true}
+{"id": "p0102", "text": "in 2hour", "dsl": "x", "unsure": true}
+{"id": "p0103", "text": "24: July 23, 2026 at 3:30 PM", "dsl": "dt 2026-07-23 15:30"}
+{"id": "p0104", "text": "Friday of next week at 9am", "dsl": "x", "unsure": true}
+{"id": "p0105", "text": "next quarter", "dsl": "x", "unsure": true}
+{"id": "p0106", "text": "5m ago", "dsl": "x", "unsure": true}
+{"id": "p0107", "text": "last weekend", "dsl": "x", "unsure": true}
+{"id": "p0108", "text": "Aug 9 96", "dsl": "d 1996-08-09"}
+{"id": "p0109", "text": "The Deadline was midnight", "dsl": "t 00:00"}
+{"id": "p0110", "text": "August 10, 2012", "dsl": "d 2012-08-10"}
+{"id": "p0111", "text": "set a timer for 5 minutes 30 seconds", "dsl": "x", "unsure": true}
+{"id": "p0112", "text": "2012/8/10", "dsl": "d 2012-08-10"}
+{"id": "p0113", "text": "Nov 12, 2011", "dsl": "d 2011-11-12"}
+{"id": "p0114", "text": "the min after", "dsl": "x"}
+{"id": "p0115", "text": "1am-3", "dsl": "t 01:00>03:00"}
+{"id": "p0116", "text": "within 3 days", "dsl": "x", "unsure": true}
+{"id": "p0117", "text": "10. - 22. August 2012", "dsl": "d 2012-08-10>2012-08-22"}
+{"id": "p0118", "text": "May 33,2021", "dsl": "x"}
+{"id": "p0119", "text": "the min before", "dsl": "x"}
+{"id": "p0120", "text": "set a timer for 5 minutes and 30 seconds", "dsl": "x", "unsure": true}
+{"id": "p0121", "text": "12 hours ago I did something", "dsl": "x", "unsure": true}
+{"id": "p0122", "text": "10/August 2012", "dsl": "d 2012-08-10"}
+{"id": "p0123", "text": "in am", "dsl": "x"}
+{"id": "p0124", "text": "we have to make something in 5 days.", "dsl": "d +5d"}
+{"id": "p0125", "text": "Let's sync on Tuesday of next week", "dsl": "x", "unsure": true}
+{"id": "p0126", "text": "-2 hours 5 minutes", "dsl": "x", "unsure": true}
+{"id": "p0127", "text": "7 May 11:00", "dsl": "dt 05-07 11:00"}
+{"id": "p0128", "text": "15s later", "dsl": "x", "unsure": true}
+{"id": "p0129", "text": "6/2018", "dsl": "x", "unsure": true}
+{"id": "p0130", "text": "Sun, Mar. 6, 2016", "dsl": "d 2016-03-06"}
+{"id": "p0131", "text": "Friday of last week", "dsl": "x", "unsure": true}
+{"id": "p0132", "text": "8:23 AM, Jul 9", "dsl": "dt 07-09 08:23"}
+{"id": "p0133", "text": "8/Oct/2012", "dsl": "d 2012-10-08"}
+{"id": "p0134", "text": "10:00:00 till 21:45:00", "dsl": "t 10:00>21:45"}
+{"id": "p0135", "text": "last day of month", "dsl": "x", "unsure": true}
+{"id": "p0136", "text": "32 August", "dsl": "x"}
+{"id": "p0137", "text": "5 minutes ago", "dsl": "x", "unsure": true}
+{"id": "p0138", "text": "The Deadline was this afternoon", "dsl": "d +0d"}
+{"id": "p0139", "text": "12 hours ago", "dsl": "x", "unsure": true}
+{"id": "p0140", "text": "The Deadline is 2018 March 18", "dsl": "d 2018-03-18"}
+{"id": "p0141", "text": "a few days ago, we did something", "dsl": "x", "unsure": true}
+{"id": "p0142", "text": "10 August - 12 September 2013", "dsl": "d 2013-08-10>2013-09-12"}
+{"id": "p0143", "text": "Eighth to eleventh May 2010", "dsl": "d 2010-05-08>2010-05-11"}
+{"id": "p0144", "text": "I'm at 10.1", "dsl": "x"}
+{"id": "p0145", "text": "24 October, 9 pm", "dsl": "dt 10-24 21:00"}
+{"id": "p0146", "text": "in 2 minute", "dsl": "x", "unsure": true}
+{"id": "p0147", "text": "50/6/2018", "dsl": "x"}
+{"id": "p0148", "text": "2023-12-29 -10days", "dsl": "x", "unsure": true}
+{"id": "p0149", "text": "end of last month", "dsl": "x", "unsure": true}
+{"id": "p0150", "text": "15 minutes from now", "dsl": "x", "unsure": true}
+{"id": "p0151", "text": "1 day 21 hours ago", "dsl": "x", "unsure": true}
+{"id": "p0152", "text": "Twenty-fourth of May", "dsl": "d 05-24"}
+{"id": "p0153", "text": "Sun., March 6, 2016", "dsl": "d 2016-03-06"}
+{"id": "p0154", "text": "next two years", "dsl": "x", "unsure": true}
+{"id": "p0155", "text": "05/31/2024-14:15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "p0156", "text": "In 5 minutes I will go home", "dsl": "x", "unsure": true}
+{"id": "p0157", "text": "1 m", "dsl": "x", "unsure": true}
+{"id": "p0158", "text": "next weekday", "dsl": "x", "unsure": true}
+{"id": "p0159", "text": "23. October 2026", "dsl": "d 2026-10-23"}
+{"id": "p0160", "text": "2014-02-30", "dsl": "x"}
+{"id": "p0161", "text": "after an hour", "dsl": "x", "unsure": true}
+{"id": "p0162", "text": "8/10/2012", "dsl": "d 2012-08-10"}
+{"id": "p0163", "text": "3 min 49 sec ago", "dsl": "x", "unsure": true}
+{"id": "p0164", "text": "within a month", "dsl": "x", "unsure": true}
+{"id": "p0165", "text": "next two quarter", "dsl": "x", "unsure": true}
+{"id": "p0166", "text": "in 15m", "dsl": "x", "unsure": true}
+{"id": "p0167", "text": "The Deadline was last night", "dsl": "d -1d"}
+{"id": "p0168", "text": "next day", "dsl": "d +1d"}
+{"id": "p0169", "text": "11pm - 12am", "dsl": "t 23:00>00:00"}
+{"id": "p0170", "text": "2020 at  11 AM", "dsl": "x", "unsure": true}
+{"id": "p0171", "text": "2 day before yesterday", "dsl": "d -3d"}
+{"id": "p0172", "text": "+1 day 2 hour", "dsl": "x", "unsure": true}
+{"id": "p0173", "text": "2012 80 10", "dsl": "x"}
+{"id": "p0174", "text": "The Deadline is 10 August", "dsl": "d 08-10"}
+{"id": "p0175", "text": "at midnight on 12th August", "dsl": "dt 08-12 00:00"}
+{"id": "p0176", "text": "She is getting married soon (July 2017).", "dsl": "x", "unsure": true}
+{"id": "p0177", "text": "2 day after today", "dsl": "d +2d"}
+{"id": "p0178", "text": "end of next month", "dsl": "x", "unsure": true}
+{"id": "p0179", "text": "end of month", "dsl": "x", "unsure": true}
+{"id": "p0180", "text": "2 day after tomorrow", "dsl": "d +3d"}
+{"id": "p0181", "text": "2014.12.28", "dsl": "d 2014-12-28"}
+{"id": "p0182", "text": "half an hour from now", "dsl": "x", "unsure": true}
+{"id": "p0183", "text": "end of next week", "dsl": "x", "unsure": true}
+{"id": "p0184", "text": "6 in the afternoon", "dsl": "t 18:00"}
+{"id": "p0185", "text": "The deadline is 123/6/2018", "dsl": "x"}
+{"id": "p0186", "text": "The Deadline is Tuesday, January 10", "dsl": "d 01-10"}
+{"id": "p0187", "text": "03 Aug 96", "dsl": "d 1996-08-03"}
+{"id": "p0188", "text": "we have to make something within 10 day", "dsl": "x", "unsure": true}
+{"id": "p0189", "text": "15 minute before", "dsl": "x", "unsure": true}
+{"id": "p0190", "text": "in a few year", "dsl": "x", "unsure": true}
+{"id": "p0191", "text": "11 tonight", "dsl": "dt +0d 23:00"}
+{"id": "p0192", "text": "2020", "dsl": "d Y@2020"}
+{"id": "p0193", "text": "tomorrow after 4pm", "dsl": "x", "unsure": true}
+{"id": "p0194", "text": "The Deadline was this morning", "dsl": "d +0d"}
+{"id": "p0195", "text": "in them", "dsl": "x"}
+{"id": "p0196", "text": "Sunday, March, 6th 2016", "dsl": "d 2016-03-06"}
+{"id": "p0197", "text": "Sunday, December 7, 2014", "dsl": "d 2014-12-07"}
+{"id": "p0198", "text": "Connect back after this year", "dsl": "x", "unsure": true}
+{"id": "p0199", "text": "The Deadline is Tue, 10 January", "dsl": "d 01-10"}
+{"id": "p0200", "text": "15 minute out", "dsl": "x", "unsure": true}
+{"id": "p0201", "text": "The Deadline is now", "dsl": "x", "unsure": true}
+{"id": "p0202", "text": "I'm at 10", "dsl": "x"}
+{"id": "p0203", "text": "In a couple of days", "dsl": "x", "unsure": true}
+{"id": "p0204", "text": "Monday of next week", "dsl": "x", "unsure": true}
+{"id": "p0205", "text": "The Deadline is August 10, 8 AD", "dsl": "x", "unsure": true}
+{"id": "p0206", "text": "noway", "dsl": "x"}
+{"id": "p0207", "text": "-2hr5min", "dsl": "x", "unsure": true}
+{"id": "p0208", "text": "January 32, 2021", "dsl": "x"}
+{"id": "p0209", "text": "17 August 2013 to 19 August 2013", "dsl": "d 2013-08-17>2013-08-19"}
+{"id": "p0210", "text": "tomorrow before 4pm", "dsl": "x", "unsure": true}
+{"id": "p0211", "text": "The Deadline is 2012/aug/10", "dsl": "d 2012-08-10"}
+{"id": "p0212", "text": "tonight 8pm", "dsl": "dt +0d 20:00"}
+{"id": "p0213", "text": "2012/80/10", "dsl": "x"}
+{"id": "p0214", "text": "08/08/2023, 09:15 AM to 08/29/2023, 09:15 AM", "dsl": "dt 2023-08-08 09:15>2023-08-29 09:15"}
+{"id": "p0215", "text": "this Friday to this Monday", "dsl": "d fr>mo"}
+{"id": "p0216", "text": "xyesterday", "dsl": "x"}
+{"id": "p0217", "text": "+2 months, 5 days", "dsl": "x", "unsure": true}
+{"id": "p0218", "text": "May eighth, 2010", "dsl": "d 2010-05-08"}
+{"id": "p0219", "text": "Aug 10 - Nov 12, 2011", "dsl": "d 2011-08-10>2011-11-12"}
+{"id": "p0220", "text": "Aug 10 - Nov 12, 2013", "dsl": "d 2013-08-10>2013-11-12"}
+{"id": "p0221", "text": "2/28/2014", "dsl": "d 2014-02-28"}
+{"id": "p0222", "text": "December 31, 2022 10:00 pm - 1:00 am", "dsl": "dt 2022-12-31 22:00>01:00"}
+{"id": "p0223", "text": "in 1d, 2hr, and 5min", "dsl": "x", "unsure": true}
+{"id": "p0224", "text": "15 minute ago", "dsl": "x", "unsure": true}
+{"id": "p0225", "text": "8 - 11pm", "dsl": "t 20:00>23:00"}
+{"id": "p0226", "text": "timeoff monday 7 to 9am", "dsl": "dt mo 07:00>09:00"}
+{"id": "p0227", "text": "The event is on May 32, 2021 now", "dsl": "x"}
+{"id": "p0228", "text": "annual leave from today morning to tomorrow", "dsl": "d +0d>+1d"}
+{"id": "p0229", "text": "10:00:00 - 21:45:00", "dsl": "t 10:00>21:45"}
+{"id": "p0230", "text": "15/28/2022", "dsl": "x"}
+{"id": "p0231", "text": "2014/13/22", "dsl": "x"}
+{"id": "p0232", "text": "Tuesday of this week", "dsl": "x", "unsure": true}
+{"id": "p0233", "text": "next hour", "dsl": "x", "unsure": true}
+{"id": "p0234", "text": "1am", "dsl": "t 01:00"}
+{"id": "p0235", "text": "1/8 at 12pm", "dsl": "dt 01-08 12:00"}
+{"id": "p0236", "text": "within 30 days", "dsl": "x", "unsure": true}
+{"id": "p0237", "text": "I am arriving sometime in August, 2012, probably.", "dsl": "x", "unsure": true}
+{"id": "p0238", "text": "Friday 12-30-16", "dsl": "d 2016-12-30"}
+{"id": "p0239", "text": "Scheduled (6/2018)", "dsl": "x", "unsure": true}
+{"id": "p0240", "text": "Wed, Jan 20th, 2016", "dsl": "d 2016-01-20"}
+{"id": "p0241", "text": "after this year", "dsl": "x", "unsure": true}
+{"id": "p0242", "text": "August 32, 2014", "dsl": "x"}
+{"id": "p0243", "text": "we have to make something in five days.", "dsl": "d +5d"}
+{"id": "p0244", "text": "The Deadline is now, without implicit local timezone", "dsl": "x", "unsure": true}
+{"id": "p0245", "text": "29 February", "dsl": "d 02-29"}
+{"id": "p0246", "text": "22-23 Feb at 7pm", "dsl": "dt 02-22 19:00>02-23 19:00"}
+{"id": "p0247", "text": "Monday (forward dates only)", "dsl": "d mo"}
+{"id": "p0248", "text": "The event is going ahead (04/2016)", "dsl": "x", "unsure": true}
+{"id": "p0249", "text": "tell them later", "dsl": "x"}
+{"id": "p0250", "text": "within two weeks", "dsl": "x", "unsure": true}
+{"id": "p0251", "text": "The Deadline is Tomorrow", "dsl": "d +1d"}
+{"id": "p0252", "text": "-5d 00", "dsl": "x", "unsure": true}
+{"id": "p0253", "text": "80-32-89-89", "dsl": "x"}
+{"id": "p0254", "text": "in 24 hours", "dsl": "x", "unsure": true}
+{"id": "p0255", "text": "next 2 weeks 3 days", "dsl": "x", "unsure": true}
+{"id": "p0256", "text": "Sun, March 6, 2016", "dsl": "d 2016-03-06"}
+{"id": "p0257", "text": "10-August-2012", "dsl": "d 2012-08-10"}
+{"id": "p0258", "text": "a week after tomorrow", "dsl": "d +8d"}
+{"id": "p0259", "text": "last day of the month", "dsl": "x", "unsure": true}
+{"id": "p0260", "text": "11 at night", "dsl": "t 23:00"}
+{"id": "p0261", "text": "05/31/2024:14:15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "p0262", "text": "I'm at 101 points!", "dsl": "x"}
+{"id": "p0263", "text": "+15min", "dsl": "x", "unsure": true}
+{"id": "p0264", "text": "11am to 1am", "dsl": "t 11:00>01:00"}
+{"id": "p0265", "text": "29 February 2014", "dsl": "x"}
+{"id": "p0266", "text": "The Deadline is Tuesday 11/3/2015", "dsl": "d 2015-11-03"}
+{"id": "p0267", "text": "December 31, 2022 10:00 pm - 12:00 am", "dsl": "dt 2022-12-31 22:00>00:00"}
+{"id": "p0268", "text": "wait for 5 minutes", "dsl": "x", "unsure": true}
+{"id": "p0269", "text": "The Deadline is August 10 2555 BE", "dsl": "x", "unsure": true}
+{"id": "p0270", "text": "in half a quarter", "dsl": "x", "unsure": true}
+{"id": "p0271", "text": "Friday of next week", "dsl": "x", "unsure": true}
+{"id": "p0272", "text": "1pm-3", "dsl": "t 13:00>15:00"}
+{"id": "p0273", "text": "Sunday 12/7/2014", "dsl": "d 2014-12-07"}
+{"id": "p0274", "text": "last day of last week", "dsl": "x", "unsure": true}
+{"id": "p0275", "text": "9 Aug 96", "dsl": "d 1996-08-09"}
+{"id": "p0276", "text": "within around 3 hours", "dsl": "x", "unsure": true}
+{"id": "p0277", "text": "February 151998", "dsl": "x"}
+{"id": "p0278", "text": "In several hours", "dsl": "x", "unsure": true}
+{"id": "p0279", "text": "15 hours 29 min", "dsl": "x", "unsure": true}
+{"id": "p0280", "text": "24th October, 9 am", "dsl": "dt 10-24 09:00"}
+{"id": "p0281", "text": "The Deadline is August 10, 345 BC", "dsl": "x", "unsure": true}
+{"id": "p0282", "text": "05/31/2024 14:15", "dsl": "dt 2024-05-31 14:15"}
+{"id": "p0283", "text": "5 months ago, we did something", "dsl": "d -5m"}
+{"id": "p0284", "text": "The Deadline is today 5PM", "dsl": "dt +0d 17:00"}
+{"id": "p0285", "text": "14/4 90", "dsl": "x"}
+{"id": "p0286", "text": "10 - 11 at night", "dsl": "t 22:00>23:00"}
+{"id": "p0287", "text": "Friday 30-12-16", "dsl": "d 2016-12-30"}
+{"id": "p0288", "text": "1hr ago", "dsl": "x", "unsure": true}
+{"id": "p0289", "text": "16/6/2018", "dsl": "d 2018-06-16"}
+{"id": "p0290", "text": "Tuesday of next week", "dsl": "x", "unsure": true}
+{"id": "p0291", "text": "10 August 2012", "dsl": "d 2012-08-10"}
+{"id": "p0292", "text": "1d 21 h 25m ago", "dsl": "x", "unsure": true}
+{"id": "p0293", "text": "04/2016", "dsl": "x", "unsure": true}
+{"id": "p0294", "text": "21-APR-16", "dsl": "d 2016-04-21"}
+{"id": "p0295", "text": "sunday morning", "dsl": "d su"}
+{"id": "p0296", "text": "A days ago, we did something", "dsl": "x", "unsure": true}
+{"id": "p0297", "text": "in 1 hour", "dsl": "x", "unsure": true}
+{"id": "p0298", "text": "set a timer for 1 hour, 5 minutes, and 30 seconds", "dsl": "x", "unsure": true}
+{"id": "p0299", "text": "20:32:13", "dsl": "x", "unsure": true}
+{"id": "p0300", "text": "4/13/1", "dsl": "x", "unsure": true}
+{"id": "p0301", "text": "set a timer for 5 minutes, 30 seconds", "dsl": "x", "unsure": true}
+{"id": "p0302", "text": "three seconds from now I did something", "dsl": "x", "unsure": true}
+{"id": "p0303", "text": "last weekday", "dsl": "x", "unsure": true}
+{"id": "p0304", "text": "31st March, 2016", "dsl": "d 2016-03-31"}
+{"id": "p0305", "text": "this afternoon at 3", "dsl": "dt +0d 15:00"}
+{"id": "p0306", "text": "I'm at 10 - 10.1", "dsl": "x"}
+{"id": "p0307", "text": "5hr before", "dsl": "x", "unsure": true}
+{"id": "p0308", "text": "2014-08-32", "dsl": "x"}
+{"id": "p0309", "text": "within 1 hour", "dsl": "x", "unsure": true}
+{"id": "p0310", "text": "The Deadline is August 10", "dsl": "d 08-10"}
+{"id": "p0311", "text": "I plan on taking the day off on Tuesday, next week", "dsl": "x", "unsure": true}
+{"id": "p0312", "text": "last two weeks", "dsl": "x", "unsure": true}
+{"id": "p0313", "text": "The Deadline is last Friday...", "dsl": "d fr-1"}
+{"id": "p0314", "text": "2024/13/1", "dsl": "x"}
+{"id": "p0315", "text": "now + 40minutes", "dsl": "x", "unsure": true}
+{"id": "p0316", "text": "06/Nov/2023", "dsl": "d 2023-11-06"}
+{"id": "p0317", "text": "half an hour ago", "dsl": "x", "unsure": true}
+{"id": "p0318", "text": "5/31", "dsl": "d 05-31"}
+{"id": "p0319", "text": "a few hour", "dsl": "x", "unsure": true}
+{"id": "p0320", "text": "+1m", "dsl": "x", "unsure": true}
+{"id": "p0321", "text": "within 12 month", "dsl": "x", "unsure": true}
+{"id": "p0322", "text": "A days from now, we did something", "dsl": "x", "unsure": true}
+{"id": "p0323", "text": "10-August 2012", "dsl": "d 2012-08-10"}
+{"id": "p0324", "text": "end of next year", "dsl": "x", "unsure": true}
+{"id": "p0325", "text": "1 hour", "dsl": "x", "unsure": true}
+{"id": "p0326", "text": "end of the next week", "dsl": "x", "unsure": true}
+{"id": "p0327", "text": "99/06/2018", "dsl": "x"}
+{"id": "p0328", "text": "14:15 05/31/2024", "dsl": "dt 2024-05-31 14:15"}
+{"id": "p0329", "text": "three seconds ago I did something", "dsl": "x", "unsure": true}
+{"id": "p0330", "text": "Friday to Monday", "dsl": "d fr>mo"}
+{"id": "p0331", "text": "a week ago, we did something", "dsl": "d -1w"}
+{"id": "p0332", "text": "8/10/2012 - 8/15/2012", "dsl": "d 2012-08-10>2012-08-15"}
+{"id": "p0333", "text": "7-730", "dsl": "t 7?>7:30?"}
+{"id": "p0334", "text": "last 2m", "dsl": "x", "unsure": true}
+{"id": "p0335", "text": "am ago", "dsl": "x"}
+{"id": "p0336", "text": "Aug 9, 96", "dsl": "d 1996-08-09"}
+{"id": "p0337", "text": "in 5 minutes", "dsl": "x", "unsure": true}
+{"id": "p0338", "text": "Tuesday of next week after 2pm", "dsl": "x", "unsure": true}
+{"id": "p0339", "text": "12 hours from now", "dsl": "x", "unsure": true}
+{"id": "p0340", "text": "XXX is set to be released in the second half of 2025", "dsl": "x", "unsure": true}
+{"id": "p0341", "text": "3 week later", "dsl": "d +3w"}
+{"id": "p0342", "text": "10 to 22 August 2012", "dsl": "d 2012-08-10>2012-08-22"}
+{"id": "p0343", "text": "10:00:00 until 21:45:00", "dsl": "t 10:00>21:45"}
+{"id": "p0344", "text": "August 10 - 22, 2012", "dsl": "d 2012-08-10>2012-08-22"}
+{"id": "p0345", "text": "within one year", "dsl": "x", "unsure": true}
+{"id": "p0346", "text": "the second half", "dsl": "x"}
+{"id": "p0347", "text": "in 1 mon", "dsl": "d +1m"}
+{"id": "p0348", "text": "10 August 2013 - 12 September", "dsl": "d 2013-08-10>2013-09-12"}
+{"id": "p0349", "text": "Sunday, March 6, 2016", "dsl": "d 2016-03-06"}
+{"id": "p0350", "text": "within 5hr", "dsl": "x", "unsure": true}
+{"id": "p0351", "text": "15 minutes earlier", "dsl": "x", "unsure": true}
+{"id": "p0352", "text": "Published: 6/2018", "dsl": "x", "unsure": true}
+{"id": "p0353", "text": "12 seconds from now I did something", "dsl": "x", "unsure": true}
+{"id": "p0354", "text": "24th October, 9 pm", "dsl": "dt 10-24 21:00"}
+{"id": "p0355", "text": "+am", "dsl": "x"}
+{"id": "p0356", "text": "Jan 1 3000, 9:30", "dsl": "dt 3000-01-01 9:30?"}
+{"id": "p0357", "text": "vacation monday - friday", "dsl": "d mo>fr"}
+{"id": "p0358", "text": "06/Nov/2023:06:36:02", "dsl": "x", "unsure": true}
+{"id": "p0359", "text": "17 August 2013 - 19 August 2013", "dsl": "d 2013-08-17>2013-08-19"}
+{"id": "p0360", "text": "15 minute from now", "dsl": "x", "unsure": true}
+{"id": "p0361", "text": "Jan 1, 2020 Evening JST", "dsl": "x", "unsure": true}
+{"id": "p0362", "text": "May 32, 2021", "dsl": "x"}
+{"id": "p0363", "text": "tdtmr", "dsl": "x"}
+{"id": "p0364", "text": "12-3am", "dsl": "t 00:00>03:00"}
+{"id": "p0365", "text": "in 1d 2hr 5min", "dsl": "x", "unsure": true}
+{"id": "p0366", "text": "a min out", "dsl": "x", "unsure": true}
+{"id": "p0367", "text": "I may by here. May the force be with you. Theresa may become PM soon.", "dsl": "x"}
+{"id": "p0368", "text": "2014 12 28", "dsl": "d 2014-12-28"}
+{"id": "p0369", "text": "In 5 seconds A car need to move", "dsl": "x", "unsure": true}
+{"id": "p0370", "text": "within half an hour", "dsl": "x", "unsure": true}
+{"id": "p0371", "text": "May 99, 2021", "dsl": "x"}
+{"id": "p0372", "text": "24 October 10 o clock", "dsl": "dt 10-24 10?"}
+{"id": "p0373", "text": "12 hrs from now", "dsl": "x", "unsure": true}
+{"id": "p0374", "text": "do I have the money", "dsl": "x"}
+{"id": "p0375", "text": "I'm at 10 - 20", "dsl": "x"}
+{"id": "p0376", "text": "3mo later", "dsl": "d +3m"}
+{"id": "p0377", "text": "09/JAN/2017", "dsl": "d 2017-01-09"}
+{"id": "p0378", "text": "last day of next month", "dsl": "x", "unsure": true}
+{"id": "p0379", "text": "Sun 15Sep", "dsl": "d 09-15"}
+{"id": "p0380", "text": "I'm at 10.1 - 10.12", "dsl": "x"}
+{"id": "p0381", "text": "10 days ago, we did something", "dsl": "d -10d"}
+{"id": "p0382", "text": "10/August/2012", "dsl": "d 2012-08-10"}
+{"id": "p0383", "text": "yesterday afternoon", "dsl": "d -1d"}
+{"id": "p0384", "text": "August 32", "dsl": "x"}
+{"id": "p0385", "text": "after a year", "dsl": "x", "unsure": true}
+{"id": "p0386", "text": "knowledge", "dsl": "x"}
+{"id": "p0387", "text": "in 1.5 hours", "dsl": "x", "unsure": true}
+{"id": "p0388", "text": "8:23 AM ∙ Jul 9", "dsl": "dt 07-09 08:23"}
+{"id": "p0389", "text": "10 - 22 August 2012", "dsl": "d 2012-08-10>2012-08-22"}
+{"id": "p0390", "text": "3y", "dsl": "x", "unsure": true}
+{"id": "p0391", "text": "The Deadline is Tuesday, 10 January", "dsl": "d 01-10"}
+{"id": "p0392", "text": "notoday", "dsl": "x"}
+{"id": "p0393", "text": "set a timer for 1 hour, 5 minutes, 30 seconds", "dsl": "x", "unsure": true}
+{"id": "p0394", "text": "11pm-3", "dsl": "t 23:00>03:00"}
+{"id": "p0395", "text": "The Deadline is 10. August", "dsl": "d 08-10"}
+{"id": "p0396", "text": "2/29/2014", "dsl": "x"}
