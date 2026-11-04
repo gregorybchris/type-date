@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 import shutil
 from collections import defaultdict
 from datetime import UTC, datetime
@@ -153,6 +154,67 @@ def tag_from_dsl(dsl: str) -> str:
     return "basic-date"
 
 
+_MER = re.compile(
+    r"\b(am|pm|a\.m\.?|p\.m\.?|noon|midnight|midday|morning|afternoon|evening|night|arvo|tonight)\b"
+    r"|\d\s?[ap]\b|\d[ap]m",
+    re.I,
+)
+_WD_START = re.compile(
+    r"^\W*(on\s+)?(mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)[a-z]*\b"
+    r"(?!.*\b(every|each|weekly|daily|until|till|for|x\d)\b)",
+    re.I,
+)
+
+
+def policy_flags(row: dict) -> list[str]:
+    """Label-policy classes in which the text does not determine the label (see exp-009 note)."""
+    t, d = row["text"].lower(), row["dsl"]
+    flags = []
+    if re.search(r"(\d{2}:\d{2}|\d\?)", d):
+        unknown = "?" in d
+        stated = bool(_MER.search(t))
+        if unknown and stated:
+            flags.append("meridiem")
+        elif not unknown and not stated:
+            m = re.search(r"(?<!\d)(\d{1,2}):(\d{2})", t)
+            if not m or not (
+                int(m.group(1)) >= 13 or (len(m.group(1)) == 2 and m.group(1)[0] == "0")
+            ):
+                flags.append("meridiem")
+    if d.startswith(("d R", "dt R")) and _WD_START.match(t):
+        flags.append("on-weekday-recurrence")
+    if re.search(r"(?<!\d)\d{1,2}\.\d{2}(?!\d)", row["text"]):
+        flags.append("dotted-numeric")
+    return flags
+
+
+def cut_clean(version: str, parent: str, extra: dict[str, list[dict]], reason: str) -> dict:
+    """New eval version: parent minus policy-ambiguous rows, plus new splits. Not a superset."""
+    base = load_eval(parent)
+    dropped: dict[str, dict[str, int]] = {}
+    out: dict[str, list[dict]] = {}
+    for sp, rows in base.items():
+        keep = []
+        cnt: dict[str, int] = defaultdict(int)
+        for r in rows:
+            fl = policy_flags(r)
+            if fl:
+                for f in fl:
+                    cnt[f] += 1
+                cnt["rows_dropped"] += 1
+            else:
+                keep.append(r)
+        out[sp] = keep
+        dropped[sp] = dict(cnt)
+    out.update(extra)
+    return _write(
+        version,
+        out,
+        {"parent": parent, "subset_of": None, "reason": reason, "added_splits": sorted(extra),
+         "dropped_by_policy": dropped, "comparable_with_parent": False},
+    )  # fmt: skip
+
+
 def extend(version: str, parent: str, extra: dict[str, list[dict]], reason: str) -> dict:
     """New eval version: parent rows unchanged plus new splits. Parent results stay comparable."""
     base = load_eval(parent)
@@ -205,4 +267,14 @@ def coverage() -> None:
     Console().print(f"{missing} missing cells")
 
 
-__all__ = ["extend", "tag_from_dsl", "create", "quick", "load_eval", "check_leak", "decontaminate"]
+__all__ = [
+    "cut_clean",
+    "policy_flags",
+    "extend",
+    "tag_from_dsl",
+    "create",
+    "quick",
+    "load_eval",
+    "check_leak",
+    "decontaminate",
+]
