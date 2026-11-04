@@ -31,3 +31,27 @@ Status: `ok` = expressible now, `ext` = needs the DSL extension in `specs/dsl.md
 2. The picker must be able to show it (multi-select, ranges, recurrence preview).
 3. A family is added only with its negative controls: similar text that must not parse as the new form.
 4. Each family gets independent writers (instructions list families and phrasings but never the DSL forms), two agreeing labelers, and a hidden test split.
+
+## Families from web research round 4 (2026-11-03)
+
+Source: `specs/research/background/web-sources-4.md`. None of these are in the DSL yet. Status column: `x` means the label is `x` for now; `v3?` means a DSL v3 candidate.
+
+| Family | Examples | Status |
+|---|---|---|
+| Sub-day interval recurrence with start and end clauses | "every 12 hours starting at 9pm", "every two days at 19:00" | v3? |
+| Completion-based recurrence | "every! 3 hours", "after 10 days" | x |
+| Day-of-month or per-month ordinal lists in one recurrence | "every 2, 15, 27", "every 1st wed jan, 3rd thu jul" | v3? |
+| Workday-counted ordinals, nth-last positions | "every last workday at 3pm", "fifth last day of May" | v3? |
+| Alternatives and fuzzy intervals | "two or three days ago", "in 2 to 4 weeks", "3ish pm" | x |
+| Deadline and bound words | "within half an hour", "by end of the month", "away until Wednesday" | open range where one side is known, else x |
+| Direction qualifiers on weekdays | "past Monday", "Monday after next", "two weeks from tuesday" | partly covered |
+| Titles that look like dates (negative controls) | "Cafe May", "Meet Bob at 2.30", "A380 tomorrow" | x |
+| Chained anchored offsets | "12 hours before yesterday at 12:30" | v3? |
+| Boundary shorthand | eod, eow, som, soq, "mid January" | v3? |
+| Day-only ranges | "Sep 12-13", "25 - 31 Dec" | covered |
+| Frequency words without days | "twice a week", "biweekly" | x |
+| Typos and malformed ordinals | "satterday", "tommorning", "23th December" | robustness |
+| Time zone suffixes, seconds | "16:11:35 -05:00", "10:30 pst" | strip, keep HH:MM |
+| Non-English names | "Juli", "Marzo", "завтра" | out of scope |
+
+Eval note: e7 `test_web_*` rows keep only phrases where two labelers agreed and neither was unsure, so unsupported families are mostly absent from the eval. Use the unsure rate per source as a separate signal.
