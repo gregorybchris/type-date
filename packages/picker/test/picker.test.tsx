@@ -173,7 +173,8 @@ describe("mobile structure", () => {
   it("shows a hint after the first tap of a range", async () => {
     const { type } = setup(table({ r: "d 10-02>10-05" }));
     type("r");
-    await waitFor(() => expect(screen.getByRole("grid")).toBeTruthy());
+    // The grid renders before the parse resolves, so wait for the range itself.
+    await waitFor(() => expect(screen.getAllByRole("gridcell").filter((c) => c.dataset.range)).toHaveLength(4));
     fireEvent.click(screen.getByRole("button", { name: "Oct 8, 2026" }));
     expect(screen.getByText("Tap an end date")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Oct 10, 2026" }));

@@ -46,3 +46,5 @@ testpaths = ["tests"]
 
 [tool.ruff.lint.per-file-ignores]
 "src/typedate/datagen/*" = ["E501"]
+"src/typedate/zeroshot.py" = ["E501"]
+"src/typedate/runwriter.py" = ["E501"]

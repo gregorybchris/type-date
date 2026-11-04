@@ -202,6 +202,37 @@ def data_decontaminate(
     typer.echo(json.dumps(decontaminate(base, version, eval_version)))
 
 
+@eval_app.command("zeroshot")
+def eval_zeroshot(
+    exp: int = typer.Argument(...),
+    model_id: str = typer.Option(..., "--model", help="HF causal LM id"),
+    title: str = typer.Option(...),
+    description: str = typer.Option(...),
+    eval_version: str = typer.Option("e1q"),
+    shots: int = typer.Option(24),
+) -> None:
+    """Score a pretrained causal LM with a few-shot prompt and no training."""
+    from .zeroshot import run
+
+    ev = run(exp, model_id, title, description, eval_version, shots)
+    typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")
+
+
+@eval_app.command("rerun")
+def eval_rerun(
+    exp: int = typer.Argument(...),
+    eval_version: str = typer.Option("e1"),
+    primary: bool = typer.Option(True, help="Make this the run's main eval"),
+) -> None:
+    """Re-score a trained scratch model checkpoint on an eval version."""
+    from .rerun import rerun
+
+    ev = rerun(exp, eval_version, primary)
+    typer.echo(
+        f"exp-{exp:03d} on {eval_version}: exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}"
+    )
+
+
 exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")
 app.add_typer(exp_app, name="exp")
 
