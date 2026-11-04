@@ -178,7 +178,10 @@ def eval_quick(
     """Cut a small stratified subset for fast screening."""
     from .evalsets import quick
 
-    m = quick(version, of, {"val": 150, "test_template": 150, "test_noise": 100, "test_llm": 200})
+    m = quick(
+        version, of,
+        {"val": 150, "test_template": 150, "test_noise": 100, "test_llm": 200, "test_external": 100},
+    )  # fmt: skip
     typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
 
 
@@ -260,6 +263,26 @@ def eval_coverage() -> None:
     from .evalsets import coverage
 
     coverage()
+
+
+@eval_app.command("cut-clean")
+def eval_cut_clean(
+    version: str = typer.Argument(..., help="e.g. e2"),
+    parent: str = typer.Option("e1"),
+    extra: list[str] | None = typer.Option(None, "--extra", help="split=path.jsonl (repeatable)"),
+    reason: str = typer.Option(...),
+) -> None:
+    """Cut a new eval version: parent minus policy-ambiguous rows, plus extra splits."""
+    from pathlib import Path
+
+    from .evalsets import cut_clean
+
+    adds = {}
+    for e in extra or []:
+        name, path = e.split("=", 1)
+        adds[name] = [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+    m = cut_clean(version, parent, adds, reason)
+    typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
 
 
 exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")
