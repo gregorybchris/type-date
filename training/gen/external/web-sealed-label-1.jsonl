@@ -1,0 +1,257 @@
+{"id": "websm0000", "text": "Thu 16th at 4pm", "dsl": "x", "unsure": true}
+{"id": "websm0001", "text": "30 seconds ago", "dsl": "x", "unsure": true}
+{"id": "websm0002", "text": "sunday 6am", "dsl": "dt su 06:00"}
+{"id": "websm0003", "text": "2008-02-15/03-14", "dsl": "d 2008-02-15>2008-03-14"}
+{"id": "websm0004", "text": "At 1 minute past the hour", "dsl": "x", "unsure": true}
+{"id": "websm0005", "text": "2017-22-06", "dsl": "x"}
+{"id": "websm0006", "text": "5th of March 2001", "dsl": "d 2001-03-05"}
+{"id": "websm0007", "text": "Every second, on the hour", "dsl": "x", "unsure": true}
+{"id": "websm0008", "text": "every hour", "dsl": "x", "unsure": true}
+{"id": "websm0009", "text": "Eid al-Adha 1974", "dsl": "x", "unsure": true}
+{"id": "websm0010", "text": "Mar 9th at 10:99", "dsl": "x"}
+{"id": "websm0011", "text": "03/25/1995", "dsl": "d 1995-03-25"}
+{"id": "websm0012", "text": "P3Y6M4DT12H30M5S", "dsl": "x", "unsure": true}
+{"id": "websm0013", "text": "Run once, at startup", "dsl": "x"}
+{"id": "websm0014", "text": "In 5 seconds", "dsl": "x", "unsure": true}
+{"id": "websm0015", "text": "mid-1990s", "dsl": "x", "unsure": true}
+{"id": "websm0016", "text": "daily at 3am 10x", "dsl": "dt R d/1 n10 03:00"}
+{"id": "websm0017", "text": "December 31, 2020", "dsl": "d 2020-12-31"}
+{"id": "websm0018", "text": "2013-08-01T19:30:00.345-07:00", "dsl": "x", "unsure": true}
+{"id": "websm0019", "text": "foo 3A bar", "dsl": "x"}
+{"id": "websm0020", "text": "tomorrow at 8:00pm", "dsl": "dt +1d 20:00"}
+{"id": "websm0021", "text": "1 year ago tomorrow", "dsl": "x", "unsure": true}
+{"id": "websm0022", "text": "3p -4p", "dsl": "t 15:00>16:00"}
+{"id": "websm0023", "text": "Every week until 1/1/2027", "dsl": "d R w/1 u2027-01-01"}
+{"id": "websm0024", "text": "at 1 P.", "dsl": "t 13:00"}
+{"id": "websm0025", "text": "10 09 2003", "dsl": "d 2003-10-09"}
+{"id": "websm0026", "text": "Yanks-Rays tonight at 6:40", "dsl": "dt +0d 18:40"}
+{"id": "websm0027", "text": "-3 month", "dsl": "d -3m"}
+{"id": "websm0028", "text": "8/1/2100 2:01pm", "dsl": "dt 2100-08-01 14:01"}
+{"id": "websm0029", "text": "every 2 hours twice", "dsl": "x", "unsure": true}
+{"id": "websm0030", "text": "2 hours and 30 minutes", "dsl": "x", "unsure": true}
+{"id": "websm0031", "text": "by Thursday 5pm", "dsl": "dt >th 17:00"}
+{"id": "websm0032", "text": "each week on saturday thru tuesday", "dsl": "d R w/1 mo,tu,sa,su"}
+{"id": "websm0033", "text": "every week starting this wednesday ending May 13th", "dsl": "d R w/1 we u05-13 swe"}
+{"id": "websm0034", "text": "Weekly until December 24, 1997", "dsl": "d R w/1 u1997-12-24"}
+{"id": "websm0035", "text": "2 mins", "dsl": "x", "unsure": true}
+{"id": "websm0036", "text": "at 15 past 3pm", "dsl": "t 15:15"}
+{"id": "websm0037", "text": "after 10 days", "dsl": "x", "unsure": true}
+{"id": "websm0038", "text": "every! 30 days", "dsl": "d R d/30"}
+{"id": "websm0039", "text": "/remind #design Join the meeting Monday", "dsl": "d mo"}
+{"id": "websm0040", "text": "1995Mar25", "dsl": "d 1995-03-25"}
+{"id": "websm0041", "text": "10:30 PM EST", "dsl": "t 22:30"}
+{"id": "websm0042", "text": "at least", "dsl": "x"}
+{"id": "websm0043", "text": "do it for the past Monday", "dsl": "d mo-1"}
+{"id": "websm0044", "text": "every 14 jan, 14 apr, 15 jun, 15 sep", "dsl": "x", "unsure": true}
+{"id": "websm0045", "text": "1 Jul – 30 Sep", "dsl": "d 07-01>09-30"}
+{"id": "websm0046", "text": "Every 3 hours from 9:00 AM to 5:00 PM on a specific day", "dsl": "x", "unsure": true}
+{"id": "websm0047", "text": "daybreak", "dsl": "x", "unsure": true}
+{"id": "websm0048", "text": "You must register by midnight on Tuesday 14 June", "dsl": "dt >06-14 00:00"}
+{"id": "websm0049", "text": "1st Wednesday after 9 August", "dsl": "x", "unsure": true}
+{"id": "websm0050", "text": "At 12:00 AM, on day 1 of the month", "dsl": "dt R m/1 d1 00:00"}
+{"id": "websm0051", "text": "every other hour", "dsl": "x", "unsure": true}
+{"id": "websm0052", "text": "in 1'", "dsl": "x", "unsure": true}
+{"id": "websm0053", "text": "Last Thursday in October at 24:00", "dsl": "x", "unsure": true}
+{"id": "websm0054", "text": "Covenant thu", "dsl": "d th"}
+{"id": "websm0055", "text": "2 extra minutes", "dsl": "x", "unsure": true}
+{"id": "websm0056", "text": "05:59:60", "dsl": "x", "unsure": true}
+{"id": "websm0057", "text": "31 September 2015", "dsl": "x"}
+{"id": "websm0058", "text": "Every Thursday, but only during June, July, and August, forever", "dsl": "d R w/1 th M@06,M@07,M@08"}
+{"id": "websm0059", "text": "First Monday in February, or 1 February if the date falls on a Friday", "dsl": "x", "unsure": true}
+{"id": "websm0060", "text": "daily starting march 3rd", "dsl": "d R d/1 s03-03"}
+{"id": "websm0061", "text": "tonight 7", "dsl": "dt +0d 19:00"}
+{"id": "websm0062", "text": "2002-02-17", "dsl": "d 2002-02-17"}
+{"id": "websm0063", "text": "Every 20th Monday of the year, forever", "dsl": "x", "unsure": true}
+{"id": "websm0064", "text": "2017-06-30 8.30pm", "dsl": "dt 2017-06-30 20:30"}
+{"id": "websm0065", "text": "every sat for 2 months", "dsl": "d R w/1 sa u+2m s+0d"}
+{"id": "websm0066", "text": "5:54 pm", "dsl": "t 17:54"}
+{"id": "websm0067", "text": "Family vacation from July 1-8", "dsl": "d 07-01>07-08"}
+{"id": "websm0068", "text": "every Wednesday, Friday, Saturday ending Saturday", "dsl": "d R w/1 we,fr,sa usa"}
+{"id": "websm0069", "text": "fourth Wednesday of October", "dsl": "d we#4@10"}
+{"id": "websm0070", "text": "/remind me to update the team meeting agenda on Mondays", "dsl": "d R w/1 mo"}
+{"id": "websm0071", "text": "3 months later", "dsl": "d +3m"}
+{"id": "websm0072", "text": "two fortnights later", "dsl": "d +4w"}
+{"id": "websm0073", "text": "Monday closest to 27 May", "dsl": "x", "unsure": true}
+{"id": "websm0074", "text": "one and three quarter of hour", "dsl": "x", "unsure": true}
+{"id": "websm0075", "text": "last friday at 20:00", "dsl": "dt fr-1 20:00"}
+{"id": "websm0076", "text": "4 June 2017", "dsl": "d 2017-06-04"}
+{"id": "websm0077", "text": "3rd Monday in January", "dsl": "d mo#3@01"}
+{"id": "websm0078", "text": "x-mas eve", "dsl": "d 12-24"}
+{"id": "websm0079", "text": "Every second, only in 2013", "dsl": "x", "unsure": true}
+{"id": "websm0080", "text": "April 9, 2019", "dsl": "d 2019-04-09"}
+{"id": "websm0081", "text": "Lunch with John at 123 Main Street on Tuesday", "dsl": "d tu"}
+{"id": "websm0082", "text": "fifteen minutes ago", "dsl": "x", "unsure": true}
+{"id": "websm0083", "text": "1.45 pm", "dsl": "t 13:45"}
+{"id": "websm0084", "text": "15h00", "dsl": "t 15:00"}
+{"id": "websm0085", "text": "due wednesday", "dsl": "d we"}
+{"id": "websm0086", "text": "Yearly in June and July for 10 occurrences", "dsl": "x", "unsure": true}
+{"id": "websm0087", "text": "Friday, October 14, 1983", "dsl": "d 1983-10-14"}
+{"id": "websm0088", "text": "PT1M", "dsl": "x", "unsure": true}
+{"id": "websm0089", "text": "2004-07-15T06:45:00", "dsl": "dt 2004-07-15 06:45"}
+{"id": "websm0090", "text": "October 2006", "dsl": "x", "unsure": true}
+{"id": "websm0091", "text": "first friday of every other month", "dsl": "x", "unsure": true}
+{"id": "websm0092", "text": "one minute and 30 seconds", "dsl": "x", "unsure": true}
+{"id": "websm0093", "text": "a fortnight", "dsl": "x", "unsure": true}
+{"id": "websm0094", "text": "sow", "dsl": "x"}
+{"id": "websm0095", "text": "15h30", "dsl": "t 15:30"}
+{"id": "websm0096", "text": "/remind me Drink water Everyday", "dsl": "d R d/1"}
+{"id": "websm0097", "text": "At 11:30 AM, Monday through Friday", "dsl": "dt R d/1 mo,tu,we,th,fr 11:30"}
+{"id": "websm0098", "text": "31 FEB 10", "dsl": "x"}
+{"id": "websm0099", "text": "every other Tues 7am starting 1 Nov", "dsl": "dt R w/2 tu 07:00 s11-01"}
+{"id": "websm0100", "text": "every N weeks", "dsl": "x", "unsure": true}
+{"id": "websm0101", "text": "2nd month", "dsl": "x", "unsure": true}
+{"id": "websm0102", "text": "8/21/03", "dsl": "d 2003-08-21"}
+{"id": "websm0103", "text": "2012-01-03 01:00:00.234567", "dsl": "dt 2012-01-03 01:00"}
+{"id": "websm0104", "text": "Last Friday in April at 00:00", "dsl": "dt fr#-1@04 00:00"}
+{"id": "websm0105", "text": "How does 5p mon sound? Or maybe 4p tu?", "dsl": "x", "unsure": true}
+{"id": "websm0106", "text": "Add call Chris at 1700 to my task list in RTM", "dsl": "t 17:00"}
+{"id": "websm0107", "text": "five hours from now", "dsl": "x", "unsure": true}
+{"id": "websm0108", "text": "09-25-2003", "dsl": "d 2003-09-25"}
+{"id": "websm0109", "text": "coffee w/ Shawn every Tuesday at 7am", "dsl": "dt R w/1 tu 07:00"}
+{"id": "websm0110", "text": "every tues, wed, thurs, fri", "dsl": "d R w/1 tu,we,th,fr"}
+{"id": "websm0111", "text": "every 8 hours except tomorrow and 1/5 at 4pm and Jan 7th at 8am", "dsl": "x", "unsure": true}
+{"id": "websm0112", "text": "5 months ago", "dsl": "d -5m"}
+{"id": "websm0113", "text": "Piano lessons Tuesdays and Thursdays at 5-6pm from 1/21 to 2/23", "dsl": "dt R w/1 tu,th u02-23 17:00>18:00 s01-21"}
+{"id": "websm0114", "text": "Friday 31 December 2021", "dsl": "d 2021-12-31"}
+{"id": "websm0115", "text": "12:01 am", "dsl": "t 00:01"}
+{"id": "websm0116", "text": "new year eve", "dsl": "d 12-31"}
+{"id": "websm0117", "text": "5-59 pm", "dsl": "x"}
+{"id": "websm0118", "text": "2023/01/27", "dsl": "d 2023-01-27"}
+{"id": "websm0119", "text": "9.00yh", "dsl": "x", "unsure": true}
+{"id": "websm0120", "text": "午前0時", "dsl": "t 00:00"}
+{"id": "websm0121", "text": "2012:05:25 22:06:50", "dsl": "dt 2012-05-25 22:06"}
+{"id": "websm0122", "text": "every X months on the first Friday of the month", "dsl": "x", "unsure": true}
+{"id": "websm0123", "text": "1999-12-31", "dsl": "d 1999-12-31"}
+{"id": "websm0124", "text": "every wednsday", "dsl": "d R w/1 we"}
+{"id": "websm0125", "text": "3A", "dsl": "t 03:00"}
+{"id": "websm0126", "text": "2nd of feb", "dsl": "d 02-02"}
+{"id": "websm0127", "text": "7-4-76", "dsl": "d 1976-07-04"}
+{"id": "websm0128", "text": "Pacific Daylight Time", "dsl": "x"}
+{"id": "websm0129", "text": "no due date", "dsl": "x"}
+{"id": "websm0130", "text": "2015-166T12:34:56Z", "dsl": "x", "unsure": true}
+{"id": "websm0131", "text": "6/28 5:00 PM - 8/02 7:00 PM", "dsl": "dt 06-28 17:00>08-02 19:00"}
+{"id": "websm0132", "text": "e 6:50PM", "dsl": "t 18:50", "unsure": true}
+{"id": "websm0133", "text": "2017-06-30T08:20:30", "dsl": "dt 2017-06-30 08:20"}
+{"id": "websm0134", "text": "Fri at 1900", "dsl": "dt fr 19:00"}
+{"id": "websm0135", "text": "1 year 12 months", "dsl": "x", "unsure": true}
+{"id": "websm0136", "text": "2 hours 30 minutes", "dsl": "x", "unsure": true}
+{"id": "websm0137", "text": "Thursday, January 7, 2016", "dsl": "d 2016-01-07"}
+{"id": "websm0138", "text": "28 February", "dsl": "d 02-28"}
+{"id": "websm0139", "text": "tomorrow at 6:45pm", "dsl": "dt +1d 18:45"}
+{"id": "websm0140", "text": "1 hour thirty", "dsl": "x", "unsure": true}
+{"id": "websm0141", "text": "foo 2024-11-09 tomorrow at noon bar", "dsl": "x", "unsure": true}
+{"id": "websm0142", "text": "12/25/07", "dsl": "d 2007-12-25"}
+{"id": "websm0143", "text": "1/2 h", "dsl": "x", "unsure": true}
+{"id": "websm0144", "text": "the 1st century", "dsl": "x"}
+{"id": "websm0145", "text": "2006 June 1", "dsl": "d 2006-06-01"}
+{"id": "websm0146", "text": "1 P.", "dsl": "t 13:00"}
+{"id": "websm0147", "text": "1 April 8.30pm", "dsl": "dt 04-01 20:30"}
+{"id": "websm0148", "text": "2hr", "dsl": "x", "unsure": true}
+{"id": "websm0149", "text": "5.6s", "dsl": "x", "unsure": true}
+{"id": "websm0150", "text": "every 3rd Tuesday starting Aug 29 ending in 6 months", "dsl": "x", "unsure": true}
+{"id": "websm0151", "text": "Every minute, on the first weekday of the month", "dsl": "x", "unsure": true}
+{"id": "websm0152", "text": "13/01/2021", "dsl": "d 2021-01-13"}
+{"id": "websm0153", "text": "Wed 25 Jun", "dsl": "d 06-25"}
+{"id": "websm0154", "text": "every morning", "dsl": "x", "unsure": true}
+{"id": "websm0155", "text": "half an hour", "dsl": "x", "unsure": true}
+{"id": "websm0156", "text": "18-12-15 06:00", "dsl": "dt 2018-12-15 06:00", "unsure": true}
+{"id": "websm0157", "text": "2017-06-30 8.20", "dsl": "dt 2017-06-30 8:20?"}
+{"id": "websm0158", "text": "11.59 p.m.", "dsl": "t 23:59"}
+{"id": "websm0159", "text": "a month and a half", "dsl": "x", "unsure": true}
+{"id": "websm0160", "text": "1 hour and fifteen", "dsl": "x", "unsure": true}
+{"id": "websm0161", "text": "1991-05-17", "dsl": "d 1991-05-17"}
+{"id": "websm0162", "text": "Thu Sep 25 2003", "dsl": "d 2003-09-25"}
+{"id": "websm0163", "text": "2018-03-14", "dsl": "d 2018-03-14"}
+{"id": "websm0164", "text": "9:30 - 11:00 CST", "dsl": "t 9:30?>11?"}
+{"id": "websm0165", "text": "forty-five seconds ago", "dsl": "x", "unsure": true}
+{"id": "websm0166", "text": "the twentieth-century", "dsl": "x"}
+{"id": "websm0167", "text": "Nov9, 25Dec", "dsl": "d 11-09"}
+{"id": "websm0168", "text": "5 hours ago", "dsl": "x", "unsure": true}
+{"id": "websm0169", "text": "last decade", "dsl": "x", "unsure": true}
+{"id": "websm0170", "text": "10 before 2", "dsl": "x", "unsure": true}
+{"id": "websm0171", "text": "Team standup every weekday at 9:30am", "dsl": "dt R d/1 mo,tu,we,th,fr 09:30"}
+{"id": "websm0172", "text": "Alexa, remind me to call the dentist tomorrow at 10am.", "dsl": "dt +1d 10:00"}
+{"id": "websm0173", "text": "Team sync Monday every 2 weeks", "dsl": "d R w/2 mo"}
+{"id": "websm0174", "text": "FY2026-27", "dsl": "x"}
+{"id": "websm0175", "text": "At 12:00 AM, on the fifth Monday of the month", "dsl": "x", "unsure": true}
+{"id": "websm0176", "text": "1/2 hour", "dsl": "x", "unsure": true}
+{"id": "websm0177", "text": "two additional minutes", "dsl": "x", "unsure": true}
+{"id": "websm0178", "text": "2003-09-25T10:49:41.5-03:00", "dsl": "x", "unsure": true}
+{"id": "websm0179", "text": "2nd and last fridays of each month", "dsl": "d R m/1 fr#2,fr#-1"}
+{"id": "websm0180", "text": "Fri at 7pm", "dsl": "dt fr 19:00"}
+{"id": "websm0181", "text": "2013-08-01T19:30:00.3456789-07:00", "dsl": "x", "unsure": true}
+{"id": "websm0182", "text": "the end of the week", "dsl": "x", "unsure": true}
+{"id": "websm0183", "text": "9:45 a.m.", "dsl": "t 09:45"}
+{"id": "websm0184", "text": "123456789123 hour", "dsl": "x", "unsure": true}
+{"id": "websm0185", "text": "1.5 days later", "dsl": "x", "unsure": true}
+{"id": "websm0186", "text": "2 days from this second", "dsl": "x", "unsure": true}
+{"id": "websm0187", "text": "2 more minutes", "dsl": "x", "unsure": true}
+{"id": "websm0188", "text": "7/17-7/18", "dsl": "d 07-17>07-18"}
+{"id": "websm0189", "text": "at 12 P.", "dsl": "t 12:00"}
+{"id": "websm0190", "text": "next friday june", "dsl": "x", "unsure": true}
+{"id": "websm0191", "text": "Friday before the AFL Grand Final", "dsl": "x", "unsure": true}
+{"id": "websm0192", "text": "At 10:29 AM", "dsl": "t 10:29"}
+{"id": "websm0193", "text": "last April 1", "dsl": "d 04-01<", "unsure": true}
+{"id": "websm0194", "text": "5-2020", "dsl": "x", "unsure": true}
+{"id": "websm0195", "text": "on the 27th at 11:30am", "dsl": "dt D@27 11:30"}
+{"id": "websm0196", "text": "/remind #management Send annual salary review report on December 15", "dsl": "d 12-15"}
+{"id": "websm0197", "text": "0099-01-01T00:00:00", "dsl": "x", "unsure": true}
+{"id": "websm0198", "text": "70Y", "dsl": "x"}
+{"id": "websm0199", "text": "12h 01m02s am", "dsl": "t 00:01", "unsure": true}
+{"id": "websm0200", "text": "2d", "dsl": "x", "unsure": true}
+{"id": "websm0201", "text": "Thu Sep 25 10:36:28", "dsl": "dt 09-25 10:36"}
+{"id": "websm0202", "text": "one thirty minutes ago", "dsl": "x", "unsure": true}
+{"id": "websm0203", "text": "may tenth", "dsl": "d 05-10"}
+{"id": "websm0204", "text": "1 hour from now", "dsl": "x", "unsure": true}
+{"id": "websm0205", "text": "17-59", "dsl": "x"}
+{"id": "websm0206", "text": "The first Saturday that follows the first Sunday of the month, forever", "dsl": "x", "unsure": true}
+{"id": "websm0207", "text": "1999345", "dsl": "x", "unsure": true}
+{"id": "websm0208", "text": "Thursday July 31", "dsl": "d 07-31"}
+{"id": "websm0209", "text": "2017-06-30 08:20:30 +02:00", "dsl": "x", "unsure": true}
+{"id": "websm0210", "text": "06/2017/22", "dsl": "x"}
+{"id": "websm0211", "text": "Team sync Monday 10-11am", "dsl": "dt mo 10:00>11:00"}
+{"id": "websm0212", "text": "next hrs", "dsl": "x"}
+{"id": "websm0213", "text": "02/11/2026", "dsl": "d 2026-02-11"}
+{"id": "websm0214", "text": "in 1.5 days", "dsl": "x", "unsure": true}
+{"id": "websm0215", "text": "Friday, December 31, 2021", "dsl": "d 2021-12-31"}
+{"id": "websm0216", "text": "January 2027", "dsl": "x", "unsure": true}
+{"id": "websm0217", "text": "平成18年12月30日", "dsl": "d 2006-12-30"}
+{"id": "websm0218", "text": "/remind me to schedule annual reviews every January 25", "dsl": "x", "unsure": true}
+{"id": "websm0219", "text": "22nd February 2012", "dsl": "d 2012-02-22"}
+{"id": "websm0220", "text": "sunday 4:20", "dsl": "dt su 4:20?"}
+{"id": "websm0221", "text": "this afternoon at 12", "dsl": "dt +0d 12:00"}
+{"id": "websm0222", "text": "later", "dsl": "x"}
+{"id": "websm0223", "text": "Friday, October 14, 1983 at 1:30 PM Eastern Daylight Time", "dsl": "dt 1983-10-14 13:30"}
+{"id": "websm0224", "text": "First Friday in June", "dsl": "d fr#1@06"}
+{"id": "websm0225", "text": "2 hour and 10", "dsl": "x", "unsure": true}
+{"id": "websm0226", "text": "le 1er juillet 2017", "dsl": "d 2017-07-01"}
+{"id": "websm0227", "text": "at most", "dsl": "x"}
+{"id": "websm0228", "text": "the second last week of October 2018", "dsl": "x", "unsure": true}
+{"id": "websm0229", "text": "30 June 2018", "dsl": "d 2018-06-30"}
+{"id": "websm0230", "text": "two and quarter of hours", "dsl": "x", "unsure": true}
+{"id": "websm0231", "text": "from 18th Dec for 10 days", "dsl": "d 12-18>+10d"}
+{"id": "websm0232", "text": "4-99", "dsl": "x"}
+{"id": "websm0233", "text": "mon 2:35", "dsl": "dt mo 2:35?"}
+{"id": "websm0234", "text": "no more than", "dsl": "x"}
+{"id": "websm0235", "text": "quarter past eleven", "dsl": "t 11:15?"}
+{"id": "websm0236", "text": "starting today and ending one week from now", "dsl": "d +0d>+1w"}
+{"id": "websm0237", "text": "May Day (1 May)", "dsl": "d 05-01"}
+{"id": "websm0238", "text": "11:59 p.m.", "dsl": "t 23:59"}
+{"id": "websm0239", "text": "1995/03/25", "dsl": "d 1995-03-25"}
+{"id": "websm0240", "text": "1 sept", "dsl": "d 09-01"}
+{"id": "websm0241", "text": "1.5 hours", "dsl": "x", "unsure": true}
+{"id": "websm0242", "text": "At 12:23 PM, on day 15 of the month", "dsl": "dt R m/1 d15 12:23"}
+{"id": "websm0243", "text": "monthly on the first and last instance of tue and fri", "dsl": "x", "unsure": true}
+{"id": "websm0244", "text": "overnight", "dsl": "x", "unsure": true}
+{"id": "websm0245", "text": "24/09/2026 18h", "dsl": "dt 2026-09-24 18:00"}
+{"id": "websm0246", "text": "8/1/2100 at 1:01", "dsl": "dt 2100-08-01 1:01?"}
+{"id": "websm0247", "text": "-1 decade 2 years", "dsl": "x", "unsure": true}
+{"id": "websm0248", "text": "Thursday December 30th 2005", "dsl": "d 2005-12-30"}
+{"id": "websm0249", "text": "-1484823450", "dsl": "x"}
+{"id": "websm0250", "text": "every! 10 days", "dsl": "d R d/10"}
+{"id": "websm0251", "text": "Saturday, 10am to 1pm", "dsl": "dt sa 10:00>13:00"}
+{"id": "websm0252", "text": "25/03/1995", "dsl": "d 1995-03-25"}
+{"id": "websm0253", "text": "Friday, October 14, 1983 at 1:30:23 PM Eastern Daylight Time", "dsl": "dt 1983-10-14 13:30"}
+{"id": "websm0254", "text": "this fortnight", "dsl": "x", "unsure": true}
+{"id": "websm0255", "text": "25-Mar-1995", "dsl": "d 1995-03-25"}
+{"id": "websm0256", "text": "December 2015", "dsl": "x", "unsure": true}

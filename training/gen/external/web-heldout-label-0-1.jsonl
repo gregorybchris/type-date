@@ -1,0 +1,346 @@
+{"id": "webhs0000", "text": "1999-12-31 to tomorrow", "dsl": "d 1999-12-31>+1d"}
+{"id": "webhs0001", "text": "between March and May", "dsl": "d M@03>M@05"}
+{"id": "webhs0002", "text": "feb 28 3 am", "dsl": "dt 02-28 03:00"}
+{"id": "webhs0003", "text": "for December after leaving in February", "unsure": true, "dsl": "x"}
+{"id": "webhs0004", "text": "Dec 9th between 8am and 2pm", "dsl": "dt 12-09 08:00>14:00"}
+{"id": "webhs0005", "text": "12/29/2000 20:29:29.79", "dsl": "dt 2000-12-29 20:29"}
+{"id": "webhs0006", "text": "Monday night", "dsl": "d mo"}
+{"id": "webhs0007", "text": "I want to travel a big chunk of world next year.", "unsure": true, "dsl": "x"}
+{"id": "webhs0008", "text": "190s BC", "unsure": true, "dsl": "x"}
+{"id": "webhs0009", "text": "08/12,15", "unsure": true, "dsl": "x"}
+{"id": "webhs0010", "text": "1am last friday", "dsl": "dt fr-1 01:00"}
+{"id": "webhs0011", "text": "between ninth and seventeenth of april", "dsl": "d 04-09>04-17"}
+{"id": "webhs0012", "text": "06:56:06 pm", "dsl": "t 18:56"}
+{"id": "webhs0013", "text": "2 days each week", "unsure": true, "dsl": "x"}
+{"id": "webhs0014", "text": "for 4 months", "unsure": true, "dsl": "x"}
+{"id": "webhs0015", "text": "in 1999/2000", "unsure": true, "dsl": "x"}
+{"id": "webhs0016", "text": "first week of 2015", "unsure": true, "dsl": "x"}
+{"id": "webhs0017", "text": "wednesday 02:30pm", "dsl": "dt we 14:30"}
+{"id": "webhs0018", "text": "within the upcoming 2 days 1 hour 5 minutes 30 seconds", "unsure": true, "dsl": "x"}
+{"id": "webhs0019", "text": "second Sunday", "unsure": true, "dsl": "x"}
+{"id": "webhs0020", "text": "this November 24", "dsl": "d 11-24"}
+{"id": "webhs0021", "text": "circa 9 a.m.", "dsl": "t 09:00"}
+{"id": "webhs0022", "text": "9am on Sundays", "dsl": "dt R w/1 su 09:00"}
+{"id": "webhs0023", "text": "from march to date", "unsure": true, "dsl": "x"}
+{"id": "webhs0024", "text": "Friday October 13 2009", "dsl": "d 2009-10-13"}
+{"id": "webhs0025", "text": "12:34", "dsl": "t 12:34?"}
+{"id": "webhs0026", "text": "750 minutes from now", "unsure": true, "dsl": "x"}
+{"id": "webhs0027", "text": "two days from tomorrow", "dsl": "d +3d"}
+{"id": "webhs0028", "text": "some days later", "unsure": true, "dsl": "x"}
+{"id": "webhs0029", "text": "May twenty one", "dsl": "d 05-21"}
+{"id": "webhs0030", "text": "in the late-morning Tuesday", "dsl": "d tu"}
+{"id": "webhs0031", "text": "I want to plan a get-together with my friends for this Friday.", "dsl": "d fr"}
+{"id": "webhs0032", "text": "in 5 hours", "unsure": true, "dsl": "x"}
+{"id": "webhs0033", "text": "between september 4th through september 8th", "dsl": "d 09-04>09-08"}
+{"id": "webhs0034", "text": "between 2015 and January 5th 2018", "dsl": "d Y@2015>2018-01-05"}
+{"id": "webhs0035", "text": "20th of next month", "unsure": true, "dsl": "x"}
+{"id": "webhs0036", "text": "last Friday morning", "dsl": "d fr-1"}
+{"id": "webhs0037", "text": "340pm", "dsl": "t 15:40"}
+{"id": "webhs0038", "text": "between 0730-0930", "dsl": "t 07:30>09:30"}
+{"id": "webhs0039", "text": "afternoon at 7", "dsl": "t 19:00"}
+{"id": "webhs0040", "text": "Tuesday late-morning", "dsl": "d tu"}
+{"id": "webhs0041", "text": "fifth Sunday", "unsure": true, "dsl": "x"}
+{"id": "webhs0042", "text": "2 years 1 month 21 days ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0043", "text": "two days after today @ 6p", "dsl": "dt +2d 18:00"}
+{"id": "webhs0044", "text": "later last night", "unsure": true, "dsl": "x"}
+{"id": "webhs0045", "text": "15 June 2016", "dsl": "d 2016-06-15"}
+{"id": "webhs0046", "text": "1st oct in the year '89,13:00", "dsl": "dt 1989-10-01 13:00"}
+{"id": "webhs0047", "text": "previous 3 minute", "unsure": true, "dsl": "x"}
+{"id": "webhs0048", "text": "19th of January of the same year", "unsure": true, "dsl": "x"}
+{"id": "webhs0049", "text": "after 2:00", "dsl": "t 2?>"}
+{"id": "webhs0050", "text": "1990 s", "dsl": "d 1990-01-01>1999-12-31"}
+{"id": "webhs0051", "text": "last week of 2015", "unsure": true, "dsl": "x"}
+{"id": "webhs0052", "text": "afternoon 7:00", "dsl": "t 19:00"}
+{"id": "webhs0053", "text": "05/05/89", "dsl": "d 1989-05-05"}
+{"id": "webhs0054", "text": "the beginning of this November 24", "unsure": true, "dsl": "x"}
+{"id": "webhs0055", "text": "half past 8pm", "dsl": "t 20:30"}
+{"id": "webhs0056", "text": "2002-10-09", "dsl": "d 2002-10-09"}
+{"id": "webhs0057", "text": "2/29-3/1/2019", "dsl": "x"}
+{"id": "webhs0058", "text": "tuesday march 7", "dsl": "d 03-07"}
+{"id": "webhs0059", "text": "the beginning of this Monday", "unsure": true, "dsl": "x"}
+{"id": "webhs0060", "text": "February of 1999", "dsl": "d 1999-02-01>1999-02-28"}
+{"id": "webhs0061", "text": "past 3 weeks", "dsl": "d -3w>+0d"}
+{"id": "webhs0062", "text": "in october 2006", "dsl": "d 2006-10-01>2006-10-31"}
+{"id": "webhs0063", "text": "jan. 2nd", "dsl": "d 01-02"}
+{"id": "webhs0064", "text": "less than sixty days", "unsure": true, "dsl": "x"}
+{"id": "webhs0065", "text": "the beginning of November 1999", "unsure": true, "dsl": "x"}
+{"id": "webhs0066", "text": "the year-earlier first quarter", "unsure": true, "dsl": "x"}
+{"id": "webhs0067", "text": "BC 190", "unsure": true, "dsl": "x"}
+{"id": "webhs0068", "text": "from Feb 1st to March 2019", "unsure": true, "dsl": "x"}
+{"id": "webhs0069", "text": "the middle of September", "unsure": true, "dsl": "x"}
+{"id": "webhs0070", "text": "after 6pm", "dsl": "t 18:00>"}
+{"id": "webhs0071", "text": "from 5 to 6 of 4/22/2016", "dsl": "dt 2016-04-22 5?>6?"}
+{"id": "webhs0072", "text": "Christmas '87", "dsl": "d 1987-12-25"}
+{"id": "webhs0073", "text": "59-year-old", "unsure": true, "dsl": "x"}
+{"id": "webhs0074", "text": "the first Friday of next month", "unsure": true, "dsl": "x"}
+{"id": "webhs0075", "text": "last wednesday 7am", "dsl": "dt we-1 07:00"}
+{"id": "webhs0076", "text": "mid morning", "unsure": true, "dsl": "x"}
+{"id": "webhs0077", "text": "next tuesday 11 pm", "dsl": "dt tu+1 23:00"}
+{"id": "webhs0078", "text": "a Sept. 1st", "dsl": "d 09-01"}
+{"id": "webhs0079", "text": "last sunday at 21:45", "dsl": "dt su-1 21:45"}
+{"id": "webhs0080", "text": "5 am this monday", "dsl": "dt mo 05:00"}
+{"id": "webhs0081", "text": "tuesday from 2:00 to 2:30 pm", "dsl": "dt tu 14:00>14:30"}
+{"id": "webhs0082", "text": "8pm on the sunday after next wed", "unsure": true, "dsl": "x"}
+{"id": "webhs0083", "text": "1.3.1999", "dsl": "d 1999-01-03"}
+{"id": "webhs0084", "text": "in the early-evening Tuesday", "dsl": "d tu"}
+{"id": "webhs0085", "text": "1 month, 21 days ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0086", "text": "next 5 years", "dsl": "d +0d>+5y"}
+{"id": "webhs0087", "text": "2019/sep/01", "dsl": "d 2019-09-01"}
+{"id": "webhs0088", "text": "Oct. 2", "dsl": "d 10-02"}
+{"id": "webhs0089", "text": "tonight at 6:30", "dsl": "dt +0d 18:30"}
+{"id": "webhs0090", "text": "two days before yesterday", "dsl": "d -3d"}
+{"id": "webhs0091", "text": "from 2015 to May 5th, 2017", "dsl": "d Y@2015>2017-05-05"}
+{"id": "webhs0092", "text": "4pm today", "dsl": "dt +0d 16:00"}
+{"id": "webhs0093", "text": "7:56pm", "dsl": "t 19:56"}
+{"id": "webhs0094", "text": "2nd friday in august", "dsl": "d fr#2@08"}
+{"id": "webhs0095", "text": "eleven twenty pm", "dsl": "t 23:20"}
+{"id": "webhs0096", "text": "the twenty-tens", "unsure": true, "dsl": "x"}
+{"id": "webhs0097", "text": "the morning of April 18", "dsl": "d 04-18"}
+{"id": "webhs0098", "text": "3 days after next wed at 6a", "dsl": "dt we+1~+3d 06:00"}
+{"id": "webhs0099", "text": "Christmas 2010", "dsl": "d 2010-12-25"}
+{"id": "webhs0100", "text": "9am every Sunday", "dsl": "dt R w/1 su 09:00"}
+{"id": "webhs0101", "text": "19th of November", "dsl": "d 11-19"}
+{"id": "webhs0102", "text": "next year's first quarter", "unsure": true, "dsl": "x"}
+{"id": "webhs0103", "text": "sat at 5", "dsl": "dt sa 5?"}
+{"id": "webhs0104", "text": "beginning of 2000", "unsure": true, "dsl": "x"}
+{"id": "webhs0105", "text": "in the morning of this Tuesday", "dsl": "d tu"}
+{"id": "webhs0106", "text": "1 month 21 days ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0107", "text": "from 12-04-2019 6:00am until 12-05-2019 8:00pm", "dsl": "dt 2019-12-04 06:00>2019-12-05 20:00"}
+{"id": "webhs0108", "text": "11/2016", "dsl": "d 2016-11-01>2016-11-30"}
+{"id": "webhs0109", "text": "11 o'clock lunchtime", "dsl": "t 11:00"}
+{"id": "webhs0110", "text": "this week from Tue to Thur", "dsl": "d tu>th"}
+{"id": "webhs0111", "text": "18 oct 5 pm", "dsl": "dt 10-18 17:00"}
+{"id": "webhs0112", "text": "seven thirty pm", "dsl": "t 19:30"}
+{"id": "webhs0113", "text": "from 4 to 22 this month", "unsure": true, "dsl": "x"}
+{"id": "webhs0114", "text": "monday january 12th, 2016", "dsl": "d 2016-01-12"}
+{"id": "webhs0115", "text": "mon 13th", "unsure": true, "dsl": "x"}
+{"id": "webhs0116", "text": "last hour", "unsure": true, "dsl": "x"}
+{"id": "webhs0117", "text": "twenty second of june 2017", "dsl": "d 2017-06-22"}
+{"id": "webhs0118", "text": "from 2 to 7 Feb, two thousand and eighteen", "dsl": "d 2018-02-02>2018-02-07"}
+{"id": "webhs0119", "text": "I know we should meet tomorrow", "dsl": "d +1d"}
+{"id": "webhs0120", "text": "between January 1st and April 5th", "dsl": "d 01-01>04-05"}
+{"id": "webhs0121", "text": "around tomorrow 10am", "dsl": "dt +1d 10:00"}
+{"id": "webhs0122", "text": "in the late-night Tuesday", "dsl": "d tu"}
+{"id": "webhs0123", "text": "last sept", "unsure": true, "dsl": "x"}
+{"id": "webhs0124", "text": "the year-earlier quarter", "unsure": true, "dsl": "x"}
+{"id": "webhs0125", "text": "rest of current day", "unsure": true, "dsl": "x"}
+{"id": "webhs0126", "text": "oct. 1, 1980", "dsl": "d 1980-10-01"}
+{"id": "webhs0127", "text": "15th  century", "unsure": true, "dsl": "x"}
+{"id": "webhs0128", "text": "the beginning of this November", "unsure": true, "dsl": "x"}
+{"id": "webhs0129", "text": "jan 1 to 2", "dsl": "d 01-01>01-02"}
+{"id": "webhs0130", "text": "2016 Q3", "dsl": "d 2016-07-01>2016-09-30"}
+{"id": "webhs0131", "text": "in the night five thirty", "unsure": true, "dsl": "x"}
+{"id": "webhs0132", "text": "next wed. at 5pm", "dsl": "dt we+1 17:00"}
+{"id": "webhs0133", "text": "this hour", "unsure": true, "dsl": "x"}
+{"id": "webhs0134", "text": "this Friday, in the afternoon", "dsl": "d fr"}
+{"id": "webhs0135", "text": "April 20 at 10 am", "dsl": "dt 04-20 10:00"}
+{"id": "webhs0136", "text": "I want to see my mother on sunday.", "dsl": "d su"}
+{"id": "webhs0137", "text": "2018-09-23 1:30p.m. to 4", "dsl": "dt 2018-09-23 13:30>16:00"}
+{"id": "webhs0138", "text": "the late seventies", "unsure": true, "dsl": "x"}
+{"id": "webhs0139", "text": "afternoon 7:00:05", "dsl": "t 19:00"}
+{"id": "webhs0140", "text": "7 o'clock", "dsl": "t 7?"}
+{"id": "webhs0141", "text": "the 1990s", "dsl": "d 1990-01-01>1999-12-31"}
+{"id": "webhs0142", "text": "early next year", "unsure": true, "dsl": "x"}
+{"id": "webhs0143", "text": "fifteen fifteen p m", "dsl": "t 15:15"}
+{"id": "webhs0144", "text": "for 3 days, from today", "unsure": true, "dsl": "x"}
+{"id": "webhs0145", "text": "January 12, 2018", "dsl": "d 2018-01-12"}
+{"id": "webhs0146", "text": "in the late night Tuesday", "dsl": "d tu"}
+{"id": "webhs0147", "text": "oct 1, 1980", "dsl": "d 1980-10-01"}
+{"id": "webhs0148", "text": "10 hours ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0149", "text": "within next 10 months", "dsl": "d +0d>+10m"}
+{"id": "webhs0150", "text": "between half past seven and 4pm of tomorrow", "dsl": "dt +1d 7:30?>16:00"}
+{"id": "webhs0151", "text": "midnight today", "dsl": "dt +0d 00:00"}
+{"id": "webhs0152", "text": "2009-03-10 9:00 to 11:00", "dsl": "dt 2009-03-10 09:00>11:00"}
+{"id": "webhs0153", "text": "2000 soldiers", "dsl": "x"}
+{"id": "webhs0154", "text": "the early 1990s", "unsure": true, "dsl": "x"}
+{"id": "webhs0155", "text": "half past seven afternoon", "dsl": "t 19:30"}
+{"id": "webhs0156", "text": "1 month 2 years 21 days ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0157", "text": "next june", "dsl": "d M@06"}
+{"id": "webhs0158", "text": "the nineteen seventies", "dsl": "d 1970-01-01>1979-12-31"}
+{"id": "webhs0159", "text": "one thousand seven hundred and eighty nine", "unsure": true, "dsl": "x"}
+{"id": "webhs0160", "text": "10:30:34 p.m.", "dsl": "t 22:30"}
+{"id": "webhs0161", "text": "09/26/1999", "dsl": "d 1999-09-26"}
+{"id": "webhs0162", "text": "the thirty", "unsure": true, "dsl": "x"}
+{"id": "webhs0163", "text": "golf tomorrow at 9 AM at pebble beach", "dsl": "dt +1d 09:00"}
+{"id": "webhs0164", "text": "within 1 day and 5 hours", "unsure": true, "dsl": "x"}
+{"id": "webhs0165", "text": "the beginning of this summer", "unsure": true, "dsl": "x"}
+{"id": "webhs0166", "text": "one hour and a half", "unsure": true, "dsl": "x"}
+{"id": "webhs0167", "text": "7h01", "dsl": "t 7:01?"}
+{"id": "webhs0168", "text": "sunday 11:00", "dsl": "dt su 11?"}
+{"id": "webhs0169", "text": "Jan-1", "dsl": "d 01-01"}
+{"id": "webhs0170", "text": "10:30:34 a.m.", "dsl": "t 10:30"}
+{"id": "webhs0171", "text": "8 in the night", "dsl": "t 20:00"}
+{"id": "webhs0172", "text": "after dinner", "unsure": true, "dsl": "x"}
+{"id": "webhs0173", "text": "2016 November", "dsl": "d 2016-11-01>2016-11-30"}
+{"id": "webhs0174", "text": "pacific timezone", "dsl": "x"}
+{"id": "webhs0175", "text": "Friday October 13", "dsl": "d 10-13"}
+{"id": "webhs0176", "text": "at the minute", "unsure": true, "dsl": "x"}
+{"id": "webhs0177", "text": "less than 60 days", "unsure": true, "dsl": "x"}
+{"id": "webhs0178", "text": "next few hours", "unsure": true, "dsl": "x"}
+{"id": "webhs0179", "text": "Watch School Spirits on June 20 on syfy channel", "dsl": "d 06-20"}
+{"id": "webhs0180", "text": "seven thirty five pm", "dsl": "t 19:35"}
+{"id": "webhs0181", "text": "11-2016", "dsl": "d 2016-11-01>2016-11-30"}
+{"id": "webhs0182", "text": "2010-01-29", "dsl": "d 2010-01-29"}
+{"id": "webhs0183", "text": "the third quarter of two thousand and twenty", "dsl": "d 2020-07-01>2020-09-30"}
+{"id": "webhs0184", "text": "today at 2:32 AM", "dsl": "dt +0d 02:32"}
+{"id": "webhs0185", "text": "February 25, 2009", "dsl": "d 2009-02-25"}
+{"id": "webhs0186", "text": "thursday afternoon", "dsl": "d th"}
+{"id": "webhs0187", "text": "11 january 2 years ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0188", "text": "ten ten", "dsl": "t 10:10?"}
+{"id": "webhs0189", "text": "summer of 2016", "unsure": true, "dsl": "x"}
+{"id": "webhs0190", "text": "9 am Wednesday", "dsl": "dt we 09:00"}
+{"id": "webhs0191", "text": "1/3 16:00", "dsl": "dt 01-03 16:00"}
+{"id": "webhs0192", "text": "no later than january 1, 2010", "dsl": "d >2010-01-01"}
+{"id": "webhs0193", "text": "fiscal year 2008", "unsure": true, "dsl": "x"}
+{"id": "webhs0194", "text": "today 2:32pm", "dsl": "dt +0d 14:32"}
+{"id": "webhs0195", "text": "from Friday the 11th until Tuesday the 15th", "dsl": "d D@11>D@15"}
+{"id": "webhs0196", "text": "12:34:45", "dsl": "t 12:34?"}
+{"id": "webhs0197", "text": "tonight at 5", "dsl": "dt +0d 17:00"}
+{"id": "webhs0198", "text": "in 3 days on friday", "unsure": true, "dsl": "x"}
+{"id": "webhs0199", "text": "Sat, 29 Jan 2005 17:21:13 -0600", "dsl": "dt 2005-01-29 17:21"}
+{"id": "webhs0200", "text": "monday 9 in the evening", "dsl": "dt mo 21:00"}
+{"id": "webhs0201", "text": "between 2 and 7 Feb two thousand and eighteen", "dsl": "d 2018-02-02>2018-02-07"}
+{"id": "webhs0202", "text": "this week Friday", "dsl": "d fr"}
+{"id": "webhs0203", "text": "thursday morning", "dsl": "d th"}
+{"id": "webhs0204", "text": "ten forty five", "dsl": "t 10:45?"}
+{"id": "webhs0205", "text": "half past eight", "dsl": "t 8:30?"}
+{"id": "webhs0206", "text": "3am on oct 1st 2010", "dsl": "dt 2010-10-01 03:00"}
+{"id": "webhs0207", "text": "29 March 190 BC", "unsure": true, "dsl": "x"}
+{"id": "webhs0208", "text": "Second Monday in October 2017", "dsl": "d 2017-10-09"}
+{"id": "webhs0209", "text": "every summer", "unsure": true, "dsl": "x"}
+{"id": "webhs0210", "text": "War ended in May, after fighting from March on", "unsure": true, "dsl": "x"}
+{"id": "webhs0211", "text": "on 20.3.2003 the war began and it lastet until 1.5.2003", "dsl": "d 2003-03-20"}
+{"id": "webhs0212", "text": "9am Sundays", "dsl": "dt R w/1 su 09:00"}
+{"id": "webhs0213", "text": "Eastersunday", "unsure": true, "dsl": "x"}
+{"id": "webhs0214", "text": "January 12, 2016", "dsl": "d 2016-01-12"}
+{"id": "webhs0215", "text": "5 pm this monday", "dsl": "dt mo 17:00"}
+{"id": "webhs0216", "text": "a minute", "unsure": true, "dsl": "x"}
+{"id": "webhs0217", "text": "about twenty days later", "unsure": true, "dsl": "x"}
+{"id": "webhs0218", "text": "06:00 hours", "dsl": "t 06:00"}
+{"id": "webhs0219", "text": "in the late-afternoon Tuesday", "dsl": "d tu"}
+{"id": "webhs0220", "text": "next night", "unsure": true, "dsl": "x"}
+{"id": "webhs0221", "text": "from 5 to 6 on 1st Jan", "dsl": "dt 01-01 5?>6?"}
+{"id": "webhs0222", "text": "at least the last twenty years", "unsure": true, "dsl": "x"}
+{"id": "webhs0223", "text": "H1 2016", "dsl": "d 2016-01-01>2016-06-30"}
+{"id": "webhs0224", "text": "on mornings at 9", "dsl": "dt R d/1 09:00"}
+{"id": "webhs0225", "text": "the day after tmrw", "dsl": "d +2d"}
+{"id": "webhs0226", "text": "Eastersunday 2010", "unsure": true, "dsl": "x"}
+{"id": "webhs0227", "text": "10-29-99", "dsl": "d 1999-10-29"}
+{"id": "webhs0228", "text": "3pm every day", "dsl": "dt R d/1 15:00"}
+{"id": "webhs0229", "text": "from 4 to January 22, 1995", "dsl": "d 1995-01-04>1995-01-22"}
+{"id": "webhs0230", "text": "I want to go to park tomorrow and then email john@aol.com", "dsl": "d +1d"}
+{"id": "webhs0231", "text": "between Week 31 and Week 35", "unsure": true, "dsl": "x"}
+{"id": "webhs0232", "text": "Friday the twenty second", "dsl": "d D@22"}
+{"id": "webhs0233", "text": "every night at 9pm", "dsl": "dt R d/1 21:00"}
+{"id": "webhs0234", "text": "rest of current week", "unsure": true, "dsl": "x"}
+{"id": "webhs0235", "text": "from 2019/aug/01 to today", "dsl": "d 2019-08-01>+0d"}
+{"id": "webhs0236", "text": "1st tuesday next november", "dsl": "d tu#1@11"}
+{"id": "webhs0237", "text": "1 o'clock midnight", "unsure": true, "dsl": "x"}
+{"id": "webhs0238", "text": "later than 2020", "unsure": true, "dsl": "x"}
+{"id": "webhs0239", "text": "November next year", "unsure": true, "dsl": "x"}
+{"id": "webhs0240", "text": "halloween weekend 2021", "unsure": true, "dsl": "x"}
+{"id": "webhs0241", "text": "16. Nov. 2016", "dsl": "d 2016-11-16"}
+{"id": "webhs0242", "text": "26 oct 10:00 am to 11:00 am", "dsl": "dt 10-26 10:00>11:00"}
+{"id": "webhs0243", "text": "first to last day of september", "dsl": "d M@09"}
+{"id": "webhs0244", "text": "12/12/12", "dsl": "d 2012-12-12"}
+{"id": "webhs0245", "text": "each month", "unsure": true, "dsl": "x"}
+{"id": "webhs0246", "text": "the day after next 6pm", "unsure": true, "dsl": "x"}
+{"id": "webhs0247", "text": "Saturday the 23rd", "dsl": "d D@23"}
+{"id": "webhs0248", "text": "last week of dec 2016", "unsure": true, "dsl": "x"}
+{"id": "webhs0249", "text": "7am jul 1", "dsl": "dt 07-01 07:00"}
+{"id": "webhs0250", "text": "tonight at 1am", "unsure": true, "dsl": "x"}
+{"id": "webhs0251", "text": "7:56:13 pm", "dsl": "t 19:56"}
+{"id": "webhs0252", "text": "five thirty in the night", "unsure": true, "dsl": "x"}
+{"id": "webhs0253", "text": "sunday jan twenty one two thousand and eighteen", "dsl": "d 2018-01-21"}
+{"id": "webhs0254", "text": "2/20/2011", "dsl": "d 2011-02-20"}
+{"id": "webhs0255", "text": "5 pm next monday", "dsl": "dt mo+1 17:00"}
+{"id": "webhs0256", "text": "from june 26th of 2020 to june the 28th 2020", "dsl": "d 2020-06-26>2020-06-28"}
+{"id": "webhs0257", "text": "on Friday next week", "unsure": true, "dsl": "x"}
+{"id": "webhs0258", "text": "eight forty", "dsl": "t 8:40?"}
+{"id": "webhs0259", "text": "4 years from now", "dsl": "d +4y"}
+{"id": "webhs0260", "text": "late last month", "unsure": true, "dsl": "x"}
+{"id": "webhs0261", "text": "within 15 seconds", "unsure": true, "dsl": "x"}
+{"id": "webhs0262", "text": "last 5 years", "dsl": "d -5y>+0d"}
+{"id": "webhs0263", "text": "save $1000 by September", "dsl": "d >M@09"}
+{"id": "webhs0264", "text": "Monday, October 12th 2009", "dsl": "d 2009-10-12"}
+{"id": "webhs0265", "text": "06:56:06 am", "dsl": "t 06:56"}
+{"id": "webhs0266", "text": "Christmas 87", "dsl": "d 1987-12-25"}
+{"id": "webhs0267", "text": "tonight at 6", "dsl": "dt +0d 18:00"}
+{"id": "webhs0268", "text": "Friday the 22nd", "dsl": "d D@22"}
+{"id": "webhs0269", "text": "tomorrow 2:32pm", "dsl": "dt +1d 14:32"}
+{"id": "webhs0270", "text": "2016 H2", "dsl": "d 2016-07-01>2016-12-31"}
+{"id": "webhs0271", "text": "next week Sunday", "unsure": true, "dsl": "x"}
+{"id": "webhs0272", "text": "two-thousand ten", "dsl": "d Y@2010"}
+{"id": "webhs0273", "text": "late last year", "unsure": true, "dsl": "x"}
+{"id": "webhs0274", "text": "in the afternoon, last Friday", "dsl": "d fr-1"}
+{"id": "webhs0275", "text": "2008", "dsl": "d Y@2008"}
+{"id": "webhs0276", "text": "Eastersunday 87", "unsure": true, "dsl": "x"}
+{"id": "webhs0277", "text": "next week between Wednesday and Friday", "unsure": true, "dsl": "x"}
+{"id": "webhs0278", "text": "Wed, 22 of Jan", "dsl": "d 01-22"}
+{"id": "webhs0279", "text": "Tuesday early-morning", "dsl": "d tu"}
+{"id": "webhs0280", "text": "for 4 weeks", "unsure": true, "dsl": "x"}
+{"id": "webhs0281", "text": "twenty days earlier", "dsl": "d -20d"}
+{"id": "webhs0282", "text": "from 5/1-5/7, 2020", "dsl": "d 2020-05-01>2020-05-07"}
+{"id": "webhs0283", "text": "Mar 16, 2015 3:33:39 PM", "dsl": "dt 2015-03-16 15:33"}
+{"id": "webhs0284", "text": "last 3 minute", "unsure": true, "dsl": "x"}
+{"id": "webhs0285", "text": "yesterday at 6:45pm", "dsl": "dt -1d 18:45"}
+{"id": "webhs0286", "text": "between 2015 and Feb 2018", "dsl": "d Y@2015>2018-02-28"}
+{"id": "webhs0287", "text": "I want to be able to jog 3 miles non-stop by September.", "dsl": "d >M@09"}
+{"id": "webhs0288", "text": "2000 kilometer", "dsl": "x"}
+{"id": "webhs0289", "text": "three min past 10 H 10 pm", "unsure": true, "dsl": "x"}
+{"id": "webhs0290", "text": "21-04-2016", "dsl": "d 2016-04-21"}
+{"id": "webhs0291", "text": "several minutes", "unsure": true, "dsl": "x"}
+{"id": "webhs0292", "text": "1am this friday", "dsl": "dt fr 01:00"}
+{"id": "webhs0293", "text": "190 BC", "unsure": true, "dsl": "x"}
+{"id": "webhs0294", "text": "I want to finalize my college schedule by next week.", "dsl": "d >W+1"}
+{"id": "webhs0295", "text": "twenty second of June", "dsl": "d 06-22"}
+{"id": "webhs0296", "text": "November 24, 2011 1535 GMT", "dsl": "dt 2011-11-24 15:35"}
+{"id": "webhs0297", "text": "September 14 and 18, 2010", "dsl": "d 2010-09-14,2010-09-18"}
+{"id": "webhs0298", "text": "4 to 23 next month", "unsure": true, "dsl": "x"}
+{"id": "webhs0299", "text": "my week", "dsl": "x"}
+{"id": "webhs0300", "text": "tomorrow 1 year ago", "unsure": true, "dsl": "x"}
+{"id": "webhs0301", "text": "tuesday AM", "dsl": "d tu"}
+{"id": "webhs0302", "text": "this tuesday 11 am", "dsl": "dt tu 11:00"}
+{"id": "webhs0303", "text": "the 70s", "dsl": "d 1970-01-01>1979-12-31"}
+{"id": "webhs0304", "text": "the third Wednesday of previous month", "unsure": true, "dsl": "x"}
+{"id": "webhs0305", "text": "the first of december in the year 1980", "dsl": "d 1980-12-01"}
+{"id": "webhs0306", "text": "10 months ago", "dsl": "d -10m"}
+{"id": "webhs0307", "text": "05/05/71", "dsl": "d 1971-05-05"}
+{"id": "webhs0308", "text": "Feb between 2-7 two thousand and eighteen", "dsl": "d 2018-02-02>2018-02-07"}
+{"id": "webhs0309", "text": "02/22/2016", "dsl": "d 2016-02-22"}
+{"id": "webhs0310", "text": "7pm jul 1", "dsl": "dt 07-01 19:00"}
+{"id": "webhs0311", "text": "within 5 days", "dsl": "d +0d>+5d"}
+{"id": "webhs0312", "text": "Feb 29th", "dsl": "d 02-29"}
+{"id": "webhs0313", "text": "April 20 10", "unsure": true, "dsl": "x"}
+{"id": "webhs0314", "text": "twice a month", "unsure": true, "dsl": "x"}
+{"id": "webhs0315", "text": "Friday afternoon between 1PM and 4 PM", "dsl": "dt fr 13:00>16:00"}
+{"id": "webhs0316", "text": "March, April and May", "dsl": "d M@03>M@05"}
+{"id": "webhs0317", "text": "every three week", "unsure": true, "dsl": "x"}
+{"id": "webhs0318", "text": "the mid-90s", "unsure": true, "dsl": "x"}
+{"id": "webhs0319", "text": "...all the backstory I needed in the first two minutes. From there, I....", "dsl": "x"}
+{"id": "webhs0320", "text": "from this may to oct 2020", "dsl": "d M@05>2020-10-31"}
+{"id": "webhs0321", "text": "in four business days", "dsl": "d +4b"}
+{"id": "webhs0322", "text": "noon next friday", "dsl": "dt fr 12:00"}
+{"id": "webhs0323", "text": "the 90s", "dsl": "d 1990-01-01>1999-12-31"}
+{"id": "webhs0324", "text": "09-24-99 1145EST", "dsl": "dt 1999-09-24 11:45"}
+{"id": "webhs0325", "text": "4 seconds from now", "unsure": true, "dsl": "x"}
+{"id": "webhs0326", "text": "Tuesday early-afternoon", "dsl": "d tu"}
+{"id": "webhs0327", "text": "noon this friday", "dsl": "dt fr 12:00"}
+{"id": "webhs0328", "text": "11 - 2016", "dsl": "d 2016-11-01>2016-11-30"}
+{"id": "webhs0329", "text": "about 200 years older", "dsl": "x"}
+{"id": "webhs0330", "text": "9-18-15", "dsl": "d 2015-09-18"}
+{"id": "webhs0331", "text": "before the thirty-first day of the month", "unsure": true, "dsl": "x"}
+{"id": "webhs0332", "text": "September 10, nineteen zero one", "dsl": "d 1901-09-10"}
+{"id": "webhs0333", "text": "a 300 year period", "unsure": true, "dsl": "x"}
+{"id": "webhs0334", "text": "for 3 days from today", "unsure": true, "dsl": "x"}
+{"id": "webhs0335", "text": "jan 10, '00", "dsl": "d 2000-01-10"}
+{"id": "webhs0336", "text": "Tuesday early night", "dsl": "d tu"}
+{"id": "webhs0337", "text": "in the late night on Tuesday", "dsl": "d tu"}
+{"id": "webhs0338", "text": "12 o'clock lunchtime", "dsl": "t 12:00"}
+{"id": "webhs0339", "text": "previous 3mins", "unsure": true, "dsl": "x"}
+{"id": "webhs0340", "text": "earlier Monday", "unsure": true, "dsl": "x"}
+{"id": "webhs0341", "text": "began on March 20 in 2003 and ended on May 1", "dsl": "d 2003-03-20"}
+{"id": "webhs0342", "text": "on november 18-19", "dsl": "d 11-18>11-19"}
+{"id": "webhs0343", "text": "the year-earlier first half", "unsure": true, "dsl": "x"}
+{"id": "webhs0344", "text": "2 years 21 days later", "unsure": true, "dsl": "x"}
+{"id": "webhs0345", "text": "March of 90", "dsl": "d 1990-03-01>1990-03-31"}

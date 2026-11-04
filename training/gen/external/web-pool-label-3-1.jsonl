@@ -1,0 +1,259 @@
+{"id": "webp3-0000", "text": "2'", "dsl": "x", "unsure": true}
+{"id": "webp3-0001", "text": "2.xi.03", "dsl": "d 2003-11-02"}
+{"id": "webp3-0002", "text": "2nd to the last of each month", "dsl": "x", "unsure": true}
+{"id": "webp3-0003", "text": "today at 03:00:00", "dsl": "dt +0d 03:00"}
+{"id": "webp3-0004", "text": "Every year on the 1st Friday", "dsl": "x", "unsure": true}
+{"id": "webp3-0005", "text": "July 13 to 15", "dsl": "d 07-13>07-15"}
+{"id": "webp3-0006", "text": "3m", "dsl": "x", "unsure": true}
+{"id": "webp3-0007", "text": "Lunch with Sarah next Tuesday at noon", "dsl": "dt tu+1 12:00"}
+{"id": "webp3-0008", "text": "tomevening", "dsl": "d +1d"}
+{"id": "webp3-0009", "text": "tax year 2011 to 2012, 10 November to 21 December", "dsl": "x", "unsure": true}
+{"id": "webp3-0010", "text": "next next Monday", "dsl": "x", "unsure": true}
+{"id": "webp3-0011", "text": "10/14/1983, 1:30 PM", "dsl": "dt 1983-10-14 13:30"}
+{"id": "webp3-0012", "text": "five-and-twenty to 9", "dsl": "t 8:35?"}
+{"id": "webp3-0013", "text": "Remind me to walk the dog every day", "dsl": "d R d/1"}
+{"id": "webp3-0014", "text": "twelve days after christmas", "dsl": "d 12-25~+12d"}
+{"id": "webp3-0015", "text": "223 milliseconds ago", "dsl": "x", "unsure": true}
+{"id": "webp3-0016", "text": "2 hours ago EST", "dsl": "x", "unsure": true}
+{"id": "webp3-0017", "text": "Every week for 20 times", "dsl": "d R w/1 n20"}
+{"id": "webp3-0018", "text": "starting in april, daily until march", "dsl": "x", "unsure": true}
+{"id": "webp3-0019", "text": "Order stationery tomorrow #Work #errand", "dsl": "d +1d"}
+{"id": "webp3-0020", "text": "1 or 2 days", "dsl": "x", "unsure": true}
+{"id": "webp3-0021", "text": "06:31", "dsl": "t 06:31"}
+{"id": "webp3-0022", "text": "Every other month on the first and last Sunday of the month for 10 occurrences", "dsl": "x", "unsure": true}
+{"id": "webp3-0023", "text": "10:36:28", "dsl": "t 10:36"}
+{"id": "webp3-0024", "text": "Every hour, between 09:00 AM and 05:00 PM", "dsl": "x", "unsure": true}
+{"id": "webp3-0025", "text": "1981-095", "dsl": "x", "unsure": true}
+{"id": "webp3-0026", "text": "one-night-only", "dsl": "x"}
+{"id": "webp3-0027", "text": "daily at 3:00am", "dsl": "dt R d/1 03:00"}
+{"id": "webp3-0028", "text": "10-3", "dsl": "d 10-03"}
+{"id": "webp3-0029", "text": "may 1st 01", "dsl": "x", "unsure": true}
+{"id": "webp3-0030", "text": "7/17, 7/18, 7/19 at 9", "dsl": "dt 07-17,07-18,07-19 9?"}
+{"id": "webp3-0031", "text": "Friday before last Sunday in March at 02:00", "dsl": "x", "unsure": true}
+{"id": "webp3-0032", "text": "February 2015", "dsl": "x", "unsure": true}
+{"id": "webp3-0033", "text": "Every minute, only in 2013", "dsl": "x", "unsure": true}
+{"id": "webp3-0034", "text": "Set a reminder for today, dinner at 7 p.m", "dsl": "dt +0d 19:00"}
+{"id": "webp3-0035", "text": "the third straight month in a row", "dsl": "x"}
+{"id": "webp3-0036", "text": "1234567891 days", "dsl": "x", "unsure": true}
+{"id": "webp3-0037", "text": "Nieuw Jaar", "dsl": "x", "unsure": true}
+{"id": "webp3-0038", "text": "today night", "dsl": "d +0d"}
+{"id": "webp3-0039", "text": "10-09-2003", "dsl": "d 2003-10-09"}
+{"id": "webp3-0040", "text": "twilight", "dsl": "x", "unsure": true}
+{"id": "webp3-0041", "text": "upcoming two months", "dsl": "x", "unsure": true}
+{"id": "webp3-0042", "text": "nightly", "dsl": "x", "unsure": true}
+{"id": "webp3-0043", "text": "6.05 a.m.", "dsl": "t 06:05"}
+{"id": "webp3-0044", "text": "31-Dec-00", "dsl": "d 2000-12-31"}
+{"id": "webp3-0045", "text": "2w", "dsl": "x", "unsure": true}
+{"id": "webp3-0046", "text": "2017-06-30T08:20:30Z", "dsl": "dt 2017-06-30 08:20"}
+{"id": "webp3-0047", "text": "Sunday 7/7/2019", "dsl": "d 2019-07-07"}
+{"id": "webp3-0048", "text": "one hour and 45 minutes", "dsl": "x", "unsure": true}
+{"id": "webp3-0049", "text": "final Thursday in November", "dsl": "d th#-1@11"}
+{"id": "webp3-0050", "text": "11:10 pm", "dsl": "t 23:10"}
+{"id": "webp3-0051", "text": "every 20th and 30th of aug", "dsl": "d R m/1 d20,d30 M@08"}
+{"id": "webp3-0052", "text": "02/04/12", "dsl": "d 2012-02-04"}
+{"id": "webp3-0053", "text": "21 October 2022", "dsl": "d 2022-10-21"}
+{"id": "webp3-0054", "text": "02/11/26", "dsl": "d 2026-02-11"}
+{"id": "webp3-0055", "text": "last fri 9.30", "dsl": "dt fr-1 9:30?"}
+{"id": "webp3-0056", "text": "Thu 17th", "dsl": "x", "unsure": true}
+{"id": "webp3-0057", "text": "1 week after Christmas", "dsl": "d 12-25~+1w"}
+{"id": "webp3-0058", "text": "12.25.07", "dsl": "d 2007-12-25"}
+{"id": "webp3-0059", "text": "everyday from aug 3", "dsl": "d R d/1 s08-03"}
+{"id": "webp3-0060", "text": "every Tue and Fri in week 14", "dsl": "x", "unsure": true}
+{"id": "webp3-0061", "text": "every weekday at 9:45am", "dsl": "dt R d/1 mo,tu,we,th,fr 09:45"}
+{"id": "webp3-0062", "text": "Monthly on the first Friday for 10 occurrences", "dsl": "d R m/1 fr#1 n10"}
+{"id": "webp3-0063", "text": "every morning at 7am", "dsl": "dt R d/1 07:00"}
+{"id": "webp3-0064", "text": "15.5 mins", "dsl": "x", "unsure": true}
+{"id": "webp3-0065", "text": "Every minute, between 12:00 AM and 12:59 AM", "dsl": "x", "unsure": true}
+{"id": "webp3-0066", "text": "Every other week on Tuesday and Thursday, for 8 occurrences", "dsl": "d R w/2 tu,th n8"}
+{"id": "webp3-0067", "text": "1. Sept 2000", "dsl": "d 2000-09-01"}
+{"id": "webp3-0068", "text": "July 8th, 2004", "dsl": "d 2004-07-08"}
+{"id": "webp3-0069", "text": "every mon at 8pm, tue at 9pm", "dsl": "x", "unsure": true}
+{"id": "webp3-0070", "text": "Snooze reminder for 20 minutes.", "dsl": "x", "unsure": true}
+{"id": "webp3-0071", "text": "01h02m03", "dsl": "x", "unsure": true}
+{"id": "webp3-0072", "text": "the beginning of the week", "dsl": "x", "unsure": true}
+{"id": "webp3-0073", "text": "2017 06 DEC", "dsl": "d 2017-12-06"}
+{"id": "webp3-0074", "text": "may 27, 1979", "dsl": "d 1979-05-27"}
+{"id": "webp3-0075", "text": "one and two quarters hour", "dsl": "x", "unsure": true}
+{"id": "webp3-0076", "text": "eoq", "dsl": "x", "unsure": true}
+{"id": "webp3-0077", "text": "At 12:23 PM, January through February", "dsl": "x", "unsure": true}
+{"id": "webp3-0078", "text": "At 12:23 PM, only in January", "dsl": "x", "unsure": true}
+{"id": "webp3-0079", "text": "27/01/2023", "dsl": "d 2023-01-27"}
+{"id": "webp3-0080", "text": "five past five", "dsl": "t 5:05?"}
+{"id": "webp3-0081", "text": "12 P.", "dsl": "t 12:00"}
+{"id": "webp3-0082", "text": "/remind #design Design critique meeting every Thursday", "dsl": "d R w/1 th"}
+{"id": "webp3-0083", "text": "On the hour, every 4 hours and at 06:00 AM", "dsl": "x", "unsure": true}
+{"id": "webp3-0084", "text": "every monday except for the 2nd monday in March", "dsl": "x", "unsure": true}
+{"id": "webp3-0085", "text": "the twenty third of June", "dsl": "d 06-23"}
+{"id": "webp3-0086", "text": "3rd Thu in Apr at 10 o'clock", "dsl": "dt th#3@04 10?"}
+{"id": "webp3-0087", "text": "last 9/11", "dsl": "x", "unsure": true}
+{"id": "webp3-0088", "text": "we start phase two in 3 days", "dsl": "d +3d"}
+{"id": "webp3-0089", "text": "in 2 hours", "dsl": "x", "unsure": true}
+{"id": "webp3-0090", "text": "today evening", "dsl": "d +0d"}
+{"id": "webp3-0091", "text": "may 97", "dsl": "x", "unsure": true}
+{"id": "webp3-0092", "text": "in 15 mins", "dsl": "x", "unsure": true}
+{"id": "webp3-0093", "text": "sonw", "dsl": "x"}
+{"id": "webp3-0094", "text": "12:34:56Z", "dsl": "t 12:34"}
+{"id": "webp3-0095", "text": "2014-10-12", "dsl": "d 2014-10-12"}
+{"id": "webp3-0096", "text": "Call with investor Thursday at 4pm for 45 minutes", "dsl": "dt th 16:00>+45m"}
+{"id": "webp3-0097", "text": "the fifth straight year", "dsl": "x", "unsure": true}
+{"id": "webp3-0098", "text": "four a.m.", "dsl": "t 04:00"}
+{"id": "webp3-0099", "text": "/remind me to attend the team meeting at 11:00 every Tuesday", "dsl": "dt R w/1 tu 11:00"}
+{"id": "webp3-0100", "text": "2nd Monday in March", "dsl": "d mo#2@03"}
+{"id": "webp3-0101", "text": "2016-09-23T02:54:32.845Z", "dsl": "dt 2016-09-23 02:54"}
+{"id": "webp3-0102", "text": "starting 3/1", "dsl": "d 03-01>"}
+{"id": "webp3-0103", "text": "0:01:02", "dsl": "t 00:01"}
+{"id": "webp3-0104", "text": "October 30, 2026", "dsl": "d 2026-10-30"}
+{"id": "webp3-0105", "text": "every 3rd month on the 4th", "dsl": "x", "unsure": true}
+{"id": "webp3-0106", "text": "12/31/1999", "dsl": "d 1999-12-31"}
+{"id": "webp3-0107", "text": "Take out the recycling every other Wednesday", "dsl": "d R w/2 we"}
+{"id": "webp3-0108", "text": "may '01", "dsl": "x", "unsure": true}
+{"id": "webp3-0109", "text": "2026-10-30", "dsl": "d 2026-10-30"}
+{"id": "webp3-0110", "text": "first Monday of the September / October school holidays", "dsl": "x", "unsure": true}
+{"id": "webp3-0111", "text": "Team meeting next monday at 2pm", "dsl": "dt mo+1 14:00"}
+{"id": "webp3-0112", "text": "November 18th 2010 at midnight", "dsl": "dt 2010-11-18 00:00"}
+{"id": "webp3-0113", "text": "every Monday, Wednesday, and Friday", "dsl": "d R w/1 mo,we,fr"}
+{"id": "webp3-0114", "text": "1997-07-16T19:20:15", "dsl": "dt 1997-07-16 19:20"}
+{"id": "webp3-0115", "text": "last 2 days", "dsl": "d -2d>+0d"}
+{"id": "webp3-0116", "text": "27th", "dsl": "d D@27"}
+{"id": "webp3-0117", "text": "90p", "dsl": "x", "unsure": true}
+{"id": "webp3-0118", "text": "Second Sunday in March at 02:00", "dsl": "dt su#2@03 02:00"}
+{"id": "webp3-0119", "text": "every 15th day", "dsl": "d R d/15"}
+{"id": "webp3-0120", "text": "Ash Wednesday", "dsl": "x", "unsure": true}
+{"id": "webp3-0121", "text": "FY2010", "dsl": "x", "unsure": true}
+{"id": "webp3-0122", "text": "The Deadline is tomorrow evening", "dsl": "d +1d"}
+{"id": "webp3-0123", "text": "240 minutes ago", "dsl": "x", "unsure": true}
+{"id": "webp3-0124", "text": "three-months old", "dsl": "x"}
+{"id": "webp3-0125", "text": "3 jan 2000", "dsl": "d 2000-01-03"}
+{"id": "webp3-0126", "text": "In 20 days", "dsl": "d +20d"}
+{"id": "webp3-0127", "text": "anytime after 2014", "dsl": "x", "unsure": true}
+{"id": "webp3-0128", "text": "every Mon thru Wed for the next year", "dsl": "d R w/1 mo,tu,we u+1y s+0d"}
+{"id": "webp3-0129", "text": "/remind me to ask Melissa about the product brief in two hours", "dsl": "x", "unsure": true}
+{"id": "webp3-0130", "text": "at the beginning of around next week", "dsl": "x", "unsure": true}
+{"id": "webp3-0131", "text": "centennial", "dsl": "x"}
+{"id": "webp3-0132", "text": "tomnight", "dsl": "d +1d"}
+{"id": "webp3-0133", "text": "Dec 25th, 2007", "dsl": "d 2007-12-25"}
+{"id": "webp3-0134", "text": "08:20:30 2017-06-30", "dsl": "dt 2017-06-30 08:20"}
+{"id": "webp3-0135", "text": "twenty-eight minutes to seven", "dsl": "t 6:32?"}
+{"id": "webp3-0136", "text": "every other month", "dsl": "d R m/2"}
+{"id": "webp3-0137", "text": "at 12:00 am", "dsl": "t 00:00"}
+{"id": "webp3-0138", "text": "now + 30 minutes", "dsl": "x", "unsure": true}
+{"id": "webp3-0139", "text": "2017-06-30 08:20:30 +0200", "dsl": "dt 2017-06-30 08:20"}
+{"id": "webp3-0140", "text": "Every year on the 13th Friday", "dsl": "x", "unsure": true}
+{"id": "webp3-0141", "text": "22nd of june at 8am", "dsl": "dt 06-22 08:00"}
+{"id": "webp3-0142", "text": "six oh two a.m.", "dsl": "t 06:02"}
+{"id": "webp3-0143", "text": "around 1030", "dsl": "t 10:30"}
+{"id": "webp3-0144", "text": "-3h", "dsl": "x", "unsure": true}
+{"id": "webp3-0145", "text": "tom afternoon", "dsl": "d +1d"}
+{"id": "webp3-0146", "text": "7 hours ago", "dsl": "x", "unsure": true}
+{"id": "webp3-0147", "text": "sundown", "dsl": "x", "unsure": true}
+{"id": "webp3-0148", "text": "july fourteen", "dsl": "d 07-14"}
+{"id": "webp3-0149", "text": "Daily for 10 occurrences", "dsl": "d R d/1 n10"}
+{"id": "webp3-0150", "text": "Every year on the second weekend day of January", "dsl": "x", "unsure": true}
+{"id": "webp3-0151", "text": "1 hour fifteen seconds", "dsl": "x", "unsure": true}
+{"id": "webp3-0152", "text": "Silvester", "dsl": "x", "unsure": true}
+{"id": "webp3-0153", "text": "the 19th century B.C.", "dsl": "x"}
+{"id": "webp3-0154", "text": "Every month on the first weekday", "dsl": "x", "unsure": true}
+{"id": "webp3-0155", "text": "Saturday before last Sunday in March at 02:00", "dsl": "x", "unsure": true}
+{"id": "webp3-0156", "text": "06/30/17", "dsl": "d 2017-06-30"}
+{"id": "webp3-0157", "text": "monthly on tue and fri", "dsl": "x", "unsure": true}
+{"id": "webp3-0158", "text": "may seventh '97 at three in the morning", "dsl": "dt 1997-05-07 03:00"}
+{"id": "webp3-0159", "text": "201508", "dsl": "x", "unsure": true}
+{"id": "webp3-0160", "text": "check the train status on weekdays at 7 AM", "dsl": "dt R d/1 mo,tu,we,th,fr 07:00"}
+{"id": "webp3-0161", "text": "every 12 days", "dsl": "d R d/12"}
+{"id": "webp3-0162", "text": "in 2 mins", "dsl": "x", "unsure": true}
+{"id": "webp3-0163", "text": "1 year 2 months from now", "dsl": "x", "unsure": true}
+{"id": "webp3-0164", "text": "10h pm", "dsl": "t 22:00"}
+{"id": "webp3-0165", "text": "-1436745600000", "dsl": "x", "unsure": true}
+{"id": "webp3-0166", "text": "2007-04-05T12:30-02:00", "dsl": "dt 2007-04-05 12:30"}
+{"id": "webp3-0167", "text": "July 4, 1976 12:01:02 am", "dsl": "dt 1976-07-04 00:01"}
+{"id": "webp3-0168", "text": "12:01 a.m.", "dsl": "t 00:01"}
+{"id": "webp3-0169", "text": "twenty-five to eleven", "dsl": "t 10:35?"}
+{"id": "webp3-0170", "text": "the beginning of last week", "dsl": "x", "unsure": true}
+{"id": "webp3-0171", "text": "Every minute, only in March and June", "dsl": "x", "unsure": true}
+{"id": "webp3-0172", "text": "twelve oh-nine", "dsl": "t 12:09?"}
+{"id": "webp3-0173", "text": "čtvrt na osm", "dsl": "x", "unsure": true}
+{"id": "webp3-0174", "text": "31.12.'91", "dsl": "d 1991-12-31"}
+{"id": "webp3-0175", "text": "in the evening", "dsl": "x", "unsure": true}
+{"id": "webp3-0176", "text": "Monday 3 pm or Tu noon", "dsl": "x", "unsure": true}
+{"id": "webp3-0177", "text": "10:00 on the 15th of every month", "dsl": "dt R m/1 d15 10:00"}
+{"id": "webp3-0178", "text": "every alternate", "dsl": "x", "unsure": true}
+{"id": "webp3-0179", "text": "Every minute, only in 2013 and 2014", "dsl": "x", "unsure": true}
+{"id": "webp3-0180", "text": "jan 15 or january 15", "dsl": "d 01-15"}
+{"id": "webp3-0181", "text": "three weeks from tomorrow", "dsl": "d +22d"}
+{"id": "webp3-0182", "text": "todo Finish important task by Thursday!!!", "dsl": "d >th"}
+{"id": "webp3-0183", "text": "22h", "dsl": "x", "unsure": true}
+{"id": "webp3-0184", "text": "10h36m28.5s", "dsl": "x", "unsure": true}
+{"id": "webp3-0185", "text": "every 2 days at 12:00 {Feb 28}", "dsl": "x", "unsure": true}
+{"id": "webp3-0186", "text": "Jan 1,2010", "dsl": "d 2010-01-01"}
+{"id": "webp3-0187", "text": "10.09.2003", "dsl": "d 2003-10-09"}
+{"id": "webp3-0188", "text": "1/20/2007 +2mo", "dsl": "x", "unsure": true}
+{"id": "webp3-0189", "text": "15 May 2004 23:24 EDT", "dsl": "dt 2004-05-15 23:24"}
+{"id": "webp3-0190", "text": "11PM to 1AM", "dsl": "t 23:00>01:00"}
+{"id": "webp3-0191", "text": "Dec 13 this year", "dsl": "d 12-13"}
+{"id": "webp3-0192", "text": "sat 7 in the evening", "dsl": "dt sa 19:00"}
+{"id": "webp3-0193", "text": "Monthly on the third-to-the-last day of the month, forever", "dsl": "x", "unsure": true}
+{"id": "webp3-0194", "text": "in three weeks' time", "dsl": "d +3w"}
+{"id": "webp3-0195", "text": "Pick up milk at Giant Eagle on Friday afternoon", "dsl": "d fr"}
+{"id": "webp3-0196", "text": "10 September 2013", "dsl": "d 2013-09-10"}
+{"id": "webp3-0197", "text": "December.0031.30", "dsl": "x", "unsure": true}
+{"id": "webp3-0198", "text": "27/5/1979", "dsl": "d 1979-05-27"}
+{"id": "webp3-0199", "text": "Flight 997 on Saturday 3pm EST to 6pm PST", "dsl": "dt sa 15:00>18:00"}
+{"id": "webp3-0200", "text": "2nd to the last friday of each month", "dsl": "x", "unsure": true}
+{"id": "webp3-0201", "text": "every 1st wed jan, 3rd thu jul", "dsl": "x", "unsure": true}
+{"id": "webp3-0202", "text": "on 11/30/2018", "dsl": "d 2018-11-30"}
+{"id": "webp3-0203", "text": "le 7 janvier 2016", "dsl": "d 2016-01-07"}
+{"id": "webp3-0204", "text": "5 and an half minute", "dsl": "x", "unsure": true}
+{"id": "webp3-0205", "text": "Thu 17th at 4pm", "dsl": "x", "unsure": true}
+{"id": "webp3-0206", "text": "maattu pongal 2018", "dsl": "x", "unsure": true}
+{"id": "webp3-0207", "text": "08:20:30 +02:00 2017-06-30", "dsl": "dt 2017-06-30 08:20"}
+{"id": "webp3-0208", "text": "daily at 12a", "dsl": "dt R d/1 00:00"}
+{"id": "webp3-0209", "text": "business day", "dsl": "x", "unsure": true}
+{"id": "webp3-0210", "text": "Thursday, 7 January 2016", "dsl": "d 2016-01-07"}
+{"id": "webp3-0211", "text": "/remind me to check my Asana tasks at 9:15am every weekday", "dsl": "dt R d/1 mo,tu,we,th,fr 09:15"}
+{"id": "webp3-0212", "text": "jan. 4", "dsl": "d 01-04"}
+{"id": "webp3-0213", "text": "12/95", "dsl": "x", "unsure": true}
+{"id": "webp3-0214", "text": "3 sec", "dsl": "x", "unsure": true}
+{"id": "webp3-0215", "text": "every 1st Friday of Jan, 1st Friday of Apr, 1st Friday of July, 1st Friday of Oct", "dsl": "x", "unsure": true}
+{"id": "webp3-0216", "text": "week of 15/1", "dsl": "x", "unsure": true}
+{"id": "webp3-0217", "text": "January 12, 2012 10:00 PM EST", "dsl": "dt 2012-01-12 22:00"}
+{"id": "webp3-0218", "text": "five and half min", "dsl": "x", "unsure": true}
+{"id": "webp3-0219", "text": "5th may 2017", "dsl": "d 2017-05-05"}
+{"id": "webp3-0220", "text": "4d", "dsl": "x", "unsure": true}
+{"id": "webp3-0221", "text": "Tue, 23 Apr 1996 13:28:27 -0400", "dsl": "dt 1996-04-23 13:28"}
+{"id": "webp3-0222", "text": "June 11-16 2026", "dsl": "d 2026-06-11>2026-06-16"}
+{"id": "webp3-0223", "text": "January 13th, 2016", "dsl": "d 2016-01-13"}
+{"id": "webp3-0224", "text": "thirty two hours", "dsl": "x", "unsure": true}
+{"id": "webp3-0225", "text": "mid-", "dsl": "x"}
+{"id": "webp3-0226", "text": "03.25.95", "dsl": "d 1995-03-25"}
+{"id": "webp3-0227", "text": "Kerstmis", "dsl": "x", "unsure": true}
+{"id": "webp3-0228", "text": "Pay credit card every 28th", "dsl": "d R m/1 d28"}
+{"id": "webp3-0229", "text": "one and three quarters of hours", "dsl": "x", "unsure": true}
+{"id": "webp3-0230", "text": "Monday to Friday, 8am to 5pm UK time", "dsl": "x", "unsure": true}
+{"id": "webp3-0231", "text": "the middle of", "dsl": "x"}
+{"id": "webp3-0232", "text": "5 P.", "dsl": "t 17:00"}
+{"id": "webp3-0233", "text": "July 17 at 3", "dsl": "dt 07-17 3?"}
+{"id": "webp3-0234", "text": "March 30th, 1979", "dsl": "d 1979-03-30"}
+{"id": "webp3-0235", "text": "2007-03-01T13:00:00Z/2008-05-11T15:30:00Z", "dsl": "x", "unsure": true}
+{"id": "webp3-0236", "text": "this second", "dsl": "x", "unsure": true}
+{"id": "webp3-0237", "text": "2016 JA 07", "dsl": "x", "unsure": true}
+{"id": "webp3-0238", "text": "lag b'omer 2017", "dsl": "x", "unsure": true}
+{"id": "webp3-0239", "text": "1994-11-05T08:15:30-05:00", "dsl": "dt 1994-11-05 08:15"}
+{"id": "webp3-0240", "text": "02-11-2026", "dsl": "d 2026-02-11"}
+{"id": "webp3-0241", "text": "1 April to 31 March", "dsl": "x", "unsure": true}
+{"id": "webp3-0242", "text": "valentine", "dsl": "x", "unsure": true}
+{"id": "webp3-0243", "text": "2015-W24-1T12:34:56Z", "dsl": "x", "unsure": true}
+{"id": "webp3-0244", "text": "second monday in january", "dsl": "d mo#2@01"}
+{"id": "webp3-0245", "text": "Soccer practice every Tuesday with John at 6pm", "dsl": "dt R w/1 tu 18:00"}
+{"id": "webp3-0246", "text": "the beginning of", "dsl": "x"}
+{"id": "webp3-0247", "text": "a reminder to walk for 20 minutes every day at noon", "dsl": "dt R d/1 12:00>+20m"}
+{"id": "webp3-0248", "text": "at 5A.", "dsl": "t 05:00"}
+{"id": "webp3-0249", "text": "On the hour, every 1 hour, starting at 02:00 AM", "dsl": "x", "unsure": true}
+{"id": "webp3-0250", "text": "October 21, 2022", "dsl": "d 2022-10-21"}
+{"id": "webp3-0251", "text": "thanksgiving 1 year ago", "dsl": "x", "unsure": true}
+{"id": "webp3-0252", "text": "five-fifteen", "dsl": "t 5:15?"}
+{"id": "webp3-0253", "text": "At 10:15 AM, on the last day of the month", "dsl": "x", "unsure": true}
+{"id": "webp3-0254", "text": "next Friday, July 4, 2025", "dsl": "d 2025-07-04"}
+{"id": "webp3-0255", "text": "31st of may at 6:30pm", "dsl": "dt 05-31 18:30"}
+{"id": "webp3-0256", "text": "At 03:30 AM", "dsl": "t 03:30"}
+{"id": "webp3-0257", "text": "13 de junio de 2003", "dsl": "d 2003-06-13"}
+{"id": "webp3-0258", "text": "thirty-three days from now", "dsl": "d +33d"}
