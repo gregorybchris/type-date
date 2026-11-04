@@ -106,7 +106,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                 }
                 const edge = pos === "mid" && open && (open === "end" ? d === mEnd : d === mStart) ? open : undefined;
                 const occ = sel.occ.has(d);
-                const selected = !!pos || sel.multi?.has(d) || (occ && d === [...sel.occ][0]);
+                const selected = !!pos || sel.multi?.has(d) || occ;
                 return (
                   <div
                     role="gridcell"
