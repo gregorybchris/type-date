@@ -1,0 +1,10 @@
+{
+  "version": "v006",
+  "created": "2026-11-04T05:09:31+00:00",
+  "base": "v005",
+  "counts": {
+    "train": 55564
+  },
+  "decontaminated_against": "e3",
+  "notes": "v005 plus 555 rows from data/real-hard/train.jsonl repeated 6x."
+}
