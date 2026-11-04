@@ -53,4 +53,7 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 
 ## Pitfalls
 
-(Add entries here as they are found.)
+- Tokenizer: do not add a `Lowercase` normalizer. The DSL has uppercase tokens (`R`, `W+1`, `M@10`). Lowercase the input text in code (`norm_in`) instead. This bug cost exp-004.
+- A typer app with one command collapses it into the root command. Add an `@app.callback()` or a second command.
+- Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
+- Agents running Playwright and training at once slow each other. Check `ps` before blaming the code.
