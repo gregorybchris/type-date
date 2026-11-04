@@ -1,0 +1,400 @@
+{"id": "taxt1-0000", "text": "tues and thurs over the past 6 weeks", "dsl": "d R w/1 tu,th u+0d s-6w"}
+{"id": "taxt1-0001", "text": "last 6 wednsdays", "dsl": "d we-1,we-2,we-3,we-4,we-5,we-6"}
+{"id": "taxt1-0002", "text": "put in weekends since october comma at ten am", "dsl": "dt R w/1 sa,su u+0d 10:00 sM@10<"}
+{"id": "taxt1-0003", "text": "saturdays in july", "dsl": "d R w/1 sa uM@07 sM@07"}
+{"id": "taxt1-0004", "text": "hotel nights dec 3, 4, 5", "dsl": "d 12-03,12-04,12-05"}
+{"id": "taxt1-0005", "text": "10 business days before apr 15", "dsl": "d 04-15~-10b"}
+{"id": "taxt1-0006", "text": "m-f for the last 2 weeks", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-2w"}
+{"id": "taxt1-0007", "text": "every friday in october each year", "dsl": "d R w/1 fr M@10"}
+{"id": "taxt1-0008", "text": "first business day on or after jan 1", "dsl": "x", "unsure": true}
+{"id": "taxt1-0009", "text": "m-f next week", "dsl": "d R d/1 mo,tu,we,th,fr uW+1 sW+1"}
+{"id": "taxt1-0010", "text": "fridays in the last 6 months", "dsl": "d R w/1 fr u+0d s-6m"}
+{"id": "taxt1-0011", "text": "he is 30 days late", "dsl": "x"}
+{"id": "taxt1-0012", "text": "twelve business days from today", "dsl": "d +12b"}
+{"id": "taxt1-0013", "text": "mwf but not the 24th", "dsl": "x", "unsure": true}
+{"id": "taxt1-0014", "text": "page 14", "dsl": "x"}
+{"id": "taxt1-0015", "text": "some time in autumn", "dsl": "x", "unsure": true}
+{"id": "taxt1-0016", "text": "tuesday and thursday this week", "dsl": "d R w/1 tu,th uW+0 sW+0"}
+{"id": "taxt1-0017", "text": "wednesdays for the last 12 weeks", "dsl": "d R w/1 we u+0d s-12w"}
+{"id": "taxt1-0018", "text": "2 weeks from friday", "dsl": "d fr~+2w"}
+{"id": "taxt1-0019", "text": "the 2nd and 4th friday of each month", "dsl": "d R m/1 fr#2,fr#4"}
+{"id": "taxt1-0020", "text": "two weeks before the closing on dec 15", "dsl": "d 12-15~-2w"}
+{"id": "taxt1-0021", "text": "the following 4 wednesdays", "dsl": "d we+1,we+2,we+3,we+4"}
+{"id": "taxt1-0022", "text": "5 days from oct 20", "dsl": "d 10-20~+5d"}
+{"id": "taxt1-0023", "text": "last tax year", "dsl": "x", "unsure": true}
+{"id": "taxt1-0024", "text": "tuesdays and thursdays over the past 8 weeks", "dsl": "d R w/1 tu,th u+0d s-8w"}
+{"id": "taxt1-0025", "text": "1st and 3rd fridays", "dsl": "d R m/1 fr#1,fr#3"}
+{"id": "taxt1-0026", "text": "every april on thursdays", "dsl": "d R w/1 th M@04"}
+{"id": "taxt1-0027", "text": "next 2 weekends", "dsl": "d sa+1,su+1,sa+2,su+2"}
+{"id": "taxt1-0028", "text": "from 3 nov until 7 nov", "dsl": "d 11-03>11-07"}
+{"id": "taxt1-0029", "text": "3x a week", "dsl": "x", "unsure": true}
+{"id": "taxt1-0030", "text": "weekends each october, every year", "dsl": "d R w/1 sa,su M@10"}
+{"id": "taxt1-0031", "text": "lane 6", "dsl": "x"}
+{"id": "taxt1-0032", "text": "weekends since october", "dsl": "d R w/1 sa,su u+0d sM@10<"}
+{"id": "taxt1-0033", "text": "sundays for the past 5 weeks", "dsl": "d R w/1 su u+0d s-5w"}
+{"id": "taxt1-0034", "text": "picnic jun 2 and jun 9", "dsl": "d 06-02,06-09"}
+{"id": "taxt1-0035", "text": "saturdays for the next 10 weeks", "dsl": "d R w/1 sa u+10w s+0d"}
+{"id": "taxt1-0036", "text": "invoice 2043", "dsl": "x"}
+{"id": "taxt1-0037", "text": "45 days after jan 1 2027", "dsl": "d 2027-01-01~+45d"}
+{"id": "taxt1-0038", "text": "9 business days from now", "dsl": "d +9b"}
+{"id": "taxt1-0039", "text": "mondays for the next 6 weeks", "dsl": "d R w/1 mo u+6w s+0d"}
+{"id": "taxt1-0040", "text": "page 12", "dsl": "x"}
+{"id": "taxt1-0041", "text": "day after new years", "dsl": "d 01-01~+1d"}
+{"id": "taxt1-0042", "text": "weekends in august at noon", "dsl": "dt R w/1 sa,su uM@08 12:00 sM@08"}
+{"id": "taxt1-0043", "text": "august 2027", "dsl": "d 2027-08-01>2027-08-31"}
+{"id": "taxt1-0044", "text": "tuesdays every september", "dsl": "d R w/1 tu M@09"}
+{"id": "taxt1-0045", "text": "M/W/F over the past 6 weeks", "dsl": "d R w/1 mo,we,fr u+0d s-6w"}
+{"id": "taxt1-0046", "text": "the rest of the month", "dsl": "d +0d>M+0"}
+{"id": "taxt1-0047", "text": "10 days after nov 5", "dsl": "d 11-05~+10d"}
+{"id": "taxt1-0048", "text": "ytd", "dsl": "d Y+0>+0d"}
+{"id": "taxt1-0049", "text": "2nd grade", "dsl": "x"}
+{"id": "taxt1-0050", "text": "two days before the wedding on june 6", "dsl": "d 06-06~-2d"}
+{"id": "taxt1-0051", "text": "weekends this month", "dsl": "d R w/1 sa,su uM+0 sM+0"}
+{"id": "taxt1-0052", "text": "sundays at 9am until the end of the year", "dsl": "dt R w/1 su uY+0 09:00"}
+{"id": "taxt1-0053", "text": "30 days after nov 3", "dsl": "d 11-03~+30d"}
+{"id": "taxt1-0054", "text": "wed and fri for the next 5 weeks", "dsl": "d R w/1 we,fr u+5w s+0d"}
+{"id": "taxt1-0055", "text": "business day on or after nov 11", "dsl": "x", "unsure": true}
+{"id": "taxt1-0056", "text": "beginning of november", "dsl": "x", "unsure": true}
+{"id": "taxt1-0057", "text": "not mondays, rest of the week", "dsl": "d R w/1 tu,we,th,fr,sa,su uW+0 s+0d"}
+{"id": "taxt1-0058", "text": "mwf every january", "dsl": "d R w/1 mo,we,fr M@01"}
+{"id": "taxt1-0059", "text": "show me the last 10 days", "dsl": "d -10d>+0d"}
+{"id": "taxt1-0060", "text": "next 3 thurs", "dsl": "d th+1,th+2,th+3"}
+{"id": "taxt1-0061", "text": "every morning for the past 2 weeks", "dsl": "d R d/1 u+0d s-2w"}
+{"id": "taxt1-0062", "text": "next 3 weekdays off", "dsl": "d +1b,+2b,+3b"}
+{"id": "taxt1-0063", "text": "ten days from tomorrow", "dsl": "d +11d"}
+{"id": "taxt1-0064", "text": "gate 14", "dsl": "x"}
+{"id": "taxt1-0065", "text": "may 5th and 19th", "dsl": "d 05-05,05-19"}
+{"id": "taxt1-0066", "text": "mondays since june", "dsl": "d R w/1 mo u+0d sM@06<"}
+{"id": "taxt1-0067", "text": "week before nov 9", "dsl": "d 11-09~-1w"}
+{"id": "taxt1-0068", "text": "saturdays until christmas", "dsl": "d R w/1 sa u12-25"}
+{"id": "taxt1-0069", "text": "the last 3 wednesdays", "dsl": "d we-1,we-2,we-3"}
+{"id": "taxt1-0070", "text": "three weeks after nov 1", "dsl": "d 11-01~+3w"}
+{"id": "taxt1-0071", "text": "tues thurs next week", "dsl": "d R w/1 tu,th uW+1 sW+1"}
+{"id": "taxt1-0072", "text": "march 3 to 9", "dsl": "d 03-03>03-09"}
+{"id": "taxt1-0073", "text": "tuesdays through march", "dsl": "d R w/1 tu uM@03"}
+{"id": "taxt1-0074", "text": "text me back", "dsl": "x"}
+{"id": "taxt1-0075", "text": "every friday over the next 90 days", "dsl": "d R w/1 fr u+90d s+0d"}
+{"id": "taxt1-0076", "text": "the tuesday before election day", "dsl": "x", "unsure": true}
+{"id": "taxt1-0077", "text": "ttth 2p", "dsl": "dt R w/1 tu,th 14:00"}
+{"id": "taxt1-0078", "text": "apr 15 and jun 15", "dsl": "d 04-15,06-15"}
+{"id": "taxt1-0079", "text": "first monday of every month at 9am", "dsl": "dt R m/1 mo#1 09:00"}
+{"id": "taxt1-0080", "text": "fortnight before easter", "dsl": "x", "unsure": true}
+{"id": "taxt1-0081", "text": "mwf 7a for the next 6 weeks", "dsl": "dt R w/1 mo,we,fr u+6w 07:00 s+0d"}
+{"id": "taxt1-0082", "text": "pulling hours for weekdays next week", "dsl": "d R d/1 mo,tu,we,th,fr uW+1 sW+1"}
+{"id": "taxt1-0083", "text": "room 3", "dsl": "x"}
+{"id": "taxt1-0084", "text": "2 tents", "dsl": "x"}
+{"id": "taxt1-0085", "text": "this tax year", "dsl": "x", "unsure": true}
+{"id": "taxt1-0086", "text": "plz send for the rest of the month", "dsl": "d +0d>M+0"}
+{"id": "taxt1-0087", "text": "every july on tuesdays", "dsl": "d R w/1 tu M@07"}
+{"id": "taxt1-0088", "text": "every weekend across the next 8 weeks", "dsl": "d R w/1 sa,su u+8w s+0d"}
+{"id": "taxt1-0089", "text": "fridays this month not the 29th", "dsl": "x", "unsure": true}
+{"id": "taxt1-0090", "text": "once or twice a month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0091", "text": "the monday before labor day", "dsl": "d mo#1@09~-1w"}
+{"id": "taxt1-0092", "text": "daily except weekends", "dsl": "d R d/1 mo,tu,we,th,fr"}
+{"id": "taxt1-0093", "text": "the next 5 business days", "dsl": "d +1b,+2b,+3b,+4b,+5b"}
+{"id": "taxt1-0094", "text": "nov 3, nov 10, nov 17", "dsl": "d 11-03,11-10,11-17"}
+{"id": "taxt1-0095", "text": "all days next month except the 1st", "dsl": "x", "unsure": true}
+{"id": "taxt1-0096", "text": "2026-11-05 and 2026-11-12", "dsl": "d 2026-11-05,2026-11-12"}
+{"id": "taxt1-0097", "text": "mwf except oct 30", "dsl": "x", "unsure": true}
+{"id": "taxt1-0098", "text": "the 14th", "dsl": "d D@14"}
+{"id": "taxt1-0099", "text": "tuesdays over the past 6 weeks", "dsl": "d R w/1 tu u+0d s-6w"}
+{"id": "taxt1-0100", "text": "harvest saturdays every october", "dsl": "d R w/1 sa M@10"}
+{"id": "taxt1-0101", "text": "previous business day", "dsl": "d -1b"}
+{"id": "taxt1-0102", "text": "s/s 9 to 11", "dsl": "x", "unsure": true}
+{"id": "taxt1-0103", "text": "m t w th", "dsl": "d mo,tu,we,th"}
+{"id": "taxt1-0104", "text": "all sundays of every november", "dsl": "d R w/1 su M@11"}
+{"id": "taxt1-0105", "text": "my 2 jobs", "dsl": "x"}
+{"id": "taxt1-0106", "text": "every day other than saturday", "dsl": "d R d/1 mo,tu,we,th,fr,su"}
+{"id": "taxt1-0107", "text": "mondays for the last 6 months", "dsl": "d R w/1 mo u+0d s-6m"}
+{"id": "taxt1-0108", "text": "3 days before oct 15", "dsl": "d 10-15~-3d"}
+{"id": "taxt1-0109", "text": "every other friday till new year", "dsl": "d R w/2 fr u01-01"}
+{"id": "taxt1-0110", "text": "t/th at 5pm through june", "dsl": "dt R w/1 tu,th uM@06 17:00"}
+{"id": "taxt1-0111", "text": "sept 1 2026", "dsl": "d 2026-09-01"}
+{"id": "taxt1-0112", "text": "sept 9, 16, 23 at 6pm", "dsl": "dt 09-09,09-16,09-23 18:00"}
+{"id": "taxt1-0113", "text": "net 30 business days from dec 1", "dsl": "d 12-01~+30b"}
+{"id": "taxt1-0114", "text": "freelance rate 50 an hour", "dsl": "x"}
+{"id": "taxt1-0115", "text": "every june on mondays", "dsl": "d R w/1 mo M@06"}
+{"id": "taxt1-0116", "text": "mondays through the end of june", "dsl": "d R w/1 mo uM@06"}
+{"id": "taxt1-0117", "text": "tuesdays every september annually", "dsl": "d R w/1 tu M@09"}
+{"id": "taxt1-0118", "text": "past 5 working days", "dsl": "d -1b,-2b,-3b,-4b,-5b"}
+{"id": "taxt1-0119", "text": "tu-f", "dsl": "d tu>fr"}
+{"id": "taxt1-0120", "text": "past 3 wednesdays", "dsl": "d we-1,we-2,we-3"}
+{"id": "taxt1-0121", "text": "wednesdays each year in april", "dsl": "d R w/1 we M@04"}
+{"id": "taxt1-0122", "text": "fri sat sun", "dsl": "d fr,sa,su"}
+{"id": "taxt1-0123", "text": "weekdays over the next 2 weeks", "dsl": "d R d/1 mo,tu,we,th,fr u+2w s+0d"}
+{"id": "taxt1-0124", "text": "everyday besides tuesday", "dsl": "d R d/1 mo,we,th,fr,sa,su"}
+{"id": "taxt1-0125", "text": "every tuesday for the next 2 months", "dsl": "d R w/1 tu u+2m s+0d"}
+{"id": "taxt1-0126", "text": "sa/su", "dsl": "d sa,su"}
+{"id": "taxt1-0127", "text": "weekends this year", "dsl": "d R w/1 sa,su uY+0 sY+0"}
+{"id": "taxt1-0128", "text": "20 working days after the 1st", "dsl": "d D@01~+20b"}
+{"id": "taxt1-0129", "text": "10 working days from 3 nov", "dsl": "d 11-03~+10b"}
+{"id": "taxt1-0130", "text": "a day before yom kippur", "dsl": "x", "unsure": true}
+{"id": "taxt1-0131", "text": "mon to wed next week", "dsl": "d R w/1 mo,tu,we uW+1 sW+1"}
+{"id": "taxt1-0132", "text": "every day in the past 2 weeks", "dsl": "d R d/1 u+0d s-2w"}
+{"id": "taxt1-0133", "text": "sundays for the next 8 weeks", "dsl": "d R w/1 su u+8w s+0d"}
+{"id": "taxt1-0134", "text": "mon-fri except thursday", "dsl": "d R d/1 mo,tu,we,fr"}
+{"id": "taxt1-0135", "text": "flight 482", "dsl": "x"}
+{"id": "taxt1-0136", "text": "5 business days after oct 1", "dsl": "d 10-01~+5b"}
+{"id": "taxt1-0137", "text": "the nxt 4 mon", "dsl": "d mo+1,mo+2,mo+3,mo+4"}
+{"id": "taxt1-0138", "text": "3 fridays", "dsl": "x", "unsure": true}
+{"id": "taxt1-0139", "text": "the day before school starts aug 25", "dsl": "d 08-25~-1d"}
+{"id": "taxt1-0140", "text": "the 3 mondays I missed", "dsl": "x", "unsure": true}
+{"id": "taxt1-0141", "text": "fridays over the past 6 weeks", "dsl": "d R w/1 fr u+0d s-6w"}
+{"id": "taxt1-0142", "text": "mwf at 6am over the past 6 weeks", "dsl": "dt R w/1 mo,we,fr u+0d 06:00 s-6w"}
+{"id": "taxt1-0143", "text": "2 weeks before the audit on may 3", "dsl": "d 05-03~-2w"}
+{"id": "taxt1-0144", "text": "weekdays this week", "dsl": "d R d/1 mo,tu,we,th,fr uW+0 sW+0"}
+{"id": "taxt1-0145", "text": "jan 1 to jan 15", "dsl": "d 01-01>01-15"}
+{"id": "taxt1-0146", "text": "weekdays over the last 2 weeks", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-2w"}
+{"id": "taxt1-0147", "text": "2 days b4 oct 31", "dsl": "d 10-31~-2d"}
+{"id": "taxt1-0148", "text": "the last 10 pages", "dsl": "x"}
+{"id": "taxt1-0149", "text": "every first monday at 9am until june", "dsl": "dt R m/1 mo#1 uM@06 09:00"}
+{"id": "taxt1-0150", "text": "sundays until new years", "dsl": "d R w/1 su u01-01"}
+{"id": "taxt1-0151", "text": "the day after christmas", "dsl": "d 12-25~+1d"}
+{"id": "taxt1-0152", "text": "i need thursdays in december", "dsl": "d R w/1 th uM@12 sM@12"}
+{"id": "taxt1-0153", "text": "5 star hotel", "dsl": "x"}
+{"id": "taxt1-0154", "text": "M W F 7:30", "dsl": "dt mo,we,fr 7:30?"}
+{"id": "taxt1-0155", "text": "every year in april on mondays", "dsl": "d R w/1 mo M@04"}
+{"id": "taxt1-0156", "text": "second half of 2026", "dsl": "x", "unsure": true}
+{"id": "taxt1-0157", "text": "all mondays and tuesdays except mon 11/9", "dsl": "x", "unsure": true}
+{"id": "taxt1-0158", "text": "every day of the trial except wednesdays", "dsl": "d R d/1 mo,tu,th,fr,sa,su"}
+{"id": "taxt1-0159", "text": "TTh", "dsl": "d tu,th"}
+{"id": "taxt1-0160", "text": "every friday at 5pm until the end of the year", "dsl": "dt R w/1 fr uY+0 17:00"}
+{"id": "taxt1-0161", "text": "this fiscal year", "dsl": "x", "unsure": true}
+{"id": "taxt1-0162", "text": "tues every october", "dsl": "d R w/1 tu M@10"}
+{"id": "taxt1-0163", "text": "the next 4 saturdays from now", "dsl": "d sa+1,sa+2,sa+3,sa+4"}
+{"id": "taxt1-0164", "text": "all weekends until the 20th", "dsl": "d R w/1 sa,su uD@20"}
+{"id": "taxt1-0165", "text": "weekdays until friday", "dsl": "d R d/1 mo,tu,we,th,fr ufr"}
+{"id": "taxt1-0166", "text": "need weekends over the last 3 months for the report", "dsl": "d R w/1 sa,su u+0d s-3m"}
+{"id": "taxt1-0167", "text": "next monday at 10", "dsl": "dt mo+1 10?"}
+{"id": "taxt1-0168", "text": "every october on saturdays", "dsl": "d R w/1 sa M@10"}
+{"id": "taxt1-0169", "text": "weekends since october at 10am", "dsl": "dt R w/1 sa,su u+0d 10:00 sM@10<"}
+{"id": "taxt1-0170", "text": "the day before oct 12th", "dsl": "d 10-12~-1d"}
+{"id": "taxt1-0171", "text": "weekdays across the last 30 days", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-30d"}
+{"id": "taxt1-0172", "text": "rest of the year", "dsl": "d +0d>Y+0"}
+{"id": "taxt1-0173", "text": "mondays and wednesdays at 6pm for the next 8 weeks", "dsl": "dt R w/1 mo,we u+8w 18:00 s+0d"}
+{"id": "taxt1-0174", "text": "a month after feb 14", "dsl": "d 02-14~+1m"}
+{"id": "taxt1-0175", "text": "the coming 3 saturdays", "dsl": "d sa+1,sa+2,sa+3"}
+{"id": "taxt1-0176", "text": "show me the next 3 saturdays", "dsl": "d sa+1,sa+2,sa+3"}
+{"id": "taxt1-0177", "text": "mondays every june thanks", "dsl": "d R w/1 mo M@06"}
+{"id": "taxt1-0178", "text": "sat sun over the past 3 weekends", "dsl": "d R w/1 sa,su u+0d s-3w"}
+{"id": "taxt1-0179", "text": "weekdays but skip friday", "dsl": "d R d/1 mo,tu,we,th"}
+{"id": "taxt1-0180", "text": "past 2 weekends at brunch time", "dsl": "d sa-1,su-1,sa-2,su-2"}
+{"id": "taxt1-0181", "text": "weekends every august please", "dsl": "d R w/1 sa,su M@08"}
+{"id": "taxt1-0182", "text": "fridays only for the next 12 weeks", "dsl": "d R w/1 fr u+12w s+0d"}
+{"id": "taxt1-0183", "text": "45 minutes", "dsl": "x"}
+{"id": "taxt1-0184", "text": "t th", "dsl": "d tu,th"}
+{"id": "taxt1-0185", "text": "first working day of 2027", "dsl": "x", "unsure": true}
+{"id": "taxt1-0186", "text": "last school year", "dsl": "x", "unsure": true}
+{"id": "taxt1-0187", "text": "kitchen closed every day but the 25th", "dsl": "x", "unsure": true}
+{"id": "taxt1-0188", "text": "weekends this month at 10am", "dsl": "dt R w/1 sa,su uM+0 10:00 sM+0"}
+{"id": "taxt1-0189", "text": "inventory count last business day of the month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0190", "text": "mon and wed next week", "dsl": "d R w/1 mo,we uW+1 sW+1"}
+{"id": "taxt1-0191", "text": "this whole month", "dsl": "d M+0"}
+{"id": "taxt1-0192", "text": "3 times a month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0193", "text": "the next 2 weekends coming up", "dsl": "d sa+1,su+1,sa+2,su+2"}
+{"id": "taxt1-0194", "text": "over the next month", "dsl": "d +0d>+1m"}
+{"id": "taxt1-0195", "text": "weekdays next week at 7am", "dsl": "dt R d/1 mo,tu,we,th,fr uW+1 07:00 sW+1"}
+{"id": "taxt1-0196", "text": "evenings this month", "dsl": "d M+0"}
+{"id": "taxt1-0197", "text": "weekends over the last 6 months", "dsl": "d R w/1 sa,su u+0d s-6m"}
+{"id": "taxt1-0198", "text": "last 4 quarters", "dsl": "d Q-4>Q-1"}
+{"id": "taxt1-0199", "text": "sundays over the next 3 months", "dsl": "d R w/1 su u+3m s+0d"}
+{"id": "taxt1-0200", "text": "mondays at 9 until thanksgiving", "dsl": "dt R w/1 mo uth#4@11 9?"}
+{"id": "taxt1-0201", "text": "every wednesday until april", "dsl": "d R w/1 we uM@04"}
+{"id": "taxt1-0202", "text": "thrice a week", "dsl": "x", "unsure": true}
+{"id": "taxt1-0203", "text": "first working day of next month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0204", "text": "last business day of the month of february", "dsl": "x", "unsure": true}
+{"id": "taxt1-0205", "text": "2 hours", "dsl": "x", "unsure": true}
+{"id": "taxt1-0206", "text": "spring break week", "dsl": "x", "unsure": true}
+{"id": "taxt1-0207", "text": "need it for 5 business days after oct 1 ok", "dsl": "d 10-01~+5b"}
+{"id": "taxt1-0208", "text": "the last five fridays of the year", "dsl": "x", "unsure": true}
+{"id": "taxt1-0209", "text": "a week before the 20th", "dsl": "d D@20~-1w"}
+{"id": "taxt1-0210", "text": "ten days after thanksgiving", "dsl": "d th#4@11~+10d"}
+{"id": "taxt1-0211", "text": "march 3 and march 4", "dsl": "d 03-03,03-04"}
+{"id": "taxt1-0212", "text": "mwf 12:15", "dsl": "dt mo,we,fr 12:15?"}
+{"id": "taxt1-0213", "text": "tue and thu at 5:30pm", "dsl": "dt tu,th 17:30"}
+{"id": "taxt1-0214", "text": "freelance deadline 5 business days after oct 1", "dsl": "d 10-01~+5b"}
+{"id": "taxt1-0215", "text": "1 week after mlk day", "dsl": "d mo#3@01~+1w"}
+{"id": "taxt1-0216", "text": "the sunday before easter", "dsl": "x", "unsure": true}
+{"id": "taxt1-0217", "text": "three working days from now", "dsl": "d +3b"}
+{"id": "taxt1-0218", "text": "s/s 10a", "dsl": "dt sa,su 10:00"}
+{"id": "taxt1-0219", "text": "oct 2 and 9 at 3pm", "dsl": "dt 10-02,10-09 15:00"}
+{"id": "taxt1-0220", "text": "mornings next week except thursday", "dsl": "d R d/1 mo,tu,we,fr,sa,su uW+1 sW+1"}
+{"id": "taxt1-0221", "text": "my 2 mondays are always rubbish", "dsl": "x"}
+{"id": "taxt1-0222", "text": "the 5th, 10th and 20th", "dsl": "d D@05,D@10,D@20"}
+{"id": "taxt1-0223", "text": "every monday at 8am for the next 12 weeks", "dsl": "dt R w/1 mo u+12w 08:00 s+0d"}
+{"id": "taxt1-0224", "text": "the preceding 3 weekdays", "dsl": "d -1b,-2b,-3b"}
+{"id": "taxt1-0225", "text": "one week before christmas eve", "dsl": "d 12-24~-1w"}
+{"id": "taxt1-0226", "text": "ship within 3 business days of oct 28", "dsl": "d 10-28~+3b"}
+{"id": "taxt1-0227", "text": "next 14 days", "dsl": "d +0d>+14d"}
+{"id": "taxt1-0228", "text": "last 2 fri", "dsl": "d fr-1,fr-2"}
+{"id": "taxt1-0229", "text": "saturdays till christmas", "dsl": "d R w/1 sa u12-25"}
+{"id": "taxt1-0230", "text": "from now to month end", "dsl": "d +0d>M+0"}
+{"id": "taxt1-0231", "text": "7 working days after oct 14", "dsl": "d 10-14~+7b"}
+{"id": "taxt1-0232", "text": "a month after jan 15", "dsl": "d 01-15~+1m"}
+{"id": "taxt1-0233", "text": "weekdays during the past 3 weeks", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-3w"}
+{"id": "taxt1-0234", "text": "nov 12 and 14", "dsl": "d 11-12,11-14"}
+{"id": "taxt1-0235", "text": "jan 15, apr 15, jun 15, sep 15", "dsl": "d 01-15,04-15,06-15,09-15"}
+{"id": "taxt1-0236", "text": "previous 4 weekdays", "dsl": "d -1b,-2b,-3b,-4b"}
+{"id": "taxt1-0237", "text": "mon+wed+fri", "dsl": "d mo,we,fr"}
+{"id": "taxt1-0238", "text": "next six thursdays", "dsl": "d th+1,th+2,th+3,th+4,th+5,th+6"}
+{"id": "taxt1-0239", "text": "the day after the 31st", "dsl": "d D@31~+1d"}
+{"id": "taxt1-0240", "text": "sundays in december", "dsl": "d R w/1 su uM@12 sM@12"}
+{"id": "taxt1-0241", "text": "5 days after valentines day", "dsl": "d 02-14~+5d"}
+{"id": "taxt1-0242", "text": "every tuesday at 4pm", "dsl": "dt R w/1 tu 16:00"}
+{"id": "taxt1-0243", "text": "first and third tuesday at 10am", "dsl": "dt R m/1 tu#1,tu#3 10:00"}
+{"id": "taxt1-0244", "text": "the last couple of weeks", "dsl": "x", "unsure": true}
+{"id": "taxt1-0245", "text": "school holidays", "dsl": "x", "unsure": true}
+{"id": "taxt1-0246", "text": "the next 3 thursdays at 8pm", "dsl": "dt th+1,th+2,th+3 20:00"}
+{"id": "taxt1-0247", "text": "next 3 sat and sun", "dsl": "d sa+1,su+1,sa+2,su+2,sa+3,su+3"}
+{"id": "taxt1-0248", "text": "weekends each august", "dsl": "d R w/1 sa,su M@08"}
+{"id": "taxt1-0249", "text": "all the sat in nov", "dsl": "d R w/1 sa uM@11 sM@11"}
+{"id": "taxt1-0250", "text": "first business day of next week", "dsl": "x", "unsure": true}
+{"id": "taxt1-0251", "text": "holiday inn", "dsl": "x"}
+{"id": "taxt1-0252", "text": "next 12 tuesdays", "dsl": "d tu+1,tu+2,tu+3,tu+4,tu+5,tu+6,tu+7,tu+8,tu+9,tu+10,tu+11,tu+12"}
+{"id": "taxt1-0253", "text": "weekends over the previous fortnight", "dsl": "d R w/1 sa,su u+0d s-2w"}
+{"id": "taxt1-0254", "text": "the past 3 mondays at 8am", "dsl": "dt mo-1,mo-2,mo-3 08:00"}
+{"id": "taxt1-0255", "text": "nxt 6 wednesdays", "dsl": "d we+1,we+2,we+3,we+4,we+5,we+6"}
+{"id": "taxt1-0256", "text": "m-f 6a", "dsl": "dt R d/1 mo,tu,we,th,fr 06:00"}
+{"id": "taxt1-0257", "text": "jan 5, 6, 7", "dsl": "d 01-05,01-06,01-07"}
+{"id": "taxt1-0258", "text": "2 days after xmas", "dsl": "d 12-25~+2d"}
+{"id": "taxt1-0259", "text": "everyday besides mondays", "dsl": "d R d/1 tu,we,th,fr,sa,su"}
+{"id": "taxt1-0260", "text": "weekdays next month", "dsl": "d R d/1 mo,tu,we,th,fr uM+1 sM+1"}
+{"id": "taxt1-0261", "text": "for example every monday in 2027", "dsl": "d R w/1 mo uY@2027 sY@2027"}
+{"id": "taxt1-0262", "text": "all mondays in 2027", "dsl": "d R w/1 mo uY@2027 sY@2027"}
+{"id": "taxt1-0263", "text": "mwf 7a until dec 15", "dsl": "dt R w/1 mo,we,fr u12-15 07:00"}
+{"id": "taxt1-0264", "text": "every day except fri and sat", "dsl": "d R d/1 mo,tu,we,th,su"}
+{"id": "taxt1-0265", "text": "pg 30", "dsl": "x"}
+{"id": "taxt1-0266", "text": "the 2nd monday after labor day", "dsl": "d mo#1@09~+2w"}
+{"id": "taxt1-0267", "text": "chapter 7 of the manual", "dsl": "x"}
+{"id": "taxt1-0268", "text": "dec 1 - dec 5", "dsl": "d 12-01>12-05"}
+{"id": "taxt1-0269", "text": "sundays each december", "dsl": "d R w/1 su M@12"}
+{"id": "taxt1-0270", "text": "saturdays and sundays at 10am until labor day", "dsl": "dt R w/1 sa,su umo#1@09 10:00"}
+{"id": "taxt1-0271", "text": "all tuesdays in march except the 14th", "dsl": "x", "unsure": true}
+{"id": "taxt1-0272", "text": "the 2 days after thanksgiving", "dsl": "d th#4@11~+1d,th#4@11~+2d"}
+{"id": "taxt1-0273", "text": "every day except the 1st and 15th", "dsl": "x", "unsure": true}
+{"id": "taxt1-0274", "text": "schedule the walk-ins for rest of this week", "dsl": "d +0d>W+0"}
+{"id": "taxt1-0275", "text": "mon wed fri next week", "dsl": "d R w/1 mo,we,fr uW+1 sW+1"}
+{"id": "taxt1-0276", "text": "I have 3 fridays off", "dsl": "x", "unsure": true}
+{"id": "taxt1-0277", "text": "2 weeks before easter", "dsl": "x", "unsure": true}
+{"id": "taxt1-0278", "text": "tuesdays over the past 4 months", "dsl": "d R w/1 tu u+0d s-4m"}
+{"id": "taxt1-0279", "text": "bring 3 copies", "dsl": "x"}
+{"id": "taxt1-0280", "text": "last 3 fridays at noon", "dsl": "dt fr-1,fr-2,fr-3 12:00"}
+{"id": "taxt1-0281", "text": "mwf every august", "dsl": "d R w/1 mo,we,fr M@08"}
+{"id": "taxt1-0282", "text": "every thurs in april", "dsl": "d R w/1 th uM@04 sM@04"}
+{"id": "taxt1-0283", "text": "mwf next week", "dsl": "d R w/1 mo,we,fr uW+1 sW+1"}
+{"id": "taxt1-0284", "text": "fridays at 3pm for the next 6 weeks", "dsl": "dt R w/1 fr u+6w 15:00 s+0d"}
+{"id": "taxt1-0285", "text": "the tuesday before valentines day", "dsl": "x", "unsure": true}
+{"id": "taxt1-0286", "text": "all of next week minus friday", "dsl": "d R d/1 mo,tu,we,th,sa,su uW+1 sW+1"}
+{"id": "taxt1-0287", "text": "the 5th business day of december", "dsl": "x", "unsure": true}
+{"id": "taxt1-0288", "text": "Th/F", "dsl": "d th,fr"}
+{"id": "taxt1-0289", "text": "tuesdays each july and august", "dsl": "d R w/1 tu M@07,M@08"}
+{"id": "taxt1-0290", "text": "weekdays every february", "dsl": "d R d/1 mo,tu,we,th,fr M@02"}
+{"id": "taxt1-0291", "text": "the invoices from the past 3 months", "dsl": "d -3m>+0d"}
+{"id": "taxt1-0292", "text": "fridays this month", "dsl": "d R w/1 fr uM+0 sM+0"}
+{"id": "taxt1-0293", "text": "every feb on wednesdays", "dsl": "d R w/1 we M@02"}
+{"id": "taxt1-0294", "text": "saturdays until spring", "dsl": "x", "unsure": true}
+{"id": "taxt1-0295", "text": "m/t/th", "dsl": "d mo,tu,th"}
+{"id": "taxt1-0296", "text": "every friday at 4pm until christmas", "dsl": "dt R w/1 fr u12-25 16:00"}
+{"id": "taxt1-0297", "text": "show me the last 4 thursdays pls", "dsl": "d th-1,th-2,th-3,th-4"}
+{"id": "taxt1-0298", "text": "3 weeks before dec 1", "dsl": "d 12-01~-3w"}
+{"id": "taxt1-0299", "text": "the saturday before halloween", "dsl": "x", "unsure": true}
+{"id": "taxt1-0300", "text": "grade 5", "dsl": "x"}
+{"id": "taxt1-0301", "text": "october 3, 10, 17, 24, 31", "dsl": "d 10-03,10-10,10-17,10-24,10-31"}
+{"id": "taxt1-0302", "text": "next 4 tuesdays at 10am", "dsl": "dt tu+1,tu+2,tu+3,tu+4 10:00"}
+{"id": "taxt1-0303", "text": "december 2026", "dsl": "d 2026-12-01>2026-12-31"}
+{"id": "taxt1-0304", "text": "a week is a long time", "dsl": "x"}
+{"id": "taxt1-0305", "text": "mondays at 8am for the next 10 weeks", "dsl": "dt R w/1 mo u+10w 08:00 s+0d"}
+{"id": "taxt1-0306", "text": "mondays over the past 3 months", "dsl": "d R w/1 mo u+0d s-3m"}
+{"id": "taxt1-0307", "text": "lecture days: last 3 mondays", "dsl": "d mo-1,mo-2,mo-3"}
+{"id": "taxt1-0308", "text": "term time mondays each january", "dsl": "d R w/1 mo M@01"}
+{"id": "taxt1-0309", "text": "tuesdays in september", "dsl": "d R w/1 tu uM@09 sM@09"}
+{"id": "taxt1-0310", "text": "all the wednesdays in june", "dsl": "d R w/1 we uM@06 sM@06"}
+{"id": "taxt1-0311", "text": "m w f for the next 12 weeks", "dsl": "d R w/1 mo,we,fr u+12w s+0d"}
+{"id": "taxt1-0312", "text": "slow season", "dsl": "x", "unsure": true}
+{"id": "taxt1-0313", "text": "every wednesday at 2pm until may", "dsl": "dt R w/1 we uM@05 14:00"}
+{"id": "taxt1-0314", "text": "harvest days sat sun over the last 5 weeks", "dsl": "d R w/1 sa,su u+0d s-5w"}
+{"id": "taxt1-0315", "text": "box 15", "dsl": "x"}
+{"id": "taxt1-0316", "text": "every friday in q3", "dsl": "d R w/1 fr uQ@3 sQ@3"}
+{"id": "taxt1-0317", "text": "last 3 weekends", "dsl": "d sa-1,su-1,sa-2,su-2,sa-3,su-3"}
+{"id": "taxt1-0318", "text": "q4 2027", "dsl": "d 2027-10-01>2027-12-31"}
+{"id": "taxt1-0319", "text": "these past 3 weeks", "dsl": "d -3w>+0d"}
+{"id": "taxt1-0320", "text": "weekdays next week", "dsl": "d R d/1 mo,tu,we,th,fr uW+1 sW+1"}
+{"id": "taxt1-0321", "text": "T/Th", "dsl": "d tu,th"}
+{"id": "taxt1-0322", "text": "the 1st and the 15th of each month", "dsl": "d R m/1 d1,d15"}
+{"id": "taxt1-0323", "text": "fridays in september and october", "dsl": "d R w/1 fr uM@10 sM@09"}
+{"id": "taxt1-0324", "text": "all my fridays for the next 3 months", "dsl": "d R w/1 fr u+3m s+0d"}
+{"id": "taxt1-0325", "text": "wednesdays over the last 4 weeks", "dsl": "d R w/1 we u+0d s-4w"}
+{"id": "taxt1-0326", "text": "the 3rd business day of the month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0327", "text": "4 business days from friday", "dsl": "d fr~+4b"}
+{"id": "taxt1-0328", "text": "all week apart from monday", "dsl": "d R d/1 tu,we,th,fr,sa,su uW+0 sW+0"}
+{"id": "taxt1-0329", "text": "my last 3 clients", "dsl": "x"}
+{"id": "taxt1-0330", "text": "3 business days ago", "dsl": "d -3b"}
+{"id": "taxt1-0331", "text": "pasted: call me back, last 3 fridays were bad", "dsl": "d fr-1,fr-2,fr-3"}
+{"id": "taxt1-0332", "text": "bay 7", "dsl": "x"}
+{"id": "taxt1-0333", "text": "weekends excluding oct 18", "dsl": "x", "unsure": true}
+{"id": "taxt1-0334", "text": "I worked 3 sundays in a row", "dsl": "x", "unsure": true}
+{"id": "taxt1-0335", "text": "weekdays each july", "dsl": "d R d/1 mo,tu,we,th,fr M@07"}
+{"id": "taxt1-0336", "text": "last 3 fridays at 5pm", "dsl": "dt fr-1,fr-2,fr-3 17:00"}
+{"id": "taxt1-0337", "text": "a fortnight after oct 3", "dsl": "d 10-03~+2w"}
+{"id": "taxt1-0338", "text": "last 10 weekdays", "dsl": "d -1b,-2b,-3b,-4b,-5b,-6b,-7b,-8b,-9b,-10b"}
+{"id": "taxt1-0339", "text": "the meeting is on the 1st and 15th", "dsl": "d D@01,D@15"}
+{"id": "taxt1-0340", "text": "first and last day of the month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0341", "text": "weekdays over the last 90 days", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-90d"}
+{"id": "taxt1-0342", "text": "tu/th 3:45", "dsl": "dt tu,th 3:45?"}
+{"id": "taxt1-0343", "text": "prev 3 tues", "dsl": "d tu-1,tu-2,tu-3"}
+{"id": "taxt1-0344", "text": "the past 5 weeks every tuesday", "dsl": "d R w/1 tu u+0d s-5w"}
+{"id": "taxt1-0345", "text": "every day but the 25th", "dsl": "x", "unsure": true}
+{"id": "taxt1-0346", "text": "the saturday before father's day", "dsl": "x", "unsure": true}
+{"id": "taxt1-0347", "text": "every other tuesday until christmas", "dsl": "d R w/2 tu u12-25"}
+{"id": "taxt1-0348", "text": "mon-fri each august", "dsl": "d R d/1 mo,tu,we,th,fr M@08"}
+{"id": "taxt1-0349", "text": "working days in november", "dsl": "d R d/1 mo,tu,we,th,fr uM@11 sM@11"}
+{"id": "taxt1-0350", "text": "10/2, 10/9 and 10/16", "dsl": "d 10-02,10-09,10-16"}
+{"id": "taxt1-0351", "text": "19 days after oct 1", "dsl": "d 10-01~+19d"}
+{"id": "taxt1-0352", "text": "ttH 3:30p", "dsl": "dt tu,th 15:30"}
+{"id": "taxt1-0353", "text": "5 working days from monday", "dsl": "d mo~+5b"}
+{"id": "taxt1-0354", "text": "tuesdays in march", "dsl": "d R w/1 tu uM@03 sM@03"}
+{"id": "taxt1-0355", "text": "pst 2 weekends", "dsl": "d sa-1,su-1,sa-2,su-2"}
+{"id": "taxt1-0356", "text": "can you show me weekends since october thx", "dsl": "d R w/1 sa,su u+0d sM@10<"}
+{"id": "taxt1-0357", "text": "mondays in oct", "dsl": "d R w/1 mo uM@10 sM@10"}
+{"id": "taxt1-0358", "text": "the 3rd and 17th", "dsl": "d D@03,D@17"}
+{"id": "taxt1-0359", "text": "upcoming 3 saturdays", "dsl": "d sa+1,sa+2,sa+3"}
+{"id": "taxt1-0360", "text": "mon thru fri", "dsl": "d mo>fr"}
+{"id": "taxt1-0361", "text": "oct 1 to oct 15", "dsl": "d 10-01>10-15"}
+{"id": "taxt1-0362", "text": "nov 4th and 18th", "dsl": "d 11-04,11-18"}
+{"id": "taxt1-0363", "text": "M W F next month", "dsl": "d R w/1 mo,we,fr uM+1 sM+1"}
+{"id": "taxt1-0364", "text": "weekdays at 6am over the past 2 weeks", "dsl": "dt R d/1 mo,tu,we,th,fr u+0d 06:00 s-2w"}
+{"id": "taxt1-0365", "text": "fridays last month", "dsl": "d R w/1 fr uM-1 sM-1"}
+{"id": "taxt1-0366", "text": "2 business days before the last friday of the month", "dsl": "x", "unsure": true}
+{"id": "taxt1-0367", "text": "fridays 3pm next 6 weeks", "dsl": "dt R w/1 fr u+6w 15:00 s+0d"}
+{"id": "taxt1-0368", "text": "pls show last 60 days", "dsl": "d -60d>+0d"}
+{"id": "taxt1-0369", "text": "weekends in february", "dsl": "d R w/1 sa,su uM@02 sM@02"}
+{"id": "taxt1-0370", "text": "last name smith", "dsl": "x"}
+{"id": "taxt1-0371", "text": "every sunday over the last 8 weeks", "dsl": "d R w/1 su u+0d s-8w"}
+{"id": "taxt1-0372", "text": "oct 5 6 7", "dsl": "d 10-05,10-06,10-07"}
+{"id": "taxt1-0373", "text": "t/th 8:30", "dsl": "dt tu,th 8:30?"}
+{"id": "taxt1-0374", "text": "the coming fortnight", "dsl": "d +0d>+2w"}
+{"id": "taxt1-0375", "text": "fridays at 3 for the next 3 months", "dsl": "dt R w/1 fr u+3m 3? s+0d"}
+{"id": "taxt1-0376", "text": "fri sat sun of next weekend", "dsl": "x", "unsure": true}
+{"id": "taxt1-0377", "text": "4 banking days from friday", "dsl": "d fr~+4b"}
+{"id": "taxt1-0378", "text": "q&a session", "dsl": "x"}
+{"id": "taxt1-0379", "text": "field trip may 12 and may 19", "dsl": "d 05-12,05-19"}
+{"id": "taxt1-0380", "text": "fridays in 2027", "dsl": "d R w/1 fr uY@2027 sY@2027"}
+{"id": "taxt1-0381", "text": "tu+th", "dsl": "d tu,th"}
+{"id": "taxt1-0382", "text": "following 4 thursdays", "dsl": "d th+1,th+2,th+3,th+4"}
+{"id": "taxt1-0383", "text": "fridays for the coming 4 weeks", "dsl": "d R w/1 fr u+4w s+0d"}
+{"id": "taxt1-0384", "text": "unit 6", "dsl": "x"}
+{"id": "taxt1-0385", "text": "nxt business day pls", "dsl": "d +1b"}
+{"id": "taxt1-0386", "text": "top 10 hotels", "dsl": "x"}
+{"id": "taxt1-0387", "text": "all of october except weekends", "dsl": "d R d/1 mo,tu,we,th,fr uM@10 sM@10"}
+{"id": "taxt1-0388", "text": "trip window next 10 days", "dsl": "d +0d>+10d"}
+{"id": "taxt1-0389", "text": "every weekday besides thurs", "dsl": "d R d/1 mo,tu,we,fr"}
+{"id": "taxt1-0390", "text": "brunch rush weekends since october", "dsl": "d R w/1 sa,su u+0d sM@10<"}
+{"id": "taxt1-0391", "text": "all week but sunday", "dsl": "d R d/1 mo,tu,we,th,fr,sa uW+0 sW+0"}
+{"id": "taxt1-0392", "text": "pls show me fridays this month thx", "dsl": "d R w/1 fr uM+0 sM+0"}
+{"id": "taxt1-0393", "text": "saturdays over the last 3 months", "dsl": "d R w/1 sa u+0d s-3m"}
+{"id": "taxt1-0394", "text": "m-f 9 to 5", "dsl": "dt R d/1 mo,tu,we,th,fr 9?>5?"}
+{"id": "taxt1-0395", "text": "peak season", "dsl": "x", "unsure": true}
+{"id": "taxt1-0396", "text": "fridays since september", "dsl": "d R w/1 fr u+0d sM@09<"}
+{"id": "taxt1-0397", "text": "every july on sundays", "dsl": "d R w/1 su M@07"}
+{"id": "taxt1-0398", "text": "fridays this week", "dsl": "d R w/1 fr uW+0 sW+0"}
+{"id": "taxt1-0399", "text": "every sat this month", "dsl": "d R w/1 sa uM+0 sM+0"}
