@@ -82,3 +82,17 @@ describe("diffDsl", () => {
     expect(diffDsl("d fr", "d fr").predicted.some((t) => t.changed)).toBe(false);
   });
 });
+
+import { SMALL_N, rowsFromScores } from "../src/components/Breakdown";
+
+describe("rowsFromScores", () => {
+  it("derives error counts from accuracy and n", () => {
+    expect(rowsFromScores({ a: { n: 82, exact: 0 }, b: { n: 3268, exact: 0.0076499388 } })).toEqual([
+      { key: "a", n: 82, errors: 82 },
+      { key: "b", n: 3268, errors: 3243 },
+    ]);
+  });
+  it("uses 30 as the small-sample threshold", () => {
+    expect(SMALL_N).toBe(30);
+  });
+});

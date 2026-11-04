@@ -6,7 +6,9 @@ import { Flow } from "@/components/Num";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Empty, Field, Input, PageHeader, SectionTitle } from "@/components/ui/misc";
+import { Breakdown, BreakdownLegend, MetricToggle, SMALL_N, rowsFromScores, type Metric } from "@/components/Breakdown";
+import { Segmented } from "@/components/ui/segmented";
+import { Card, Empty, Field, Input, PageHeader, SectionTitle } from "@/components/ui/misc";
 import { Select } from "@/components/ui/select";
 import { fetchErrors, useAsync } from "@/lib/api";
 import { diffDsl, type DiffToken } from "@/lib/diff";
@@ -17,6 +19,16 @@ import type { ErrorRow } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const PAGE = 40;
+type Dim = "tag" | "modifier" | "split";
+
+function Summary({ label, children, first, last }: { label: string; children: React.ReactNode; first?: boolean; last?: boolean }) {
+  return (
+    <div className={cn("min-w-0 pr-4", !last && "sep-md", !first && "md:pl-5", "max-md:even:pl-4")}>
+      <div className="label-caps">{label}</div>
+      <div className="mt-1">{children}</div>
+    </div>
+  );
+}
 
 function Tokens({ tokens, tone }: { tokens: DiffToken[]; tone: "ok" | "danger" }) {
   return (
@@ -71,13 +83,22 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
   useEffect(() => setPicked(new Map()), [expId]);
 
   const list = useAsync(`${expId}|${tag}|${modifier}|${split}|${q}|${page}`, (s) => fetchErrors(expId, { tag, modifier, split, q, offset: page * PAGE, limit: PAGE }, s));
-  const base = useAsync(`${expId}|${split}|${q}`, (s) => fetchErrors(expId, { split, q, limit: 1 }, s));
 
   const rows = list.data?.items ?? [];
+  const [dim, setDim] = useState<Dim>("tag");
+  const [metric, setMetric] = useState<Metric>("error");
   const today0 = today || localToday();
   const resolved = useMemo(() => rows.map((r) => ({ exp: resolveText(r.expected, today0), got: resolveText(r.predicted, today0) })), [rows, today0]);
 
   if (!run) return <Empty>No experiment selected</Empty>;
+  const scores = dim === "tag" ? run.metrics.eval.by_tag : dim === "modifier" ? run.metrics.eval.by_modifier : run.metrics.eval.by_split;
+  const rows_ = rowsFromScores(scores);
+  const totalErrors = Math.round(run.metrics.eval.n * (1 - run.metrics.eval.exact));
+  const overall = run.metrics.eval.n ? totalErrors / run.metrics.eval.n : 0;
+  const reliable = rows_.filter((r) => r.n >= SMALL_N && r.errors > 0);
+  const worst = [...reliable].sort((a, b) => b.errors / b.n - a.errors / a.n)[0];
+  const biggest = [...rows_].sort((a, b) => b.errors - a.errors)[0];
+  const selectedKey = dim === "tag" ? tag : dim === "modifier" ? modifier : split;
   const total = list.data?.total ?? 0;
   const pages = Math.max(1, Math.ceil(total / PAGE));
   const allOnPage = rows.length > 0 && rows.every((r) => picked.has(r.id));
@@ -91,7 +112,6 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
       return n;
     });
 
-  const maxTag = Math.max(1, ...Object.values(base.data?.facets.by_tag ?? { x: 1 }));
   const tagOptions = Object.keys(run.metrics.eval.by_tag).sort().map((t) => ({ value: t, label: t }));
   const modOptions = Object.keys(run.metrics.eval.by_modifier).sort().map((t) => ({ value: t, label: t }));
   const splitOptions = Object.keys(run.metrics.eval.by_split).map((t) => ({ value: t, label: t }));
@@ -119,33 +139,29 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
         />
       </PageHeader>
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)]">
-        <section>
-          <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Failures per primary tag. Click to filter.</span>}>Failures by tag</SectionTitle>
-          <div className="flex flex-col">
-            {Object.entries(base.data?.facets.by_tag ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([k, n]) => (
-              <button key={k} onClick={() => setParams({ tag: tag === k ? undefined : k })} className={cn("grid cursor-pointer grid-cols-[minmax(0,120px)_1fr_36px] sm:grid-cols-[minmax(0,170px)_1fr_40px] items-center gap-3 rounded-[6px] px-1.5 py-[5px] text-left hover:bg-hover", tag === k && "bg-hover")}>
-                <span className="truncate text-[12.5px]">{k}</span>
-                <span className="h-2 overflow-hidden rounded-full bg-sunken"><span className="block h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${(n / maxTag) * 100}%` }} /></span>
-                <span className="num text-right text-[12px] font-medium">{n}</span>
-              </button>
-            ))}
+      <section>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="text-[13px] font-semibold">Where the errors are</h2>
+            <p className="text-[12px] text-muted">Whole experiment. Click a row to filter the table below.</p>
           </div>
-        </section>
-        <section>
-          <SectionTitle>Failures by modifier</SectionTitle>
-          <div className="flex flex-wrap gap-1.5">
-            {Object.entries(base.data?.facets.by_modifier ?? {}).sort((a, b) => b[1] - a[1]).map(([k, n]) => (
-              <button key={k} onClick={() => setParams({ modifier: modifier === k ? undefined : k })} className={cn("inline-flex cursor-pointer items-center gap-1.5 rounded-chip border px-2 py-1 text-[12px] transition-colors", modifier === k ? "border-accent bg-accent-soft text-accent" : "border-border bg-surface text-muted hover:bg-hover")}>
-                {k}<span className="num font-medium text-fg">{n}</span>
-              </button>
-            ))}
+          <div className="flex max-w-full flex-wrap items-center gap-2">
+            <Segmented<Dim> value={dim} onChange={setDim} options={[{ value: "tag", label: "Tag" }, { value: "modifier", label: "Modifier" }, { value: "split", label: "Split" }]} />
+            <MetricToggle value={metric} onChange={setMetric} />
           </div>
-          <div className="mt-5 text-[12px] text-muted">
-            <span className="num font-medium text-fg"><Flow value={base.data?.total ?? 0} /></span> failures of <span className="num">{run.metrics.eval.n}</span> eval examples in {run.config.id}.
+        </div>
+        <Card className="p-4">
+          <div className="grid grid-cols-2 gap-y-4 md:grid-cols-4">
+            <Summary label="Error rate" first><Flow value={overall * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="text-[12px] text-muted">{totalErrors.toLocaleString()} of {run.metrics.eval.n.toLocaleString()}</div></Summary>
+            <Summary label="Accuracy"><Flow value={(1 - overall) * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="text-[12px] text-muted">exact match</div></Summary>
+            <Summary label="Highest rate">{worst ? <><Flow value={worst.errors / worst.n * 100} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="break-words text-[12px] text-muted">{worst.key}, n={worst.n}</div></> : <span className="text-[22px] text-subtle">-</span>}</Summary>
+            <Summary label="Largest share" last>{biggest ? <><Flow value={totalErrors ? biggest.errors / totalErrors * 100 : 0} digits={1} suffix="%" className="text-[22px] font-medium" /><div className="break-words text-[12px] text-muted">{biggest.key}, {biggest.errors} errors</div></> : <span className="text-[22px] text-subtle">-</span>}</Summary>
           </div>
-        </section>
-      </div>
+          <div className="dotted-t my-4" />
+          <Breakdown rows={rows_} totalErrors={totalErrors} totalN={run.metrics.eval.n} metric={metric} selected={selectedKey} onSelect={(k) => setParams({ [dim]: selectedKey === k ? undefined : k })} />
+          <BreakdownLegend metric={metric} overall={overall} />
+        </Card>
+      </section>
 
       <div className="dotted-t" />
 

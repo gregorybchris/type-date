@@ -1,6 +1,7 @@
 import { ArrowLeft, Bug, Play } from "lucide-react";
-import { useMemo } from "react";
-import { AccuracyBars, Delta } from "@/components/Bars";
+import { useMemo, useState } from "react";
+import { Delta } from "@/components/Bars";
+import { Breakdown, BreakdownLegend, MetricToggle, SMALL_N, rowsFromScores, type Metric } from "@/components/Breakdown";
 import { Flow, Pct } from "@/components/Num";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -30,11 +31,13 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
   const cmpId = params.has("compare") ? params.get("compare")! : defaultCmp;
   const cmp = cmpId ? getRun(cmpId) : undefined;
   const profile = params.get("profile") ?? "desktop";
+  const [metric, setMetric] = useState<Metric>("error");
 
   const options = useMemo(() => runs.filter((x) => x.config.id !== id).map((x) => ({ value: x.config.id, label: x.config.id, hint: x.config.title })), [runs, id]);
 
   if (!r) return <Empty>No experiment {id}</Empty>;
   const ev = r.metrics.eval;
+  const totalErrors = Math.round(ev.n * (1 - ev.exact));
   const b = bestBench(r, profile);
   const base = isBaseline(r);
   const dEx = cmp ? (ev.exact - cmp.metrics.eval.exact) * 100 : null;
@@ -96,22 +99,28 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
 
       <Dotted />
 
-      <StaggerItem className="grid min-w-0 gap-8 lg:grid-cols-2">
-        <section className="min-w-0">
-          <SectionTitle>Primary tags</SectionTitle>
-          <AccuracyBars scores={ev.by_tag} compare={cmp?.metrics.eval.by_tag} onSelect={(t) => navigate(href("errors", id, { tag: t }))} />
-          <p className="mt-2 px-1.5 text-[12px] text-subtle">Click a tag to see its failures.</p>
-        </section>
-        <div className="flex min-w-0 flex-col gap-8">
-          <section>
-            <SectionTitle>Modifier tags</SectionTitle>
-            <AccuracyBars scores={ev.by_modifier} compare={cmp?.metrics.eval.by_modifier} onSelect={(t) => navigate(href("errors", id, { modifier: t }))} />
-          </section>
-          <section>
-            <SectionTitle>Splits</SectionTitle>
-            <AccuracyBars scores={ev.by_split} compare={cmp?.metrics.eval.by_split} onSelect={(t) => navigate(href("errors", id, { split: t }))} />
-          </section>
+      <StaggerItem className="flex flex-col gap-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-[12px] text-muted">Click a row to see its failures. Counts are shown in grey. Hatched bars have fewer than {SMALL_N} examples.</p>
+          <MetricToggle value={metric} onChange={setMetric} />
         </div>
+        <div className="grid min-w-0 gap-8 lg:grid-cols-2">
+          <section className="min-w-0">
+            <SectionTitle>Primary tags</SectionTitle>
+            <Breakdown rows={rowsFromScores(ev.by_tag)} compare={cmp ? rowsFromScores(cmp.metrics.eval.by_tag) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { tag: t }))} />
+          </section>
+          <div className="flex min-w-0 flex-col gap-8">
+            <section>
+              <SectionTitle>Modifier tags</SectionTitle>
+              <Breakdown rows={rowsFromScores(ev.by_modifier)} compare={cmp ? rowsFromScores(cmp.metrics.eval.by_modifier) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { modifier: t }))} />
+            </section>
+            <section>
+              <SectionTitle>Splits</SectionTitle>
+              <Breakdown rows={rowsFromScores(ev.by_split)} compare={cmp ? rowsFromScores(cmp.metrics.eval.by_split) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { split: t }))} />
+            </section>
+          </div>
+        </div>
+        <BreakdownLegend metric={metric} overall={totalErrors / Math.max(1, ev.n)} />
       </StaggerItem>
 
       <Dotted />

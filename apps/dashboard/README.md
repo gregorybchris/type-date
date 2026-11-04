@@ -25,6 +25,8 @@ pnpm --filter @type-date/dashboard shots       # Playwright screenshots, needs t
 
 Cmd/Ctrl+K opens the quick switcher.
 
+Breakdowns (error analysis, experiment detail) use `components/Breakdown.tsx`: a Tag/Modifier/Split switch and an Error rate / Accuracy / Share of errors toggle. The percentage is the headline, "errors of n" is grey, groups under 30 examples get a hatched bar and an `n=` flag, and a dotted line marks the overall rate. Error counts are derived from `metrics.json` (`n * (1 - exact)`), so the breakdown always covers the whole experiment, not the table filters.
+
 ## Mobile
 
 - Below 768 px the sidebar becomes a bottom bar (safe-area padding) and the window fills the screen (`dvh`). 768 to 1023 px uses an icon rail. Tables become stacked cards below 1024 px. Wide tables that remain scroll inside their container, never the page.
