@@ -178,6 +178,7 @@
 /* collapsible rows */
 .td-collapse {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 0fr;
   opacity: 0;
   transition:
@@ -513,6 +514,8 @@
   white-space: nowrap;
 }
 .td-rec {
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -533,6 +536,15 @@
   font-size: 12px;
 }
 .td-rrule {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  height: auto;
+  padding-block: 4px;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: break-word;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   color: var(--td-accent);
 }

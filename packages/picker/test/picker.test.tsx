@@ -3,6 +3,12 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { TypeDatePicker } from "../src";
 import type { TypeDatePickerProps } from "../src";
 
+/** The rule is split at semicolons for line breaking, so match on the element's text. */
+function ruleText(rule: string): HTMLElement | null {
+  const el = document.querySelector<HTMLElement>(".td-rrule");
+  return el && el.textContent === rule ? el : null;
+}
+
 afterEach(cleanup);
 
 const TODAY = "2026-09-14";
@@ -62,7 +68,7 @@ describe("rendering", () => {
   it("marks recurrence occurrences and shows the rule", async () => {
     const { type } = setup(table({ e: "d R w/2 su" }), { weekStart: 1 });
     type("e");
-    await waitFor(() => expect(screen.getByText("FREQ=WEEKLY;INTERVAL=2;BYDAY=SU")).toBeTruthy());
+    await waitFor(() => expect(ruleText("FREQ=WEEKLY;INTERVAL=2;BYDAY=SU")).toBeTruthy());
     const marked = screen.getAllByRole("gridcell").filter((c) => c.dataset.occ);
     expect(marked.map((c) => c.textContent)).toContain("20");
     expect(marked.map((c) => c.textContent)).not.toContain("27");
@@ -394,7 +400,7 @@ describe("DSL v2 results", () => {
     const dots = screen.getAllByRole("gridcell").filter((c) => c.dataset.occ && !c.dataset.out).map((c) => c.textContent);
     expect(dots).toEqual(["2", "9", "16", "23", "30"]);
     expect(screen.getByText("Mar 1, 2027 - Mar 31, 2027")).toBeTruthy();
-    expect(screen.getByText("FREQ=WEEKLY;BYDAY=TU;UNTIL=20270331")).toBeTruthy();
+    expect(ruleText("FREQ=WEEKLY;BYDAY=TU;UNTIL=20270331")).toBeTruthy();
   });
 
   it("recurrence that started in the past shows dots in past months", async () => {
@@ -411,14 +417,14 @@ describe("DSL v2 results", () => {
     const { type } = setup(table({ a: "d R d/1 mo,tu,we,th,fr M@08" }));
     type("a");
     await waitFor(() => expect(screen.getByText("Every August")).toBeTruthy());
-    expect(screen.getByText("FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR;BYMONTH=8")).toBeTruthy();
+    expect(ruleText("FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR;BYMONTH=8")).toBeTruthy();
     expect(screen.getByText("Next Aug 2 · Aug 3 · Aug 4")).toBeTruthy();
   });
 
   it("nth list is described and exported", async () => {
     const { type } = setup(table({ a: "d R m/1 tu#1,tu#3" }));
     type("a");
-    await waitFor(() => expect(screen.getByText("FREQ=MONTHLY;BYDAY=1TU,3TU")).toBeTruthy());
+    await waitFor(() => expect(ruleText("FREQ=MONTHLY;BYDAY=1TU,3TU")).toBeTruthy());
     expect(screen.getByRole("status").textContent).toBe("Every month on the 1st Tue, 3rd Tue");
   });
 

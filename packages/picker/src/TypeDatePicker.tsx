@@ -402,7 +402,17 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
           {chip && <span className="td-chip">{chip}</span>}
           {rec && (
             <div className="td-rec">
-              <code className="td-rrule">{toRRule(rec)}</code>
+              <code className="td-rrule">
+                {toRRule(rec)
+                  .split(";")
+                  .map((part, i, all) => (
+                    <span key={part}>
+                      {part}
+                      {i < all.length - 1 ? ";" : ""}
+                      <wbr />
+                    </span>
+                  ))}
+              </code>
               {rec.months && <span className="td-chip">Every {monthNames(rec.months)}</span>}
               {bound && <span className="td-chip">{bound}</span>}
               <span className="td-next">
