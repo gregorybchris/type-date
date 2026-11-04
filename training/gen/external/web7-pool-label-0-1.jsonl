@@ -1,0 +1,200 @@
+{"id": "web7p0-0000", "text": "2020-07-20+08:00", "dsl": "d 2020-07-20"}
+{"id": "web7p0-0001", "text": "03/19/2012 10:11:59", "dsl": "dt 2012-03-19 10:11"}
+{"id": "web7p0-0002", "text": "2018-11-09T10:00:00", "dsl": "dt 2018-11-09 10:00"}
+{"id": "web7p0-0003", "text": "October 7th, 1970", "dsl": "d 1970-10-07"}
+{"id": "web7p0-0004", "text": "12-25-1995", "dsl": "d 1995-12-25"}
+{"id": "web7p0-0005", "text": "2012-12-03T24:00", "dsl": "x", "unsure": true}
+{"id": "web7p0-0006", "text": "Fri, 3-Jul-15 08:08:08 MST", "dsl": "dt 2015-07-03 08:08"}
+{"id": "web7p0-0007", "text": "by 12 July 2026", "dsl": "d >2026-07-12"}
+{"id": "web7p0-0008", "text": "8:3:2", "dsl": "x", "unsure": true}
+{"id": "web7p0-0009", "text": "28.02.2014", "dsl": "d 2014-02-28"}
+{"id": "web7p0-0010", "text": "23-08-19", "dsl": "x", "unsure": true}
+{"id": "web7p0-0011", "text": "Sunday, 20 December 2020 at 14:23:16 GMT+11", "dsl": "dt 2020-12-20 14:23"}
+{"id": "web7p0-0012", "text": "Monday, 02 Jan 2006 15:04:05 +0100", "dsl": "dt 2006-01-02 15:04"}
+{"id": "web7p0-0013", "text": "2008.197", "dsl": "x", "unsure": true}
+{"id": "web7p0-0014", "text": "2011-12-31 23", "dsl": "dt 2011-12-31 23:00"}
+{"id": "web7p0-0015", "text": "Halloween is on 2019.10.31.", "dsl": "d 2019-10-31"}
+{"id": "web7p0-0016", "text": "J2451187", "dsl": "x", "unsure": true}
+{"id": "web7p0-0017", "text": "Aug 23 2019 1:39PM", "dsl": "dt 2019-08-23 13:39"}
+{"id": "web7p0-0018", "text": "2018-03-09 8 hello 40", "dsl": "x", "unsure": true}
+{"id": "web7p0-0019", "text": "6/15/2009 1:45 PM", "dsl": "dt 2009-06-15 13:45"}
+{"id": "web7p0-0020", "text": "Thu, 3 Jul 2017 08:08:04 +0100", "dsl": "dt 2017-07-03 08:08"}
+{"id": "web7p0-0021", "text": "2/30/2019 7:00pm", "dsl": "x"}
+{"id": "web7p0-0022", "text": "-w15-5", "dsl": "x", "unsure": true}
+{"id": "web7p0-0023", "text": "Thu, 13 Feb 1969 23:32:54 -0330", "dsl": "dt 1969-02-13 23:32"}
+{"id": "web7p0-0024", "text": "2014-04-26 17:24:37.1 +0000", "dsl": "dt 2014-04-26 17:24"}
+{"id": "web7p0-0025", "text": "last day in October 1996", "dsl": "x", "unsure": true}
+{"id": "web7p0-0026", "text": "50-02-03", "dsl": "x", "unsure": true}
+{"id": "web7p0-0027", "text": "June 7 2012", "dsl": "d 2012-06-07"}
+{"id": "web7p0-0028", "text": "@1215282385", "dsl": "x", "unsure": true}
+{"id": "web7p0-0029", "text": "Fri, 21 Nov 1997 09:55:06 -0600", "dsl": "dt 1997-11-21 09:55"}
+{"id": "web7p0-0030", "text": "2012-01-01 00:02:00", "dsl": "dt 2012-01-01 00:02"}
+{"id": "web7p0-0031", "text": "1 July 2013", "dsl": "d 2013-07-01"}
+{"id": "web7p0-0032", "text": "Monday, 02-Jan-06 15:04:05 MST", "dsl": "dt 2006-01-02 15:04"}
+{"id": "web7p0-0033", "text": "4/10/2008 6:30AM", "dsl": "dt 2008-04-10 06:30"}
+{"id": "web7p0-0034", "text": "141516", "dsl": "x", "unsure": true}
+{"id": "web7p0-0035", "text": "2012-W48-6", "dsl": "x", "unsure": true}
+{"id": "web7p0-0036", "text": "78-Dec-22", "dsl": "x", "unsure": true}
+{"id": "web7p0-0037", "text": "2012^12^31 11+30+45", "dsl": "x", "unsure": true}
+{"id": "web7p0-0038", "text": "1975-05-21 22", "dsl": "dt 1975-05-21 22:00"}
+{"id": "web7p0-0039", "text": "20141205T123045", "dsl": "dt 2014-12-05 12:30"}
+{"id": "web7p0-0040", "text": "07-Feb-2004 09:07:07 +0100", "dsl": "dt 2004-02-07 09:07"}
+{"id": "web7p0-0041", "text": "06w155", "dsl": "x", "unsure": true}
+{"id": "web7p0-0042", "text": "01/02 03:04:05PM '06 -0700", "dsl": "x", "unsure": true}
+{"id": "web7p0-0043", "text": "May 21st, 2012", "dsl": "d 2012-05-21"}
+{"id": "web7p0-0044", "text": "20161006 123456.123456", "dsl": "dt 2016-10-06 12:34"}
+{"id": "web7p0-0045", "text": "Thu, 03 Jul 2017 08:08:04 +0100", "dsl": "dt 2017-07-03 08:08"}
+{"id": "web7p0-0046", "text": "Mon Jan _2 15:04:05 2006", "dsl": "x", "unsure": true}
+{"id": "web7p0-0047", "text": "08.21.71", "dsl": "d 1971-08-21"}
+{"id": "web7p0-0048", "text": "23 Aug 19", "dsl": "x", "unsure": true}
+{"id": "web7p0-0049", "text": "01 Jan 1970", "dsl": "d 1970-01-01"}
+{"id": "web7p0-0050", "text": "2014-04-02 4:8", "dsl": "x", "unsure": true}
+{"id": "web7p0-0051", "text": "12/19/2012, 19:00:00", "dsl": "dt 2012-12-19 19:00"}
+{"id": "web7p0-0052", "text": "06333", "dsl": "x", "unsure": true}
+{"id": "web7p0-0053", "text": "January 8, 99 BC", "dsl": "x", "unsure": true}
+{"id": "web7p0-0054", "text": "2010-10-20 4:30", "dsl": "dt 2010-10-20 4:30?"}
+{"id": "web7p0-0055", "text": "May 05, 2015, 05:05:07", "dsl": "dt 2015-05-05 05:05"}
+{"id": "web7p0-0056", "text": "first sat of July 2008", "dsl": "d 2008-07-05"}
+{"id": "web7p0-0057", "text": "2018-04", "dsl": "x", "unsure": true}
+{"id": "web7p0-0058", "text": "Tue, 01 Nov 2016 01:23:45 UT", "dsl": "dt 2016-11-01 01:23"}
+{"id": "web7p0-0059", "text": "22/12/1440 1:39:17.090PM", "dsl": "x", "unsure": true}
+{"id": "web7p0-0060", "text": "June was born in May 1980", "dsl": "x", "unsure": true}
+{"id": "web7p0-0061", "text": "2008-W28-3", "dsl": "x", "unsure": true}
+{"id": "web7p0-0062", "text": "Tue, 3 Jun 2008 11:05:30 GMT", "dsl": "dt 2008-06-03 11:05"}
+{"id": "web7p0-0063", "text": "T191919-0700", "dsl": "t 19:19"}
+{"id": "web7p0-0064", "text": "2015-6-9", "dsl": "d 2015-06-09"}
+{"id": "web7p0-0065", "text": "29th", "dsl": "d D@29"}
+{"id": "web7p0-0066", "text": "1/17/2006", "dsl": "d 2006-01-17"}
+{"id": "web7p0-0067", "text": "last wed of july 2008", "dsl": "d 2008-07-30"}
+{"id": "web7p0-0068", "text": "6/15/2009 1:45:30 PM", "dsl": "dt 2009-06-15 13:45"}
+{"id": "web7p0-0069", "text": "2013-03-10 2:30", "dsl": "dt 2013-03-10 2:30?"}
+{"id": "web7p0-0070", "text": "22DEC78", "dsl": "d 1978-12-22"}
+{"id": "web7p0-0071", "text": "Oct 11 22:14:15", "dsl": "dt 10-11 22:14"}
+{"id": "web7p0-0072", "text": "04 Decem 1995", "dsl": "d 1995-12-04"}
+{"id": "web7p0-0073", "text": "April 1, 2009, to March 31, 2010", "dsl": "d 2009-04-01>2010-03-31"}
+{"id": "web7p0-0074", "text": "3.3.2014", "dsl": "d 2014-03-03"}
+{"id": "web7p0-0075", "text": "Sunday week 22", "dsl": "x", "unsure": true}
+{"id": "web7p0-0076", "text": "fri1feb3bc4pm+5", "dsl": "x", "unsure": true}
+{"id": "web7p0-0077", "text": "1 July", "dsl": "d 07-01"}
+{"id": "web7p0-0078", "text": "2013-04-01 00:00:00", "dsl": "dt 2013-04-01 00:00"}
+{"id": "web7p0-0079", "text": "2012-12-31T11:30:45", "dsl": "dt 2012-12-31 11:30"}
+{"id": "web7p0-0080", "text": "Jan _2 15:04:05", "dsl": "x", "unsure": true}
+{"id": "web7p0-0081", "text": "04/02/2014 04:08:09 AM", "dsl": "dt 2014-04-02 04:08"}
+{"id": "web7p0-0082", "text": "Labor Day (No Classes): 9/7/2026", "dsl": "d 2026-09-07"}
+{"id": "web7p0-0083", "text": "2014:3:31", "dsl": "x", "unsure": true}
+{"id": "web7p0-0084", "text": "2012^12^31", "dsl": "x", "unsure": true}
+{"id": "web7p0-0085", "text": "Tomorrow (2019-10-31) is Halloween!", "dsl": "d +1d", "unsure": true}
+{"id": "web7p0-0086", "text": "oct. 7, 1970", "dsl": "d 1970-10-07"}
+{"id": "web7p0-0087", "text": "2014-04-26 17:24:37.123", "dsl": "dt 2014-04-26 17:24"}
+{"id": "web7p0-0088", "text": "second month", "dsl": "x", "unsure": true}
+{"id": "web7p0-0089", "text": "12/16/2021, GMT-8", "dsl": "d 2021-12-16"}
+{"id": "web7p0-0090", "text": "04/02/2014 04:08:09.123", "dsl": "dt 2014-04-02 04:08"}
+{"id": "web7p0-0091", "text": "-w-5", "dsl": "x", "unsure": true}
+{"id": "web7p0-0092", "text": "July 31st, 2016", "dsl": "d 2016-07-31"}
+{"id": "web7p0-0093", "text": "49-02-03", "dsl": "x", "unsure": true}
+{"id": "web7p0-0094", "text": "3rd Tuesday in October 1996", "dsl": "d 1996-10-15"}
+{"id": "web7p0-0095", "text": "04 DecFoo 1995", "dsl": "x", "unsure": true}
+{"id": "web7p0-0096", "text": "6 Mar 2017 21:22:23 GMT", "dsl": "dt 2017-03-06 21:22"}
+{"id": "web7p0-0097", "text": "+9 months", "dsl": "d +9m"}
+{"id": "web7p0-0098", "text": "Mon, 11 Feb 2019 09:46:50 GMT+1", "dsl": "dt 2019-02-11 09:46"}
+{"id": "web7p0-0099", "text": "19990523235521.123456+0900", "dsl": "dt 1999-05-23 23:55"}
+{"id": "web7p0-0100", "text": "Thursday, April 10, 2008", "dsl": "d 2008-04-10"}
+{"id": "web7p0-0101", "text": "15-Jan-2017", "dsl": "d 2017-01-15"}
+{"id": "web7p0-0102", "text": "2013-02-01 00:00:00", "dsl": "dt 2013-02-01 00:00"}
+{"id": "web7p0-0103", "text": "2018-4-1 1:1:1:223", "dsl": "x", "unsure": true}
+{"id": "web7p0-0104", "text": "Feb 3, 2013 at 7:54pm (UTC)", "dsl": "dt 2013-02-03 19:54"}
+{"id": "web7p0-0105", "text": "2012:08:03 18:31:59+00:00", "dsl": "dt 2012-08-03 18:31"}
+{"id": "web7p0-0106", "text": "01023T040506Z", "dsl": "x", "unsure": true}
+{"id": "web7p0-0107", "text": "Tue, 01 Nov 16 04:23:45 Z", "dsl": "dt 2016-11-01 04:23"}
+{"id": "web7p0-0108", "text": "Tue Apr 07 22:52:51 2009", "dsl": "dt 2009-04-07 22:52"}
+{"id": "web7p0-0109", "text": "9/2/69", "dsl": "d 1969-09-02"}
+{"id": "web7p0-0110", "text": "Tue, 01 Nov 2016 03:23 +0000", "dsl": "dt 2016-11-01 03:23"}
+{"id": "web7p0-0111", "text": "March 2018", "dsl": "x", "unsure": true}
+{"id": "web7p0-0112", "text": "PT4H54M6.5S", "dsl": "x"}
+{"id": "web7p0-0113", "text": "t0222", "dsl": "x", "unsure": true}
+{"id": "web7p0-0114", "text": "20130108", "dsl": "d 2013-01-08"}
+{"id": "web7p0-0115", "text": "2008/6/30", "dsl": "d 2008-06-30"}
+{"id": "web7p0-0116", "text": "2014-12-05T12:30:45.123456-05:30", "dsl": "dt 2014-12-05 12:30"}
+{"id": "web7p0-0117", "text": "PST8PDT", "dsl": "x"}
+{"id": "web7p0-0118", "text": "2013-02-08 09Z", "dsl": "dt 2013-02-08 09:00"}
+{"id": "web7p0-0119", "text": "4/10/2008 6:30 AM", "dsl": "dt 2008-04-10 06:30"}
+{"id": "web7p0-0120", "text": "2018-03-09 8 h 40", "dsl": "dt 2018-03-09 8:40?", "unsure": true}
+{"id": "web7p0-0121", "text": "January 8, 1999", "dsl": "d 1999-01-08"}
+{"id": "web7p0-0122", "text": "2020/9/30", "dsl": "d 2020-09-30"}
+{"id": "web7p0-0123", "text": "2014-04-26 05:24:37 PST", "dsl": "dt 2014-04-26 05:24"}
+{"id": "web7p0-0124", "text": "fifth day", "dsl": "x", "unsure": true}
+{"id": "web7p0-0125", "text": "Feb 3, 2013 at 7:54pm (PST)", "dsl": "dt 2013-02-03 19:54"}
+{"id": "web7p0-0126", "text": "3:04PM", "dsl": "t 15:04"}
+{"id": "web7p0-0127", "text": "6:30pm in =1830", "dsl": "t 18:30"}
+{"id": "web7p0-0128", "text": "23 Aug 2019", "dsl": "d 2019-08-23"}
+{"id": "web7p0-0129", "text": "20161001T14", "dsl": "dt 2016-10-01 14:00"}
+{"id": "web7p0-0130", "text": "2013-04-01 22:43:22", "dsl": "dt 2013-04-01 22:43"}
+{"id": "web7p0-0131", "text": "2014/04/02", "dsl": "d 2014-04-02"}
+{"id": "web7p0-0132", "text": "Feb  5 17:32:18", "dsl": "dt 02-05 17:32"}
+{"id": "web7p0-0133", "text": "back of 7pm", "dsl": "x", "unsure": true}
+{"id": "web7p0-0134", "text": "2009-08-12T22:15:09", "dsl": "dt 2009-08-12 22:15"}
+{"id": "web7p0-0135", "text": "[18/Sep/2011:19:18:28 -0400]", "dsl": "dt 2011-09-18 19:18"}
+{"id": "web7p0-0136", "text": "Thu Jan 01 1970", "dsl": "d 1970-01-01"}
+{"id": "web7p0-0137", "text": "2012-W12-9", "dsl": "x", "unsure": true}
+{"id": "web7p0-0138", "text": "20180429", "dsl": "d 2018-04-29"}
+{"id": "web7p0-0139", "text": "1/1/2018", "dsl": "d 2018-01-01"}
+{"id": "web7p0-0140", "text": "Mar 32, 2014", "dsl": "x"}
+{"id": "web7p0-0141", "text": "4:08:39:12313am", "dsl": "x", "unsure": true}
+{"id": "web7p0-0142", "text": "04:05:06 PST", "dsl": "t 04:05"}
+{"id": "web7p0-0143", "text": "2022-06-02T16:58:35+00:00", "dsl": "dt 2022-06-02 16:58"}
+{"id": "web7p0-0144", "text": "3 Jun 2008 11:05", "dsl": "dt 2008-06-03 11:05"}
+{"id": "web7p0-0145", "text": "first wednesday july 23rd, 2008", "dsl": "x", "unsure": true}
+{"id": "web7p0-0146", "text": "20/12/2012, 03:00:00", "dsl": "dt 2012-12-20 03:00"}
+{"id": "web7p0-0147", "text": "0100 hours", "dsl": "t 01:00"}
+{"id": "web7p0-0148", "text": "12/18/2026: Final Exams Begin", "dsl": "d 2026-12-18"}
+{"id": "web7p0-0149", "text": "Commencement Weekend: 5/14–5/16/2027", "dsl": "d 2027-05-14>2027-05-16"}
+{"id": "web7p0-0150", "text": "06/Jan/2008:15:04:05 -0700", "dsl": "dt 2008-01-06 15:04"}
+{"id": "web7p0-0151", "text": "15/Jan/2025 2:30 PM", "dsl": "dt 2025-01-15 14:30"}
+{"id": "web7p0-0152", "text": "September 17th 2012", "dsl": "d 2012-09-17"}
+{"id": "web7p0-0153", "text": "between 1 and 12 July 2026", "dsl": "d 2026-07-01>2026-07-12"}
+{"id": "web7p0-0154", "text": "01-02-03", "dsl": "x", "unsure": true}
+{"id": "web7p0-0155", "text": "040506+0730", "dsl": "x", "unsure": true}
+{"id": "web7p0-0156", "text": "2009W011", "dsl": "x", "unsure": true}
+{"id": "web7p0-0157", "text": "+1.5 hours", "dsl": "x", "unsure": true}
+{"id": "web7p0-0158", "text": "Midnight = 0000", "dsl": "t 00:00"}
+{"id": "web7p0-0159", "text": "04-14-2012 10:00", "dsl": "dt 2012-04-14 10:00"}
+{"id": "web7p0-0160", "text": "Three Months Ended September 30, 2025", "dsl": "x", "unsure": true}
+{"id": "web7p0-0161", "text": "October 25th 1999", "dsl": "d 1999-10-25"}
+{"id": "web7p0-0162", "text": "Sat Aug 28 02:29:34 GMT CE 2000", "dsl": "x", "unsure": true}
+{"id": "web7p0-0163", "text": "11:30:59,123456", "dsl": "t 11:30"}
+{"id": "web7p0-0164", "text": "+1978-04-17", "dsl": "d 1978-04-17"}
+{"id": "web7p0-0165", "text": "040506-08", "dsl": "x", "unsure": true}
+{"id": "web7p0-0166", "text": "1995-12-25", "dsl": "d 1995-12-25"}
+{"id": "web7p0-0167", "text": "2012-007", "dsl": "x", "unsure": true}
+{"id": "web7p0-0168", "text": "Thu May 08 11:57:51 -0700 2009", "dsl": "dt 2009-05-08 11:57"}
+{"id": "web7p0-0169", "text": "2016-10-06T12:34:56.123456+05", "dsl": "dt 2016-10-06 12:34"}
+{"id": "web7p0-0170", "text": "2011-281", "dsl": "x", "unsure": true}
+{"id": "web7p0-0171", "text": "P1Y2M3DT4H5M6S", "dsl": "x", "unsure": true}
+{"id": "web7p0-0172", "text": "Jul 31, 2009", "dsl": "d 2009-07-31"}
+{"id": "web7p0-0173", "text": "070523091528", "dsl": "x", "unsure": true}
+{"id": "web7p0-0174", "text": "2014-04-02", "dsl": "d 2014-04-02"}
+{"id": "web7p0-0175", "text": "Thu, 02 Jun 2022 16:58:35 +0000", "dsl": "dt 2022-06-02 16:58"}
+{"id": "web7p0-0176", "text": "Thu May 08 17:57:51 PST 2009", "dsl": "dt 2009-05-08 17:57"}
+{"id": "web7p0-0177", "text": "Wednesday, 07-May-09 08:00:43 MST", "dsl": "dt 2009-05-07 08:00"}
+{"id": "web7p0-0178", "text": "4/13/2008 12:30PM", "dsl": "dt 2008-04-13 12:30"}
+{"id": "web7p0-0179", "text": "2:30 p.m. Pacific time", "dsl": "t 14:30"}
+{"id": "web7p0-0180", "text": "2018-06-29 19:09:57 +0300 +03", "dsl": "dt 2018-06-29 19:09"}
+{"id": "web7p0-0181", "text": "12:02:1999", "dsl": "x", "unsure": true}
+{"id": "web7p0-0182", "text": "2019/08/23", "dsl": "d 2019-08-23"}
+{"id": "web7p0-0183", "text": "3 February 2013", "dsl": "d 2013-02-03"}
+{"id": "web7p0-0184", "text": "04 Dec 1995 00:12:00 GMT", "dsl": "dt 1995-12-04 00:12"}
+{"id": "web7p0-0185", "text": "3 Dec 2011", "dsl": "d 2011-12-03"}
+{"id": "web7p0-0186", "text": "2008-05-11T15:30:00Z/P1Y2M10DT2H30M", "dsl": "x", "unsure": true}
+{"id": "web7p0-0187", "text": "2012-337", "dsl": "x", "unsure": true}
+{"id": "web7p0-0188", "text": "@1607974647.503686", "dsl": "x", "unsure": true}
+{"id": "web7p0-0189", "text": "2015-000", "dsl": "x", "unsure": true}
+{"id": "web7p0-0190", "text": "04 De 1995", "dsl": "x", "unsure": true}
+{"id": "web7p0-0191", "text": "2012-08-03 13:31:51.123 +02:00 CEST", "dsl": "dt 2012-08-03 13:31"}
+{"id": "web7p0-0192", "text": "2012@12@31", "dsl": "x", "unsure": true}
+{"id": "web7p0-0193", "text": "2014-04-26 17:24:37.3186369", "dsl": "dt 2014-04-26 17:24"}
+{"id": "web7p0-0194", "text": "Mon, 02 Jan 2006 15:04:05 -0700", "dsl": "dt 2006-01-02 15:04"}
+{"id": "web7p0-0195", "text": "1999.008", "dsl": "x", "unsure": true}
+{"id": "web7p0-0196", "text": "2012-W05", "dsl": "x", "unsure": true}
+{"id": "web7p0-0197", "text": "04/2/2014 03:00:51", "dsl": "dt 2014-04-02 03:00"}
+{"id": "web7p0-0198", "text": "fourth business day of each month", "dsl": "x", "unsure": true}
+{"id": "web7p0-0199", "text": "4:2:2014 04:08:09", "dsl": "x", "unsure": true}

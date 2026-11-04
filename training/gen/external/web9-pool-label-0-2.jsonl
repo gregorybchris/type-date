@@ -1,0 +1,243 @@
+{"id": "web9p0-0000", "text": "3s", "dsl": "x", "unsure": true}
+{"id": "web9p0-0001", "text": "At 2:30 PM and 4:30 PM", "dsl": "t 14:30"}
+{"id": "web9p0-0002", "text": "SATURDAY CLASS 1:00–4:00", "dsl": "dt sa 1?>4?"}
+{"id": "web9p0-0003", "text": "for 3 to 5 days", "dsl": "x", "unsure": true}
+{"id": "web9p0-0004", "text": "once at the top of every hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0005", "text": "at least 180 days", "dsl": "x", "unsure": true}
+{"id": "web9p0-0006", "text": "MWF 2:00-3:15", "dsl": "dt R w/1 mo,we,fr 2?>3:15?"}
+{"id": "web9p0-0007", "text": "by the following Wednesday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0008", "text": "At 25 minutes past the hour, every 13 hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0009", "text": "Once daily – 7 am (every 24 hours)", "dsl": "dt R d/1 07:00"}
+{"id": "web9p0-0010", "text": "on sale Monday, November 9", "dsl": "d 11-09"}
+{"id": "web9p0-0011", "text": "every fifteen minutes (perhaps at :07, :22, :37, :52)", "dsl": "x", "unsure": true}
+{"id": "web9p0-0012", "text": "Sun: 1 p.m. - 5 p.m.", "dsl": "dt su 13:00>17:00"}
+{"id": "web9p0-0013", "text": "every third hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0014", "text": "First Saturday in April at 24:00", "dsl": "x", "unsure": true}
+{"id": "web9p0-0015", "text": "TTH 1:00–2:15", "dsl": "dt R w/1 tu,th 1?>2:15?"}
+{"id": "web9p0-0016", "text": "2 months’ notice", "dsl": "x", "unsure": true}
+{"id": "web9p0-0017", "text": "At 9:46 AM, only on Friday and Saturday", "dsl": "dt R w/1 fr,sa 09:46"}
+{"id": "web9p0-0018", "text": "three garbage routes Monday through Wednesday", "dsl": "d mo>we"}
+{"id": "web9p0-0019", "text": "MWF 2:30–3:30", "dsl": "dt R w/1 mo,we,fr 2:30?>3:30?"}
+{"id": "web9p0-0020", "text": "every 2 to 3 months", "dsl": "x", "unsure": true}
+{"id": "web9p0-0021", "text": "run at 5:30 AM in the America/New_York timezone every Monday through Friday", "dsl": "dt R d/1 mo,tu,we,th,fr 05:30"}
+{"id": "web9p0-0022", "text": "1st monday of sep,oct,nov 09:00", "dsl": "dt R m/1 mo#1 M@09,M@10,M@11 09:00"}
+{"id": "web9p0-0023", "text": "Every 10 seconds, at 0 minutes past the hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0024", "text": "Tuesday, 2025-06-17", "dsl": "d 2025-06-17"}
+{"id": "web9p0-0025", "text": "at least 8 weeks after the most recent dose.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0026", "text": "by the last day of February of the following year", "dsl": "x", "unsure": true}
+{"id": "web9p0-0027", "text": "1,2,3 of month 07:00", "dsl": "dt R m/1 d1,d2,d3 07:00"}
+{"id": "web9p0-0028", "text": "Once every hour of the day at minute 5 of each hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0029", "text": "Thu 7:30pm; Fri-Sat 8pm; Sun 2pm", "dsl": "dt th 19:30"}
+{"id": "web9p0-0030", "text": "every day at 16:00 and 18:00", "dsl": "dt R d/1 16:00"}
+{"id": "web9p0-0031", "text": "at age 11–12 years; 16 years", "dsl": "x", "unsure": true}
+{"id": "web9p0-0032", "text": "begins 1 October and ends 30 September the following year", "dsl": "d 10-01"}
+{"id": "web9p0-0033", "text": "check-out is usually by 12:00 PM (noon)", "dsl": "t >12:00"}
+{"id": "web9p0-0034", "text": "At 00, 05, 10, 15, 20, 25, 30, 35, 40, 45, 50 and 55 minutes past the hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0035", "text": "every morning (every day before noon)", "dsl": "d R d/1", "unsure": true}
+{"id": "web9p0-0036", "text": "around the clock", "dsl": "x", "unsure": true}
+{"id": "web9p0-0037", "text": "once every hour from 9 AM to 5 PM", "dsl": "x", "unsure": true}
+{"id": "web9p0-0038", "text": "Fire every minute starting at 2pm and ending at 2:59pm, every day", "dsl": "x", "unsure": true}
+{"id": "web9p0-0039", "text": "once a week to have your injection", "dsl": "x", "unsure": true}
+{"id": "web9p0-0040", "text": "At 05 minutes past the hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0041", "text": "Third Sunday of October", "dsl": "d su#3@10"}
+{"id": "web9p0-0042", "text": "1st Monday in November", "dsl": "d mo#1@11"}
+{"id": "web9p0-0043", "text": "every six hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0044", "text": "every 5 minutes from 10:00 to 14:00", "dsl": "x", "unsure": true}
+{"id": "web9p0-0045", "text": "Regular Thurs-Sat: 8pm", "dsl": "dt R w/1 th,fr,sa 20:00"}
+{"id": "web9p0-0046", "text": "last weekday of the month at midnight", "dsl": "dt b#-1@M+0 00:00"}
+{"id": "web9p0-0047", "text": "Fourth Sunday in Lent", "dsl": "x", "unsure": true}
+{"id": "web9p0-0048", "text": "Meet two times weekly for 75 minutes each", "dsl": "x", "unsure": true}
+{"id": "web9p0-0049", "text": "every Tuesday for waste collection", "dsl": "d R w/1 tu"}
+{"id": "web9p0-0050", "text": "by 11:59pm on 31 January 2027", "dsl": "dt >2027-01-31 23:59"}
+{"id": "web9p0-0051", "text": "at 9:30 AM every weekday", "dsl": "dt R d/1 mo,tu,we,th,fr 09:30"}
+{"id": "web9p0-0052", "text": "MW 5:30–6:45", "dsl": "dt R w/1 mo,we 5:30?>6:45?"}
+{"id": "web9p0-0053", "text": "every day 00:00", "dsl": "dt R d/1 00:00"}
+{"id": "web9p0-0054", "text": "MWF 2:00-2:50", "dsl": "dt R w/1 mo,we,fr 2?>2:50?"}
+{"id": "web9p0-0055", "text": "every hour at 30 minutes", "dsl": "x", "unsure": true}
+{"id": "web9p0-0056", "text": "MTWR 50 min", "dsl": "x", "unsure": true}
+{"id": "web9p0-0057", "text": "Runs once a week.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0058", "text": "Every 2 minutes, minutes 00 through 30 past the hour, at 5:00 PM, Monday through Friday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0059", "text": "last Monday preceding May 25", "dsl": "x", "unsure": true}
+{"id": "web9p0-0060", "text": "runs at every minute 15 of every hour of every day.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0061", "text": "1st,third monday of month 04:00", "dsl": "dt R m/1 mo#1,mo#3 04:00"}
+{"id": "web9p0-0062", "text": "TTh 11:20-12:35", "dsl": "dt R w/1 tu,th 11:20?>12:35?"}
+{"id": "web9p0-0063", "text": "6:00 AM and 7:00 PM every day", "dsl": "dt R d/1 06:00"}
+{"id": "web9p0-0064", "text": "even if it’s on a weekend or bank holiday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0065", "text": "Second Thursday in June", "dsl": "d th#2@06"}
+{"id": "web9p0-0066", "text": "every tuesday and monday at 5pm", "dsl": "dt R w/1 mo,tu 17:00"}
+{"id": "web9p0-0067", "text": "The fourth month after your fiscal year ends, day 15.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0068", "text": "1st mon,wednesday,thu of sep,oct,nov 17:00", "dsl": "dt R m/1 mo#1,we#1,th#1 M@09,M@10,M@11 17:00"}
+{"id": "web9p0-0069", "text": "The Tuesday after the first Monday of November", "dsl": "d mo#1@11~+1d"}
+{"id": "web9p0-0070", "text": "Run every 10 minutes Monday through Friday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0071", "text": "Every 5 minutes, at 3:00 PM, Sunday through Saturday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0072", "text": "Last Monday in June", "dsl": "d mo#-1@06"}
+{"id": "web9p0-0073", "text": "MW 11:00–12:15", "dsl": "dt R w/1 mo,we 11?>12:15?"}
+{"id": "web9p0-0074", "text": "every day at 5 pm on America/Los_Angeles", "dsl": "dt R d/1 17:00"}
+{"id": "web9p0-0075", "text": "MWF 9:00-9:50", "dsl": "dt R w/1 mo,we,fr 9?>9:50?"}
+{"id": "web9p0-0076", "text": "once an hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0077", "text": "every 4 minutes", "dsl": "x", "unsure": true}
+{"id": "web9p0-0078", "text": "Monday after Easter Day", "dsl": "x", "unsure": true}
+{"id": "web9p0-0079", "text": "Tuesday, 2027-02-02", "dsl": "d 2027-02-02"}
+{"id": "web9p0-0080", "text": "every day at 1am", "dsl": "dt R d/1 01:00"}
+{"id": "web9p0-0081", "text": "Every minute, at 12:00 AM", "dsl": "x", "unsure": true}
+{"id": "web9p0-0082", "text": "at least 8 weeks apart", "dsl": "x", "unsure": true}
+{"id": "web9p0-0083", "text": "first weekday of the month at midnight", "dsl": "dt b#1@M+0 00:00"}
+{"id": "web9p0-0084", "text": "every 2 hours synchronized", "dsl": "x", "unsure": true}
+{"id": "web9p0-0085", "text": "the second Friday in the month at midnight", "dsl": "dt fr#2@M+0 00:00"}
+{"id": "web9p0-0086", "text": "Fire at 12pm (noon) every day", "dsl": "dt R d/1 12:00"}
+{"id": "web9p0-0087", "text": "Beginning October 1, 2026", "dsl": "d 2026-10-01>"}
+{"id": "web9p0-0088", "text": "At 12:00 AM, only on every 2 days of the week, Monday through Wednesday and Friday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0089", "text": "on the hour nine-to-five weekdays", "dsl": "dt R d/1 mo,tu,we,th,fr 9?>5?"}
+{"id": "web9p0-0090", "text": "every ten seconds", "dsl": "x", "unsure": true}
+{"id": "web9p0-0091", "text": "at 9:30 AM every Monday in January", "dsl": "dt R w/1 mo M@01 09:30"}
+{"id": "web9p0-0092", "text": "every 60 minutes", "dsl": "x", "unsure": true}
+{"id": "web9p0-0093", "text": "Fridays, 8:30 p.m., Saturdays, 3 & 8:30 p.m. and Sundays, 2 p.m.", "dsl": "dt R w/1 fr 20:30"}
+{"id": "web9p0-0094", "text": "MWF 11:00–12:00", "dsl": "dt R w/1 mo,we,fr 11?>12?"}
+{"id": "web9p0-0095", "text": "every 30 mins", "dsl": "x", "unsure": true}
+{"id": "web9p0-0096", "text": "At 9:46 AM, only on Saturday and Sunday", "dsl": "dt R w/1 sa,su 09:46"}
+{"id": "web9p0-0097", "text": "Friday preceding Easter Day", "dsl": "x", "unsure": true}
+{"id": "web9p0-0098", "text": "every 3 hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0099", "text": "at age 12–15 months", "dsl": "x", "unsure": true}
+{"id": "web9p0-0100", "text": "Recycling is collected every other Tuesday.", "dsl": "d R w/2 tu"}
+{"id": "web9p0-0101", "text": "Cast Talkbacks (following the 2:00p matinee) on May 26, Jul 7, Aug 18, Sep 29", "dsl": "dt 05-26,07-07,08-18,09-29 14:00"}
+{"id": "web9p0-0102", "text": "7 am-8pm", "dsl": "t 07:00>20:00"}
+{"id": "web9p0-0103", "text": "Tuesday, 2025-02-11", "dsl": "d 2025-02-11"}
+{"id": "web9p0-0104", "text": "once every 5 minutes", "dsl": "x", "unsure": true}
+{"id": "web9p0-0105", "text": "every day at 5 pm", "dsl": "dt R d/1 17:00"}
+{"id": "web9p0-0106", "text": "At 12:00 AM, on day 10 and every 2 days, 1 through 5 of the month", "dsl": "x", "unsure": true}
+{"id": "web9p0-0107", "text": "Monday preceding May 25", "dsl": "x", "unsure": true}
+{"id": "web9p0-0108", "text": "administer at age 6 months", "dsl": "x", "unsure": true}
+{"id": "web9p0-0109", "text": "Fire every November 11th at 11:11am.", "dsl": "dt R y/1 11-11 11:11"}
+{"id": "web9p0-0110", "text": "within 12 hours of birth", "dsl": "x", "unsure": true}
+{"id": "web9p0-0111", "text": "1 July to 30 June", "dsl": "d 07-01>06-30", "unsure": true}
+{"id": "web9p0-0112", "text": "the first Monday and Tuesday of each month", "dsl": "d R m/1 mo#1,tu#1"}
+{"id": "web9p0-0113", "text": "Take it the day after your methotrexate.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0114", "text": "Closing Date: May 19, 2024", "dsl": "d 2024-05-19"}
+{"id": "web9p0-0115", "text": "Runs three times each year.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0116", "text": "Tu,Th (40%)", "dsl": "x", "unsure": true}
+{"id": "web9p0-0117", "text": "every Tuesday morning", "dsl": "d R w/1 tu"}
+{"id": "web9p0-0118", "text": "the first Monday in the month at midnight", "dsl": "dt mo#1@M+0 00:00"}
+{"id": "web9p0-0119", "text": "every midnight", "dsl": "dt R d/1 00:00"}
+{"id": "web9p0-0120", "text": "Wednesday after last Tuesday in January", "dsl": "d tu#-1@01~+1d"}
+{"id": "web9p0-0121", "text": "at 0, 1–2, 6 months", "dsl": "x", "unsure": true}
+{"id": "web9p0-0122", "text": "At 12:23 PM, January through March, 2013 through 2015", "dsl": "x", "unsure": true}
+{"id": "web9p0-0123", "text": "every 24 hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0124", "text": "every saturday at noon", "dsl": "dt R w/1 sa 12:00"}
+{"id": "web9p0-0125", "text": "taken once a week", "dsl": "x", "unsure": true}
+{"id": "web9p0-0126", "text": "every 1 minute", "dsl": "x", "unsure": true}
+{"id": "web9p0-0127", "text": "within 24 hours of birth", "dsl": "x", "unsure": true}
+{"id": "web9p0-0128", "text": "4 times a day", "dsl": "x", "unsure": true}
+{"id": "web9p0-0129", "text": "at 9:30 AM every day", "dsl": "dt R d/1 09:30"}
+{"id": "web9p0-0130", "text": "At 12:00 PM, every 2 days of the week, Friday through Sunday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0131", "text": "12:05 – 1:20 pm", "dsl": "t 12:05>13:20"}
+{"id": "web9p0-0132", "text": "every 3.hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0133", "text": "1st Monday in May", "dsl": "d mo#1@05"}
+{"id": "web9p0-0134", "text": "Third Monday in August", "dsl": "d mo#3@08"}
+{"id": "web9p0-0135", "text": "at least 4 weeks after most recent dose", "dsl": "x", "unsure": true}
+{"id": "web9p0-0136", "text": "You have until 31 May 2026", "dsl": "d >2026-05-31"}
+{"id": "web9p0-0137", "text": "At 05 and 10 minutes past the hour, at 12:00 AM", "dsl": "x", "unsure": true}
+{"id": "web9p0-0138", "text": "Year Round - Wednesday only", "dsl": "d R w/1 we", "unsure": true}
+{"id": "web9p0-0139", "text": "every 3 to 5 years", "dsl": "x", "unsure": true}
+{"id": "web9p0-0140", "text": "Monday in April; date varies from year to year", "dsl": "x", "unsure": true}
+{"id": "web9p0-0141", "text": "more than 2 days late", "dsl": "x", "unsure": true}
+{"id": "web9p0-0142", "text": "at the same time of day", "dsl": "x", "unsure": true}
+{"id": "web9p0-0143", "text": "before or after food", "dsl": "x", "unsure": true}
+{"id": "web9p0-0144", "text": "At 07:05 AM, every 3 days, starting on day 2 of the month", "dsl": "x", "unsure": true}
+{"id": "web9p0-0145", "text": "once every two hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0146", "text": "MW, MF, WF 8:00-9:40", "dsl": "dt R w/1 mo,we 8?>9:40?"}
+{"id": "web9p0-0147", "text": "Every other Tuesday.", "dsl": "d R w/2 tu"}
+{"id": "web9p0-0148", "text": "runs at minute 2 and 10 of the 4th and 5th hour of every day.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0149", "text": "At 9:46 AM, only on Monday and Tuesday", "dsl": "dt R w/1 mo,tu 09:46"}
+{"id": "web9p0-0150", "text": "at intermediate hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0151", "text": "at least 6 months after dose 3", "dsl": "x", "unsure": true}
+{"id": "web9p0-0152", "text": "Recyclables Pickup - Every Other Friday", "dsl": "d R w/2 fr"}
+{"id": "web9p0-0153", "text": "Runs once every two hours, every day starting at 00:00", "dsl": "x", "unsure": true}
+{"id": "web9p0-0154", "text": "At 30 minutes past the hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0155", "text": "by your original due date", "dsl": "x", "unsure": true}
+{"id": "web9p0-0156", "text": "fast for 8 to 12 hours before a test", "dsl": "x", "unsure": true}
+{"id": "web9p0-0157", "text": "MW* 1 hour 15 min", "dsl": "x", "unsure": true}
+{"id": "web9p0-0158", "text": "weekdays only", "dsl": "d R d/1 mo,tu,we,th,fr"}
+{"id": "web9p0-0159", "text": "April 15-21, floating Monday", "dsl": "d 04-15>04-21", "unsure": true}
+{"id": "web9p0-0160", "text": "At 9:46 AM, only on Sunday and Saturday", "dsl": "dt R w/1 sa,su 09:46"}
+{"id": "web9p0-0161", "text": "ages 15–18 months and 4–6 years", "dsl": "x", "unsure": true}
+{"id": "web9p0-0162", "text": "Friday-Saturday 12pm-5pm", "dsl": "dt R w/1 fr,sa 12:00>17:00"}
+{"id": "web9p0-0163", "text": "every 15 minutes", "dsl": "x", "unsure": true}
+{"id": "web9p0-0164", "text": "Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.", "dsl": "dt R w/1 we M@03 14:10"}
+{"id": "web9p0-0165", "text": "Every second, at 0 minutes past the hour, between 12:00 AM and 12:59 AM", "dsl": "x", "unsure": true}
+{"id": "web9p0-0166", "text": "Try to space your doses evenly throughout the day.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0167", "text": "At 3:00 AM, only on Sunday, Tuesday through Thursday and Saturday", "dsl": "dt R w/1 tu,we,th,sa,su 03:00"}
+{"id": "web9p0-0168", "text": "SUNDAY @ 3 PM", "dsl": "dt su 15:00"}
+{"id": "web9p0-0169", "text": "every 1.day, at: '3:00'", "dsl": "dt R d/1 3?"}
+{"id": "web9p0-0170", "text": "Run every 5 minutes Monday through Friday between 8:00 am and 5:55 pm (UTC+0)", "dsl": "x", "unsure": true}
+{"id": "web9p0-0171", "text": "Thursday, 2025-09-18", "dsl": "d 2025-09-18"}
+{"id": "web9p0-0172", "text": "every friday at midnight", "dsl": "dt R w/1 fr 00:00"}
+{"id": "web9p0-0173", "text": "At 9:46 AM, only on Sunday", "dsl": "dt R w/1 su 09:46"}
+{"id": "web9p0-0174", "text": "F 6:00–9:00", "dsl": "dt fr 6?>9?"}
+{"id": "web9p0-0175", "text": "every day at five", "dsl": "dt R d/1 5?"}
+{"id": "web9p0-0176", "text": "TTH 2:30–3:45", "dsl": "dt R w/1 tu,th 2:30?>3:45?"}
+{"id": "web9p0-0177", "text": "MWF 8:00–9:00", "dsl": "dt R w/1 mo,we,fr 8?>9?"}
+{"id": "web9p0-0178", "text": "every day at 12:00am", "dsl": "dt R d/1 00:00"}
+{"id": "web9p0-0179", "text": "Third Sunday in June", "dsl": "d su#3@06"}
+{"id": "web9p0-0180", "text": "Every minute, on the weekday nearest day 5 of the month", "dsl": "x", "unsure": true}
+{"id": "web9p0-0181", "text": "Do not test before age 9 months.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0182", "text": "Tuesday/Thursday 2:00 pm 3:15 pm", "dsl": "dt R w/1 tu,th 14:00>15:15"}
+{"id": "web9p0-0183", "text": "once daily in the morning", "dsl": "d R d/1", "unsure": true}
+{"id": "web9p0-0184", "text": "TTh 9:55-11:10", "dsl": "dt R w/1 tu,th 9:55?>11:10?"}
+{"id": "web9p0-0185", "text": "Fire at 12pm (noon) every 5 days every month, starting on the first day of the month.", "dsl": "x", "unsure": true}
+{"id": "web9p0-0186", "text": "Wednesday, 2026-06-10", "dsl": "d 2026-06-10"}
+{"id": "web9p0-0187", "text": "first thing in the morning, mid-afternoon and at bedtime", "dsl": "x", "unsure": true}
+{"id": "web9p0-0188", "text": "every 6 minutes", "dsl": "x", "unsure": true}
+{"id": "web9p0-0189", "text": "Thursday, 2025-08-14", "dsl": "d 2025-08-14"}
+{"id": "web9p0-0190", "text": "1 May to 30 April", "dsl": "d 05-01>04-30", "unsure": true}
+{"id": "web9p0-0191", "text": "Sat: 10 a.m. - 5 p.m.", "dsl": "dt sa 10:00>17:00"}
+{"id": "web9p0-0192", "text": "10 additional calendar days", "dsl": "x", "unsure": true}
+{"id": "web9p0-0193", "text": "1 January to 31 December", "dsl": "d 01-01>12-31"}
+{"id": "web9p0-0194", "text": "Labour Day (\"May Day\"): 1st Monday in May.", "dsl": "d mo#1@05"}
+{"id": "web9p0-0195", "text": "Tuesday, 2024-10-15", "dsl": "d 2024-10-15"}
+{"id": "web9p0-0196", "text": "Tuesday, 2025-01-14", "dsl": "d 2025-01-14"}
+{"id": "web9p0-0197", "text": "every day at 12pm", "dsl": "dt R d/1 12:00"}
+{"id": "web9p0-0198", "text": "Friday and Saturday:- 9am to 5pm", "dsl": "dt R w/1 fr,sa 09:00>17:00"}
+{"id": "web9p0-0199", "text": "every 15s", "dsl": "x", "unsure": true}
+{"id": "web9p0-0200", "text": "Morning Labs 9:00-11:50", "dsl": "t 9?>11:50?"}
+{"id": "web9p0-0201", "text": "schedule the test early in the morning", "dsl": "x", "unsure": true}
+{"id": "web9p0-0202", "text": "1 of jan,april,july,oct 00:00", "dsl": "dt R m/1 d1 M@01,M@04,M@07,M@10 00:00"}
+{"id": "web9p0-0203", "text": "At 6:00 AM", "dsl": "t 06:00"}
+{"id": "web9p0-0204", "text": "at bedtime", "dsl": "x", "unsure": true}
+{"id": "web9p0-0205", "text": "2h", "dsl": "x", "unsure": true}
+{"id": "web9p0-0206", "text": "every uneven minute", "dsl": "x", "unsure": true}
+{"id": "web9p0-0207", "text": "At 12:00 PM, every 2 days of the week, Monday through Sunday", "dsl": "x", "unsure": true}
+{"id": "web9p0-0208", "text": "Second Sunday in July", "dsl": "d su#2@07"}
+{"id": "web9p0-0209", "text": "after 7:00 AM the day of collection", "dsl": "t 07:00>"}
+{"id": "web9p0-0210", "text": "at alternate hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0211", "text": "At 05 and 10 minutes past the hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0212", "text": "2:00p Matinees on Wed, Thu, Fri, Sat, Sun", "dsl": "dt R w/1 we,th,fr,sa,su 14:00"}
+{"id": "web9p0-0213", "text": "every day at 12am", "dsl": "dt R d/1 00:00"}
+{"id": "web9p0-0214", "text": "At 3:00 AM, only in January through March and May through June", "dsl": "dt R d/1 M@01,M@02,M@03,M@05,M@06 03:00"}
+{"id": "web9p0-0215", "text": "Every 30 minutes, starting at 5 minutes past the hour", "dsl": "x", "unsure": true}
+{"id": "web9p0-0216", "text": "at least 12 weeks later", "dsl": "x", "unsure": true}
+{"id": "web9p0-0217", "text": "once a day on the 1st and 15th of every month except December", "dsl": "x", "unsure": true}
+{"id": "web9p0-0218", "text": "every other week on the same day", "dsl": "x", "unsure": true}
+{"id": "web9p0-0219", "text": "M,W,F (60%)", "dsl": "x", "unsure": true}
+{"id": "web9p0-0220", "text": "MWF 10:00-10:50", "dsl": "dt R w/1 mo,we,fr 10?>10:50?"}
+{"id": "web9p0-0221", "text": "MWF 5:00-6:15", "dsl": "dt R w/1 mo,we,fr 5?>6:15?"}
+{"id": "web9p0-0222", "text": "1st,second mon,wed,fri of may 10:00", "dsl": "x", "unsure": true}
+{"id": "web9p0-0223", "text": "every evening (every day after noon)", "dsl": "d R d/1", "unsure": true}
+{"id": "web9p0-0224", "text": "21 or 22 March", "dsl": "x", "unsure": true}
+{"id": "web9p0-0225", "text": "every 8 hours", "dsl": "x", "unsure": true}
+{"id": "web9p0-0226", "text": "every day at 12:15 am", "dsl": "dt R d/1 00:15"}
+{"id": "web9p0-0227", "text": "Tuesday, 2025-12-02", "dsl": "d 2025-12-02"}
+{"id": "web9p0-0228", "text": "2nd monday,thu", "dsl": "x", "unsure": true}
+{"id": "web9p0-0229", "text": "after 5 October 2026", "dsl": "d 2026-10-05>"}
+{"id": "web9p0-0230", "text": "30 minutes before you have breakfast", "dsl": "x", "unsure": true}
+{"id": "web9p0-0231", "text": "MW 4:00–5:15", "dsl": "dt R w/1 mo,we 4?>5:15?"}
+{"id": "web9p0-0232", "text": "At 09:00 AM, only on Sunday", "dsl": "dt R w/1 su 09:00"}
+{"id": "web9p0-0233", "text": "At 07:00 AM", "dsl": "t 07:00"}
+{"id": "web9p0-0234", "text": "Friday, 2025-12-05", "dsl": "d 2025-12-05"}
+{"id": "web9p0-0235", "text": "MWF 9:30–10:30", "dsl": "dt R w/1 mo,we,fr 9:30?>10:30?"}
+{"id": "web9p0-0236", "text": "every day at 16:30", "dsl": "dt R d/1 16:30"}
+{"id": "web9p0-0237", "text": "1st Monday in October", "dsl": "d mo#1@10"}
+{"id": "web9p0-0238", "text": "Memorial Day – Monday, May 25, 2026", "dsl": "d 2026-05-25"}
+{"id": "web9p0-0239", "text": "Fri: 10 a.m. - 6 p.m.", "dsl": "dt fr 10:00>18:00"}
+{"id": "web9p0-0240", "text": "every tuesday at 5 pm", "dsl": "dt R w/1 tu 17:00"}
+{"id": "web9p0-0241", "text": "every 1 mins", "dsl": "x", "unsure": true}
+{"id": "web9p0-0242", "text": "the 15th day of the following month", "dsl": "d D15@M+1"}

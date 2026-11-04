@@ -1,0 +1,94 @@
+{
+  "parent": "e11",
+  "subset_of": null,
+  "reason": "e11 plus three sealed splits from the round of 2026-11-04, all from sources and writers not used before: test_personas (547 rows from six LLM writer personas: non-native English, voice transcripts, terse quick-add, professional email, regional English, casual texting; two agreeing labelers), test_voice_booking (194 rows from MASSIVE, Taskmaster-1, Schema-Guided Dialogue, ATIS), test_formats_domain (about 280 rows from regional and machine date formats in library docs and tests, and domain scheduling language: school, health, civic notices, recurrence docs). Pool halves for tuning: data/pool/persona/dev.jsonl, data/pool/web/dev7.jsonl, dev8.jsonl, dev9.jsonl. Not comparable with e11.",
+  "added_splits": [
+    "test_formats_domain",
+    "test_personas",
+    "test_voice_booking"
+  ],
+  "version": "e12",
+  "created": "2026-11-04T10:26:45+00:00",
+  "files": {
+    "val": {
+      "n": 2505,
+      "sha256": "df26629243ca3b90a6ec307cb0a97e0c551af4291e6e973652788b1c6eed5afd"
+    },
+    "test_template": {
+      "n": 4539,
+      "sha256": "98f90c7d62b20f4cbbae6905a04ed05f5c8e638eca63d2152ae5e455afda6178"
+    },
+    "test_noise": {
+      "n": 1463,
+      "sha256": "c79981388c0c4dee579542237384c7456b49e2df0964bf23b78e4ee9718ddbc1"
+    },
+    "test_llm": {
+      "n": 1289,
+      "sha256": "8b8d9c266a72a1d343488763ab2b01b7ebbd965e94b01fa21376256b71584c93"
+    },
+    "test_external": {
+      "n": 307,
+      "sha256": "cf013b429478467dfe7f0e5f0f776ad77c7bddf4f31d4878a45cbd1fb5eb85d0"
+    },
+    "test_external_hard": {
+      "n": 771,
+      "sha256": "8421c2547a2be590474d15a5cbd32aea26437a991bb436a4a85f6ad7e3c0c1a5"
+    },
+    "test_public": {
+      "n": 211,
+      "sha256": "865525c77b8e1757e1f460045add9a647a78a596210127e89cf25c0bccf045d6"
+    },
+    "test_public2": {
+      "n": 121,
+      "sha256": "b2c6f1d38818765b329b8a97bd50758cbcccb0f90a6814026542e7039dbb143b"
+    },
+    "test_v2": {
+      "n": 224,
+      "sha256": "b7688d80471b0a0ab47a4b477b2d97a92f21abb787e76082651d7421b6994b21"
+    },
+    "test_tax": {
+      "n": 275,
+      "sha256": "420cbb05ff7e7691d43ccf0c3af23d29e64549c039656c4689f46bc7bc86b277"
+    },
+    "test_web_heldout": {
+      "n": 388,
+      "sha256": "e8ded9315e4a084a491247a66206685134b9de7df4a764d43a42742ada9a8cf7"
+    },
+    "test_web_sealed": {
+      "n": 251,
+      "sha256": "069ea20fadb67e170d1303927b5faf6dfebd4b056f7a8133d46defee87361b0e"
+    },
+    "test_web2_sealed": {
+      "n": 366,
+      "sha256": "e3cedb7c746484618c1d591c850e9422d350cdbc0dde8da142896c4d789f2071"
+    },
+    "test_typo": {
+      "n": 1088,
+      "sha256": "6138d6b57c0ad0a59e7d112fdee5e0f109ca6e90874b5a56a34b453a34625a92"
+    },
+    "test_new_forms": {
+      "n": 136,
+      "sha256": "f4175665b1f43e6acff5d5778184b10447255158a9c7777a213f12f63af8479f"
+    },
+    "test_families": {
+      "n": 121,
+      "sha256": "11e2f9e7bfb06260e834352e89720ddecd9114017cb375e087416e20a1b08f78"
+    },
+    "test_number_words": {
+      "n": 25,
+      "sha256": "bd351d39f0e75e39cdf6c8e257cd6de3cfc6d33f1c34b2e0169b9b3e649d63a3"
+    },
+    "test_personas": {
+      "n": 547,
+      "sha256": "90b483f1e571deb68194064de5117938b2b4d08c83d904fa5108173c1eee3260"
+    },
+    "test_voice_booking": {
+      "n": 194,
+      "sha256": "49cc84bdbed79a619bc14d0a82ab3277a0ef8b337d6e891783536457c1370db3"
+    },
+    "test_formats_domain": {
+      "n": 260,
+      "sha256": "f151641b706c57b15d0af6b8a6b0d11b91750ffe2962af859347b479d1a70175"
+    }
+  }
+}

@@ -54,7 +54,7 @@ rescore-baselines:  ## Score engines on one eval version: make rescore-baselines
 	@printf '%s\n' $(ENGINES) | xargs -P 8 -I{} sh -c 'cd packages/baselines && $(SCORE) --engine {} --eval-version $(EVAL) | sed "s/^/{} $(EVAL): /"'
 
 # All eval versions, full and quick subsets
-EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10 e11
+EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10 e11 e12
 rescore-all:  ## Score every engine on every eval version in parallel (about 2 minutes): make rescore-all [ENGINES="h8 h9"]
 	@printf '%s\n' $(ENGINES) | xargs -P 8 -I{} sh -c 'cd packages/baselines && for v in $(EVALS); do $(SCORE) --engine {} --eval-version $$v | grep -E "^{}:" | sed "s/^/$$v /" || exit 1; done'
 
