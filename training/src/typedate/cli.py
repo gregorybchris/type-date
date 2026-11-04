@@ -1,5 +1,6 @@
 """Command line entry point. Run `uv run td --help` from `training/`."""
 
+import contextlib
 import json
 
 import typer
@@ -292,19 +293,15 @@ def data_prepare_batch(
     for f in sorted(glob.glob(str(root / pattern))):
         for line in Path(f).read_text().splitlines():
             if line.strip():
-                try:
+                with contextlib.suppress(json.JSONDecodeError, KeyError):
                     rows.append(json.loads(line)["text"])
-                except (json.JSONDecodeError, KeyError):
-                    pass
     banned: set[str] = set()
     sources = [*glob.glob(str(repo / "data/*/*.jsonl")), *glob.glob(str(repo / "evals/*/*.jsonl"))]
     for f in sources:
         for line in Path(f).read_text().splitlines():
             if line.strip():
-                try:
+                with contextlib.suppress(json.JSONDecodeError, KeyError):
                     banned.add(norm(json.loads(line)["text"]))
-                except (json.JSONDecodeError, KeyError):
-                    pass
     for f in glob.glob(str(root / "gen/external/*inputs*.jsonl")):
         for line in Path(f).read_text().splitlines():
             if line.strip():
