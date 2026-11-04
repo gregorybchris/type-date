@@ -25,7 +25,7 @@ REC    := 'R' ' ' F '/' N [' ' DAYS] [' ' LIMIT] [' ' TIMES] [' ' 's' DATE]
 F      := d | w | m | y
 DAYS   := WD(','WD)* | dNN | dNN(','dNN)* | WD '#' K       (dNN: day of month, d-1 is last)
 LIMIT  := n<COUNT> | u<DATE>
-TIMES  := TIME ['>' TIME]
+TIMES  := TIME ['>' TIME | '>' '+' N ('h'|'m')]
 WD     := mo | tu | we | th | fr | sa | su
 ```
 
@@ -150,3 +150,8 @@ Rules:
 - `b` offsets skip Saturdays and Sundays. Resolver option `businessDays` may later support holidays.
 
 Not supported (label `x`): frequency without days ("twice a week"), fuzzy spans ("summer", "christmas week"), minute or hour offsets from now, last business day of a month, halves of a month, nth week of a month.
+
+Additional v2 rules (from labeling feedback):
+- `D@DD` is always two digits (`D@04`, `D@15`).
+- A recurrence time may end with a duration: `dt R d/1 09:30>+15m` ("standup every day 9:30 for 15 min"). In the grammar, the recurrence `TIMES` token is `TIME ['>' TIME | '>' '+' N ('h'|'m')]`.
+- An open start may carry a date and a time: `dt >+0d 21:00` ("by 9pm tonight").

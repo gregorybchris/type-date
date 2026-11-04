@@ -21,7 +21,7 @@ Policy (follow exactly, these decide ambiguous cases):
 - Weekday range alone ("mon-fri", "monday to friday") -> `d mo>fr` (a range). A recurrence needs a cue like every, each, weekly, daily, weekdays, until or for.
 - "every 2nd wed" -> `R w/2 we`. "ten to seven" (minute word, then to or of, then an hour, with no am/pm) -> `t 6:50?`.
 - A month-name date followed by a bare two-digit number ("5 Nov 18", "oct 2 15") is ambiguous: write `x` and set unsure true.
-- DSL v2 part B (see specs/dsl.md): "last 3 fridays" -> `d fr-1,fr-2,fr-3`; "next 3 fridays" -> `d fr+1,fr+2,fr+3`; "oct 2, oct 9 and oct 16" -> `d 10-02,10-09,10-16`; "the 1st and 15th" -> `d D@1,D@15`; "oct 2 and 9 at 3pm" -> `dt 10-02,10-09 15:00`; "weekends since october" -> `d R w/1 sa,su sM@10< u+0d`; "tuesdays in march" -> `d R w/1 tu sM@03 uM@03`; "fridays this month" -> `d R w/1 fr sM+0 uM+0`; "weekdays next week" -> `d R d/1 mo,tu,we,th,fr sW+1 uW+1`; "first and third tuesday of every month" -> `d R m/1 tu#1,tu#3`; "this quarter" -> `d Q+0`; "q3" -> `d Q@3`; "3 days before oct 15" -> `d 10-15~-3d`; "2 days after xmas" -> `d 12-25~+2d`; "next business day" -> `d +1b`; "last 30 days" -> `d -30d>+0d`; "rest of the month" -> `d +0d>M+0`; "every day except sunday" -> `d R d/1 mo,tu,we,th,fr,sa`. Frequency without days ("twice a week"), fuzzy spans ("summer"), minutes or hours from now -> `x` with unsure true.
+- DSL v2 part B (see specs/dsl.md): "last 3 fridays" -> `d fr-1,fr-2,fr-3`; "next 3 fridays" -> `d fr+1,fr+2,fr+3`; "oct 2, oct 9 and oct 16" -> `d 10-02,10-09,10-16`; "the 1st and 15th" -> `d D@01,D@15`; "oct 2 and 9 at 3pm" -> `dt 10-02,10-09 15:00`; "weekends since october" -> `d R w/1 sa,su sM@10< u+0d`; "tuesdays in march" -> `d R w/1 tu sM@03 uM@03`; "fridays this month" -> `d R w/1 fr sM+0 uM+0`; "weekdays next week" -> `d R d/1 mo,tu,we,th,fr sW+1 uW+1`; "first and third tuesday of every month" -> `d R m/1 tu#1,tu#3`; "this quarter" -> `d Q+0`; "q3" -> `d Q@3`; "3 days before oct 15" -> `d 10-15~-3d`; "2 days after xmas" -> `d 12-25~+2d`; "next business day" -> `d +1b`; "last 30 days" -> `d -30d>+0d`; "rest of the month" -> `d +0d>M+0`; "every day except sunday" -> `d R d/1 mo,tu,we,th,fr,sa`. Frequency without days ("twice a week"), fuzzy spans ("summer"), minutes or hours from now -> `x` with unsure true.
 - Recurrence that repeats every year in a month ("weekdays every august", "mondays each june") -> month filter token: `d R d/1 mo,tu,we,th,fr M@08`, `d R w/1 mo M@06`. One specific period ("weekdays in august", "tuesdays this march") -> period bound: `sM@08 uM@08`. Rolling windows: "M/T/W over the past 6 weeks" -> `d R w/1 mo,tu,we s-6w u+0d`; "fridays for the next 3 months" -> `d R w/1 fr s+0d u+3m`. Single-letter weekdays: M=mon, T=tue, W=wed, Th=thu, F=fri, Sa=sat, Su=sun; a lone T followed by Th means tuesday.
 - If the text has no clear single meaning in the DSL, write `x` and add a field "unsure": true.
 
@@ -30,3 +30,12 @@ Check your work: put your output file in its own empty directory and run
 Every line must parse and round trip (exit code 0). Fix any reported line.
 
 Output: a JSONL file at the path given in your instructions, one line per input line, same order, fields: {"id": "...", "text": "...", "dsl": "...", optional "unsure": true}. Reply with only a one-line count and how many are marked unsure.
+
+## Notes for all labelers (added later)
+
+- The validator `packages/core/scripts/validate-data.ts` may not yet accept the newest DSL v2 forms (open ranges `>`, `D@`, `>+2h` durations, date lists, `<`, `~`, `M@` filter, `Q`, `b`). If it rejects a v2-only form that matches `specs/dsl.md`, keep your label and say how many lines it rejected.
+- Write labels yourself, one by one. Do not write a script that guesses labels (a script may only merge ids and texts with your labels).
+- If a family in `specs/research/coverage-taxonomy.md` is marked `x`, label `x` and set unsure true.
+
+- Day-of-month is always two digits: `D@04`, `D@01`, `D@15`.
+- A recurrence time may carry a duration: "standup every day 9:30 for 15 min" -> `dt R d/1 09:30>+15m`.
