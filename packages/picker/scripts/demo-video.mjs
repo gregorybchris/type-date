@@ -38,18 +38,43 @@ async function type(page, text) {
 }
 
 const browser = await chromium.launch();
+const PAD = 32;
+// Frame page: only the picker, top-aligned, with the same padding on every side.
+const CSS = `.demo-try, .demo-note, .demo-gear, .demo-confirmed { display: none !important }
+.demo { padding: ${PAD}px !important; justify-content: flex-start !important; align-items: center !important }`;
+const url = (q = "") => `${base}/?theme=light&ws=1&engine=h11${q ? `&q=${encodeURIComponent(q)}` : ""}`;
+
+// Probe: size of the largest card across the phrases, so the frame fits all of them.
+const probe = await browser.newPage({ viewport: { width: 900, height: 1000 } });
+let w = 0;
+let h = 0;
+for (const p of phrases) {
+  await probe.goto(url(p.replace("~", "")), { waitUntil: "domcontentloaded" });
+  await probe.addStyleTag({ content: CSS });
+  await sleep(1200);
+  const box = await probe.locator(".td-card").first().boundingBox();
+  w = Math.max(w, box.width);
+  h = Math.max(h, box.height);
+}
+await probe.close();
+const size = { width: Math.round(w + 2 * PAD), height: Math.round(h + 2 * PAD) };
+console.log("frame", size);
+
 const ctx = await browser.newContext({
-  viewport: { width: 560, height: 760 },
+  viewport: size,
   deviceScaleFactor: 2,
-  recordVideo: { dir: out, size: { width: 560, height: 760 } },
+  recordVideo: { dir: out, size },
 });
 const page = await ctx.newPage();
-await page.goto(`${base}/?theme=light&ws=1&engine=h11`, { waitUntil: "domcontentloaded" });
+await page.goto(url(), { waitUntil: "domcontentloaded" });
+await page.addStyleTag({ content: CSS });
 await page.getByRole("textbox", { name: "Date and time" }).click();
+await page.evaluate("window.scrollTo(0, 0)");
 await sleep(1200);
 for (const p of phrases) {
   await type(page, p);
   await sleep(2200);
+  console.log("scrollY", await page.evaluate("window.scrollY"), p);
   await page.keyboard.press("Escape");
   await sleep(900);
 }
