@@ -15,6 +15,7 @@ import torch
 from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
 from transformers import PreTrainedTokenizerFast, T5Config, T5ForConditionalGeneration
 
+from .evalsets import load_eval  # noqa: E402
 from .timing import Timer, merge_timing  # noqa: E402
 
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
@@ -44,6 +45,8 @@ class TrainConfig:
     max_train: int = 0  # 0 = all
     digit_split: bool = False
     parent: int = 0
+    eval_version: str = "e1"
+    description: str = ""
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -232,10 +235,8 @@ def run(cfg: TrainConfig) -> dict:
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     data = ROOT / "data" / cfg.dataset
     with tm.bucket("data_load"):
-        splits = {
-            s: load_jsonl(data / f"{s}.jsonl")
-            for s in ["train", "val", "test_template", "test_noise", "test_llm", "test_external"]
-        }
+        splits = {"train": load_jsonl(data / "train.jsonl")}
+        splits.update(load_eval(cfg.eval_version))
     train_rows = splits["train"]
     if cfg.max_train:
         random.shuffle(train_rows)
@@ -328,6 +329,7 @@ def run(cfg: TrainConfig) -> dict:
     eval_s = time.time() - t1
     with tm.bucket("eval_score"):
         ev, errors = evaluate(eval_rows, preds)
+    ev["version"] = cfg.eval_version
     tm.extra["eval_rows"] = sum(len(r) for r in eval_rows.values())
     print(f"exact {ev['exact']:.4f} resolved {ev['resolved']:.4f}", flush=True)
 
@@ -343,6 +345,7 @@ def run(cfg: TrainConfig) -> dict:
         "id": f"exp-{cfg.exp:03d}",
         "number": cfg.exp,
         "title": cfg.title,
+        "description": cfg.description,
         "created": datetime.now(UTC).isoformat(timespec="seconds"),
         "dataset": cfg.dataset,
         "format": "dsl-v1",

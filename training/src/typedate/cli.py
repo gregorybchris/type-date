@@ -114,6 +114,8 @@ def train_run(
     lr: float = typer.Option(1e-3),
     max_train: int = typer.Option(0, help="Limit train rows (0 = all)"),
     digit_split: bool = typer.Option(False, help="Tokenize digits one by one"),
+    description: str = typer.Option("", help="1-2 sentence plain description of the experiment"),
+    eval_version: str = typer.Option("e1", help="Eval set version (evals/<version>)"),
     seed: int = typer.Option(0),
     parent: int = typer.Option(0, help="Reference experiment number (0 = none)"),
     notes: str = typer.Option(""),
@@ -125,7 +127,7 @@ def train_run(
         exp=exp, title=title, dataset=dataset, d_model=d_model, d_ff=d_ff, heads=heads,
         enc_layers=enc_layers, dec_layers=dec_layers, vocab=vocab, epochs=epochs,
         batch_size=batch_size, lr=lr, seed=seed, notes=notes, max_train=max_train,
-        digit_split=digit_split, parent=parent,
+        digit_split=digit_split, parent=parent, description=description, eval_version=eval_version,
     )  # fmt: skip
     res = run(cfg)
     ev = res["metrics"]["eval"]
@@ -146,6 +148,58 @@ def export_run(
 
     res = export(exp, quant)
     typer.echo(json.dumps(res, indent=2))
+
+
+eval_app = typer.Typer(no_args_is_help=True, help="Versioned eval sets")
+app.add_typer(eval_app, name="eval")
+
+
+@eval_app.command("create")
+def eval_create(
+    version: str = typer.Argument(..., help="e.g. e1"),
+    from_dataset: str = typer.Option("v002", "--from"),
+    parent: str = typer.Option("", help="Parent eval version"),
+    reason: str = typer.Option("first eval set"),
+) -> None:
+    """Cut an immutable eval version from a dataset's eval splits."""
+    from .evalsets import create
+
+    m = create(version, from_dataset, parent or None, reason)
+    typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
+
+
+@eval_app.command("quick")
+def eval_quick(
+    version: str = typer.Argument(..., help="e.g. e1q"),
+    of: str = typer.Option("e1"),
+) -> None:
+    """Cut a small stratified subset for fast screening."""
+    from .evalsets import quick
+
+    m = quick(version, of, {"val": 150, "test_template": 150, "test_noise": 100, "test_llm": 200})
+    typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
+
+
+@eval_app.command("check-leak")
+def eval_check_leak(
+    dataset: str = typer.Argument(...), eval_version: str = typer.Option("e1")
+) -> None:
+    """Report eval rows whose text also appears in a training dataset."""
+    from .evalsets import check_leak
+
+    typer.echo(json.dumps(check_leak(dataset, eval_version), indent=2))
+
+
+@data_app.command("decontaminate")
+def data_decontaminate(
+    version: str = typer.Argument(..., help="New train-only version, e.g. v003"),
+    base: str = typer.Option("v002"),
+    eval_version: str = typer.Option("e1"),
+) -> None:
+    """Drop train rows whose text appears in an eval version. Writes data/<version>/train.jsonl."""
+    from .evalsets import decontaminate
+
+    typer.echo(json.dumps(decontaminate(base, version, eval_version)))
 
 
 exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")

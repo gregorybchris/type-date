@@ -1,0 +1,31 @@
+{
+  "parent": null,
+  "subset_of": "e1",
+  "reason": "fast screening subset of e1",
+  "quotas": {
+    "val": 150,
+    "test_template": 150,
+    "test_noise": 100,
+    "test_llm": 200
+  },
+  "version": "e1q",
+  "created": "2026-11-04T03:56:02+00:00",
+  "files": {
+    "val": {
+      "n": 150,
+      "sha256": "e60f20a270f5dd329916a9799cd0309ed3e3950181c58899138eca0c03823663"
+    },
+    "test_template": {
+      "n": 150,
+      "sha256": "39d61722c57627fd2eceaa6f12af9671bc97da355b74d53343e82c2e17314a38"
+    },
+    "test_noise": {
+      "n": 100,
+      "sha256": "be32bb4fef676e3ed91a1e4d645baa69e43cb7899e95b0ffe844f4727c1257c8"
+    },
+    "test_llm": {
+      "n": 200,
+      "sha256": "9beb01a7f330bd9fe97f36e3429a05b3d64e1db98d577cfd5d8e3692a12fdcbc"
+    }
+  }
+}

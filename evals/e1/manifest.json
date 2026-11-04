@@ -1,0 +1,26 @@
+{
+  "parent": null,
+  "from_dataset": "v002",
+  "reason": "first eval set: val, test_template, test_noise, test_llm from dataset v002",
+  "subset_of": null,
+  "version": "e1",
+  "created": "2026-11-04T03:56:02+00:00",
+  "files": {
+    "val": {
+      "n": 2591,
+      "sha256": "8b3c931823ae111ec06b544bb7e881b55a7388840ff3b0fcccf2965f3ad30b40"
+    },
+    "test_template": {
+      "n": 5249,
+      "sha256": "17b5c2803977c981ce9605d67c7ceb32f4a7137dd38b3d39a6950d404751df34"
+    },
+    "test_noise": {
+      "n": 1499,
+      "sha256": "30f279e8c153aafd9ad7216bbb1a989969bb77b8ee81294486a170cc65c4260e"
+    },
+    "test_llm": {
+      "n": 1502,
+      "sha256": "cd45972746e0344f4c9efed72cd526e37831e85b4979c2439c5dbc0759ac0f1e"
+    }
+  }
+}
