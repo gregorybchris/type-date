@@ -102,7 +102,7 @@ def check_leak(dataset: str, eval_version: str) -> dict:
     return res
 
 
-def decontaminate(base: str, version: str, eval_version: str) -> dict:
+def decontaminate(base: str, version: str, eval_version: str, drop_policy: bool = False) -> dict:
     """New train dataset: base minus rows whose normalized text appears in an eval version."""
     banned = set()
     for rows in load_eval(eval_version).values():
@@ -113,6 +113,11 @@ def decontaminate(base: str, version: str, eval_version: str) -> dict:
     out.mkdir(parents=True)
     train = _read(ROOT / "data" / base / "train.jsonl")
     kept = [r for r in train if " ".join(r["text"].lower().split()) not in banned]
+    n_policy = 0
+    if drop_policy:
+        before = len(kept)
+        kept = [r for r in kept if not policy_flags(r)]
+        n_policy = before - len(kept)
     (out / "train.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in kept)
     )
@@ -122,13 +127,14 @@ def decontaminate(base: str, version: str, eval_version: str) -> dict:
         created=datetime.now(UTC).isoformat(timespec="seconds"),
         base=base,
         decontaminated_against=eval_version,
-        notes=f"{base} train rows minus {len(train) - len(kept)} rows whose lowercased text is in "
-        f"eval {eval_version}. Train only; eval splits live in evals/{eval_version}.",
+        notes=f"{base} train rows minus rows whose lowercased text is in eval {eval_version}"
+        + (f" and {n_policy} rows in label-policy ambiguity classes" if drop_policy else "")
+        + f". Train only; eval splits live in evals/{eval_version}.",
     )
     meta["counts"] = {"train": len(kept)}
     meta.pop("by_tag", None)
     (out / "meta.json").write_text(json.dumps(meta, indent=2))
-    return {"train_before": len(train), "train_after": len(kept)}
+    return {"train_before": len(train), "train_after": len(kept), "dropped_policy": n_policy}
 
 
 def tag_from_dsl(dsl: str) -> str:

@@ -200,11 +200,12 @@ def data_decontaminate(
     version: str = typer.Argument(..., help="New train-only version, e.g. v003"),
     base: str = typer.Option("v002"),
     eval_version: str = typer.Option("e1"),
+    drop_policy: bool = typer.Option(False, help="Also drop label-policy-ambiguous rows"),
 ) -> None:
     """Drop train rows whose text appears in an eval version. Writes data/<version>/train.jsonl."""
     from .evalsets import decontaminate
 
-    typer.echo(json.dumps(decontaminate(base, version, eval_version)))
+    typer.echo(json.dumps(decontaminate(base, version, eval_version, drop_policy)))
 
 
 @eval_app.command("zeroshot")

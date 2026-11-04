@@ -88,7 +88,7 @@ def md_date(rng: random.Random, m: int | None = None, d: int | None = None) -> D
     if form == "slash" and d > 12 and rng.random() < 0.25:
         return DateR([C(f"{d}/{m}")], dsl, "slash_dm", mods)
     if form == "slash":
-        sep = pick(rng, ["/", "-", "."], [85, 8, 7])
+        sep = pick(rng, ["/", "-"], [92, 8])  # no "." (ambiguous with times like 7.20)
         return DateR([C(f"{m}{sep}{d}")], dsl, "slash", mods)
     mon = month_text(rng, m, mods)
     if form == "mon_d":
@@ -260,6 +260,8 @@ def time_known(rng: random.Random, h24: int, mi: int) -> TimeR:
     if h24 == 0 and mi == 0 and rng.random() < 0.5:
         return TimeR([C("midnight", kind="kw")], dsl, "midnight", mods, False)
     form = pick(rng, ["ampm", "ampm_space", "dotted", "h24", "daypart"], [40, 26, 5, 22, 7])
+    if form == "h24" and h24 in (10, 11, 12):
+        form = "ampm"  # "11:30" with no am/pm is ambiguous (policy: unknown meridiem)
     h12 = h24 % 12 or 12
     suffix = "am" if h24 < 12 else "pm"
     if form == "h24":
@@ -839,7 +841,7 @@ def gen_recurrence(rng):
     elif kind == "weekly":
         n = pick(rng, [1, 1, 1, 2, 3], [60, 15, 5, 12, 8])
         days = rng.sample(WD_CODES, n)
-        lead = pick(rng, ["every", "each", "weekly on", "on", "", "every"], [50, 5, 10, 5, 22, 8])
+        lead = pick(rng, ["every", "each", "weekly on", "", "every"], [50, 5, 12, 22, 8])
         wl = _wd_list_text(rng, days, mods)
         if lead == "" and n == 1:
             # plural: "tuesdays"
