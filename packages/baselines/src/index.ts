@@ -7,9 +7,10 @@ import heuristicFull4 from "./heuristic-full-4";
 import heuristicFull5 from "./heuristic-full-5";
 import heuristicFull6 from "./heuristic-full-6";
 import heuristicFull7 from "./heuristic-full-7";
+import heuristicFull8 from "./heuristic-full-8";
 import heuristicSmall from "./heuristic-small";
 
-export { chronoEngine, heuristicFull, heuristicFull2, heuristicFull3, heuristicFull4, heuristicFull5, heuristicFull6, heuristicFull7, heuristicSmall };
+export { chronoEngine, heuristicFull, heuristicFull2, heuristicFull3, heuristicFull4, heuristicFull5, heuristicFull6, heuristicFull7, heuristicFull8, heuristicSmall };
 export { chronoToDsl } from "./chrono";
 export { parseFull } from "./heuristic-full";
 export { parseFull as parseFull2 } from "./heuristic-full-2";
@@ -18,6 +19,7 @@ export { parseFull as parseFull4 } from "./heuristic-full-4";
 export { parseFull as parseFull5 } from "./heuristic-full-5";
 export { parseFull as parseFull6 } from "./heuristic-full-6";
 export { parseFull as parseFull7, parseFullAsync as parseFull7Async, loadV2 as loadFull7Lazy } from "./heuristic-full-7";
+export { parseFull8, parseFull8Async } from "./heuristic-full-8";
 export { parseSmall } from "./heuristic-small";
 
 /** Non-model baselines by engine id. All implement the `Engine` interface. */
@@ -31,4 +33,5 @@ export const baselines: Record<string, Engine> = {
   "heuristic-full-5": heuristicFull5,
   "heuristic-full-6": heuristicFull6,
   "heuristic-full-7": heuristicFull7,
+  "heuristic-full-8": heuristicFull8,
 };

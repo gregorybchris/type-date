@@ -224,7 +224,7 @@ function fuzzy1(w: string): Tok | undefined {
   return tok && tok.k === "w" && w.endsWith("s") && !best!.endsWith("s") ? { ...tok, pl: true } : tok;
 }
 
-function exact(w: string): Tok | undefined {
+export function exact(w: string): Tok | undefined {
   const t = LEX.get(w);
   if (t) return t;
   if (w.length >= 4 && w.endsWith("s") && w !== "thus") {

@@ -13,6 +13,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `heuristic-full-5` | `src/heuristic-full-5.ts` | heuristic-full-4 plus date validity checks and developer-written date formats. | 15.9 kB |
 | `heuristic-full-6` | `src/heuristic-full-6.ts` | heuristic-full-5 plus DSL v2 forms (open ranges, day of month, durations, lists, bounds, windows, offsets). | see exp-016 |
 | `heuristic-full-7` | `src/heuristic-full-7.ts` | heuristic-full-6 plus web-pool fixes. DSL v2 families and the fixes sit in `src/full-7/v2-forms.ts`, loaded on demand (not an engine). | 19.0 kB eager + 10.6 kB lazy |
+| `heuristic-full-8` | `src/heuristic-full-8.ts` | heuristic-full-7 behind a normalization layer (`src/full-8/`: typo and abbreviation rewrites, day of a relative month, score and dozen). full-7 is unchanged except one `export`. | 21.9 kB eager + 10.7 kB lazy |
 
 `predict(text, signal?, { today })` takes an optional reference day. Only `chrono` uses it, because chrono returns absolute dates. The heuristics output relative DSL and ignore it.
 
@@ -59,3 +60,5 @@ For `chrono` the eval calls the engine once for each reference day in `score-res
 
 - heuristic-full-7: `src/full-7/v2-forms.ts` is a lazy chunk loaded by `import()` from `src/heuristic-full-7.ts`. Sync `parseFull7` runs the v2 layer only after `loadFull7Lazy()` (call it first in tests). `eval.ts` bundles with code splitting and reports the eager gzip as `size_bytes` and the lazy chunk as `size_bytes_lazy`.
 - A shell `echo "$RE"` in zsh turns `\b` in a regex into a backspace. Use `printf '%s'` or write the regex from Python when moving it into a file.
+
+- heuristic-full-8: the typo layer must not rewrite words full-7 already reads (`exact()` is exported for that check). Skeleton matching needs the typo to be a subsequence of the target, else `form` becomes `from`. A word regex with a lookahead backtracks (`friday9am` became `fridayy9am`); exclude letters in the lookahead. `pst` is a time zone: rewrite it to `past` only before a count.

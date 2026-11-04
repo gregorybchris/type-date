@@ -1846,6 +1846,248 @@
         }
       },
       "version": "e8"
+    },
+    "e9": {
+      "exact": 0.3379475286273373,
+      "resolved": 0.3463545441368314,
+      "n": 13798,
+      "by_split": {
+        "val": {
+          "n": 2505,
+          "exact": 0.5516966067864272,
+          "resolved": 0.5600798403193613
+        },
+        "test_template": {
+          "n": 4539,
+          "exact": 0.19762062128222074,
+          "resolved": 0.20136593963428068
+        },
+        "test_noise": {
+          "n": 1463,
+          "exact": 0.42515379357484623,
+          "resolved": 0.44360902255639095
+        },
+        "test_llm": {
+          "n": 1289,
+          "exact": 0.44453064391000774,
+          "resolved": 0.4546159813809154
+        },
+        "test_external": {
+          "n": 307,
+          "exact": 0.4169381107491857,
+          "resolved": 0.4169381107491857
+        },
+        "test_external_hard": {
+          "n": 771,
+          "exact": 0.1621271076523995,
+          "resolved": 0.16731517509727625
+        },
+        "test_public": {
+          "n": 211,
+          "exact": 0.6919431279620853,
+          "resolved": 0.7061611374407583
+        },
+        "test_public2": {
+          "n": 121,
+          "exact": 0.7107438016528925,
+          "resolved": 0.8512396694214877
+        },
+        "test_v2": {
+          "n": 224,
+          "exact": 0.07142857142857142,
+          "resolved": 0.07142857142857142
+        },
+        "test_tax": {
+          "n": 275,
+          "exact": 0.1890909090909091,
+          "resolved": 0.19272727272727272
+        },
+        "test_web_heldout": {
+          "n": 388,
+          "exact": 0.520618556701031,
+          "resolved": 0.5360824742268041
+        },
+        "test_web_sealed": {
+          "n": 251,
+          "exact": 0.5816733067729084,
+          "resolved": 0.5856573705179283
+        },
+        "test_web2_sealed": {
+          "n": 366,
+          "exact": 0.5491803278688525,
+          "resolved": 0.5601092896174863
+        },
+        "test_typo": {
+          "n": 1088,
+          "exact": 0.07996323529411764,
+          "resolved": 0.0818014705882353
+        }
+      },
+      "by_tag": {
+        "anchored-offset": {
+          "n": 81,
+          "exact": 0
+        },
+        "basic-date": {
+          "n": 1285,
+          "exact": 0.6365758754863813
+        },
+        "basic-date-range": {
+          "n": 1742,
+          "exact": 0.4626865671641791
+        },
+        "basic-date-year": {
+          "n": 221,
+          "exact": 0.918552036199095
+        },
+        "business-day": {
+          "n": 12,
+          "exact": 0
+        },
+        "date-list": {
+          "n": 96,
+          "exact": 0
+        },
+        "date-range-shared-month": {
+          "n": 174,
+          "exact": 0.6379310344827587
+        },
+        "datetime": {
+          "n": 1563,
+          "exact": 0.48624440179142675
+        },
+        "datetime-range": {
+          "n": 706,
+          "exact": 0.43342776203966005
+        },
+        "day-of-month": {
+          "n": 64,
+          "exact": 0
+        },
+        "duration": {
+          "n": 105,
+          "exact": 0
+        },
+        "fuzzy-period": {
+          "n": 32,
+          "exact": 0.375
+        },
+        "month-or-year-only": {
+          "n": 117,
+          "exact": 0.28205128205128205
+        },
+        "named-holiday": {
+          "n": 110,
+          "exact": 0.12727272727272726
+        },
+        "non-date-noise": {
+          "n": 288,
+          "exact": 0.9236111111111112
+        },
+        "nth-weekday-of-month": {
+          "n": 236,
+          "exact": 0.07627118644067797
+        },
+        "open-range": {
+          "n": 144,
+          "exact": 0
+        },
+        "period-relative": {
+          "n": 171,
+          "exact": 0.18128654970760233
+        },
+        "quarter": {
+          "n": 13,
+          "exact": 0
+        },
+        "recurrence": {
+          "n": 407,
+          "exact": 0
+        },
+        "recurrence-bounded": {
+          "n": 196,
+          "exact": 0
+        },
+        "recurrence-daily": {
+          "n": 131,
+          "exact": 0.022900763358778626
+        },
+        "recurrence-interval": {
+          "n": 233,
+          "exact": 0.02575107296137339
+        },
+        "recurrence-month-filter": {
+          "n": 52,
+          "exact": 0
+        },
+        "recurrence-monthly-yearly": {
+          "n": 298,
+          "exact": 0.07046979865771812
+        },
+        "recurrence-weekly": {
+          "n": 2741,
+          "exact": 0.03356439255746078
+        },
+        "relative-date": {
+          "n": 435,
+          "exact": 0.3816091954022989
+        },
+        "relative-offset": {
+          "n": 423,
+          "exact": 0.29550827423167847
+        },
+        "time-only": {
+          "n": 555,
+          "exact": 0.6504504504504505
+        },
+        "time-range": {
+          "n": 711,
+          "exact": 0.4669479606188467
+        },
+        "weekday-bare": {
+          "n": 58,
+          "exact": 0.6896551724137931
+        },
+        "weekday-relative": {
+          "n": 398,
+          "exact": 0.3492462311557789
+        }
+      },
+      "by_modifier": {
+        "abbreviation": {
+          "n": 3608,
+          "exact": 0.29545454545454547
+        },
+        "ampm-ambiguous": {
+          "n": 922,
+          "exact": 0.3156182212581345
+        },
+        "casing": {
+          "n": 1239,
+          "exact": 0.3954802259887006
+        },
+        "partial-prefix": {
+          "n": 1229,
+          "exact": 0.42961757526444266
+        },
+        "spacing": {
+          "n": 2343,
+          "exact": 0.38156209987195905
+        },
+        "typo": {
+          "n": 2093,
+          "exact": 0.10272336359292882
+        },
+        "typo-keyboard": {
+          "n": 341,
+          "exact": 0.07917888563049853
+        },
+        "word-numbers": {
+          "n": 900,
+          "exact": 0.3088888888888889
+        }
+      },
+      "version": "e9"
     }
   }
 }

@@ -58,6 +58,7 @@ eval-baselines:  ## Score the non-model baselines into runs/exp-001..003 and 009
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-5 --exp 15 --eval-version e4 --title "heuristic-full-5" --description "heuristic-full-4 plus date validity checks, year-first and named numeric date formats, two-digit years, seconds and more relative offsets."
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-6 --exp 16 --eval-version e6 --title "heuristic-full-6" --description "heuristic-full-5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, rolling windows, anchored and business-day offsets."
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-7 --exp 17 --eval-version e6 --title "heuristic-full-7" --description "heuristic-full-6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms."
+	pnpm --filter @type-date/baselines eval --engine heuristic-full-8 --exp 18 --eval-version e9 --title "heuristic-full-8" --description "heuristic-full-7 behind a normalization layer that rewrites misspelled and abbreviated words (weekdays, months, units, connectors, digits for words)."
 
 timing:  ## Where experiment wall time goes: make timing ARGS="--last 5"
 	cd training && uv run td exp timing $(ARGS)
@@ -66,10 +67,10 @@ eval-coverage:  ## Matrix of experiments by eval version, gaps marked
 	cd training && uv run td eval coverage
 
 # Baseline experiments: number:engine
-BASELINE_EXPS = 1:chrono 2:heuristic-small 3:heuristic-full 9:heuristic-full-2 13:heuristic-full-3 14:heuristic-full-4 15:heuristic-full-5 16:heuristic-full-6 17:heuristic-full-7
-rescore-baselines:  ## Re-score baselines on another eval: make rescore-baselines EVAL=e1q [EXPS="1 2 3 9 13 14 15 16 17"]
+BASELINE_EXPS = 1:chrono 2:heuristic-small 3:heuristic-full 9:heuristic-full-2 13:heuristic-full-3 14:heuristic-full-4 15:heuristic-full-5 16:heuristic-full-6 17:heuristic-full-7 18:heuristic-full-8
+rescore-baselines:  ## Re-score baselines on another eval: make rescore-baselines EVAL=e1q [EXPS="1 2 3 9 13 14 15 16 17 18"]
 	@test -n "$(EVAL)" || (echo "usage: make rescore-baselines EVAL=e1q [EXPS=...]"; exit 2)
-	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 2 3 9 13 14 15 16 17)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
+	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 2 3 9 13 14 15 16 17 18)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
 
 results:  ## Results table for an eval version: make results EVAL=e3
 	cd training && uv run td exp table --eval-version $(or $(EVAL),e3)
