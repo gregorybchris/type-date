@@ -9,6 +9,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { engineColors, splitColor, splitLabel } from "@/lib/compare";
 import { evalFor, isRealisticSplit, splitsOf } from "@/lib/evals";
 import { useStore } from "@/lib/store";
+import { useTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 function Chip({ on, onClick, color, children }: { on: boolean; onClick: () => void; color: string; children: React.ReactNode }) {
@@ -34,6 +35,7 @@ function Panel({ title, version, note, right, children }: { title: string; versi
 }
 
 export function CompareView() {
+  const { theme } = useTheme();
   const { runs, version } = useStore();
   const [off, setOff] = useState<Set<string>>(new Set());
   const [axis, setAxis] = useState<"0" | "50">("0");
@@ -98,7 +100,7 @@ export function CompareView() {
           <Panel
             title="Engines by split"
             version={version}
-            note="Heatmap of the rate in each cell. Darker is better in both modes."
+            note={`Heatmap of the rate in each cell. ${theme === "dark" ? "Yellower" : "More indigo"} is better in both modes, with the median cell at mid-shade.`}
             right={<Segmented value={mode} onChange={setMode} options={[{ value: "accuracy", label: "Accuracy" }, { value: "error", label: "Error rate" }]} />}
           >
             <Heatmap runs={shown} splits={splits} version={version} mode={mode} />
