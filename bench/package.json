@@ -1,0 +1,20 @@
+{
+  "name": "@type-date/bench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@type-date/engines": "workspace:*",
+    "onnxruntime-web": "1.31.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.49.0",
+    "tsx": "*",
+    "typescript": "^5.6.0",
+    "@types/node": "*"
+  }
+}

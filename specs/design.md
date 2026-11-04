@@ -34,6 +34,10 @@ Dark theme:
 
 Command palette (reference): search field with a magnifier, a list with small avatar tiles, a footer row of keyboard hints. Use this style for the picker's text input and result summary.
 
+## Showing rates and counts
+
+Lead with percentages. In error analysis and per-tag views the main figure is the error rate (or accuracy), because absolute counts mislead when groups differ in size. Counts stay available: show them as secondary text, a tooltip, or a Rate/Count toggle, plus the denominator (`n`) so the reader can judge how reliable a rate is. Sort and color by rate. Flag small samples (for example n < 30) so a 100% error rate on 3 rows is not read as a trend.
+
 ## Responsive and mobile
 
 Mobile is a hard requirement.

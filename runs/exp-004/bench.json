@@ -1,0 +1,62 @@
+[
+  {
+    "engine": "ort-custom",
+    "backend": "wasm",
+    "browser": "chromium",
+    "profile": "desktop",
+    "threads": 1,
+    "load_ms": 1368,
+    "cold_first_ms": 178.8,
+    "latency_ms": {
+      "p50": 27.1,
+      "p95": 46,
+      "p99": 741.6
+    },
+    "tokens_per_s": 99,
+    "memory_mb": 750,
+    "download_bytes": 10437419,
+    "n": 100,
+    "browser_accuracy": 0.5,
+    "data": "data/v002/test_llm.jsonl"
+  },
+  {
+    "engine": "ort-custom",
+    "backend": "wasm",
+    "browser": "chromium",
+    "profile": "mobile-4x",
+    "threads": 1,
+    "load_ms": 3848,
+    "cold_first_ms": 368.4,
+    "latency_ms": {
+      "p50": 73.9,
+      "p95": 145.9,
+      "p99": 3012.4
+    },
+    "tokens_per_s": 32,
+    "memory_mb": 770,
+    "download_bytes": 10437419,
+    "n": 100,
+    "browser_accuracy": 0.5,
+    "data": "data/v002/test_llm.jsonl"
+  },
+  {
+    "engine": "ort-custom",
+    "backend": "webgpu",
+    "browser": "chromium",
+    "profile": "desktop",
+    "threads": 1,
+    "load_ms": 1112,
+    "cold_first_ms": 5104.5,
+    "latency_ms": {
+      "p50": 1564.9,
+      "p95": 2308.4,
+      "p99": 2792.5
+    },
+    "tokens_per_s": 23,
+    "memory_mb": 614,
+    "download_bytes": 10437419,
+    "n": 100,
+    "browser_accuracy": 0,
+    "data": "data/v002/test_llm.jsonl"
+  }
+]
