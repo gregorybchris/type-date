@@ -9,9 +9,14 @@ const TODAY = "2026-09-14";
 
 /** Engines shown in the demo. The default is the best solution so far (see `specs/research/experiments`). */
 const ENGINES = [
-  { id: "heuristic-full", label: "Heuristic (full)", note: "exp-003 · 7.9 kB · 91% resolved on eval e1" },
-  { id: "heuristic-small", label: "Heuristic (small)", note: "exp-002 · 3.5 kB · 58% resolved" },
-  { id: "chrono", label: "chrono-node", note: "exp-001 · 14.9 kB · 33% resolved, no recurrence" },
+  {
+    id: "heuristic-full-2",
+    label: "Heuristic (full v2)",
+    note: "exp-009 · 8.8 kB · 94.9% resolved on eval e2, 70.7% on realistic external input",
+  },
+  { id: "heuristic-full", label: "Heuristic (full)", note: "exp-003 · 7.9 kB · 92.7% resolved on eval e2, 67.4% on realistic external input" },
+  { id: "heuristic-small", label: "Heuristic (small)", note: "exp-002 · 3.5 kB · 61.6% resolved on e2" },
+  { id: "chrono", label: "chrono-node", note: "exp-001 · 14.9 kB · 36.3% resolved on e2, no recurrence" },
 ] as const;
 
 const EXAMPLES = [
@@ -34,7 +39,7 @@ const q = new URLSearchParams(location.search);
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">(q.get("theme") === "dark" ? "dark" : "light");
   const [weekStart, setWeekStart] = useState<0 | 1>(q.get("ws") === "0" ? 0 : 1);
-  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full");
+  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full-2");
   const [last, setLast] = useState<{ dsl: string; ms: number } | null>(null);
   const [text, setText] = useState(q.get("q") ?? "");
   const engine = ENGINES.find((e) => e.id === engineId) ?? ENGINES[0];
