@@ -129,6 +129,10 @@ Added after the coverage review in `specs/research/coverage-taxonomy.md`. Supers
 | | | "weekends since october" | `d R w/1 sa,su sM@10< u+0d` | |
 | | | "fridays this month" | `d R w/1 fr sM+0 uM+0` | |
 | | | "weekdays next week" | `d R d/1 mo,tu,we,th,fr sW+1 uW+1` | |
+| Month filter (repeats every year) | `M@MM(,M@MM)*` token inside a recurrence, after the day spec | "weekdays every august" | `d R d/1 mo,tu,we,th,fr M@08` | every weekday in August, every year |
+| | | "mondays in june and july, every year" | `d R w/1 mo M@06,M@07` | |
+| Rolling window bound | `s` and `u` accept offsets | "M/T/W over the past 6 weeks" | `d R w/1 mo,tu,we s-6w u+0d` | |
+| | | "fridays for the next 3 months" | `d R w/1 fr s+0d u+3m` | |
 | Nth list | `WD#K(,WD#K)*` in a monthly recurrence | "first and third tuesday of every month" | `d R m/1 tu#1,tu#3` | |
 | Quarter | `Q+N`, `Q-N`, `Q@N` (N 1-4); a period like `W`, `M`, `Y` | "this quarter", "Q3" | `d Q+0`, `d Q@3` | whole quarter as a range |
 | Anchored offset | `DATE~(+|-)N(d|w|m|y|b)` | "3 days before oct 15" | `d 10-15~-3d` | |
@@ -137,6 +141,8 @@ Added after the coverage review in `specs/research/coverage-taxonomy.md`. Supers
 | Period as range end | a period as the end point of a range means its last day; as the start, its first day | "rest of the month" | `d +0d>M+0` | already true in the resolver |
 
 Rules:
+- "in August" or "this March" (one specific period) is a period bound (`sM@08 uM@08`). "every August", "each June", "every year in march" (repeats every year) is a month filter (`M@08`). A recurrence with a month filter and no `u` bound continues indefinitely.
+- Canonical recurrence token order is now: frequency, days or nth list or month days or year day, month filter, count, until, time, start.
 - A list element is a single day: periods (`W+1`), ranges and recurrences are not allowed inside a list. Lists have 2 to 31 items. A shared time may follow the list.
 - `<` resolves the date on or before today (today counts). It is only valid on the forms listed.
 - A recurrence `s` bound is the first day of the period, `u` bound is the last day. When `u` is in the past, the recurrence lists only past dates.

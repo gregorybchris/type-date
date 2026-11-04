@@ -8,6 +8,9 @@ Status: `ok` = expressible now, `ext` = needs the DSL extension in `specs/dsl.md
 |---|---|---|---|---|
 | A | Counted occurrences, past or future | "last 3 fridays", "next 4 mondays", "the past 2 weekends", "next 5 weekdays" | ext | date list: `d fr-1,fr-2,fr-3` |
 | B | Recurrence inside a period | "weekends since october", "fridays this month", "tuesdays in march", "weekdays next week", "every monday in 2027", "saturdays until christmas" | ext | recurrence with period bounds: `d R w/1 sa,su sM@10< u+0d`, `d R w/1 fr sM+0 uM+0` |
+| B | Recurrence over a rolling window | "M/T/W over the past 6 weeks", "fridays for the next 3 months", "daily this past month" | ext | `d R w/1 mo,tu,we s-6w u+0d`, `d R w/1 fr s+0d u+3m` |
+| B | Recurrence that repeats every year in a month | "weekdays every august", "mondays each june", "every year in march on fridays" | ext | month filter: `d R d/1 mo,tu,we,th,fr M@08` |
+| B | Single-letter and compact weekday forms | "M/T/W", "MWF", "T/Th", "M-F", "TTh", "S/S" | ok | the parser's job; DSL already lists weekdays |
 | C | Rolling windows | "last 30 days", "next 2 weeks", "past 3 months", "the next 10 days" | ok | `d -30d>+0d`, `d +0d>+2w` |
 | C | Rest of a period / period ends | "rest of the month", "rest of this week", "year to date" | ok | `d +0d>M+0`, `d Y+0>+0d` (a period as range end means its last day, as range start its first day) |
 | C | Named periods | "this quarter", "Q3", "next quarter", "second half of march" | ext (quarters only) | `d Q+0`, `d Q@3`, `d Q+1`. Halves and "nth week of" are x |
