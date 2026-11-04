@@ -16,6 +16,7 @@ Apply these to all docs, comments, commit messages, and UI copy.
 
 - Commit often to git with informative messages. Do not push. There is no remote.
 - Keep total disk use under 10GB. Delete checkpoints that are not on the Pareto front or needed for a comparison. Record metrics before deleting.
+- Mobile matters: UI must be responsive and the model must be fast on phones (see `specs/design.md`, `specs/plan.md` Mobile).
 - `design-ideas/` is gitignored. Look at the images there before doing UI work.
 - Every experiment gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
 - Background research goes in `specs/research/background/` as markdown.
