@@ -45,8 +45,8 @@ serve-status:  ## Check both dev servers
 eval-coverage:  ## Matrix of engines by eval version, gaps marked
 	cd training && uv run td eval coverage
 
-# Engines in dashboard order: chrono (comparison baseline), then h1..h10 (heuristic parser generations)
-ENGINES = chrono h1 h2 h3 h4 h5 h6 h7 h8 h9 h10
+# Engines in dashboard order: chrono (comparison baseline), then h1..h11 (heuristic parser generations)
+ENGINES = chrono h1 h2 h3 h4 h5 h6 h7 h8 h9 h10 h11
 # Engines are scored in parallel (one process per engine, 8 at a time); each process walks the eval versions in order.
 SCORE = pnpm exec tsx scripts/eval.ts --no-primary
 rescore-baselines:  ## Score engines on one eval version: make rescore-baselines EVAL=e10 [ENGINES="h8 h9"]

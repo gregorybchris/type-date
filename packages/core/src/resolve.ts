@@ -129,6 +129,17 @@ function weekRange(today: string, n: number, weekStart: 0 | 1): DateRange {
   return { start, end: addDays(start, 6) };
 }
 
+/** Easter Sunday of a year (Gregorian, anonymous algorithm). */
+export function easterSunday(y: number): string {
+  const a = y % 19, b = Math.floor(y / 100), c = y % 100;
+  const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  return ymd(y, month, ((h + l - 7 * m + 114) % 31) + 1);
+}
+
 /** Resolve a date spec. `ref` is the date that "on or after" rules use. */
 export function resolveDate(
   spec: DateSpec,
@@ -241,6 +252,19 @@ export function resolveDate(
     }
     case "yr":
       return { start: ymd(spec.year, 1, 1), end: ymd(spec.year, 12, 31) };
+    case "east": {
+      if (spec.y !== undefined) return single(addDays(easterSunday(spec.y), spec.n));
+      const [ry] = parts(ref);
+      for (let y = ry; y <= ry + 1; y++) {
+        const cand = addDays(easterSunday(y), spec.n);
+        if (toDays(cand) >= toDays(ref)) return single(cand);
+      }
+      return null;
+    }
+    case "wdw": {
+      const w = weekRange(today, spec.n, weekStart);
+      return single(addDays(w.start, (wdIndex(spec.wd) - weekStart + 7) % 7));
+    }
     case "pdom": {
       // Day d of the month n months from today's month. A day the month lacks (31 in April) is invalid.
       const [ty, tm] = parts(today);

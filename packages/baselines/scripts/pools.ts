@@ -30,7 +30,13 @@ const POOLS: Record<string, string> = {
   "v007 train": "data/v007/train.jsonl",
   "relmonth dev": "data/pool/misc/dev_relmonth.jsonl",
   "families dev": "data/pool/misc/dev_families.jsonl",
+  "persona dev": "data/pool/persona/dev.jsonl",
+  "web dev7": "data/pool/web/dev7.jsonl",
+  "web dev8": "data/pool/web/dev8.jsonl",
+  "web dev9": "data/pool/web/dev9.jsonl",
 };
+// Pools split by line index: even rows develop, odd rows are an internal validation set (score only, failures hidden).
+const HALVES = new Set(["persona dev", "web dev7", "web dev8", "web dev9"]);
 const mod = await import(join(here, "../src", positionals[0] + ".ts"));
 const engine = mod.default;
 const outDir = a.out;
@@ -42,10 +48,14 @@ const fams = new Map<string, [number, number]>();
 let T = 0, C = 0;
 const line = (n: string, t: number, c: number) => `${n.padEnd(18)} n=${String(t).padStart(6)} exact ${(c / t).toFixed(4)}  wrong ${t - c}`;
 const fails: any[] = [];
+const units: [string, string, number | null][] = [];
 for (const [name, rel] of Object.entries(all)) {
+  if (HALVES.has(name)) { units.push([name + " [even]", rel, 0], [name + " [odd]", rel, 1]); } else units.push([name, rel, null]);
+}
+for (const [name, rel, half] of units) {
   const p = rel.startsWith("/") ? rel : join(ROOT, rel);
   if (!existsSync(p)) continue;
-  const rows = readFileSync(p, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l));
+  const rows = readFileSync(p, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)).filter((_, i) => half === null || i % 2 === half);
   let c = 0;
   const outRows: string[] = [];
   for (const r of rows) {
@@ -54,8 +64,8 @@ for (const [name, rel] of Object.entries(all)) {
     c += +good;
     const tag = r.primary_tag ?? "?";
     const st = tags.get(tag) ?? [0, 0]; st[0]++; st[1] += +good; tags.set(tag, st);
-    if (!good) fails.push({ pool: name, id: r.id, text: r.text, exp: r.dsl, got: pred, tag });
-    outRows.push(JSON.stringify({ text: r.text, dsl: pred }));
+    if (!good && half !== 1) fails.push({ pool: name, id: r.id, text: r.text, exp: r.dsl, got: pred, tag });
+    outRows.push(JSON.stringify({ text: r.text, dsl: pred, exp: r.dsl, id: r.id }));
   }
   T += rows.length; C += c;
   console.log(line(name, rows.length, c));

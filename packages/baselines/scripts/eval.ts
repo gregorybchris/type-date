@@ -26,6 +26,7 @@ const REGISTRY: Record<string, { file: string; perDay: boolean; description: str
   h8: { file: "h8.ts", perDay: false, description: "h7 behind a normalization layer for typos and abbreviations, plus day of a relative month, score and dozen." },
   h9: { file: "h9.ts", perDay: false, description: "h8 behind rules for named dates, nth weekday of a relative month, bounded recurrences, weekday exclusions, lone hour words, foreign month names and noise tokens." },
   h10: { file: "h10.ts", perDay: false, description: "h9 behind a rewrite step: an hour with a missing a or p (9m) keeps the hour with an unknown meridiem, so the rest of the phrase is still read." },
+  h11: { file: "h11.ts", perDay: false, description: "h10 behind a layer of general readers: a table of named days and moving holidays (with Easter-relative dates), spoken numbers and clock idioms, numeric and machine date formats, weekday-code meeting patterns, deadline words and frequency words." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.

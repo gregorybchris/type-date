@@ -14,6 +14,11 @@ function localToday(): string {
 /** Engines shown in the demo. The default is the best solution so far (see `specs/engines`). */
 const ENGINES = [
   {
+    id: "h11",
+    label: "h11",
+    note: "22 kB + 28 kB lazy · holidays and Easter, weekday of a relative week, weekday codes, spoken times, deadline words, numeric and machine formats",
+  },
+  {
     id: "h10",
     label: "h10",
     note: "h9 plus a rewrite step: an hour with a dropped a or p (9m) keeps the rest of the range",
@@ -121,7 +126,7 @@ interface Prefs {
   details: boolean;
   rule: boolean;
 }
-const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h10", details: false, rule: false };
+const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h11", details: false, rule: false };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};

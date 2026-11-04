@@ -23,6 +23,8 @@ DATE   := YYYY-MM-DD                            absolute
         | W(+|-)N | M(+|-)N | Y(+|-)N           whole week / month / year relative to now. Expands to a range
         | M@MM | Y@YYYY                         whole named month (nearest on or after today) / whole year
         | DDD@M±N                               day DD of the month N months from this one (`D13@M-1` is the 13th of last month). The month lacks the day: `x`
+        | E(+|-)N | E@YYYY(+|-)N                Easter Sunday plus N days (`E-2` Good Friday, `E+1` Easter Monday), nearest on or after today / in year YYYY (h11)
+        | WD@W(+|-)N                            weekday inside the week N weeks from this one (`tu@W+1` is Tuesday of next week) (h11)
 TIME   := HH:MM                                 24h, known
         | H[:MM]'?'                             hour 1-12, am/pm unknown
 REC    := 'R' ' ' F '/' N [' ' DAYS] [' ' LIMIT] [' ' TIMES] [' ' 's' DATE]
@@ -203,3 +205,97 @@ Existing forms that cover other requested phrases (no change to the DSL):
 - A range end that is a weekday resolves on or after the start: "this weekend through monday" is `d sa>mo` (Saturday to the following Monday).
 - A range end that is a day of month resolves on or after the start: "the first of next month until the 15th" is `d D01@M+1>D15@M+1` (or `D01@M+1>D@15`; same dates). Canonical label: explicit `D15@M+1`.
 - Recurrence bounded on both sides: "business days from nov 2 to nov 20" is `d R d/1 mo,tu,we,th,fr u11-20 s11-02`.
+
+## Easter-relative dates, weekday inside a relative week (added 2026-11-04, h11)
+
+Two single-day forms. Valid wherever a single day is (ranges, lists, anchors, `s` and `u` bounds).
+
+| Form | Input | Output | Resolves (today 2026-11-04, a Wednesday, week starts Sunday) |
+|---|---|---|---|
+| `E±N` | "easter", "easter sunday" | `d E+0` | 2027-03-28 |
+| | "good friday" | `d E-2` | 2027-03-26 |
+| | "easter monday" | `d E+1` | 2027-03-29 |
+| | "2 days before easter" | `d E+0~-2d` | 2027-03-26 |
+| `E@YYYY±N` | "easter 2027" | the engine writes the date: `d 2027-03-28`. `E@2027+0` is the same day and is accepted | 2027-03-28 |
+| `WD@W±N` | "friday of next week" | `d fr@W+1` | 2026-11-13 |
+| | "monday of this week" | `d mo@W+0` | 2026-11-02 (earlier this week) |
+| | "wednesday of last week" | `d we@W-1` | 2026-10-28 |
+
+Rules:
+- `E±N` is the first date on or after today (on or after the range start in a range end) that is Easter Sunday plus N days. N is -70 to 70 (Ash Wednesday `E-46`, Ascension `E+39`, Pentecost `E+49`, Corpus Christi `E+60`). Gregorian Easter (the anonymous algorithm). Orthodox Easter is not covered.
+- `WD@W±N` is the day of the week `W±N` (`W+0` this week, `W+1` next week) that has weekday `WD`. The week starts on the resolver week start (Sunday by default), so `fr@W+0` on a Sunday is the Friday of the same week and `mo@W+0` on a Wednesday is a day in the past. `WD+1` ("the first Friday after today") is not the same as `WD@W+1` for weekdays that come after today in this week (on a Wednesday `fr+1` is this Friday, `fr@W+1` is next Friday).
+- Compatibility rule for engines: `monday of next week` was labelled `mo+1` before this form. When `WD+1`, `WD` or `WD-1` gives the same day as the new form on the reference date, the h11 engine writes the older form; it writes `WD@W±N` only when the dates differ. Both resolve to the same date.
+- "mon to thu next week" is a range `mo+1>th` (end is a bare weekday on or after the start), or `mo@W+1>th` when the old start form would pick another day.
+
+## Named days and moving holidays (h11)
+
+No new forms. The h11 table uses existing ones. Fixed dates are `MM-DD`; moving ones are the nth weekday of a month or `E±N`:
+
+| Day | Form | Day | Form |
+|---|---|---|---|
+| Thanksgiving (US) | `th#4@11` | Canadian Thanksgiving | `mo#2@10` |
+| Labor Day | `mo#1@09` | Memorial Day, Spring bank holiday | `mo#-1@05` |
+| MLK Day | `mo#3@01` | Presidents Day, Family Day | `mo#3@02` |
+| Columbus / Indigenous Peoples Day | `mo#2@10` | Mother's Day (US) | `su#2@05` |
+| Father's Day | `su#3@06` | Victoria Day | `mo#-1@05~-1w` |
+| Black Friday | `th#4@11~+1d` | Cyber Monday | `th#4@11~+4d` |
+| Election Day | `mo#1@11~+1d` | Early May bank holiday | `mo#1@05` |
+| Summer bank holiday | `mo#-1@08` | King's / Queen's Birthday (AU) | `mo#2@06` |
+| Civic Holiday | `mo#1@08` | Arbor Day | `fr#-1@04` |
+| Melbourne Cup Day | `tu#1@11` | Super Bowl Sunday | `su#1@02` |
+| Good Friday, Easter Monday, Palm Sunday, Ash Wednesday, Mardi Gras / Shrove Tuesday, Pentecost | `E-2`, `E+1`, `E-7`, `E-46`, `E-47`, `E+49` | Mothering Sunday | `E-21` |
+
+Fixed days in the table: New Year's Day and Eve, Twelfth Night, Epiphany, Orthodox Christmas, Burns Night, Australia Day, Republic Day (India), Groundhog Day, Waitangi Day, Valentine's, St David's, Pi Day, Ides of March, St Patrick's, April Fools, Tax Day, Earth Day, St George's, Anzac Day, May Day, Star Wars Day, Cinco de Mayo, Flag Day, Juneteenth, Canada Day, Bastille Day, Independence Day, Gandhi Jayanti, Halloween, All Saints, All Souls, Guy Fawkes, Veterans / Remembrance / Armistice Day, Immaculate Conception, Christmas Eve and Day, Boxing Day (also St Stephen's), St Andrew's. Moving lunar holidays (Eid, Diwali, Holi, Lunar New Year, Ramadan, Passover, Hanukkah) stay `x`.
+
+Rules:
+- A holiday next to another date is a label, not a date: "independence day 15th august" is `d 08-15`, "memorial day - monday, may 25, 2026" is `d 2026-05-25`. Two holidays or a holiday and a date joined by "to", "until", "through" or "and" are both used.
+- A stated year gives the concrete date ("thanksgiving 2027" is `d 2027-11-25`, "easter 2027" is `d 2027-03-28`).
+- "every thanksgiving" is `d R m/1 th#4 M@11`; "every christmas" is `d R y/1 12-25`. A recurrence on an Easter-relative day is `x`.
+- Fuzzy periods stay `x`: "christmas week", "easter break", "labor day weekend", "spring break".
+- Bare "valentines", "presidents", "mlk", "st patricks" (without "day") stay `x` (the labelled data treats them as cut-off words).
+
+## Numeric date order (decided 2026-11-04, h11)
+
+The earlier text did not state an order. The labelled pools decide:
+
+| Format | Policy | Example |
+|---|---|---|
+| Slashes | Month first (US). Day first when the first number is over 12 and the second is 12 or less | `04/10/2021` is `2021-04-10`, `13/04/2021` is `2021-04-13` |
+| Dots | Day first when the first number is over 12 (`13.04.2021` is `2021-04-13`). Otherwise month first, as in the pools (`9.8.2013` is `2013-09-08`, `4.7.2025` is `2025-04-07`; three rows) | |
+| Dashes | ISO when year first. `MM-DD-YYYY` month first, `DD-MM-YYYY` when the first number is over 12 | `10-4-21` is `2021-10-04` |
+| Two-digit years | 70-99 are 19xx, 00-69 are 20xx | `12/25/99` is `1999-12-25`, `22DEC78` is `1978-12-22` |
+| Bare `N-M` with a valid month and day | A date `MM-DD`, except when the first number is 6 or more and below the second, and the second is 12 or less (an hour range such as `6-8`, `9-10`) | `11-03` is `d 11-03` |
+| `24/7` | `x` | |
+| Machine formats | ISO week date (`2001-W05-3` is `2001-01-31`, `2001-W05` the week as a range), ISO ordinal date (`2001-123`), ISO year-month (`2021-04` is the month as a range), basic ISO date-time (`20211004T101500Z`), Roman-numeral month (`14 III 1879`, `31.xii.99`), syslog and ctime (zone before the year is skipped), `04/Nov/2023:02:15:33`. Seconds, zones and fractions are dropped | |
+| 24h clock | `0900 hours`, `1745h`, `08.30 hrs`, `at 10 hours`, spoken `oh seven hundred`, `fourteen hundred`, `eighteen forty five` are known times. A time after an ISO `T` is a known time. A time with leading zero or above 12 is known; `10:15` after a date stays `10:15?` | `1430 hrs` is `t 14:30` |
+
+The suggested policy "dotted dates day-first" was not adopted for ambiguous dates: the pools label 3 rows month first (`web dev 9.8.2013`, `7.1.2004`, `real-fmt dev 4.7.2025`) and none day first.
+
+## Deadline words (decided 2026-11-04, h11)
+
+The pools label "by X", "before X", "until X", "no later than X" both as an open start (`d >12-14`, as in this file) and as the date itself (`d 12-14`). Counts over the open pools without `data/v007` (its rows are repeated copies of a few texts; its 210 "by X" rows are all points) and without the odd lines of the four split pools:
+
+| Construction | open start | the date | Policy |
+|---|---|---|---|
+| "by X" | 28 | 56 | Open start when the message is short (under 11 words); the date when it is a long message. Rows with 11 or more words: about 30 points and 2 open. Rows with fewer words: 29 open, 21 points. The length rule scores best of thresholds 9 to 12 on the pooled open data. |
+| "before X" (deadline sense, not "2 days before X") | 35 | about 6 | Open start (same length rule) |
+| "no later than X", "not later than X" | 6 | 2 | Open start, any length |
+| "until X", "till X", "through X" with one date | 34 | about 10 | Open start (same length rule); with a recurrence it is the `u` bound |
+| "due X" | 1 | 61 | The date (h10 already did this) |
+| day of month ("by the 15th" = `D@15`) | 14 | 0 | Open start, any length |
+| "by the end of the day", "by the close of business on friday" (spelled out) | 3 | 0 | Open start (`d >+0d`, `d >fr`). The abbreviations "eod" and "cob" are labelled as the date in 6 rows; h11 leaves them to h10 (open) |
+
+Minority-labelled rows (they disagree with the policy; labels were not edited) are listed in `specs/engines/h11.md`.
+
+## Other label decisions made by h11 (2026-11-04)
+
+- Weekday codes written as letters ("MWF 10-10:50", "t/th 2pm", "tu+th 7:15am", "mon wed fri at 7am", "ttH 9am this quarter") are weekly recurrences (`R w/1 tu,th`) when something follows them (time, month, bound). A bare code list ("tu th sa", "T/Th") stays a date list. `T` is Tuesday, `R` is Thursday only in a joined code of three or more letters.
+- A bare duration or offset ("2 hours", "10 mins", "thirty minutes early") is `x`: the DSL has no hour or minute offsets.
+- Frequency words without days: "daily", "everyday", "nightly", "twice daily" are `d R d/1`; "weekly" `d R w/1`; "monthly" `d R m/1`; "yearly", "annually" `d R y/1`; "afternoons", "night" alone are `x`.
+- Part of day before an hour: "night 9" is `t 21:00`, "morning 8" `t 08:00`, "afternoon 12" `t 12:00`. A part-of-day bound: "morning before 11 am" is `t >11:00`, "evening before 9" `t >21:00`.
+- Two clock times joined only by "and" ("meet at 4pm and 6pm", "every day at 16:00 and 18:00"): the first time (the existing rule for two times without a cue word).
+- A count of occurrences for "every N weeks ... for M weeks" is M/N (`every 2 weeks on monday for 6 weeks` is `n3`).
+- "through <month>" in a weekly or daily recurrence is the last day of that month (`u06-30`); "until <month>" stays `uM@06`.
+- Spoken years and day numbers: "nineteen ninety nine" is `d Y@1999`, "two thousand and five" `d Y@2005`.
+- A correction word ("no", "actually", "i mean", "sorry", "make that") replaces the part it corrects: "uh tuesday no wednesday at ten" is `dt we 10?`.
+- "friday week", "monday fortnight", "a week on friday" are `fr~+1w`, `mo~+2w`.

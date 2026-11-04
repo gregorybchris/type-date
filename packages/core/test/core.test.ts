@@ -956,3 +956,51 @@ describe("h9 forms: nth weekday of a relative month, weekday and day of month, r
     expect(serializeDsl(parseDsl("d R d/1 mo,tu,we,th,fr u11-20 s11-02"))).toBe("d R d/1 mo,tu,we,th,fr u11-20 s11-02");
   });
 });
+
+describe("h11 forms: Easter-relative dates and a weekday inside a relative week", () => {
+  const today = "2026-11-04"; // Wednesday
+  const date = (dsl: string, o: { today: string; weekStart?: 0 | 1 } = { today }) => resolveDsl(dsl, o).start?.date;
+  it("resolves Easter Sunday and offsets to the next occurrence on or after today", () => {
+    expect(date("d E+0")).toBe("2027-03-28");
+    expect(date("d E-2")).toBe("2027-03-26");
+    expect(date("d E+1")).toBe("2027-03-29");
+    expect(date("d E+0", { today: "2026-04-05" })).toBe("2026-04-05"); // today is Easter
+    expect(date("d E-2", { today: "2026-04-05" })).toBe("2027-03-26"); // Good Friday 2026 has passed
+    expect(date("d E+49")).toBe("2027-05-16");
+  });
+  it("computes Easter for known years", () => {
+    const known: [number, string][] = [[2024, "2024-03-31"], [2025, "2025-04-20"], [2026, "2026-04-05"], [2028, "2028-04-16"], [2038, "2038-04-25"]];
+    for (const [y, d] of known) expect(date(`d E@${y}+0`)).toBe(d);
+  });
+  it("accepts a time, a range and a list", () => {
+    const r = resolveDsl("dt E+0 09:00", { today });
+    expect([r.start?.date, r.start?.time]).toEqual(["2027-03-28", "09:00"]);
+    expect(resolveDsl("d E-2>E+1", { today })).toMatchObject({ kind: "range", start: { date: "2027-03-26" }, end: { date: "2027-03-29" } });
+    expect(resolveDsl("d E-2,E+1", { today }).dates).toEqual(["2027-03-26", "2027-03-29"]);
+  });
+  it("round-trips and rejects bad forms", () => {
+    for (const l of ["d E+0", "d E-2", "d E+1", "d E@2027+0", "dt E+0 09:00"]) expect(serializeDsl(parseDsl(l)!)).toBe(l);
+    expect(parseDsl("d E")).toEqual({ mode: "x" });
+    expect(parseDsl("d E+999")).toEqual({ mode: "x" });
+    expect(resolveDsl("d E", { today }).mode).toBe("x");
+  });
+  it("resolves a weekday of a relative week (week starts Sunday)", () => {
+    expect(date("d tu@W+1")).toBe("2026-11-10");
+    expect(date("d fr@W+0")).toBe("2026-11-06");
+    expect(date("d mo@W+0")).toBe("2026-11-02"); // earlier this week
+    expect(date("d su@W+0")).toBe("2026-11-01");
+    expect(date("d we@W-1")).toBe("2026-10-28");
+  });
+  it("follows the week start setting", () => {
+    expect(date("d su@W+0", { today, weekStart: 1 })).toBe("2026-11-08");
+    expect(date("d mo@W+1", { today, weekStart: 1 })).toBe("2026-11-09");
+  });
+  it("accepts a time, a range and an anchor", () => {
+    const r = resolveDsl("dt fr@W+1 15:00", { today });
+    expect([r.start?.date, r.start?.time]).toEqual(["2026-11-13", "15:00"]);
+    expect(resolveDsl("d mo@W+1>fr@W+1", { today })).toMatchObject({ start: { date: "2026-11-09" }, end: { date: "2026-11-13" } });
+    expect(date("d tu@W+1~+1d")).toBe("2026-11-11");
+    expect(serializeDsl(parseDsl("d tu@W+1")!)).toBe("d tu@W+1");
+    expect(parseDsl("d xx@W+1")).toEqual({ mode: "x" });
+  });
+});

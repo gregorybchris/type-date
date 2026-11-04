@@ -17,6 +17,8 @@ export type DateSpec =
   | { k: "qtr"; q: number } // Q@N: nearest quarter on or after today
   | { k: "anc"; base: DateSpec; n: number; u: OffUnit } // DATE~(+|-)N unit
   | { k: "yr"; year: number }
+  | { k: "east"; n: number; y?: number } // E+0 Easter Sunday, E-2 Good Friday, E+1 Easter Monday. y: fixed year (E@2027+0)
+  | { k: "wdw"; wd: Weekday; n: number } // weekday inside a relative week (`tu@W+1`: Tuesday of next week)
   | { k: "dom"; d: number } // day of month only, 1-31
   | { k: "pdom"; d: number; n: number }; // day d of the month n months from this one (D13@M-1)
 

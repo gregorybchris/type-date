@@ -15,6 +15,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `h8` | `src/h8.ts` | h7 behind a normalization layer (`src/h8/`: typo and abbreviation rewrites, day of a relative month, score and dozen). h7 is unchanged except one `export`. | 21.9 kB eager + 10.7 kB lazy |
 | `h9` | `src/h9.ts` | h8 behind rules (`src/h9/`, lazy chunk): named dates, nth weekday of a relative month, weekday plus day of month, ranges with day-of-month or period ends, recurrence bounds and counts, weekday exclusions, lone hour words, foreign month names, noise tokens. h8 unchanged. | 21.9 kB eager + 16.4 kB lazy |
 | `h10` | `src/h10.ts` | h9 behind a rewrite step (`src/h10/rewrite.ts`): `9m` keeps the hour. | same as h9 |
+| `h11` | `src/h11.ts` | h10 behind general readers (`src/h11/`, lazy chunk): a table of named days and moving holidays with Easter-relative dates, spoken numbers and clock idioms, numeric and machine date formats, weekday-code meeting patterns, deadline words by message length, frequency words, corrections, durations before the start. | 22.1 kB eager + 27.9 kB lazy |
 
 Engine ids are the same in the registry (`src/index.ts`, `scripts/eval.ts`), `runs/<id>/`, the dashboard and the picker demo. Notes per engine: `specs/engines/<id>.md`. Each file exports the engine object `hN` and `parseHN`.
 
@@ -66,3 +67,6 @@ For `chrono` the eval calls the engine once for each reference day in `score-res
 - A shell `echo "$RE"` in zsh turns `\b` in a regex into a backspace. Use `printf '%s'` or write the regex from Python when moving it into a file.
 
 - h8: the typo layer must not rewrite words h7 already reads (`exact()` is exported for that check). Skeleton matching needs the typo to be a subsequence of the target, else `form` becomes `from`. A word regex with a lookahead backtracks (`friday9am` became `fridayy9am`); exclude letters in the lookahead. `pst` is a time zone: rewrite it to `past` only before a count.
+
+- h11: the lazy chunk imports h9's `clean` through `import("../h9/all")` (h9/all re-exports it). A static import of `h9/rules` from both lazy chunks makes esbuild put it in a shared chunk that `eval.ts` counts as eager (+5 kB gzip).
+- `scripts/pools.ts` scores the persona and web dev7..dev9 pools in two halves (even lines `[even]` for development, odd lines `[odd]` as an internal validation set, failures of odd lines are not written).

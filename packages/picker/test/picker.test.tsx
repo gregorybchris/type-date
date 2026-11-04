@@ -58,6 +58,18 @@ describe("rendering", () => {
     expect(cells.map((c) => c.textContent)).toEqual(["2", "3", "4", "5"]);
   });
 
+  it("shows the day for an Easter-relative date and for a weekday of a relative week (h11 forms)", async () => {
+    const { type } = setup(table({ e: "d E-2", w: "d tu@W+1" }));
+    type("e");
+    // Good Friday 2027 is 2027-03-26
+    await waitFor(() => expect(screen.getByRole("grid").getAttribute("aria-label")).toBe("March 2027"));
+    expect(screen.getAllByRole("gridcell").filter((c) => c.getAttribute("aria-selected") === "true" || c.dataset.selected).map((c) => c.textContent)).toContain("26");
+    type("w");
+    // Today is Monday 2026-09-14; Tuesday of next week is 2026-09-22
+    await waitFor(() => expect(screen.getByRole("grid").getAttribute("aria-label")).toBe("September 2026"));
+    expect(screen.getAllByRole("gridcell").some((c) => c.textContent === "22" && (c.getAttribute("aria-selected") === "true" || !!c.dataset.selected))).toBe(true);
+  });
+
   it("renders a time range with two selected options", async () => {
     const { type } = setup(table({ t: "t 4?>4:30?" }));
     type("t");

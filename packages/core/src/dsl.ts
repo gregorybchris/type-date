@@ -21,7 +21,7 @@ function validNth(wd: string, nth: number): boolean {
 
 /** Forms that name one day. Lists and anchors accept only these. */
 function isSingleDay(d: DateSpec): boolean {
-  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc";
+  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc" || d.k === "east" || d.k === "wdw";
 }
 
 export function parseDate(s: string): DateSpec | null {
@@ -72,6 +72,11 @@ export function parseDate(s: string): DateSpec | null {
     const d = +m[2]!;
     return inRange(d, 1, 31) ? { k: "wdom", wd: m[1] as Weekday, d } : null;
   }
+  if ((m = s.match(/^E(?:@(\d{4}))?([+-]\d+)$/))) {
+    const n = +m[2]!;
+    return inRange(n, -70, 70) ? { k: "east", n, ...(m[1] ? { y: +m[1] } : {}) } : null;
+  }
+  if ((m = s.match(new RegExp(`^(${WD_RE})@W([+-]\\d+)$`)))) return { k: "wdw", wd: m[1] as Weekday, n: +m[2]! };
   if ((m = s.match(/^([WMYQ])([+-]\d+)$/))) {
     return { k: "per", u: m[1]!.toLowerCase() as "w" | "m" | "y" | "q", n: +m[2]! };
   }
@@ -295,6 +300,10 @@ function fmtDate(d: DateSpec): string {
       return `Y@${d.year}`;
     case "dom":
       return `D@${p2(d.d)}`;
+    case "east":
+      return `E${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}`;
+    case "wdw":
+      return `${d.wd}@W${d.n >= 0 ? "+" : ""}${d.n}`;
     case "pdom":
       return `D${p2(d.d)}@M${d.n >= 0 ? "+" : ""}${d.n}`;
   }

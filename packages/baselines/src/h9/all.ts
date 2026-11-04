@@ -4,6 +4,9 @@ import { normalize } from "../h8/normalize";
 import { afterNext, boundedRec, chained, clean, cueRange, domRange, everyLast, exclusion, loneHour, minutesTo, misc, named, nthOfMonth, recBounds, relAnchor, relMonthRange, sameYear, weekendThrough, wdayDom } from "./rules";
 import { foreign } from "./lang";
 
+/** Re-exported for h11, which loads this lazy module instead of importing h9/rules a second time. */
+export { clean } from "./rules";
+
 /** All h9 rules in front of h8. */
 export const runH9 = (text: string, today?: string): string => {
   const p = (s: string) => parseH8(s, today);
