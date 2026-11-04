@@ -14,12 +14,30 @@
       "unaccounted_s": 0.175,
       "eval_rows": 600,
       "prompt_tokens": 790
+    },
+    "eval-e3": {
+      "stages": {
+        "started_at": "2026-11-04T05:11:35+00:00",
+        "finished_at": "2026-11-04T05:28:19+00:00"
+      },
+      "total_s": 1004.062,
+      "buckets": {
+        "eval_generate": 999.327,
+        "eval_score": 0.704,
+        "model_load": 3.963
+      },
+      "unaccounted_s": 0.068,
+      "eval_rows": 10948,
+      "prompt_tokens": 818
     }
   },
-  "total_s": 616.611,
+  "total_s": 1620.673,
   "buckets": {
     "eval.eval_generate": 573.829,
     "eval.eval_score": 0.83,
-    "eval.model_load": 41.777
+    "eval.model_load": 41.777,
+    "eval-e3.eval_generate": 999.327,
+    "eval-e3.eval_score": 0.704,
+    "eval-e3.model_load": 3.963
   }
 }

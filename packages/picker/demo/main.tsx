@@ -10,6 +10,11 @@ const TODAY = "2026-09-14";
 /** Engines shown in the demo. The default is the best solution so far (see `specs/research/experiments`). */
 const ENGINES = [
   {
+    id: "heuristic-full-4",
+    label: "Heuristic (full v4)",
+    note: "exp-014 · 14.6 kB · 95.1% resolved on eval e3, 94.5% realistic, 89.9% hard external input",
+  },
+  {
     id: "heuristic-full-3",
     label: "Heuristic (full v3)",
     note: "exp-013 · 10.3 kB · 95.5% resolved on eval e2, 93.3% on realistic external input",
@@ -44,7 +49,7 @@ const q = new URLSearchParams(location.search);
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">(q.get("theme") === "dark" ? "dark" : "light");
   const [weekStart, setWeekStart] = useState<0 | 1>(q.get("ws") === "0" ? 0 : 1);
-  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full-3");
+  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full-4");
   const [last, setLast] = useState<{ dsl: string; ms: number } | null>(null);
   const [text, setText] = useState(q.get("q") ?? "");
   const engine = ENGINES.find((e) => e.id === engineId) ?? ENGINES[0];

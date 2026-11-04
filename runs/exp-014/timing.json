@@ -1,0 +1,70 @@
+{
+  "stages": {
+    "eval": {
+      "stages": {
+        "started_at": "2026-11-04T05:28:05.749Z",
+        "finished_at": "2026-11-04T05:28:07.280Z"
+      },
+      "total_s": 1.5309591660000001,
+      "buckets": {
+        "load_data": 0.12640991599999998,
+        "eval_predict": 1.382527,
+        "bundle_size": 0.022028291999999963
+      }
+    },
+    "bench-js-desktop": {
+      "total_s": 1.276,
+      "buckets": {
+        "setup": 0,
+        "esbuild_bundle": 0.066,
+        "server_start": 0.002,
+        "browser_launch": 0.633,
+        "page_open": 0.394,
+        "run_in_browser": 0.105,
+        "write_results": 0.076,
+        "run_in_browser/model_load": 0,
+        "run_in_browser/predictions": 0.045
+      },
+      "rows": 100
+    },
+    "bench-js-mobile-4x": {
+      "total_s": 0.742,
+      "buckets": {
+        "setup": 0,
+        "esbuild_bundle": 0.075,
+        "server_start": 0.001,
+        "browser_launch": 0.115,
+        "page_open": 0.27,
+        "run_in_browser": 0.209,
+        "write_results": 0.072,
+        "run_in_browser/model_load": 0,
+        "run_in_browser/predictions": 0.121
+      },
+      "rows": 100
+    }
+  },
+  "total_s": 3.549,
+  "buckets": {
+    "eval.load_data": 0.12640991599999998,
+    "eval.eval_predict": 1.382527,
+    "eval.bundle_size": 0.022028291999999963,
+    "bench-js-desktop.setup": 0,
+    "bench-js-desktop.esbuild_bundle": 0.066,
+    "bench-js-desktop.server_start": 0.002,
+    "bench-js-desktop.browser_launch": 0.633,
+    "bench-js-desktop.page_open": 0.394,
+    "bench-js-desktop.run_in_browser": 0.105,
+    "bench-js-desktop.write_results": 0.076,
+    "bench-js-desktop.run_in_browser/model_load": 0,
+    "bench-js-desktop.run_in_browser/predictions": 0.045,
+    "bench-js-mobile-4x.setup": 0,
+    "bench-js-mobile-4x.esbuild_bundle": 0.075,
+    "bench-js-mobile-4x.server_start": 0.001,
+    "bench-js-mobile-4x.browser_launch": 0.115,
+    "bench-js-mobile-4x.page_open": 0.27,
+    "bench-js-mobile-4x.run_in_browser": 0.209,
+    "bench-js-mobile-4x.write_results": 0.072,
+    "bench-js-mobile-4x.run_in_browser/model_load": 0,
+    "bench-js-mobile-4x.run_in_browser/predictions": 0.121
+  }
+}
