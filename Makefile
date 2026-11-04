@@ -1,7 +1,7 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo export bench
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo export bench serve serve-stop serve-status
 
 help:  ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -38,3 +38,12 @@ export:  ## ONNX export + int8 quantize: make export EXP=5
 
 bench:  ## Browser benchmark: make bench EXP=5 ARGS="--profile mobile-4x --backend wasm"
 	cd bench && pnpm exec tsx run.ts --exp $(EXP) $(ARGS)
+
+serve:  ## Start supervised dev servers (dashboard 5173, picker demo 5199). Restarts them if they exit.
+	scripts/serve.sh start
+
+serve-stop:  ## Stop the supervised dev servers
+	scripts/serve.sh stop
+
+serve-status:  ## Check both dev servers
+	scripts/serve.sh status
