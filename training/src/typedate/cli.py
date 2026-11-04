@@ -182,7 +182,7 @@ def eval_quick(
     m = quick(
         version, of,
         {"val": 150, "test_template": 150, "test_noise": 100, "test_llm": 200, "test_external": 100,
-         "test_external_hard": 100},
+         "test_external_hard": 100, "test_public": 40, "test_public2": 30, "test_v2": 100, "test_tax": 100},
     )  # fmt: skip
     typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
 
@@ -262,6 +262,31 @@ def data_mix(
         )
     )
     _ = Path
+
+
+@data_app.command("retag")
+def data_retag(
+    paths: list[str] = typer.Argument(..., help="JSONL files (relative to the repo root)"),
+) -> None:
+    """Recompute primary_tag from the label for rows without a generator tag (consensus rows)."""
+    from pathlib import Path
+
+    from .evalsets import tag_from_dsl
+
+    repo = Path(__file__).resolve().parents[3]
+    for rel in paths:
+        p = repo / rel
+        rows = [json.loads(x) for x in p.read_text().splitlines() if x.strip()]
+        n = 0
+        for r in rows:
+            if r.get("source", "").startswith(("grammar", "noise", "prefix", "llm")):
+                continue
+            t = tag_from_dsl(r["dsl"])
+            if t != r.get("primary_tag"):
+                r["primary_tag"] = t
+                n += 1
+        p.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+        typer.echo(f"{rel}: retagged {n} of {len(rows)}")
 
 
 @data_app.command("prepare-batch")

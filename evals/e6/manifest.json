@@ -1,0 +1,95 @@
+{
+  "parent": "e5",
+  "subset_of": null,
+  "reason": "e5 cleaned with the policy decisions of 2026-11-03 (weekday range vs recurrence, bare number after a month date, minute-word-to-hour, every-nth-weekday, start hour before noon, and legacy rows with DSL v2 features that older labels flattened), plus two sealed splits for DSL v2: test_v2 (open ranges, durations, day of month, 224 rows) and test_tax (coverage-taxonomy families: lists, bounded recurrences, month filters, anchored offsets, business days, quarters, 275 rows). New rows come from independent LLM writers (brief lists phrasings, not DSL forms) and two agreeing labelers. Not comparable with e5.",
+  "added_splits": [
+    "test_tax",
+    "test_v2"
+  ],
+  "dropped_by_policy": {
+    "val": {
+      "bare-number-after-month-date": 5,
+      "rows_dropped": 5
+    },
+    "test_template": {
+      "bare-number-after-month-date": 2,
+      "rows_dropped": 2
+    },
+    "test_noise": {
+      "bare-number-after-month-date": 2,
+      "rows_dropped": 2
+    },
+    "test_llm": {
+      "bare-number-after-month-date": 8,
+      "rows_dropped": 12,
+      "v2-feature": 1,
+      "minute-word-to-hour": 2,
+      "every-nth-weekday": 1
+    },
+    "test_external": {
+      "on-weekday-recurrence": 5,
+      "rows_dropped": 21,
+      "minute-word-to-hour": 4,
+      "meridiem": 8,
+      "every-nth-weekday": 1,
+      "dotted-numeric": 3
+    },
+    "test_external_hard": {
+      "v2-feature": 26,
+      "rows_dropped": 32,
+      "minute-word-to-hour": 4,
+      "bare-number-after-month-date": 1,
+      "every-nth-weekday": 1
+    },
+    "test_public": {
+      "bare-number-after-month-date": 7,
+      "rows_dropped": 7
+    },
+    "test_public2": {}
+  },
+  "comparable_with_parent": false,
+  "version": "e6",
+  "created": "2026-11-04T07:00:02+00:00",
+  "files": {
+    "val": {
+      "n": 2505,
+      "sha256": "df26629243ca3b90a6ec307cb0a97e0c551af4291e6e973652788b1c6eed5afd"
+    },
+    "test_template": {
+      "n": 4539,
+      "sha256": "98f90c7d62b20f4cbbae6905a04ed05f5c8e638eca63d2152ae5e455afda6178"
+    },
+    "test_noise": {
+      "n": 1463,
+      "sha256": "c79981388c0c4dee579542237384c7456b49e2df0964bf23b78e4ee9718ddbc1"
+    },
+    "test_llm": {
+      "n": 1289,
+      "sha256": "8b8d9c266a72a1d343488763ab2b01b7ebbd965e94b01fa21376256b71584c93"
+    },
+    "test_external": {
+      "n": 307,
+      "sha256": "cf013b429478467dfe7f0e5f0f776ad77c7bddf4f31d4878a45cbd1fb5eb85d0"
+    },
+    "test_external_hard": {
+      "n": 771,
+      "sha256": "8421c2547a2be590474d15a5cbd32aea26437a991bb436a4a85f6ad7e3c0c1a5"
+    },
+    "test_public": {
+      "n": 211,
+      "sha256": "865525c77b8e1757e1f460045add9a647a78a596210127e89cf25c0bccf045d6"
+    },
+    "test_public2": {
+      "n": 121,
+      "sha256": "b2c6f1d38818765b329b8a97bd50758cbcccb0f90a6814026542e7039dbb143b"
+    },
+    "test_v2": {
+      "n": 224,
+      "sha256": "b7688d80471b0a0ab47a4b477b2d97a92f21abb787e76082651d7421b6994b21"
+    },
+    "test_tax": {
+      "n": 275,
+      "sha256": "420cbb05ff7e7691d43ccf0c3af23d29e64549c039656c4689f46bc7bc86b277"
+    }
+  }
+}

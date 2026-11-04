@@ -1,0 +1,100 @@
+{"id": "e-x0123", "text": "eod fri", "dsl": "d fr", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0124", "text": "jan 3 - jan 10", "dsl": "d 01-03>01-10", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0127", "text": "today at 5", "dsl": "dt +0d 5?", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0111", "text": "mon 9:00-9:30 standup", "dsl": "dt mo 9?>9:30?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0220", "text": "xx", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0131", "text": "nxt yr", "dsl": "d Y+1", "primary_tag": "period-relative", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0253", "text": "weekdays at 9", "dsl": "dt R d/1 mo,tu,we,th,fr 9?", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0321", "text": "this arvo", "dsl": "d +0d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0287", "text": "quarter past six", "dsl": "t 6:15?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0238", "text": "8:30 until 10", "dsl": "t 8:30?>10?", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0009", "text": "wedn", "dsl": "d we", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0141", "text": "wkend", "dsl": "d sa>su", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0218", "text": "fri 1", "dsl": "dt fr 1?", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0194", "text": "yoga 9-10 sat", "dsl": "dt sa 9?>10?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0100", "text": "asdfgh jkl", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0383", "text": "next mnoth", "dsl": "d M+1", "primary_tag": "period-relative", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0366", "text": "annually on june 12", "dsl": "d R y/1 06-12", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0268", "text": "the day after tomorow", "dsl": "d +2d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0075", "text": "8a", "dsl": "t 08:00", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0011", "text": "nine to five", "dsl": "t 9?>5?", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0105", "text": "aug 31", "dsl": "d 08-31", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0237", "text": "next mon-fri", "dsl": "d mo+1>fr+1", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0217", "text": "toomorrow at 5", "dsl": "dt +1d 5?", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0167", "text": "btwn 2 and 4 tmrw", "dsl": "dt +1d 2?>4?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0130", "text": "$450 deposit", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0110", "text": "the week after next", "dsl": "d W+2", "primary_tag": "period-relative", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0094", "text": "every other wk", "dsl": "d R w/2", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0005", "text": "after lunch tmrw", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0042", "text": "half 5", "dsl": "t 5:30?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0184", "text": "6pm-midnight", "dsl": "t 18:00>00:00", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0182", "text": "the 21st of march", "dsl": "d 03-21", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0103", "text": "aug 5 until aug 12", "dsl": "d 08-05>08-12", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0044", "text": "friday at 2", "dsl": "dt fr 2?", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0155", "text": "fri 10am-noon", "dsl": "dt fr 10:00>12:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0118", "text": "ring dave", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0198", "text": "every weekend", "dsl": "d R w/1 sa,su", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0170", "text": "first thing tmrw", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0246", "text": "9 to", "dsl": "t 9?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0196", "text": "6am - 2pm", "dsl": "t 06:00>14:00", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0400", "text": "5 dec 2026", "dsl": "d 2026-12-05", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0154", "text": "from the 4th till the 9th of march", "dsl": "d 03-04>03-09", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0264", "text": "today 3pm", "dsl": "dt +0d 15:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0320", "text": "sat 2 to 4pm", "dsl": "dt sa 14:00>16:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0396", "text": "invoice 4471", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0330", "text": "every monday at 8am", "dsl": "dt R w/1 mo 08:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0297", "text": "tomorow mornin", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0164", "text": "bout 4", "dsl": "t 4?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0347", "text": "two to three pm", "dsl": "t 14:00>15:00", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0311", "text": "satruday morning", "dsl": "d sa", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0251", "text": "mar 3-mar 7", "dsl": "d 03-03>03-07", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0178", "text": "6 pm tomorrow", "dsl": "dt +1d 18:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0309", "text": "from 10 to 12 on saturday", "dsl": "dt sa 10?>12?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0022", "text": "????", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0010", "text": "every day until friday", "dsl": "d R d/1 ufr", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0402", "text": "in a couple wks", "dsl": "d +2w", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0096", "text": "pls schedule for 11:15 am", "dsl": "t 11:15", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0195", "text": "1-2", "dsl": "t 1?>2?", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0145", "text": "7/4/27", "dsl": "d 2027-07-04", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0372", "text": "tues-thurs", "dsl": "d tu>th", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0115", "text": "can u do thurs at 7am?", "dsl": "dt th 07:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0343", "text": "2-4pm sat", "dsl": "dt sa 14:00>16:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0129", "text": "ute rego", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0219", "text": "every mon wed fri", "dsl": "d R w/1 mo,we,fr", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0052", "text": "tmrw eve", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0241", "text": "five o'clock", "dsl": "t 5?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0394", "text": "7a-7p", "dsl": "t 07:00>19:00", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0215", "text": "decmber 19th", "dsl": "d 12-19", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0282", "text": "oct 2 to oct 5", "dsl": "d 10-02>10-05", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0136", "text": "maybe sat noon", "dsl": "dt sa 12:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0046", "text": "tmrw 1pm-2pm", "dsl": "dt +1d 13:00>14:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0392", "text": "call mum", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0152", "text": "every other week on mon", "dsl": "d R w/2 mo", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0021", "text": "later today", "dsl": "d +0d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0374", "text": "half five", "dsl": "t 5:30?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0361", "text": "3:30-4:15", "dsl": "t 3:30?>4:15?", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0049", "text": "satruday nite", "dsl": "d sa", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0213", "text": "weeken", "dsl": "d sa>su", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0211", "text": "jan 5th at 7pm", "dsl": "dt 01-05 19:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0292", "text": "next monday 9 to 11", "dsl": "dt mo+1 9?>11?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0055", "text": "gate b7", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0338", "text": "daily for a week", "dsl": "d R d/1 n7", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0351", "text": "tomorrow morning", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0158", "text": "twenty past 3", "dsl": "t 3:20?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0280", "text": "from 9 till 5", "dsl": "t 9?>5?", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0365", "text": "9 jun", "dsl": "d 06-09", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0363", "text": "july 1st to 4th", "dsl": "d 07-01>07-04", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0389", "text": "2026/12/04 15:00", "dsl": "dt 2026-12-04 15:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0349", "text": "tmrw 9 till 11", "dsl": "dt +1d 9?>11?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0116", "text": "pin 4821", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0353", "text": "evry tuesdy", "dsl": "d R w/1 tu", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0293", "text": "late tmrw nite", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0122", "text": "at 4:", "dsl": "t 4?", "primary_tag": "time-only", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0336", "text": "9-5", "dsl": "t 9?>5?", "primary_tag": "time-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0252", "text": "this coming sat", "dsl": "d sa", "primary_tag": "basic-date", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0144", "text": "apr 3 thru apr 6", "dsl": "d 04-03>04-06", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0071", "text": "monday in the morning at nine", "dsl": "dt mo 09:00", "primary_tag": "datetime", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0204", "text": "mon 7am-7pm", "dsl": "dt mo 07:00>19:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0060", "text": "123 main st", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0326", "text": "every fri 3pm", "dsl": "dt R w/1 fr 15:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}
+{"id": "e-x0018", "text": "this evening", "dsl": "d +0d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "external", "split": "test_external", "parent_id": null, "group": "ext"}

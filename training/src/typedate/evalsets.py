@@ -84,7 +84,8 @@ def quick(version: str, of: str, quotas: dict[str, int]) -> dict:
             if not added:
                 break
             i += 1
-        out[split] = picked
+        if picked:
+            out[split] = picked
     return _write(
         version,
         out,
