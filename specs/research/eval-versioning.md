@@ -37,3 +37,15 @@ Eval sets are separate from training datasets. Training rows must not overlap ev
 ## Costs
 
 Scoring a model on about 12k rows takes about 20 s in PyTorch (MPS) plus the resolver pass. Browser re-scoring is slower and is only done for candidates on the Pareto front. A cut is therefore cheap in compute but must not be frequent, because history in the dashboard and in write-ups gets split across versions.
+
+## Data reuse protocol for heuristic work (adopted 2026-11-03)
+
+We no longer train models, so "training data" is just labeled material for error analysis. The protocol:
+
+1. **One pool.** All consensus-labeled rows go into a pool with metadata: batch, source (LLM writers, public library tests, web research, forum posts), family (see `specs/research/coverage-taxonomy.md`), and difficulty. The pool is the working set for error analysis and rule writing. Anyone tuning the heuristic may read any pool row that is not sealed.
+2. **Sealed test per round.** Each hill-climb round has a sealed test split. Its rows are never read by whoever edits the heuristic. Only aggregate scores and per-family and per-source aggregates are reported. A sealed split is cut from new data, ideally from sources the heuristic author has not tuned on.
+3. **Burn after use.** When a round ends, its sealed split is opened: the failures are analyzed, and the rows move into the pool as dev data. A new sealed split is cut for the next round. A burned split keeps its name and is still reported, marked as `burned`: its score is a development number from then on.
+4. **Report by slice.** Every eval report shows accuracy per family and per source, not only the overall number. A source or family with a large gap is where to look next.
+5. **Hold out whole sources.** At least one sealed split per round comes from a source family the heuristic was not tuned on (for example a different web source), to measure generalization instead of memorization.
+6. **No information leaks.** Failure categories seen by the eval owner do not go into writer briefs or tuning prompts for the sealed rows. If it happens, record it in the manifest `known_issues`.
+7. **Cheap error analysis.** `make robustness` (label-free) and per-family tables run on every iteration. Row-level failure reading happens on dev rows only.
