@@ -1,4 +1,4 @@
-import type { DateSpec, Parsed, Point, RecSpec, TimeSpec, Unit, Weekday } from "./types";
+import type { DateSpec, Duration, OffUnit, Parsed, Point, RecSpec, TimeSpec, Unit, Weekday } from "./types";
 import { WEEKDAYS } from "./types";
 
 const WD_RE = "(?:su|mo|tu|we|th|fr|sa)";
@@ -14,8 +14,27 @@ function validMonthDay(m: number, d: number): boolean {
   return inRange(d, 1, max);
 }
 
+/** Forms that name one day. Lists and anchors accept only these. */
+function isSingleDay(d: DateSpec): boolean {
+  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "dom" || d.k === "anc";
+}
+
 export function parseDate(s: string): DateSpec | null {
   let m: RegExpMatchArray | null;
+  if (s.includes("~")) {
+    if (!(m = s.match(/^([^~]+)~([+-]\d+)([dwmyb])$/))) return null;
+    const base = parseDate(m[1]!);
+    return base && base.k !== "anc" && isSingleDay(base) ? { k: "anc", base, n: +m[2]!, u: m[3] as OffUnit } : null;
+  }
+  if ((m = s.match(/^(\d{2})-(\d{2})<$/))) {
+    const [mo, d] = [+m[1]!, +m[2]!];
+    return validMonthDay(mo, d) ? { k: "abs", y: null, m: mo, d, past: true } : null;
+  }
+  if ((m = s.match(new RegExp(`^(${WD_RE})<$`)))) return { k: "wd", wd: m[1] as Weekday, n: 0, past: true };
+  if ((m = s.match(/^M@(\d{2})<$/))) {
+    return inRange(+m[1]!, 1, 12) ? { k: "mon", month: +m[1]!, past: true } : null;
+  }
+  if ((m = s.match(/^Q@(\d)$/))) return inRange(+m[1]!, 1, 4) ? { k: "qtr", q: +m[1]! } : null;
   if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/))) {
     const [y, mo, d] = [+m[1]!, +m[2]!, +m[3]!];
     return validMonthDay(mo, d) ? { k: "abs", y, m: mo, d } : null;
@@ -24,8 +43,8 @@ export function parseDate(s: string): DateSpec | null {
     const [mo, d] = [+m[1]!, +m[2]!];
     return validMonthDay(mo, d) ? { k: "abs", y: null, m: mo, d } : null;
   }
-  if ((m = s.match(/^([+-]\d+)([dwmy])$/))) {
-    return { k: "off", n: +m[1]!, u: m[2] as Unit };
+  if ((m = s.match(/^([+-]\d+)([dwmyb])$/))) {
+    return { k: "off", n: +m[1]!, u: m[2] as OffUnit };
   }
   if ((m = s.match(new RegExp(`^(${WD_RE})$`)))) {
     return { k: "wd", wd: m[1] as Weekday, n: 0 };
@@ -39,13 +58,14 @@ export function parseDate(s: string): DateSpec | null {
     if (!inRange(month, 1, 12) || nth === 0 || !inRange(nth, -1, 5)) return null;
     return { k: "nth", wd: m[1] as Weekday, nth, month };
   }
-  if ((m = s.match(/^([WMY])([+-]\d+)$/))) {
-    return { k: "per", u: m[1]!.toLowerCase() as "w" | "m" | "y", n: +m[2]! };
+  if ((m = s.match(/^([WMYQ])([+-]\d+)$/))) {
+    return { k: "per", u: m[1]!.toLowerCase() as "w" | "m" | "y" | "q", n: +m[2]! };
   }
   if ((m = s.match(/^M@(\d{2})$/))) {
     return inRange(+m[1]!, 1, 12) ? { k: "mon", month: +m[1]! } : null;
   }
   if ((m = s.match(/^Y@(\d{4})$/))) return { k: "yr", year: +m[1]! };
+  if ((m = s.match(/^D@(\d{1,2})$/))) return inRange(+m[1]!, 1, 31) ? { k: "dom", d: +m[1]! } : null;
   return null;
 }
 
@@ -89,10 +109,19 @@ function parseDays(tok: string, rec: RecSpec): boolean {
     rec.days = tok.split(",") as Weekday[];
     return true;
   }
-  if ((m = tok.match(new RegExp(`^(${WD_RE})#(-?\\d+)$`)))) {
-    const k = +m[2]!;
-    if (k === 0 || !inRange(k, -1, 5)) return false;
-    rec.nth = { wd: m[1] as Weekday, k };
+  if (/^M@\d{2}(,M@\d{2})*$/.test(tok)) {
+    const months = tok.split(",").map((x) => +x.slice(2));
+    if (!months.every((x) => inRange(x, 1, 12))) return false;
+    rec.months = months;
+    return true;
+  }
+  if (new RegExp(`^${WD_RE}#-?\\d+(,${WD_RE}#-?\\d+)*$`).test(tok)) {
+    const nth = tok.split(",").map((x) => {
+      const [wd, k] = x.split("#");
+      return { wd: wd as Weekday, k: +k! };
+    });
+    if (nth.length > 7 || !nth.every((n) => n.k !== 0 && inRange(n.k, -1, 5))) return false;
+    rec.nth = nth;
     return true;
   }
   if (/^d-?\d+(,d-?\d+)*$/.test(tok)) {
@@ -130,14 +159,31 @@ function parseRecurrence(tokens: string[]): RecSpec | null {
     } else if (tok.includes(">") || parseTime(tok)) {
       const [a, b, ...rest] = tok.split(">");
       const ta = a ? parseTime(a) : null;
-      const tb = b ? parseTime(b) : null;
-      if (!ta || rest.length || (b !== undefined && !tb)) return null;
-      rec.time = tb ? { start: ta, end: tb } : { start: ta };
+      const dur = b ? parseDuration(b) : null;
+      const tb = b && !dur ? parseTime(b) : null;
+      if (!ta || rest.length || (b !== undefined && !tb && !dur)) return null;
+      rec.time = dur ? { start: ta, dur } : tb ? { start: ta, end: tb } : { start: ta };
     } else if (!parseDays(tok, rec)) {
       return null;
     }
   }
+  if (rec.nth && rec.nth.length > 1 && rec.freq !== "m") return null;
   return rec;
+}
+
+function parseList(mode: string, tokens: string[]): Parsed {
+  if (tokens.length > 2 || (mode !== "d" && mode !== "dt")) return { mode: "x" };
+  const parts = tokens[0]!.split(",");
+  if (parts.length < 2 || parts.length > 31) return { mode: "x" };
+  const dates: DateSpec[] = [];
+  for (const p of parts) {
+    const spec = parseDate(p);
+    if (!spec || !isSingleDay(spec)) return { mode: "x" };
+    dates.push(spec);
+  }
+  if (mode === "d") return tokens.length === 1 ? { mode, kind: "list", dates } : { mode: "x" };
+  const time = tokens[1] ? parseTime(tokens[1]) : null;
+  return time ? { mode, kind: "list", dates, time } : { mode: "x" };
 }
 
 /** Parse a model output line. Returns `{mode: "x"}` for anything invalid. */
@@ -156,17 +202,45 @@ export function parseDsl(input: string): Parsed {
     if (mode === "t") return { mode: "x" };
     return { mode, kind: "recurrence", rec };
   }
+  if (rest[0]?.includes(",") && !line.includes(">")) return parseList(mode, rest);
   // split on ">" between points. A point may contain spaces.
   const joined = rest.join(" ");
   const halves = joined.split(">");
   if (halves.length > 2) return { mode: "x" };
-  const start = parsePointTokens((halves[0] ?? "").trim().split(" ").filter(Boolean));
-  if (!start) return { mode: "x" };
-  if (!modeMatches(mode, start)) return { mode: "x" };
-  if (halves.length === 1) return { mode, kind: "single", start };
-  const end = parsePointTokens((halves[1] ?? "").trim().split(" ").filter(Boolean));
+  const toks = (s: string | undefined) => (s ?? "").trim().split(" ").filter(Boolean);
+  const left = toks(halves[0]);
+  if (halves.length === 1) {
+    const start = parsePointTokens(left);
+    if (!start || !modeMatches(mode, start)) return { mode: "x" };
+    return { mode, kind: "single", start };
+  }
+  const right = toks(halves[1]);
+  if (!left.length && !right.length) return { mode: "x" };
+  if (!left.length) {
+    const end = parsePointTokens(right);
+    if (!end || !modeMatches(mode, end)) return { mode: "x" };
+    return { mode, kind: "open", open: "start", end };
+  }
+  const start = parsePointTokens(left);
+  if (!start || !modeMatches(mode, start)) return { mode: "x" };
+  if (!right.length) return { mode, kind: "open", open: "end", start };
+  // `+Nm` is also a month offset, so `d 10-05>+1m` stays a v1 date range. In t and dt it is minutes.
+  const dur = right.length === 1 ? right[0]!.match(/^\+\d+([hm])$/) : null;
+  if (dur && (mode !== "d" || dur[1] === "h")) {
+    const duration = mode === "d" ? null : parseDuration(right[0]!);
+    return duration && mode !== "d" ? { mode, kind: "duration", start, duration } : { mode: "x" };
+  }
+  const end = parsePointTokens(right);
   if (!end) return { mode: "x" };
   return { mode, kind: "range", start, end };
+}
+
+function parseDuration(s: string): Duration | null {
+  const m = s.match(/^\+([1-9]\d*)([hm])$/);
+  if (!m) return null;
+  const n = +m[1]!;
+  const u = m[2] as "h" | "m";
+  return inRange(n, 1, u === "h" ? 48 : 1440) ? { n, u } : null;
 }
 
 function modeMatches(mode: "d" | "t" | "dt", p: Point): boolean {
@@ -185,19 +259,25 @@ function fmtDate(d: DateSpec): string {
   const p2 = (n: number) => String(n).padStart(2, "0");
   switch (d.k) {
     case "abs":
-      return d.y === null ? `${p2(d.m)}-${p2(d.d)}` : `${d.y}-${p2(d.m)}-${p2(d.d)}`;
+      return d.y === null ? `${p2(d.m)}-${p2(d.d)}${d.past ? "<" : ""}` : `${d.y}-${p2(d.m)}-${p2(d.d)}`;
     case "off":
       return `${d.n >= 0 ? "+" : ""}${d.n}${d.u}`;
     case "wd":
-      return d.n === 0 ? d.wd : `${d.wd}${d.n > 0 ? "+" : ""}${d.n}`;
+      return d.n === 0 ? `${d.wd}${d.past ? "<" : ""}` : `${d.wd}${d.n > 0 ? "+" : ""}${d.n}`;
     case "nth":
       return `${d.wd}#${d.nth}@${p2(d.month)}`;
     case "per":
       return `${d.u.toUpperCase()}${d.n >= 0 ? "+" : ""}${d.n}`;
     case "mon":
-      return `M@${p2(d.month)}`;
+      return `M@${p2(d.month)}${d.past ? "<" : ""}`;
+    case "qtr":
+      return `Q@${d.q}`;
+    case "anc":
+      return `${fmtDate(d.base)}~${d.n >= 0 ? "+" : ""}${d.n}${d.u}`;
     case "yr":
       return `Y@${d.year}`;
+    case "dom":
+      return `D@${p2(d.d)}`;
   }
 }
 
@@ -210,19 +290,31 @@ export function serializeDsl(p: Parsed): string {
   if (p.mode === "x") return "x";
   if (p.kind === "single") return `${p.mode} ${fmtPoint(p.start)}`;
   if (p.kind === "range") return `${p.mode} ${fmtPoint(p.start)}>${fmtPoint(p.end)}`;
+  if (p.kind === "list") {
+    return `${p.mode} ${p.dates.map(fmtDate).join(",")}${p.time ? ` ${fmtTime(p.time)}` : ""}`;
+  }
+  if (p.kind === "open") {
+    return p.open === "end" ? `${p.mode} ${fmtPoint(p.start)}>` : `${p.mode} >${fmtPoint(p.end)}`;
+  }
+  if (p.kind === "duration") return `${p.mode} ${fmtPoint(p.start)}>+${p.duration.n}${p.duration.u}`;
   const r = p.rec;
   const parts = ["R", `${r.freq}/${r.interval}`];
   if (r.days) parts.push(r.days.join(","));
-  if (r.nth) parts.push(`${r.nth.wd}#${r.nth.k}`);
+  if (r.nth) parts.push(r.nth.map((n) => `${n.wd}#${n.k}`).join(","));
   if (r.monthDays) parts.push(r.monthDays.map((d) => `d${d}`).join(","));
   if (r.yearDay) {
     parts.push(`${String(r.yearDay.m).padStart(2, "0")}-${String(r.yearDay.d).padStart(2, "0")}`);
   }
+  if (r.months) parts.push(r.months.map((x) => `M@${String(x).padStart(2, "0")}`).join(","));
   if (r.count) parts.push(`n${r.count}`);
   if (r.until) parts.push(`u${fmtDate(r.until)}`);
   if (r.time) {
     parts.push(
-      r.time.end ? `${fmtTime(r.time.start)}>${fmtTime(r.time.end)}` : fmtTime(r.time.start),
+      r.time.dur
+        ? `${fmtTime(r.time.start)}>+${r.time.dur.n}${r.time.dur.u}`
+        : r.time.end
+          ? `${fmtTime(r.time.start)}>${fmtTime(r.time.end)}`
+          : fmtTime(r.time.start),
     );
   }
   if (r.start) parts.push(`s${fmtDate(r.start)}`);

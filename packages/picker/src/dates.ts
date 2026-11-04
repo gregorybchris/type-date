@@ -58,6 +58,20 @@ export function timeOptions(extra: (string | undefined)[]): string[] {
   return [...set].sort();
 }
 
+/** "9:30 - 9:45 AM", or "11:30 AM - 1:00 PM" across noon. */
+export const fmtSpan = (a: string, b: string) => {
+  const fa = fmtTime(a);
+  const fb = fmtTime(b);
+  return fa.slice(-2) === fb.slice(-2) ? `${fa.slice(0, -3)} - ${fb}` : `${fa} - ${fb}`;
+};
+
+/** 45 min, 2 h, 1 h 30 min. */
+export const fmtDuration = (min: number) => {
+  const h = Math.floor(min / 60);
+  const m = min % 60;
+  return [h && `${h} h`, m && `${m} min`].filter(Boolean).join(" ");
+};
+
 /** Shift a HH:MM time by 12 hours. */
 export const flip12 = (t: string) => {
   const [h, m] = t.split(":").map(Number) as [number, number];
@@ -70,15 +84,21 @@ const ord = (n: number) => {
   return `${n}${s[(v - 20) % 10] ?? s[v] ?? s[0]}`;
 };
 
+/** "August", "June, July". */
+export const monthNames = (months: number[]) => months.map((m) => MONTH[m - 1]).join(", ");
+
 export function describeRecurrence(r: ResolvedRecurrence): string {
   const unit = { d: "day", w: "week", m: "month", y: "year" }[r.freq];
   let s = r.interval > 1 ? `Every ${r.interval} ${unit}s` : `Every ${unit}`;
   if (r.days?.length) s += ` on ${r.days.map((d) => WD_LABEL[d]).join(", ")}`;
   if (r.monthDays?.length)
     s += ` on the ${r.monthDays.map((d) => (d < 0 ? "last day" : ord(d))).join(", ")}`;
-  if (r.nth) s += ` on the ${r.nth.k < 0 ? "last" : ord(r.nth.k)} ${WD_LABEL[r.nth.wd]}`;
+  for (const [i, n] of (r.nths ?? (r.nth ? [r.nth] : [])).entries()) {
+    s += `${i ? "," : " on the"} ${n.k < 0 ? "last" : ord(n.k)} ${WD_LABEL[n.wd]}`;
+  }
+  if (r.months) s += ` in ${monthNames(r.months)}`;
   if (r.yearDay) s += ` on ${MON[r.yearDay.m - 1]} ${r.yearDay.d}`;
-  if (r.time) s += ` at ${fmtTime(r.time.start)}${r.time.end ? ` to ${fmtTime(r.time.end)}` : ""}`;
+  if (r.time) s += ` at ${r.time.end ? fmtSpan(r.time.start, r.time.end) : fmtTime(r.time.start)}`;
   if (r.count) s += `, ${r.count} times`;
   if (r.until) s += ` until ${fmtDate(r.until)}`;
   return s;

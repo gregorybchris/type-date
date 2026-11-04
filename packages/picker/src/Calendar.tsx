@@ -1,4 +1,4 @@
-import { addDays, addMonths } from "@type-date/core";
+import { addDays, addMonths, daysInMonth } from "@type-date/core";
 import { useEffect, useRef, useState } from "react";
 import { DOW, fmtDate, fromIndex, gridDays, monthLabel, ymd, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
@@ -10,6 +10,10 @@ export interface Selection {
   hi: string | null;
   /** Recurrence occurrence dates. */
   occ: Set<string>;
+  /** One-sided range: the fill runs to the edge of the visible month on the open side. */
+  open?: "start" | "end";
+  /** Date list: each day is selected on its own, with no range fill. */
+  multi?: Set<string>;
 }
 
 interface Props {
@@ -59,6 +63,11 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
     if (next.slice(0, 7) !== tabDate.slice(0, 7)) onView(viewOf(next));
   };
 
+  const mStart = ymd(view.y, view.m, 1);
+  const mEnd = ymd(view.y, view.m, daysInMonth(view.y, view.m));
+  const open = sel.open;
+  const lo = open === "start" ? mStart : sel.lo;
+  const hi = open === "end" ? mEnd : sel.hi;
   const rows = Array.from({ length: 6 }, (_, r) => days.slice(r * 7, r * 7 + 7));
   const label = monthLabel(view);
 
@@ -88,13 +97,16 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
             <div role="row" className="td-row" key={r}>
               {row.map((d) => {
                 const out = d.slice(0, 7) !== `${view.y}-${String(view.m).padStart(2, "0")}`;
-                const { lo, hi } = sel;
                 let pos: string | undefined;
-                if (lo && hi && d >= lo && d <= hi) {
-                  pos = lo === hi ? "single" : d === lo ? "start" : d === hi ? "end" : "mid";
+                if (lo && hi && d >= lo && d <= hi && !(open && out)) {
+                  const trueLo = open !== "start" && d === lo;
+                  const trueHi = open !== "end" && d === hi;
+                  pos = trueLo && trueHi ? "single" : trueLo ? "start" : trueHi ? "end" : "mid";
+                  if (open && !trueLo && !trueHi && lo === hi) pos = "mid";
                 }
+                const edge = pos === "mid" && open && (open === "end" ? d === mEnd : d === mStart) ? open : undefined;
                 const occ = sel.occ.has(d);
-                const selected = !!pos || (occ && d === [...sel.occ][0]);
+                const selected = !!pos || sel.multi?.has(d) || (occ && d === [...sel.occ][0]);
                 return (
                   <div
                     role="gridcell"
@@ -102,6 +114,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                     className="td-cell"
                     aria-selected={selected}
                     data-range={pos}
+                    data-edge={edge}
                     data-out={out || undefined}
                     data-today={d === today || undefined}
                     data-occ={occ || undefined}

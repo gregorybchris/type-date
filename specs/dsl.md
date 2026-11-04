@@ -157,3 +157,11 @@ Additional v2 rules (from labeling feedback):
 - An open start may carry a date and a time: `dt >+0d 21:00` ("by 9pm tonight").
 
 Canonical order inside a recurrence (serializer output): frequency, days or nth list or month days or year day, month filter, count, until (`u`), time, start (`s`). The parser accepts any order; labels are canonicalized when stored. Examples above use this order (until before start).
+
+## Resolver notes for v2 (implementation, `packages/core`)
+
+- `Resolved.open` is `"start"` or `"end"` for one-sided ranges (`kind` is `"range"`, the missing side is absent). `durationMin` is set for `PT>+N` ranges and for none else. `endNextDay: true` marks a time-only duration whose end is on a later day (any number of days; `end.date` stays absent). Date lists use `kind: "list"` with `dates` and optional `time`. A recurrence with an `s` bound has `recurrence.from`. A month filter gives `recurrence.months`. An nth list gives `recurrence.nths` (`nth` holds the first).
+- In a range end, `+Nm` after a date-only start (`d 10-05>+1m`) is still a month offset. In `t` and `dt` it is minutes, and an invalid N is `x`.
+- `+0b` is today on a weekday and the next Monday on a weekend. From a weekend, `+1b` is the next Monday and `-1b` the previous Friday.
+- `<` uses today, not the range start, as its reference.
+- Date lists drop duplicate dates after resolving.

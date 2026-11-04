@@ -9,6 +9,7 @@ import type {
   ResolvedPoint,
   ResolvedRecurrence,
   TimeSpec,
+  OffUnit,
   Unit,
   Weekday,
 } from "./types";
@@ -51,6 +52,31 @@ export function addMonths(s: string, n: number): string {
   return ymd(ny, nm, Math.min(d, daysInMonth(ny, nm)));
 }
 
+const isWeekend = (s: string) => weekdayOf(s) % 6 === 0;
+
+/** Move `n` business days (Mon-Fri). From a weekend, +1b is the next Monday and -1b the previous Friday. +0b rolls forward. */
+export function addBusinessDays(s: string, n: number): string {
+  let d = s;
+  if (n === 0) {
+    while (isWeekend(d)) d = addDays(d, 1);
+    return d;
+  }
+  const step = n < 0 ? -1 : 1;
+  for (let left = Math.abs(n); left > 0; ) {
+    d = addDays(d, step);
+    if (!isWeekend(d)) left--;
+  }
+  return d;
+}
+
+function applyOffset(s: string, n: number, u: OffUnit): string {
+  if (u === "d") return addDays(s, n);
+  if (u === "w") return addDays(s, n * 7);
+  if (u === "m") return addMonths(s, n);
+  if (u === "y") return addMonths(s, n * 12);
+  return addBusinessDays(s, n);
+}
+
 export function localToday(): string {
   const n = new Date();
   return ymd(n.getFullYear(), n.getMonth() + 1, n.getDate());
@@ -78,6 +104,11 @@ interface DateRange {
   end: string;
 }
 
+function quarter(y: number, q: number): DateRange {
+  const m = (q - 1) * 3 + 1;
+  return { start: ymd(y, m, 1), end: ymd(y, m + 2, daysInMonth(y, m + 2)) };
+}
+
 function weekRange(today: string, n: number, weekStart: 0 | 1): DateRange {
   const back = (weekdayOf(today) - weekStart + 7) % 7;
   const start = addDays(today, -back + n * 7);
@@ -95,6 +126,15 @@ export function resolveDate(
   switch (spec.k) {
     case "abs": {
       if (spec.y !== null) return single(ymd(spec.y, spec.m, spec.d));
+      if (spec.past) {
+        const [ty] = parts(today);
+        for (let y = ty; y >= ty - 8; y--) {
+          if (spec.d > daysInMonth(y, spec.m)) continue;
+          const cand = ymd(y, spec.m, spec.d);
+          if (toDays(cand) <= toDays(today)) return single(cand);
+        }
+        return null;
+      }
       const [ry] = parts(ref);
       for (let y = ry; y <= ry + 8; y++) {
         if (spec.d > daysInMonth(y, spec.m)) continue;
@@ -103,13 +143,17 @@ export function resolveDate(
       }
       return null;
     }
-    case "off": {
-      if (spec.u === "d") return single(addDays(today, spec.n));
-      if (spec.u === "w") return single(addDays(today, spec.n * 7));
-      if (spec.u === "m") return single(addMonths(today, spec.n));
-      return single(addMonths(today, spec.n * 12));
+    case "off":
+      return single(applyOffset(today, spec.n, spec.u));
+    case "anc": {
+      const base = resolveDate(spec.base, today, ref, weekStart);
+      return base ? single(applyOffset(base.start, spec.n, spec.u)) : null;
     }
     case "wd": {
+      if (spec.n === 0 && spec.past) {
+        const back = (weekdayOf(today) - wdIndex(spec.wd) + 7) % 7;
+        return single(addDays(today, -back));
+      }
       if (spec.n === 0) return single(nextWeekday(ref, spec.wd));
       if (spec.n > 0) {
         return single(addDays(nextWeekday(addDays(today, 1), spec.wd), (spec.n - 1) * 7));
@@ -128,6 +172,10 @@ export function resolveDate(
     case "per": {
       if (spec.u === "w") return weekRange(today, spec.n, weekStart);
       const [y, m] = parts(today);
+      if (spec.u === "q") {
+        const idx = y * 4 + Math.floor((m - 1) / 3) + spec.n;
+        return quarter(Math.floor(idx / 4), (idx % 4 + 4) % 4 + 1);
+      }
       if (spec.u === "m") {
         const idx = y * 12 + (m - 1) + spec.n;
         const ny = Math.floor(idx / 12);
@@ -136,7 +184,20 @@ export function resolveDate(
       }
       return { start: ymd(y + spec.n, 1, 1), end: ymd(y + spec.n, 12, 31) };
     }
+    case "qtr": {
+      const [ry] = parts(ref);
+      for (let y = ry; y <= ry + 1; y++) {
+        const q = quarter(y, spec.q);
+        if (toDays(q.end) >= toDays(ref)) return q;
+      }
+      return null;
+    }
     case "mon": {
+      if (spec.past) {
+        const [ty, tm] = parts(today);
+        const y = spec.month <= tm ? ty : ty - 1;
+        return { start: ymd(y, spec.month, 1), end: ymd(y, spec.month, daysInMonth(y, spec.month)) };
+      }
       const [ry] = parts(ref);
       for (let y = ry; y <= ry + 1; y++) {
         const end = ymd(y, spec.month, daysInMonth(y, spec.month));
@@ -146,6 +207,19 @@ export function resolveDate(
     }
     case "yr":
       return { start: ymd(spec.year, 1, 1), end: ymd(spec.year, 12, 31) };
+    case "dom": {
+      // Months with fewer days are skipped. 4 years of months always contain a 31st and a leap 29th.
+      const [ry, rm] = parts(ref);
+      for (let i = 0; i < 60; i++) {
+        const idx = ry * 12 + (rm - 1) + i;
+        const y = Math.floor(idx / 12);
+        const m = (idx % 12) + 1;
+        if (spec.d > daysInMonth(y, m)) continue;
+        const cand = ymd(y, m, spec.d);
+        if (toDays(cand) >= toDays(ref)) return single(cand);
+      }
+      return null;
+    }
   }
 }
 
@@ -189,7 +263,11 @@ function toResolvedRec(rec: RecSpec, dtstart: string, today: string): ResolvedRe
   const out: ResolvedRecurrence = { freq: rec.freq, interval: rec.interval, dtstart };
   if (rec.days) out.days = rec.days;
   if (rec.monthDays) out.monthDays = rec.monthDays;
-  if (rec.nth) out.nth = rec.nth;
+  if (rec.nth) {
+    out.nth = rec.nth[0]!;
+    if (rec.nth.length > 1) out.nths = rec.nth;
+  }
+  if (rec.months) out.months = rec.months;
   if (rec.yearDay) out.yearDay = rec.yearDay;
   if (rec.count) out.count = rec.count;
   if (rec.until) {
@@ -220,6 +298,7 @@ function occurrencesFrom(
   const dayOk = (n: number): boolean => {
     const s = fromDays(n);
     const [y, m, d] = parts(s);
+    if (r.months && !r.months.includes(m)) return false;
     if (r.freq === "d") {
       if ((n - startN) % r.interval !== 0) return false;
       return !r.days || r.days.includes(WEEKDAYS[weekdayOf(s)] as Weekday);
@@ -233,9 +312,8 @@ function occurrencesFrom(
     if (r.freq === "m") {
       const [sy, sm] = parts(r.dtstart);
       if (((y - sy) * 12 + (m - sm)) % r.interval !== 0) return false;
-      if (r.nth) {
-        return nthWeekdayOfMonth(y, m, r.nth.wd, r.nth.k) === s;
-      }
+      const nths = r.nths ?? (r.nth ? [r.nth] : null);
+      if (nths) return nths.some((x) => nthWeekdayOfMonth(y, m, x.wd, x.k) === s);
       const mds = r.monthDays ?? [parts(r.dtstart)[2]];
       return mds.some((md) => (md === -1 ? d === daysInMonth(y, m) : d === md));
     }
@@ -278,7 +356,9 @@ export function toRRule(r: ResolvedRecurrence): string {
   const p = [`FREQ=${RR_FREQ[r.freq]}`];
   if (r.interval > 1) p.push(`INTERVAL=${r.interval}`);
   if (r.days) p.push(`BYDAY=${r.days.map((d) => RR_DAY[d]).join(",")}`);
-  if (r.nth) p.push(`BYDAY=${r.nth.k}${RR_DAY[r.nth.wd]}`);
+  const nths = r.nths ?? (r.nth ? [r.nth] : []);
+  if (nths.length) p.push(`BYDAY=${nths.map((x) => `${x.k}${RR_DAY[x.wd]}`).join(",")}`);
+  if (r.months) p.push(`BYMONTH=${r.months.join(",")}`);
   if (r.monthDays) p.push(`BYMONTHDAY=${r.monthDays.join(",")}`);
   if (r.yearDay) p.push(`BYMONTH=${r.yearDay.m}`, `BYMONTHDAY=${r.yearDay.d}`);
   if (r.count) p.push(`COUNT=${r.count}`);
@@ -329,13 +409,64 @@ export function resolveParsed(parsed: Parsed, options: ResolveOptions = {}): Res
     const rr = toResolvedRec(rec, startRef ?? from, today);
     // the series anchor is the first match, so interval counting starts there
     rr.dtstart = dtstart;
+    if (startRef) rr.from = startRef;
     if (rec.time) {
       const s = resolveStartTime(rec.time.start);
-      const e = rec.time.end ? resolveEndTime(rec.time.end, s) : undefined;
+      let e = rec.time.end ? resolveEndTime(rec.time.end, s) : undefined;
+      if (rec.time.dur) {
+        const mins = rec.time.dur.u === "h" ? rec.time.dur.n * 60 : rec.time.dur.n;
+        const total = (Number(s.slice(0, 2)) * 60 + Number(s.slice(3)) + mins) % 1440;
+        e = hm(Math.floor(total / 60), total % 60);
+      }
       rr.time = e ? { start: s, end: e } : { start: s };
     }
     const amb = !!(rec.time?.start.amb || rec.time?.end?.amb);
     return { mode, kind: "recurrence", recurrence: rr, ambiguous: amb };
+  }
+
+  if (parsed.kind === "open") {
+    if (parsed.open === "end") {
+      const s = resolvePoint(parsed.start, today, today, weekStart, {});
+      if (!s) return { mode: "x", kind: "none", ambiguous: false };
+      const start = s.range ? { ...s.point, date: s.range.start } : s.point;
+      return { mode, kind: "range", open: "end", start, ambiguous: s.amb };
+    }
+    const e = resolvePoint(parsed.end, today, today, weekStart, { isEnd: true });
+    if (!e) return { mode: "x", kind: "none", ambiguous: false };
+    const end = e.range ? { ...e.point, date: e.range.end } : e.point;
+    return { mode, kind: "range", open: "start", end, ambiguous: e.amb };
+  }
+
+  if (parsed.kind === "duration") {
+    const s = resolvePoint(parsed.start, today, today, weekStart, {});
+    if (!s || !s.point.time) return { mode: "x", kind: "none", ambiguous: false };
+    const start = s.range ? { ...s.point, date: s.range.start } : s.point;
+    const mins = parsed.duration.u === "h" ? parsed.duration.n * 60 : parsed.duration.n;
+    const total = Number(start.time!.slice(0, 2)) * 60 + Number(start.time!.slice(3)) + mins;
+    const days = Math.floor(total / 1440);
+    const end: ResolvedPoint = { time: hm(Math.floor((total % 1440) / 60), total % 60) };
+    if (start.date) end.date = addDays(start.date, days);
+    return {
+      mode,
+      kind: "range",
+      start,
+      end,
+      durationMin: mins,
+      ...(!start.date && days > 0 ? { endNextDay: true as const } : {}),
+      ambiguous: s.amb,
+    };
+  }
+
+  if (parsed.kind === "list") {
+    const set = new Set<string>();
+    for (const spec of parsed.dates) {
+      const x = resolveDate(spec, today, today, weekStart);
+      if (!x) return { mode: "x", kind: "none", ambiguous: false };
+      set.add(x.start);
+    }
+    const dates = [...set].sort();
+    if (!parsed.time) return { mode, kind: "list", dates, ambiguous: false };
+    return { mode, kind: "list", dates, time: resolveStartTime(parsed.time), ambiguous: parsed.time.amb };
   }
 
   const start = resolvePoint(parsed.start, today, today, weekStart, {});

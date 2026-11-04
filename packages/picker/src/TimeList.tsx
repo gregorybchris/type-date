@@ -6,10 +6,12 @@ interface Props {
   end?: string;
   /** Time to scroll to. */
   active?: string;
+  /** One-sided range: highlight every option after `start` or before `end`. */
+  open?: "start" | "end";
   onPick: (time: string) => void;
 }
 
-export function TimeList({ start, end, active, onPick }: Props) {
+export function TimeList({ start, end, active, open, onPick }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const options = timeOptions([start, end]);
 
@@ -45,6 +47,7 @@ export function TimeList({ start, end, active, onPick }: Props) {
           data-time={t}
           className="td-opt"
           aria-selected={t === start || t === end}
+          data-in={(open === "end" && !!start && t > start) || (open === "start" && !!end && t < end) || undefined}
           tabIndex={t === tabbable ? 0 : -1}
           onClick={() => onPick(t)}
         >

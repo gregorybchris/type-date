@@ -7,6 +7,7 @@ export {
   occurrences,
   toRRule,
   addDays,
+  addBusinessDays,
   addMonths,
   daysInMonth,
   weekdayOf,

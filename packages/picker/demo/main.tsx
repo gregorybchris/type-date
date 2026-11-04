@@ -53,7 +53,33 @@ const EXAMPLES = [
   "noon",
 ];
 
+/** DSL v2 lines for a few phrases. The heuristic engines do not produce v2 yet. Enabled with `?parse=v2demo`. */
+const V2_DEMO: Record<string, string> = {
+  "after 2pm": "t 14:00>",
+  "before noon": "t >12:00",
+  "after oct 5": "d 10-05>",
+  "until friday": "d >fr",
+  "by 9pm tonight": "dt >+0d 21:00",
+  "the 15th": "d D@15",
+  "the 31st": "d D@31",
+  "3pm for 2 hours": "t 15:00>+2h",
+  "tomorrow 9am for 90 min": "dt +1d 09:00>+90m",
+  "11pm for 2 hours": "t 23:00>+2h",
+  "oct 2, oct 9 and oct 16": "d 10-02,10-09,10-16",
+  "nov 5 and 12 at 3pm": "dt 11-05,11-12 15:00",
+  "tuesdays in march": "d R w/1 tu uM@03 sM@03",
+  "mon tue wed over the past 6 weeks": "d R w/1 mo,tu,we u+0d s-6w",
+  "first and third tuesday of every month": "d R m/1 tu#1,tu#3",
+  "weekdays every august": "d R d/1 mo,tu,we,th,fr M@08",
+  "standup every day 9:30 for 15 min": "dt R d/1 09:30>+15m",
+  "this quarter": "d Q+0",
+  "3 days before dec 15": "d 12-15~-3d",
+  "3 business days from now": "d +3b",
+};
+const V2_CHIPS = Object.keys(V2_DEMO);
+
 const q = new URLSearchParams(location.search);
+const V2 = q.get("parse") === "v2demo";
 /** The real current date. `?today=YYYY-MM-DD` overrides it (used by the screenshot scripts). */
 const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(q.get("today") ?? "") ? (q.get("today") as string) : localToday();
 
@@ -67,6 +93,11 @@ function App() {
 
   const parse = useCallback(
     async (t: string) => {
+      const hit = V2 ? V2_DEMO[t.trim().toLowerCase().replace(/\s+/g, " ")] : undefined;
+      if (hit) {
+        setLast({ dsl: hit, ms: 0 });
+        return hit;
+      }
       const e = baselines[engineId];
       if (!e) return "x";
       const r = await e.predict(t.trim().toLowerCase().replace(/\s+/g, " "), undefined, { today: TODAY });
@@ -117,7 +148,7 @@ function App() {
       />
       <p className="demo-try">
         Try:{" "}
-        {EXAMPLES.map((ex) => (
+        {(V2 ? [...V2_CHIPS, ...EXAMPLES.slice(0, 4)] : EXAMPLES).map((ex) => (
           <button key={ex} className="demo-chip" onClick={() => setText(ex)}>
             {ex}
           </button>

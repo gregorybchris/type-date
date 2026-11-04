@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
-import { describeRecurrence, fmtDate, fmtShort, fmtTime, viewIndex, viewOf } from "./dates";
+import { describeRecurrence, fmtDate, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
 import { flipMeridiem, pickDate, pickTime, summarize } from "./edit";
 import type { Target } from "./edit";
@@ -57,6 +57,9 @@ function Field(props: { icon?: boolean; active?: boolean; onClick: () => void; c
   );
 }
 
+/** "Mar 1", or "Mar 1, 2027" when the year is not the current one. */
+const fmtBound = (d: string, today: string) => (d.slice(0, 4) === today.slice(0, 4) ? fmtShort(d) : fmtDate(d));
+
 export function TypeDatePicker(props: TypeDatePickerProps) {
   const { parse, value, theme = "system", weekStart = 0, debounceMs = 120 } = props;
   const today = useMemo(() => props.today ?? localToday(), [props.today]);
@@ -107,7 +110,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       latest.current.result = r;
       setResult(r);
       setTarget("start");
-      const d = r.recurrence?.dtstart ?? r.start?.date ?? r.end?.date;
+      const d = r.recurrence?.dtstart ?? r.dates?.[0] ?? r.start?.date ?? r.end?.date;
       if (d) show(viewOf(d));
       if (notify) latest.current.onChange?.(r);
     },
@@ -188,7 +191,15 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   const sel: Selection = useMemo(() => {
     if (!result) return { lo: null, hi: null, occ: new Set() };
     if (rec) {
-      return { lo: null, hi: null, occ: new Set(occurrences(rec, 120, weekStart)) };
+      return { lo: null, hi: null, occ: new Set(occurrences(rec, 400, weekStart)) };
+    }
+    if (result.kind === "list" && result.dates) {
+      return { lo: result.dates[0] ?? null, hi: null, occ: new Set(), multi: new Set(result.dates) };
+    }
+    if (result.open) {
+      const lo = result.start?.date ?? null;
+      const hi = result.end?.date ?? null;
+      return { lo, hi, occ: new Set(), open: result.open };
     }
     const a = result.start?.date;
     const b = result.kind === "range" ? (result.end?.date ?? a) : a;
@@ -210,21 +221,35 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     latest.current.result = r;
     setResult(r);
     latest.current.onChange?.(r);
-    if (result.kind === "range" && target === "start") setTarget("end");
+    if (result.kind === "range" && !result.open && !result.durationMin && target === "start") setTarget("end");
   };
 
-  const startTime = rec ? rec.time?.start : result?.start?.time;
+  const isList = result?.kind === "list";
+  const startTime = rec ? rec.time?.start : isList ? result?.time : result?.start?.time;
   const endTime = rec ? rec.time?.end : result?.end?.time;
-  const activeTime = result?.kind === "range" && target === "end" ? endTime : startTime;
+  const open = result?.open;
+  const tgt: Target = open === "start" ? "end" : open === "end" ? "start" : target;
+  const activeTime = result?.kind === "range" && tgt === "end" ? endTime : startTime;
   const meridiem = startTime ? (Number(startTime.slice(0, 2)) < 12 ? "AM" : "PM") : undefined;
   const summary = muted ? `No date found. Showing last result: ${summarize(result)}` : summarize(result);
-  const dateOf = (k: Target) => result?.[k]?.date;
+  const dateOf = (k: Target) => (k === "start" ? (result?.start?.date ?? result?.dates?.[0]) : result?.end?.date);
   const isRange = result?.kind === "range";
   const jump = (k: Target) => {
     setTarget(k);
     const d = dateOf(k);
     if (d) show(viewOf(d));
   };
+
+  const chip = open
+    ? summarize(result)
+    : isList && result?.dates
+      ? `${result.dates.length} dates`
+      : result?.durationMin
+        ? `${fmtDuration(result.durationMin)}${result.endNextDay ? ", ends next day" : ""}`
+        : null;
+  const upcoming = [...sel.occ].filter((d) => d >= today);
+  const nextList = (upcoming.length ? upcoming : [...sel.occ].slice(-3)).slice(0, 3);
+  const bound = rec?.from && rec.until ? `${fmtBound(rec.from, today)} - ${fmtBound(rec.until, today)}` : null;
 
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
 
@@ -263,6 +288,13 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
             <Field active onClick={() => jump("start")}>
               {describeRecurrence(rec)}
             </Field>
+          ) : isList && result?.dates ? (
+            <div className="td-fg">
+              <Field icon active onClick={() => jump("start")}>
+                {result.dates.length} dates
+              </Field>
+              {showTime && startTime && <Field active onClick={() => setTarget("start")}>{fmtTime(startTime)}</Field>}
+            </div>
           ) : (
             <>
               <div className="td-fg">
@@ -272,17 +304,18 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
                   </Field>
                 )}
                 {showTime && startTime && (
-                  <Field active={target === "start"} onClick={() => setTarget("start")}>
+                  <Field active={tgt === "start"} onClick={() => setTarget("start")}>
                     {fmtTime(startTime)}
                   </Field>
                 )}
               </div>
-              {isRange && (
+              {isRange && open !== "end" && (
                 <div className="td-fg">
-                  <span className="td-to">to</span>
+                  {!open && <span className="td-to">to</span>}
                   {showTime && endTime && (
-                    <Field active={target === "end"} onClick={() => setTarget("end")}>
+                    <Field active={tgt === "end"} onClick={() => setTarget("end")}>
                       {fmtTime(endTime)}
+                      {result?.endNextDay ? " (+1 day)" : ""}
                     </Field>
                   )}
                   {showCal && dateOf("end") && (mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
@@ -313,20 +346,24 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
         </div>
         <div className="td-panel td-panel-time" aria-hidden={!showTime} ref={inertRef(showTime)}>
           <div className="td-panel-in">
-            <TimeList start={startTime} end={endTime} active={activeTime} onPick={onPickTime} />
+            <TimeList start={startTime} end={endTime} active={activeTime} open={open} onPick={onPickTime} />
           </div>
         </div>
       </div>
 
-      <Collapse open={!!rec || (!!result?.ambiguous && showTime) || muted || !!anchor}>
+      <Collapse open={!!rec || !!chip || (!!result?.ambiguous && showTime) || muted || !!anchor}>
         <div className="td-extras">
           {muted && <span className="td-note">No date found. Showing the last result.</span>}
           {anchor && !muted && <span className="td-note">Tap an end date</span>}
+          {chip && <span className="td-chip">{chip}</span>}
           {rec && (
             <div className="td-rec">
               <code className="td-rrule">{toRRule(rec)}</code>
+              {rec.months && <span className="td-chip">Every {monthNames(rec.months)}</span>}
+              {bound && <span className="td-chip">{bound}</span>}
               <span className="td-next">
-                Next {sel.occ.size ? [...sel.occ].slice(0, 3).map(fmtShort).join(" · ") : "none"}
+                {upcoming.length || !sel.occ.size ? "Next" : "Last"}{" "}
+                {nextList.length ? nextList.map(fmtShort).join(" · ") : "none"}
               </span>
             </div>
           )}
