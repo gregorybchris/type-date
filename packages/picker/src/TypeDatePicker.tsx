@@ -170,6 +170,27 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     timer.current = setTimeout(() => run(t), debounceMs);
   };
 
+  // Escape clears the picker from anywhere inside it, or when nothing has focus (after a click on a day or
+  // on empty space). The text input has its own handler below.
+  const textRef = useRef(text);
+  textRef.current = text;
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape" || e.defaultPrevented) return;
+      const el = document.activeElement;
+      const target = e.target as Element | null;
+      if (target?.closest("dialog, input, textarea, select, [contenteditable]") && !root.current?.contains(target)) return;
+      if (target instanceof HTMLInputElement && root.current?.contains(target)) return;
+      if (el && el !== document.body && !root.current?.contains(el)) return;
+      if (textRef.current) {
+        onText("");
+        root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
+      } else props.onEscape?.();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
   const onInputKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       clearTimeout(timer.current);
