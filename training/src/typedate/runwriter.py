@@ -24,12 +24,21 @@ def write_run(
     notes: str = "",
     size_bytes: int = 0,
     stage: str = "eval",
+    primary: bool = True,
 ) -> dict:
     with timer.bucket("eval_score"):
         ev, errors = evaluate(rows_by_split, preds_by_split)
     ev["version"] = eval_version
     run_dir = ROOT / "runs" / f"exp-{exp:03d}"
     run_dir.mkdir(parents=True, exist_ok=True)
+    if not primary:
+        # add this eval version next to the existing results; leave config and errors alone
+        mp = run_dir / "metrics.json"
+        m = json.loads(mp.read_text())
+        m.setdefault("evals", {})[eval_version] = ev
+        mp.write_text(json.dumps(m, indent=2))
+        merge_timing(run_dir, f"{stage}-{eval_version}", timer.to_dict())
+        return ev
     config = {
         "id": f"exp-{exp:03d}",
         "number": exp,

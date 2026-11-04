@@ -98,6 +98,58 @@ def make_prompts(
     return out
 
 
+def common_prefix(strs: list[str]) -> str:
+    a, b = min(strs), max(strs)
+    i = 0
+    while i < len(a) and i < len(b) and a[i] == b[i]:
+        i += 1
+    return a[:i]
+
+
+def generate_cached(
+    model, tok, prompts: list[str], device, max_new: int, bs: int = 32
+) -> list[str]:
+    """Greedy generation for prompts that share a long prefix. The prefix is encoded once.
+
+    Rows are grouped by suffix token length so no padding is needed inside a batch.
+    """
+    import copy
+    from collections import defaultdict
+
+    prefix = common_prefix(prompts[: min(len(prompts), 400)] + prompts[-50:])
+    # cut the prefix at the last newline so token boundaries match between prefix and suffix
+    cut = prefix.rfind("\n") + 1
+    prefix = prefix[:cut]
+    p_ids = tok(prefix, return_tensors="pt", add_special_tokens=False)["input_ids"].to(device)
+    with torch.no_grad():
+        pkv = model(p_ids, use_cache=True).past_key_values
+    suf = [tok(p[len(prefix) :], add_special_tokens=False)["input_ids"] for p in prompts]
+    groups: dict[int, list[int]] = defaultdict(list)
+    for i, s in enumerate(suf):
+        groups[len(s)].append(i)
+    out = [""] * len(prompts)
+    for _, idxs in sorted(groups.items()):
+        for k in range(0, len(idxs), bs):
+            chunk = idxs[k : k + bs]
+            ids_s = torch.tensor([suf[i] for i in chunk], device=device)
+            ids = torch.cat([p_ids.repeat(len(chunk), 1), ids_s], dim=1)
+            cache = copy.deepcopy(pkv)
+            cache.batch_repeat_interleave(len(chunk))
+            with torch.no_grad():
+                gen = model.generate(
+                    input_ids=ids,
+                    attention_mask=torch.ones_like(ids),
+                    past_key_values=cache,
+                    max_new_tokens=max_new,
+                    do_sample=False,
+                    pad_token_id=tok.pad_token_id,
+                )
+            texts = tok.batch_decode(gen[:, ids.shape[1] :], skip_special_tokens=True)
+            for i, t in zip(chunk, texts, strict=False):
+                out[i] = t.split("\n")[0].strip()
+    return out
+
+
 def run(
     exp: int,
     model_id: str,
@@ -108,6 +160,7 @@ def run(
     batch: int = 16,
     max_new: int = 24,
     prompt: str = "fixed",
+    primary: bool = True,
 ) -> dict:
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -127,6 +180,13 @@ def run(
     preds: dict[str, list[str]] = {}
     t0 = time.perf_counter()
     for split, rows in evals.items():
+        if not prompt.startswith("knn"):
+            prompts = make_prompts(prompt, tok, rows, n_shots, retr)
+            preds[split] = generate_cached(model, tok, prompts, device, max_new)
+            prompt_tokens = max(
+                prompt_tokens, len(tok(prompts[0], add_special_tokens=False)["input_ids"])
+            )
+            continue
         out: list[str] = []
         for i in range(0, len(rows), batch):
             chunk = rows[i : i + batch]
@@ -152,6 +212,7 @@ def run(
         extra_config={"train": {"trained": False}},
         notes=f"Prompt kind {prompt}: {n_shots} examples, up to {prompt_tokens} tokens, greedy, fp32, MPS.",
         size_bytes=n_params * 2,
+        primary=primary,
     )  # fmt: skip
     del model
     if device == "mps":

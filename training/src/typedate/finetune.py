@@ -88,6 +88,12 @@ def run(
                 print(f"step {step}/{steps} loss {last:.4f}", flush=True)
     tm.add("train_loop", time.perf_counter() - t0)
     model.eval()
+    with tm.bucket("save_checkpoint"):
+        ck = ROOT / "artifacts" / f"exp-{exp:03d}" / "torch"
+        ck.mkdir(parents=True, exist_ok=True)
+        model.to(torch.bfloat16).save_pretrained(ck)
+        tok.save_pretrained(ck)
+        model.to(torch.float32)
     tok.padding_side = "left"
     evals = load_eval(eval_version)
     preds: dict[str, list[str]] = {}
