@@ -45,6 +45,7 @@ class TrainConfig:
     max_train: int = 0  # 0 = all
     digit_split: bool = False
     parent: int = 0
+    dropout: float = 0.1
     eval_version: str = "e1"
     description: str = ""
 
@@ -117,7 +118,7 @@ def make_model(cfg: TrainConfig, vocab_size: int) -> T5ForConditionalGeneration:
         num_heads=cfg.heads,
         relative_attention_num_buckets=16,
         relative_attention_max_distance=64,
-        dropout_rate=0.1,
+        dropout_rate=cfg.dropout,
         feed_forward_proj="gated-gelu",
         tie_word_embeddings=True,
         pad_token_id=PAD,
@@ -358,6 +359,7 @@ def run(cfg: TrainConfig) -> dict:
             "layers": f"{cfg.enc_layers}+{cfg.dec_layers}",
             "vocab": len(tok),
             "digit_split": cfg.digit_split,
+            "dropout": cfg.dropout,
         },
         "train": {
             "epochs": cfg.epochs,

@@ -116,6 +116,7 @@ def train_run(
     digit_split: bool = typer.Option(False, help="Tokenize digits one by one"),
     description: str = typer.Option("", help="1-2 sentence plain description of the experiment"),
     eval_version: str = typer.Option("e1", help="Eval set version (evals/<version>)"),
+    dropout: float = typer.Option(0.1),
     seed: int = typer.Option(0),
     parent: int = typer.Option(0, help="Reference experiment number (0 = none)"),
     notes: str = typer.Option(""),
@@ -127,7 +128,8 @@ def train_run(
         exp=exp, title=title, dataset=dataset, d_model=d_model, d_ff=d_ff, heads=heads,
         enc_layers=enc_layers, dec_layers=dec_layers, vocab=vocab, epochs=epochs,
         batch_size=batch_size, lr=lr, seed=seed, notes=notes, max_train=max_train,
-        digit_split=digit_split, parent=parent, description=description, eval_version=eval_version,
+        digit_split=digit_split, parent=parent, description=description,
+        eval_version=eval_version, dropout=dropout,
     )  # fmt: skip
     res = run(cfg)
     ev = res["metrics"]["eval"]
