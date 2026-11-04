@@ -14,6 +14,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `h7` | `src/h7.ts` | h6 plus web-pool fixes. DSL v2 families and the fixes sit in `src/h7/v2-forms.ts`, loaded on demand (not an engine). | 19.0 kB eager + 10.6 kB lazy |
 | `h8` | `src/h8.ts` | h7 behind a normalization layer (`src/h8/`: typo and abbreviation rewrites, day of a relative month, score and dozen). h7 is unchanged except one `export`. | 21.9 kB eager + 10.7 kB lazy |
 | `h9` | `src/h9.ts` | h8 behind rules (`src/h9/`, lazy chunk): named dates, nth weekday of a relative month, weekday plus day of month, ranges with day-of-month or period ends, recurrence bounds and counts, weekday exclusions, lone hour words, foreign month names, noise tokens. h8 unchanged. | 21.9 kB eager + 16.4 kB lazy |
+| `h10` | `src/h10.ts` | h9 behind a rewrite step (`src/h10/rewrite.ts`): `9m` keeps the hour. | same as h9 |
 
 Engine ids are the same in the registry (`src/index.ts`, `scripts/eval.ts`), `runs/<id>/`, the dashboard and the picker demo. Notes per engine: `specs/engines/<id>.md`. Each file exports the engine object `hN` and `parseHN`.
 
