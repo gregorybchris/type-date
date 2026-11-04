@@ -137,8 +137,17 @@ The staged queue is in `specs/research/design-space.md`. Numbering so far:
 2. exp-002: heuristic-small (baseline)
 3. exp-003: heuristic-full (baseline)
 4. exp-004: first from-scratch model, v001. Invalid: tokenizer lowercased DSL labels
-5. exp-005: reference model R0 (v002, BPE merged digits, 20 epochs)
-6. exp-006: R0 with digit-split tokens (stage 1d)
+5. exp-005: from-scratch enc-dec R0 (v002, BPE merged digits, 20 epochs). 61% exact on e1
+6. exp-006: SmolLM2-135M few-shot, no training (e1q)
+7. exp-007: SmolLM2-360M few-shot, no training (e1q)
+8. exp-008: Qwen2.5-0.5B few-shot, no training (e1q)
+9. exp-009: heuristic-full-2 (improved heuristic, in progress)
+10. exp-010: SmolLM2-135M fine-tuned 1 epoch on 6k rows (e1q)
+11. exp-011: scratch enc-dec, 3 epochs on 8k rows (e1q)
+12. exp-012: scratch enc-dec with digit tokens, 3 epochs on 8k rows (e1q)
+13. exp-013: reserved for a second heuristic iteration
+
+The first broad comparison (exp-001..012) is the screening round. Canceled: digit-split 20 epochs, seeds 1 and 2 of R0. They return only if a model path is worth the time.
 
 ## Disk budget
 
