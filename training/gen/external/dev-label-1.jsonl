@@ -1,0 +1,400 @@
+{"id": "d0000", "text": "after school monday 3:45", "dsl": "dt mo 3:45?"}
+{"id": "d0001", "text": "every wednesday at 4pm for 6 weeks", "dsl": "dt R w/1 we n6 16:00"}
+{"id": "d0002", "text": "9am pst = 10:30pm ist right? so tmrw 22:30", "dsl": "x", "unsure": true}
+{"id": "d0003", "text": "5pmtmrw", "dsl": "dt +1d 17:00"}
+{"id": "d0004", "text": "pickup at 4:45", "dsl": "t 4:45?"}
+{"id": "d0005", "text": "smoko 3pm daily", "dsl": "dt R d/1 15:00"}
+{"id": "d0006", "text": "bout 9pm", "dsl": "t 21:00"}
+{"id": "d0007", "text": "friday 1:1 at 11", "dsl": "dt fr 11?"}
+{"id": "d0008", "text": "mar 15th @ 6", "dsl": "dt 03-15 6?"}
+{"id": "d0009", "text": "every tues and thurs at 5", "dsl": "dt R w/1 tu,th 5?"}
+{"id": "d0010", "text": "19h", "dsl": "t 19:00"}
+{"id": "d0011", "text": "book cleaner wed morning", "dsl": "d we"}
+{"id": "d0012", "text": "oh nine hundred monday", "dsl": "dt mo 09:00"}
+{"id": "d0013", "text": "new years eve at 9pm", "dsl": "dt 12-31 21:00"}
+{"id": "d0014", "text": "half six tonight", "dsl": "dt +0d 18:30"}
+{"id": "d0015", "text": "Monday 9AM", "dsl": "dt mo 09:00"}
+{"id": "d0016", "text": "thurs at 7:", "dsl": "dt th 7?"}
+{"id": "d0017", "text": "tues and thurs at 5", "dsl": "x", "unsure": true}
+{"id": "d0018", "text": "fryday at foar", "dsl": "dt fr 4?"}
+{"id": "d0019", "text": "quarter past nine", "dsl": "t 9:15?"}
+{"id": "d0020", "text": "FRI@7", "dsl": "dt fr 7?"}
+{"id": "d0021", "text": "weds - fri", "dsl": "d we>fr"}
+{"id": "d0022", "text": "come friday", "dsl": "d fr"}
+{"id": "d0023", "text": "mow the back paddock this coming sat", "dsl": "d sa"}
+{"id": "d0024", "text": "5x5 squats tues thurs sat at 0600", "dsl": "dt R w/1 tu,th,sa 06:00", "unsure": true}
+{"id": "d0025", "text": "christmas eve 5pm", "dsl": "dt 12-24 17:00"}
+{"id": "d0026", "text": "my class is in tuesdays at 7pm", "dsl": "dt R w/1 tu 19:00"}
+{"id": "d0027", "text": "weds 3-4pm", "dsl": "dt we 15:00>16:00"}
+{"id": "d0028", "text": "dont forget teh 8th", "dsl": "x", "unsure": true}
+{"id": "d0029", "text": "off all next week", "dsl": "d W+1"}
+{"id": "d0030", "text": "decmber 5 at 3 p.m.", "dsl": "dt 12-05 15:00"}
+{"id": "d0031", "text": "the week of dec 14", "dsl": "d 12-14", "unsure": true}
+{"id": "d0032", "text": "mon wed fri at 9:30", "dsl": "dt R w/1 mo,we,fr 9:30?", "unsure": true}
+{"id": "d0033", "text": "cardio 30 min after work", "dsl": "x"}
+{"id": "d0034", "text": "hi can i get an appt tues at 10:15", "dsl": "dt tu 10:15?"}
+{"id": "d0035", "text": "quater to 5", "dsl": "t 4:45?"}
+{"id": "d0036", "text": "pallet jack training wed 1400", "dsl": "dt we 14:00"}
+{"id": "d0037", "text": "2 pm   tmrw", "dsl": "dt +1d 14:00"}
+{"id": "d0038", "text": "sign-ups due friday", "dsl": "d fr"}
+{"id": "d0039", "text": "tomorrow in the afternoon at 3", "dsl": "dt +1d 15:00"}
+{"id": "d0040", "text": "route 66", "dsl": "x"}
+{"id": "d0041", "text": "lecture thurs 11-1", "dsl": "dt th 11?>1?"}
+{"id": "d0042", "text": "lets do thursday at half two", "dsl": "dt th 2:30?"}
+{"id": "d0043", "text": "12th of october", "dsl": "d 10-12"}
+{"id": "d0044", "text": "1245", "dsl": "t 12:45"}
+{"id": "d0045", "text": "nov 11 11am", "dsl": "dt 11-11 11:00"}
+{"id": "d0046", "text": "mid-july", "dsl": "x", "unsure": true}
+{"id": "d0047", "text": "meeting moved to next wednesday at 10", "dsl": "dt we+1 10?"}
+{"id": "d0048", "text": "the 12th", "dsl": "x", "unsure": true}
+{"id": "d0049", "text": "in two hours", "dsl": "x", "unsure": true}
+{"id": "d0050", "text": "the meeting has been moved to the third of february at 2pm", "dsl": "dt 02-03 14:00"}
+{"id": "d0051", "text": "market every saturday from 6:30 to 1", "dsl": "dt R w/1 sa 6:30?>1?"}
+{"id": "d0052", "text": "sat 8am-12pm", "dsl": "dt sa 08:00>12:00"}
+{"id": "d0053", "text": "nov 15 to", "dsl": "d 11-15"}
+{"id": "d0054", "text": "wed at half 3", "dsl": "dt we 3:30?"}
+{"id": "d0055", "text": "pls remind me every 2nd day", "dsl": "d R d/2"}
+{"id": "d0056", "text": "ceremony 4:30 reception 6", "dsl": "x", "unsure": true}
+{"id": "d0057", "text": "pls can we move it to the 19th around 11", "dsl": "x", "unsure": true}
+{"id": "d0058", "text": "next sat 6a", "dsl": "dt sa+1 06:00"}
+{"id": "d0059", "text": "usher training sun after service 12:15", "dsl": "dt su 12:15?"}
+{"id": "d0060", "text": "ned wk", "dsl": "d W+1"}
+{"id": "d0061", "text": "i can to go in the next friday at six", "dsl": "dt fr+1 6?"}
+{"id": "d0062", "text": "k tmrw then", "dsl": "d +1d"}
+{"id": "d0063", "text": "a month from tmrw", "dsl": "x", "unsure": true}
+{"id": "d0064", "text": "depo mon 10am", "dsl": "dt mo 10:00"}
+{"id": "d0065", "text": "7th", "dsl": "x", "unsure": true}
+{"id": "d0066", "text": "can ye come oot on the 14th at 9", "dsl": "x", "unsure": true}
+{"id": "d0067", "text": "wedding oct 17", "dsl": "d 10-17"}
+{"id": "d0068", "text": "rest day tmrw", "dsl": "d +1d"}
+{"id": "d0069", "text": "prune roses feb", "dsl": "d M@02"}
+{"id": "d0070", "text": "oct 2 at", "dsl": "d 10-02"}
+{"id": "d0071", "text": "???", "dsl": "x"}
+{"id": "d0072", "text": "sun 9:00", "dsl": "dt su 9?"}
+{"id": "d0073", "text": "mon, nov 9", "dsl": "d 11-09"}
+{"id": "d0074", "text": "6.45", "dsl": "t 6:45?"}
+{"id": "d0075", "text": "mon morning 6", "dsl": "dt mo 06:00"}
+{"id": "d0076", "text": "5.30 tonight", "dsl": "dt +0d 17:30"}
+{"id": "d0077", "text": "mon 9 til 11", "dsl": "dt mo 9?>11?"}
+{"id": "d0078", "text": "monthly on the 1st", "dsl": "d R m/1 d1"}
+{"id": "d0079", "text": "dip the ewes sunday morning", "dsl": "d su"}
+{"id": "d0080", "text": "in 3 hrs", "dsl": "x", "unsure": true}
+{"id": "d0081", "text": "8 till 4", "dsl": "t 8?>4?"}
+{"id": "d0082", "text": "every second weds", "dsl": "d R w/2 we"}
+{"id": "d0083", "text": "fri aft", "dsl": "d fr"}
+{"id": "d0084", "text": "half three", "dsl": "t 3:30?"}
+{"id": "d0085", "text": "can u cover my shift sunday 6am", "dsl": "dt su 06:00"}
+{"id": "d0086", "text": "mon-wed 8 to 4", "dsl": "dt R d/1 mo,tu,we 8?>4?", "unsure": true}
+{"id": "d0087", "text": "mon, tues and thurs at 10", "dsl": "dt R w/1 mo,tu,th 10?", "unsure": true}
+{"id": "d0088", "text": "the 3rd week of march", "dsl": "x", "unsure": true}
+{"id": "d0089", "text": "tues the 20th", "dsl": "d tu", "unsure": true}
+{"id": "d0090", "text": "jan 2nd 2027", "dsl": "d 2027-01-02"}
+{"id": "d0091", "text": "11/3/26", "dsl": "d 2026-11-03"}
+{"id": "d0092", "text": "can we push the call to 8pm ist", "dsl": "t 20:00"}
+{"id": "d0093", "text": "zoom fri 10:30", "dsl": "dt fr 10:30?"}
+{"id": "d0094", "text": "daily at 6am for a week", "dsl": "dt R d/1 n7 06:00"}
+{"id": "d0095", "text": "ev oth", "dsl": "x"}
+{"id": "d0096", "text": "next week sometime", "dsl": "d W+1"}
+{"id": "d0097", "text": "no idea", "dsl": "x"}
+{"id": "d0098", "text": "eoy", "dsl": "x", "unsure": true}
+{"id": "d0099", "text": "lemme check, probably sun afternoon", "dsl": "d su"}
+{"id": "d0100", "text": "responses due in 30 days", "dsl": "d +30d"}
+{"id": "d0101", "text": "colour correction tuesday 9:00-12:00", "dsl": "dt tu 09:00>12:00"}
+{"id": "d0102", "text": "12-25", "dsl": "d 12-25"}
+{"id": "d0103", "text": "dec 28 t", "dsl": "d 12-28"}
+{"id": "d0104", "text": "weekly every wed at 3", "dsl": "dt R w/1 we 3?"}
+{"id": "d0105", "text": "jan5th", "dsl": "d 01-05"}
+{"id": "d0106", "text": "four thirty pm tomorrow", "dsl": "dt +1d 16:30"}
+{"id": "d0107", "text": "decmber 12", "dsl": "d 12-12"}
+{"id": "d0108", "text": "smoko at 10", "dsl": "t 10?"}
+{"id": "d0109", "text": "12/12 12pm", "dsl": "dt 12-12 12:00"}
+{"id": "d0110", "text": "8pm sharp", "dsl": "t 20:00"}
+{"id": "d0111", "text": "tomorrow4pm", "dsl": "dt +1d 16:00"}
+{"id": "d0112", "text": "after tomorrow at ten o'clock", "dsl": "x", "unsure": true}
+{"id": "d0113", "text": "quarter past", "dsl": "x"}
+{"id": "d0114", "text": "drinks fri 5", "dsl": "dt fr 5?"}
+{"id": "d0115", "text": "dec 25 at 1", "dsl": "dt 12-25 1?"}
+{"id": "d0116", "text": "chk in 2 days", "dsl": "d +2d"}
+{"id": "d0117", "text": "twice weekly till december", "dsl": "x", "unsure": true}
+{"id": "d0118", "text": "wensday at 5", "dsl": "dt we 5?"}
+{"id": "d0119", "text": "3/15/27", "dsl": "d 2027-03-15"}
+{"id": "d0120", "text": "payroll every other friday", "dsl": "d R w/2 fr"}
+{"id": "d0121", "text": "may long weekend", "dsl": "x", "unsure": true}
+{"id": "d0122", "text": "in the next sunday we have church at 9", "dsl": "dt su+1 9?"}
+{"id": "d0123", "text": "saturday mornin", "dsl": "d sa"}
+{"id": "d0124", "text": "weigh ins sat 8am", "dsl": "dt sa 08:00"}
+{"id": "d0125", "text": "bootcamp 6 to 7am", "dsl": "t 06:00>07:00"}
+{"id": "d0126", "text": "ep 2", "dsl": "x"}
+{"id": "d0127", "text": "tuesday at noon", "dsl": "dt tu 12:00"}
+{"id": "d0128", "text": "on call wk of nov 10", "dsl": "d 11-10", "unsure": true}
+{"id": "d0129", "text": "walk the boundary every sunday at 7", "dsl": "dt R w/1 su 7?"}
+{"id": "d0130", "text": "weekends only", "dsl": "d R w/1 sa,su", "unsure": true}
+{"id": "d0131", "text": "stock take last day of the month", "dsl": "d R m/1 d-1", "unsure": true}
+{"id": "d0132", "text": "9.15am", "dsl": "t 09:15"}
+{"id": "d0133", "text": "last fri of the month", "dsl": "d R m/1 fr#-1", "unsure": true}
+{"id": "d0134", "text": "1900 tonite", "dsl": "dt +0d 19:00"}
+{"id": "d0135", "text": "every year on my birthday june 8", "dsl": "d R y/1 06-08", "unsure": true}
+{"id": "d0136", "text": "next wknd", "dsl": "x", "unsure": true}
+{"id": "d0137", "text": "ENG 204", "dsl": "x"}
+{"id": "d0138", "text": "board deck cob thurs", "dsl": "d th"}
+{"id": "d0139", "text": "every morning at 7", "dsl": "dt R d/1 07:00"}
+{"id": "d0140", "text": "dentist thurs 3pm", "dsl": "dt th 15:00"}
+{"id": "d0141", "text": "dentist 2wks from thurs", "dsl": "x", "unsure": true}
+{"id": "d0142", "text": "ten o clock", "dsl": "t 10?"}
+{"id": "d0143", "text": "practice sat 7am sharp", "dsl": "dt sa 07:00"}
+{"id": "d0144", "text": "the 3", "dsl": "x"}
+{"id": "d0145", "text": "2pm till 3:30pm", "dsl": "t 14:00>15:30"}
+{"id": "d0146", "text": "teh 14th at 2", "dsl": "x", "unsure": true}
+{"id": "d0147", "text": "fortnight from today", "dsl": "d +2w"}
+{"id": "d0148", "text": "pickup the kids 3.15 weekdays", "dsl": "dt R d/1 mo,tu,we,th,fr 3:15?"}
+{"id": "d0149", "text": "pls book a family shoot for sun 16th at 9am", "dsl": "dt su 09:00", "unsure": true}
+{"id": "d0150", "text": "quarterly review first week of every quarter", "dsl": "x", "unsure": true}
+{"id": "d0151", "text": "every monday for 6 weeks", "dsl": "d R w/1 mo n6"}
+{"id": "d0152", "text": "pickle", "dsl": "x"}
+{"id": "d0153", "text": "call w/ mark thurs 1pm", "dsl": "dt th 13:00"}
+{"id": "d0154", "text": "nov 5-7", "dsl": "d 11-05>11-07"}
+{"id": "d0155", "text": "need it by 28/11", "dsl": "d 11-28"}
+{"id": "d0156", "text": "dinner w/ investors 7pm thurs", "dsl": "dt th 19:00"}
+{"id": "d0157", "text": "mid nov", "dsl": "x", "unsure": true}
+{"id": "d0158", "text": "end of day", "dsl": "x"}
+{"id": "d0159", "text": "salon closed 24 dec to 2 jan", "dsl": "d 12-24>01-02"}
+{"id": "d0160", "text": "away game next friday 4pm", "dsl": "dt fr+1 16:00"}
+{"id": "d0161", "text": "1 jan - 15 jan", "dsl": "d 01-01>01-15"}
+{"id": "d0162", "text": "plz put me down for sat 9 am", "dsl": "dt sa 09:00"}
+{"id": "d0163", "text": "table 7", "dsl": "x"}
+{"id": "d0164", "text": "sat arv", "dsl": "d sa"}
+{"id": "d0165", "text": "five to nine", "dsl": "t 8:55?"}
+{"id": "d0166", "text": "early jan", "dsl": "d M@01", "unsure": true}
+{"id": "d0167", "text": "dec 18 for the year 11 formal 6:30 til 10", "dsl": "dt 12-18 6:30?>10?"}
+{"id": "d0168", "text": "thu 7:15 am", "dsl": "dt th 07:15"}
+{"id": "d0169", "text": "tmrw 8pm", "dsl": "dt +1d 20:00"}
+{"id": "d0170", "text": "sell the wethers at the sale yards thurs 10", "dsl": "dt th 10?"}
+{"id": "d0171", "text": "week of the 16th", "dsl": "x", "unsure": true}
+{"id": "d0172", "text": "okay", "dsl": "x"}
+{"id": "d0173", "text": "mid january", "dsl": "d 01-01", "unsure": true}
+{"id": "d0174", "text": "mondays and thursdays at 7pm", "dsl": "dt R w/1 mo,th 19:00"}
+{"id": "d0175", "text": "scrimmage tonite 6ish", "dsl": "dt +0d 18:00"}
+{"id": "d0176", "text": "sat 10 to noon", "dsl": "dt sa 10:00>12:00"}
+{"id": "d0177", "text": "every sat and sun", "dsl": "d R w/1 sa,su"}
+{"id": "d0178", "text": "0900-1100", "dsl": "t 09:00>11:00"}
+{"id": "d0179", "text": "my own time friday 1-3", "dsl": "dt fr 1?>3?"}
+{"id": "d0180", "text": "9 in the evening", "dsl": "t 21:00"}
+{"id": "d0181", "text": "labor day weekend", "dsl": "x", "unsure": true}
+{"id": "d0182", "text": "5pm tomorow", "dsl": "dt +1d 17:00"}
+{"id": "d0183", "text": "nov 20 4pm client dinner booked", "dsl": "dt 11-20 16:00"}
+{"id": "d0184", "text": "ev month", "dsl": "d R m/1"}
+{"id": "d0185", "text": "release freeze dec 20 - jan 2", "dsl": "d 12-20>01-02"}
+{"id": "d0186", "text": "sat 11 oct", "dsl": "d 10-11"}
+{"id": "d0187", "text": "lunch break 12:30 for 30 min", "dsl": "t 12:30?"}
+{"id": "d0188", "text": "fortnight", "dsl": "x", "unsure": true}
+{"id": "d0189", "text": "can you fit me in on the 9th around quarter to 4", "dsl": "x", "unsure": true}
+{"id": "d0190", "text": "viva 2 weeks from fri", "dsl": "x", "unsure": true}
+{"id": "d0191", "text": "every weekday 8.30", "dsl": "dt R d/1 mo,tu,we,th,fr 8:30?"}
+{"id": "d0192", "text": "sched meeting nxt wed bout 3", "dsl": "dt we+1 3?"}
+{"id": "d0193", "text": "dec 28 through jan 3 for the holiday volunteer schedule", "dsl": "d 12-28>01-03"}
+{"id": "d0194", "text": "tuesdya 2pm", "dsl": "dt tu 14:00"}
+{"id": "d0195", "text": "whats for tea", "dsl": "x"}
+{"id": "d0196", "text": "3 oclock tmrw", "dsl": "dt +1d 3?"}
+{"id": "d0197", "text": "late tmrw", "dsl": "d +1d"}
+{"id": "d0198", "text": "y'all ok if we do wed night at 6:30?", "dsl": "dt we 18:30"}
+{"id": "d0199", "text": "mnthly on the 15th", "dsl": "d R m/1 d15"}
+{"id": "d0200", "text": "nine thirty am", "dsl": "t 09:30"}
+{"id": "d0201", "text": "cob tmrw", "dsl": "d +1d"}
+{"id": "d0202", "text": "am i free fri 3-4", "dsl": "dt fr 3?>4?"}
+{"id": "d0203", "text": "2nd tuesday of each month", "dsl": "d R m/1 tu#2"}
+{"id": "d0204", "text": "the 3rd weekend of march", "dsl": "x", "unsure": true}
+{"id": "d0205", "text": "tomorrow mornin", "dsl": "d +1d"}
+{"id": "d0206", "text": "last wk of june", "dsl": "x", "unsure": true}
+{"id": "d0207", "text": "from 9 to 5 mon-fri", "dsl": "dt R d/1 mo,tu,we,th,fr 9?>5?"}
+{"id": "d0208", "text": "mark me unavailable 14 to 18 jul", "dsl": "d 07-14>07-18"}
+{"id": "d0209", "text": "10:30 sharp", "dsl": "t 10:30?"}
+{"id": "d0210", "text": "the monday after next", "dsl": "d mo+2", "unsure": true}
+{"id": "d0211", "text": "an hour from now", "dsl": "x", "unsure": true}
+{"id": "d0212", "text": "bday 3/22", "dsl": "d 03-22"}
+{"id": "d0213", "text": "thu 2ish??", "dsl": "dt th 2?"}
+{"id": "d0214", "text": "ev tu", "dsl": "d R w/1 tu"}
+{"id": "d0215", "text": "yestrday", "dsl": "d -1d"}
+{"id": "d0216", "text": "call me after 6", "dsl": "t 6?"}
+{"id": "d0217", "text": "ok so maybe jan 5th at 7pm", "dsl": "dt 01-05 19:00"}
+{"id": "d0218", "text": "twenty past four", "dsl": "t 4:20?"}
+{"id": "d0219", "text": "thurs 5 till half 6", "dsl": "dt th 5?>6:30?"}
+{"id": "d0220", "text": "every year on dec 24", "dsl": "d R y/1 12-24", "unsure": true}
+{"id": "d0221", "text": "tues 12 till 1:30", "dsl": "dt tu 12?>1:30?"}
+{"id": "d0222", "text": "saturday the 14th at 1030", "dsl": "dt sa 10:30", "unsure": true}
+{"id": "d0223", "text": "friday night", "dsl": "d fr"}
+{"id": "d0224", "text": "dinner tonite 7pm", "dsl": "dt +0d 19:00"}
+{"id": "d0225", "text": "6 am tues", "dsl": "dt tu 06:00"}
+{"id": "d0226", "text": "next weekend", "dsl": "x", "unsure": true}
+{"id": "d0227", "text": "team meeting every thursday 10am till end of year", "dsl": "dt R w/1 th u12-31 10:00"}
+{"id": "d0228", "text": "o seven hundred", "dsl": "t 07:00"}
+{"id": "d0229", "text": "today at the nine and half", "dsl": "dt +0d 9:30?", "unsure": true}
+{"id": "d0230", "text": "birthday party sat 2-5", "dsl": "dt sa 2?>5?"}
+{"id": "d0231", "text": "july 4th weekend", "dsl": "x", "unsure": true}
+{"id": "d0232", "text": "swap with me for sat 7a-7p", "dsl": "dt sa 07:00>19:00"}
+{"id": "d0233", "text": "tail docking wed 6am", "dsl": "dt we 06:00"}
+{"id": "d0234", "text": "mon the 9th at 2", "dsl": "dt mo 2?", "unsure": true}
+{"id": "d0235", "text": "gym 6am mon wed fri", "dsl": "dt R w/1 mo,we,fr 06:00", "unsure": true}
+{"id": "d0236", "text": "open home this coming sat 1-1:30", "dsl": "dt sa 1?>1:30?"}
+{"id": "d0237", "text": "hockey tournament nov 22-24", "dsl": "d 11-22>11-24"}
+{"id": "d0238", "text": "wed 6pm", "dsl": "dt we 18:00"}
+{"id": "d0239", "text": "bloods at 7 in the mornin on the 3rd", "dsl": "t 07:00", "unsure": true}
+{"id": "d0240", "text": "victoria day", "dsl": "x", "unsure": true}
+{"id": "d0241", "text": "see you tues", "dsl": "d tu"}
+{"id": "d0242", "text": "every night at 9", "dsl": "dt R d/1 21:00"}
+{"id": "d0243", "text": "2 hrs", "dsl": "x"}
+{"id": "d0244", "text": "quarter t", "dsl": "x"}
+{"id": "d0245", "text": "mon wed fri 6am", "dsl": "dt R w/1 mo,we,fr 06:00", "unsure": true}
+{"id": "d0246", "text": "1 to 3 tmrw", "dsl": "dt +1d 1?>3?"}
+{"id": "d0247", "text": "in the new year", "dsl": "x", "unsure": true}
+{"id": "d0248", "text": "quarter to eight", "dsl": "t 7:45?"}
+{"id": "d0249", "text": "remind me tomorrow at 8 to call the vet", "dsl": "dt +1d 8?"}
+{"id": "d0250", "text": "leg day mon 6am", "dsl": "dt mo 06:00"}
+{"id": "d0251", "text": "smoko 3am", "dsl": "t 03:00"}
+{"id": "d0252", "text": "back shift 2 til 10 sunday", "dsl": "dt su 2?>10?"}
+{"id": "d0253", "text": "running late 15 min", "dsl": "x"}
+{"id": "d0254", "text": "i will travel from dec 20 to jan 6", "dsl": "d 12-20>01-06"}
+{"id": "d0255", "text": "room 7 b", "dsl": "x"}
+{"id": "d0256", "text": "quarter to six", "dsl": "t 5:45?"}
+{"id": "d0257", "text": "blister packs ready fri by 12", "dsl": "dt fr 12?"}
+{"id": "d0258", "text": "take 1 tablet daily at 8am", "dsl": "dt R d/1 08:00"}
+{"id": "d0259", "text": "tues 8-10", "dsl": "dt tu 8?>10?"}
+{"id": "d0260", "text": "client sync thursday 7.30pm", "dsl": "dt th 19:30"}
+{"id": "d0261", "text": "film review wednesdays after school", "dsl": "d R w/1 we"}
+{"id": "d0262", "text": "eight fifteen am", "dsl": "t 08:15"}
+{"id": "d0263", "text": "mon 4", "dsl": "dt mo 4?"}
+{"id": "d0264", "text": "thurs a.m.", "dsl": "d th"}
+{"id": "d0265", "text": "every second thurs at 7pm", "dsl": "dt R w/2 th 19:00"}
+{"id": "d0266", "text": "pt session tues 6 pm", "dsl": "dt tu 18:00"}
+{"id": "d0267", "text": "twelve thirty tomorrow", "dsl": "dt +1d 12:30?"}
+{"id": "d0268", "text": "next thu at 4p", "dsl": "dt th+1 16:00"}
+{"id": "d0269", "text": "physio tues 11:15", "dsl": "dt tu 11:15?"}
+{"id": "d0270", "text": "nov 5 t", "dsl": "d 11-05"}
+{"id": "d0271", "text": "tomorrow mornin at 9 sharp", "dsl": "dt +1d 09:00"}
+{"id": "d0272", "text": "on the day 5 of march", "dsl": "d 03-05"}
+{"id": "d0273", "text": "jun 1 - jun 30", "dsl": "d 06-01>06-30"}
+{"id": "d0274", "text": "ur next tue 3", "dsl": "dt tu+1 3?"}
+{"id": "d0275", "text": "smoko 10ish", "dsl": "t 10?"}
+{"id": "d0276", "text": "headshots tues 10am", "dsl": "dt tu 10:00"}
+{"id": "d0277", "text": "aug 8th at noon", "dsl": "dt 08-08 12:00"}
+{"id": "d0278", "text": "need a plumber monday morning", "dsl": "d mo"}
+{"id": "d0279", "text": "pls book fellowship hall for sat the 14th", "dsl": "d sa", "unsure": true}
+{"id": "d0280", "text": "bout 2ish", "dsl": "t 2?"}
+{"id": "d0281", "text": "eod tmrw", "dsl": "d +1d"}
+{"id": "d0282", "text": "file motion by eod fri", "dsl": "d fr"}
+{"id": "d0283", "text": "ok ok sat 16th 3 oclock for the open house", "dsl": "dt sa 3?", "unsure": true}
+{"id": "d0284", "text": "tuesday the 4th", "dsl": "d tu", "unsure": true}
+{"id": "d0285", "text": "reschedule to thurs same time", "dsl": "d th"}
+{"id": "d0286", "text": "away on holiday fae the 12th tae the 19th", "dsl": "x", "unsure": true}
+{"id": "d0287", "text": "nxt mon 9", "dsl": "dt mo+1 9?"}
+{"id": "d0288", "text": "over xmas", "dsl": "x", "unsure": true}
+{"id": "d0289", "text": "friday nights from 8", "dsl": "dt fr 20:00"}
+{"id": "d0290", "text": "every day at 8am for a week", "dsl": "dt R d/1 n7 08:00"}
+{"id": "d0291", "text": "three o'clock", "dsl": "t 3?"}
+{"id": "d0292", "text": "may 1 - may 15", "dsl": "d 05-01>05-15"}
+{"id": "d0293", "text": "this com", "dsl": "x"}
+{"id": "d0294", "text": "start of next month", "dsl": "d M+1", "unsure": true}
+{"id": "d0295", "text": "pls move my wed 11 to thursday same time", "dsl": "x", "unsure": true}
+{"id": "d0296", "text": "meeting on the twelfth of december at ten", "dsl": "dt 12-12 10?"}
+{"id": "d0297", "text": "twenty past six", "dsl": "t 6:20?"}
+{"id": "d0298", "text": "vbs june 8 - 12 9am to noon", "dsl": "dt 06-08 09:00>06-12 12:00"}
+{"id": "d0299", "text": "10:30-11:15", "dsl": "t 10:30?>11:15?"}
+{"id": "d0300", "text": "every evening", "dsl": "d R d/1"}
+{"id": "d0301", "text": "septembar the furst", "dsl": "d 09-01"}
+{"id": "d0302", "text": "ok lets say thurs 4.30", "dsl": "dt th 4:30?"}
+{"id": "d0303", "text": "the first week of january", "dsl": "x", "unsure": true}
+{"id": "d0304", "text": "to morrow nite at ate", "dsl": "dt +1d 20:00"}
+{"id": "d0305", "text": "meet at 12:15pm", "dsl": "t 12:15"}
+{"id": "d0306", "text": "wensday at 4", "dsl": "dt we 4?"}
+{"id": "d0307", "text": "mid-day", "dsl": "t 12:00", "unsure": true}
+{"id": "d0308", "text": "every morning at 6", "dsl": "dt R d/1 06:00"}
+{"id": "d0309", "text": "brazilian on friday at 3 thanks", "dsl": "dt fr 3?"}
+{"id": "d0310", "text": "8 oclock tonight", "dsl": "dt +0d 20:00"}
+{"id": "d0311", "text": "flu jabs from oct 1 to oct 31", "dsl": "d 10-01>10-31"}
+{"id": "d0312", "text": "Tmrw at Noon", "dsl": "dt +1d 12:00"}
+{"id": "d0313", "text": "munday at nine", "dsl": "dt mo 9?"}
+{"id": "d0314", "text": "6pm ish", "dsl": "t 18:00"}
+{"id": "d0315", "text": "ring me tmrw arvo", "dsl": "d +1d"}
+{"id": "d0316", "text": "four thirty pm friday", "dsl": "dt fr 16:30"}
+{"id": "d0317", "text": "remind me to call dave friday at two thirty pm", "dsl": "dt fr 14:30"}
+{"id": "d0318", "text": "every day for 30 days", "dsl": "d R d/1 n30"}
+{"id": "d0319", "text": "bin day every other tuesday", "dsl": "d R w/2 tu"}
+{"id": "d0320", "text": "seven thirty", "dsl": "t 7:30?"}
+{"id": "d0321", "text": "ocotber 12", "dsl": "d 10-12"}
+{"id": "d0322", "text": "half pas", "dsl": "x"}
+{"id": "d0323", "text": "ill ping u at 10 pm sharp", "dsl": "t 22:00"}
+{"id": "d0324", "text": "venue walkthrough next wed 2pm", "dsl": "dt we+1 14:00"}
+{"id": "d0325", "text": "the day twenty two", "dsl": "x", "unsure": true}
+{"id": "d0326", "text": "seven fifteen in the evening", "dsl": "t 19:15"}
+{"id": "d0327", "text": "wed 4th dec", "dsl": "d 12-04"}
+{"id": "d0328", "text": "every weekday at 7:45 for the next 3 weeks", "dsl": "dt R d/1 mo,tu,we,th,fr n15 7:45?"}
+{"id": "d0329", "text": "we can meet the saturday at 2 pm?", "dsl": "dt sa 14:00"}
+{"id": "d0330", "text": "deploy window sat 2am", "dsl": "dt sa 02:00"}
+{"id": "d0331", "text": "ill pop in thurs bout 2", "dsl": "dt th 2?"}
+{"id": "d0332", "text": "11/3 at 9a", "dsl": "dt 11-03 09:00"}
+{"id": "d0333", "text": "easter monday", "dsl": "x", "unsure": true}
+{"id": "d0334", "text": "every second tuesday of the month at half seven", "dsl": "dt R m/1 tu#2 7:30?"}
+{"id": "d0335", "text": "annually every apr 1", "dsl": "d 04-01", "unsure": true}
+{"id": "d0336", "text": "sat 3 jan 1pm", "dsl": "dt 01-03 13:00"}
+{"id": "d0337", "text": "tuesdy 3 oclock", "dsl": "dt tu 3?"}
+{"id": "d0338", "text": "sept 1st to sept 4th, 8-6 daily", "dsl": "dt 09-01 8?>09-04 6?", "unsure": true}
+{"id": "d0339", "text": "dr singh clinic closed 24 dec to 2 jan", "dsl": "d 12-24>01-02"}
+{"id": "d0340", "text": "tournament feb 14-16", "dsl": "d 02-14>02-16"}
+{"id": "d0341", "text": "vet appt 11/6 at 10:20", "dsl": "dt 11-06 10:20?"}
+{"id": "d0342", "text": "mr khan", "dsl": "x"}
+{"id": "d0343", "text": "water tomatoes every other day", "dsl": "d R d/2"}
+{"id": "d0344", "text": "eleven pm", "dsl": "t 23:00"}
+{"id": "d0345", "text": "class at 11 on wednesday", "dsl": "dt we 11?"}
+{"id": "d0346", "text": "swap tues open for thurs close", "dsl": "x"}
+{"id": "d0347", "text": "the last week of november", "dsl": "x", "unsure": true}
+{"id": "d0348", "text": "6 o'clock", "dsl": "t 6?"}
+{"id": "d0349", "text": "bet", "dsl": "x"}
+{"id": "d0350", "text": "8 till late sat", "dsl": "dt sa 8?"}
+{"id": "d0351", "text": "7th nov at 10 am", "dsl": "dt 11-07 10:00"}
+{"id": "d0352", "text": "8pm till late saturday", "dsl": "dt sa 20:00"}
+{"id": "d0353", "text": "tonight 8", "dsl": "dt +0d 20:00"}
+{"id": "d0354", "text": "03/11", "dsl": "d 03-11"}
+{"id": "d0355", "text": "my shift ends 7am tmrw", "dsl": "dt +1d 07:00"}
+{"id": "d0356", "text": "locum starts 3rd nov", "dsl": "d 11-03"}
+{"id": "d0357", "text": "in 20 mins", "dsl": "x", "unsure": true}
+{"id": "d0358", "text": "hearing 12/9 at 9:30 am", "dsl": "dt 12-09 09:30"}
+{"id": "d0359", "text": "a week on friday", "dsl": "x", "unsure": true}
+{"id": "d0360", "text": "flu clinic every thurs 2-5pm", "dsl": "dt R w/1 th 14:00>17:00"}
+{"id": "d0361", "text": "cob friday", "dsl": "d fr"}
+{"id": "d0362", "text": "3 nights from fri", "dsl": "x", "unsure": true}
+{"id": "d0363", "text": "drop off at 7:45 mon-fri", "dsl": "dt R d/1 mo,tu,we,th,fr 7:45?"}
+{"id": "d0364", "text": "every 2nd", "dsl": "d R m/1 d2", "unsure": true}
+{"id": "d0365", "text": "mar3rd7pm", "dsl": "dt 03-03 19:00"}
+{"id": "d0366", "text": "tues 3rd", "dsl": "d tu", "unsure": true}
+{"id": "d0367", "text": "kindly reschedule to monday 11 am", "dsl": "dt mo 11:00"}
+{"id": "d0368", "text": "thrusday 10", "dsl": "dt th 10?"}
+{"id": "d0369", "text": "showing at 14 elm st sat 11am", "dsl": "dt sa 11:00"}
+{"id": "d0370", "text": "the 15th at 4", "dsl": "x", "unsure": true}
+{"id": "d0371", "text": "ten past eleven", "dsl": "t 11:10?"}
+{"id": "d0372", "text": "gym sesh 7p", "dsl": "t 19:00"}
+{"id": "d0373", "text": "wedding sat 2nd may at 2pm", "dsl": "dt 05-02 14:00"}
+{"id": "d0374", "text": "by 3pm", "dsl": "t 15:00"}
+{"id": "d0375", "text": "newborn session wk of the 12th", "dsl": "x", "unsure": true}
+{"id": "d0376", "text": "every shift change", "dsl": "x"}
+{"id": "d0377", "text": "send discovery responses wk of dec 1", "dsl": "d 12-01", "unsure": true}
+{"id": "d0378", "text": "fr fr tmrw 2pm", "dsl": "dt +1d 14:00"}
+{"id": "d0379", "text": "afternoon of the 20th", "dsl": "x", "unsure": true}
+{"id": "d0380", "text": "florist delivery fri 8am", "dsl": "dt fr 08:00"}
+{"id": "d0381", "text": "-", "dsl": "x"}
+{"id": "d0382", "text": "mid november", "dsl": "x", "unsure": true}
+{"id": "d0383", "text": "wed 1:30-2:15", "dsl": "dt we 1:30?>2:15?"}
+{"id": "d0384", "text": "daily at 5 for a week", "dsl": "dt R d/1 n7 5?"}
+{"id": "d0385", "text": "dec 2", "dsl": "d 12-02"}
+{"id": "d0386", "text": "dec 14 - 21", "dsl": "d 12-14>12-21"}
+{"id": "d0387", "text": "1.5.27", "dsl": "d 2027-01-05", "unsure": true}
+{"id": "d0388", "text": "12a", "dsl": "t 00:00"}
+{"id": "d0389", "text": "9th of september", "dsl": "d 09-09"}
+{"id": "d0390", "text": "how about monday", "dsl": "d mo"}
+{"id": "d0391", "text": "engagement session this coming sat golden hour", "dsl": "d sa"}
+{"id": "d0392", "text": "ring the vet monday first thing", "dsl": "d mo"}
+{"id": "d0393", "text": "lunch break", "dsl": "x"}
+{"id": "d0394", "text": "every 6 mos", "dsl": "d R m/6"}
+{"id": "d0395", "text": "about 1 ish", "dsl": "t 1?"}
+{"id": "d0396", "text": "noon thurs", "dsl": "dt th 12:00"}
+{"id": "d0397", "text": "cob fri", "dsl": "d fr"}
+{"id": "d0398", "text": "this coming sat arvo", "dsl": "d sa"}
+{"id": "d0399", "text": "fri at 5ish drinks", "dsl": "dt fr 5?"}

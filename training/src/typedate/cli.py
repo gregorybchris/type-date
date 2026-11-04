@@ -195,6 +195,24 @@ def eval_check_leak(
     typer.echo(json.dumps(check_leak(dataset, eval_version), indent=2))
 
 
+@data_app.command("consensus")
+def data_consensus(
+    inputs: str = typer.Argument(...),
+    label_a: str = typer.Argument(...),
+    label_b: str = typer.Argument(...),
+    out: str = typer.Option(..., help="Output JSONL"),
+    source: str = typer.Option("realistic"),
+    split: str = typer.Option("train"),
+) -> None:
+    """Keep rows where two labelers agree and neither marked the row unsure."""
+    from pathlib import Path
+
+    from .consensus import consensus
+
+    stats = consensus(Path(inputs), Path(label_a), Path(label_b), Path(out), source, split)
+    typer.echo(json.dumps(stats))
+
+
 @data_app.command("decontaminate")
 def data_decontaminate(
     version: str = typer.Argument(..., help="New train-only version, e.g. v003"),
