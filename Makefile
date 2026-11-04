@@ -33,12 +33,6 @@ dashboard:  ## Dev server for the experiment dashboard (apps/dashboard)
 picker-demo:  ## Dev server for the picker demo (http://localhost:5199)
 	pnpm --filter @type-date/picker dev
 
-export:  ## ONNX export + int8 quantize: make export EXP=5
-	cd training && uv run td export run $(EXP) --quant int8
-
-bench:  ## Browser benchmark: make bench EXP=5 ARGS="--profile mobile-4x --backend wasm"
-	cd bench && pnpm exec tsx run.ts --exp $(EXP) $(ARGS)
-
 serve:  ## Start supervised dev servers (dashboard 5173, picker demo 5199). Restarts them if they exit.
 	scripts/serve.sh start
 
@@ -60,20 +54,22 @@ eval-baselines:  ## Score the non-model baselines into runs/exp-001..003 and 009
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-7 --exp 17 --eval-version e6 --title "heuristic-full-7" --description "heuristic-full-6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms."
 	pnpm --filter @type-date/baselines eval --engine heuristic-full-8 --exp 18 --eval-version e9 --title "heuristic-full-8" --description "heuristic-full-7 behind a normalization layer that rewrites misspelled and abbreviated words (weekdays, months, units, connectors, digits for words)."
 
-timing:  ## Where experiment wall time goes: make timing ARGS="--last 5"
-	cd training && uv run td exp timing $(ARGS)
-
 eval-coverage:  ## Matrix of experiments by eval version, gaps marked
 	cd training && uv run td eval coverage
 
 # Baseline experiments: number:engine
 BASELINE_EXPS = 1:chrono 2:heuristic-small 3:heuristic-full 9:heuristic-full-2 13:heuristic-full-3 14:heuristic-full-4 15:heuristic-full-5 16:heuristic-full-6 17:heuristic-full-7 18:heuristic-full-8
-rescore-baselines:  ## Re-score baselines on another eval: make rescore-baselines EVAL=e1q [EXPS="1 2 3 9 13 14 15 16 17 18"]
+rescore-baselines:  ## Re-score baselines on one eval: make rescore-baselines EVAL=e10 [EXPS="1 2 3 9 13 14 15 16 17 18"]
 	@test -n "$(EVAL)" || (echo "usage: make rescore-baselines EVAL=e1q [EXPS=...]"; exit 2)
 	$(foreach p,$(BASELINE_EXPS),$(if $(filter $(firstword $(subst :, ,$(p))),$(or $(EXPS),1 2 3 9 13 14 15 16 17 18)),pnpm --filter @type-date/baselines eval --engine $(lastword $(subst :, ,$(p))) --exp $(firstword $(subst :, ,$(p))) --title x --eval-version $(EVAL) --no-primary &&) ) true
 
-results:  ## Results table for an eval version: make results EVAL=e3
-	cd training && uv run td exp table --eval-version $(or $(EVAL),e3)
+# All eval versions, full and quick subsets
+EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10
+rescore-all:  ## Score every baseline on every eval version (fast, run after adding a baseline or eval)
+	$(foreach v,$(EVALS),$(MAKE) rescore-baselines EVAL=$(v) &&) true
+
+results:  ## Results table for an eval version: make results EVAL=e10
+	cd training && uv run td exp table --eval-version $(or $(EVAL),e10)
 
 robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=heuristic-full-5
 	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),heuristic-full-5)

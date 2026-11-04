@@ -2,7 +2,7 @@
 // Pipeline: normalize -> scan into typed tokens (lexicon, fuzzy match, glued-word split) ->
 // recursive-descent readers for dates, times, points, ranges and recurrences -> DSL line.
 // If the whole input does not parse, the longest parsable prefix is used (partial typing).
-import type { Engine } from "@type-date/engines";
+import type { Engine } from "./engine";
 import { norm } from "./engine";
 
 export interface Tok {

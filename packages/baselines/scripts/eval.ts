@@ -8,7 +8,7 @@ import { gzipSync } from "node:zlib";
 import { parseArgs } from "node:util";
 import { build } from "esbuild";
 import { resolveDsl } from "@type-date/core";
-import type { Engine } from "@type-date/engines";
+import type { Engine } from "../src/engine";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(here, "../../..");

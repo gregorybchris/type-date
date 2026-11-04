@@ -1,4 +1,22 @@
-import type { Engine, PredictOptions, PredictResult } from "@type-date/engines";
+export interface PredictResult {
+  /** DSL line, see specs/dsl.md */
+  dsl: string;
+  /** Wall time of this call in milliseconds */
+  ms: number;
+}
+
+export interface PredictOptions {
+  /** Reference day as YYYY-MM-DD. Only chrono-node uses it. */
+  today?: string;
+}
+
+/** A text to DSL parser. `load` and `dispose` exist for engines that need setup; the heuristics do nothing. */
+export interface Engine {
+  readonly id: string;
+  load(opts?: unknown): Promise<void>;
+  predict(text: string, signal?: AbortSignal, opts?: PredictOptions): Promise<PredictResult>;
+  dispose(): void;
+}
 
 /** Wrap a synchronous text -> DSL function as an Engine. */
 export function makeEngine(id: string, parse: (text: string, today?: string) => string): Engine {

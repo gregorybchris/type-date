@@ -1,25 +1,12 @@
 [project]
 name = "typedate"
 version = "0.1.0"
-description = "Data generation, training, export, and evaluation for the type-date model"
+description = "Data and eval-set tooling for the type-date heuristic parsers"
 requires-python = ">=3.11"
 dependencies = [
-  "torch",
-  "transformers",
-  "tokenizers",
-  "datasets",
-  "accelerate",
-  "optimum[onnxruntime]",
-  "onnx",
-  "onnxruntime",
-  "sentencepiece",
-  "numpy",
-  "pandas",
-  "tqdm",
   "typer",
   "rich",
   "datasketch",
-  "scikit-learn>=1.9.1",
 ]
 
 [project.scripts]

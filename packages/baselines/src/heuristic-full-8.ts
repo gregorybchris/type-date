@@ -1,6 +1,6 @@
 // exp-018: heuristic-full-7 behind a normalization layer for typos and abbreviations.
 // The layer (src/full-8/normalize.ts) rewrites misspelled words to forms full-7 knows, then full-7 parses.
-import type { Engine } from "@type-date/engines";
+import type { Engine } from "./engine";
 import { parseFull, parseFullAsync, loadV2 } from "./heuristic-full-7";
 import { normalize } from "./full-8/normalize";
 import { scoreDozen } from "./full-8/score";

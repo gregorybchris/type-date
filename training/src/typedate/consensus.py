@@ -4,8 +4,8 @@ import json
 import re
 from pathlib import Path
 
+from .common import resolved_equal
 from .evalsets import policy_flags, tag_from_dsl
-from .train import resolved_equal
 
 
 def _norm_dsl(dsl: str) -> str:

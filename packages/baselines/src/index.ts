@@ -1,4 +1,5 @@
-import type { Engine } from "@type-date/engines";
+import type { Engine } from "./engine";
+export type { Engine, PredictOptions, PredictResult } from "./engine";
 import chronoEngine from "./chrono";
 import heuristicFull from "./heuristic-full";
 import heuristicFull2 from "./heuristic-full-2";
