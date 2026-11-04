@@ -20,6 +20,26 @@ Apply these to all docs, comments, commit messages, and UI copy.
 - Every experiment gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
 - Background research goes in `specs/research/background/` as markdown.
 
+## Tooling preferences
+
+Full list in `specs/conventions.md`.
+
+- Python: `uv`, `ruff`, `ty`, `pytest`, `typer`. Python project is `training/`. Run with `uv run`.
+- TypeScript: pnpm workspaces, Vitest.
+- Codify actions we repeat as commands. Python and ML actions are `td` subcommands (typer, `training/src/typedate/cli.py`). Repo-level actions are Makefile targets. When you run a command a third time, add it as a command and list it below.
+
+## Commands
+
+Run `make help` for the full list.
+
+| Command | What it does |
+|---|---|
+| `make setup` | Install Python deps with uv |
+| `make py-check` | ruff, ruff format check, ty |
+| `make py-fix` | ruff autofix and format |
+| `make py-test` | pytest |
+| `make td ARGS="--help"` | Run the `td` CLI |
+
 ## Updating this file
 
 Agents are encouraged to update CLAUDE.md as they work. Put CLAUDE.md changes in a separate commit (or a separate PR if the project has PRs) from code changes. This helps other agents that start with an empty context.
