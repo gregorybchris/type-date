@@ -1,9 +1,10 @@
 {
   "id": "exp-003",
   "number": 3,
-  "title": "heuristic-full",
-  "created": "2026-11-04T03:55:06Z",
-  "dataset": "v002",
+  "title": "heuristic-full (grammar, fuzzy)",
+  "created": "2026-11-04T04:20:52Z",
+  "description": "Hand-written scanner and recursive-descent parser with fuzzy word matching, glued-word splitting and all DSL forms.",
+  "dataset": null,
   "format": "dsl-v1",
   "notes": "Hand-written grammar parser with fuzzy word matching. No dependencies.",
   "parent": null,
@@ -15,6 +16,5 @@
   "train": {},
   "export": {
     "format": "none"
-  },
-  "description": "Hand-written grammar parser with fuzzy matching of words for typos. No model, 7.9 kB gzipped. Best result so far."
+  }
 }

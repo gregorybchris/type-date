@@ -1,0 +1,234 @@
+{
+  "version": "dev1",
+  "created": "2026-11-04T04:09:51+00:00",
+  "seed": 777,
+  "params": {
+    "n": 30000,
+    "noise_rate": 0.3,
+    "prefix_rate": 0.15
+  },
+  "counts": {
+    "train": 25491,
+    "test_template": 2902,
+    "val": 1361,
+    "test_noise": 764
+  },
+  "dropped_conflicts": 1380,
+  "conflict_texts": [
+    "1",
+    "1 day",
+    "1-",
+    "10:10",
+    "10:15",
+    "10:15 to 10:45",
+    "10:30",
+    "10:45",
+    "11:10",
+    "11:30",
+    "11:30 to 12:30",
+    "11:45",
+    "11th aug",
+    "12",
+    "12 in",
+    "12 to",
+    "12-",
+    "12:10",
+    "12:30",
+    "12:45",
+    "14 march",
+    "17th aug",
+    "1:30",
+    "1:30 to",
+    "2",
+    "2 to",
+    "2 until",
+    "20th may",
+    "25 may",
+    "25th february",
+    "26th november",
+    "3",
+    "3 to",
+    "3pm",
+    "4",
+    "4 to",
+    "4:30",
+    "5",
+    "5 aug",
+    "6",
+    "7",
+    "7 until",
+    "7-",
+    "8:30",
+    "8:30 to",
+    "8am",
+    "9",
+    "9 may",
+    "9 to",
+    "9:30"
+  ],
+  "held_out_templates": [
+    "basic-date-range.between.abs_mon_d_d_mon",
+    "basic-date-range.between.abs_mon_d_mon_dot_d",
+    "basic-date-range.between.abs_mon_d_the_ord_of_mon",
+    "basic-date-range.between.rel_bare_next",
+    "basic-date-range.between.rel_d_mon_mon_dot_d",
+    "basic-date-range.between.rel_d_mon_slash",
+    "basic-date-range.between.rel_rel_day_coming",
+    "basic-date-range.between.rel_rel_day_nxt",
+    "basic-date-range.between.rel_slash_d_mon",
+    "basic-date-range.from.abs_d_mon_d_mon",
+    "basic-date-range.from.abs_mon_dot_d_slash_dm",
+    "basic-date-range.from.rel_bare_bare",
+    "basic-date-range.from.rel_d_mon_d_mon",
+    "basic-date-range.from.rel_d_mon_mon_d",
+    "basic-date-range.from.rel_last_on",
+    "basic-date-range.from.rel_mon_d_mon_dot_d",
+    "basic-date-range.from.rel_mon_d_the_ord_of_mon",
+    "basic-date-range.from.rel_next_bare",
+    "basic-date-range.from.rel_next_last",
+    "basic-date-range.from.rel_slash_dm_d_mon",
+    "basic-date-range.from.rel_slash_mon_d",
+    "basic-date-range.plain.abs_d_mon_d_mon",
+    "basic-date-range.plain.abs_d_mon_slash_dm",
+    "basic-date-range.plain.abs_mon_d_d_mon",
+    "basic-date-range.plain.abs_mon_d_slash",
+    "basic-date-range.plain.abs_mon_dot_d_d_mon",
+    "basic-date-range.plain.abs_mon_dot_d_mon_d",
+    "basic-date-range.plain.abs_slash_dm_d_mon",
+    "basic-date-range.plain.abs_slash_dm_slash",
+    "basic-date-range.plain.abs_the_ord_of_mon_mon_d",
+    "basic-date-range.plain.rel_last_on",
+    "basic-date-range.plain.rel_nxt_nxt",
+    "basic-date-range.plain.rel_ord_mon_d_mon",
+    "basic-date-range.plain.rel_previous_bare",
+    "basic-date-range.plain.rel_rel_day_past",
+    "basic-date-range.plain.rel_slash_dm_d_mon",
+    "basic-date-range.plain.rel_this_coming",
+    "datetime-range.one-date.noon_end",
+    "datetime.@.next",
+    "datetime.@.this",
+    "datetime.at.off_in",
+    "datetime.at.on",
+    "datetime.on_rev.mon_dot_d",
+    "datetime.on_rev.the_ord_of_mon",
+    "datetime.plain.coming",
+    "recurrence-weekly.weekly",
+    "relative-date.word",
+    "time-range.h24.between",
+    "time-range.known.between",
+    "weekday-relative.past"
+  ],
+  "by_tag": {
+    "basic-date": {
+      "train": 1968,
+      "val": 122,
+      "test_noise": 108
+    },
+    "basic-date-range": {
+      "train": 2862,
+      "test_template": 493,
+      "val": 148,
+      "test_noise": 23
+    },
+    "basic-date-year": {
+      "train": 935,
+      "val": 52,
+      "test_noise": 31
+    },
+    "date-range-shared-month": {
+      "train": 841,
+      "val": 44,
+      "test_noise": 14
+    },
+    "datetime": {
+      "train": 3472,
+      "test_template": 110,
+      "val": 191,
+      "test_noise": 52
+    },
+    "datetime-range": {
+      "train": 3130,
+      "test_template": 55,
+      "val": 153,
+      "test_noise": 31
+    },
+    "fuzzy-period": {
+      "train": 73,
+      "val": 2,
+      "test_noise": 8
+    },
+    "month-or-year-only": {
+      "train": 223,
+      "val": 20,
+      "test_noise": 36
+    },
+    "named-holiday": {
+      "train": 359,
+      "val": 25,
+      "test_noise": 38
+    },
+    "non-date-noise": {
+      "train": 413,
+      "val": 18
+    },
+    "nth-weekday-of-month": {
+      "train": 1266,
+      "val": 63,
+      "test_noise": 12
+    },
+    "period-relative": {
+      "train": 348,
+      "val": 15,
+      "test_noise": 42
+    },
+    "recurrence-daily": {
+      "train": 679,
+      "val": 48,
+      "test_noise": 18
+    },
+    "recurrence-interval": {
+      "train": 1400,
+      "val": 60,
+      "test_noise": 23
+    },
+    "recurrence-monthly-yearly": {
+      "train": 2000,
+      "val": 98,
+      "test_noise": 27
+    },
+    "recurrence-weekly": {
+      "test_template": 1762
+    },
+    "relative-date": {
+      "test_template": 261
+    },
+    "relative-offset": {
+      "train": 935,
+      "val": 55,
+      "test_noise": 20
+    },
+    "time-only": {
+      "train": 1059,
+      "val": 57,
+      "test_noise": 99
+    },
+    "time-range": {
+      "train": 2700,
+      "test_template": 160,
+      "val": 149,
+      "test_noise": 74
+    },
+    "weekday-bare": {
+      "train": 87,
+      "val": 3,
+      "test_noise": 26
+    },
+    "weekday-relative": {
+      "train": 741,
+      "test_template": 61,
+      "val": 38,
+      "test_noise": 82
+    }
+  },
+  "notes": ""
+}

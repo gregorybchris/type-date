@@ -1,0 +1,24 @@
+{
+  "id": "exp-007",
+  "number": 7,
+  "title": "SmolLM2-360M few-shot",
+  "description": "Pretrained SmolLM2-360M-Instruct with a 24-example prompt and no training. Same prompt as exp-006, 2.7x more parameters.",
+  "created": "2026-11-04T04:18:14+00:00",
+  "dataset": null,
+  "format": "dsl-v1",
+  "notes": "Few-shot prompt (24 examples, 855 tokens), greedy, fp32, MPS.",
+  "parent": null,
+  "model": {
+    "family": "zero-shot",
+    "params": 361821120,
+    "hf_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "n_shots": 24
+  },
+  "train": {
+    "trained": false
+  },
+  "export": {
+    "format": "none",
+    "quant": "none"
+  }
+}

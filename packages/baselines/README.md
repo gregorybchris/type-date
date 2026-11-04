@@ -7,6 +7,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `chrono` | `src/chrono.ts` | chrono-node 2.10.3 plus an adapter. No recurrence. | 14.9 kB |
 | `heuristic-small` | `src/heuristic-small.ts` | About 40 regex rules, no dependencies. | 3.5 kB |
 | `heuristic-full` | `src/heuristic-full.ts` | Scanner, fuzzy words, recursive-descent readers. | 7.9 kB |
+| `heuristic-full-2` | `src/heuristic-full-2.ts` | heuristic-full plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
 
 `predict(text, signal?, { today })` takes an optional reference day. Only `chrono` uses it, because chrono returns absolute dates. The heuristics output relative DSL and ignore it.
 
@@ -15,7 +16,8 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 ```sh
 pnpm --filter @type-date/baselines test                      # vitest, about 35 cases per engine
 pnpm --filter @type-date/baselines eval --engine heuristic-full --exp 3 --title "heuristic-full"
-make eval-baselines                                          # all three, writes runs/exp-001..003
+make eval-baselines                                          # all four, writes runs/exp-001..003 and 009 on eval e1
+make rescore-baselines EVAL=e1q [EXPS="1 9"]                 # another eval version, only adds metrics.json evals[e1q] (--no-primary)
 pnpm --filter @type-date/baselines exec tsx scripts/dev.ts heuristic-full --split val --show 20   # failures, train or val only
 ```
 
@@ -25,7 +27,13 @@ For `chrono` the eval calls the engine once for each reference day in `score-res
 
 `scripts/dev.ts` reads only `train` and `val`. Use it to tune. Score the test splits with `eval.ts` for the final numbers only.
 
+`eval.ts` takes `--eval-version` (default `e1`, reads `evals/<version>`), `--description`, and `--no-primary`, which writes only `metrics.json` `evals[<version>]` and leaves `eval`, errors and config alone. It also writes `timing.json` (stage `eval`).
+
 ## Baselines pitfalls
+
+- A broad regex or lexicon entry added for one phrasing can capture noise words through fuzzy matching (`yest` matched `test`, `start` matched `stars`, `tomo` matched `tom`). Keep short special words out of the fuzzy targets and re-check `non-date-noise`.
+- Allowing 2 edits for long words made `inthree` and `totomorrow` match `three` and `tomorrow` and lose the glued prefix. Cap the length gap at 1, with a narrow exception for month and weekday names.
+- Make Makefile edits with an editor tool: a `for` loop with `$$` in a shell heredoc was blocked by the command safety check.
 
 - `import ... from "chrono-node/en"` works in esbuild and tsx but not in Vitest (the package `exports` wildcard is not resolved). Import from `"chrono-node"`. esbuild still drops the other locales (bundle 14.9 kB gzipped).
 - A hand-rolled random sampler in `dev.ts` (`s * 1664525` in a float) lost its low bits, returned a constant, selected every row, and the run took minutes and ran out of memory. Use `Math.imul` or take every k-th row.

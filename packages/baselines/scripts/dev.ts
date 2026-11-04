@@ -11,10 +11,10 @@ const { values: a, positionals } = parseArgs({
   allowPositionals: true,
   options: { split: { type: "string", default: "train" }, n: { type: "string", default: "6000" }, tag: { type: "string" }, show: { type: "string", default: "6" }, grep: { type: "string" }, mod: { type: "string" }, file: { type: "string" } },
 });
-if (a.split !== "train" && a.split !== "val") throw new Error("dev.ts only reads train and val");
+if (a.split !== "train" && a.split !== "val" && !a.file) throw new Error("dev.ts only reads train and val");
 const mod = await import(join(here, "../src", positionals[0] + ".ts"));
 const engine = mod.default;
-let rows = readFileSync(a.file ?? join(ROOT, "data/v002", a.split + ".jsonl"), "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l));
+let rows = readFileSync(a.file ?? join(ROOT, "data/v003", a.split + ".jsonl"), "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l));
 // deterministic subsample
 let s = 12345;
 const rnd = () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 2 ** 32);

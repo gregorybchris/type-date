@@ -2,69 +2,21 @@
   "stages": {
     "eval": {
       "stages": {
-        "started_at": "2026-11-04T04:15:39.697Z",
-        "finished_at": "2026-11-04T04:15:39.891Z"
+        "started_at": "2026-11-04T04:20:49.255Z",
+        "finished_at": "2026-11-04T04:20:52.601Z"
       },
-      "total_s": 0.19435925,
+      "total_s": 3.345329792,
       "buckets": {
-        "load_data": 0.05596074999999999,
-        "eval_predict": 0.11731900000000002,
-        "bundle_size": 0.021089916000000018
+        "load_data": 0.165674875,
+        "eval_predict": 3.128000583,
+        "bundle_size": 0.051677292000000305
       }
-    },
-    "bench-js-desktop": {
-      "total_s": 1.419,
-      "buckets": {
-        "setup": 0,
-        "esbuild_bundle": 0.138,
-        "server_start": 0.002,
-        "browser_launch": 0.3,
-        "page_open": 0.447,
-        "run_in_browser": 0.418,
-        "write_results": 0.112,
-        "run_in_browser/model_load": 0,
-        "run_in_browser/predictions": 0.014
-      },
-      "rows": 200
-    },
-    "bench-js-mobile-4x": {
-      "total_s": 0.702,
-      "buckets": {
-        "setup": 0,
-        "esbuild_bundle": 0.088,
-        "server_start": 0.002,
-        "browser_launch": 0.134,
-        "page_open": 0.273,
-        "run_in_browser": 0.133,
-        "write_results": 0.071,
-        "run_in_browser/model_load": 0.001,
-        "run_in_browser/predictions": 0.03
-      },
-      "rows": 200
     }
   },
-  "total_s": 2.315,
+  "total_s": 3.345329792,
   "buckets": {
-    "eval.load_data": 0.05596074999999999,
-    "eval.eval_predict": 0.11731900000000002,
-    "eval.bundle_size": 0.021089916000000018,
-    "bench-js-desktop.setup": 0,
-    "bench-js-desktop.esbuild_bundle": 0.138,
-    "bench-js-desktop.server_start": 0.002,
-    "bench-js-desktop.browser_launch": 0.3,
-    "bench-js-desktop.page_open": 0.447,
-    "bench-js-desktop.run_in_browser": 0.418,
-    "bench-js-desktop.write_results": 0.112,
-    "bench-js-desktop.run_in_browser/model_load": 0,
-    "bench-js-desktop.run_in_browser/predictions": 0.014,
-    "bench-js-mobile-4x.setup": 0,
-    "bench-js-mobile-4x.esbuild_bundle": 0.088,
-    "bench-js-mobile-4x.server_start": 0.002,
-    "bench-js-mobile-4x.browser_launch": 0.134,
-    "bench-js-mobile-4x.page_open": 0.273,
-    "bench-js-mobile-4x.run_in_browser": 0.133,
-    "bench-js-mobile-4x.write_results": 0.071,
-    "bench-js-mobile-4x.run_in_browser/model_load": 0.001,
-    "bench-js-mobile-4x.run_in_browser/predictions": 0.03
+    "eval.load_data": 0.165674875,
+    "eval.eval_predict": 3.128000583,
+    "eval.bundle_size": 0.051677292000000305
   }
 }

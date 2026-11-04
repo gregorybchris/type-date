@@ -2,8 +2,9 @@
   "id": "exp-001",
   "number": 1,
   "title": "chrono-node + DSL adapter",
-  "created": "2026-11-04T03:55:02Z",
-  "dataset": "v002",
+  "created": "2026-11-04T04:20:45Z",
+  "description": "chrono-node 2.10.3 English parser with an adapter to DSL lines. No recurrence support, so recurrence inputs output x.",
+  "dataset": null,
   "format": "dsl-v1",
   "notes": "chrono-node 2.10.3 (en casual, forwardDate) plus DSL adapter. No recurrence support.",
   "parent": null,
@@ -15,6 +16,5 @@
   "train": {},
   "export": {
     "format": "none"
-  },
-  "description": "Off-the-shelf rule-based date parser (chrono-node) with an adapter to our DSL. No recurrence support. A floor for what a library gives with no custom work."
+  }
 }

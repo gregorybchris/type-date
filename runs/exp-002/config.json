@@ -1,9 +1,10 @@
 {
   "id": "exp-002",
   "number": 2,
-  "title": "heuristic-small",
-  "created": "2026-11-04T03:55:04Z",
-  "dataset": "v002",
+  "title": "heuristic-small (regex)",
+  "created": "2026-11-04T04:20:47Z",
+  "description": "About 40 hand-written regex rules, no dependencies, 3.5 kB gzipped. Common phrases only.",
+  "dataset": null,
   "format": "dsl-v1",
   "notes": "Hand-written tokenizer and a few dozen regex rules. No dependencies.",
   "parent": null,
@@ -15,6 +16,5 @@
   "train": {},
   "export": {
     "format": "none"
-  },
-  "description": "Tiny hand-written regex rules, no dependencies, 3.5 kB gzipped. Covers common phrases only."
+  }
 }
