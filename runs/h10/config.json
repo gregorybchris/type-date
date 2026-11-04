@@ -1,0 +1,7 @@
+{
+  "id": "h10",
+  "title": "h10",
+  "description": "h9 behind a rewrite step: an hour with a missing a or p (9m) keeps the hour with an unknown meridiem, so the rest of the phrase is still read.",
+  "created": "2026-11-04T10:11:40Z",
+  "format": "dsl-v1"
+}

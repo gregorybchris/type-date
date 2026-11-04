@@ -85,7 +85,6 @@
 {"id":"n-0004420","text":"ydday","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","typo"],"expected":"d -1d","predicted":"x","resolved_match":false}
 {"id":"p-0004423","text":"on tuesday till j","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","partial-prefix"],"expected":"d R w/1 tu","predicted":"d tu","resolved_match":false}
 {"id":"p-0005217","text":"weekly on thursday,","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","partial-prefix"],"expected":"x","predicted":"d R w/1 th","resolved_match":false}
-{"id":"p-0005302","text":"2m","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","partial-prefix"],"expected":"x","predicted":"t 2?","resolved_match":false}
 {"id":"p-0006152","text":"EVERY TUES STARTING OCTOBER","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","casing","partial-prefix"],"expected":"d R w/1 tu","predicted":"d R w/1 tu sM@10","resolved_match":false}
 {"id":"g-0006481","text":"january 14th - 2-2","split":"test_template","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 01-14>02-02","predicted":"d 01-14>01-02","resolved_match":false}
 {"id":"n-0006482","text":"januaey 14th - 2-2","split":"test_template","primary_tag":"basic-date-range","modifier_tags":["typo-keyboard"],"expected":"d 01-14>02-02","predicted":"d 01-14>01-02","resolved_match":false}
@@ -668,12 +667,10 @@
 {"id":"r-v2x0078","text":"Library hours: open after 10am, closed before 9am on sundays","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 10:00>","predicted":"dt su 09:00>","resolved_match":false}
 {"id":"r-v2x0090","text":"free after 4:30 any day this week","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 4:30?>","predicted":"dt W+0 4:30?>","resolved_match":false}
 {"id":"r-v2x0093","text":"brunch sun 11 1.5h","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"dt su 11?>+90m","predicted":"dt su 11?","resolved_match":false}
-{"id":"r-v2x0122","text":"6pm 90m","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 18:00>+90m","predicted":"t 18:00","resolved_match":false}
 {"id":"r-v2x0123","text":"the party starts after 8 so no rush","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 8?>","predicted":"x","resolved_match":false}
 {"id":"r-v2x0134","text":"i need 3 hours starting at 1pm","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 13:00>+3h","predicted":"t 13:00>","resolved_match":false}
 {"id":"r-v2x0171","text":"latest friday","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"d >fr","predicted":"d fr","resolved_match":false}
 {"id":"r-v2x0202","text":"starting next week","split":"test_v2","primary_tag":"period-relative","modifier_tags":[],"expected":"d W+1","predicted":"d W+1>","resolved_match":false}
-{"id":"r-v2x0210","text":"5pm 45m","split":"test_v2","primary_tag":"duration","modifier_tags":[],"expected":"t 17:00>+45m","predicted":"t 17:00","resolved_match":false}
 {"id":"r-v2x0211","text":"open from 8am","split":"test_v2","primary_tag":"open-range","modifier_tags":[],"expected":"t 08:00>","predicted":"t 08:00","resolved_match":false}
 {"id":"r-v2x0217","text":"Your essay is due the 30th by midnight","split":"test_v2","primary_tag":"day-of-month","modifier_tags":[],"expected":"d D@30","predicted":"dt >D@30 00:00","resolved_match":false}
 {"id":"r-v2x0244","text":"the 2 of us","split":"test_v2","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"t 2?","resolved_match":false}

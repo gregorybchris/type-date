@@ -157,7 +157,6 @@
 {"id":"g-0004981","text":"on tue and thur and saturday","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation"],"expected":"d R w/1 tu,th,sa","predicted":"d tu,th,sa","resolved_match":false}
 {"id":"p-0005217","text":"weekly on thursday,","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","partial-prefix"],"expected":"x","predicted":"d R w/1 th","resolved_match":false}
 {"id":"g-0005238","text":"next tues @ 11:00","split":"test_template","primary_tag":"datetime","modifier_tags":["abbreviation"],"expected":"dt tu+1 11:00","predicted":"dt tu+1 11?","resolved_match":false}
-{"id":"p-0005302","text":"2m","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","partial-prefix"],"expected":"x","predicted":"t 2?","resolved_match":false}
 {"id":"g-0005816","text":"fri., sunday, thursday","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation"],"expected":"d R w/1 th,fr,su","predicted":"d th,fr,su","resolved_match":false}
 {"id":"g-0005827","text":"on saturday, thur., tuesday","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation"],"expected":"d R w/1 tu,th,sa","predicted":"d tu,th,sa","resolved_match":false}
 {"id":"p-0006152","text":"EVERY TUES STARTING OCTOBER","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","casing","partial-prefix"],"expected":"d R w/1 tu","predicted":"d R w/1 tu sM@10","resolved_match":false}

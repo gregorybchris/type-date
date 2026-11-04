@@ -86,7 +86,6 @@
 {"id":"n-0004420","text":"ydday","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","typo"],"expected":"d -1d","predicted":"x","resolved_match":false}
 {"id":"p-0004423","text":"on tuesday till j","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","partial-prefix"],"expected":"d R w/1 tu","predicted":"d tu","resolved_match":false}
 {"id":"p-0005217","text":"weekly on thursday,","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","partial-prefix"],"expected":"x","predicted":"d R w/1 th","resolved_match":false}
-{"id":"p-0005302","text":"2m","split":"test_template","primary_tag":"relative-date","modifier_tags":["abbreviation","partial-prefix"],"expected":"x","predicted":"t 2?","resolved_match":false}
 {"id":"p-0006152","text":"EVERY TUES STARTING OCTOBER","split":"test_template","primary_tag":"recurrence-weekly","modifier_tags":["abbreviation","casing","partial-prefix"],"expected":"d R w/1 tu","predicted":"d R w/1 tu sM@10","resolved_match":false}
 {"id":"g-0006481","text":"january 14th - 2-2","split":"test_template","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 01-14>02-02","predicted":"d 01-14>01-02","resolved_match":false}
 {"id":"n-0006482","text":"januaey 14th - 2-2","split":"test_template","primary_tag":"basic-date-range","modifier_tags":["typo-keyboard"],"expected":"d 01-14>02-02","predicted":"d 01-14>01-02","resolved_match":false}
