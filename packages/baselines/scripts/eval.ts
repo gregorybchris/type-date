@@ -20,6 +20,7 @@ const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; 
   "heuristic-full-2": { file: "heuristic-full-2.ts", family: "heuristic", perDay: false, notes: "heuristic-full plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
   "heuristic-full-5": { file: "heuristic-full-5.ts", family: "heuristic", perDay: false, notes: "heuristic-full-4 plus date validity checks, year-first and named numeric formats, two-digit years, seconds, relative offsets in more forms." },
   "heuristic-full-6": { file: "heuristic-full-6.ts", family: "heuristic", perDay: false, notes: "heuristic-full-5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, windows, anchored and business-day offsets." },
+  "heuristic-full-7": { file: "heuristic-full-7.ts", family: "heuristic", perDay: false, notes: "heuristic-full-6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms." },
   "heuristic-full-4": { file: "heuristic-full-4.ts", family: "heuristic", perDay: false, notes: "heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand." },
   "heuristic-full-3": { file: "heuristic-full-3.ts", family: "heuristic", perDay: false, notes: "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm and slang." },
   "heuristic-full": { file: "heuristic-full.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },
@@ -90,19 +91,32 @@ function pct(sorted: number[], q: number): number {
   return sorted[Math.min(sorted.length - 1, Math.floor(q * sorted.length))] ?? 0;
 }
 
-async function bundleSize(file: string): Promise<{ raw: number; gzip: number }> {
+async function bundleSize(file: string): Promise<{ raw: number; gzip: number; lazyGzip: number; lazyRaw: number }> {
+  // Code splitting: chunks reached through a dynamic import() are "lazy", the rest is the eager download.
   const out = await build({
     entryPoints: [join(here, "../src", file)],
     bundle: true,
     minify: true,
+    splitting: true,
     format: "esm",
+    outdir: "out",
     platform: "browser",
     target: "es2022",
     write: false,
+    metafile: true,
     logLevel: "error",
   });
-  const code = out.outputFiles[0]!.contents;
-  return { raw: code.length, gzip: gzipSync(code, { level: 9 }).length };
+  const lazy = new Set<string>();
+  for (const o of Object.values(out.metafile.outputs)) for (const i of o.imports) if (i.kind === "dynamic-import") lazy.add(i.path);
+  let raw = 0, lazyRaw = 0;
+  const eager: Buffer[] = [], lz: Buffer[] = [];
+  for (const f of out.outputFiles) {
+    const rel = Object.keys(out.metafile.outputs).find((k) => resolve(k) === f.path)!;
+    const buf = Buffer.from(f.contents);
+    if (lazy.has(rel)) (lazyRaw += buf.length), lz.push(buf);
+    else (raw += buf.length), eager.push(buf);
+  }
+  return { raw, gzip: gzipSync(Buffer.concat(eager), { level: 9 }).length, lazyRaw, lazyGzip: lz.length ? gzipSync(Buffer.concat(lz), { level: 9 }).length : 0 };
 }
 
 async function main() {
@@ -178,7 +192,7 @@ async function main() {
       by_modifier: sortedObj(mod_),
       version: args["eval-version"],
     },
-    model: { params: 0, size_bytes: size.gzip, size_bytes_minified: size.raw, avg_output_tokens: null },
+    model: { params: 0, size_bytes: size.gzip, size_bytes_minified: size.raw, size_bytes_lazy: size.lazyGzip, avg_output_tokens: null },
     train: { seconds: 0, steps: 0, final_loss: null },
     node_latency_ms: { p50: pct(latencies, 0.5), p95: pct(latencies, 0.95), p99: pct(latencies, 0.99), n: latencies.length },
   };
@@ -196,7 +210,7 @@ async function main() {
     train: {},
     export: { format: "none" },
   };
-  console.log(`${args.engine}: exact ${metrics.eval.exact.toFixed(4)} resolved ${metrics.eval.resolved.toFixed(4)} n=${tot} gzip=${size.gzip}B p50=${metrics.node_latency_ms.p50.toFixed(4)}ms`);
+  console.log(`${args.engine}: exact ${metrics.eval.exact.toFixed(4)} resolved ${metrics.eval.resolved.toFixed(4)} n=${tot} gzip=${size.gzip}B lazy=${size.lazyGzip}B p50=${metrics.node_latency_ms.p50.toFixed(4)}ms`);
   for (const [s, v] of Object.entries(bySplit)) console.log(`  ${s.padEnd(14)} n=${String(v.n).padStart(5)} exact ${v.exact.toFixed(4)} resolved ${v.resolved.toFixed(4)}`);
   if (args["dry-run"]) return;
   const dir = join(ROOT, "runs", expId);
