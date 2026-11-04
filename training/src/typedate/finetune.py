@@ -12,6 +12,7 @@ from .timing import Timer
 from .train import ROOT, load_jsonl
 
 os.environ.setdefault("HF_HOME", str(ROOT / "training" / ".hf"))
+os.environ.setdefault("PYTORCH_MPS_HIGH_WATERMARK_RATIO", "0.6")  # cap MPS memory growth
 
 
 def run(
@@ -67,6 +68,9 @@ def run(
         for i in range(0, len(data) - batch + 1, batch):
             chunk = data[i : i + batch]
             ml = max(len(c[0]) for c in chunk)
+            ml = (
+                (ml + 15) // 16
+            ) * 16  # fixed length buckets: fewer distinct shapes, less MPS fragmentation
             ids = torch.full((batch, ml), tok.pad_token_id)
             labels = torch.full((batch, ml), -100)
             att = torch.zeros((batch, ml), dtype=torch.long)
@@ -84,6 +88,8 @@ def run(
             opt.zero_grad(set_to_none=True)
             step += 1
             last = out.loss.item()
+            if device == "mps" and step % 25 == 0:
+                torch.mps.empty_cache()
             if step % 50 == 0:
                 print(f"step {step}/{steps} loss {last:.4f}", flush=True)
     tm.add("train_loop", time.perf_counter() - t0)
