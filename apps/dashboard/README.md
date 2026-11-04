@@ -30,6 +30,8 @@ Breakdowns (error analysis, experiment detail) use `components/Breakdown.tsx`: a
 ## Eval versions, families, titles
 
 - The Eval selector in the top bar (experiments, Pareto, detail, errors) picks the version for every metric. Default: the version with the most results, latest on ties. Runs without results for it are greyed with "Not evaluated on X" and left out of charts. Runs with `eval.version` `pre-*` are marked invalid. Deltas and comparisons only use runs scored on the same version.
+- Default version: the latest full version (`e3` over `e2` over `e1`) with at least 3 experiments scored; quick versions (`e3q`) only if no full one qualifies. The selector groups full and quick sets, shows coverage ("7 of 10") and the first sentence of `evals/<v>/manifest.json` `reason` (served at `/api/evals`). A banner on Experiments and Pareto lists experiments missing from the selected version. The store refreshes every 20 s and on tab focus.
+- Realistic accuracy: resolved accuracy on `test_external` and `test_external_hard`, weighted by row count (`lib/evals.ts`). It is the default Pareto Y axis, a column in the table, and the emphasized rows of the detail page's "Accuracy by split".
 - Family chips (heuristic, library, zero-shot, finetune, scratch) filter the table and the Pareto plot. Other `config.model.family` names are mapped by substring.
 - Titles show next to the experiment number; descriptions show in the table (truncated, full text on hover), cards, tooltips and the detail header.
 - Pareto labels are placed greedily; labels that would collide are dropped and the tooltip names the point.

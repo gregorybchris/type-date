@@ -1,7 +1,8 @@
 import { ArrowLeft, Bug, Play } from "lucide-react";
 import { useMemo, useState } from "react";
 import { TimeCard } from "@/components/TimeCard";
-import { evalFor, isInvalidVersion, notEvaluatedNote, ownVersion } from "@/lib/evals";
+import { SplitBars } from "@/components/SplitBars";
+import { evalFor, isInvalidVersion, notEvaluatedNote, ownVersion, realisticResolved } from "@/lib/evals";
 import { Delta } from "@/components/Bars";
 import { Breakdown, BreakdownLegend, MetricToggle, SMALL_N, rowsFromScores, type Metric } from "@/components/Breakdown";
 import { Flow, Pct } from "@/components/Num";
@@ -47,6 +48,8 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
   const b = bestBench(r, profile);
   const base = isBaseline(r);
   const dEx = cmp ? (ev.exact - cev!.exact) * 100 : null;
+  const real = realisticResolved(ev);
+  const dReal = cmp && real !== null && realisticResolved(cev) !== null ? (real - realisticResolved(cev)!) * 100 : null;
   const dRes = cmp ? (ev.resolved - cev!.resolved) * 100 : null;
   const cb = cmp ? bestBench(cmp, profile) : undefined;
 
@@ -88,16 +91,17 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
       </StaggerItem>
 
       <StaggerItem>
-        <div className="grid grid-cols-2 gap-y-5 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-y-5 md:grid-cols-4 lg:grid-cols-7">
           {[
+            { l: `Resolved, ${evVersion}`, v: <Pct value={ev.resolved} className="text-[22px] font-medium" />, d: dRes !== null && <Delta value={dRes} /> },
+            { l: "Realistic", v: real !== null ? <Pct value={real} className="text-[22px] font-medium text-accent" /> : <span className="text-[22px] text-subtle" title="No realistic split on this version">-</span>, d: dReal !== null && <Delta value={dReal} /> },
             { l: "Exact", v: <Pct value={ev.exact} className="text-[22px] font-medium" />, d: dEx !== null && <Delta value={dEx} /> },
-            { l: "Resolved", v: <Pct value={ev.resolved} className="text-[22px] font-medium" />, d: dRes !== null && <Delta value={dRes} /> },
             { l: "p50 latency", v: b ? <Flow value={b.latency_ms.p50} digits={b.latency_ms.p50 < 10 ? 2 : 1} suffix=" ms" className="text-[22px] font-medium" /> : "-", d: b && cb && <Delta value={b.latency_ms.p50 - cb.latency_ms.p50} unit="ms" invert /> },
             { l: "Memory", v: b ? <Flow value={b.memory_mb} suffix=" MB" className="text-[22px] font-medium" /> : "-", d: b && cb && <Delta value={b.memory_mb - cb.memory_mb} unit="MB" invert /> },
             { l: "Download", v: <span className="num text-[22px] font-medium">{fmtBytes(b?.download_bytes ?? r.metrics.model.size_bytes)}</span>, d: null },
             { l: "Params", v: <span className="num text-[22px] font-medium">{fmtParams(r.metrics.model.params)}</span>, d: null },
           ].map((s, i) => (
-            <div key={s.l} className={i < 5 ? "pr-4 sep-lg" : "pr-4"}>
+            <div key={s.l} className={i < 6 ? "pr-4 sep-lg" : "pr-4"}>
               <div className={i > 0 ? "pl-0 lg:pl-4" : ""}>
                 <StatLabel>{s.l}</StatLabel>
                 <div className="mt-1">{s.v}</div>
@@ -117,6 +121,14 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
 
       <Dotted />
 
+      <StaggerItem>
+        <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Resolved accuracy on {evVersion}</span>}>Accuracy by split</SectionTitle>
+        <SplitBars scores={ev.by_split} compare={cmp ? cev!.by_split : null} />
+        <p className="mt-2 px-1 text-[11.5px] leading-4 text-subtle">Realistic splits (test_external, test_external_hard) are the closest to real use. The other splits are generated and easier.</p>
+      </StaggerItem>
+
+      <Dotted />
+
       <StaggerItem className="flex flex-col gap-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-[12px] text-muted">Click a row to see its failures. Counts are shown in grey. Hatched bars have fewer than {SMALL_N} examples.</p>
@@ -132,10 +144,7 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
               <SectionTitle>Modifier tags</SectionTitle>
               <Breakdown rows={rowsFromScores(ev.by_modifier)} compare={cmp ? rowsFromScores(cev!.by_modifier) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { modifier: t }))} />
             </section>
-            <section>
-              <SectionTitle>Splits</SectionTitle>
-              <Breakdown rows={rowsFromScores(ev.by_split)} compare={cmp ? rowsFromScores(cev!.by_split) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { split: t }))} />
-            </section>
+
           </div>
         </div>
         <BreakdownLegend metric={metric} overall={totalErrors / Math.max(1, ev.n)} />

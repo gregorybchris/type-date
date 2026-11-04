@@ -42,3 +42,23 @@ describe("familyOf", () => {
     expect(familyOf(run(1, "e1", {}, "heuristic"))).toBe("heuristic");
   });
 });
+
+import { kindOf, realisticResolved } from "../src/lib/evals";
+
+describe("default version and realistic split", () => {
+  it("classifies versions", () => {
+    expect([kindOf("e3"), kindOf("e3q"), kindOf("pre-e1"), kindOf("real-dev")]).toEqual(["full", "quick", "other", "other"]);
+  });
+  it("prefers the latest full version with at least 3 scored, even if a quick one has more", () => {
+    const runs = [1, 2, 3].map((n) => run(n, "e1", { e3: block(0.5) }));
+    const many = [...runs, ...[4, 5, 6, 7].map((n) => run(n, "e1q"))];
+    expect(defaultVersion(many)).toBe("e3");
+    expect(defaultVersion([run(1, "e1", { e3: block(0.5) }), ...[2, 3].map((n) => run(n, "e1"))])).toBe("e1");
+  });
+  it("weights the realistic splits by row count", () => {
+    const ev = block(0.5);
+    ev.by_split = { test_external: { n: 300, exact: 0.9, resolved: 0.9 }, test_external_hard: { n: 100, exact: 0.5 }, val: { n: 1000, exact: 1 } };
+    expect(realisticResolved(ev)).toBeCloseTo((300 * 0.9 + 100 * 0.5) / 400);
+    expect(realisticResolved(block(0.5))).toBeNull();
+  });
+});

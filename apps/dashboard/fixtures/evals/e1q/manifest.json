@@ -1,0 +1,15 @@
+{
+ "version": "e1q",
+ "created": "2026-11-03T12:30:00Z",
+ "reason": "Fast screening subset of e1.",
+ "parent": null,
+ "subset_of": "e1",
+ "files": {
+  "val": {
+   "n": 200
+  },
+  "test_external": {
+   "n": 100
+  }
+ }
+}

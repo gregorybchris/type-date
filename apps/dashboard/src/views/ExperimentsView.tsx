@@ -1,6 +1,7 @@
 import { m } from "motion/react";
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
+import { CoverageBanner } from "@/components/Coverage";
 import { FamilyChips, useToggleSet } from "@/components/FamilyChips";
 import { Flow, Pct } from "@/components/Num";
 import { ProgressChart } from "@/components/charts/ProgressChart";
@@ -8,7 +9,7 @@ import { Sparkline } from "@/components/Sparkline";
 import { Badge } from "@/components/ui/badge";
 import { Card, Empty, Input, PageHeader, SectionTitle, StatLabel } from "@/components/ui/misc";
 import { itemVariants, listVariants } from "@/components/ui/motion";
-import { evalFor, notEvaluatedNote, ownVersion, isInvalidVersion } from "@/lib/evals";
+import { evalFor, isInvalidVersion, notEvaluatedNote, ownVersion, realisticResolved } from "@/lib/evals";
 import { fmtBytes, fmtParams } from "@/lib/format";
 import { bestBench, familyOf, isBaseline } from "@/lib/pareto";
 import { href, navigate } from "@/lib/router";
@@ -24,7 +25,7 @@ export function ExperimentsView() {
   const scored = useMemo(() => runs.map((run) => ({ run, ev: evalFor(run, version) })), [runs, version]);
   const stats = useMemo(() => {
     const ok = scored.filter((s) => s.ev);
-    const best = [...ok].sort((a, b) => b.ev!.exact - a.ev!.exact)[0];
+    const best = [...ok].sort((a, b) => b.ev!.resolved - a.ev!.resolved)[0];
     const fastest = Math.min(...runs.map((r) => bestBench(r)?.latency_ms.p50 ?? Infinity));
     const smallest = Math.min(...runs.filter((r) => !isBaseline(r)).map((r) => r.metrics.model.size_bytes));
     return { best, fastest, smallest, evaluated: ok.length, count: runs.length };
@@ -42,10 +43,11 @@ export function ExperimentsView() {
 
   return (
     <div className="flex flex-col gap-7">
-      <PageHeader title="Experiments" subtitle={`Accuracy, speed and size for every run on eval ${version}.`} />
+      <PageHeader title="Experiments" subtitle={`Accuracy, speed and size for every run on eval ${version}. Realistic means test_external and test_external_hard.`} />
+      <CoverageBanner />
 
       <div className="grid grid-cols-2 gap-y-5 md:grid-cols-4">
-        <Stat label={`Best exact (${version})`}>{stats.best ? <><Pct value={stats.best.ev!.exact} className="text-[22px] font-medium" /><div className="truncate text-[12px] text-muted">{stats.best.run.config.id} {stats.best.run.config.title}</div></> : <span className="text-[22px] text-subtle">-</span>}</Stat>
+        <Stat label={`Best resolved (${version})`}>{stats.best ? <><Pct value={stats.best.ev!.resolved} className="text-[22px] font-medium" /><div className="truncate text-[12px] text-muted">{stats.best.run.config.id} {stats.best.run.config.title}</div></> : <span className="text-[22px] text-subtle">-</span>}</Stat>
         <Stat label="Experiments"><Flow value={stats.count} className="text-[22px] font-medium" /><div className="text-[12px] text-muted">{stats.evaluated} evaluated on {version}</div></Stat>
         <Stat label="Fastest p50">{Number.isFinite(stats.fastest) && <Flow value={stats.fastest} digits={2} suffix=" ms" className="text-[22px] font-medium" />}<div className="text-[12px] text-muted">best bench entry</div></Stat>
         <Stat label="Smallest model" last><span className="num text-[22px] font-medium">{Number.isFinite(stats.smallest) ? fmtBytes(stats.smallest) : "-"}</span><div className="text-[12px] text-muted">download, excl. baselines</div></Stat>
@@ -54,7 +56,7 @@ export function ExperimentsView() {
       <div className="dotted-t" />
 
       <section>
-        <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Best exact accuracy on {version} so far. Diamonds are baselines.</span>}>Progress over time</SectionTitle>
+        <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Best resolved accuracy on {version} so far. Diamonds are baselines.</span>}>Progress over time</SectionTitle>
         <Card className="p-3">
           <ProgressChart runs={runs} version={version} onOpen={(id) => navigate(href("experiments", id))} />
         </Card>
@@ -72,8 +74,8 @@ export function ExperimentsView() {
           <table className="w-full min-w-[1040px] border-collapse text-[13px]">
             <thead>
               <tr className="dotted-b text-left text-[12px] font-medium text-subtle">
-                {["Exp", "Title", "Family", "Params", "Size", "Exact", "Resolved", "p50", "Memory", "Trend"].map((h, i) => (
-                  <th key={h} className={cn("whitespace-nowrap px-2 py-2.5 font-medium", i >= 3 && i <= 8 && "text-right")}>{h}</th>
+                {["Exp", "Title", "Family", "Params", "Size", "Resolved, all", "Resolved, realistic", "p50", "Memory", "Trend"].map((h, i) => (
+                  <th key={h} className={cn("whitespace-nowrap px-2 py-2.5 font-medium", i >= 3 && i <= 8 && "text-right", i === 6 && "text-accent")}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -81,7 +83,7 @@ export function ExperimentsView() {
               {rows.map(({ run: r, ev }) => {
                 const b = bestBench(r);
                 const isBest = stats.best?.run.config.id === r.config.id;
-                const series = history.filter((x) => x.run.config.number <= r.config.number).slice(-8).map((x) => x.ev!.exact);
+                const series = history.filter((x) => x.run.config.number <= r.config.number).slice(-8).map((x) => x.ev!.resolved);
                 const note = ev ? null : notEvaluatedNote(r, version);
                 return (
                   <m.tr
@@ -104,8 +106,8 @@ export function ExperimentsView() {
                     <td className="whitespace-nowrap px-2 py-3 align-top text-muted">{familyOf(r)}</td>
                     <td className="num px-2 py-3 text-right align-top text-muted">{fmtParams(r.metrics.model.params)}</td>
                     <td className="num whitespace-nowrap px-2 py-3 text-right align-top text-muted">{fmtBytes(b?.download_bytes ?? r.metrics.model.size_bytes)}</td>
-                    <td className="px-2 py-3 text-right align-top font-medium">{ev ? <Pct value={ev.exact} /> : <span className="text-subtle">-</span>}</td>
-                    <td className="px-2 py-3 text-right align-top text-muted">{ev ? <Pct value={ev.resolved} /> : <span className="text-subtle">-</span>}</td>
+                    <td className="px-2 py-3 text-right align-top font-medium">{ev ? <Pct value={ev.resolved} /> : <span className="text-subtle">-</span>}</td>
+                    <td className="px-2 py-3 text-right align-top font-medium text-accent">{ev && realisticResolved(ev) !== null ? <Pct value={realisticResolved(ev)!} /> : <span className="text-subtle" title="No realistic split scored on this version">-</span>}</td>
                     <td className="px-2 py-3 text-right align-top text-muted">{b ? <Flow value={b.latency_ms.p50} digits={b.latency_ms.p50 < 10 ? 2 : 1} suffix=" ms" /> : "-"}</td>
                     <td className="px-2 py-3 text-right align-top text-muted">{b ? <Flow value={b.memory_mb} digits={0} suffix=" MB" /> : "-"}</td>
                     <td className="px-2 py-2 align-top">{ev && <Sparkline values={series} />}</td>
@@ -148,13 +150,13 @@ function RunCard({ r, ev, version, best }: { r: Run; ev: ReturnType<typeof evalF
         </div>
         {ev && (
           <div className="shrink-0 text-right">
-            <Pct value={ev.exact} className="text-[18px] font-medium" />
-            <div className="text-[11px] text-subtle">exact {version}</div>
+            <Pct value={ev.resolved} className="text-[18px] font-medium" />
+            <div className="text-[11px] text-subtle">resolved {version}</div>
           </div>
         )}
       </div>
       <div className="dotted-t mt-2.5 grid grid-cols-4 gap-2 pt-2.5 text-[12px]">
-        <div><div className="text-subtle">Resolved</div><div className="num font-medium">{ev ? `${(ev.resolved * 100).toFixed(1)}%` : "-"}</div></div>
+        <div><div className="text-subtle">Realistic</div><div className="num font-medium text-accent">{realisticResolved(ev) !== null ? `${(realisticResolved(ev)! * 100).toFixed(1)}%` : "-"}</div></div>
         <div><div className="text-subtle">p50</div><div className="num font-medium">{b ? `${b.latency_ms.p50.toFixed(b.latency_ms.p50 < 10 ? 2 : 1)} ms` : "-"}</div></div>
         <div><div className="text-subtle">Memory</div><div className="num font-medium">{b ? `${Math.round(b.memory_mb)} MB` : "-"}</div></div>
         <div><div className="text-subtle">Size</div><div className="num font-medium">{fmtBytes(b?.download_bytes ?? r.metrics.model.size_bytes)}</div></div>

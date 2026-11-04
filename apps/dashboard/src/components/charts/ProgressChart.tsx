@@ -10,7 +10,7 @@ import { makeYScale } from "./scales";
 const MD = { top: 12, right: 16, bottom: 28, left: 44 };
 const MS = { top: 12, right: 12, bottom: 28, left: 36 };
 
-/** Best exact accuracy so far by experiment number, with each experiment as a dot. */
+/** Best resolved accuracy so far by experiment number, with each experiment as a dot. */
 export function ProgressChart({ runs, version, onOpen, height: heightProp = 220 }: { runs: Run[]; version?: string; onOpen: (id: string) => void; height?: number }) {
   const [ref, { w }] = useSize<HTMLDivElement>();
   const [hover, setHover] = useState<number | null>(null);
@@ -22,7 +22,7 @@ export function ProgressChart({ runs, version, onOpen, height: heightProp = 220 
   const series = useMemo(() => bestSoFar(runs, version), [runs, version]);
   const kinds = useMemo(() => new Map(runs.map((r) => [r.config.id, isBaseline(r)])), [runs]);
   const xs = useMemo(() => scalePoint<number>().domain(series.map((s) => s.number)).range([0, iw]).padding(0.4), [series, iw]);
-  const ys = useMemo(() => makeYScale(series.map((s) => s.exact), ih), [series, ih]);
+  const ys = useMemo(() => makeYScale(series.map((s) => s.score), ih), [series, ih]);
   const stepD = series
     .map((s, i) => {
       const px = xs(s.number) ?? 0;
@@ -50,9 +50,9 @@ export function ProgressChart({ runs, version, onOpen, height: heightProp = 220 
             ))}
             <m.path d={stepD} fill="none" stroke="var(--accent)" strokeWidth={2} strokeLinejoin="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} />
             {series.map((s) => (
-              <g key={s.number} transform={`translate(${xs(s.number)},${ys.scale(s.exact)})`} style={{ cursor: "pointer" }} onPointerDown={(e) => { touch.current = e.pointerType !== "mouse"; }} onMouseEnter={() => !touch.current && setHover(s.number)} onMouseLeave={() => !touch.current && setHover(null)} onClick={() => (touch.current && hover !== s.number ? setHover(s.number) : onOpen(s.id))}>
+              <g key={s.number} transform={`translate(${xs(s.number)},${ys.scale(s.score)})`} style={{ cursor: "pointer" }} onPointerDown={(e) => { touch.current = e.pointerType !== "mouse"; }} onMouseEnter={() => !touch.current && setHover(s.number)} onMouseLeave={() => !touch.current && setHover(null)} onClick={() => (touch.current && hover !== s.number ? setHover(s.number) : onOpen(s.id))}>
                 <circle r={16} fill="transparent" />
-                <Marker kind={kinds.get(s.id) ? "baseline" : "model"} r={hover === s.number ? 5 : 3.5} fill={s.exact === s.best ? "var(--accent)" : "var(--surface)"} stroke={s.exact === s.best ? "var(--accent)" : "var(--chart-dim)"} />
+                <Marker kind={kinds.get(s.id) ? "baseline" : "model"} r={hover === s.number ? 5 : 3.5} fill={s.score === s.best ? "var(--accent)" : "var(--surface)"} stroke={s.score === s.best ? "var(--accent)" : "var(--chart-dim)"} />
               </g>
             ))}
             {hs && (
@@ -64,7 +64,7 @@ export function ProgressChart({ runs, version, onOpen, height: heightProp = 220 
       {hs && (
         <div className="pointer-events-none absolute z-10 rounded-field border border-border bg-surface px-2.5 py-1.5 text-[12px] shadow-pop" style={{ left: Math.max(4, Math.min(w - 230, M.left + (xs(hs.number) ?? 0) + 10)), top: 4 }}>
           <div className="font-medium">{hs.id} <span className="font-normal text-muted">{hs.title}</span></div>
-          <div className="num text-muted">exact {(hs.exact * 100).toFixed(1)}%, best {(hs.best * 100).toFixed(1)}%</div>
+          <div className="num text-muted">resolved {(hs.score * 100).toFixed(1)}%, best {(hs.best * 100).toFixed(1)}%</div>
           <div className="text-[11px] text-subtle">{touch.current ? "Tap again to open" : "Click to open"}</div>
         </div>
       )}

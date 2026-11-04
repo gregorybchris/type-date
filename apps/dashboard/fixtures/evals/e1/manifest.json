@@ -1,0 +1,21 @@
+{
+ "version": "e1",
+ "created": "2026-11-03T12:00:00Z",
+ "reason": "First eval set: val, test_template, test_noise and test_external from dataset v001.",
+ "parent": null,
+ "subset_of": null,
+ "files": {
+  "val": {
+   "n": 1000
+  },
+  "test_template": {
+   "n": 600
+  },
+  "test_noise": {
+   "n": 600
+  },
+  "test_external": {
+   "n": 400
+  }
+ }
+}

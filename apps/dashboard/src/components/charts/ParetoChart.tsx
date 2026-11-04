@@ -15,14 +15,15 @@ interface LabelPos {
 }
 
 /** Greedy label placement. Front points go first. A label that fits nowhere is dropped (the tooltip still names the point). */
-function placeLabels(items: Array<{ key: string; px: number; py: number; r: number; text: string; front: boolean }>, bounds: { w: number; h: number }): Map<string, LabelPos> {
+function placeLabels(items: Array<{ key: string; px: number; py: number; r: number; text: string; short: string; front: boolean }>, bounds: { w: number; h: number }): Map<string, LabelPos> {
   const out = new Map<string, LabelPos>();
   type Rect = [number, number, number, number];
   const used: Rect[] = items.map((i) => [i.px - i.r - 1, i.py - i.r - 1, i.px + i.r + 1, i.py + i.r + 1]);
   const hit = (a: Rect, b: Rect) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
   const order = [...items].sort((a, b) => Number(b.front) - Number(a.front) || a.px - b.px);
   for (const it of order) {
-    const wTxt = it.text.length * 6.3 + 2;
+   for (const text of it.text === it.short ? [it.text] : [it.text, it.short]) {
+    const wTxt = text.length * 6.3 + 2;
     const cands: Array<[number, number, LabelPos["anchor"]]> = [
       [it.r + 4, -it.r + 2, "start"],
       [it.r + 4, it.r + 10, "start"],
@@ -37,9 +38,11 @@ function placeLabels(items: Array<{ key: string; px: number; py: number; r: numb
       if (rect[0] < -4 || rect[2] > bounds.w + 20 || rect[1] < -14 || rect[3] > bounds.h + 4) continue;
       if (used.some((u) => hit(rect, u))) continue;
       used.push(rect);
-      out.set(it.key, { dx, dy, anchor, text: it.text });
+      out.set(it.key, { dx, dy, anchor, text });
       break;
     }
+    if (out.has(it.key)) break;
+   }
   }
   return out;
 }
@@ -96,7 +99,7 @@ export function ParetoChart({
   const labels = useMemo(() => {
     const wide = w >= 700;
     return placeLabels(
-      points.map((p) => ({ key: p.key, px: x.scale(p.x), py: y.scale(p.y), r: p.kind === "baseline" ? (many ? 5 : 6) : rScale(p.paramsM), text: wide && frontKeys.has(p.key) && points.length <= 40 ? `${p.label} ${p.title.length > 18 ? p.title.slice(0, 17) + "…" : p.title}` : p.label, front: frontKeys.has(p.key) })),
+      points.map((p) => ({ key: p.key, px: x.scale(p.x), py: y.scale(p.y), r: p.kind === "baseline" ? (many ? 5 : 6) : rScale(p.paramsM), text: wide && frontKeys.has(p.key) && points.length <= 40 ? `${p.label} ${p.title.length > 18 ? p.title.slice(0, 17) + "…" : p.title}` : p.label, short: p.label, front: frontKeys.has(p.key) })),
       { w: iw, h: ih },
     );
   }, [points, x, y, rScale, frontKeys, iw, ih, w, many]);

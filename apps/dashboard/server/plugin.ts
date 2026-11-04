@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Plugin } from "vite";
-import { loadDatasets, loadRuns, queryErrors, querySamples, type Roots } from "./data";
+import { loadDatasets, loadEvalManifests, loadRuns, queryErrors, querySamples, type Roots } from "./data";
 
 const MIME: Record<string, string> = {
   ".json": "application/json",
@@ -55,6 +55,7 @@ export function typeDateApi(roots: Roots): Plugin {
             });
             return out ? send(res, 200, out) : send(res, 404, { error: "run not found" });
           }
+          if (p === "/api/evals") return send(res, 200, loadEvalManifests(roots));
           if (p === "/api/datasets") return send(res, 200, loadDatasets(roots));
           m = p.match(/^\/api\/datasets\/([^/]+)\/samples$/);
           if (m) {

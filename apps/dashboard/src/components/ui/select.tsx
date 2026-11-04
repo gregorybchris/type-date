@@ -6,6 +6,10 @@ export interface Option {
   value: string;
   label: string;
   hint?: string;
+  /** Second line under the label. */
+  description?: string;
+  /** Group heading. Options with the same group should be adjacent. */
+  group?: string;
 }
 
 const ALL = "__all__";
@@ -51,9 +55,17 @@ export function Select({
         >
           <RS.Viewport>
             {allLabel && <Item value={ALL} label={allLabel} />}
-            {options.map((o) => (
-              <Item key={o.value} value={o.value} label={o.label} hint={o.hint} />
-            ))}
+            {groups(options).map(([g, items]) => {
+              const list = items.map((o) => <Item key={o.value} value={o.value} label={o.label} hint={o.hint} description={o.description} />);
+              return g ? (
+                <RS.Group key={g}>
+                  <RS.Label className="px-2 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wide text-subtle">{g}</RS.Label>
+                  {list}
+                </RS.Group>
+              ) : (
+                list
+              );
+            })}
           </RS.Viewport>
         </RS.Content>
       </RS.Portal>
@@ -61,14 +73,28 @@ export function Select({
   );
 }
 
-function Item({ value, label, hint }: { value: string; label: string; hint?: string }) {
+function groups(options: Option[]): Array<[string, Option[]]> {
+  const out: Array<[string, Option[]]> = [];
+  for (const o of options) {
+    const g = o.group ?? "";
+    const last = out[out.length - 1];
+    if (last && last[0] === g) last[1].push(o);
+    else out.push([g, [o]]);
+  }
+  return out;
+}
+
+function Item({ value, label, hint, description }: { value: string; label: string; hint?: string; description?: string }) {
   return (
     <RS.Item
       value={value}
       className="relative flex cursor-pointer select-none items-center gap-2 rounded-[6px] py-1.5 pl-2 pr-7 text-[13px] text-fg outline-none data-[highlighted]:bg-hover"
     >
-      <RS.ItemText>{label}</RS.ItemText>
-      {hint && <span className="ml-auto text-[11px] text-subtle">{hint}</span>}
+      <span className="flex min-w-0 flex-col">
+        <RS.ItemText>{label}</RS.ItemText>
+        {description && <span className="max-w-[260px] truncate text-[11.5px] text-subtle">{description}</span>}
+      </span>
+      {hint && <span className="num ml-auto pl-3 text-[11px] text-subtle">{hint}</span>}
       <RS.ItemIndicator className="absolute right-2">
         <Check className="size-3.5 text-accent" />
       </RS.ItemIndicator>

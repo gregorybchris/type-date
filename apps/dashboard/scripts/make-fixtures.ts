@@ -384,6 +384,8 @@ function makeTiming(e: Exp, r: R, bench: Array<{ backend: string; profile?: stri
 
 function main() {
   fs.rmSync(OUT, { recursive: true, force: true });
+  writeJson(path.join(OUT, "evals", "e1", "manifest.json"), { version: "e1", created: "2026-11-03T12:00:00Z", reason: "First eval set: val, test_template, test_noise and test_external from dataset v001.", parent: null, subset_of: null, files: { val: { n: 1000 }, test_template: { n: 600 }, test_noise: { n: 600 }, test_external: { n: 400 } } });
+  writeJson(path.join(OUT, "evals", "e1q", "manifest.json"), { version: "e1q", created: "2026-11-03T12:30:00Z", reason: "Fast screening subset of e1.", parent: null, subset_of: "e1", files: { val: { n: 200 }, test_external: { n: 100 } } });
   const datasets: Record<string, Sample[]> = {};
   for (const [v, seed] of [["v001", 11], ["v002", 22]] as const) {
     datasets[v] = genDataset(v, seed);
@@ -437,7 +439,7 @@ function main() {
     }
     const n = rows.length;
     const score = (m: Record<string, { n: number; ok: number }>) =>
-      Object.fromEntries(Object.entries(m).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => [k, { n: v.n, exact: round(v.ok / v.n) }]));
+      Object.fromEntries(Object.entries(m).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => [k, { n: v.n, exact: round(v.ok / v.n), resolved: round(Math.min(1, v.ok / v.n + 0.01)) }]));
     const exact = ok / n;
     const sizeBytes = e.sizeBytes ?? Math.round(e.params * (QBYTES[e.quant] ?? 1) * (0.97 + r() * 0.06));
     const dir = path.join(OUT, "runs", id);

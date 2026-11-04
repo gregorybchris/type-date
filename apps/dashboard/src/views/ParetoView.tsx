@@ -9,6 +9,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { Switch } from "@/components/ui/switch";
 import { fmtMs } from "@/lib/format";
 import { evalFor, notEvaluatedNote } from "@/lib/evals";
+import { CoverageBanner } from "@/components/Coverage";
 import { buildPoints, familyOf, paretoFront, PROFILES, X_AXES, Y_AXES, type XAxis, type YAxis } from "@/lib/pareto";
 import { href, navigate } from "@/lib/router";
 import { useStore } from "@/lib/store";
@@ -18,7 +19,7 @@ export function ParetoView() {
   const { runs, version } = useStore();
   const [profile, setProfile] = useState<string>("desktop");
   const [x, setX] = useState<XAxis>("latency");
-  const [y, setY] = useState<YAxis>("exact");
+  const [y, setY] = useState<YAxis>("realistic");
   const [perEngine, setPerEngine] = useState(false);
   const [off, toggleFamily] = useToggleSet();
 
@@ -33,7 +34,8 @@ export function ParetoView() {
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title="Pareto front" subtitle={`Accuracy on eval ${version}. Higher accuracy and lower cost are better; the line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU).`} />
+      <PageHeader title="Pareto front" subtitle={`Accuracy on eval ${version}. Realistic accuracy is resolved accuracy on test_external and test_external_hard, weighted by rows. Higher accuracy and lower cost are better; the line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU).`} />
+      <CoverageBanner />
       <div className="flex flex-wrap items-end gap-x-5 gap-y-3 [&>div]:max-w-full">
         <div className="flex flex-col gap-1">
           <span className="text-[12px] font-medium text-muted">X axis</span>

@@ -19,6 +19,7 @@ export interface RunConfig {
 export interface TagScore {
   n: number;
   exact: number;
+  resolved?: number;
 }
 
 export interface EvalBlock {
@@ -84,6 +85,22 @@ export interface Run {
   metrics: RunMetrics;
   bench: BenchEntry[];
   manifest: Manifest | null;
+}
+
+export interface EvalManifest {
+  version: string;
+  created?: string;
+  reason?: string;
+  parent?: string | null;
+  subset_of?: string | null;
+  added_splits?: string[];
+  /** Rows per split. */
+  files?: Record<string, { n: number }>;
+}
+
+export interface EvalsResponse {
+  sample: boolean;
+  evals: EvalManifest[];
 }
 
 export interface RunsResponse {

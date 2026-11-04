@@ -1,8 +1,8 @@
-import { evalFor } from "./evals";
+import { evalFor, realisticResolved } from "./evals";
 import type { BenchEntry, Run } from "./types";
 
 export type XAxis = "latency" | "memory" | "size" | "params";
-export type YAxis = "exact" | "resolved" | "browser";
+export type YAxis = "exact" | "resolved" | "realistic" | "browser";
 
 export interface AxisInfo<K extends string> {
   key: K;
@@ -18,6 +18,7 @@ export const X_AXES: AxisInfo<XAxis>[] = [
 ];
 
 export const Y_AXES: AxisInfo<YAxis>[] = [
+  { key: "realistic", label: "Realistic accuracy", unit: "%" },
   { key: "exact", label: "Exact accuracy", unit: "%" },
   { key: "resolved", label: "Resolved accuracy", unit: "%" },
   { key: "browser", label: "Browser accuracy", unit: "%" },
@@ -80,6 +81,7 @@ export function yValue(run: Run, entry: BenchEntry | undefined, axis: YAxis, ver
   if (!ev) return null;
   if (axis === "exact") return ev.exact;
   if (axis === "resolved") return ev.resolved;
+  if (axis === "realistic") return realisticResolved(ev);
   return entry?.browser_accuracy ?? null;
 }
 
@@ -172,16 +174,16 @@ export function frontPath(front: Array<{ x: number; y: number }>, sx: (v: number
   return d;
 }
 
-/** Best exact accuracy so far, by experiment number. */
-export function bestSoFar(runs: Run[], version?: string): Array<{ number: number; id: string; title: string; exact: number; best: number }> {
+/** Best resolved accuracy so far, by experiment number. */
+export function bestSoFar(runs: Run[], version?: string): Array<{ number: number; id: string; title: string; score: number; best: number }> {
   const sorted = [...runs].sort((a, b) => a.config.number - b.config.number);
   let best = 0;
-  const out: Array<{ number: number; id: string; title: string; exact: number; best: number }> = [];
+  const out: Array<{ number: number; id: string; title: string; score: number; best: number }> = [];
   for (const r of sorted) {
     const ev = evalFor(r, version ?? (r.metrics.eval.version ?? "e1"));
     if (!ev) continue;
-    best = Math.max(best, ev.exact);
-    out.push({ number: r.config.number, id: r.config.id, title: r.config.title, exact: ev.exact, best });
+    best = Math.max(best, ev.resolved);
+    out.push({ number: r.config.number, id: r.config.id, title: r.config.title, score: ev.resolved, best });
   }
   return out;
 }

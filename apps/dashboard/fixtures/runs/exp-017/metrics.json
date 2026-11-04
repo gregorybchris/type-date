@@ -7,167 +7,207 @@
   "by_split": {
    "test_external": {
     "n": 400,
-    "exact": 0.4025
+    "exact": 0.4025,
+    "resolved": 0.4125
    },
    "test_noise": {
     "n": 600,
-    "exact": 0.175
+    "exact": 0.175,
+    "resolved": 0.185
    },
    "test_template": {
     "n": 600,
-    "exact": 0.4667
+    "exact": 0.4667,
+    "resolved": 0.4767
    },
    "val": {
     "n": 1000,
-    "exact": 0.548
+    "exact": 0.548,
+    "resolved": 0.558
    }
   },
   "by_tag": {
    "ampm-ambiguous": {
     "n": 82,
-    "exact": 0.1341
+    "exact": 0.1341,
+    "resolved": 0.1441
    },
    "basic-date": {
     "n": 228,
-    "exact": 0.8333
+    "exact": 0.8333,
+    "resolved": 0.8433
    },
    "basic-date-range": {
     "n": 193,
-    "exact": 0.456
+    "exact": 0.456,
+    "resolved": 0.466
    },
    "basic-date-year": {
     "n": 106,
-    "exact": 0.6792
+    "exact": 0.6792,
+    "resolved": 0.6892
    },
    "date-range-shared-month": {
     "n": 104,
-    "exact": 0.3942
+    "exact": 0.3942,
+    "resolved": 0.4042
    },
    "datetime": {
     "n": 170,
-    "exact": 0.4941
+    "exact": 0.4941,
+    "resolved": 0.5041
    },
    "datetime-range": {
     "n": 150,
-    "exact": 0.08
+    "exact": 0.08,
+    "resolved": 0.09
    },
    "fuzzy-period": {
     "n": 65,
-    "exact": 0.0154
+    "exact": 0.0154,
+    "resolved": 0.0254
    },
    "month-or-year-only": {
     "n": 38,
-    "exact": 0.4211
+    "exact": 0.4211,
+    "resolved": 0.4311
    },
    "named-holiday": {
     "n": 55,
-    "exact": 0.0909
+    "exact": 0.0909,
+    "resolved": 0.1009
    },
    "non-date-noise": {
     "n": 70,
-    "exact": 0.4857
+    "exact": 0.4857,
+    "resolved": 0.4957
    },
    "nth-weekday-of-month": {
     "n": 74,
-    "exact": 0.1486
+    "exact": 0.1486,
+    "resolved": 0.1586
    },
    "numeric-date": {
     "n": 94,
-    "exact": 0.383
+    "exact": 0.383,
+    "resolved": 0.393
    },
    "ordinal-date": {
     "n": 73,
-    "exact": 0.5342
+    "exact": 0.5342,
+    "resolved": 0.5442
    },
    "period-relative": {
     "n": 64,
-    "exact": 0.2969
+    "exact": 0.2969,
+    "resolved": 0.3069
    },
    "recurrence-bounded": {
     "n": 43,
-    "exact": 0.0233
+    "exact": 0.0233,
+    "resolved": 0.0333
    },
    "recurrence-daily": {
     "n": 76,
-    "exact": 0.0789
+    "exact": 0.0789,
+    "resolved": 0.0889
    },
    "recurrence-interval": {
     "n": 88,
-    "exact": 0.0227
+    "exact": 0.0227,
+    "resolved": 0.0327
    },
    "recurrence-monthly-yearly": {
     "n": 40,
-    "exact": 0.05
+    "exact": 0.05,
+    "resolved": 0.06
    },
    "recurrence-weekly": {
     "n": 73,
-    "exact": 0.1096
+    "exact": 0.1096,
+    "resolved": 0.1196
    },
    "relative-date": {
     "n": 148,
-    "exact": 0.7838
+    "exact": 0.7838,
+    "resolved": 0.7938
    },
    "relative-offset": {
     "n": 101,
-    "exact": 0.5347
+    "exact": 0.5347,
+    "resolved": 0.5447
    },
    "time-only": {
     "n": 131,
-    "exact": 0.6412
+    "exact": 0.6412,
+    "resolved": 0.6512
    },
    "time-range": {
     "n": 104,
-    "exact": 0.4423
+    "exact": 0.4423,
+    "resolved": 0.4523
    },
    "weekday-bare": {
     "n": 104,
-    "exact": 0.7115
+    "exact": 0.7115,
+    "resolved": 0.7215
    },
    "weekday-relative": {
     "n": 126,
-    "exact": 0.3333
+    "exact": 0.3333,
+    "resolved": 0.3433
    }
   },
   "by_modifier": {
    "abbreviation": {
     "n": 100,
-    "exact": 0.48
+    "exact": 0.48,
+    "resolved": 0.49
    },
    "casing": {
     "n": 176,
-    "exact": 0.4318
+    "exact": 0.4318,
+    "resolved": 0.4418
    },
    "colloquial": {
     "n": 7,
-    "exact": 0.1429
+    "exact": 0.1429,
+    "resolved": 0.1529
    },
    "filler-words": {
     "n": 168,
-    "exact": 0.2917
+    "exact": 0.2917,
+    "resolved": 0.3017
    },
    "long-input": {
     "n": 3,
-    "exact": 0
+    "exact": 0,
+    "resolved": 0.01
    },
    "partial-prefix": {
     "n": 32,
-    "exact": 0.3125
+    "exact": 0.3125,
+    "resolved": 0.3225
    },
    "spacing": {
     "n": 13,
-    "exact": 0.0769
+    "exact": 0.0769,
+    "resolved": 0.0869
    },
    "typo": {
     "n": 703,
-    "exact": 0.165
+    "exact": 0.165,
+    "resolved": 0.175
    },
    "typo-keyboard": {
     "n": 88,
-    "exact": 0.1818
+    "exact": 0.1818,
+    "resolved": 0.1918
    },
    "word-numbers": {
     "n": 34,
-    "exact": 0.4412
+    "exact": 0.4412,
+    "resolved": 0.4512
    }
   }
  },

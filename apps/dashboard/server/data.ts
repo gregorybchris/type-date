@@ -4,6 +4,8 @@ import path from "node:path";
 import type {
   DatasetMeta,
   DatasetsResponse,
+  EvalManifest,
+  EvalsResponse,
   ErrorQuery,
   ErrorRow,
   ErrorsResponse,
@@ -155,6 +157,19 @@ export function queryErrors(roots: Roots, id: string, q: ErrorQuery): ErrorsResp
     items: filtered.slice(offset, offset + limit),
     facets: facetErrors(filtered),
   };
+}
+
+/** Eval set manifests from evals/<version>/manifest.json. */
+export function loadEvalManifests(roots: Roots): EvalsResponse {
+  const real = path.join(roots.repo, "evals");
+  const useFixtures = process.env.DASHBOARD_SAMPLE === "1" || listDirs(real, /^[\w-]+$/).length === 0;
+  const dir = useFixtures ? path.join(roots.fixtures, "evals") : real;
+  const evals: EvalManifest[] = [];
+  for (const v of listDirs(dir, /^[\w-]+$/)) {
+    const m = readJson<EvalManifest>(path.join(dir, v, "manifest.json"));
+    if (m) evals.push({ ...m, version: m.version ?? v });
+  }
+  return { sample: useFixtures, evals };
 }
 
 export function loadDatasets(roots: Roots): DatasetsResponse {
