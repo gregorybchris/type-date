@@ -22,6 +22,7 @@
     "@radix-ui/react-switch": "1.4.1",
     "@radix-ui/react-tabs": "1.2.1",
     "@radix-ui/react-tooltip": "1.4.1",
+    "@type-date/baselines": "workspace:*",
     "@type-date/core": "workspace:*",
     "@type-date/engines": "workspace:*",
     "@type-date/picker": "workspace:*",

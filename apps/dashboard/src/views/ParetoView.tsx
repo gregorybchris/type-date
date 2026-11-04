@@ -34,7 +34,7 @@ export function ParetoView() {
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title="Pareto front" subtitle={`Accuracy on eval ${version}. Realistic accuracy is resolved accuracy on test_external and test_external_hard, weighted by rows. Higher accuracy and lower cost are better; the line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU).`} />
+      <PageHeader title="Pareto front" subtitle={`Accuracy on eval ${version}. Realistic accuracy is resolved accuracy on the external and public splits, weighted by rows. Higher accuracy and lower cost are better; the line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU).`} />
       <CoverageBanner />
       <div className="flex flex-wrap items-end gap-x-5 gap-y-3 [&>div]:max-w-full">
         <div className="flex flex-col gap-1">

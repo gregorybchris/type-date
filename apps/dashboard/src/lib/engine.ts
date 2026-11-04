@@ -15,7 +15,7 @@ export interface LoadOptions {
 export interface Engine {
   readonly id: string;
   load(opts: LoadOptions): Promise<void>;
-  predict(text: string, signal?: AbortSignal): Promise<PredictResult>;
+  predict(text: string, signal?: AbortSignal, opts?: { today?: string }): Promise<PredictResult>;
   dispose(): void;
 }
 
@@ -61,6 +61,16 @@ function mockParse(text: string): string {
   const mi = m ? MON.indexOf(m[1]!) : -1;
   if (m && mi >= 0) return `d ${String(mi + 1).padStart(2, "0")}-${m[2]!.padStart(2, "0")}`;
   return "x";
+}
+
+/** Non-model engines from @type-date/baselines, keyed by id (chrono, heuristic-full-4, ...). They need no artifact. */
+export async function loadBaselines(): Promise<Record<string, Engine>> {
+  try {
+    const mod = (await import("@type-date/baselines")) as { baselines?: Record<string, Engine> };
+    return mod.baselines ?? {};
+  } catch {
+    return {};
+  }
 }
 
 /** Fallback engine: a few hard-coded phrases, with simulated latency. */

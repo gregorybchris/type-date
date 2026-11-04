@@ -43,7 +43,7 @@ export function ExperimentsView() {
 
   return (
     <div className="flex flex-col gap-7">
-      <PageHeader title="Experiments" subtitle={`Accuracy, speed and size for every run on eval ${version}. Realistic means test_external and test_external_hard.`} />
+      <PageHeader title="Experiments" subtitle={`Accuracy, speed and size for every run on eval ${version}. Realistic means the external and public splits.`} />
       <CoverageBanner />
 
       <div className="grid grid-cols-2 gap-y-5 md:grid-cols-4">

@@ -53,22 +53,33 @@ export function defaultVersion(runs: Run[]): string {
   return (full ?? quick ?? pick("other") ?? vs[0])?.version ?? "e1";
 }
 
-/** Splits that approximate real use: realistic LLM-written input and the hard set. */
-export const REALISTIC_SPLITS = ["test_external", "test_external_hard"] as const;
+/** Realistic splits approximate real use: names with "external" (written by others) or "public" (developer-written phrases). */
+export const isRealisticSplit = (name: string): boolean => /external|public/i.test(name);
 
-/** Resolved accuracy over the realistic splits, weighted by row count. Null when none were scored. */
-export function realisticResolved(ev: EvalBlock | null | undefined): number | null {
+/** Hard splits are adversarial or long inputs. */
+export const isHardSplit = (name: string): boolean => /hard/i.test(name);
+
+function weighted(ev: EvalBlock | null | undefined, keep: (name: string) => boolean): number | null {
   if (!ev) return null;
   let n = 0;
   let sum = 0;
-  for (const k of REALISTIC_SPLITS) {
-    const s = ev.by_split[k];
-    if (s && s.n > 0) {
+  for (const [k, s] of Object.entries(ev.by_split)) {
+    if (keep(k) && s.n > 0) {
       n += s.n;
       sum += s.n * (s.resolved ?? s.exact);
     }
   }
   return n ? sum / n : null;
+}
+
+/** Resolved accuracy on the splits matching "external" or "public" in their name, weighted by rows. */
+export function realisticResolved(ev: EvalBlock | null | undefined): number | null {
+  return weighted(ev, isRealisticSplit);
+}
+
+/** Resolved accuracy on splits with "hard" in their name. */
+export function hardResolved(ev: EvalBlock | null | undefined): number | null {
+  return weighted(ev, isHardSplit);
 }
 
 export const isInvalidVersion = (v: string) => v.startsWith("pre");

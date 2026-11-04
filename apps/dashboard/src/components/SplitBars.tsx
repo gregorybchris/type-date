@@ -2,11 +2,11 @@ import { m } from "motion/react";
 import { Delta } from "@/components/Bars";
 import { Flow } from "@/components/Num";
 import { Badge } from "@/components/ui/badge";
-import { REALISTIC_SPLITS } from "@/lib/evals";
+import { isRealisticSplit } from "@/lib/evals";
 import type { TagScore } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-const isReal = (k: string) => (REALISTIC_SPLITS as readonly string[]).includes(k);
+const isReal = isRealisticSplit;
 const score = (s: TagScore) => s.resolved ?? s.exact;
 
 /** Per-split resolved accuracy. Realistic splits come first and use the accent color. */

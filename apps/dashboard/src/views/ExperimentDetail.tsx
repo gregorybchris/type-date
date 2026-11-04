@@ -124,7 +124,7 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
       <StaggerItem>
         <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Resolved accuracy on {evVersion}</span>}>Accuracy by split</SectionTitle>
         <SplitBars scores={ev.by_split} compare={cmp ? cev!.by_split : null} />
-        <p className="mt-2 px-1 text-[11.5px] leading-4 text-subtle">Realistic splits (test_external, test_external_hard) are the closest to real use. The other splits are generated and easier.</p>
+        <p className="mt-2 px-1 text-[11.5px] leading-4 text-subtle">Realistic splits (names containing "external" or "public") are the closest to real use. The other splits are generated and easier.</p>
       </StaggerItem>
 
       <Dotted />

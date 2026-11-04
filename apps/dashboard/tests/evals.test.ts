@@ -43,7 +43,7 @@ describe("familyOf", () => {
   });
 });
 
-import { kindOf, realisticResolved } from "../src/lib/evals";
+import { hardResolved, kindOf, realisticResolved } from "../src/lib/evals";
 
 describe("default version and realistic split", () => {
   it("classifies versions", () => {
@@ -60,5 +60,11 @@ describe("default version and realistic split", () => {
     ev.by_split = { test_external: { n: 300, exact: 0.9, resolved: 0.9 }, test_external_hard: { n: 100, exact: 0.5 }, val: { n: 1000, exact: 1 } };
     expect(realisticResolved(ev)).toBeCloseTo((300 * 0.9 + 100 * 0.5) / 400);
     expect(realisticResolved(block(0.5))).toBeNull();
+  });
+  it("treats external and public split names as realistic and any new split by name", () => {
+    const ev = block(0.5);
+    ev.by_split = { test_public_dev: { n: 100, exact: 0.6 }, test_external_hard: { n: 100, exact: 0.2 }, test_template: { n: 999, exact: 1 } };
+    expect(realisticResolved(ev)).toBeCloseTo(0.4);
+    expect(hardResolved(ev)).toBeCloseTo(0.2);
   });
 });
