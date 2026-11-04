@@ -1,0 +1,11 @@
+design-ideas/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+dist/
+.cache/
+models/
+checkpoints/
+*.log
