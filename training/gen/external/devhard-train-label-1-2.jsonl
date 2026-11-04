@@ -1,0 +1,324 @@
+{"id": "ht1-0000", "text": "valentines day dinner 7:30", "dsl": "dt 02-14 7:30?"}
+{"id": "ht1-0001", "text": "from 6pm friday to 6am sunday", "dsl": "dt fr 18:00>su 06:00"}
+{"id": "ht1-0002", "text": "2moro 9am", "dsl": "dt +1d 09:00"}
+{"id": "ht1-0003", "text": "the 2nd saturday of every month", "dsl": "d R m/1 sa#2"}
+{"id": "ht1-0004", "text": "Welcome party for new neighbors: Sun Sept 6, 4-6 PM, clubhouse patio", "dsl": "dt 09-06 16:00>18:00"}
+{"id": "ht1-0005", "text": "Restaurant week: Jan 22 - Feb 7, three-course prix fixe, reservations recommended", "dsl": "d 01-22>02-07"}
+{"id": "ht1-0006", "text": "fri eve", "dsl": "d fr"}
+{"id": "ht1-0007", "text": "Order #88213 shipped Mon 11/2; arrives in 3-5 business days", "dsl": "d 11-02"}
+{"id": "ht1-0008", "text": "Barre class, Tuesdays 7:00 PM and Saturdays 10:00 AM -- first class free!", "dsl": "x", "unsure": true}
+{"id": "ht1-0009", "text": "Welcome back luncheon for faculty & staff: Aug. 19 at 11:45 a.m. (Room 100)", "dsl": "dt 08-19 11:45"}
+{"id": "ht1-0010", "text": "the 1st and 3rd mon of each month", "dsl": "x", "unsure": true}
+{"id": "ht1-0011", "text": "pls reschedule to wed 11th at 3 pm, thanks", "dsl": "dt 11-11 15:00"}
+{"id": "ht1-0012", "text": "tuesdays at 7 for the next 8 weeks", "dsl": "dt R w/1 tu n8 7?"}
+{"id": "ht1-0013", "text": "Dinner and a show: reservation at 5:45pm then curtain at 8:00, this Friday", "dsl": "x", "unsure": true}
+{"id": "ht1-0014", "text": "Ski rental pickup Fri Jan 22 after 4 PM; return by Mon Jan 25 at 5 PM", "dsl": "dt 01-22 16:00>01-25 17:00"}
+{"id": "ht1-0015", "text": "Midweek prayer service, Wednesdays at 6:45 p.m. in the chapel", "dsl": "dt R w/1 we 18:45"}
+{"id": "ht1-0016", "text": "Delivery window: Thursday 11/5, 9 AM - 1 PM. Someone 18+ must be home.", "dsl": "dt 11-05 09:00>13:00"}
+{"id": "ht1-0017", "text": "the 1st thursday after the 15th", "dsl": "x", "unsure": true}
+{"id": "ht1-0018", "text": "Evening prayer vigil, Friday, March 27th, 8 PM to midnight, chapel", "dsl": "dt 03-27 20:00>00:00"}
+{"id": "ht1-0019", "text": "Knitting circle, Mondays at 2 PM, Room 5 -- all skill levels welcome!", "dsl": "dt R w/1 mo 14:00"}
+{"id": "ht1-0020", "text": "Uber Reserve confirmed for Sunday, March 7 at 5:05 AM from Home to JFK", "dsl": "dt 03-07 05:05"}
+{"id": "ht1-0021", "text": "until noon", "dsl": "t 12:00"}
+{"id": "ht1-0022", "text": "Ticketmaster: Taylor Swift, Mon Sept 14, 7:30 PM, Gillette Stadium, Gate D", "dsl": "dt 09-14 19:30"}
+{"id": "ht1-0023", "text": "every 31st", "dsl": "d R m/1 d31"}
+{"id": "ht1-0024", "text": "the last day of february next year", "dsl": "d 2027-02-28"}
+{"id": "ht1-0025", "text": "um next thursday i think at 2", "dsl": "dt th+1 2?"}
+{"id": "ht1-0026", "text": "Cub Scout pack meeting - first Monday of the month, 6:30 PM, Scout Hut", "dsl": "dt R m/1 mo#1 18:30"}
+{"id": "ht1-0027", "text": "Your Turo trip begins Sat, Jul 25 at 9:00 AM and ends Tue, Jul 28 at 9:00 AM", "dsl": "dt 07-25 09:00>07-28 09:00"}
+{"id": "ht1-0028", "text": "Open house at 412 Maple Dr: Sun 11/15, 1-4pm, refreshments provided", "dsl": "dt 11-15 13:00>16:00"}
+{"id": "ht1-0029", "text": "tues/thurs 6:15pm", "dsl": "dt R w/1 tu,th 18:15"}
+{"id": "ht1-0030", "text": "Grandparents Day luncheon Fri, 5/1, 11:30am-1pm (RSVP to the front office)", "dsl": "dt 05-01 11:30>13:00"}
+{"id": "ht1-0031", "text": "The staff retreat will be Oct 6-8 at Lakeview Lodge; carpool leaves 7:30 AM Monday", "dsl": "d 10-06>10-08"}
+{"id": "ht1-0032", "text": "weekdays 9a-5p", "dsl": "dt R d/1 mo,tu,we,th,fr 09:00>17:00"}
+{"id": "ht1-0033", "text": "The school board will vote on the budget at its meeting Thursday, May 14, 7 PM", "dsl": "dt 05-14 19:00"}
+{"id": "ht1-0034", "text": "Coffee & donuts with the principal, Friday, Sept 26, 8:00 AM, library", "dsl": "dt 09-26 08:00"}
+{"id": "ht1-0035", "text": "Reservation at Le Bernardin changed to Sat., Dec. 12th, 9:00 PM (party of 2)", "dsl": "dt 12-12 21:00"}
+{"id": "ht1-0036", "text": "FW: Fwd: Meeting moved to Tuesday, November 10, 3:00-4:00 PM (Conf A)", "dsl": "dt 11-10 15:00>16:00"}
+{"id": "ht1-0037", "text": "Open gym volleyball, Sundays 3 to 5 PM, ages 16+, Westside Rec", "dsl": "dt R w/1 su 15:00>17:00"}
+{"id": "ht1-0038", "text": "Garbage and recycling pickup moves to Wednesday this week due to the holiday", "dsl": "d we"}
+{"id": "ht1-0039", "text": "m w f 6am", "dsl": "dt R w/1 mo,we,fr 06:00"}
+{"id": "ht1-0040", "text": "2027-03-14", "dsl": "d 2027-03-14"}
+{"id": "ht1-0041", "text": "Hotel booking: Hilton Chicago, Fri 5/28 - Mon 5/31/2027, 3 nights, 1 king", "dsl": "d 2027-05-28>2027-05-31"}
+{"id": "ht1-0042", "text": "You have a package waiting at Locker 14. Pick up within 3 days.", "dsl": "d +0d>+3d", "unsure": true}
+{"id": "ht1-0043", "text": "q4", "dsl": "x"}
+{"id": "ht1-0044", "text": "ten to noon on the fifth", "dsl": "t 11:50"}
+{"id": "ht1-0045", "text": "12 midnight on the 31st", "dsl": "dt 12-31 00:00"}
+{"id": "ht1-0046", "text": "2 for 1 deal", "dsl": "x"}
+{"id": "ht1-0047", "text": "june 5-7", "dsl": "d 06-05>06-07"}
+{"id": "ht1-0048", "text": "Cirque du Soleil tickets: Thursday 2/4/27 at 8 PM, Section 201, Row C", "dsl": "dt 2027-02-04 20:00"}
+{"id": "ht1-0049", "text": "every year on march 3rd", "dsl": "d R y/1 s03-03"}
+{"id": "ht1-0050", "text": "by next friday", "dsl": "d fr+1"}
+{"id": "ht1-0051", "text": "Library book due back by Mon., Nov. 16 -- renew online to avoid fines", "dsl": "d 11-16"}
+{"id": "ht1-0052", "text": "eight p.m. thursday", "dsl": "dt th 20:00"}
+{"id": "ht1-0053", "text": "hello there", "dsl": "x"}
+{"id": "ht1-0054", "text": "Please arrive 30 minutes early. Your colonoscopy is Monday, Dec 14 at 7:15 AM.", "dsl": "dt 12-14 07:15"}
+{"id": "ht1-0055", "text": "wkdys 7:30a", "dsl": "dt R d/1 mo,tu,we,th,fr 07:30"}
+{"id": "ht1-0056", "text": "Thanks for booking! Your massage is Sunday at 2 pm with Chen, 90 min", "dsl": "dt su 14:00"}
+{"id": "ht1-0057", "text": "All volunteers please check in at 7:15 AM on Sat, 3/21 at the main tent", "dsl": "dt 03-21 07:15"}
+{"id": "ht1-0058", "text": "Meeting minutes will be sent out within three days of the meeting", "dsl": "x"}
+{"id": "ht1-0059", "text": "Hockey practice Mondays 5:15-6:30pm @ Ice House (Nov - Mar)", "dsl": "dt R w/1 mo 17:15>18:30"}
+{"id": "ht1-0060", "text": "the weekend after this one", "dsl": "x", "unsure": true}
+{"id": "ht1-0061", "text": "thursday fortnight", "dsl": "x", "unsure": true}
+{"id": "ht1-0062", "text": "School's out for winter break Dec 21 through Jan 1; classes resume Mon, Jan 4", "dsl": "d 12-21>01-01"}
+{"id": "ht1-0063", "text": "Flight BA 287 SFO-LHR leaves Thursday night 11/5 at 9:10 PM", "dsl": "dt 11-05 21:10"}
+{"id": "ht1-0064", "text": "Reminder: parent-teacher conferences Thursday Oct 29, 4:00 to 7:00 PM (sign up online)", "dsl": "dt 10-29 16:00>19:00"}
+{"id": "ht1-0065", "text": "late tuesday night", "dsl": "d tu"}
+{"id": "ht1-0066", "text": "Team lunch moved to Thurs 12/4 at 12:30pm; location TBD, details to follow", "dsl": "dt 12-04 12:30"}
+{"id": "ht1-0067", "text": "next week mon-wed", "dsl": "x", "unsure": true}
+{"id": "ht1-0068", "text": "Your gym class Yoga Flow repeats every Monday at 6:00 PM (45 min)", "dsl": "dt R w/1 mo 18:00"}
+{"id": "ht1-0069", "text": "Contact the church office at 555-0142 or email office@stmarks.example for questions", "dsl": "x"}
+{"id": "ht1-0070", "text": "Parking permit valid 10/01/2026 - 10/31/2026, Garage B, Level 3", "dsl": "d 2026-10-01>2026-10-31"}
+{"id": "ht1-0071", "text": "wkdays 9-5", "dsl": "dt R d/1 mo,tu,we,th,fr 9?>5?"}
+{"id": "ht1-0072", "text": "Principal's coffee chat, first Friday of each month at 8:15 a.m., staff lounge", "dsl": "dt R m/1 fr#1 08:15"}
+{"id": "ht1-0073", "text": "Cake pickup Saturday the 21st, before noon, Sweet Crumb Bakery", "dsl": "d 11-21"}
+{"id": "ht1-0074", "text": "Concert: The National, Wed 9/16, doors 6:30pm, music 8pm, Merriweather Post", "dsl": "d 09-16"}
+{"id": "ht1-0075", "text": "Conference badge pickup: Tues Sept 8, 7:30 AM - 5:00 PM, Moscone West Lobby", "dsl": "dt 09-08 07:30>17:00"}
+{"id": "ht1-0076", "text": "the saturday before easter", "dsl": "x", "unsure": true}
+{"id": "ht1-0077", "text": "last fri of each month", "dsl": "d R m/1 fr#-1"}
+{"id": "ht1-0078", "text": "Appointment ID 88-A: Passport photo, Mon Nov 16 at 12:10 PM, Walgreens on 3rd", "dsl": "dt 11-16 12:10"}
+{"id": "ht1-0079", "text": "Greetings from Delta! Your flight to Atlanta leaves in two days at 7:30 in the morning", "dsl": "dt +2d 07:30"}
+{"id": "ht1-0080", "text": "14/3", "dsl": "d 03-14"}
+{"id": "ht1-0081", "text": "halloween at 8", "dsl": "dt 10-31 8?"}
+{"id": "ht1-0082", "text": "a quarter to midnight", "dsl": "t 23:45"}
+{"id": "ht1-0083", "text": "Staff birthday celebration every last Friday of the month at 3 PM in the break room", "dsl": "dt R m/1 fr#-1 15:00"}
+{"id": "ht1-0084", "text": "Lunch booking at Zuma, Friday 27th November, 1:15pm, table for 5", "dsl": "dt 11-27 13:15"}
+{"id": "ht1-0085", "text": "Please remember that Friday, 6/12 is the last day of school (half day, 11:30 dismissal)", "dsl": "d 06-12"}
+{"id": "ht1-0086", "text": "Heads up, the 7:10 train from Westport is running 12 minutes late this morning", "dsl": "dt +0d 07:10"}
+{"id": "ht1-0087", "text": "satuday night", "dsl": "d sa"}
+{"id": "ht1-0088", "text": "Ceramics studio open to members Wednesdays 6-9 PM, Room 14, glaze fee applies", "dsl": "dt R w/1 we 18:00>21:00"}
+{"id": "ht1-0089", "text": "Reminder - Tomorrow is the last day to return items purchased on Oct 5", "dsl": "d +1d", "unsure": true}
+{"id": "ht1-0090", "text": "Please do not leave valuables in lockers; the school is not responsible for items", "dsl": "x"}
+{"id": "ht1-0091", "text": "12 midnight sunday", "dsl": "dt su 00:00"}
+{"id": "ht1-0092", "text": "oct 5 mon wed fri for 4 weeks", "dsl": "d R w/1 mo,we,fr n12 s10-05"}
+{"id": "ht1-0093", "text": "Annual Fourth of July parade steps off at 10:00 a.m. sharp on Saturday, July 4th", "dsl": "dt 07-04 10:00"}
+{"id": "ht1-0094", "text": "this eve", "dsl": "d +0d"}
+{"id": "ht1-0095", "text": "apr 1 2027", "dsl": "d 2027-04-01"}
+{"id": "ht1-0096", "text": "Taekwondo tournament check-in 8:00 AM, Sunday March 22, Memorial Gym", "dsl": "dt 03-22 08:00"}
+{"id": "ht1-0097", "text": "Sunrise service on Easter morning, April 5, 6:30 AM, behind the church", "dsl": "dt 04-05 06:30"}
+{"id": "ht1-0098", "text": "each sunday evening", "dsl": "d R w/1 su"}
+{"id": "ht1-0099", "text": "Taxi booked for 05:15 Friday 13th November to Gatwick South Terminal", "dsl": "dt 11-13 05:15"}
+{"id": "ht1-0100", "text": "Retirement party for Gary: Fri., 12/11, 4:30 - 7:30 pm in the break room", "dsl": "dt 12-11 16:30>19:30"}
+{"id": "ht1-0101", "text": "Science fair projects are due Thursday morning, March 5th, by 8 AM", "dsl": "dt 03-05 08:00"}
+{"id": "ht1-0102", "text": "Your Vet visit for Biscuit: Mon 11/9 at 10:45 AM, bring vaccination records", "dsl": "dt 11-09 10:45"}
+{"id": "ht1-0103", "text": "every sat till end of year", "dsl": "d R w/1 sa u12-31"}
+{"id": "ht1-0104", "text": "2027-02-14", "dsl": "d 2027-02-14"}
+{"id": "ht1-0105", "text": "Intro to pickleball, Wednesdays 7:00-8:00 PM for 4 weeks beginning Sept 24", "dsl": "dt R w/1 we n4 19:00>20:00 s09-24"}
+{"id": "ht1-0106", "text": "Welcome to the new school year! First day for students: Tuesday, August 25th", "dsl": "d 08-25"}
+{"id": "ht1-0107", "text": "nine in the morning tomorrow", "dsl": "dt +1d 09:00"}
+{"id": "ht1-0108", "text": "dec 24 6pm through dec 26 noon", "dsl": "dt 12-24 18:00>12-26 12:00"}
+{"id": "ht1-0109", "text": "Please remember: trash day moved to Wednesday this week due to the holiday", "dsl": "d we"}
+{"id": "ht1-0110", "text": "Estimated delivery: Dec 14 - Dec 18. Track your parcel at the link below", "dsl": "d 12-14>12-18"}
+{"id": "ht1-0111", "text": "Your pickup order at Target is ready; pick up by 11/8 at 9:00 PM", "dsl": "dt 11-08 21:00"}
+{"id": "ht1-0112", "text": "weekdays for the next 2 weeks", "dsl": "d R d/1 mo,tu,we,th,fr n10"}
+{"id": "ht1-0113", "text": "Ride share pickup, Mon at 7am, 55 Harbor View, Terminal 1 drop-off", "dsl": "dt mo 07:00"}
+{"id": "ht1-0114", "text": "every tuesday and thursday until dec 15", "dsl": "d R w/1 tu,th u12-15"}
+{"id": "ht1-0115", "text": "Reminder: school picture day is Thursday, October 2nd - order forms due Friday", "dsl": "d 10-02"}
+{"id": "ht1-0116", "text": "Table booked for Thursday night, 8:30, under the name Rivera", "dsl": "dt th 20:30"}
+{"id": "ht1-0117", "text": "Dress code reminder for field day: sneakers, sunscreen, and a hat for everyone", "dsl": "x"}
+{"id": "ht1-0118", "text": "monthly on the 15th, 10 am", "dsl": "dt R m/1 d15 10:00"}
+{"id": "ht1-0119", "text": "every other tuesday starting nov 10", "dsl": "d R w/2 tu s11-10"}
+{"id": "ht1-0120", "text": "satruday at ten", "dsl": "dt sa 10?"}
+{"id": "ht1-0121", "text": "every morning at nine", "dsl": "dt R d/1 09:00"}
+{"id": "ht1-0122", "text": "call mom sun 6", "dsl": "dt su 6?"}
+{"id": "ht1-0123", "text": "Thanksgiving dinner at Mom's: Thurs Nov 26, we eat at 3:30, come by 2:30", "dsl": "d 11-26"}
+{"id": "ht1-0124", "text": "Dance team tryouts: Mon 4/6, Tue 4/7, and Wed 4/8 from 3:15 to 5:15 PM", "dsl": "x", "unsure": true}
+{"id": "ht1-0125", "text": "Soccer practice Tuesdays and Thursdays at 5:15 PM, Field 4, through mid-November", "dsl": "dt R w/1 tu,th 17:15"}
+{"id": "ht1-0126", "text": "remind me tomorrow at half past seven", "dsl": "dt +1d 7:30?"}
+{"id": "ht1-0127", "text": "Early dismissal Wednesday, Dec 17 at 12:15 p.m. for all grades (buses will run)", "dsl": "dt 12-17 12:15"}
+{"id": "ht1-0128", "text": "Community yard sale: Saturday, May 16th, 8 AM to 2 PM, rain or shine (Oak Lane)", "dsl": "dt 05-16 08:00>14:00"}
+{"id": "ht1-0129", "text": "Support ticket #4471 opened. We will respond within 24 hours.", "dsl": "x"}
+{"id": "ht1-0130", "text": "Table for 2 at Café Bleu tonight at 6:45 pm, confirmation #A83921", "dsl": "dt +0d 18:45"}
+{"id": "ht1-0131", "text": "pickup at the 2-4 on the 24th", "dsl": "dt 11-24 2?>4?"}
+{"id": "ht1-0132", "text": "Fire drill scheduled for Tuesday morning, 10/14, approx. 9:45 AM; no action needed", "dsl": "dt 10-14 09:45"}
+{"id": "ht1-0133", "text": "Meeting invite: Sprint planning, every other Monday 10:00-11:30 (CET), starting Nov 9", "dsl": "dt R w/2 mo 10:00>11:30 s11-09"}
+{"id": "ht1-0134", "text": "maybe monday morning, like 9:30?", "dsl": "dt mo 09:30"}
+{"id": "ht1-0135", "text": "the monday before thanksgiving", "dsl": "x", "unsure": true}
+{"id": "ht1-0136", "text": "tusday 2pm", "dsl": "dt tu 14:00"}
+{"id": "ht1-0137", "text": "from 8 till 10 tonight", "dsl": "dt +0d 20:00>22:00"}
+{"id": "ht1-0138", "text": "Movie tickets: Dune Part Three, Sat 12/19, 4:45 PM, Auditorium 6, Seats H9 H10", "dsl": "dt 12-19 16:45"}
+{"id": "ht1-0139", "text": "Second shift crew: mandatory overtime Sat 11/29, 7 AM to 3 PM (sign the sheet)", "dsl": "dt 11-29 07:00>15:00"}
+{"id": "ht1-0140", "text": "Pot roast dinner at the Legion hall on the 2nd Friday of every month, 5-7 PM", "dsl": "dt R m/1 fr#2 17:00>19:00"}
+{"id": "ht1-0141", "text": "Your tow has been scheduled for the morning of Thursday the 5th, window 8-10 AM", "dsl": "dt 11-05 08:00>10:00"}
+{"id": "ht1-0142", "text": "Recital: Sophie plays Saturday, May 15th, at 2 o'clock in the school auditorium", "dsl": "dt 05-15 2?"}
+{"id": "ht1-0143", "text": "1st & 15th of every month", "dsl": "d R m/1 d1,d15"}
+{"id": "ht1-0144", "text": "8ish", "dsl": "t 8?"}
+{"id": "ht1-0145", "text": "monthly on the 5th", "dsl": "d R m/1 d5"}
+{"id": "ht1-0146", "text": "Stand-up comedy, Friday 10/23, 2 shows: 7:00 PM and 9:30 PM, Comedy Cellar", "dsl": "d 10-23"}
+{"id": "ht1-0147", "text": "Please join us for brunch on Sunday, May 10, 10:30 AM, at Aunt Linda's house", "dsl": "dt 05-10 10:30"}
+{"id": "ht1-0148", "text": "on the 3rd of next month at half past two", "dsl": "dt 12-03 2:30?"}
+{"id": "ht1-0149", "text": "Parents are reminded not to park in the fire lane during pickup and drop-off", "dsl": "x"}
+{"id": "ht1-0150", "text": "quarterly on the first of jan apr jul oct", "dsl": "d R m/3 d1 s01-01", "unsure": true}
+{"id": "ht1-0151", "text": "the thursday after next at four thirty", "dsl": "dt th+2 4:30?"}
+{"id": "ht1-0152", "text": "the whole month of february", "dsl": "d M@02"}
+{"id": "ht1-0153", "text": "Marathon bib pickup Sat Oct 10 from 10 AM to 6 PM; race day is Sunday Oct 11 at 7:00 AM", "dsl": "dt 10-10 10:00>18:00"}
+{"id": "ht1-0154", "text": "jan 3rd 2027 till jan 10th", "dsl": "d 2027-01-03>2027-01-10"}
+{"id": "ht1-0155", "text": "next july", "dsl": "d M@07"}
+{"id": "ht1-0156", "text": "A reminder that the book return slot will be closed Sun 12/28 and Thurs 1/1", "dsl": "x", "unsure": true}
+{"id": "ht1-0157", "text": "Your order will arrive between Mon 3/9 and Wed 3/11 (signature required)", "dsl": "d 03-09>03-11"}
+{"id": "ht1-0158", "text": "Meeting of the finance committee, 4th Thursday, 5:15 PM (or as called by the chair)", "dsl": "dt R m/1 th#4 17:15"}
+{"id": "ht1-0159", "text": "two weekends from now", "dsl": "x", "unsure": true}
+{"id": "ht1-0160", "text": "Kindergarten roundup is set for Tuesday evening, April 14, 6:00 PM (cafeteria)", "dsl": "dt 04-14 18:00"}
+{"id": "ht1-0161", "text": "fri the 13th", "dsl": "d 11-13"}
+{"id": "ht1-0162", "text": "Swim meet Saturday, Oct 31, warmups 7:30 AM, first event 8:15 AM", "dsl": "d 10-31"}
+{"id": "ht1-0163", "text": "Lunch and learn: Tuesday, March 10, 12 noon to 1 PM, Conference Room C", "dsl": "dt 03-10 12:00>13:00"}
+{"id": "ht1-0164", "text": "after 5 on friday", "dsl": "dt fr 5?"}
+{"id": "ht1-0165", "text": "Rental house Cape Cod: Sat-Sat, Aug 7 - Aug 14, 2027, check-in 4 PM", "dsl": "d 2027-08-07>2027-08-14"}
+{"id": "ht1-0166", "text": "a fortnight from today", "dsl": "d +2w"}
+{"id": "ht1-0167", "text": "Aerial silks intro, Saturday Mar 7, 1:00 - 2:30 PM, Studio D, $25 per person", "dsl": "dt 03-07 13:00>14:30"}
+{"id": "ht1-0168", "text": "wed morn", "dsl": "d we"}
+{"id": "ht1-0169", "text": "Silent auction ends Saturday, Nov 21 at 9:30 PM Pacific; bidding opens Nov 14", "dsl": "dt 11-21 21:30"}
+{"id": "ht1-0170", "text": "fifth of october at ten past ten at night", "dsl": "dt 10-05 22:10"}
+{"id": "ht1-0171", "text": "Virtual interview with Acme Corp on Monday Nov 9, 10:00-10:45 AM CT via Teams", "dsl": "dt 11-09 10:00>10:45"}
+{"id": "ht1-0172", "text": "janurary 1st", "dsl": "d 01-01"}
+{"id": "ht1-0173", "text": "Rescheduled: Quarterly review now Thu, Dec 3 at 11 AM Eastern (was Nov 30)", "dsl": "dt 12-03 11:00"}
+{"id": "ht1-0174", "text": "mid-september", "dsl": "x", "unsure": true}
+{"id": "ht1-0175", "text": "Booking ref KX92LM: Airbnb stay from Dec 27 to Jan 2 (6 nights), Lisbon", "dsl": "d 12-27>01-02"}
+{"id": "ht1-0176", "text": "Senior center closed Wed 7/1 through Fri 7/3 for floor refinishing", "dsl": "d 07-01>07-03"}
+{"id": "ht1-0177", "text": "1/2 past 5", "dsl": "t 5:30?"}
+{"id": "ht1-0178", "text": "Staff luncheon: Wed., Dec. 10, noon-1:30 PM, break room (potluck - sign up on the door)", "dsl": "dt 12-10 12:00>13:30"}
+{"id": "ht1-0179", "text": "Vaccination appointment on 2026-11-17 at 13:20, Pharmacy counter", "dsl": "dt 2026-11-17 13:20"}
+{"id": "ht1-0180", "text": "Your reservation at The Capital Grille is on 12/18 at 7:00 p.m. for six", "dsl": "dt 12-18 19:00"}
+{"id": "ht1-0181", "text": "Dues reminder: second-quarter payments are due by June 30 (see treasurer)", "dsl": "d 06-30"}
+{"id": "ht1-0182", "text": "daily for 10 days starting tmrw", "dsl": "d R d/1 n10 s+1d"}
+{"id": "ht1-0183", "text": "three days from tuesday", "dsl": "x", "unsure": true}
+{"id": "ht1-0184", "text": "half past six tomorrow morning", "dsl": "dt +1d 06:30"}
+{"id": "ht1-0185", "text": "every day at six in the morning", "dsl": "dt R d/1 06:00"}
+{"id": "ht1-0186", "text": "Lights Out Night at the observatory: Fri., Sept 18, gates 8:30 PM", "dsl": "dt 09-18 20:30"}
+{"id": "ht1-0187", "text": "Grief support group meets Thursdays from 6 to 7:30 PM, Oct 2 through Nov 20", "dsl": "dt R w/1 th u11-20 18:00>19:30 s10-02"}
+{"id": "ht1-0188", "text": "Your pass expires at midnight on Sunday, Nov 15", "dsl": "dt 11-15 00:00"}
+{"id": "ht1-0189", "text": "two fifteen pm", "dsl": "t 14:15"}
+{"id": "ht1-0190", "text": "Walk-in clinic hours Mon-Fri 8am-6pm, Sat 9am-1pm", "dsl": "x", "unsure": true}
+{"id": "ht1-0191", "text": "Appointment: Tuesday, 3rd of November, 11:30 hrs, Clinica Central", "dsl": "dt 11-03 11:30"}
+{"id": "ht1-0192", "text": "Dads and donuts, first Wednesday of the month, 7:30 to 8:15 AM, cafeteria", "dsl": "dt R m/1 we#1 07:30>08:15"}
+{"id": "ht1-0193", "text": "CPR certification course, Saturday, April 11, 9 AM - 3 PM, $45 (lunch not included)", "dsl": "dt 04-11 09:00>15:00"}
+{"id": "ht1-0194", "text": "Sunday worship service 10:00 AM, nursery open (Fellowship Hall)", "dsl": "dt su 10:00"}
+{"id": "ht1-0195", "text": "Appointment reminder: Wed 11/4 at 3:45pm w/ Dr. Okafor, 2nd floor, Suite 20", "dsl": "dt 11-04 15:45"}
+{"id": "ht1-0196", "text": "four a.m. monday", "dsl": "dt mo 04:00"}
+{"id": "ht1-0197", "text": "janurary 9 at 10am", "dsl": "dt 01-09 10:00"}
+{"id": "ht1-0198", "text": "Your next payment of $89.00 is scheduled for the 15th of every month", "dsl": "d R m/1 d15"}
+{"id": "ht1-0199", "text": "Annual flu shot clinic, Tuesdays and Fridays in October, 9 a.m. to 3 p.m.", "dsl": "dt R w/1 tu,fr u10-31 09:00>15:00 s10-01", "unsure": true}
+{"id": "ht1-0200", "text": "the 24th of may, victoria day, all day", "dsl": "d 05-24"}
+{"id": "ht1-0201", "text": "Fun run 5K, Sun Sept 20, 8:00 AM start (packet pickup Sat 2-6 PM)", "dsl": "dt 09-20 08:00"}
+{"id": "ht1-0202", "text": "Newsletter deadline: submissions due by end of day Friday, Oct 24 (email Linda)", "dsl": "d 10-24"}
+{"id": "ht1-0203", "text": "Our youth orchestra rehearses Tuesdays from 4:30 to 6:00 PM, September to May", "dsl": "dt R w/1 tu 16:30>18:00"}
+{"id": "ht1-0204", "text": "Nurse's office will be closed on Tuesday afternoon, Sept 30, after 1 PM", "dsl": "dt 09-30 13:00"}
+{"id": "ht1-0205", "text": "Weekly planning call: Mondays 8:30am Central, 15 min, Google Meet", "dsl": "dt R w/1 mo 08:30"}
+{"id": "ht1-0206", "text": "Rummage sale Friday 5/8 (noon-6) and Saturday 5/9 (9-2) in the fellowship hall", "dsl": "d 05-08>05-09"}
+{"id": "ht1-0207", "text": "Zumba Gold, Fridays 9:30 AM (Community Center, Rm 3) - $5 drop-in", "dsl": "dt R w/1 fr 09:30"}
+{"id": "ht1-0208", "text": "thursdays through december", "dsl": "d R w/1 th u12-31"}
+{"id": "ht1-0209", "text": "Office closed Monday, May 25 in observance of Memorial Day", "dsl": "d 05-25"}
+{"id": "ht1-0210", "text": "sometime after lunch, say 1:30, on the 12th", "dsl": "dt 11-12 13:30"}
+{"id": "ht1-0211", "text": "Reminder: library books due back by Mon. Feb 2 or fines will apply", "dsl": "d 02-02"}
+{"id": "ht1-0212", "text": "7 to 9 pm thursday", "dsl": "dt th 19:00>21:00"}
+{"id": "ht1-0213", "text": "from monday the 9th until friday the 13th", "dsl": "d 11-09>11-13"}
+{"id": "ht1-0214", "text": "6 weeks out", "dsl": "d +6w"}
+{"id": "ht1-0215", "text": "Rental period: Fri 7/10 10:00 AM through Mon 7/13 10:00 AM, pick up at Denver", "dsl": "dt 07-10 10:00>07-13 10:00"}
+{"id": "ht1-0216", "text": "Lap swim hours change on Jan 5: weekdays 5:30-8:30 AM and 4:00-8:00 PM", "dsl": "d 01-05", "unsure": true}
+{"id": "ht1-0217", "text": "ten past noon", "dsl": "t 12:10"}
+{"id": "ht1-0218", "text": "Summer hours begin Monday June 1: Mon-Thu 7:30 AM-5:00 PM, closed Fridays", "dsl": "d 06-01"}
+{"id": "ht1-0219", "text": "ea. day 2 pm for 10 days", "dsl": "dt R d/1 n10 14:00"}
+{"id": "ht1-0220", "text": "Alert: severe storm warning, do not travel, expected to end by 6 AM", "dsl": "t 06:00"}
+{"id": "ht1-0221", "text": "thirty first of october", "dsl": "d 10-31"}
+{"id": "ht1-0222", "text": "Please return permission slips by Wednesday, March 4th, no later than 8:30 AM", "dsl": "dt 03-04 08:30"}
+{"id": "ht1-0223", "text": "Seminar: Intro to Python, Tue & Thu, Nov 3 - Nov 24, 6:00-8:00 PM, Room 5", "dsl": "dt R w/1 tu,th u11-24 18:00>20:00 s11-03"}
+{"id": "ht1-0224", "text": "thirteen oclock", "dsl": "t 13:00"}
+{"id": "ht1-0225", "text": "14.03.2027", "dsl": "d 2027-03-14"}
+{"id": "ht1-0226", "text": "Aqua aerobics Mon, Wed, Fri 8-9 AM (lap pool, lanes 1-2) starting Sept 8", "dsl": "dt R w/1 mo,we,fr 08:00>09:00 s09-08"}
+{"id": "ht1-0227", "text": "Spa appointment confirmed for Sat. Jun 6 @ 11:15 AM w/ Dana (60 min massage)", "dsl": "dt 06-06 11:15"}
+{"id": "ht1-0228", "text": "jan 1 2028 midnight", "dsl": "dt 2028-01-01 00:00"}
+{"id": "ht1-0229", "text": "nov 12th @ 2.30 pm", "dsl": "dt 11-12 14:30"}
+{"id": "ht1-0230", "text": "asap tomorrow", "dsl": "d +1d"}
+{"id": "ht1-0231", "text": "Last call for t-shirt orders: Monday, September 15 by 3:00 PM", "dsl": "dt 09-15 15:00"}
+{"id": "ht1-0232", "text": "two days ago at noon", "dsl": "dt -2d 12:00"}
+{"id": "ht1-0233", "text": "flight leaves 6:05a sat", "dsl": "dt sa 06:05"}
+{"id": "ht1-0234", "text": "Daily devotional hour 6:00-7:00 AM Monday through Friday in the prayer room", "dsl": "dt R d/1 mo,tu,we,th,fr 06:00>07:00"}
+{"id": "ht1-0235", "text": "Your meal kit delivery is scheduled for Sunday between 8am and noon", "dsl": "dt su 08:00>12:00"}
+{"id": "ht1-0236", "text": "Your cargo shipment ETA is January 6th, with customs clearance on the 7th", "dsl": "d 01-06"}
+{"id": "ht1-0237", "text": "Your Peloton order will be delivered on Friday, Nov 20, 1:00 PM - 5:00 PM", "dsl": "dt 11-20 13:00>17:00"}
+{"id": "ht1-0238", "text": "every 2nd and 4th saturday", "dsl": "x", "unsure": true}
+{"id": "ht1-0239", "text": "fri 3/6 @ 7p", "dsl": "dt 03-06 19:00"}
+{"id": "ht1-0240", "text": "six weeks from friday", "dsl": "x", "unsure": true}
+{"id": "ht1-0241", "text": "Visit us! Hours: Tue-Sat 11am to 9pm, Sun 10am-3pm, closed Mon", "dsl": "x", "unsure": true}
+{"id": "ht1-0242", "text": "nov 20 to nov 22, 9 to 5 daily", "dsl": "dt R d/1 u11-22 9?>5? s11-20"}
+{"id": "ht1-0243", "text": "three-ish this afternoon", "dsl": "dt +0d 15:00"}
+{"id": "ht1-0244", "text": "1 apr 2027", "dsl": "d 2027-04-01"}
+{"id": "ht1-0245", "text": "new years eve 9pm", "dsl": "dt 12-31 21:00"}
+{"id": "ht1-0246", "text": "the 10th of this month at nine pm", "dsl": "dt 11-10 21:00"}
+{"id": "ht1-0247", "text": "Community garden plots open for sign-ups starting Sunday, March 1st", "dsl": "d 03-01"}
+{"id": "ht1-0248", "text": "Mom & me ballet, Saturdays 9:00-9:45 AM, Studio C, session starts Jan 10", "dsl": "dt R w/1 sa 09:00>09:45 s01-10"}
+{"id": "ht1-0249", "text": "Prom is Saturday, May 2, 2026, 7:00 to 11:00 PM at the Riverside Ballroom", "dsl": "dt 2026-05-02 19:00>23:00"}
+{"id": "ht1-0250", "text": "a week from sunday at dusk", "dsl": "x", "unsure": true}
+{"id": "ht1-0251", "text": "monday week at 9", "dsl": "x", "unsure": true}
+{"id": "ht1-0252", "text": "Call the clinic by 4 PM on Friday to reschedule your Monday 9:00 AM visit", "dsl": "dt fr 16:00"}
+{"id": "ht1-0253", "text": "Lakeside Resort reservation: arrive Fri 9/4 4:00 PM, depart Mon 9/7 11:00 AM (Labor Day)", "dsl": "dt 09-04 16:00>09-07 11:00"}
+{"id": "ht1-0254", "text": "th 4p", "dsl": "dt th 16:00"}
+{"id": "ht1-0255", "text": "Court date: Wed 12/2/2026 at 9:00 a.m., Courtroom 5B, 100 Main", "dsl": "dt 2026-12-02 09:00"}
+{"id": "ht1-0256", "text": "a quarter after seven wed", "dsl": "dt we 7:15?"}
+{"id": "ht1-0257", "text": "within 3 days", "dsl": "d +0d>+3d", "unsure": true}
+{"id": "ht1-0258", "text": "6.30 am next mon", "dsl": "dt mo+1 06:30"}
+{"id": "ht1-0259", "text": "wed thru fri", "dsl": "d we>fr"}
+{"id": "ht1-0260", "text": "apr 1, 2027, 8:00 am", "dsl": "dt 2027-04-01 08:00"}
+{"id": "ht1-0261", "text": "Craft fair vendor setup: Friday 11/6 from 4 to 7 PM; doors open Sat at 9", "dsl": "dt 11-06 16:00>19:00"}
+{"id": "ht1-0262", "text": "Package at the post office. Pick up by 12/05 (closes 5:30 PM on weekdays)", "dsl": "d 12-05"}
+{"id": "ht1-0263", "text": "five thirty in the morning", "dsl": "t 05:30"}
+{"id": "ht1-0264", "text": "Please note new pickup time: 3:05 PM instead of 3:15, effective Mon, Oct 6", "dsl": "dt 10-06 15:05"}
+{"id": "ht1-0265", "text": "the previous friday at 5", "dsl": "dt fr-1 5?"}
+{"id": "ht1-0266", "text": "sundey at noon", "dsl": "dt su 12:00"}
+{"id": "ht1-0267", "text": "Yoga for kids, Wednesdays at 4:00 PM for six weeks starting April 8", "dsl": "dt R w/1 we n6 16:00 s04-08"}
+{"id": "ht1-0268", "text": "Estimated delivery date: Monday, November 23rd, 2026 by 8pm", "dsl": "dt 2026-11-23 20:00"}
+{"id": "ht1-0269", "text": "Your DoorDash order from Pho 79 will arrive by 7:25 PM", "dsl": "t 19:25"}
+{"id": "ht1-0270", "text": "novemeber 3", "dsl": "d 11-03"}
+{"id": "ht1-0271", "text": "Trash pickup is every other Friday starting Nov 6 (recycling on alternate weeks)", "dsl": "d R w/2 fr s11-06"}
+{"id": "ht1-0272", "text": "Open mic night at the coffeehouse, 1st Saturday monthly at 7:30 PM", "dsl": "dt R m/1 sa#1 19:30"}
+{"id": "ht1-0273", "text": "every thrusday until dec 15", "dsl": "d R w/1 th u12-15"}
+{"id": "ht1-0274", "text": "Lost & found items will be donated after Friday, June 5 - please check the office", "dsl": "d 06-05"}
+{"id": "ht1-0275", "text": "11/12/26", "dsl": "d 2026-11-12"}
+{"id": "ht1-0276", "text": "coming saturday night, ten-ish", "dsl": "dt sa 22:00"}
+{"id": "ht1-0277", "text": "Pilates mat class, Sat 8:15 AM, studio A -- limited to 12 participants", "dsl": "dt sa 08:15"}
+{"id": "ht1-0278", "text": "Youth basketball clinic - Sat, Jan 17, 1:00 p.m. to 3:30 p.m., Lincoln Middle gym", "dsl": "dt 01-17 13:00>15:30"}
+{"id": "ht1-0279", "text": "the 22nd at 5pm", "dsl": "dt 11-22 17:00"}
+{"id": "ht1-0280", "text": "Annual golf scramble Saturday, September 12th, shotgun start 8:00 AM, Eagle Ridge", "dsl": "dt 09-12 08:00"}
+{"id": "ht1-0281", "text": "every 2nd and 4th sat", "dsl": "x", "unsure": true}
+{"id": "ht1-0282", "text": "annually on 12 dec", "dsl": "d R y/1 s12-12"}
+{"id": "ht1-0283", "text": "Order 5521 delivery slot: Wednesday 14 October, 18:00-20:00", "dsl": "dt 10-14 18:00>20:00"}
+{"id": "ht1-0284", "text": "Annual spring cleanup day is Saturday, April 18th, 9 a.m. - noon, meet at the park", "dsl": "dt 04-18 09:00>12:00"}
+{"id": "ht1-0285", "text": "fridy at 5", "dsl": "dt fr 5?"}
+{"id": "ht1-0286", "text": "oh-eight-hundred tomorrow", "dsl": "dt +1d 08:00"}
+{"id": "ht1-0287", "text": "Visa appointment at US Embassy: January 14, 2027, 9:45 AM, bring passport", "dsl": "dt 2027-01-14 09:45"}
+{"id": "ht1-0288", "text": "Shuttle runs every 15 min from 5:00 AM until 11:45 PM daily", "dsl": "dt R d/1 05:00>23:45"}
+{"id": "ht1-0289", "text": "Birthday party for Leo, Saturday afternoon from 2 to 4, bouncy house in the yard", "dsl": "dt sa 14:00>16:00"}
+{"id": "ht1-0290", "text": "Event starts in 2 hours at the Grand Ballroom, 1200 Market Street", "dsl": "x", "unsure": true}
+{"id": "ht1-0291", "text": "seven o'clock tonite", "dsl": "dt +0d 19:00"}
+{"id": "ht1-0292", "text": "the 2nd week of march", "dsl": "x", "unsure": true}
+{"id": "ht1-0293", "text": "in about 10 days", "dsl": "d +10d"}
+{"id": "ht1-0294", "text": "Library story time for toddlers every Thursday at 10:30 a.m. through June 18", "dsl": "dt R w/1 th u06-18 10:30"}
+{"id": "ht1-0295", "text": "su 8p", "dsl": "dt su 20:00"}
+{"id": "ht1-0296", "text": "every saturday from 10 to 12 through the end of june", "dsl": "dt R w/1 sa u06-30 10?>12?"}
+{"id": "ht1-0297", "text": "Fish fry every Friday during Lent (Feb 18 - Apr 3), 4:30 PM until 7:30 PM", "dsl": "dt R w/1 fr u04-03 16:30>19:30 s02-18"}
+{"id": "ht1-0298", "text": "Your package is out for delivery and should arrive today by 8:00 PM", "dsl": "dt +0d 20:00"}
+{"id": "ht1-0299", "text": "last friday of each month at 3", "dsl": "dt R m/1 fr#-1 3?"}
+{"id": "ht1-0300", "text": "Faculty meeting rescheduled to Wednesday 3/18, 3:45 PM, library media center", "dsl": "dt 03-18 15:45"}
+{"id": "ht1-0301", "text": "Delivery date changed from 11/9 to 11/13. We apologize for the inconvenience.", "dsl": "d 11-13"}
+{"id": "ht1-0302", "text": "fri afternoon at 3-4", "dsl": "dt fr 15:00>16:00"}
+{"id": "ht1-0303", "text": "Trunk-or-treat in the church lot Friday, 10/31, 5:30 to 7:30 PM, costumes encouraged", "dsl": "dt 10-31 17:30>19:30"}
+{"id": "ht1-0304", "text": "boxing day at 8 in the morning", "dsl": "dt 12-26 08:00"}
+{"id": "ht1-0305", "text": "Open enrollment ends 11/30/2026 at 11:59 PM Eastern", "dsl": "dt 2026-11-30 23:59"}
+{"id": "ht1-0306", "text": "Lenten soup supper every Wednesday in March 6 PM - 7 PM, sign up to bring a pot", "dsl": "dt R w/1 we u03-31 18:00>19:00 s03-01"}
+{"id": "ht1-0307", "text": "School will be closed Nov 26-28 for Thanksgiving break; classes resume Mon Dec 1", "dsl": "d 11-26>11-28"}
+{"id": "ht1-0308", "text": "Polling place hours are 7:00 AM to 8:00 PM on Tuesday, Nov 3 at the school gym", "dsl": "dt 11-03 07:00>20:00"}
+{"id": "ht1-0309", "text": "could we do wed the 18th 3ish?", "dsl": "dt 11-18 3?"}
+{"id": "ht1-0310", "text": "the 1st of jan", "dsl": "d 01-01"}
+{"id": "ht1-0311", "text": "Estimated ship date: 11/12/2026", "dsl": "d 2026-11-12"}
+{"id": "ht1-0312", "text": "march 3 - 9", "dsl": "d 03-03>03-09"}
+{"id": "ht1-0313", "text": "Cell service will be interrupted Nov 8, 1-4 AM, for scheduled maintenance", "dsl": "dt 11-08 01:00>04:00"}
+{"id": "ht1-0314", "text": "School lunch menu for the week of 12/8: pizza Mon, tacos Tues, pasta Wed", "dsl": "d 12-08"}
+{"id": "ht1-0315", "text": "Haircut w/ Marco, Tues 10/27 @ 5:30p, 123 Bleecker St", "dsl": "dt 10-27 17:30"}
+{"id": "ht1-0316", "text": "how about two weeks from thursday at 4", "dsl": "x", "unsure": true}
+{"id": "ht1-0317", "text": "Annual parish festival Aug 21-23: Fri 5-10 PM, Sat 12-11 PM, Sun 12-6 PM", "dsl": "d 08-21>08-23"}
+{"id": "ht1-0318", "text": "Moms in prayer meet every Tuesday morning at 8:15 in the library", "dsl": "dt R w/1 tu 08:15"}
+{"id": "ht1-0319", "text": "first half of december", "dsl": "d 12-01>12-15"}
+{"id": "ht1-0320", "text": "Basketball banquet on Sunday, March 29, 5 PM, followed by awards at 6:15", "dsl": "dt 03-29 17:00"}
+{"id": "ht1-0321", "text": "sat the 14th around 2:30", "dsl": "dt 11-14 2:30?"}
+{"id": "ht1-0322", "text": "lunchtime friday", "dsl": "d fr"}
+{"id": "ht1-0323", "text": "Hot yoga, daily at 6:15 AM and 5:45 PM (check schedule for weekend hours)", "dsl": "x", "unsure": true}
