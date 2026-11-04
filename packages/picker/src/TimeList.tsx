@@ -18,13 +18,14 @@ export function TimeList({ start, end, active, onPick }: Props) {
     const el = active ? box?.querySelector<HTMLElement>(`[data-time="${active}"]`) : null;
     if (!box || !el) return;
     const top = el.offsetTop - box.clientHeight / 2 + el.offsetHeight / 2;
+    const left = el.offsetLeft - box.clientWidth / 2 + el.offsetWidth / 2;
     const calm = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    box.scrollTo?.({ top, behavior: calm ? "auto" : "smooth" });
+    box.scrollTo?.({ top, left, behavior: calm ? "auto" : "smooth" });
   }, [active]);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const t = e.target as HTMLElement;
-    const move = e.key === "ArrowDown" ? t.nextElementSibling : e.key === "ArrowUp" ? t.previousElementSibling : null;
+    const move = e.key === "ArrowDown" || e.key === "ArrowRight" ? t.nextElementSibling : e.key === "ArrowUp" || e.key === "ArrowLeft" ? t.previousElementSibling : null;
     if (move) {
       e.preventDefault();
       (move as HTMLElement).focus();

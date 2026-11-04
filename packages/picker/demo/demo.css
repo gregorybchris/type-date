@@ -4,7 +4,7 @@ body {
 }
 .demo {
   min-height: 100vh;
-  padding: 48px 24px;
+  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,4 +36,9 @@ body {
   font-size: 12px;
   line-height: 1.7;
   opacity: 0.55;
+}
+.demo-try {
+  align-self: stretch;
+  max-width: 462px;
+  margin-inline: auto;
 }

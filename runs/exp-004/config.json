@@ -23,7 +23,7 @@
     "n_train": 47332
   },
   "export": {
-    "format": "pending",
-    "quant": "none"
+    "format": "onnx",
+    "quant": "int8"
   }
 }

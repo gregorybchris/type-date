@@ -144,8 +144,14 @@
   },
   "model": {
     "params": 9698944,
-    "size_bytes": 38807120,
-    "avg_output_tokens": 4.898
+    "size_bytes": 10437419,
+    "avg_output_tokens": 4.898,
+    "onnx_sizes": {
+      "decoder_model.onnx": 5778792,
+      "decoder_model_merged.onnx": 22421176,
+      "decoder_with_past_model.onnx": 5230881,
+      "encoder_model.onnx": 4594599
+    }
   },
   "train": {
     "seconds": 709.4,

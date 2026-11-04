@@ -74,7 +74,7 @@ def export(exp: int, quant: str = "int8", prune_torch: bool = False) -> dict:
         },
     }
     (art / "manifest.json").write_text(json.dumps(manifest, indent=2))
-    # download size for the browser: encoder + decoder (with past) + tokenizer
+    # download size for the ort-custom engine: encoder + decoder (no cache) + tokenizer
     need = [
         "encoder_model.onnx",
         "decoder_model_merged.onnx",

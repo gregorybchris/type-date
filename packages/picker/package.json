@@ -25,7 +25,8 @@
     "size": "node scripts/size.mjs",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "shots": "node scripts/shots.mjs"
+    "shots": "node scripts/shots.mjs",
+    "shots:mobile": "node scripts/mobile-shots.mjs"
   },
   "peerDependencies": {
     "react": ">=18"

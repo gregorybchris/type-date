@@ -160,3 +160,33 @@ describe("direct edits", () => {
     expect(onConfirm.mock.calls[0]![0].start.date).toBe("2026-09-21");
   });
 });
+
+describe("mobile structure", () => {
+  it("renders the time options in one listbox and day buttons as 7 columns", async () => {
+    const { type } = setup(table({ c: "dt 09-21 10:00" }));
+    type("c");
+    await waitFor(() => expect(screen.getByRole("listbox")).toBeTruthy());
+    expect(screen.getAllByRole("option").length).toBeGreaterThanOrEqual(48);
+    expect(screen.getAllByRole("row").every((r) => r.children.length === 7)).toBe(true);
+  });
+
+  it("shows a hint after the first tap of a range", async () => {
+    const { type } = setup(table({ r: "d 10-02>10-05" }));
+    type("r");
+    await waitFor(() => expect(screen.getByRole("grid")).toBeTruthy());
+    fireEvent.click(screen.getByRole("button", { name: "Oct 8, 2026" }));
+    expect(screen.getByText("Tap an end date")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "Oct 10, 2026" }));
+    await waitFor(() => expect(screen.getAllByRole("gridcell").filter((c) => c.dataset.range === "mid")).toHaveLength(1));
+  });
+
+  it("keeps the picker input and ships touch and safe-area CSS", async () => {
+    const { readFileSync } = await import("node:fs");
+    const css = readFileSync(`${process.cwd()}/src/styles.css`, "utf8");
+    expect(css).toContain("env(safe-area-inset-bottom)");
+    expect(css).toContain("100dvh");
+    expect(css).toContain("touch-action: manipulation");
+    expect(css).toContain("@media (hover: hover)");
+    expect(css).toContain("@container (max-width: 461px)");
+  });
+});

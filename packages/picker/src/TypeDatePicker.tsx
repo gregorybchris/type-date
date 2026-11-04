@@ -72,6 +72,28 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   const latest = useRef({ result, onChange: props.onChange });
   latest.current = { result, onChange: props.onChange };
   const root = useRef<HTMLDivElement>(null);
+  const card = useRef<HTMLDivElement>(null);
+
+  // Soft keyboard: size the card to the visual viewport and keep the input in view.
+  useEffect(() => {
+    const vv = typeof window !== "undefined" ? window.visualViewport : null;
+    if (!vv) return;
+    const fit = () => card.current?.style.setProperty("--td-vvh", `${vv.height}px`);
+    const onResize = () => {
+      fit();
+      if (root.current?.contains(document.activeElement) && matchMedia("(max-width: 520px)").matches) {
+        root.current.scrollIntoView({ block: "start" });
+      }
+    };
+    fit();
+    vv.addEventListener("resize", onResize);
+    return () => vv.removeEventListener("resize", onResize);
+  }, []);
+  const keepVisible = () => {
+    if (typeof matchMedia === "function" && matchMedia("(max-width: 520px)").matches) {
+      setTimeout(() => root.current?.scrollIntoView?.({ block: "start", behavior: "smooth" }), 250);
+    }
+  };
 
   const show = useCallback((v: View) => {
     setView((old) => {
@@ -216,6 +238,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       data-pending={pending || undefined}
       data-muted={muted || undefined}
     >
+      <div className="td-card" ref={card}>
       <div className="td-search">
         <SearchIcon />
         <input
@@ -228,6 +251,8 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
           spellCheck={false}
           onChange={(e) => onText(e.target.value)}
           onKeyDown={onInputKey}
+          onFocus={keepVisible}
+          enterKeyHint="done"
         />
         <span className="td-busy" aria-hidden />
       </div>
@@ -240,26 +265,32 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
             </Field>
           ) : (
             <>
-              {showCal && dateOf("start") && (
-                <Field icon active={mode === "d" && !isRange} onClick={() => jump("start")}>
-                  {fmtDate(dateOf("start")!)}
-                </Field>
-              )}
-              {showTime && startTime && (
-                <Field active={target === "start"} onClick={() => setTarget("start")}>
-                  {fmtTime(startTime)}
-                </Field>
-              )}
-              {isRange && <span className="td-to">to</span>}
-              {isRange && showTime && endTime && (
-                <Field active={target === "end"} onClick={() => setTarget("end")}>
-                  {fmtTime(endTime)}
-                </Field>
-              )}
-              {isRange && showCal && dateOf("end") && (mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
-                <Field icon onClick={() => jump("end")}>
-                  {fmtDate(dateOf("end")!)}
-                </Field>
+              <div className="td-fg">
+                {showCal && dateOf("start") && (
+                  <Field icon active={mode === "d" && !isRange} onClick={() => jump("start")}>
+                    {fmtDate(dateOf("start")!)}
+                  </Field>
+                )}
+                {showTime && startTime && (
+                  <Field active={target === "start"} onClick={() => setTarget("start")}>
+                    {fmtTime(startTime)}
+                  </Field>
+                )}
+              </div>
+              {isRange && (
+                <div className="td-fg">
+                  <span className="td-to">to</span>
+                  {showTime && endTime && (
+                    <Field active={target === "end"} onClick={() => setTarget("end")}>
+                      {fmtTime(endTime)}
+                    </Field>
+                  )}
+                  {showCal && dateOf("end") && (mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
+                    <Field icon onClick={() => jump("end")}>
+                      {fmtDate(dateOf("end")!)}
+                    </Field>
+                  )}
+                </div>
               )}
             </>
           )}
@@ -287,9 +318,10 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
         </div>
       </div>
 
-      <Collapse open={!!rec || (!!result?.ambiguous && showTime) || muted}>
+      <Collapse open={!!rec || (!!result?.ambiguous && showTime) || muted || !!anchor}>
         <div className="td-extras">
           {muted && <span className="td-note">No date found. Showing the last result.</span>}
+          {anchor && !muted && <span className="td-note">Tap an end date</span>}
           {rec && (
             <div className="td-rec">
               <code className="td-rrule">{toRRule(rec)}</code>
@@ -330,6 +362,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
           <kbd>esc</kbd>
           clear
         </span>
+      </div>
       </div>
       <div id="td-status" className="td-sr" role="status" aria-live="polite">
         {summary}
