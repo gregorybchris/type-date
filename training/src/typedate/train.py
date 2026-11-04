@@ -40,6 +40,7 @@ class TrainConfig:
     notes: str = ""
     max_train: int = 0  # 0 = all
     digit_split: bool = False
+    parent: int = 0
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -290,7 +291,7 @@ def run(cfg: TrainConfig) -> dict:
         "dataset": cfg.dataset,
         "format": "dsl-v1",
         "notes": cfg.notes,
-        "parent": None,
+        "parent": f"exp-{cfg.parent:03d}" if cfg.parent else None,
         "model": {
             "family": "enc-dec-scratch",
             "params": n_params,
