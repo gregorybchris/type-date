@@ -1,0 +1,31 @@
+{
+  "stages": {
+    "bench-wasm-desktop": {
+      "total_s": 4.825,
+      "buckets": {
+        "setup": 0.001,
+        "esbuild_bundle": 0.053,
+        "server_start": 0.002,
+        "browser_launch": 0.366,
+        "page_open": 0.36,
+        "run_in_browser": 3.852,
+        "write_results": 0.192,
+        "run_in_browser/model_load": 0.972,
+        "run_in_browser/predictions": 2.231
+      },
+      "rows": 50
+    }
+  },
+  "total_s": 4.825,
+  "buckets": {
+    "bench-wasm-desktop.setup": 0.001,
+    "bench-wasm-desktop.esbuild_bundle": 0.053,
+    "bench-wasm-desktop.server_start": 0.002,
+    "bench-wasm-desktop.browser_launch": 0.366,
+    "bench-wasm-desktop.page_open": 0.36,
+    "bench-wasm-desktop.run_in_browser": 3.852,
+    "bench-wasm-desktop.write_results": 0.192,
+    "bench-wasm-desktop.run_in_browser/model_load": 0.972,
+    "bench-wasm-desktop.run_in_browser/predictions": 2.231
+  }
+}

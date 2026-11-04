@@ -1,0 +1,19 @@
+{
+  "id": "exp-001",
+  "number": 1,
+  "title": "chrono-node + DSL adapter",
+  "created": "2026-11-04T03:55:02Z",
+  "dataset": "v002",
+  "format": "dsl-v1",
+  "notes": "chrono-node 2.10.3 (en casual, forwardDate) plus DSL adapter. No recurrence support.",
+  "parent": null,
+  "model": {
+    "family": "library",
+    "params": 0,
+    "engine": "chrono"
+  },
+  "train": {},
+  "export": {
+    "format": "none"
+  }
+}

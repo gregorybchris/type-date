@@ -1,4 +1,4 @@
-export type { Engine, LoadOptions, Manifest, PredictResult } from "./types";
+export type { Engine, LoadOptions, Manifest, PredictOptions, PredictResult } from "./types";
 export { BpeTokenizer } from "./tokenizer";
 export { OrtCustomEngine } from "./ort-custom";
 import { OrtCustomEngine } from "./ort-custom";

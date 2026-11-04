@@ -1,0 +1,186 @@
+// Score a non-model baseline engine and write runs/exp-NNN/{config,metrics}.json and errors.jsonl.
+// Usage: pnpm --filter @type-date/baselines eval --engine chrono --exp 1 --title "chrono-node baseline"
+// Metrics follow training/src/typedate/train.py `evaluate` (exact, resolved, by_split, by_tag, by_modifier).
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { gzipSync } from "node:zlib";
+import { parseArgs } from "node:util";
+import { build } from "esbuild";
+import { resolveDsl } from "@type-date/core";
+import type { Engine } from "@type-date/engines";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(here, "../../..");
+
+/** engine id -> source file, model family, and whether predictions depend on the reference day. */
+const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; notes: string }> = {
+  chrono: { file: "chrono.ts", family: "library", perDay: true, notes: "chrono-node 2.10.3 (en casual, forwardDate) plus DSL adapter. No recurrence support." },
+  "heuristic-small": { file: "heuristic-small.ts", family: "heuristic", perDay: false, notes: "Hand-written tokenizer and a few dozen regex rules. No dependencies." },
+  "heuristic-full": { file: "heuristic-full.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },
+};
+
+// Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
+const DAYS = ["2026-11-03", "2026-01-31", "2027-02-28", "2028-02-29", "2026-12-31", "2026-03-15", "2026-07-04"];
+const DEFAULT_DAY = DAYS[0]!;
+const SPLITS = ["val", "test_template", "test_noise", "test_llm", "test_external"];
+
+const { values: args } = parseArgs({
+  options: {
+    engine: { type: "string" },
+    exp: { type: "string" },
+    title: { type: "string" },
+    dataset: { type: "string", default: "v002" },
+    splits: { type: "string" },
+    limit: { type: "string" },
+    "dry-run": { type: "boolean", default: false },
+  },
+});
+const reg = REGISTRY[args.engine ?? ""];
+if (!reg || !args.exp || !args.title) {
+  console.error(`usage: eval --engine <${Object.keys(REGISTRY).join("|")}> --exp <n> --title "<title>"`);
+  process.exit(2);
+}
+const expNum = Number(args.exp);
+const expId = `exp-${String(expNum).padStart(3, "0")}`;
+
+interface Row {
+  id: string;
+  text: string;
+  dsl: string;
+  primary_tag: string;
+  modifier_tags?: string[];
+}
+
+function loadSplit(name: string): Row[] {
+  const p = join(ROOT, "data", args.dataset!, `${name}.jsonl`);
+  if (!existsSync(p)) return [];
+  const rows = readFileSync(p, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l) as Row);
+  return args.limit ? rows.slice(0, Number(args.limit)) : rows;
+}
+
+const cache = new Map<string, string>();
+function key(dsl: string, day: string): string {
+  const k = `${day}|${dsl}`;
+  let v = cache.get(k);
+  if (v === undefined) {
+    v = JSON.stringify(resolveDsl(dsl, { today: day, weekStart: 0 }));
+    cache.set(k, v);
+  }
+  return v;
+}
+
+function pct(sorted: number[], q: number): number {
+  return sorted[Math.min(sorted.length - 1, Math.floor(q * sorted.length))] ?? 0;
+}
+
+async function bundleSize(file: string): Promise<{ raw: number; gzip: number }> {
+  const out = await build({
+    entryPoints: [join(here, "../src", file)],
+    bundle: true,
+    minify: true,
+    format: "esm",
+    platform: "browser",
+    target: "es2022",
+    write: false,
+    logLevel: "error",
+  });
+  const code = out.outputFiles[0]!.contents;
+  return { raw: code.length, gzip: gzipSync(code, { level: 9 }).length };
+}
+
+async function main() {
+  const mod = await import(join(here, "../src", reg!.file));
+  const engine: Engine = mod.default;
+  await engine.load({ baseUrl: "" });
+  const splitNames = (args.splits ? args.splits.split(",") : SPLITS).filter((s) => loadSplit(s).length > 0);
+  const rowsBySplit: Record<string, Row[]> = Object.fromEntries(splitNames.map((s) => [s, loadSplit(s)]));
+
+  // warm up the JIT before timing
+  const warm = rowsBySplit[splitNames[0]!]!.slice(0, 300);
+  for (let i = 0; i < 2; i++) for (const r of warm) await engine.predict(r.text, undefined, { today: DEFAULT_DAY });
+
+  const latencies: number[] = [];
+  const errors: Record<string, unknown>[] = [];
+  const bySplit: Record<string, { n: number; exact: number; resolved: number }> = {};
+  const tag = new Map<string, [number, number]>();
+  const mod_ = new Map<string, [number, number]>();
+  let tot = 0, ok = 0, resOk = 0;
+  for (const [split, rows] of Object.entries(rowsBySplit)) {
+    let sOk = 0, sRes = 0;
+    for (const r of rows) {
+      const t0 = performance.now();
+      const res = await engine.predict(r.text, undefined, { today: DEFAULT_DAY });
+      latencies.push(performance.now() - t0);
+      const pred = res.dsl;
+      const good = pred === r.dsl;
+      let resolvedMatch = good;
+      if (!good) {
+        resolvedMatch = true;
+        for (const day of DAYS) {
+          const p = reg!.perDay && day !== DEFAULT_DAY ? (await engine.predict(r.text, undefined, { today: day })).dsl : pred;
+          if (key(r.dsl, day) !== key(p, day)) {
+            resolvedMatch = false;
+            break;
+          }
+        }
+      }
+      sOk += +good;
+      sRes += +resolvedMatch;
+      const t = tag.get(r.primary_tag) ?? [0, 0];
+      t[0]++, (t[1] += +good);
+      tag.set(r.primary_tag, t);
+      for (const m of r.modifier_tags ?? []) {
+        const s = mod_.get(m) ?? [0, 0];
+        s[0]++, (s[1] += +good);
+        mod_.set(m, s);
+      }
+      if (!good) {
+        errors.push({ id: r.id, text: r.text, split, primary_tag: r.primary_tag, modifier_tags: r.modifier_tags ?? [], expected: r.dsl, predicted: pred, resolved_match: resolvedMatch });
+      }
+    }
+    bySplit[split] = { n: rows.length, exact: sOk / Math.max(1, rows.length), resolved: sRes / Math.max(1, rows.length) };
+    tot += rows.length;
+    ok += sOk;
+    resOk += sRes;
+  }
+  latencies.sort((a, b) => a - b);
+  const size = await bundleSize(reg!.file);
+  const sortedObj = (m: Map<string, [number, number]>) =>
+    Object.fromEntries([...m.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([k, [n, c]]) => [k, { n, exact: c / n }]));
+  const metrics = {
+    eval: {
+      exact: ok / Math.max(1, tot),
+      resolved: resOk / Math.max(1, tot),
+      n: tot,
+      by_split: bySplit,
+      by_tag: sortedObj(tag),
+      by_modifier: sortedObj(mod_),
+    },
+    model: { params: 0, size_bytes: size.gzip, size_bytes_minified: size.raw, avg_output_tokens: null },
+    train: { seconds: 0, steps: 0, final_loss: null },
+    node_latency_ms: { p50: pct(latencies, 0.5), p95: pct(latencies, 0.95), p99: pct(latencies, 0.99), n: latencies.length },
+  };
+  const config = {
+    id: expId,
+    number: expNum,
+    title: args.title,
+    created: new Date().toISOString().replace(/\.\d+Z$/, "Z"),
+    dataset: args.dataset,
+    format: "dsl-v1",
+    notes: reg!.notes,
+    parent: null,
+    model: { family: reg!.family, params: 0, engine: args.engine },
+    train: {},
+    export: { format: "none" },
+  };
+  console.log(`${args.engine}: exact ${metrics.eval.exact.toFixed(4)} resolved ${metrics.eval.resolved.toFixed(4)} n=${tot} gzip=${size.gzip}B p50=${metrics.node_latency_ms.p50.toFixed(4)}ms`);
+  for (const [s, v] of Object.entries(bySplit)) console.log(`  ${s.padEnd(14)} n=${String(v.n).padStart(5)} exact ${v.exact.toFixed(4)} resolved ${v.resolved.toFixed(4)}`);
+  if (args["dry-run"]) return;
+  const dir = join(ROOT, "runs", expId);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "config.json"), JSON.stringify(config, null, 2));
+  writeFileSync(join(dir, "metrics.json"), JSON.stringify(metrics, null, 2));
+  writeFileSync(join(dir, "errors.jsonl"), errors.map((e) => JSON.stringify(e)).join("\n") + (errors.length ? "\n" : ""));
+}
+main();

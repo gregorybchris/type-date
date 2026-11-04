@@ -1,0 +1,19 @@
+{
+  "id": "exp-003",
+  "number": 3,
+  "title": "heuristic-full (grammar parser, fuzzy words)",
+  "created": "2026-11-04T03:55:06Z",
+  "dataset": "v002",
+  "format": "dsl-v1",
+  "notes": "Hand-written grammar parser with fuzzy word matching. No dependencies.",
+  "parent": null,
+  "model": {
+    "family": "heuristic",
+    "params": 0,
+    "engine": "heuristic-full"
+  },
+  "train": {},
+  "export": {
+    "format": "none"
+  }
+}

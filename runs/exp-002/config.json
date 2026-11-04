@@ -1,0 +1,19 @@
+{
+  "id": "exp-002",
+  "number": 2,
+  "title": "heuristic-small (regex rules)",
+  "created": "2026-11-04T03:55:04Z",
+  "dataset": "v002",
+  "format": "dsl-v1",
+  "notes": "Hand-written tokenizer and a few dozen regex rules. No dependencies.",
+  "parent": null,
+  "model": {
+    "family": "heuristic",
+    "params": 0,
+    "engine": "heuristic-small"
+  },
+  "train": {},
+  "export": {
+    "format": "none"
+  }
+}
