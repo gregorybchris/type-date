@@ -31,3 +31,7 @@ Turn actions we do often into CLI commands (`td ...`) or Makefile targets. Put t
 
 - Commit often with informative messages. No pushes. No remote.
 - CLAUDE.md edits go in their own commit, separate from code.
+
+## Recording preferences
+
+When the user states a preference, record it here or in the relevant spec. Add at most one short line to CLAUDE.md, and keep CLAUDE.md small. Pushing back is fine. If you agree, codify it.
