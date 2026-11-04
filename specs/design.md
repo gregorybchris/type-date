@@ -34,6 +34,16 @@ Dark theme:
 
 Command palette (reference): search field with a magnifier, a list with small avatar tiles, a footer row of keyboard hints. Use this style for the picker's text input and result summary.
 
+## Responsive and mobile
+
+Mobile is a hard requirement.
+
+- Design mobile-first. Test at 360, 390, 768, 1024, and 1440 px widths.
+- Picker: one column at phone width. The calendar fills the width. The time list becomes a horizontal or compact vertical list below the calendar. Tap targets are at least 44px. The text input stays visible above the on-screen keyboard. No horizontal page scroll.
+- Respect the soft keyboard: the result must stay visible while the user types.
+- Dashboard: sidebar collapses to a bottom bar or drawer on phones. Tables become stacked cards or scroll inside their container. Charts resize and keep tooltips usable with touch (tap, not hover).
+- Use `dvh` units, `env(safe-area-inset-*)`, and `touch-action` where needed. No hover-only interactions.
+
 ## Tokens (starting values; refine against the images)
 
 - Font: Inter, 14px base, 13px for dense tables, 12px for labels. Numeric data uses tabular numbers.

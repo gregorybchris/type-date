@@ -79,6 +79,16 @@ Whether a heuristic is good enough is an empirical question. Baselines run throu
 - [ ] Motion: CSS only, reduced-motion support
 - [ ] npm packaging (`exports`, types, CSS)
 
+### Mobile (applies to every phase)
+- [ ] Picker and dashboard layouts are responsive and checked with Playwright screenshots at 360, 390, 768, 1024, 1440 px
+- [ ] Dashboard narrow-width pass (the dashboard agent only checked 1440x900)
+- [ ] Bench harness has a mobile profile: Chromium with CPU throttling (4x and 6x) and a mobile viewport, recorded in `bench.json` as `profile`
+- [ ] Track a phone latency budget: parse update under about 150 ms p95 at 4x CPU throttle. Adjust after measuring.
+- [ ] Track phone memory and download budget (model plus runtime wasm)
+- [ ] Test on a real mid-range phone when possible (Android Chrome and iOS Safari). WebGPU may be missing on phones, so WASM must work well
+- [ ] Check iOS Safari specifics: WASM threads need cross-origin isolation, memory limits for tabs, WASM SIMD support
+- [ ] Add a "mobile" Pareto view in the dashboard that uses mobile-profile numbers
+
 ### Phase 7: dashboard
 - [ ] Experiment list with numbers, trend over time
 - [ ] Pareto front (accuracy vs latency vs memory vs size)

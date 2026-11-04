@@ -67,6 +67,8 @@ Also build heuristic (non-language-model) solutions, in a few variants that trad
 
 ## Constraints
 
+- Mobile is very important. The picker and the dashboard must be responsive to screen size and work well on phones. The model must be fast enough on standard smartphones today. Layout work follows this from the start. Phone speed is evaluated as we go (see `specs/plan.md`, "Mobile").
+
 - Installable as a node package. Usable in React projects.
 - Model runtime is not TensorFlow.js (poor fit for generative models). Try other engines (Transformers.js / ONNX Runtime Web, WebLLM, wllama, etc.).
 - About 10GB of disk for the whole project. Do not keep every checkpoint.

@@ -55,10 +55,12 @@ One directory per experiment. Committed to git. Small files only. `NNN` is a zer
 `bench.json`: array of browser benchmark results. One entry per (engine, backend).
 
 ```json
-[{"engine": "ort-custom", "backend": "wasm", "browser": "chromium", "load_ms": 420, "cold_first_ms": 80,
+[{"engine": "ort-custom", "backend": "wasm", "browser": "chromium", "profile": "desktop", "load_ms": 420, "cold_first_ms": 80,
   "latency_ms": {"p50": 22, "p95": 40, "p99": 55}, "tokens_per_s": 480,
   "memory_mb": 95, "download_bytes": 9400000, "n": 200, "browser_accuracy": 0.93}]
 ```
+
+`profile` is `desktop` (no throttling) or `mobile-4x`, `mobile-6x` (CPU throttle plus a phone viewport). Mobile results are emulated until a real phone is tested.
 
 ## Artifacts: `artifacts/exp-NNN/` (gitignored)
 
