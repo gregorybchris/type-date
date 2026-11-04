@@ -216,11 +216,13 @@ def eval_zeroshot(
     description: str = typer.Option(...),
     eval_version: str = typer.Option("e1q"),
     shots: int = typer.Option(24),
+    prompt: str = typer.Option("fixed", help="fixed, chat, knn, knn-chat"),
+    batch: int = typer.Option(16),
 ) -> None:
     """Score a pretrained causal LM with a few-shot prompt and no training."""
     from .zeroshot import run
 
-    ev = run(exp, model_id, title, description, eval_version, shots)
+    ev = run(exp, model_id, title, description, eval_version, shots, batch=batch, prompt=prompt)
     typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")
 
 

@@ -43,6 +43,61 @@ def build_prompt(examples: list[dict]) -> str:
     return HEADER + "\nExamples:\n\n" + body
 
 
+class Retriever:
+    """Nearest labeled examples by character n-gram TF-IDF, for retrieval few-shot prompts."""
+
+    def __init__(self, dataset: str = "v004") -> None:
+        from sklearn.feature_extraction.text import TfidfVectorizer
+
+        rows = load_jsonl(ROOT / "data" / dataset / "train.jsonl")
+        # prefer clean grammar rows and LLM rows; keep all for coverage
+        self.rows = rows
+        self.vec = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 4), lowercase=True)
+        self.mat = self.vec.fit_transform([r["text"] for r in rows])
+
+    def nearest(self, texts: list[str], k: int) -> list[list[dict]]:
+        import numpy as np
+
+        q = self.vec.transform(texts)
+        sims = (q @ self.mat.T).toarray()
+        out = []
+        for i in range(len(texts)):
+            idx = np.argsort(-sims[i])[: k * 2]
+            seen, picked = set(), []
+            for j in idx:
+                key = (self.rows[j]["text"].lower(), self.rows[j]["dsl"])
+                if key in seen:
+                    continue
+                seen.add(key)
+                picked.append(self.rows[j])
+                if len(picked) == k:
+                    break
+            out.append(picked[::-1])  # most similar last, closest to the query
+        return out
+
+
+def make_prompts(
+    kind: str, tok, rows: list[dict], shots: int, retr: "Retriever | None"
+) -> list[str]:
+    fixed = pick_examples(shots)
+    texts = [r["text"].lower() for r in rows]
+    nn = retr.nearest(texts, shots) if retr is not None and kind.startswith("knn") else None
+    out = []
+    for i, t in enumerate(texts):
+        ex = nn[i] if nn is not None else fixed
+        if kind.endswith("chat"):
+            msgs = [{"role": "system", "content": HEADER}]
+            for e in ex:
+                msgs.append({"role": "user", "content": e["text"].lower()})
+                msgs.append({"role": "assistant", "content": e["dsl"]})
+            msgs.append({"role": "user", "content": t})
+            out.append(tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True))
+        else:
+            body = "".join(f"Input: {e['text'].lower()}\nOutput: {e['dsl']}\n\n" for e in ex)
+            out.append(HEADER + "\nExamples:\n\n" + body + f"Input: {t}\nOutput:")
+    return out
+
+
 def run(
     exp: int,
     model_id: str,
@@ -52,6 +107,7 @@ def run(
     n_shots: int = 24,
     batch: int = 16,
     max_new: int = 24,
+    prompt: str = "fixed",
 ) -> dict:
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -65,8 +121,8 @@ def run(
         model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float32).to(device)
         model.eval()
     n_params = sum(p.numel() for p in model.parameters())
-    prefix = build_prompt(pick_examples(n_shots))
-    prompt_tokens = len(tok(prefix)["input_ids"])
+    retr = Retriever() if prompt.startswith("knn") else None
+    prompt_tokens = 0
     evals = load_eval(eval_version)
     preds: dict[str, list[str]] = {}
     t0 = time.perf_counter()
@@ -74,8 +130,11 @@ def run(
         out: list[str] = []
         for i in range(0, len(rows), batch):
             chunk = rows[i : i + batch]
-            prompts = [prefix + f"Input: {r['text'].lower()}\nOutput:" for r in chunk]
-            enc = tok(prompts, return_tensors="pt", padding=True).to(device)
+            prompts = make_prompts(prompt, tok, chunk, n_shots, retr)
+            enc = tok(prompts, return_tensors="pt", padding=True, add_special_tokens=False).to(
+                device
+            )
+            prompt_tokens = max(prompt_tokens, enc["input_ids"].shape[1])
             with torch.no_grad():
                 gen = model.generate(
                     **enc, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.pad_token_id
@@ -89,9 +148,9 @@ def run(
     tm.extra["prompt_tokens"] = prompt_tokens
     ev = write_run(
         exp, title, description, "zero-shot", eval_version, evals, preds, tm,
-        model={"params": n_params, "hf_id": model_id, "n_shots": n_shots},
+        model={"params": n_params, "hf_id": model_id, "n_shots": n_shots, "prompt": prompt},
         extra_config={"train": {"trained": False}},
-        notes=f"Few-shot prompt ({n_shots} examples, {prompt_tokens} tokens), greedy, fp32, MPS.",
+        notes=f"Prompt kind {prompt}: {n_shots} examples, up to {prompt_tokens} tokens, greedy, fp32, MPS.",
         size_bytes=n_params * 2,
     )  # fmt: skip
     del model

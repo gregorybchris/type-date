@@ -1,0 +1,124 @@
+{"id": "t2-0000", "text": "two weeks from monday", "unsure": true, "dsl": "x"}
+{"id": "t2-0001", "text": "every sat and sun at 8am", "dsl": "dt R w/1 sa,su 08:00"}
+{"id": "t2-0002", "text": "hair appt sat 1pm", "dsl": "dt sa 13:00"}
+{"id": "t2-0003", "text": "march twenty second", "dsl": "d 03-22"}
+{"id": "t2-0004", "text": "boiler service the morn at 8", "unsure": true, "dsl": "dt +1d 8?"}
+{"id": "t2-0005", "text": "the long weekend", "unsure": true, "dsl": "x"}
+{"id": "t2-0006", "text": "mum's birthday on the 28th", "unsure": true, "dsl": "x"}
+{"id": "t2-0007", "text": "marking due 15th dec", "dsl": "d 12-15"}
+{"id": "t2-0008", "text": "due 11/30 11:59pm", "dsl": "dt 11-30 23:59"}
+{"id": "t2-0009", "text": "put me down for sat 3pm pls", "dsl": "dt sa 15:00"}
+{"id": "t2-0010", "text": "oh eight thirty", "dsl": "t 08:30"}
+{"id": "t2-0011", "text": "every month on the 3rd", "dsl": "d R m/1 d3"}
+{"id": "t2-0012", "text": "wed nxt wk 9am walk through w/ the buyers", "unsure": true, "dsl": "dt we+1 09:00"}
+{"id": "t2-0013", "text": "1pm sharp", "dsl": "t 13:00"}
+{"id": "t2-0014", "text": "next summer", "unsure": true, "dsl": "x"}
+{"id": "t2-0015", "text": "every wednesday at six pm", "dsl": "dt R w/1 we 18:00"}
+{"id": "t2-0016", "text": "late shift sat 2 till 10", "dsl": "dt sa 2?>10?"}
+{"id": "t2-0017", "text": "first fri every month at 6pm", "dsl": "dt R m/1 fr#1 18:00"}
+{"id": "t2-0018", "text": "calving starts mid july", "unsure": true, "dsl": "x"}
+{"id": "t2-0019", "text": "canada day", "dsl": "d 07-01"}
+{"id": "t2-0020", "text": "its giving friday 7pm", "dsl": "dt fr 19:00"}
+{"id": "t2-0021", "text": "early tmrw", "dsl": "d +1d"}
+{"id": "t2-0022", "text": "mon 0600", "dsl": "dt mo 06:00"}
+{"id": "t2-0023", "text": "pay wages every second friday", "dsl": "d R w/2 fr"}
+{"id": "t2-0024", "text": "q3", "unsure": true, "dsl": "x"}
+{"id": "t2-0025", "text": "tues 7.15", "dsl": "dt tu 7:15?"}
+{"id": "t2-0026", "text": "mornings this week", "dsl": "d W+0"}
+{"id": "t2-0027", "text": "all day thursday", "dsl": "d th"}
+{"id": "t2-0028", "text": "call mum sunday at 5", "dsl": "dt su 5?"}
+{"id": "t2-0029", "text": "evening of dec 3", "dsl": "d 12-03"}
+{"id": "t2-0030", "text": "ugh not before 10 on sunday", "unsure": true, "dsl": "dt su 10?"}
+{"id": "t2-0031", "text": "yesterday at 4", "dsl": "dt -1d 4?"}
+{"id": "t2-0032", "text": "sunday evening", "dsl": "d su"}
+{"id": "t2-0033", "text": "every payday", "unsure": true, "dsl": "x"}
+{"id": "t2-0034", "text": "tonight", "dsl": "d +0d"}
+{"id": "t2-0035", "text": "pick up the kids", "dsl": "x"}
+{"id": "t2-0036", "text": "every weds till christmas", "dsl": "d R w/1 we u12-25"}
+{"id": "t2-0037", "text": "the 31st at 9", "unsure": true, "dsl": "t 9?"}
+{"id": "t2-0038", "text": "sept 9 thru 13", "dsl": "d 09-09>09-13"}
+{"id": "t2-0039", "text": "mon-fri  9-5", "dsl": "dt R d/1 mo,tu,we,th,fr 9?>5?"}
+{"id": "t2-0040", "text": "daily until friday", "dsl": "d R d/1 ufr"}
+{"id": "t2-0041", "text": "rehearsal every tues and thurs at 7", "dsl": "dt R w/1 tu,th 7?"}
+{"id": "t2-0042", "text": "dec 1 until the 23rd, mondays through fridays 9 to 5", "dsl": "dt R d/1 mo,tu,we,th,fr u12-23 9?>5? s12-01"}
+{"id": "t2-0043", "text": "mrng", "dsl": "x"}
+{"id": "t2-0044", "text": "ten hundred hours", "dsl": "t 10:00"}
+{"id": "t2-0045", "text": "parent teacher evenings 12-14 nov", "dsl": "d 11-12>11-14"}
+{"id": "t2-0046", "text": "9 to half 10", "dsl": "t 9?>10:30?"}
+{"id": "t2-0047", "text": "dec 24 6pm", "dsl": "dt 12-24 18:00"}
+{"id": "t2-0048", "text": "feb 3 2 pm", "dsl": "dt 02-03 14:00"}
+{"id": "t2-0049", "text": "ned", "dsl": "x"}
+{"id": "t2-0050", "text": "0900 to 17", "dsl": "t 09:00>17:00"}
+{"id": "t2-0051", "text": "ca. 4 pm", "dsl": "t 16:00"}
+{"id": "t2-0052", "text": "jv at 5:30 on tuesday", "dsl": "dt tu 5:30?"}
+{"id": "t2-0053", "text": "each sat at 10 for 6 weeks", "dsl": "dt R w/1 sa n6 10?"}
+{"id": "t2-0054", "text": "ish 7", "dsl": "t 7?"}
+{"id": "t2-0055", "text": "can u do the 4th of july for the portrait sesh", "dsl": "d 07-04"}
+{"id": "t2-0056", "text": "wed even", "dsl": "d we"}
+{"id": "t2-0057", "text": "y'all come fri nite 7", "dsl": "dt fr 19:00"}
+{"id": "t2-0058", "text": "sat 22nd 8pm", "unsure": true, "dsl": "dt sa 20:00"}
+{"id": "t2-0059", "text": "once a month on the 2nd", "dsl": "d R m/1 d2"}
+{"id": "t2-0060", "text": "this comin friday", "dsl": "d fr"}
+{"id": "t2-0061", "text": "tomorrw morning", "dsl": "d +1d"}
+{"id": "t2-0062", "text": "july 4 2027 noon", "dsl": "dt 2027-07-04 12:00"}
+{"id": "t2-0063", "text": "ok see u at 8", "dsl": "t 8?"}
+{"id": "t2-0064", "text": "deadline is dec 1st", "dsl": "d 12-01"}
+{"id": "t2-0065", "text": "5 kg", "dsl": "x"}
+{"id": "t2-0066", "text": "st patricks day at 10am", "dsl": "dt 03-17 10:00"}
+{"id": "t2-0067", "text": "blah blah", "dsl": "x"}
+{"id": "t2-0068", "text": "9:15 am sharp", "dsl": "t 09:15"}
+{"id": "t2-0069", "text": "tuesdays and fridays at 8 for 6 weeks", "dsl": "dt R w/1 tu,fr n12 8?"}
+{"id": "t2-0070", "text": "tue thru thu", "dsl": "d tu>th"}
+{"id": "t2-0071", "text": "3 o'clock", "dsl": "t 3?"}
+{"id": "t2-0072", "text": "puck drop 7:05", "dsl": "t 7:05?"}
+{"id": "t2-0073", "text": "ok last one, sat the 22nd, 9 to 12", "dsl": "dt sa 9?>12?"}
+{"id": "t2-0074", "text": "quarter to four", "dsl": "t 3:45?"}
+{"id": "t2-0075", "text": "everyday 7pm", "dsl": "dt R d/1 19:00"}
+{"id": "t2-0076", "text": "tonite at 9", "dsl": "dt +0d 21:00"}
+{"id": "t2-0077", "text": "can u do tmrw at 2", "dsl": "dt +1d 2?"}
+{"id": "t2-0078", "text": "october 12th", "dsl": "d 10-12"}
+{"id": "t2-0079", "text": "sat night", "dsl": "d sa"}
+{"id": "t2-0080", "text": "sep 9th at 8", "dsl": "dt 09-09 8?"}
+{"id": "t2-0081", "text": "weds @ 3.30", "dsl": "dt we 3:30?"}
+{"id": "t2-0082", "text": "need my prescription ready by this friday at 5", "dsl": "dt fr 5?"}
+{"id": "t2-0083", "text": "labour day weekend", "unsure": true, "dsl": "x"}
+{"id": "t2-0084", "text": "lunch", "dsl": "x"}
+{"id": "t2-0085", "text": "demo day oct 2nd 10-noon", "dsl": "dt 10-02 10:00>12:00"}
+{"id": "t2-0086", "text": "last friday of the month", "unsure": true, "dsl": "x"}
+{"id": "t2-0087", "text": "fri at 10 and again at 2", "unsure": true, "dsl": "x"}
+{"id": "t2-0088", "text": "25/12", "dsl": "d 12-25"}
+{"id": "t2-0089", "text": "get cows in at 5 in the morning", "dsl": "t 05:00"}
+{"id": "t2-0090", "text": "every wed at 6:30pm", "dsl": "dt R w/1 we 18:30"}
+{"id": "t2-0091", "text": "senior night feb 20", "dsl": "d 02-20"}
+{"id": "t2-0092", "text": "3 weeks tmrw", "unsure": true, "dsl": "x"}
+{"id": "t2-0093", "text": "7 until 9 tonight", "dsl": "dt +0d 19:00>21:00"}
+{"id": "t2-0094", "text": "Tuesday, December 1st, 2026", "dsl": "d 2026-12-01"}
+{"id": "t2-0095", "text": "hmm maybe thurs after 5", "unsure": true, "dsl": "dt th 5?"}
+{"id": "t2-0096", "text": "thurs 25th", "unsure": true, "dsl": "d th"}
+{"id": "t2-0097", "text": "push it to next week same time", "unsure": true, "dsl": "d W+1"}
+{"id": "t2-0098", "text": "bin day", "dsl": "x"}
+{"id": "t2-0099", "text": "every mon and thurs", "dsl": "d R w/1 mo,th"}
+{"id": "t2-0100", "text": "lunch w/ mom sun noon", "dsl": "dt su 12:00"}
+{"id": "t2-0101", "text": "feb 29", "dsl": "d 02-29"}
+{"id": "t2-0102", "text": "tmrw 3pm IST call w/ london team", "dsl": "dt +1d 15:00"}
+{"id": "t2-0103", "text": "2nd wk of aug", "unsure": true, "dsl": "x"}
+{"id": "t2-0104", "text": "every wk on fri", "dsl": "d R w/1 fr"}
+{"id": "t2-0105", "text": "thursdays 10.30", "dsl": "dt R w/1 th 10:30?"}
+{"id": "t2-0106", "text": "this morning", "dsl": "d +0d"}
+{"id": "t2-0107", "text": "11p-7a", "dsl": "t 23:00>07:00"}
+{"id": "t2-0108", "text": "sick of this lol thurs", "dsl": "d th"}
+{"id": "t2-0109", "text": "perm test fri arvo", "dsl": "d fr"}
+{"id": "t2-0110", "text": "can we do next thursday at 4", "dsl": "dt fr+1 4?"}
+{"id": "t2-0111", "text": "repeat every fortnight on wednesday", "dsl": "d R w/2 we"}
+{"id": "t2-0112", "text": "the class start at 8:30 in thursday", "dsl": "dt th 8:30?"}
+{"id": "t2-0113", "text": "does tues work at 4", "dsl": "dt tu 4?"}
+{"id": "t2-0114", "text": "hockey every tues and thurs 6pm", "dsl": "dt R w/1 tu,th 18:00"}
+{"id": "t2-0115", "text": "cpd webinar wed 21st 7pm", "unsure": true, "dsl": "dt we 19:00"}
+{"id": "t2-0116", "text": "1 nov 2026", "dsl": "d 2026-11-01"}
+{"id": "t2-0117", "text": "passport", "dsl": "x"}
+{"id": "t2-0118", "text": "next mon-wed", "unsure": true, "dsl": "d mo+1>we+1"}
+{"id": "t2-0119", "text": "2nd of jan", "dsl": "d 01-02"}
+{"id": "t2-0120", "text": "covering your shift weds 3 to 11", "dsl": "dt we 3?>11?"}
+{"id": "t2-0121", "text": "3 in the arvo", "dsl": "t 15:00"}
+{"id": "t2-0122", "text": "quarter to eight tonight", "dsl": "dt +0d 19:45"}
+{"id": "t2-0123", "text": "3 hrs from now", "unsure": true, "dsl": "x"}
