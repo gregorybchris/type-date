@@ -53,6 +53,10 @@ We are not building one implementation and stopping. We build an environment for
 
 Track accuracy, latency, and memory for every experiment. Show a Pareto front so we can choose the best configuration for the use case.
 
+### Non-model baselines
+
+Also build heuristic (non-language-model) solutions, in a few variants that trade robustness against code size, memory, and latency. The Pareto front must show them next to the models. It may turn out that a heuristic is good enough. This is an empirical question.
+
 ### Research to do first
 
 - Best structured output format for the model to predict.

@@ -84,6 +84,8 @@ export interface Engine {
 }
 ```
 
+Non-model baselines (chrono-node adapter, heuristic parsers) implement the same `Engine` interface. They have no `manifest.files`, and `load` may do nothing. Their `config.json` uses `model.family` of `library` or `heuristic`, `params` of 0, and `download_bytes` equal to the bundled code size. The dashboard treats them like any other entry.
+
 The picker takes a `parse: (text: string) => Promise<string>` prop (returns a DSL line) so it does not depend on any engine.
 
 ## Picker props (`packages/picker`)

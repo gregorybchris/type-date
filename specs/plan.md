@@ -43,6 +43,14 @@ bench/                     Playwright benchmark harness (Node)
 - [ ] `packages/core`: parser, resolver, golden tests
 - [ ] Baseline: chrono-node scored on the same eval set
 
+### Phase 2b: non-model baselines
+Whether a heuristic is good enough is an empirical question. Baselines run through the same eval, bench, and dashboard as models, and appear on the same Pareto front.
+- [ ] `packages/baselines`: engines that implement the `Engine` interface with no model
+- [ ] chrono-node + adapter to DSL (existing library, rule-based)
+- [ ] `heuristic-small`: tokenizer plus a few regex rules, tiny code size
+- [ ] `heuristic-full`: broad rule set, fuzzy matching of month and weekday words for typos
+- [ ] Score all of them on the same eval sets and bench harness (size = bundle bytes, memory, latency)
+
 ### Phase 3: data
 - [ ] Tag taxonomy file shared by Python and TS
 - [ ] Grammar/template generator in Python (spec -> text + DSL), noise injection
@@ -86,14 +94,22 @@ bench/                     Playwright benchmark harness (Node)
 
 ## Experiment queue (initial)
 
-1. exp-001: from-scratch enc-dec ~8M, DSL output, dataset v001, ORT custom loop
-2. exp-002: same model, Transformers.js engine (benchmark only)
-3. exp-003: size sweep d=128 and d=384
-4. exp-004: from-scratch decoder-only ~6M
-5. exp-005: absolute ISO output with `now` in the prompt (format ablation)
-6. exp-006: t5-small with pruned vocab
-7. exp-007: wllama with a GGUF export of the decoder-only model
-8. Dataset ablations: more data, noise level, LLM vs template mix
+Baselines first (they set the floor and need no training):
+
+1. exp-001: chrono-node + DSL adapter
+2. exp-002: heuristic-small
+3. exp-003: heuristic-full
+
+Models:
+
+4. exp-004: from-scratch enc-dec ~8M, DSL output, dataset v001, ORT custom loop
+5. exp-005: same model, Transformers.js engine (benchmark only)
+6. exp-006: size sweep d=128 and d=384
+7. exp-007: from-scratch decoder-only ~6M
+8. exp-008: absolute ISO output with `now` in the prompt (format ablation)
+9. exp-009: t5-small with pruned vocab
+10. exp-010: wllama with a GGUF export of the decoder-only model
+11. Dataset ablations: more data, noise level, LLM vs template mix
 
 ## Disk budget
 
