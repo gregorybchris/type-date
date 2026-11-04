@@ -1,5 +1,5 @@
 import { baselines } from "@type-date/baselines";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { TypeDatePicker } from "../src";
 import "../src/styles.css";
@@ -93,10 +93,156 @@ const V2 = q.get("parse") === "v2demo";
 /** The real current date. `?today=YYYY-MM-DD` overrides it (used by the screenshot scripts). */
 const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(q.get("today") ?? "") ? (q.get("today") as string) : localToday();
 
+const STORE_KEY = "type-date-demo:v1";
+interface Prefs {
+  theme: "light" | "dark";
+  weekStart: 0 | 1;
+  engineId: string;
+  details: boolean;
+}
+const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "heuristic-full-7", details: false };
+
+function loadPrefs(): Prefs {
+  let saved: Partial<Prefs> = {};
+  try {
+    saved = JSON.parse(localStorage.getItem(STORE_KEY) ?? "{}") ?? {};
+  } catch {
+    // storage blocked or corrupt: use defaults
+  }
+  const engineOk = ENGINES.some((e) => e.id === saved.engineId);
+  const base: Prefs = {
+    theme: saved.theme === "dark" ? "dark" : "light",
+    weekStart: saved.weekStart === 0 ? 0 : 1,
+    engineId: engineOk ? (saved.engineId as string) : DEFAULTS.engineId,
+    details: saved.details === true,
+  };
+  // URL parameters win over saved preferences (used by screenshot scripts and shared links)
+  if (q.get("theme")) base.theme = q.get("theme") === "dark" ? "dark" : "light";
+  if (q.get("ws")) base.weekStart = q.get("ws") === "0" ? 0 : 1;
+  if (q.get("engine") && ENGINES.some((e) => e.id === q.get("engine"))) base.engineId = q.get("engine") as string;
+  return base;
+}
+
+function savePrefs(p: Prefs) {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(p));
+  } catch {
+    // storage blocked: preferences last for this visit only
+  }
+}
+
+function Segmented<T extends string | number>(props: {
+  label: string;
+  value: T;
+  options: { value: T; label: string }[];
+  onChange: (v: T) => void;
+}) {
+  return (
+    <div className="demo-seg" role="radiogroup" aria-label={props.label}>
+      {props.options.map((o) => (
+        <button
+          key={String(o.value)}
+          type="button"
+          role="radio"
+          aria-checked={o.value === props.value}
+          onClick={() => props.onChange(o.value)}
+        >
+          {o.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset: () => void }) {
+  const ref = useRef<HTMLDialogElement>(null);
+  const { prefs, set } = props;
+  const open = () => ref.current?.showModal();
+  const close = () => ref.current?.close();
+  return (
+    <>
+      <button type="button" className="demo-gear" aria-label="Settings" onClick={open}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
+        </svg>
+      </button>
+      <dialog
+        ref={ref}
+        className="demo-modal"
+        aria-labelledby="demo-settings-title"
+        onClick={(e) => {
+          if (e.target === ref.current) close();
+        }}
+      >
+        <div className="demo-modal-head">
+          <h2 id="demo-settings-title">Settings</h2>
+          <button type="button" className="demo-x" aria-label="Close" onClick={close}>
+            ×
+          </button>
+        </div>
+        <div className="demo-field">
+          <span className="demo-label">Theme</span>
+          <Segmented
+            label="Theme"
+            value={prefs.theme}
+            options={[
+              { value: "light", label: "Light" },
+              { value: "dark", label: "Dark" },
+            ]}
+            onChange={(theme) => set({ theme })}
+          />
+        </div>
+        <div className="demo-field">
+          <span className="demo-label">Week starts on</span>
+          <Segmented
+            label="Week starts on"
+            value={prefs.weekStart}
+            options={[
+              { value: 1, label: "Monday" },
+              { value: 0, label: "Sunday" },
+            ]}
+            onChange={(weekStart) => set({ weekStart })}
+          />
+        </div>
+        <div className="demo-field">
+          <span className="demo-label">Parser</span>
+          <div className="demo-engines" role="radiogroup" aria-label="Parser">
+            {ENGINES.map((e) => (
+              <button
+                key={e.id}
+                type="button"
+                role="radio"
+                aria-checked={e.id === prefs.engineId}
+                className="demo-engine"
+                onClick={() => set({ engineId: e.id })}
+              >
+                <span className="demo-engine-name">{e.label}</span>
+                <span className="demo-engine-note">{e.note}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <label className="demo-check">
+          <input type="checkbox" checked={prefs.details} onChange={(e) => set({ details: e.target.checked })} />
+          <span>Show parse details under the picker</span>
+        </label>
+        <div className="demo-modal-foot">
+          <span>Today is {TODAY}. Saved in this browser.</span>
+          <button type="button" className="demo-link" onClick={props.reset}>
+            Reset
+          </button>
+        </div>
+      </dialog>
+    </>
+  );
+}
+
 function App() {
-  const [theme, setTheme] = useState<"light" | "dark">(q.get("theme") === "dark" ? "dark" : "light");
-  const [weekStart, setWeekStart] = useState<0 | 1>(q.get("ws") === "0" ? 0 : 1);
-  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full-7");
+  const [prefs, setPrefs] = useState<Prefs>(loadPrefs);
+  const { theme, weekStart, engineId, details } = prefs;
+  const set = (p: Partial<Prefs>) => setPrefs((cur) => ({ ...cur, ...p }));
+  useEffect(() => savePrefs(prefs), [prefs]);
   const [last, setLast] = useState<{ dsl: string; ms: number } | null>(null);
   const [text, setText] = useState(q.get("q") ?? "");
   const engine = ENGINES.find((e) => e.id === engineId) ?? ENGINES[0];
@@ -119,33 +265,7 @@ function App() {
 
   return (
     <main className="demo" data-theme={theme}>
-      <div className="demo-bar">
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>Theme: {theme}</button>
-        <button onClick={() => setWeekStart(weekStart ? 0 : 1)}>Week starts: {weekStart ? "Mon" : "Sun"}</button>
-        <span>Today is {TODAY}.</span>
-      </div>
-      <div className="demo-bar" role="radiogroup" aria-label="Engine">
-        {ENGINES.map((e) => (
-          <button
-            key={e.id}
-            role="radio"
-            aria-checked={e.id === engineId}
-            data-active={e.id === engineId}
-            onClick={() => setEngineId(e.id)}
-          >
-            {e.label}
-          </button>
-        ))}
-      </div>
-      <p className="demo-note">
-        {engine.note}
-        {last ? (
-          <>
-            {" "}
-            · parsed to <code>{last.dsl}</code> in {last.ms.toFixed(2)} ms
-          </>
-        ) : null}
-      </p>
+      <Settings prefs={prefs} set={set} reset={() => setPrefs(DEFAULTS)} />
       {/* key remounts the picker when the engine or example changes: the picker reads `defaultText` once */}
       <TypeDatePicker
         key={`${engineId}:${text}`}
@@ -156,6 +276,17 @@ function App() {
         defaultText={text}
         onConfirm={(r) => console.log("confirm", r)}
       />
+      {details ? (
+        <p className="demo-note">
+          {engine.note}
+          {last ? (
+            <>
+              {" "}
+              · parsed to <code>{last.dsl}</code> in {last.ms.toFixed(2)} ms
+            </>
+          ) : null}
+        </p>
+      ) : null}
       <p className="demo-try">
         Try:{" "}
         {(V2 ? [...V2_CHIPS, ...EXAMPLES.slice(0, 4)] : EXAMPLES).map((ex) => (

@@ -78,6 +78,7 @@
 .td-card {
   box-sizing: border-box;
   width: min(340px, 100%);
+  margin-inline: auto;
   overflow: hidden;
   background: var(--td-bg);
   color: var(--td-fg);
