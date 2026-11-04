@@ -10,8 +10,10 @@
   --td-dotted: #d4d4d4;
   --td-hover: #f5f5f5;
   --td-sel: #ebebed;
-  --td-range: #f1f1f4;
   --td-accent: #4f46e5;
+  --td-on-accent: #fff;
+  --td-range: color-mix(in srgb, #4f46e5 11%, transparent);
+  --td-today-ring: #171717;
   --td-ring: rgb(79 70 229 / 0.14);
   --td-shadow: 0 12px 32px -8px rgb(0 0 0 / 0.12), 0 2px 6px rgb(0 0 0 / 0.06);
   --td-key: 0 1px 2px rgb(0 0 0 / 0.05);
@@ -38,8 +40,10 @@
   --td-dotted: #3a3a3a;
   --td-hover: #2a2a2a;
   --td-sel: #363636;
-  --td-range: #2e2e2e;
   --td-accent: #c9a45c;
+  --td-on-accent: #1c1c1c;
+  --td-range: color-mix(in srgb, #c9a45c 16%, transparent);
+  --td-today-ring: #f5f5f5;
   --td-ring: rgb(201 164 92 / 0.18);
   --td-shadow: 0 16px 40px -8px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.3);
   --td-key: 0 1px 2px rgb(0 0 0 / 0.3);
@@ -55,8 +59,10 @@
     --td-dotted: #3a3a3a;
     --td-hover: #2a2a2a;
     --td-sel: #363636;
-    --td-range: #2e2e2e;
-    --td-accent: #c9a45c;
+      --td-accent: #c9a45c;
+  --td-on-accent: #1c1c1c;
+  --td-range: color-mix(in srgb, #c9a45c 16%, transparent);
+  --td-today-ring: #f5f5f5;
     --td-ring: rgb(201 164 92 / 0.18);
     --td-shadow: 0 16px 40px -8px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.3);
     --td-key: 0 1px 2px rgb(0 0 0 / 0.3);
@@ -375,7 +381,7 @@
 }
 .td-cell[data-range="single"]::before,
 .td-cell:not([data-range])::before {
-  background: var(--td-sel);
+  background: transparent;
   border-radius: 8px;
   inset: 1px 1px;
 }
@@ -419,7 +425,8 @@
   }
 }
 .td-cell[data-today] button {
-  background: var(--td-hover);
+  box-shadow: inset 0 0 0 1.5px var(--td-today-ring);
+  font-weight: 600;
 }
 .td-cell[data-out] button {
   color: var(--td-fg-3);
@@ -428,8 +435,15 @@
 .td-cell[data-range="end"] button,
 .td-cell[data-range="single"] button,
 .td-cell[aria-selected="true"]:not([data-range]) button {
-  color: var(--td-accent);
-  font-weight: 500;
+  background: var(--td-accent);
+  color: var(--td-on-accent);
+  font-weight: 600;
+}
+.td-cell[data-range="start"][data-today] button,
+.td-cell[data-range="end"][data-today] button,
+.td-cell[data-range="single"][data-today] button,
+.td-cell[aria-selected="true"][data-today] button {
+  box-shadow: inset 0 0 0 2px var(--td-bg), inset 0 0 0 3.5px var(--td-today-ring);
 }
 .td-cell[data-occ] button::after {
   content: "";
@@ -442,6 +456,12 @@
   border-radius: 50%;
   background: var(--td-accent);
   animation: td-pop var(--td-dur) var(--td-ease-spring) both;
+}
+.td-cell[data-range="start"][data-occ] button::after,
+.td-cell[data-range="end"][data-occ] button::after,
+.td-cell[data-range="single"][data-occ] button::after,
+.td-cell[aria-selected="true"][data-occ] button::after {
+  background: var(--td-on-accent);
 }
 .td-cell[data-occ][data-out] button::after {
   opacity: 0.45;
