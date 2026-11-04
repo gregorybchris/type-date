@@ -44,7 +44,7 @@ Run `make help` for the full list.
 | `make td ARGS="--help"` | Run the `td` CLI |
 | `make export EXP=5` | Export an experiment to ONNX int8 |
 | `make bench EXP=5 ARGS="--profile mobile-4x"` | Browser benchmark, writes runs/exp-005/bench.json |
-| `make dashboard`, `make picker-demo` | Dev servers (ports 5173, 5199) |
+| `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
 | `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
 ## Recording user preferences
@@ -64,4 +64,5 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
 - Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
 - WebGPU with the int8 ONNX model gave 0% accuracy and 1.5 s latency (exp-004). Use fp32 or fp16 for WebGPU.
+- Dev servers: the user watches ports 5173 (dashboard) and 5199 (picker demo). Never start, stop, or kill servers on those ports except with `make serve*`. Agents that need a server for screenshots use other ports (5300+). Servers started from a tool call die when the session cleans up (exit 143); `scripts/serve.sh` runs them under nohup with a restart loop.
 - Agents running Playwright and training at once slow each other. Check `ps` before blaming the code.
