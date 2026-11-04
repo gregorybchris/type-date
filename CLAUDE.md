@@ -20,6 +20,7 @@ Apply these to all docs, comments, commit messages, and UI copy.
 - `design-ideas/` is gitignored. Look at the images there before doing UI work.
 - Work coarse to fine. Follow the staged plan in `specs/research/design-space.md`: one factor per experiment, time-boxed, no deep latency tuning until the broad design is chosen.
 - Eval sets are versioned and immutable (`evals/eN`). Compare only within one eval version. Cut a new one rarely. See `specs/research/eval-versioning.md`.
+- Every run writes `timing.json` (wall time by bucket). Use `make timing` and optimize the biggest bucket first.
 - Every experiment gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
 - Background research goes in `specs/research/background/` as markdown.
 
@@ -42,6 +43,7 @@ Run `make help` for the full list.
 | `make py-fix` | ruff autofix and format |
 | `make py-test` | pytest |
 | `make td ARGS="--help"` | Run the `td` CLI |
+| `make timing` | Wall time by bucket per experiment and overall |
 | `make export EXP=5` | Export an experiment to ONNX int8 |
 | `make bench EXP=5 ARGS="--profile mobile-4x"` | Browser benchmark, writes runs/exp-005/bench.json |
 | `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
