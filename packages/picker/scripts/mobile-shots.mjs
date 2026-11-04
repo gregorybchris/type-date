@@ -22,7 +22,7 @@ for (const w of [360, 390, 768, 1024]) {
     const ctx = await browser.newContext({ viewport: { width: w, height: touch ? 780 : 900 }, deviceScaleFactor: 2, hasTouch: touch, isMobile: touch });
     const page = await ctx.newPage();
     for (const [q, name] of cases) {
-      await page.goto(`http://localhost:5199/?theme=${theme}&q=${encodeURIComponent(q)}&ws=1`, { waitUntil: "domcontentloaded" });
+      await page.goto(`http://localhost:5199/?theme=${theme}&q=${encodeURIComponent(q)}&ws=1&today=2026-09-14`, { waitUntil: "domcontentloaded" });
       await page.waitForTimeout(1600);
       const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       const small = await page.evaluate(() =>

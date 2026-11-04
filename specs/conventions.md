@@ -48,6 +48,10 @@ Every experiment has a short `title` and a one or two sentence `description` in 
 
 Every experiment records where wall time goes (`runs/exp-NNN/timing.json`). Look at the biggest bucket first and optimize it to speed up the outer loop. Do not guess: measure, then optimize, then measure again. Time includes training, eval, export, benchmark, and the gaps between experiments.
 
+## Do not stall
+
+Never block on a long wait. Run long jobs in the background and keep working on something else. If there is nothing else to do, check status with a quick command and report. Prefer parallel work: queue the next experiments, prepare data, write docs, or improve the dashboard while jobs run.
+
 ## Experiment method
 
 Decide coarse design questions with controlled one-factor experiments before fine-grained optimization. Time-box each factor. Do not rabbit-hole on one thing (for example mobile latency) while the broad design is open. See `specs/research/design-space.md`.

@@ -5,7 +5,11 @@ import { TypeDatePicker } from "../src";
 import "../src/styles.css";
 import "./demo.css";
 
-const TODAY = "2026-09-14";
+function localToday(): string {
+  const n = new Date();
+  const p = (x: number) => String(x).padStart(2, "0");
+  return `${n.getFullYear()}-${p(n.getMonth() + 1)}-${p(n.getDate())}`;
+}
 
 /** Engines shown in the demo. The default is the best solution so far (see `specs/research/experiments`). */
 const ENGINES = [
@@ -45,6 +49,8 @@ const EXAMPLES = [
 ];
 
 const q = new URLSearchParams(location.search);
+/** The real current date. `?today=YYYY-MM-DD` overrides it (used by the screenshot scripts). */
+const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(q.get("today") ?? "") ? (q.get("today") as string) : localToday();
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">(q.get("theme") === "dark" ? "dark" : "light");
@@ -70,7 +76,7 @@ function App() {
       <div className="demo-bar">
         <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>Theme: {theme}</button>
         <button onClick={() => setWeekStart(weekStart ? 0 : 1)}>Week starts: {weekStart ? "Mon" : "Sun"}</button>
-        <span>Today is fixed at {TODAY}.</span>
+        <span>Today is {TODAY}.</span>
       </div>
       <div className="demo-bar" role="radiogroup" aria-label="Engine">
         {ENGINES.map((e) => (

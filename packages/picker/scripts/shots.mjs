@@ -20,7 +20,7 @@ const cases = [
 for (const theme of ["light", "dark"]) {
   const page = await browser.newPage({ viewport: { width: 760, height: 640 }, deviceScaleFactor: 2 });
   for (const [q, name] of cases) {
-    await page.goto(`http://localhost:5199/?theme=${theme}&q=${encodeURIComponent(q)}&ws=1`, { waitUntil: "domcontentloaded" });
+    await page.goto(`http://localhost:5199/?theme=${theme}&q=${encodeURIComponent(q)}&ws=1&today=2026-09-14`, { waitUntil: "domcontentloaded" });
     await page.locator("input").focus();
     await page.keyboard.press("Enter");
     await page.waitForTimeout(900);
