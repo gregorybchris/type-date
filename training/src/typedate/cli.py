@@ -67,8 +67,7 @@ def data_intents(
     seed: int = typer.Option(101),
     out: str = typer.Option("gen/intents", help="Output dir under training/"),
 ) -> None:
-    """Write intent shards for LLM paraphrasing. Each line has the canonical text and the DSL label."""
-    import json
+    """Write intent shards for LLM paraphrasing (canonical text plus DSL label per line)."""
     import random
     from pathlib import Path
 
