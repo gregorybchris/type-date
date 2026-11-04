@@ -165,3 +165,7 @@ Canonical order inside a recurrence (serializer output): frequency, days or nth 
 - `+0b` is today on a weekday and the next Monday on a weekend. From a weekend, `+1b` is the next Monday and `-1b` the previous Friday.
 - `<` uses today, not the range start, as its reference.
 - Date lists drop duplicate dates after resolving.
+
+## Range end that repeats the start date (decided 2026-11-04)
+
+When the text states the end date again, the label writes it: "today 4PM to today 5:15PM" is `dt +0d 16:00>+0d 17:15`. When the text gives only an end time ("mon 4pm to 5pm"), the end omits the date: `dt mo 16:00>17:00`. Both forms resolve to the same dates; the rule only fixes the exact-match string. Three `web4` pool rows were relabeled to follow this. No e7 row is affected.
