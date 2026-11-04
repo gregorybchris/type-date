@@ -6,7 +6,7 @@
 {"id": "r-t0-0007", "text": "quarter to 8", "dsl": "t 7:45?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0007"}
 {"id": "r-t0-0008", "text": "what time is it", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0008"}
 {"id": "r-t0-0010", "text": "please book me in for friday at 10", "dsl": "dt fr 10?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0010"}
-{"id": "r-t0-0011", "text": "yoga every sat 9am", "dsl": "dt R w/1 sa 09:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0011"}
+{"id": "r-t0-0011", "text": "yoga every sat 9am", "dsl": "dt R w/1 sa 09:00", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0011"}
 {"id": "r-t0-0013", "text": "sunday lunchtime", "dsl": "d su", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0013"}
 {"id": "r-t0-0014", "text": "boardroom booked 11am to 12 thursday", "dsl": "dt th 11:00>12:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0014"}
 {"id": "r-t0-0015", "text": "dinner w/ sara fri 7:30", "dsl": "dt fr 7:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0015"}
@@ -108,7 +108,7 @@
 {"id": "r-t0-0127", "text": "ever other", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0127"}
 {"id": "r-t0-0128", "text": "standup 9:15 every weekday", "dsl": "dt R d/1 mo,tu,we,th,fr 9:15?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0128"}
 {"id": "r-t0-0129", "text": "can we push it to wed at ten past two", "dsl": "dt we 2:10?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0129"}
-{"id": "r-t0-0130", "text": "for 10 days starting monday", "dsl": "d R d/1 n10 smo", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0130"}
+{"id": "r-t0-0130", "text": "for 10 days starting monday", "dsl": "d R d/1 n10 smo", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0130"}
 {"id": "r-t0-0131", "text": "wedding rehearsal june 12 at 5", "dsl": "dt 06-12 5?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0131"}
 {"id": "r-t0-0133", "text": "interview moved to 10:30 mon", "dsl": "dt mo 10:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0133"}
 {"id": "r-t0-0135", "text": "from 9 to", "dsl": "t 9?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0135"}
@@ -125,7 +125,7 @@
 {"id": "r-t0-0150", "text": "pharmacy stock order cob friday", "dsl": "d fr", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0150"}
 {"id": "r-t0-0151", "text": "need it by thursday cob", "dsl": "d th", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0151"}
 {"id": "r-t0-0152", "text": "lunch at half twelve", "dsl": "t 12:30?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0152"}
-{"id": "r-t0-0153", "text": "every sat morning", "dsl": "d R w/1 sa", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0153"}
+{"id": "r-t0-0153", "text": "every sat morning", "dsl": "d R w/1 sa", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0153"}
 {"id": "r-t0-0154", "text": "quarter past 5", "dsl": "t 5:15?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0154"}
 {"id": "r-t0-0155", "text": "thrusday 9am", "dsl": "dt th 09:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0155"}
 {"id": "r-t0-0157", "text": "flight out nov 22 6:40am", "dsl": "dt 11-22 06:40", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0157"}
@@ -169,7 +169,7 @@
 {"id": "r-t0-0207", "text": "a fortni", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0207"}
 {"id": "r-t0-0208", "text": "friday morning", "dsl": "d fr", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0208"}
 {"id": "r-t0-0209", "text": "tmrw @ 5ish", "dsl": "dt +1d 5?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0209"}
-{"id": "r-t0-0210", "text": "weekly cut and blow dry saturdays 9am", "dsl": "dt R w/1 sa 09:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0210"}
+{"id": "r-t0-0210", "text": "weekly cut and blow dry saturdays 9am", "dsl": "dt R w/1 sa 09:00", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0210"}
 {"id": "r-t0-0212", "text": "keg delivery thurs 7am", "dsl": "dt th 07:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0212"}
 {"id": "r-t0-0216", "text": "i have the exame on the 12 of december", "dsl": "d 12-12", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0216"}
 {"id": "r-t0-0217", "text": "summer camp june 9 through june 20", "dsl": "d 06-09>06-20", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0217"}
@@ -183,7 +183,7 @@
 {"id": "r-t0-0228", "text": "every sunday at 4", "dsl": "dt R w/1 su 4?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0228"}
 {"id": "r-t0-0229", "text": "friday evening please", "dsl": "d fr", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0229"}
 {"id": "r-t0-0231", "text": "two o clock", "dsl": "t 2?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0231"}
-{"id": "r-t0-0234", "text": "daily until nov 30", "dsl": "d R d/1 u11-30", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0234"}
+{"id": "r-t0-0234", "text": "daily until nov 30", "dsl": "d R d/1 u11-30", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0234"}
 {"id": "r-t0-0235", "text": "from 3 until 5", "dsl": "t 3?>5?", "primary_tag": "time-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0235"}
 {"id": "r-t0-0236", "text": "pls remind me about the farrier on fri at 8am", "dsl": "dt fr 08:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0236"}
 {"id": "r-t0-0237", "text": "juse 3", "dsl": "d 06-03", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0237"}
@@ -192,7 +192,7 @@
 {"id": "r-t0-0241", "text": "dec 6 8 pm", "dsl": "dt 12-06 20:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0241"}
 {"id": "r-t0-0242", "text": "4 t", "dsl": "t 4?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0242"}
 {"id": "r-t0-0244", "text": "yes 3pm", "dsl": "t 15:00", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0244"}
-{"id": "r-t0-0245", "text": "2nd sunday of each month", "dsl": "d R m/1 su#2", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0245"}
+{"id": "r-t0-0245", "text": "2nd sunday of each month", "dsl": "d R m/1 su#2", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0245"}
 {"id": "r-t0-0246", "text": "back to school tmrw morning", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0246"}
 {"id": "r-t0-0247", "text": "bus 38", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0247"}
 {"id": "r-t0-0248", "text": "8am-4pm", "dsl": "t 08:00>16:00", "primary_tag": "time-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0248"}
@@ -227,7 +227,7 @@
 {"id": "r-t0-0286", "text": "jan 3rd, 2027", "dsl": "d 2027-01-03", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0286"}
 {"id": "r-t0-0288", "text": "sat 8", "dsl": "dt sa 8?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0288"}
 {"id": "r-t0-0289", "text": "3rd of december", "dsl": "d 12-03", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0289"}
-{"id": "r-t0-0290", "text": "every sat at 7:30am rink", "dsl": "dt R w/1 sa 07:30", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0290"}
+{"id": "r-t0-0290", "text": "every sat at 7:30am rink", "dsl": "dt R w/1 sa 07:30", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0290"}
 {"id": "r-t0-0292", "text": "6/1 at 9", "dsl": "dt 06-01 9?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0292"}
 {"id": "r-t0-0294", "text": "sundya 11ish", "dsl": "dt su 11?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0294"}
 {"id": "r-t0-0295", "text": "1/5 - 1/9", "dsl": "d 01-05>01-09", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0295"}
@@ -253,7 +253,7 @@
 {"id": "r-t0-0325", "text": "back-to-backs mon 9am through 5pm", "dsl": "dt mo 09:00>17:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0325"}
 {"id": "r-t0-0326", "text": "twenty to 3", "dsl": "t 2:40?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0326"}
 {"id": "r-t0-0329", "text": "lunch w/ sam fri 1pm", "dsl": "dt fr 13:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0329"}
-{"id": "r-t0-0330", "text": "3-11 shift every sat and sun", "dsl": "dt R w/1 sa,su 3?>11?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0330"}
+{"id": "r-t0-0330", "text": "3-11 shift every sat and sun", "dsl": "dt R w/1 sa,su 3?>11?", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0330"}
 {"id": "r-t0-0331", "text": "dec 20 till jan 4", "dsl": "d 12-20>01-04", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0331"}
 {"id": "r-t0-0332", "text": "pm shift friday", "dsl": "d fr", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0332"}
 {"id": "r-t0-0333", "text": "asdfgh", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0333"}
@@ -298,7 +298,7 @@
 {"id": "r-t0-0381", "text": "game on sat 3pm", "dsl": "dt sa 15:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0381"}
 {"id": "r-t0-0382", "text": "guest availability the week of nov 17", "dsl": "d 11-17", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0382"}
 {"id": "r-t0-0383", "text": "9a", "dsl": "t 09:00", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0383"}
-{"id": "r-t0-0384", "text": "live music every sat night 9pm", "dsl": "dt R w/1 sa 21:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0384"}
+{"id": "r-t0-0384", "text": "live music every sat night 9pm", "dsl": "dt R w/1 sa 21:00", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0384"}
 {"id": "r-t0-0386", "text": "thanksgiving meal nov 26", "dsl": "d 11-26", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0386"}
 {"id": "r-t0-0388", "text": "banquet sunday dec 7 5ish", "dsl": "dt 12-07 5?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0388"}
 {"id": "r-t0-0389", "text": "trash day every thursday", "dsl": "d R w/1 th", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t0-0389"}
@@ -409,7 +409,7 @@
 {"id": "r-t1-0113", "text": "need a table sunday 1pm for 4", "dsl": "dt su 13:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0113"}
 {"id": "r-t1-0115", "text": "sUnDaY nIgHt", "dsl": "d su", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0115"}
 {"id": "r-t1-0116", "text": "cake tasting sat 11:30", "dsl": "dt sa 11:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0116"}
-{"id": "r-t1-0117", "text": "every thurs till xmas", "dsl": "d R w/1 th u12-25", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0117"}
+{"id": "r-t1-0117", "text": "every thurs till xmas", "dsl": "d R w/1 th u12-25", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0117"}
 {"id": "r-t1-0119", "text": "lets say monday 10", "dsl": "dt mo 10?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0119"}
 {"id": "r-t1-0120", "text": "wed 12 nov 1pm", "dsl": "dt 11-12 13:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0120"}
 {"id": "r-t1-0121", "text": "tomorow at 3", "dsl": "dt +1d 3?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0121"}
@@ -465,7 +465,7 @@
 {"id": "r-t1-0188", "text": "weekly on thursdays at 4 pm", "dsl": "dt R w/1 th 16:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0188"}
 {"id": "r-t1-0190", "text": "this coming sa", "dsl": "d sa", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0190"}
 {"id": "r-t1-0191", "text": "bout 6 ish", "dsl": "t 6?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0191"}
-{"id": "r-t1-0192", "text": "every tues until dec 15", "dsl": "d R w/1 tu u12-15", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0192"}
+{"id": "r-t1-0192", "text": "every tues until dec 15", "dsl": "d R w/1 tu u12-15", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0192"}
 {"id": "r-t1-0193", "text": "TOMORROW 10AM", "dsl": "dt +1d 10:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0193"}
 {"id": "r-t1-0196", "text": "cloudy tmrw", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0196"}
 {"id": "r-t1-0198", "text": "bingo every fri at 6:30", "dsl": "dt R w/1 fr 6:30?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0198"}
@@ -573,7 +573,7 @@
 {"id": "r-t1-0331", "text": "from the 1st to the 15th of march", "dsl": "d 03-01>03-15", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0331"}
 {"id": "r-t1-0332", "text": "2026-03-14", "dsl": "d 2026-03-14", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0332"}
 {"id": "r-t1-0333", "text": "statute runs mar 3 2027", "dsl": "d 2027-03-03", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0333"}
-{"id": "r-t1-0334", "text": "every sat 6am", "dsl": "dt R w/1 sa 06:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0334"}
+{"id": "r-t1-0334", "text": "every sat 6am", "dsl": "dt R w/1 sa 06:00", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0334"}
 {"id": "r-t1-0335", "text": "rates due 1st may", "dsl": "d 05-01", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0335"}
 {"id": "r-t1-0336", "text": "daily at 7am", "dsl": "dt R d/1 07:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0336"}
 {"id": "r-t1-0337", "text": "nex tuesdy", "dsl": "d tu+1", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0337"}
@@ -618,7 +618,7 @@
 {"id": "r-t1-0391", "text": "dec 24 to dec 26", "dsl": "d 12-24>12-26", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0391"}
 {"id": "r-t1-0393", "text": "see ye on saturday at 2", "dsl": "dt sa 2?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0393"}
 {"id": "r-t1-0394", "text": "tmrw arvo", "dsl": "d +1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0394"}
-{"id": "r-t1-0395", "text": "every first sunday", "dsl": "d R m/1 su#1", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0395"}
+{"id": "r-t1-0395", "text": "every first sunday", "dsl": "d R m/1 su#1", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0395"}
 {"id": "r-t1-0396", "text": "1/1", "dsl": "d 01-01", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0396"}
 {"id": "r-t1-0397", "text": "the 4th of july", "dsl": "d 07-04", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0397"}
 {"id": "r-t1-0398", "text": "jan 5th a", "dsl": "d 01-05", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0398"}
@@ -635,7 +635,7 @@
 {"id": "r-t1-0415", "text": "2026-12-09", "dsl": "d 2026-12-09", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0415"}
 {"id": "r-t1-0416", "text": "ivery othr sundy", "dsl": "d R w/2 su", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0416"}
 {"id": "r-t1-0417", "text": "ok cool 6 oclock", "dsl": "t 6?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t1-0417"}
-{"id": "r-t2-0001", "text": "every sat and sun at 8am", "dsl": "dt R w/1 sa,su 08:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0001"}
+{"id": "r-t2-0001", "text": "every sat and sun at 8am", "dsl": "dt R w/1 sa,su 08:00", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0001"}
 {"id": "r-t2-0002", "text": "hair appt sat 1pm", "dsl": "dt sa 13:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0002"}
 {"id": "r-t2-0003", "text": "march twenty second", "dsl": "d 03-22", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0003"}
 {"id": "r-t2-0007", "text": "marking due 15th dec", "dsl": "d 12-15", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0007"}
@@ -657,11 +657,11 @@
 {"id": "r-t2-0032", "text": "sunday evening", "dsl": "d su", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0032"}
 {"id": "r-t2-0034", "text": "tonight", "dsl": "d +0d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0034"}
 {"id": "r-t2-0035", "text": "pick up the kids", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0035"}
-{"id": "r-t2-0036", "text": "every weds till christmas", "dsl": "d R w/1 we u12-25", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0036"}
+{"id": "r-t2-0036", "text": "every weds till christmas", "dsl": "d R w/1 we u12-25", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0036"}
 {"id": "r-t2-0038", "text": "sept 9 thru 13", "dsl": "d 09-09>09-13", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0038"}
-{"id": "r-t2-0040", "text": "daily until friday", "dsl": "d R d/1 ufr", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0040"}
+{"id": "r-t2-0040", "text": "daily until friday", "dsl": "d R d/1 ufr", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0040"}
 {"id": "r-t2-0041", "text": "rehearsal every tues and thurs at 7", "dsl": "dt R w/1 tu,th 7?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0041"}
-{"id": "r-t2-0042", "text": "dec 1 until the 23rd, mondays through fridays 9 to 5", "dsl": "dt R d/1 mo,tu,we,th,fr u12-23 9?>5? s12-01", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0042"}
+{"id": "r-t2-0042", "text": "dec 1 until the 23rd, mondays through fridays 9 to 5", "dsl": "dt R d/1 mo,tu,we,th,fr u12-23 9?>5? s12-01", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0042"}
 {"id": "r-t2-0043", "text": "mrng", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0043"}
 {"id": "r-t2-0045", "text": "parent teacher evenings 12-14 nov", "dsl": "d 11-12>11-14", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0045"}
 {"id": "r-t2-0046", "text": "9 to half 10", "dsl": "t 9?>10:30?", "primary_tag": "time-range", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0046"}
@@ -670,7 +670,7 @@
 {"id": "r-t2-0049", "text": "ned", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0049"}
 {"id": "r-t2-0051", "text": "ca. 4 pm", "dsl": "t 16:00", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0051"}
 {"id": "r-t2-0052", "text": "jv at 5:30 on tuesday", "dsl": "dt tu 5:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0052"}
-{"id": "r-t2-0053", "text": "each sat at 10 for 6 weeks", "dsl": "dt R w/1 sa n6 10?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0053"}
+{"id": "r-t2-0053", "text": "each sat at 10 for 6 weeks", "dsl": "dt R w/1 sa n6 10?", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0053"}
 {"id": "r-t2-0054", "text": "ish 7", "dsl": "t 7?", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0054"}
 {"id": "r-t2-0055", "text": "can u do the 4th of july for the portrait sesh", "dsl": "d 07-04", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0055"}
 {"id": "r-t2-0056", "text": "wed even", "dsl": "d we", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic", "split": "train", "parent_id": null, "group": "real-t2-0056"}

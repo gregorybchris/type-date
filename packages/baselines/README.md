@@ -11,6 +11,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `heuristic-full-3` | `src/heuristic-full-3.ts` | heuristic-full-2 plus span extraction around unknown words, day parts, slang. | 10.3 kB |
 | `heuristic-full-4` | `src/heuristic-full-4.ts` | heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases. | 14.6 kB |
 | `heuristic-full-5` | `src/heuristic-full-5.ts` | heuristic-full-4 plus date validity checks and developer-written date formats. | 15.9 kB |
+| `heuristic-full-6` | `src/heuristic-full-6.ts` | heuristic-full-5 plus DSL v2 forms (open ranges, day of month, durations, lists, bounds, windows, offsets). | see exp-016 |
 
 `predict(text, signal?, { today })` takes an optional reference day. Only `chrono` uses it, because chrono returns absolute dates. The heuristics output relative DSL and ignore it.
 
@@ -51,3 +52,6 @@ For `chrono` the eval calls the engine once for each reference day in `score-res
 - The dataset resolves text ambiguity by sampling, not by rule. `10:30` without am/pm is `10:30?` in some rows and `10:30` in others, and `today 2:50` is sometimes the prefix of `today 2:50 pm`. Do not chase these. Check the counts in `train` before adding a rule, and keep the rule only if it raises accuracy there.
 - Another agent edited `packages/engines/src/index.ts` while this package was built, and the `PredictOptions` export was lost once. If `tsc` says `PredictOptions` is missing, re-add it.
 - pnpm needs `pnpm install` at the repo root after adding this package. The workspace link is how `@type-date/core` and `@type-date/engines` resolve.
+
+- heuristic-full-6: fuzzy match turned "reminder" into the `rest` token and the parse became `x`. `rest` is skipped in fuzzy matching and dropped before the base grammar.
+- heuristic-full-6 is at 23.97 kB gzip, close to the 24 kB budget. Add families as table entries or a lazy chunk.

@@ -35,7 +35,7 @@
 {"id": "r-d0045", "text": "nov 11 11am", "dsl": "dt 11-11 11:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0045"}
 {"id": "r-d0047", "text": "meeting moved to next wednesday at 10", "dsl": "dt we+1 10?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0047"}
 {"id": "r-d0050", "text": "the meeting has been moved to the third of february at 2pm", "dsl": "dt 02-03 14:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0050"}
-{"id": "r-d0051", "text": "market every saturday from 6:30 to 1", "dsl": "dt R w/1 sa 6:30?>1?", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0051"}
+{"id": "r-d0051", "text": "market every saturday from 6:30 to 1", "dsl": "dt R w/1 sa 6:30?>1?", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0051"}
 {"id": "r-d0052", "text": "sat 8am-12pm", "dsl": "dt sa 08:00>12:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0052"}
 {"id": "r-d0053", "text": "nov 15 to", "dsl": "d 11-15", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0053"}
 {"id": "r-d0054", "text": "wed at half 3", "dsl": "dt we 3:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0054"}
@@ -122,7 +122,7 @@
 {"id": "r-d0170", "text": "sell the wethers at the sale yards thurs 10", "dsl": "dt th 10?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0170"}
 {"id": "r-d0172", "text": "okay", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0172"}
 {"id": "r-d0176", "text": "sat 10 to noon", "dsl": "dt sa 10:00>12:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0176"}
-{"id": "r-d0177", "text": "every sat and sun", "dsl": "d R w/1 sa,su", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0177"}
+{"id": "r-d0177", "text": "every sat and sun", "dsl": "d R w/1 sa,su", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0177"}
 {"id": "r-d0179", "text": "my own time friday 1-3", "dsl": "dt fr 1?>3?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0179"}
 {"id": "r-d0180", "text": "9 in the evening", "dsl": "t 21:00", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0180"}
 {"id": "r-d0182", "text": "5pm tomorow", "dsl": "dt +1d 17:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0182"}
@@ -156,7 +156,7 @@
 {"id": "r-d0223", "text": "friday night", "dsl": "d fr", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0223"}
 {"id": "r-d0224", "text": "dinner tonite 7pm", "dsl": "dt +0d 19:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0224"}
 {"id": "r-d0225", "text": "6 am tues", "dsl": "dt tu 06:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0225"}
-{"id": "r-d0227", "text": "team meeting every thursday 10am till end of year", "dsl": "dt R w/1 th u12-31 10:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0227"}
+{"id": "r-d0227", "text": "team meeting every thursday 10am till end of year", "dsl": "dt R w/1 th u12-31 10:00", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0227"}
 {"id": "r-d0230", "text": "birthday party sat 2-5", "dsl": "dt sa 2?>5?", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0230"}
 {"id": "r-d0232", "text": "swap with me for sat 7a-7p", "dsl": "dt sa 07:00>19:00", "primary_tag": "datetime-range", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0232"}
 {"id": "r-d0233", "text": "tail docking wed 6am", "dsl": "dt we 06:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0233"}

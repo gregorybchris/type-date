@@ -19,6 +19,7 @@ const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; 
   "heuristic-small": { file: "heuristic-small.ts", family: "heuristic", perDay: false, notes: "Hand-written tokenizer and a few dozen regex rules. No dependencies." },
   "heuristic-full-2": { file: "heuristic-full-2.ts", family: "heuristic", perDay: false, notes: "heuristic-full plus clock words, filler and chat phrasing, UK order, edit distance 2, more recurrence forms." },
   "heuristic-full-5": { file: "heuristic-full-5.ts", family: "heuristic", perDay: false, notes: "heuristic-full-4 plus date validity checks, year-first and named numeric formats, two-digit years, seconds, relative offsets in more forms." },
+  "heuristic-full-6": { file: "heuristic-full-6.ts", family: "heuristic", perDay: false, notes: "heuristic-full-5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, windows, anchored and business-day offsets." },
   "heuristic-full-4": { file: "heuristic-full-4.ts", family: "heuristic", perDay: false, notes: "heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases and shorthand." },
   "heuristic-full-3": { file: "heuristic-full-3.ts", family: "heuristic", perDay: false, notes: "heuristic-full-2 plus span extraction around unknown words, day parts, one-letter am/pm and slang." },
   "heuristic-full": { file: "heuristic-full.ts", family: "heuristic", perDay: false, notes: "Hand-written grammar parser with fuzzy word matching. No dependencies." },

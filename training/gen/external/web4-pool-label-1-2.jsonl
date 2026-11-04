@@ -245,7 +245,7 @@
 {"id": "web4p1-0244", "text": "en.Weekday", "dsl": "x"}
 {"id": "web4p1-0245", "text": "10 PM EST", "dsl": "t 22:00"}
 {"id": "web4p1-0246", "text": "Vi 17:15", "dsl": "dt fr 17:15"}
-{"id": "web4p1-0247", "text": "every 3rd of the month", "dsl": "d R m/1 d03"}
+{"id": "web4p1-0247", "text": "every 3rd of the month", "dsl": "d R m/1 d3"}
 {"id": "web4p1-0248", "text": "2 week t", "dsl": "x", "unsure": true}
 {"id": "web4p1-0249", "text": "72 days ago", "dsl": "d -72d"}
 {"id": "web4p1-0250", "text": "last 4am", "dsl": "x", "unsure": true}
