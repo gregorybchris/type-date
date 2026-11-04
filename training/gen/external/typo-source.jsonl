@@ -1,0 +1,1200 @@
+{"id": "ty0000", "text": "3 days after the 15th", "src_id": "r-taxt2-0050", "dsl": "d D@15~+3d"}
+{"id": "ty0001", "text": "not today, day after tomorrow", "src_id": "r-web4p0-0359", "dsl": "d +2d"}
+{"id": "ty0002", "text": "remainder of the year", "src_id": "r-taxt0-0069", "dsl": "d +0d>Y+0"}
+{"id": "ty0003", "text": "Evening Pilates reformer, Mon & Wed at 6:45 PM, ends Dec 17", "src_id": "r-ht0-0067", "dsl": "dt R w/1 mo,we u12-17 18:45"}
+{"id": "ty0004", "text": "buy a balloon tomorrow", "src_id": "r-web4p1-0052", "dsl": "d +1d"}
+{"id": "ty0005", "text": "this whole month", "src_id": "r-taxt1-0191", "dsl": "d M+0"}
+{"id": "ty0006", "text": "from 9 to 5 tomorrow", "src_id": "r-v2t0-0326", "dsl": "dt +1d 9?>5?"}
+{"id": "ty0007", "text": "72 days ago", "src_id": "r-web4p1-0249", "dsl": "d -72d"}
+{"id": "ty0008", "text": "evrey other friday", "src_id": "r-t0-0087", "dsl": "d R w/2 fr"}
+{"id": "ty0009", "text": "every thrusday until dec 15", "src_id": "r-ht1-0273", "dsl": "d R w/1 th u12-15"}
+{"id": "ty0010", "text": "every year in april on mondays", "src_id": "r-taxt1-0155", "dsl": "d R w/1 mo M@04"}
+{"id": "ty0011", "text": "saturdays every may", "src_id": "r-taxt0-0115", "dsl": "d R w/1 sa M@05"}
+{"id": "ty0012", "text": "Alexa, remind me every night at 9:30pm to start my bedtime routine.", "src_id": "r-webp1-0259", "dsl": "dt R d/1 21:30"}
+{"id": "ty0013", "text": "every tuesday in 2027", "src_id": "r-taxt0-0372", "dsl": "d R w/1 tu u2027-12-31 s2027-01-01"}
+{"id": "ty0014", "text": "put me down for sat 3pm pls", "src_id": "r-t2-0009", "dsl": "dt sa 15:00"}
+{"id": "ty0015", "text": "mid-morning tuesday", "src_id": "r-ht0-0087", "dsl": "d tu"}
+{"id": "ty0016", "text": "December 4th 1995", "src_id": "r-web4p2-0246", "dsl": "d 1995-12-04"}
+{"id": "ty0017", "text": "since last friday", "src_id": "r-v2t1-0004", "dsl": "d fr-1>"}
+{"id": "ty0018", "text": "foils for jess fri 10am", "src_id": "r-t0-0042", "dsl": "dt fr 10:00"}
+{"id": "ty0019", "text": "twelve business days from today", "src_id": "r-taxt1-0012", "dsl": "d +12b"}
+{"id": "ty0020", "text": "5pm 05 Aug", "src_id": "r-web4p2-0120", "dsl": "dt 08-05 17:00"}
+{"id": "ty0021", "text": "30 Dec 2011 7pm EST", "src_id": "r-web4p1-0253", "dsl": "dt 2011-12-30 19:00"}
+{"id": "ty0022", "text": "half past 6 in the morning", "src_id": "r-t1-0361", "dsl": "t 06:30"}
+{"id": "ty0023", "text": "daily except sundays at 6 am", "src_id": "r-ht0-0184", "dsl": "dt R d/1 mo,tu,we,th,fr,sa 06:00"}
+{"id": "ty0024", "text": "Your car service is booked for monday 8am, expect it to take 2 hours", "src_id": "r-v2t0-0137", "dsl": "dt mo 08:00>+2h"}
+{"id": "ty0025", "text": "march third 2015", "src_id": "r-web4p1-0268", "dsl": "d 2015-03-03"}
+{"id": "ty0026", "text": "every friday at 3pm", "src_id": "r-taxt0-0136", "dsl": "dt R w/1 fr 15:00"}
+{"id": "ty0027", "text": "eod wed", "src_id": "r-t1-0259", "dsl": "d we"}
+{"id": "ty0028", "text": "business days next week", "src_id": "r-taxt0-0318", "dsl": "d R d/1 mo,tu,we,th,fr uW+1 sW+1"}
+{"id": "ty0029", "text": "two weeks before the closing on dec 15", "src_id": "r-taxt1-0020", "dsl": "d 12-15~-2w"}
+{"id": "ty0030", "text": "leak repair come monday first thing", "src_id": "r-t1-0066", "dsl": "d mo"}
+{"id": "ty0031", "text": "every day except sunday", "src_id": "r-taxd0194", "dsl": "d R d/1 mo,tu,we,th,fr,sa"}
+{"id": "ty0032", "text": "today 2PM to today 3PM", "src_id": "r-web4p2-0098", "dsl": "dt +0d 14:00>+0d 15:00"}
+{"id": "ty0033", "text": "Every month on the last Monday", "src_id": "r-webp0-0151", "dsl": "d R m/1 mo#-1"}
+{"id": "ty0034", "text": "the 2nd friday in november", "src_id": "r-ht0-0170", "dsl": "d fr#2@11"}
+{"id": "ty0035", "text": "March 4, March", "src_id": "r-web4p2-0189", "dsl": "d 03-04"}
+{"id": "ty0036", "text": "weekdays at noon this month", "src_id": "r-taxt0-0131", "dsl": "dt R d/1 mo,tu,we,th,fr uM+0 12:00 sM+0"}
+{"id": "ty0037", "text": "m-f except wednesday next week", "src_id": "r-taxt2-0051", "dsl": "d R d/1 mo,tu,th,fr uW+1 sW+1"}
+{"id": "ty0038", "text": "next 3 thurs", "src_id": "r-taxt1-0060", "dsl": "d th+1,th+2,th+3"}
+{"id": "ty0039", "text": "From May to November", "src_id": "r-web4p2-0054", "dsl": "d M@05>M@11"}
+{"id": "ty0040", "text": "sundays for the next 8 weeks", "src_id": "r-taxt1-0133", "dsl": "d R w/1 su u+8w s+0d"}
+{"id": "ty0041", "text": "24 July 2028", "src_id": "r-web6p0-0007", "dsl": "d 2028-07-24"}
+{"id": "ty0042", "text": "aug 3rd 8-4", "src_id": "r-t1-0368", "dsl": "dt 08-03 8?>4?"}
+{"id": "ty0043", "text": "June 25th at 9am and July 2nd at 10am and August 16th at 11am", "src_id": "r-web4p1-0008", "dsl": "dt 06-25 09:00"}
+{"id": "ty0044", "text": "/remind me to file expenses on the 1st of every month", "src_id": "r-webp2-0218", "dsl": "d R m/1 d1"}
+{"id": "ty0045", "text": "June 11-16 2026", "src_id": "r-webp3-0222", "dsl": "d 2026-06-11>2026-06-16"}
+{"id": "ty0046", "text": "Dinner Sunday 6pm?? Mom says she's making lasagna, bring wine", "src_id": "r-ht0-0324", "dsl": "dt su 18:00"}
+{"id": "ty0047", "text": "a week after this friday", "src_id": "r-web4p2-0193", "dsl": "d fr~+1w"}
+{"id": "ty0048", "text": "20th June 2026", "src_id": "r-web5p0-0055", "dsl": "d 2026-06-20"}
+{"id": "ty0049", "text": "2nd tues of each month", "src_id": "r-t1-0404", "dsl": "d R m/1 tu#2"}
+{"id": "ty0050", "text": "since 9am today", "src_id": "r-v2t1-0120", "dsl": "dt +0d 09:00>"}
+{"id": "ty0051", "text": "fri afternoon at 3-4", "src_id": "r-ht1-0302", "dsl": "dt fr 15:00>16:00"}
+{"id": "ty0052", "text": "Pick up milk at Giant Eagle on Friday afternoon", "src_id": "r-webp3-0195", "dsl": "d fr"}
+{"id": "ty0053", "text": "evenings this week", "src_id": "r-taxt0-0057", "dsl": "d W+0"}
+{"id": "ty0054", "text": "anytime before 4 tomorrow", "src_id": "r-v2t1-0072", "dsl": "dt >+1d 4?"}
+{"id": "ty0055", "text": "Sunday 23 May 1856 12:09:08 AM", "src_id": "r-webp2-0245", "dsl": "dt 1856-05-23 00:09"}
+{"id": "ty0056", "text": "can you do a call fri 2pm for half an hour", "src_id": "r-v2t1-0049", "dsl": "dt fr 14:00>+30m"}
+{"id": "ty0057", "text": "4 business days after the 15th", "src_id": "r-taxt0-0258", "dsl": "d D@15~+4b"}
+{"id": "ty0058", "text": "Sam's birthday every year on 5/16", "src_id": "r-webp0-0220", "dsl": "d R y/1 05-16"}
+{"id": "ty0059", "text": "Weekly newsletter goes out Thursdays at 8:00 AM EST", "src_id": "r-ht0-0304", "dsl": "dt R w/1 th 08:00"}
+{"id": "ty0060", "text": "remind me to Buy Milk on Tuesday", "src_id": "r-webp0-0327", "dsl": "d tu"}
+{"id": "ty0061", "text": "last friday at 4:00", "src_id": "r-webp0-0143", "dsl": "dt fr-1 4?"}
+{"id": "ty0062", "text": "the last 2 tuesdays", "src_id": "r-taxt0-0349", "dsl": "d tu-1,tu-2"}
+{"id": "ty0063", "text": "every 20th", "src_id": "r-v2t0-0324", "dsl": "d R m/1 d20"}
+{"id": "ty0064", "text": "Seat 14C on the flight to Denver on friday", "src_id": "r-v2d0029", "dsl": "d fr"}
+{"id": "ty0065", "text": "I want the past 2 weekends, thanks", "src_id": "r-taxt0-0336", "dsl": "d R w/1 sa,su u+0d s-2w"}
+{"id": "ty0066", "text": "the last sunday in november", "src_id": "r-web4p0-0091", "dsl": "d su#-1@11"}
+{"id": "ty0067", "text": "late shift sat 2 till 10", "src_id": "r-t2-0016", "dsl": "dt sa 2?>10?"}
+{"id": "ty0068", "text": "3 weeks before dec 1", "src_id": "r-taxt1-0298", "dsl": "d 12-01~-3w"}
+{"id": "ty0069", "text": "block off the monday after next", "src_id": "r-taxt0-0163", "dsl": "d mo+2"}
+{"id": "ty0070", "text": "mtg w/ boss wed 11", "src_id": "r-t0-0044", "dsl": "dt we 11?"}
+{"id": "ty0071", "text": "0 days ago", "src_id": "r-web4p2-0166", "dsl": "d +0d"}
+{"id": "ty0072", "text": "At 12:00 AM, on the second Monday of the month", "src_id": "r-webp2-0187", "dsl": "dt R m/1 mo#2 00:00"}
+{"id": "ty0073", "text": "thanksgiving meal nov 26", "src_id": "r-t0-0386", "dsl": "d 11-26"}
+{"id": "ty0074", "text": "Our appointment is tomorrow at 2", "src_id": "r-v2t0-0214", "dsl": "dt +1d 2?"}
+{"id": "ty0075", "text": "rest of this month", "src_id": "r-taxd0079", "dsl": "d +0d>M+0"}
+{"id": "ty0076", "text": "31 March 2028", "src_id": "r-web6p0-0107", "dsl": "d 2028-03-31"}
+{"id": "ty0077", "text": "the 20th morning", "src_id": "r-v2t0-0345", "dsl": "d D@20"}
+{"id": "ty0078", "text": "every Tuesday starting in 3 weeks", "src_id": "r-webp2-0193", "dsl": "d R w/1 tu s+3w"}
+{"id": "ty0079", "text": "after sunday", "src_id": "r-v2d0003", "dsl": "d su>"}
+{"id": "ty0080", "text": "today 3pm for an hour, budget review", "src_id": "r-v2t0-0099", "dsl": "dt +0d 15:00>+1h"}
+{"id": "ty0081", "text": "by sept 1", "src_id": "r-v2d0000", "dsl": "d >09-01"}
+{"id": "ty0082", "text": "June 30th 12PM", "src_id": "r-web4p1-0098", "dsl": "dt 06-30 12:00"}
+{"id": "ty0083", "text": "1500 days ago", "src_id": "r-web4p2-0111", "dsl": "d -1500d"}
+{"id": "ty0084", "text": "1 week before mothers day", "src_id": "r-taxd0118", "dsl": "d su#2@05~-1w"}
+{"id": "ty0085", "text": "sundays until new years", "src_id": "r-taxt1-0150", "dsl": "d R w/1 su u01-01"}
+{"id": "ty0086", "text": "JUNE 9TH - JUNE 23RD, 2014", "src_id": "r-web4p0-0051", "dsl": "d 2014-06-09>2014-06-23"}
+{"id": "ty0087", "text": "next 6 weeks", "src_id": "r-taxt0-0235", "dsl": "d +0d>+6w"}
+{"id": "ty0088", "text": "Taxi booked for 05:15 Friday 13th November to Gatwick South Terminal", "src_id": "r-ht1-0099", "dsl": "dt 11-13 05:15"}
+{"id": "ty0089", "text": "dec 1st", "src_id": "r-t1-0307", "dsl": "d 12-01"}
+{"id": "ty0090", "text": "every friday in the next 3 months", "src_id": "r-taxd0071", "dsl": "d R w/1 fr u+3m s+0d"}
+{"id": "ty0091", "text": "Aug 25, 2006 5pm", "src_id": "r-web4p0-0131", "dsl": "dt 2006-08-25 17:00"}
+{"id": "ty0092", "text": "weekdays over the last 2 weeks", "src_id": "r-taxt1-0146", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-2w"}
+{"id": "ty0093", "text": "Thursday at 9:30pm ist", "src_id": "r-web4p0-0251", "dsl": "dt th 21:30"}
+{"id": "ty0094", "text": "the 2nd of march", "src_id": "r-web4p1-0128", "dsl": "d 03-02"}
+{"id": "ty0095", "text": "between 3 and 5 tomorrow", "src_id": "r-t1-0253", "dsl": "dt +1d 3?>5?"}
+{"id": "ty0096", "text": "in too weeks", "src_id": "r-t1-0035", "dsl": "d +2w"}
+{"id": "ty0097", "text": "Jan 20, 2010 9:00:00pm", "src_id": "r-web4p0-0017", "dsl": "dt 2010-01-20 21:00"}
+{"id": "ty0098", "text": "morning of the 15th of february", "src_id": "r-web4p1-0314", "dsl": "d 02-15"}
+{"id": "ty0099", "text": "Registration deadline is Sunday night, March 8th, 11:59 PM", "src_id": "r-ht0-0102", "dsl": "dt 03-08 23:59"}
+{"id": "ty0100", "text": "Taekwondo tournament check-in 8:00 AM, Sunday March 22, Memorial Gym", "src_id": "r-ht1-0096", "dsl": "dt 03-22 08:00"}
+{"id": "ty0101", "text": "Every other wednesday at 10am", "src_id": "r-v2t0-0078", "dsl": "dt R w/2 we 10:00"}
+{"id": "ty0102", "text": "blood tests tues 8:15am", "src_id": "r-t0-0088", "dsl": "dt tu 08:15"}
+{"id": "ty0103", "text": "Tuesday, December 1st, 2026", "src_id": "r-t2-0094", "dsl": "d 2026-12-01"}
+{"id": "ty0104", "text": "15 Aug 2026 18:00", "src_id": "r-web5p0-0134", "dsl": "dt 2026-08-15 18:00"}
+{"id": "ty0105", "text": "Hey Siri, remind me to call my insurance company at 4:30 PM today.", "src_id": "r-webp1-0249", "dsl": "dt +0d 16:30"}
+{"id": "ty0106", "text": "shearing starts 18 nov", "src_id": "r-t1-0082", "dsl": "d 11-18"}
+{"id": "ty0107", "text": "the coming 3 saturdays", "src_id": "r-taxt1-0175", "dsl": "d sa+1,sa+2,sa+3"}
+{"id": "ty0108", "text": "Lunch booking at Zuma, Friday 27th November, 1:15pm, table for 5", "src_id": "r-ht1-0084", "dsl": "dt 11-27 13:15"}
+{"id": "ty0109", "text": "10-July-2004", "src_id": "r-webp2-0161", "dsl": "d 2004-07-10"}
+{"id": "ty0110", "text": "thursday 3:30 for 30 mins", "src_id": "r-v2t0-0256", "dsl": "dt th 3:30?>+30m"}
+{"id": "ty0111", "text": "At 09:46 AM, only on Monday", "src_id": "r-webp0-0306", "dsl": "dt R w/1 mo 09:46"}
+{"id": "ty0112", "text": "Sunday, November 8, 2026", "src_id": "r-web6p0-0266", "dsl": "d 2026-11-08"}
+{"id": "ty0113", "text": "I am free from tomorrow evening 7 until about 9", "src_id": "r-t0-0259", "dsl": "dt +1d 19:00>21:00"}
+{"id": "ty0114", "text": "all next week", "src_id": "r-t1-0278", "dsl": "d W+1"}
+{"id": "ty0115", "text": "Coffee & donuts with the principal, Friday, Sept 26, 8:00 AM, library", "src_id": "r-ht1-0034", "dsl": "dt 09-26 08:00"}
+{"id": "ty0116", "text": "12 noon wed", "src_id": "r-ht0-0084", "dsl": "dt we 12:00"}
+{"id": "ty0117", "text": "Friday at 5 PM", "src_id": "r-webp1-0196", "dsl": "dt fr 17:00"}
+{"id": "ty0118", "text": "'February 24th 12PM PST'", "src_id": "r-web4p1-0129", "dsl": "dt 02-24 12:00"}
+{"id": "ty0119", "text": "bruh exam is next tues", "src_id": "r-t0-0162", "dsl": "d tu+1"}
+{"id": "ty0120", "text": "starting May 13th repeat every other day", "src_id": "r-web4p1-0350", "dsl": "d R d/2 s05-13"}
+{"id": "ty0121", "text": "twice a week mon and thu at 6", "src_id": "r-ht0-0333", "dsl": "dt R w/1 mo,th 6?"}
+{"id": "ty0122", "text": "Friday Fun Bar", "src_id": "r-web4p1-0221", "dsl": "d fr"}
+{"id": "ty0123", "text": "28 march 9:37", "src_id": "r-web4p0-0149", "dsl": "dt 03-28 9:37?"}
+{"id": "ty0124", "text": "mar 14, mar 21, mar 28", "src_id": "r-taxt0-0128", "dsl": "d 03-14,03-21,03-28"}
+{"id": "ty0125", "text": "on 27th September", "src_id": "r-web5p0-0084", "dsl": "d 09-27"}
+{"id": "ty0126", "text": "1 sept.", "src_id": "r-webp2-0370", "dsl": "d 09-01"}
+{"id": "ty0127", "text": "Yoga with Maya returns the first Saturday of every month at 9 AM", "src_id": "r-ht0-0160", "dsl": "dt R m/1 sa#1 09:00"}
+{"id": "ty0128", "text": "1:00am on Feb 1, 2024", "src_id": "r-web4p1-0000", "dsl": "dt 2024-02-01 01:00"}
+{"id": "ty0129", "text": "We are open from 10 on saturdays", "src_id": "r-v2t0-0185", "dsl": "dt R w/1 sa 10?"}
+{"id": "ty0130", "text": "October 14th, 2016 10:03 PM", "src_id": "r-web4p0-0295", "dsl": "dt 2016-10-14 22:03"}
+{"id": "ty0131", "text": "June 11-16, 2026", "src_id": "r-web4p0-0299", "dsl": "d 2026-06-11>2026-06-16"}
+{"id": "ty0132", "text": "12am last monday", "src_id": "r-webp1-0053", "dsl": "dt mo-1 00:00"}
+{"id": "ty0133", "text": "off wed thru fri", "src_id": "r-t0-0048", "dsl": "d we>fr"}
+{"id": "ty0134", "text": "meeting got moved to thursday, same time", "src_id": "r-v2t1-0106", "dsl": "d th"}
+{"id": "ty0135", "text": "ill call you wed at 4 your time", "src_id": "r-t0-0097", "dsl": "dt we 4?"}
+{"id": "ty0136", "text": "the 16th evening", "src_id": "r-v2t0-0325", "dsl": "d D@16"}
+{"id": "ty0137", "text": "You must register by 11:59pm on Tuesday 14 June.", "src_id": "r-webp1-0094", "dsl": "dt >06-14 23:59"}
+{"id": "ty0138", "text": "eod friday", "src_id": "r-t1-0049", "dsl": "d fr"}
+{"id": "ty0139", "text": "tomorrow at noon for an hour and a half", "src_id": "r-v2t1-0059", "dsl": "dt +1d 12:00>+90m"}
+{"id": "ty0140", "text": "until friday morning", "src_id": "r-v2t0-0367", "dsl": "d >fr"}
+{"id": "ty0141", "text": "hillary clintoo sep 13, 2013", "src_id": "r-web4p1-0231", "dsl": "d 2013-09-13"}
+{"id": "ty0142", "text": "Jan 1,2010", "src_id": "r-webp3-0186", "dsl": "d 2010-01-01"}
+{"id": "ty0143", "text": "Reminder, your Zoom therapy session is today at 4:00pm (50 min)", "src_id": "r-ht0-0039", "dsl": "dt +0d 16:00"}
+{"id": "ty0144", "text": "4 October 1957", "src_id": "r-web4p1-0261", "dsl": "d 1957-10-04"}
+{"id": "ty0145", "text": "weekdays in june", "src_id": "r-taxt0-0253", "dsl": "d R d/1 mo,tu,we,th,fr uM@06 sM@06"}
+{"id": "ty0146", "text": "nxt 4 mon", "src_id": "r-taxt0-0300", "dsl": "d mo+1,mo+2,mo+3,mo+4"}
+{"id": "ty0147", "text": "the tenth of the month", "src_id": "r-webp2-0220", "dsl": "d D@10"}
+{"id": "ty0148", "text": "2nd and 4th friday each month", "src_id": "r-taxt0-0251", "dsl": "d R m/1 fr#2,fr#4"}
+{"id": "ty0149", "text": "tomorrow evening", "src_id": "r-t0-0139", "dsl": "d +1d"}
+{"id": "ty0150", "text": "around next tuesday", "src_id": "r-webp1-0219", "dsl": "d tu+1"}
+{"id": "ty0151", "text": "the 30th of this month", "src_id": "r-web4p2-0211", "dsl": "d D@30"}
+{"id": "ty0152", "text": "from jan 5 on", "src_id": "r-v2d0039", "dsl": "d 01-05>"}
+{"id": "ty0153", "text": "aug 11 - 15", "src_id": "r-t1-0294", "dsl": "d 08-11>08-15"}
+{"id": "ty0154", "text": "everyday for 3 weeks", "src_id": "r-webp0-0082", "dsl": "d R d/1 n21"}
+{"id": "ty0155", "text": "the last day of february next year", "src_id": "r-ht1-0024", "dsl": "d 2027-02-28"}
+{"id": "ty0156", "text": "Fri, 09 Sep 2005 13:51:39 -0700", "src_id": "r-web4p2-0244", "dsl": "dt 2005-09-09 13:51"}
+{"id": "ty0157", "text": "today 3:30-5PM", "src_id": "r-web4p1-0219", "dsl": "dt +0d 15:30>17:00"}
+{"id": "ty0158", "text": "noon tomorrow", "src_id": "r-v2t1-0102", "dsl": "dt +1d 12:00"}
+{"id": "ty0159", "text": "every day in 2027 except sundays", "src_id": "r-taxd0184", "dsl": "d R d/1 mo,tu,we,th,fr,sa uY@2027 sY@2027"}
+{"id": "ty0160", "text": "from monday on", "src_id": "r-v2t0-0044", "dsl": "d mo>"}
+{"id": "ty0161", "text": "every day of the trial except wednesdays", "src_id": "r-taxt1-0158", "dsl": "d R d/1 mo,tu,th,fr,sa,su"}
+{"id": "ty0162", "text": "weekdays but skip friday", "src_id": "r-taxt1-0179", "dsl": "d R d/1 mo,tu,we,th"}
+{"id": "ty0163", "text": "in a couple weeks", "src_id": "r-t1-0038", "dsl": "d +2w"}
+{"id": "ty0164", "text": "nine-thirty am monday", "src_id": "r-ht0-0057", "dsl": "dt mo 09:30"}
+{"id": "ty0165", "text": "tomorrow 9am for 90 minutes, workshop with the vendors", "src_id": "r-v2t0-0149", "dsl": "dt +1d 09:00>+90m"}
+{"id": "ty0166", "text": "sundey at noon", "src_id": "r-ht1-0266", "dsl": "dt su 12:00"}
+{"id": "ty0167", "text": "mon 9 to 1", "src_id": "r-t1-0087", "dsl": "dt mo 9?>1?"}
+{"id": "ty0168", "text": "remind me tomorrow morning to [action]", "src_id": "r-webp1-0054", "dsl": "d +1d"}
+{"id": "ty0169", "text": "Water plants @every 2 fridays", "src_id": "r-web5p0-0079", "dsl": "d R w/2 fr"}
+{"id": "ty0170", "text": "@10 fri", "src_id": "r-web5p0-0145", "dsl": "dt fr 10?"}
+{"id": "ty0171", "text": "he said hes free until 5 on saturday", "src_id": "r-v2d0022", "dsl": "dt >sa 5?"}
+{"id": "ty0172", "text": "rent due on the 1st every month", "src_id": "r-t1-0240", "dsl": "d R m/1 d1"}
+{"id": "ty0173", "text": "can you pick up the kids before 3pm tomorrow", "src_id": "r-v2t1-0006", "dsl": "dt >+1d 15:00"}
+{"id": "ty0174", "text": "Flight AA 212 leaves at 7:05am on sunday", "src_id": "r-v2t0-0301", "dsl": "dt su 07:05"}
+{"id": "ty0175", "text": "ea. weekday 8:55am", "src_id": "r-ht0-0386", "dsl": "dt R d/1 mo,tu,we,th,fr 08:55"}
+{"id": "ty0176", "text": "Last day of July", "src_id": "r-web4p2-0154", "dsl": "d 07-31"}
+{"id": "ty0177", "text": "the last day of february 1999", "src_id": "r-web4p2-0005", "dsl": "d 1999-02-28"}
+{"id": "ty0178", "text": "29/Mar/2010", "src_id": "r-web4p1-0228", "dsl": "d 2010-03-29"}
+{"id": "ty0179", "text": "What time is the GSW game on tonight?", "src_id": "r-web5p0-0023", "dsl": "d +0d"}
+{"id": "ty0180", "text": "picnic jun 2 and jun 9", "src_id": "r-taxt1-0034", "dsl": "d 06-02,06-09"}
+{"id": "ty0181", "text": "this noon", "src_id": "r-webp2-0143", "dsl": "t 12:00"}
+{"id": "ty0182", "text": "fri   4pm", "src_id": "r-t1-0074", "dsl": "dt fr 16:00"}
+{"id": "ty0183", "text": "every other day over the past 2 weeks", "src_id": "r-taxt0-0335", "dsl": "d R d/2 u+0d s-2w"}
+{"id": "ty0184", "text": "weekdays in 2027", "src_id": "r-taxt0-0316", "dsl": "d R d/1 mo,tu,we,th,fr u2027-12-31 s2027-01-01"}
+{"id": "ty0185", "text": "16 Dec, 2010", "src_id": "r-web4p1-0088", "dsl": "d 2010-12-16"}
+{"id": "ty0186", "text": "in next tuesday at 14:00", "src_id": "r-web4p1-0033", "dsl": "dt tu+1 14:00"}
+{"id": "ty0187", "text": "Last Monday in October", "src_id": "r-webp1-0068", "dsl": "d mo#-1@10"}
+{"id": "ty0188", "text": "every April and December on the 1st and 24th", "src_id": "r-webp1-0087", "dsl": "d R m/1 d1,d24 M@04,M@12"}
+{"id": "ty0189", "text": "four a.m. monday", "src_id": "r-ht1-0196", "dsl": "dt mo 04:00"}
+{"id": "ty0190", "text": "Cleaners will visit every other Thursday at 9 AM starting Nov 5", "src_id": "r-ht0-0301", "dsl": "dt R w/2 th 09:00 s11-05"}
+{"id": "ty0191", "text": "the 2 days after thanksgiving", "src_id": "r-taxt1-0272", "dsl": "d th#4@11~+1d,th#4@11~+2d"}
+{"id": "ty0192", "text": "show me the next 3 saturdays", "src_id": "r-taxt1-0176", "dsl": "d sa+1,sa+2,sa+3"}
+{"id": "ty0193", "text": "Meeting with Fred tomorrow at 5p", "src_id": "r-web4p0-0373", "dsl": "dt +1d 17:00"}
+{"id": "ty0194", "text": "sat arvo", "src_id": "r-t1-0370", "dsl": "d sa"}
+{"id": "ty0195", "text": "September 7: Labor Day", "src_id": "r-web6p0-0197", "dsl": "d 09-07"}
+{"id": "ty0196", "text": "the next monday", "src_id": "r-taxd0181", "dsl": "d mo+1"}
+{"id": "ty0197", "text": "in next tuesday at 2p", "src_id": "r-web4p0-0266", "dsl": "dt tu+1 14:00"}
+{"id": "ty0198", "text": "Your pass expires at midnight on Sunday, Nov 15", "src_id": "r-ht1-0188", "dsl": "dt 11-15 00:00"}
+{"id": "ty0199", "text": "through thursday", "src_id": "r-v2t0-0177", "dsl": "d >th"}
+{"id": "ty0200", "text": "Team lunch friday 12:30 for 1 hour, my treat", "src_id": "r-v2t0-0285", "dsl": "dt fr 12:30?>+1h"}
+{"id": "ty0201", "text": "Family vacation from August 9-18", "src_id": "r-webp1-0333", "dsl": "d 08-09>08-18"}
+{"id": "ty0202", "text": "next 3 sat and sun", "src_id": "r-taxt1-0247", "dsl": "d sa+1,su+1,sa+2,su+2,sa+3,su+3"}
+{"id": "ty0203", "text": "the next 4 mondays", "src_id": "r-taxt0-0024", "dsl": "d mo+1,mo+2,mo+3,mo+4"}
+{"id": "ty0204", "text": "monday of next week at 7:05", "src_id": "r-ht0-0000", "dsl": "dt mo+1 7:05?"}
+{"id": "ty0205", "text": "every friday at 12", "src_id": "r-web4p0-0335", "dsl": "dt R w/1 fr 12?"}
+{"id": "ty0206", "text": "four working days from tue", "src_id": "r-taxt0-0231", "dsl": "d tu~+4b"}
+{"id": "ty0207", "text": "Sept. 5th", "src_id": "r-web4p1-0211", "dsl": "d 09-05"}
+{"id": "ty0208", "text": "jan 15 or january 15", "src_id": "r-webp3-0180", "dsl": "d 01-15"}
+{"id": "ty0209", "text": "October 30, 2026", "src_id": "r-webp3-0104", "dsl": "d 2026-10-30"}
+{"id": "ty0210", "text": "pls block 3pm for 2 hours today for the workshop", "src_id": "r-v2t0-0222", "dsl": "dt +0d 15:00>+2h"}
+{"id": "ty0211", "text": "the 10th of this month at nine pm", "src_id": "r-ht1-0246", "dsl": "dt 11-10 21:00"}
+{"id": "ty0212", "text": "sunrise shoot tmrw 5:50am", "src_id": "r-t1-0329", "dsl": "dt +1d 05:50"}
+{"id": "ty0213", "text": "every other tuesday at 3pm until august", "src_id": "r-taxd0068", "dsl": "dt R w/2 tu uM@08 15:00"}
+{"id": "ty0214", "text": "every day except fri and sat", "src_id": "r-taxt1-0264", "dsl": "d R d/1 mo,tu,we,th,su"}
+{"id": "ty0215", "text": "sept 9 thru 13", "src_id": "r-t2-0038", "dsl": "d 09-09>09-13"}
+{"id": "ty0216", "text": "1200 days ago", "src_id": "r-web4p0-0015", "dsl": "d -1200d"}
+{"id": "ty0217", "text": "30 Dec 2011 7pm EDT", "src_id": "r-web4p2-0051", "dsl": "dt 2011-12-30 19:00"}
+{"id": "ty0218", "text": "Monday 26 October to Friday 30 October 2026", "src_id": "r-web6p0-0088", "dsl": "d 2026-10-26>2026-10-30"}
+{"id": "ty0219", "text": "every tue 9pm", "src_id": "r-webp1-0207", "dsl": "dt R w/1 tu 21:00"}
+{"id": "ty0220", "text": "wed morn", "src_id": "r-ht1-0168", "dsl": "d we"}
+{"id": "ty0221", "text": "w/ dr smith thurs 2pm", "src_id": "r-t0-0167", "dsl": "dt th 14:00"}
+{"id": "ty0222", "text": "the preceding 3 weekdays", "src_id": "r-taxt1-0224", "dsl": "d -1b,-2b,-3b"}
+{"id": "ty0223", "text": "fiber install is the 11th, sometime after noon", "src_id": "r-v2t0-0366", "dsl": "dt D@11 12:00>"}
+{"id": "ty0224", "text": "wed 12 nov 1pm", "src_id": "r-t1-0120", "dsl": "dt 11-12 13:00"}
+{"id": "ty0225", "text": "mon9am", "src_id": "r-t1-0127", "dsl": "dt mo 09:00"}
+{"id": "ty0226", "text": "Wed., Jan 6 2016 at 10:13AM", "src_id": "r-webp2-0314", "dsl": "dt 2016-01-06 10:13"}
+{"id": "ty0227", "text": "maybe monday morning, like 9:30?", "src_id": "r-ht1-0134", "dsl": "dt mo 09:30"}
+{"id": "ty0228", "text": "can you show me weekends since october thx", "src_id": "r-taxt1-0356", "dsl": "d R w/1 sa,su u+0d sM@10<"}
+{"id": "ty0229", "text": "remind me tomorrow at half past seven", "src_id": "r-ht1-0126", "dsl": "dt +1d 7:30?"}
+{"id": "ty0230", "text": "every week on Tuesday, Friday", "src_id": "r-webp0-0179", "dsl": "d R w/1 tu,fr"}
+{"id": "ty0231", "text": "Dinner at 7 on thursday, wear something nice", "src_id": "r-v2t1-0108", "dsl": "dt th 7?"}
+{"id": "ty0232", "text": "march 14 at 2pm", "src_id": "r-v2t0-0394", "dsl": "dt 03-14 14:00"}
+{"id": "ty0233", "text": "\"Submit assignment this Friday\"", "src_id": "r-web5p0-0003", "dsl": "d fr"}
+{"id": "ty0234", "text": "flight leaves 6:05a sat", "src_id": "r-ht1-0233", "dsl": "dt sa 06:05"}
+{"id": "ty0235", "text": "parent teacher conf oct 14 and oct 16", "src_id": "r-taxt0-0119", "dsl": "d 10-14,10-16"}
+{"id": "ty0236", "text": "following Monday", "src_id": "r-webp2-0086", "dsl": "d mo+1"}
+{"id": "ty0237", "text": "/remind monday X", "src_id": "r-web5p0-0044", "dsl": "d mo"}
+{"id": "ty0238", "text": "Lecture series: Thursdays at 5:30 PM, Jan 14 through Feb 25, Hall B", "src_id": "r-ht0-0031", "dsl": "dt R w/1 th u02-25 17:30 s01-14"}
+{"id": "ty0239", "text": "next tues at 12:30pm", "src_id": "r-t1-0058", "dsl": "dt tu+1 12:30"}
+{"id": "ty0240", "text": "every feb on wednesdays", "src_id": "r-taxt1-0293", "dsl": "d R w/1 we M@02"}
+{"id": "ty0241", "text": "2 days after my birthday on aug 9", "src_id": "r-taxt0-0137", "dsl": "d 08-09~+2d"}
+{"id": "ty0242", "text": "filing deadline nov 20", "src_id": "r-t0-0322", "dsl": "d 11-20"}
+{"id": "ty0243", "text": "this friday coming 4pm", "src_id": "r-t1-0345", "dsl": "dt fr 16:00"}
+{"id": "ty0244", "text": "weekdays over the next 2 weeks", "src_id": "r-taxt1-0123", "dsl": "d R d/1 mo,tu,we,th,fr u+2w s+0d"}
+{"id": "ty0245", "text": "-2 days", "src_id": "r-web6p0-0180", "dsl": "d -2d"}
+{"id": "ty0246", "text": "over the next 90 days", "src_id": "r-taxd0090", "dsl": "d +0d>+90d"}
+{"id": "ty0247", "text": "January 19: Martin Luther King, Jr. Day", "src_id": "r-web6p0-0112", "dsl": "d 01-19"}
+{"id": "ty0248", "text": "What's the weather next Thursday?", "src_id": "r-web5p0-0028", "dsl": "d th+1"}
+{"id": "ty0249", "text": "Call with investor Thursday at 4pm for 45 minutes", "src_id": "r-webp3-0096", "dsl": "dt th 16:00>+45m"}
+{"id": "ty0250", "text": "from 9 to 11 on saturday", "src_id": "r-ht0-0342", "dsl": "dt sa 9?>11?"}
+{"id": "ty0251", "text": "every april on thursdays", "src_id": "r-taxt1-0026", "dsl": "d R w/1 th M@04"}
+{"id": "ty0252", "text": "rota for week beginning 10th november", "src_id": "r-t0-0022", "dsl": "d 11-10"}
+{"id": "ty0253", "text": "monday early in the morning", "src_id": "r-web4p0-0246", "dsl": "d mo"}
+{"id": "ty0254", "text": "every sat in march", "src_id": "r-taxt0-0332", "dsl": "d R w/1 sa uM@03 sM@03"}
+{"id": "ty0255", "text": "twelve noon", "src_id": "r-t0-0102", "dsl": "t 12:00"}
+{"id": "ty0256", "text": "every January on the 15th", "src_id": "r-webp2-0045", "dsl": "d R m/1 d15 M@01"}
+{"id": "ty0257", "text": "13 March 2026, Friday", "src_id": "r-web6p0-0114", "dsl": "d 2026-03-13"}
+{"id": "ty0258", "text": "Every Monday and Wednesday at 4:30 PM", "src_id": "r-t0-0064", "dsl": "dt R w/1 mo,we 16:30"}
+{"id": "ty0259", "text": "mondays for the next 6 weeks", "src_id": "r-taxt1-0039", "dsl": "d R w/1 mo u+6w s+0d"}
+{"id": "ty0260", "text": "new tasks every two days at 19:00", "src_id": "r-web4p1-0137", "dsl": "dt R d/2 19:00"}
+{"id": "ty0261", "text": "Construction on elm st starts nov 1", "src_id": "r-v2d0063", "dsl": "d 11-01"}
+{"id": "ty0262", "text": "next monday at 10", "src_id": "r-taxt1-0167", "dsl": "dt mo+1 10?"}
+{"id": "ty0263", "text": "7th of December", "src_id": "r-web4p0-0395", "dsl": "d 12-07"}
+{"id": "ty0264", "text": "pls reply by 5pm today", "src_id": "r-v2t1-0013", "dsl": "dt >+0d 17:00"}
+{"id": "ty0265", "text": "twenty past eight tonight", "src_id": "r-ht0-0267", "dsl": "dt +0d 20:20"}
+{"id": "ty0266", "text": "june 21 2027", "src_id": "r-t1-0104", "dsl": "d 2027-06-21"}
+{"id": "ty0267", "text": "pls remind me about the farrier on fri at 8am", "src_id": "r-t0-0236", "dsl": "dt fr 08:00"}
+{"id": "ty0268", "text": "could we do wed the 18th 3ish?", "src_id": "r-ht1-0309", "dsl": "dt 11-18 3?"}
+{"id": "ty0269", "text": "1st of september", "src_id": "r-webp0-0118", "dsl": "d 09-01"}
+{"id": "ty0270", "text": "english homework due wednesday", "src_id": "r-web5p0-0066", "dsl": "d we"}
+{"id": "ty0271", "text": "8 am tomorrow", "src_id": "r-webp0-0226", "dsl": "dt +1d 08:00"}
+{"id": "ty0272", "text": "Every other week on Fri and Mon", "src_id": "r-web4p0-0024", "dsl": "d R w/2 mo,fr"}
+{"id": "ty0273", "text": "dentist 3pm (1hr) thursday", "src_id": "r-v2t1-0011", "dsl": "dt th 15:00>+1h"}
+{"id": "ty0274", "text": "on the 5th at 2pm for 2 hours", "src_id": "r-v2t0-0305", "dsl": "dt D@05 14:00>+2h"}
+{"id": "ty0275", "text": "fourth quarter this year", "src_id": "r-taxt0-0017", "dsl": "d Q@4"}
+{"id": "ty0276", "text": "take out the garbage every tuesday", "src_id": "r-web4p0-0326", "dsl": "d R w/1 tu"}
+{"id": "ty0277", "text": "November 3, 2026", "src_id": "r-webp0-0324", "dsl": "d 2026-11-03"}
+{"id": "ty0278", "text": "next 12 tuesdays", "src_id": "r-taxt1-0252", "dsl": "d tu+1,tu+2,tu+3,tu+4,tu+5,tu+6,tu+7,tu+8,tu+9,tu+10,tu+11,tu+12"}
+{"id": "ty0279", "text": "5pm August 25, 2006", "src_id": "r-web4p0-0203", "dsl": "dt 2006-08-25 17:00"}
+{"id": "ty0280", "text": "jul 14-21", "src_id": "r-t1-0204", "dsl": "d 07-14>07-21"}
+{"id": "ty0281", "text": "before dec 25", "src_id": "r-v2d0095", "dsl": "d >12-25"}
+{"id": "ty0282", "text": "twenty-eight minutes to seven", "src_id": "r-webp3-0135", "dsl": "t 6:32?"}
+{"id": "ty0283", "text": "every 28 days", "src_id": "r-webp2-0270", "dsl": "d R d/28"}
+{"id": "ty0284", "text": "Your package from Zappos is scheduled to arrive on or before Nov 18", "src_id": "r-ht0-0196", "dsl": "d 11-18"}
+{"id": "ty0285", "text": "every other month", "src_id": "r-webp3-0136", "dsl": "d R m/2"}
+{"id": "ty0286", "text": "last 14 days", "src_id": "r-web4p0-0084", "dsl": "d -14d>+0d"}
+{"id": "ty0287", "text": "can you put me down for the second saturday in december", "src_id": "r-t0-0105", "dsl": "d sa#2@12"}
+{"id": "ty0288", "text": "thurzday afternoon", "src_id": "r-t1-0238", "dsl": "d th"}
+{"id": "ty0289", "text": "everyday besides mondays", "src_id": "r-taxt1-0259", "dsl": "d R d/1 tu,we,th,fr,sa,su"}
+{"id": "ty0290", "text": "a month after feb 14", "src_id": "r-taxt1-0174", "dsl": "d 02-14~+1m"}
+{"id": "ty0291", "text": "July 4, 1976 12:01:02 am", "src_id": "r-webp3-0167", "dsl": "dt 1976-07-04 00:01"}
+{"id": "ty0292", "text": "team standup every tuesday at 10", "src_id": "r-v2t0-0344", "dsl": "dt R w/1 tu 10?"}
+{"id": "ty0293", "text": "at 10:30 pst today", "src_id": "r-web4p0-0327", "dsl": "dt +0d 10:30?"}
+{"id": "ty0294", "text": "staff training the day before thanksgiving", "src_id": "r-taxd0018", "dsl": "d th#4@11~-1d"}
+{"id": "ty0295", "text": "each sunday evening", "src_id": "r-ht1-0098", "dsl": "d R w/1 su"}
+{"id": "ty0296", "text": "Monday 7 September to Friday 23 October", "src_id": "r-web6p0-0074", "dsl": "d 09-07>10-23"}
+{"id": "ty0297", "text": "in about 10 days", "src_id": "r-ht1-0293", "dsl": "d +10d"}
+{"id": "ty0298", "text": "3 months after jan 15", "src_id": "r-taxt0-0096", "dsl": "d 01-15~+3m"}
+{"id": "ty0299", "text": "jan 1 to jan 7", "src_id": "r-taxt0-0144", "dsl": "d 01-01>01-07"}
+{"id": "ty0300", "text": "next friday at 9am", "src_id": "r-web4p0-0161", "dsl": "dt fr+1 09:00"}
+{"id": "ty0301", "text": "Walk-in hours for the notary: Wednesdays 1-3 PM, county annex building", "src_id": "r-ht0-0209", "dsl": "dt R w/1 we 13:00>15:00"}
+{"id": "ty0302", "text": "3 weeks from tomorrow", "src_id": "r-webp2-0283", "dsl": "d +22d"}
+{"id": "ty0303", "text": "at 20 december", "src_id": "r-web6p0-0259", "dsl": "d 12-20"}
+{"id": "ty0304", "text": "every weekday besides thurs", "src_id": "r-taxt1-0389", "dsl": "d R d/1 mo,tu,we,fr"}
+{"id": "ty0305", "text": "back in the office after oct 5", "src_id": "r-v2d0099", "dsl": "d 10-05>"}
+{"id": "ty0306", "text": "every twentieth", "src_id": "r-v2t0-0263", "dsl": "d R m/1 d20"}
+{"id": "ty0307", "text": "weekends over the last 6 months", "src_id": "r-taxt1-0197", "dsl": "d R w/1 sa,su u+0d s-6m"}
+{"id": "ty0308", "text": "trailer goes live dec 1", "src_id": "r-t0-0070", "dsl": "d 12-01"}
+{"id": "ty0309", "text": "ten past eight tonight", "src_id": "r-t0-0311", "dsl": "dt +0d 20:10"}
+{"id": "ty0310", "text": "from monday to friday", "src_id": "r-taxt0-0076", "dsl": "d mo>fr"}
+{"id": "ty0311", "text": "leg day mondays for the next 3 months", "src_id": "r-taxt0-0375", "dsl": "d R w/1 mo u+3m s+0d"}
+{"id": "ty0312", "text": "every fifteenth", "src_id": "r-v2t1-0001", "dsl": "d R m/1 d15"}
+{"id": "ty0313", "text": "the 2nd saturday of every month", "src_id": "r-ht1-0003", "dsl": "d R m/1 sa#2"}
+{"id": "ty0314", "text": "January 12, 2012 10:00 PM EST", "src_id": "r-webp3-0217", "dsl": "dt 2012-01-12 22:00"}
+{"id": "ty0315", "text": "next 2 sundays", "src_id": "r-taxt0-0206", "dsl": "d su+1,su+2"}
+{"id": "ty0316", "text": "Saturday, December 10, 2011 3:20:42 PM", "src_id": "r-web4p0-0043", "dsl": "dt 2011-12-10 15:20"}
+{"id": "ty0317", "text": "standup every day at nine fifteen", "src_id": "r-t1-0053", "dsl": "dt R d/1 9:15?"}
+{"id": "ty0318", "text": "the next 4 saturdays from now", "src_id": "r-taxt1-0163", "dsl": "d sa+1,sa+2,sa+3,sa+4"}
+{"id": "ty0319", "text": "ea. fri 4:30", "src_id": "r-ht0-0372", "dsl": "dt R w/1 fr 4:30?"}
+{"id": "ty0320", "text": "holiday is on 3rd Monday in February", "src_id": "r-webp1-0361", "dsl": "d mo#3@02"}
+{"id": "ty0321", "text": "2 days b4 oct 31", "src_id": "r-taxt1-0147", "dsl": "d 10-31~-2d"}
+{"id": "ty0322", "text": "feb 3 2 pm", "src_id": "r-t2-0048", "dsl": "dt 02-03 14:00"}
+{"id": "ty0323", "text": "at five for half an hour", "src_id": "r-v2t0-0142", "dsl": "t 5?>+30m"}
+{"id": "ty0324", "text": "from now to month end", "src_id": "r-taxt1-0230", "dsl": "d +0d>M+0"}
+{"id": "ty0325", "text": "nxt wk mon", "src_id": "r-t0-0016", "dsl": "d mo+1"}
+{"id": "ty0326", "text": "Second Sunday in March at 02:00", "src_id": "r-webp3-0118", "dsl": "dt su#2@03 02:00"}
+{"id": "ty0327", "text": "2 weeks ago at 8am", "src_id": "r-web6p0-0084", "dsl": "dt -2w 08:00"}
+{"id": "ty0328", "text": "Oct 2 to oct 5 vacation", "src_id": "r-v2t0-0187", "dsl": "d 10-02>10-05"}
+{"id": "ty0329", "text": "meeting wed", "src_id": "r-v2t0-0146", "dsl": "d we"}
+{"id": "ty0330", "text": "evening@6pm", "src_id": "r-webp2-0265", "dsl": "t 18:00"}
+{"id": "ty0331", "text": "Book club meets the last Thursday of every month at 7pm at Judy's", "src_id": "r-ht0-0137", "dsl": "dt R m/1 th#-1 19:00"}
+{"id": "ty0332", "text": "Oct 14, 1983, 1:30:23 PM", "src_id": "r-webp1-0369", "dsl": "dt 1983-10-14 13:30"}
+{"id": "ty0333", "text": "next july", "src_id": "r-ht1-0155", "dsl": "d M@07"}
+{"id": "ty0334", "text": "5 January 2027", "src_id": "r-web6p0-0059", "dsl": "d 2027-01-05"}
+{"id": "ty0335", "text": "today at midday", "src_id": "r-web4p1-0308", "dsl": "dt +0d 12:00"}
+{"id": "ty0336", "text": "the 15th of this month", "src_id": "r-v2t0-0129", "dsl": "d D@15"}
+{"id": "ty0337", "text": "12am tonight", "src_id": "r-t0-0339", "dsl": "dt +0d 00:00"}
+{"id": "ty0338", "text": "every sunday at 4", "src_id": "r-t0-0228", "dsl": "dt R w/1 su 4?"}
+{"id": "ty0339", "text": "tomorrow 3am", "src_id": "r-web4p0-0290", "dsl": "dt +1d 03:00"}
+{"id": "ty0340", "text": "conditioning every morning 6 to 7", "src_id": "r-t1-0304", "dsl": "dt R d/1 06:00>07:00"}
+{"id": "ty0341", "text": "meeting tomorrow at 3 lasting 2 hours", "src_id": "r-v2t0-0275", "dsl": "dt +1d 3?>+2h"}
+{"id": "ty0342", "text": "nine thirty tomorrow", "src_id": "r-ht0-0004", "dsl": "dt +1d 9:30?"}
+{"id": "ty0343", "text": "fri sat sun", "src_id": "r-taxt1-0122", "dsl": "d fr,sa,su"}
+{"id": "ty0344", "text": "every other day starting May 1 2021", "src_id": "r-webp2-0214", "dsl": "d R d/2 s2021-05-01"}
+{"id": "ty0345", "text": "every tuesday until november 30", "src_id": "r-taxd0057", "dsl": "d R w/1 tu u11-30"}
+{"id": "ty0346", "text": "every other tuesday until christmas", "src_id": "r-taxt1-0347", "dsl": "d R w/2 tu u12-25"}
+{"id": "ty0347", "text": "every fourth of the month from jan 1 2010 to dec 25th 2020", "src_id": "r-webp1-0278", "dsl": "d R m/1 d4 u2020-12-25 s2010-01-01"}
+{"id": "ty0348", "text": "lst 3 fridays", "src_id": "r-taxt0-0275", "dsl": "d fr-1,fr-2,fr-3"}
+{"id": "ty0349", "text": "every wednesday at six pm", "src_id": "r-t2-0015", "dsl": "dt R w/1 we 18:00"}
+{"id": "ty0350", "text": "nov 3, nov 10, nov 17", "src_id": "r-taxt1-0094", "dsl": "d 11-03,11-10,11-17"}
+{"id": "ty0351", "text": "mwf next week", "src_id": "r-taxt1-0283", "dsl": "d R w/1 mo,we,fr uW+1 sW+1"}
+{"id": "ty0352", "text": "dec 20 - jan 3", "src_id": "r-taxt0-0029", "dsl": "d 12-20>01-03"}
+{"id": "ty0353", "text": "Hey it's Mia, can you do thurs 3pm for an hour", "src_id": "r-v2t1-0055", "dsl": "dt th 15:00>+1h"}
+{"id": "ty0354", "text": "julio 5, 2015 en 1:04 pm", "src_id": "r-web4p0-0369", "dsl": "dt 2015-07-05 13:04"}
+{"id": "ty0355", "text": "FW: Fwd: Meeting moved to Tuesday, November 10, 3:00-4:00 PM (Conf A)", "src_id": "r-ht1-0036", "dsl": "dt 11-10 15:00>16:00"}
+{"id": "ty0356", "text": "last 2 days", "src_id": "r-webp3-0115", "dsl": "d -2d>+0d"}
+{"id": "ty0357", "text": "the monday after next monday", "src_id": "r-web4p2-0172", "dsl": "d mo+2"}
+{"id": "ty0358", "text": "Your confirmation number is 3028 for saturday at noon", "src_id": "r-v2t0-0339", "dsl": "dt sa 12:00"}
+{"id": "ty0359", "text": "1 apr 2027", "src_id": "r-ht1-0244", "dsl": "d 2027-04-01"}
+{"id": "ty0360", "text": "eight p.m. thursday", "src_id": "r-ht1-0052", "dsl": "dt th 20:00"}
+{"id": "ty0361", "text": "dec25", "src_id": "r-t1-0079", "dsl": "d 12-25"}
+{"id": "ty0362", "text": "Your package is out for delivery and should arrive today by 8:00 PM", "src_id": "r-ht1-0298", "dsl": "dt +0d 20:00"}
+{"id": "ty0363", "text": "13 Septiembre, 2014", "src_id": "r-web4p2-0156", "dsl": "d 2014-09-13"}
+{"id": "ty0364", "text": "the pharmacy says your prescription will be ready after 4pm today", "src_id": "r-v2t0-0034", "dsl": "dt +0d 16:00>"}
+{"id": "ty0365", "text": "tomorrow nine am for ninety minutes", "src_id": "r-v2t0-0195", "dsl": "dt +1d 09:00>+90m"}
+{"id": "ty0366", "text": "Friday, December 04, 2015 9:00 AM", "src_id": "r-web5p0-0011", "dsl": "dt 2015-12-04 09:00"}
+{"id": "ty0367", "text": "12th March 2010", "src_id": "r-webp0-0085", "dsl": "d 2010-03-12"}
+{"id": "ty0368", "text": "Lunch with John on Friday at 1pm", "src_id": "r-webp2-0164", "dsl": "dt fr 13:00"}
+{"id": "ty0369", "text": "Monday December 4, 1995", "src_id": "r-web4p2-0034", "dsl": "d 1995-12-04"}
+{"id": "ty0370", "text": "Every month on the 4th", "src_id": "r-webp1-0106", "dsl": "d R m/1 d4"}
+{"id": "ty0371", "text": "Calendar invite: Offsite planning thurs 9am for 3 hours", "src_id": "r-v2t0-0392", "dsl": "dt th 09:00>+3h"}
+{"id": "ty0372", "text": "fortnightly on a tuesday", "src_id": "r-t1-0170", "dsl": "d R w/2 tu"}
+{"id": "ty0373", "text": "meeting on Tuesday, 3/29", "src_id": "r-web4p0-0167", "dsl": "d 03-29"}
+{"id": "ty0374", "text": "first tues in dec at 6pm", "src_id": "r-ht0-0238", "dsl": "dt tu#1@12 18:00"}
+{"id": "ty0375", "text": "What is the data since last monday", "src_id": "r-web4p1-0039", "dsl": "d mo-1>"}
+{"id": "ty0376", "text": "standup every weekday at 9:15", "src_id": "r-t0-0025", "dsl": "dt R d/1 mo,tu,we,th,fr 9:15?"}
+{"id": "ty0377", "text": "mon 9 an", "src_id": "r-t1-0036", "dsl": "dt mo 9?"}
+{"id": "ty0378", "text": "Go to the doctor's tomorrow", "src_id": "r-web4p1-0185", "dsl": "d +1d"}
+{"id": "ty0379", "text": "1995-Mar-25, Saturday", "src_id": "r-webp0-0177", "dsl": "d 1995-03-25"}
+{"id": "ty0380", "text": "weekdays over the last 90 days", "src_id": "r-taxt1-0341", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-90d"}
+{"id": "ty0381", "text": "Pay credit card every 28th", "src_id": "r-webp3-0228", "dsl": "d R m/1 d28"}
+{"id": "ty0382", "text": "remind me this evening", "src_id": "r-webp1-0327", "dsl": "d +0d"}
+{"id": "ty0383", "text": "rest of the year", "src_id": "r-taxt1-0172", "dsl": "d +0d>Y+0"}
+{"id": "ty0384", "text": "week before nov 9", "src_id": "r-taxt1-0067", "dsl": "d 11-09~-1w"}
+{"id": "ty0385", "text": "the day after the 31st", "src_id": "r-taxt1-0239", "dsl": "d D@31~+1d"}
+{"id": "ty0386", "text": "wedding rehearsal june 12 at 5", "src_id": "r-t0-0131", "dsl": "dt 06-12 5?"}
+{"id": "ty0387", "text": "next April 1", "src_id": "r-webp0-0023", "dsl": "d 04-01"}
+{"id": "ty0388", "text": "sat   10am", "src_id": "r-t0-0028", "dsl": "dt sa 10:00"}
+{"id": "ty0389", "text": "tonight at 815", "src_id": "r-web4p0-0372", "dsl": "dt +0d 20:15"}
+{"id": "ty0390", "text": "Jan 1 2999", "src_id": "r-web4p2-0221", "dsl": "d 2999-01-01"}
+{"id": "ty0391", "text": "every 2 weeks starting 3 January", "src_id": "r-webp2-0033", "dsl": "d R w/2 s01-03"}
+{"id": "ty0392", "text": "weekdays over the coming 3 weeks", "src_id": "r-taxt0-0190", "dsl": "d R d/1 mo,tu,we,th,fr u+3w s+0d"}
+{"id": "ty0393", "text": "in the coming week", "src_id": "r-taxd0001", "dsl": "d W+1"}
+{"id": "ty0394", "text": "in three weeks' time", "src_id": "r-webp3-0194", "dsl": "d +3w"}
+{"id": "ty0395", "text": "every other friday for 5 times", "src_id": "r-webp1-0271", "dsl": "d R w/2 fr n5"}
+{"id": "ty0396", "text": "weekends this month at 10am", "src_id": "r-taxt1-0188", "dsl": "dt R w/1 sa,su uM+0 10:00 sM+0"}
+{"id": "ty0397", "text": "December 4 1995", "src_id": "r-web4p0-0164", "dsl": "d 1995-12-04"}
+{"id": "ty0398", "text": "Sun 9am.", "src_id": "r-web4p0-0386", "dsl": "dt su 09:00"}
+{"id": "ty0399", "text": "trip window next 10 days", "src_id": "r-taxt1-0388", "dsl": "d +0d>+10d"}
+{"id": "ty0400", "text": "each sat at 10 for 6 weeks", "src_id": "r-t2-0053", "dsl": "dt R w/1 sa n6 10?"}
+{"id": "ty0401", "text": "term time mondays each january", "src_id": "r-taxt1-0308", "dsl": "d R w/1 mo M@01"}
+{"id": "ty0402", "text": "3rd thursday this september", "src_id": "r-webp2-0108", "dsl": "d th#3@09"}
+{"id": "ty0403", "text": "in 3 days at noon", "src_id": "r-t0-0309", "dsl": "dt +3d 12:00"}
+{"id": "ty0404", "text": "nxt thurs at 1", "src_id": "r-t1-0083", "dsl": "dt th+1 1?"}
+{"id": "ty0405", "text": "on Saturday for 9am", "src_id": "r-webp2-0197", "dsl": "dt sa 09:00"}
+{"id": "ty0406", "text": "tonight", "src_id": "r-t2-0034", "dsl": "d +0d"}
+{"id": "ty0407", "text": "next 18 months", "src_id": "r-taxt0-0143", "dsl": "d +0d>+18m"}
+{"id": "ty0408", "text": "tonight at half seven", "src_id": "r-t1-0213", "dsl": "dt +0d 19:30"}
+{"id": "ty0409", "text": "The year 2016", "src_id": "r-web4p0-0309", "dsl": "d Y@2016"}
+{"id": "ty0410", "text": "1 week ago at 12:00 am", "src_id": "r-webp0-0154", "dsl": "dt -1w 00:00"}
+{"id": "ty0411", "text": "nine in the morning", "src_id": "r-web5p0-0012", "dsl": "t 09:00"}
+{"id": "ty0412", "text": "July 23rd 2004", "src_id": "r-webp0-0009", "dsl": "d 2004-07-23"}
+{"id": "ty0413", "text": "July 17, 2018 at 3p.m.", "src_id": "r-webp2-0169", "dsl": "dt 2018-07-17 15:00"}
+{"id": "ty0414", "text": "all of last month", "src_id": "r-taxt0-0166", "dsl": "d M-1"}
+{"id": "ty0415", "text": "december 9 at 9am", "src_id": "r-web4p2-0017", "dsl": "dt 12-09 09:00"}
+{"id": "ty0416", "text": "21 October 2022", "src_id": "r-webp3-0053", "dsl": "d 2022-10-21"}
+{"id": "ty0417", "text": "from the 13 to the 15th of July", "src_id": "r-web4p1-0255", "dsl": "d 07-13>07-15"}
+{"id": "ty0418", "text": "sat 8", "src_id": "r-t0-0288", "dsl": "dt sa 8?"}
+{"id": "ty0419", "text": "Monday to Saturdays", "src_id": "r-web6p0-0286", "dsl": "d mo>sa"}
+{"id": "ty0420", "text": "Dec 13 this year", "src_id": "r-webp3-0191", "dsl": "d 12-13"}
+{"id": "ty0421", "text": "m-f next week", "src_id": "r-taxt1-0009", "dsl": "d R d/1 mo,tu,we,th,fr uW+1 sW+1"}
+{"id": "ty0422", "text": "2 weeks before the audit on may 3", "src_id": "r-taxt1-0143", "dsl": "d 05-03~-2w"}
+{"id": "ty0423", "text": "10 days after nov 5", "src_id": "r-taxt1-0047", "dsl": "d 11-05~+10d"}
+{"id": "ty0424", "text": "August 5th 12:00 pm", "src_id": "r-web4p0-0392", "dsl": "dt 08-05 12:00"}
+{"id": "ty0425", "text": "Rosary is prayed at 11:25 a.m. every day.", "src_id": "r-web6p0-0142", "dsl": "dt R d/1 11:25"}
+{"id": "ty0426", "text": "Open house: the 16th, 1pm for 3 hours", "src_id": "r-v2t0-0245", "dsl": "dt D@16 13:00>+3h"}
+{"id": "ty0427", "text": "mon may 15 through 16", "src_id": "r-web4p0-0152", "dsl": "d 05-15>05-16"}
+{"id": "ty0428", "text": "Remind me tomorrow morning to review this web page", "src_id": "r-web4p0-0341", "dsl": "d +1d"}
+{"id": "ty0429", "text": "monday am", "src_id": "r-t0-0315", "dsl": "d mo"}
+{"id": "ty0430", "text": "June 11", "src_id": "r-web4p2-0024", "dsl": "d 06-11"}
+{"id": "ty0431", "text": "we have to do something in 5 days.", "src_id": "r-webp1-0194", "dsl": "d +5d"}
+{"id": "ty0432", "text": "Jan 20, 2010 9:10pm", "src_id": "r-web4p2-0015", "dsl": "dt 2010-01-20 21:10"}
+{"id": "ty0433", "text": "remind me tomorrow at 2pm", "src_id": "r-web5p0-0111", "dsl": "dt +1d 14:00"}
+{"id": "ty0434", "text": "Thursday December 30 2006", "src_id": "r-web4p0-0059", "dsl": "d 2006-12-30"}
+{"id": "ty0435", "text": "by dec 15", "src_id": "r-v2t1-0112", "dsl": "d >12-15"}
+{"id": "ty0436", "text": "martin luther king jr day", "src_id": "r-web4p1-0031", "dsl": "d mo#3@01"}
+{"id": "ty0437", "text": "until friday", "src_id": "r-v2t1-0034", "dsl": "d >fr"}
+{"id": "ty0438", "text": "Friday 26 March to Friday 9 April 2027", "src_id": "r-web6p0-0228", "dsl": "d 2027-03-26>2027-04-09"}
+{"id": "ty0439", "text": "m w f for the next 12 weeks", "src_id": "r-taxt1-0311", "dsl": "d R w/1 mo,we,fr u+12w s+0d"}
+{"id": "ty0440", "text": "1 nov 2026", "src_id": "r-t2-0116", "dsl": "d 2026-11-01"}
+{"id": "ty0441", "text": "Tennis lessons for kids, Saturdays 10-11 a.m., June 6 through July 25", "src_id": "r-ht0-0227", "dsl": "dt R w/1 sa u07-25 10:00>11:00 s06-06"}
+{"id": "ty0442", "text": "weekdays next week at 7am", "src_id": "r-taxt1-0195", "dsl": "dt R d/1 mo,tu,we,th,fr uW+1 07:00 sW+1"}
+{"id": "ty0443", "text": "call caterer mon morning", "src_id": "r-t1-0389", "dsl": "d mo"}
+{"id": "ty0444", "text": "weekends over the last 3 months", "src_id": "r-taxt0-0165", "dsl": "d R w/1 sa,su u+0d s-3m"}
+{"id": "ty0445", "text": "tomorrow at 8am", "src_id": "r-taxd0195", "dsl": "dt +1d 08:00"}
+{"id": "ty0446", "text": "friday 8pm", "src_id": "r-webp0-0141", "dsl": "dt fr 20:00"}
+{"id": "ty0447", "text": "load-in days all week but sunday", "src_id": "r-taxt0-0294", "dsl": "d R d/1 mo,tu,we,th,fr,sa uW+0 sW+0"}
+{"id": "ty0448", "text": "dentist 2:30 for 45 minutes", "src_id": "r-v2d0085", "dsl": "t 2:30?>+45m"}
+{"id": "ty0449", "text": "Webinar tomorrow 1pm for 90 minutes, register now", "src_id": "r-v2t0-0098", "dsl": "dt +1d 13:00>+90m"}
+{"id": "ty0450", "text": "jan 5, 6, 7", "src_id": "r-taxt1-0257", "dsl": "d 01-05,01-06,01-07"}
+{"id": "ty0451", "text": "Room 12 is booked for thursday at 1pm", "src_id": "r-v2t0-0308", "dsl": "dt th 13:00"}
+{"id": "ty0452", "text": "Order 5521 delivery slot: Wednesday 14 October, 18:00-20:00", "src_id": "r-ht1-0283", "dsl": "dt 10-14 18:00>20:00"}
+{"id": "ty0453", "text": "Your promo code works after oct 5 only", "src_id": "r-v2t0-0338", "dsl": "d 10-05>"}
+{"id": "ty0454", "text": "every month on the 3rd", "src_id": "r-t2-0011", "dsl": "d R m/1 d3"}
+{"id": "ty0455", "text": "@every 2 fridays", "src_id": "r-web5p0-0110", "dsl": "d R w/2 fr"}
+{"id": "ty0456", "text": "the 18th at noon", "src_id": "r-v2t1-0115", "dsl": "dt D@18 12:00"}
+{"id": "ty0457", "text": "every friday over the next 90 days", "src_id": "r-taxt1-0075", "dsl": "d R w/1 fr u+90d s+0d"}
+{"id": "ty0458", "text": "25 March 1995", "src_id": "r-webp2-0330", "dsl": "d 1995-03-25"}
+{"id": "ty0459", "text": "send it to me no later than friday please", "src_id": "r-v2t1-0014", "dsl": "d >fr"}
+{"id": "ty0460", "text": "Begin the party at 8 o'clock in the evening on Thursday", "src_id": "r-web5p0-0131", "dsl": "dt th 20:00"}
+{"id": "ty0461", "text": "+10 days", "src_id": "r-web4p0-0201", "dsl": "d +10d"}
+{"id": "ty0462", "text": "March 4, March 23", "src_id": "r-web4p0-0191", "dsl": "d 03-04,03-23"}
+{"id": "ty0463", "text": "last 3 fridays at 5:30pm", "src_id": "r-taxd0093", "dsl": "dt fr-1,fr-2,fr-3 17:30"}
+{"id": "ty0464", "text": "all fridays in october", "src_id": "r-taxt0-0087", "dsl": "d R w/1 fr uM@10 sM@10"}
+{"id": "ty0465", "text": "last fri of each month", "src_id": "r-ht1-0077", "dsl": "d R m/1 fr#-1"}
+{"id": "ty0466", "text": "Today at 11:20 am", "src_id": "r-webp1-0204", "dsl": "dt +0d 11:20"}
+{"id": "ty0467", "text": "lemme see if we can swing next fri around 5ish after work", "src_id": "r-t1-0067", "dsl": "dt fr+1 5?"}
+{"id": "ty0468", "text": "7 business days from today", "src_id": "r-taxt0-0211", "dsl": "d +7b"}
+{"id": "ty0469", "text": "Jul 18, Fri", "src_id": "r-web4p2-0068", "dsl": "d 07-18"}
+{"id": "ty0470", "text": "Doc appt moved 2 weeks out to Fri 11/20 at 10:15, same office", "src_id": "r-ht0-0289", "dsl": "dt 11-20 10:15?"}
+{"id": "ty0471", "text": "after oct 5", "src_id": "r-v2t1-0082", "dsl": "d 10-05>"}
+{"id": "ty0472", "text": "wednesdays each december", "src_id": "r-taxt0-0012", "dsl": "d R w/1 we M@12"}
+{"id": "ty0473", "text": "Pay rent on december 1", "src_id": "r-v2t0-0096", "dsl": "d 12-01"}
+{"id": "ty0474", "text": "19 days after oct 1", "src_id": "r-taxt1-0351", "dsl": "d 10-01~+19d"}
+{"id": "ty0475", "text": "reminder to self: pick up dry cleaning after 5pm friday", "src_id": "r-v2t1-0027", "dsl": "dt fr 17:00>"}
+{"id": "ty0476", "text": "wkends since october", "src_id": "r-taxt0-0199", "dsl": "d R w/1 sa,su u+0d sM@10<"}
+{"id": "ty0477", "text": "starting tomorrow on weekends", "src_id": "r-webp2-0116", "dsl": "d R w/1 sa,su s+1d"}
+{"id": "ty0478", "text": "ok so how about the 22nd of december, maybe 6 in the evening?", "src_id": "r-ht0-0398", "dsl": "dt 12-22 18:00"}
+{"id": "ty0479", "text": "\"15 Jul, 2025 \"", "src_id": "r-web5p0-0108", "dsl": "d 2025-07-15"}
+{"id": "ty0480", "text": "another 3 years", "src_id": "r-webp1-0091", "dsl": "d +3y"}
+{"id": "ty0481", "text": "veteran's day", "src_id": "r-web4p1-0124", "dsl": "d 11-11"}
+{"id": "ty0482", "text": "daily except weekends", "src_id": "r-taxt1-0092", "dsl": "d R d/1 mo,tu,we,th,fr"}
+{"id": "ty0483", "text": "friday at noon", "src_id": "r-v2t1-0122", "dsl": "dt fr 12:00"}
+{"id": "ty0484", "text": "after work tomorrow", "src_id": "r-v2t1-0085", "dsl": "d +1d"}
+{"id": "ty0485", "text": "every 10th", "src_id": "r-v2t0-0328", "dsl": "d R m/1 d10"}
+{"id": "ty0486", "text": "spring term starts jan 28", "src_id": "r-t1-0005", "dsl": "d 01-28"}
+{"id": "ty0487", "text": "flights oct 2 and oct 9", "src_id": "r-taxt0-0149", "dsl": "d 10-02,10-09"}
+{"id": "ty0488", "text": "earth day", "src_id": "r-web4p1-0260", "dsl": "d 04-22"}
+{"id": "ty0489", "text": "dec 28 - j", "src_id": "r-t1-0006", "dsl": "d 12-28"}
+{"id": "ty0490", "text": "10-Oct-2015", "src_id": "r-web4p0-0058", "dsl": "d 2015-10-10"}
+{"id": "ty0491", "text": "5 working days from monday", "src_id": "r-taxt1-0353", "dsl": "d mo~+5b"}
+{"id": "ty0492", "text": "Alexa, remind me to take my evening medication at 7pm tonight.", "src_id": "r-webp1-0023", "dsl": "dt +0d 19:00"}
+{"id": "ty0493", "text": "25 Aug, 2006 5pm", "src_id": "r-web4p1-0301", "dsl": "dt 2006-08-25 17:00"}
+{"id": "ty0494", "text": "4pm Friday", "src_id": "r-webp2-0339", "dsl": "dt fr 16:00"}
+{"id": "ty0495", "text": "a wk from tuesday", "src_id": "r-taxd0126", "dsl": "d tu~+1w"}
+{"id": "ty0496", "text": "every morning for the past 2 weeks", "src_id": "r-taxt1-0061", "dsl": "d R d/1 u+0d s-2w"}
+{"id": "ty0497", "text": "3 years ago", "src_id": "r-webp0-0197", "dsl": "d -3y"}
+{"id": "ty0498", "text": "slay, sat 10pm", "src_id": "r-t1-0043", "dsl": "dt sa 22:00"}
+{"id": "ty0499", "text": "31 Oct 2011", "src_id": "r-web4p1-0104", "dsl": "d 2011-10-31"}
+{"id": "ty0500", "text": "summer camp june 9 through june 20", "src_id": "r-t0-0217", "dsl": "d 06-09>06-20"}
+{"id": "ty0501", "text": "from noon on", "src_id": "r-v2t1-0104", "dsl": "t 12:00>"}
+{"id": "ty0502", "text": "coffee wed morning", "src_id": "r-t0-0053", "dsl": "d we"}
+{"id": "ty0503", "text": "21-Jan-2020", "src_id": "r-web5p0-0046", "dsl": "d 2020-01-21"}
+{"id": "ty0504", "text": "Lammas (1 August)", "src_id": "r-webp0-0099", "dsl": "d 08-01"}
+{"id": "ty0505", "text": "remind me to call mom at 8 Wednesday evening", "src_id": "r-web5p0-0070", "dsl": "dt we 20:00"}
+{"id": "ty0506", "text": "The Deadline was this noon", "src_id": "r-webp2-0065", "dsl": "t 12:00"}
+{"id": "ty0507", "text": "friday 2 oct", "src_id": "r-t1-0142", "dsl": "d 10-02"}
+{"id": "ty0508", "text": "9-ish for an hour", "src_id": "r-v2t0-0110", "dsl": "t 9?>+1h"}
+{"id": "ty0509", "text": "Yesterday 1:20 pm", "src_id": "r-webp2-0000", "dsl": "dt -1d 13:20"}
+{"id": "ty0510", "text": "7 days ago at 00:00", "src_id": "r-web4p0-0316", "dsl": "dt -7d 00:00"}
+{"id": "ty0511", "text": "/remind #nyc-office to clean out the fridge every Friday at 3pm", "src_id": "r-webp0-0140", "dsl": "dt R w/1 fr 15:00"}
+{"id": "ty0512", "text": "first frost nov 10ish", "src_id": "r-t0-0353", "dsl": "d 11-10"}
+{"id": "ty0513", "text": "flag day", "src_id": "r-web4p1-0105", "dsl": "d 06-14"}
+{"id": "ty0514", "text": "every day other than saturday", "src_id": "r-taxt1-0106", "dsl": "d R d/1 mo,tu,we,th,fr,su"}
+{"id": "ty0515", "text": "befor noon", "src_id": "r-v2t0-0343", "dsl": "t >12:00"}
+{"id": "ty0516", "text": "tonight at 11:10 pm", "src_id": "r-web4p0-0138", "dsl": "dt +0d 23:10"}
+{"id": "ty0517", "text": "I want to visit my grandfathers grave on December 30 2011", "src_id": "r-web4p1-0093", "dsl": "d 2011-12-30"}
+{"id": "ty0518", "text": "Feburary 20, 2021", "src_id": "r-web4p1-0092", "dsl": "d 2021-02-20"}
+{"id": "ty0519", "text": "NEXT TUESDAY 3PM", "src_id": "r-t0-0251", "dsl": "dt tu+1 15:00"}
+{"id": "ty0520", "text": "12 February to 20 February 2028", "src_id": "r-web6p0-0249", "dsl": "d 2028-02-12>2028-02-20"}
+{"id": "ty0521", "text": "every saturday in 2027", "src_id": "r-taxt0-0397", "dsl": "d R w/1 sa u2027-12-31 s2027-01-01"}
+{"id": "ty0522", "text": "pls show me fridays this month thx", "src_id": "r-taxt1-0392", "dsl": "d R w/1 fr uM+0 sM+0"}
+{"id": "ty0523", "text": "Michaelmas Day (29 September)", "src_id": "r-webp2-0007", "dsl": "d 09-29"}
+{"id": "ty0524", "text": "26 March to 11 April 2027", "src_id": "r-web6p0-0106", "dsl": "d 2027-03-26>2027-04-11"}
+{"id": "ty0525", "text": "two days before the wedding on june 6", "src_id": "r-taxt1-0050", "dsl": "d 06-06~-2d"}
+{"id": "ty0526", "text": "wed thru fri", "src_id": "r-ht1-0259", "dsl": "d we>fr"}
+{"id": "ty0527", "text": "July 8th, 2004", "src_id": "r-webp3-0068", "dsl": "d 2004-07-08"}
+{"id": "ty0528", "text": "arvo tomorrow", "src_id": "r-t1-0251", "dsl": "d +1d"}
+{"id": "ty0529", "text": "Wed, July 10, '96", "src_id": "r-webp0-0221", "dsl": "d 1996-07-10"}
+{"id": "ty0530", "text": "27 May to 4 June 2028", "src_id": "r-web6p0-0255", "dsl": "d 2028-05-27>2028-06-04"}
+{"id": "ty0531", "text": "2:21 p.m., December 11, 2014", "src_id": "r-web4p0-0075", "dsl": "dt 2014-12-11 14:21"}
+{"id": "ty0532", "text": "weigh in fri 7am", "src_id": "r-t1-0232", "dsl": "dt fr 07:00"}
+{"id": "ty0533", "text": "pop in anytime between 2 and 4 on wed", "src_id": "r-t0-0399", "dsl": "dt we 2?>4?"}
+{"id": "ty0534", "text": "lunch w/ sam fri 1pm", "src_id": "r-t0-0329", "dsl": "dt fr 13:00"}
+{"id": "ty0535", "text": "my night shifts over the past 6 weeks, wed thu fri", "src_id": "r-taxt0-0287", "dsl": "d R w/1 we,th,fr u+0d s-6w"}
+{"id": "ty0536", "text": "At 12:00 AM, only on Sunday", "src_id": "r-webp2-0017", "dsl": "dt R w/1 su 00:00"}
+{"id": "ty0537", "text": "31 years ago", "src_id": "r-web4p1-0003", "dsl": "d -31y"}
+{"id": "ty0538", "text": "15 March 2026, Sunday", "src_id": "r-web6p0-0055", "dsl": "d 2026-03-15"}
+{"id": "ty0539", "text": "August 22, 12:10PM", "src_id": "r-web4p2-0249", "dsl": "dt 08-22 12:10"}
+{"id": "ty0540", "text": "25/Mar/1995", "src_id": "r-webp1-0056", "dsl": "d 1995-03-25"}
+{"id": "ty0541", "text": "Every other week on Tuesday and Thursday, for 8 occurrences", "src_id": "r-webp3-0066", "dsl": "d R w/2 tu,th n8"}
+{"id": "ty0542", "text": "dinner service mondays each june", "src_id": "r-taxt0-0175", "dsl": "d R w/1 mo M@06"}
+{"id": "ty0543", "text": "call at 3 for ten minutes", "src_id": "r-v2t0-0307", "dsl": "t 3?>+10m"}
+{"id": "ty0544", "text": "this day", "src_id": "r-web4p0-0032", "dsl": "d +0d"}
+{"id": "ty0545", "text": "dec 1, 8 and 15", "src_id": "r-taxt0-0343", "dsl": "d 12-01,12-08,12-15"}
+{"id": "ty0546", "text": "haircut next sat 11", "src_id": "r-t1-0044", "dsl": "dt sa+1 11?"}
+{"id": "ty0547", "text": "Mon December 4, 1995", "src_id": "r-web4p1-0373", "dsl": "d 1995-12-04"}
+{"id": "ty0548", "text": "Do you have anything open before noon friday", "src_id": "r-v2t0-0376", "dsl": "dt >fr 12:00"}
+{"id": "ty0549", "text": "2nd Sunday in January", "src_id": "r-web4p0-0089", "dsl": "d su#2@01"}
+{"id": "ty0550", "text": "sat night", "src_id": "r-t2-0079", "dsl": "d sa"}
+{"id": "ty0551", "text": "friday at four pm for two hours", "src_id": "r-v2t0-0174", "dsl": "dt fr 16:00>+2h"}
+{"id": "ty0552", "text": "this saturday at 10am", "src_id": "r-v2t0-0318", "dsl": "dt sa 10:00"}
+{"id": "ty0553", "text": "60 days before dec 31", "src_id": "r-taxd0137", "dsl": "d 12-31~-60d"}
+{"id": "ty0554", "text": "tuesday thursday 3pm", "src_id": "r-taxd0151", "dsl": "dt tu,th 15:00"}
+{"id": "ty0555", "text": "weekly on wednesdays and fridays", "src_id": "r-webp0-0246", "dsl": "d R w/1 we,fr"}
+{"id": "ty0556", "text": "tuesdays every september annually", "src_id": "r-taxt1-0117", "dsl": "d R w/1 tu M@09"}
+{"id": "ty0557", "text": "Your delivery is scheduled for dec 3", "src_id": "r-v2d0030", "dsl": "d 12-03"}
+{"id": "ty0558", "text": "bridal shower aug 9", "src_id": "r-t1-0373", "dsl": "d 08-09"}
+{"id": "ty0559", "text": "choir practice thurs 7pm", "src_id": "r-t1-0217", "dsl": "dt th 19:00"}
+{"id": "ty0560", "text": "next 4 tuesdays at 10am", "src_id": "r-taxt1-0302", "dsl": "dt tu+1,tu+2,tu+3,tu+4 10:00"}
+{"id": "ty0561", "text": "2 weeks from friday", "src_id": "r-taxt1-0018", "dsl": "d fr~+2w"}
+{"id": "ty0562", "text": "Library book due back by Mon., Nov. 16 -- renew online to avoid fines", "src_id": "r-ht1-0051", "dsl": "d 11-16"}
+{"id": "ty0563", "text": "April Fools Day", "src_id": "r-webp0-0125", "dsl": "d 04-01"}
+{"id": "ty0564", "text": "22-feb", "src_id": "r-webp1-0286", "dsl": "d 02-22"}
+{"id": "ty0565", "text": "Yesterday at 4:25 pm", "src_id": "r-webp1-0255", "dsl": "dt -1d 16:25"}
+{"id": "ty0566", "text": "fridays in january every year", "src_id": "r-taxd0196", "dsl": "d R w/1 fr M@01"}
+{"id": "ty0567", "text": "around noon", "src_id": "r-t0-0398", "dsl": "t 12:00"}
+{"id": "ty0568", "text": "A380 tomorrow", "src_id": "r-web4p1-0383", "dsl": "d +1d"}
+{"id": "ty0569", "text": "sick of this lol thurs", "src_id": "r-t2-0108", "dsl": "d th"}
+{"id": "ty0570", "text": "interview 10am for 1 hour pls", "src_id": "r-v2t0-0167", "dsl": "t 10:00>+1h"}
+{"id": "ty0571", "text": "Oct 31, 2023", "src_id": "r-web6p0-0110", "dsl": "d 2023-10-31"}
+{"id": "ty0572", "text": "eight tonight", "src_id": "r-web5p0-0043", "dsl": "dt +0d 20:00"}
+{"id": "ty0573", "text": "mondays every february", "src_id": "r-taxd0135", "dsl": "d R w/1 mo M@02"}
+{"id": "ty0574", "text": "send retainer reminders first monday every month", "src_id": "r-taxd0011", "dsl": "d R m/1 mo#1"}
+{"id": "ty0575", "text": "Mar 25, 1995", "src_id": "r-webp2-0264", "dsl": "d 1995-03-25"}
+{"id": "ty0576", "text": "dec 1st and dec 15th", "src_id": "r-taxd0177", "dsl": "d 12-01,12-15"}
+{"id": "ty0577", "text": "weekdays last week", "src_id": "r-taxt0-0212", "dsl": "d R d/1 mo,tu,we,th,fr uW-1 sW-1"}
+{"id": "ty0578", "text": "end of day tomorrow", "src_id": "r-v2t0-0040", "dsl": "d +1d"}
+{"id": "ty0579", "text": "todo Finish important task by Thursday!!!", "src_id": "r-webp3-0182", "dsl": "d >th"}
+{"id": "ty0580", "text": "the business day before dec 1", "src_id": "r-taxt0-0228", "dsl": "d 12-01~-1b"}
+{"id": "ty0581", "text": "from the 1st to the 15th of march", "src_id": "r-t1-0331", "dsl": "d 03-01>03-15"}
+{"id": "ty0582", "text": "Please plan on 2 hours, starting at 6pm on the 14th", "src_id": "r-v2t0-0319", "dsl": "dt D@14 18:00>+2h"}
+{"id": "ty0583", "text": "the day before school starts aug 25", "src_id": "r-taxt1-0139", "dsl": "d 08-25~-1d"}
+{"id": "ty0584", "text": "first showing is monday at half ten", "src_id": "r-t1-0366", "dsl": "dt mo 10:30?"}
+{"id": "ty0585", "text": "Monthly on the first Friday until December 24, 1997", "src_id": "r-webp0-0216", "dsl": "d R m/1 fr#1 u1997-12-24"}
+{"id": "ty0586", "text": "Sunday, Feb 10", "src_id": "r-web4p0-0154", "dsl": "d 02-10"}
+{"id": "ty0587", "text": "3am, october first 2010", "src_id": "r-web4p2-0047", "dsl": "dt 2010-10-01 03:00"}
+{"id": "ty0588", "text": "Remind me in 2 months from now", "src_id": "r-web6p0-0118", "dsl": "d +2m"}
+{"id": "ty0589", "text": "from september to november", "src_id": "r-webp2-0073", "dsl": "d M@09>M@11"}
+{"id": "ty0590", "text": "Eurostar 9024 departs London St Pancras 08:31, Wed 9 Sept 2026", "src_id": "r-ht0-0270", "dsl": "dt 2026-09-09 08:31"}
+{"id": "ty0591", "text": "Thu Aug 10th 2005", "src_id": "r-web4p0-0078", "dsl": "d 2005-08-10"}
+{"id": "ty0592", "text": "yesterday at 4:00", "src_id": "r-webp0-0368", "dsl": "dt -1d 4?"}
+{"id": "ty0593", "text": "1st and 3rd fridays", "src_id": "r-taxt1-0025", "dsl": "d R m/1 fr#1,fr#3"}
+{"id": "ty0594", "text": "sept 30", "src_id": "r-ht0-0093", "dsl": "d 09-30"}
+{"id": "ty0595", "text": "-10 years", "src_id": "r-web6p0-0198", "dsl": "d -10y"}
+{"id": "ty0596", "text": "Your table is held 15 minutes, reservation 7pm friday", "src_id": "r-v2t0-0300", "dsl": "dt fr 19:00"}
+{"id": "ty0597", "text": "next thursday at 2:15 pm", "src_id": "r-t0-0172", "dsl": "dt th+1 14:15"}
+{"id": "ty0598", "text": "pls show last 60 days", "src_id": "r-taxt1-0368", "dsl": "d -60d>+0d"}
+{"id": "ty0599", "text": "tomorrow at ten for twenty minutes", "src_id": "r-v2t1-0009", "dsl": "dt +1d 10?>+20m"}
+{"id": "ty0600", "text": "bday march 9", "src_id": "r-ht0-0112", "dsl": "d 03-09"}
+{"id": "ty0601", "text": "golf with friends tomorrow at 10", "src_id": "r-web4p1-0070", "dsl": "dt +1d 10?"}
+{"id": "ty0602", "text": "tryouts start monday nov 10 3pm", "src_id": "r-t0-0302", "dsl": "dt 11-10 15:00"}
+{"id": "ty0603", "text": "12 months ago", "src_id": "r-web6p0-0164", "dsl": "d -12m"}
+{"id": "ty0604", "text": "oct. 1st", "src_id": "r-ht0-0240", "dsl": "d 10-01"}
+{"id": "ty0605", "text": "+15 days", "src_id": "r-web5p0-0002", "dsl": "d +15d"}
+{"id": "ty0606", "text": "hair appt sat 10am for 2 hours, color and cut", "src_id": "r-v2t0-0168", "dsl": "dt sa 10:00>+2h"}
+{"id": "ty0607", "text": "next week except wednesday", "src_id": "r-taxt0-0027", "dsl": "d R d/1 mo,tu,th,fr,sa,su uW+1 sW+1"}
+{"id": "ty0608", "text": "starting monday", "src_id": "r-v2d0002", "dsl": "d mo>"}
+{"id": "ty0609", "text": "mondays for the next 3 months", "src_id": "r-taxd0187", "dsl": "d R w/1 mo u+3m s+0d"}
+{"id": "ty0610", "text": "fri at", "src_id": "r-t1-0098", "dsl": "d fr"}
+{"id": "ty0611", "text": "Karaoke night at the VFW Hall -- every other Friday starting 8 PM", "src_id": "r-ht0-0169", "dsl": "dt R w/2 fr 20:00"}
+{"id": "ty0612", "text": "starting tomorrow at 9", "src_id": "r-v2t0-0266", "dsl": "dt +1d 9?>"}
+{"id": "ty0613", "text": "weekends since sept", "src_id": "r-taxt0-0063", "dsl": "d R w/1 sa,su u+0d sM@09<"}
+{"id": "ty0614", "text": "Technician will arrive from 1 on friday", "src_id": "r-v2t0-0347", "dsl": "dt fr 1?>"}
+{"id": "ty0615", "text": "payroll every 15th", "src_id": "r-v2t1-0124", "dsl": "d R m/1 d15"}
+{"id": "ty0616", "text": "@24 dec", "src_id": "r-web5p0-0168", "dsl": "d 12-24"}
+{"id": "ty0617", "text": "11 Marzo, 2014", "src_id": "r-web4p0-0020", "dsl": "d 2014-03-11"}
+{"id": "ty0618", "text": "weekdays every august at 8am", "src_id": "r-taxt0-0276", "dsl": "dt R d/1 mo,tu,we,th,fr M@08 08:00"}
+{"id": "ty0619", "text": "Sun 9am", "src_id": "r-web4p0-0239", "dsl": "dt su 09:00"}
+{"id": "ty0620", "text": "jan 5th at 7", "src_id": "r-t0-0343", "dsl": "dt 01-05 7?"}
+{"id": "ty0621", "text": "April 05, 2014 16:00", "src_id": "r-web4p2-0169", "dsl": "dt 2014-04-05 16:00"}
+{"id": "ty0622", "text": "grade 9 camp feb 3-7", "src_id": "r-t1-0381", "dsl": "d 02-03>02-07"}
+{"id": "ty0623", "text": "every morning at 6:45", "src_id": "r-t1-0085", "dsl": "dt R d/1 06:45"}
+{"id": "ty0624", "text": "8:00 pm February 11", "src_id": "r-web4p1-0140", "dsl": "dt 02-11 20:00"}
+{"id": "ty0625", "text": "following 4 thursdays", "src_id": "r-taxt1-0382", "dsl": "d th+1,th+2,th+3,th+4"}
+{"id": "ty0626", "text": "a week from nov 5", "src_id": "r-taxt0-0062", "dsl": "d 11-05~+1w"}
+{"id": "ty0627", "text": "November 18th 2010 midnight", "src_id": "r-webp0-0375", "dsl": "dt 2010-11-18 00:00"}
+{"id": "ty0628", "text": "t/th each june", "src_id": "r-taxt0-0135", "dsl": "d R w/1 tu,th M@06"}
+{"id": "ty0629", "text": "20 days before the filing deadline of jan 31", "src_id": "r-taxt0-0041", "dsl": "d 01-31~-20d"}
+{"id": "ty0630", "text": "15th Feb 2027 - 19th Feb 2027", "src_id": "r-web6p0-0172", "dsl": "d 2027-02-15>2027-02-19"}
+{"id": "ty0631", "text": "afternoons this week", "src_id": "r-taxt0-0021", "dsl": "d W+0"}
+{"id": "ty0632", "text": "every wensday at 3", "src_id": "r-ht0-0028", "dsl": "dt R w/1 we 3?"}
+{"id": "ty0633", "text": "2 weeks from tuesday", "src_id": "r-web4p1-0358", "dsl": "d tu~+2w"}
+{"id": "ty0634", "text": "do the needful by tuesday eod", "src_id": "r-t0-0037", "dsl": "d tu"}
+{"id": "ty0635", "text": "17th October, 2034 @ 01:08 am PDT", "src_id": "r-webp2-0222", "dsl": "dt 2034-10-17 01:08"}
+{"id": "ty0636", "text": "Early registration after oct 5 gets a discount", "src_id": "r-v2t0-0116", "dsl": "d 10-05>"}
+{"id": "ty0637", "text": "previous 5 saturdays", "src_id": "r-taxt0-0093", "dsl": "d sa-1,sa-2,sa-3,sa-4,sa-5"}
+{"id": "ty0638", "text": "weekdays for the next 4 weeks", "src_id": "r-taxt0-0008", "dsl": "d R d/1 mo,tu,we,th,fr u+4w s+0d"}
+{"id": "ty0639", "text": "shift 10pm for 8 hours", "src_id": "r-v2t1-0121", "dsl": "t 22:00>+8h"}
+{"id": "ty0640", "text": "sun 6p", "src_id": "r-t0-0276", "dsl": "dt su 18:00"}
+{"id": "ty0641", "text": "10 to 10:20 tomorrow", "src_id": "r-t0-0072", "dsl": "dt +1d 10?>10:20?"}
+{"id": "ty0642", "text": "were looking at the last 30 days", "src_id": "r-taxt0-0080", "dsl": "d -30d>+0d"}
+{"id": "ty0643", "text": "oct 2 and 9 at 3pm", "src_id": "r-taxt1-0219", "dsl": "dt 10-02,10-09 15:00"}
+{"id": "ty0644", "text": "dec 24 6pm through dec 26 noon", "src_id": "r-ht1-0108", "dsl": "dt 12-24 18:00>12-26 12:00"}
+{"id": "ty0645", "text": "upcoming Monday noon", "src_id": "r-webp2-0353", "dsl": "dt mo 12:00"}
+{"id": "ty0646", "text": "2 business days before nov 30", "src_id": "r-taxt0-0010", "dsl": "d 11-30~-2b"}
+{"id": "ty0647", "text": "orientation oct 28 8a-4p", "src_id": "r-t0-0038", "dsl": "dt 10-28 08:00>16:00"}
+{"id": "ty0648", "text": "Buy milk tomorrow 9am", "src_id": "r-webp1-0227", "dsl": "dt +1d 09:00"}
+{"id": "ty0649", "text": "estimated taxes next quarter", "src_id": "r-taxd0046", "dsl": "d Q+1"}
+{"id": "ty0650", "text": "Remind me to stretch every day at 9 am.", "src_id": "r-webp1-0012", "dsl": "dt R d/1 09:00"}
+{"id": "ty0651", "text": "the previous 3 tuesdays", "src_id": "r-taxt0-0348", "dsl": "d tu-1,tu-2,tu-3"}
+{"id": "ty0652", "text": "HR reminder: open enrollment ends Friday, November 14 at 5 p.m. PST", "src_id": "r-ht0-0114", "dsl": "dt 11-14 17:00"}
+{"id": "ty0653", "text": "last 10 weekdays", "src_id": "r-taxt1-0338", "dsl": "d -1b,-2b,-3b,-4b,-5b,-6b,-7b,-8b,-9b,-10b"}
+{"id": "ty0654", "text": "Monday, November 14, 2022 - 7:00pm", "src_id": "r-web6p0-0274", "dsl": "dt 2022-11-14 19:00"}
+{"id": "ty0655", "text": "after new years", "src_id": "r-v2t0-0313", "dsl": "d 01-01>"}
+{"id": "ty0656", "text": "Monday 31 May to Friday 4 June", "src_id": "r-web6p0-0150", "dsl": "d 05-31>06-04"}
+{"id": "ty0657", "text": "in three weeks time", "src_id": "r-webp2-0185", "dsl": "d +3w"}
+{"id": "ty0658", "text": "tuesdays at 7 for the next 8 weeks", "src_id": "r-ht1-0012", "dsl": "dt R w/1 tu n8 7?"}
+{"id": "ty0659", "text": "18 April 2028", "src_id": "r-web6p0-0095", "dsl": "d 2028-04-18"}
+{"id": "ty0660", "text": "fourteenth of june 2010 at eleven o'clock in the evening", "src_id": "r-webp0-0180", "dsl": "dt 2010-06-14 23:00"}
+{"id": "ty0661", "text": "satruday at ten", "src_id": "r-ht1-0120", "dsl": "dt sa 10?"}
+{"id": "ty0662", "text": "October 14, 1983", "src_id": "r-webp0-0300", "dsl": "d 1983-10-14"}
+{"id": "ty0663", "text": "Every week on Mon", "src_id": "r-web4p0-0170", "dsl": "d R w/1 mo"}
+{"id": "ty0664", "text": "nov  12   at  4", "src_id": "r-t0-0366", "dsl": "dt 11-12 4?"}
+{"id": "ty0665", "text": "What are my Monday reminders?", "src_id": "r-webp2-0190", "dsl": "d mo"}
+{"id": "ty0666", "text": "the tuesday after thanksgiving", "src_id": "r-taxt0-0394", "dsl": "d th#4@11~+5d"}
+{"id": "ty0667", "text": "fri eve", "src_id": "r-ht1-0006", "dsl": "d fr"}
+{"id": "ty0668", "text": "weekly retro every fri 5pm", "src_id": "r-t0-0369", "dsl": "dt R w/1 fr 17:00"}
+{"id": "ty0669", "text": "starting november first", "src_id": "r-v2t0-0231", "dsl": "d 11-01>"}
+{"id": "ty0670", "text": "march 3 2015", "src_id": "r-web4p2-0151", "dsl": "d 2015-03-03"}
+{"id": "ty0671", "text": "parent teacher evenings 12-14 nov", "src_id": "r-t2-0045", "dsl": "d 11-12>11-14"}
+{"id": "ty0672", "text": "3rd Thu in Apr at 10 o'clock", "src_id": "r-webp3-0086", "dsl": "dt th#3@04 10?"}
+{"id": "ty0673", "text": "the last 12 months", "src_id": "r-taxt0-0020", "dsl": "d -12m>+0d"}
+{"id": "ty0674", "text": "tues 8am", "src_id": "r-webp1-0334", "dsl": "dt tu 08:00"}
+{"id": "ty0675", "text": "Minutes of the September 26 Public Infrastructure Meeting", "src_id": "r-web6p0-0024", "dsl": "d 09-26"}
+{"id": "ty0676", "text": "canada day", "src_id": "r-t2-0019", "dsl": "d 07-01"}
+{"id": "ty0677", "text": "lunch w/ boss thurs 12:15 for 1hr", "src_id": "r-v2t0-0329", "dsl": "dt th 12:15?>+1h"}
+{"id": "ty0678", "text": "2nd June", "src_id": "r-webp2-0369", "dsl": "d 06-02"}
+{"id": "ty0679", "text": "how about 4 business days out", "src_id": "r-taxt0-0025", "dsl": "d +4b"}
+{"id": "ty0680", "text": "Extension due the 15th of october", "src_id": "r-v2t0-0209", "dsl": "d 10-15"}
+{"id": "ty0681", "text": "spring break mar 14 - 22", "src_id": "r-t0-0122", "dsl": "d 03-14>03-22"}
+{"id": "ty0682", "text": "weekends in august at noon", "src_id": "r-taxt1-0042", "dsl": "dt R w/1 sa,su uM@08 12:00 sM@08"}
+{"id": "ty0683", "text": "the twenty third of June", "src_id": "r-webp3-0085", "dsl": "d 06-23"}
+{"id": "ty0684", "text": "oct 10 at 3 ish", "src_id": "r-t1-0130", "dsl": "dt 10-10 3?"}
+{"id": "ty0685", "text": "every sat this month", "src_id": "r-taxt1-0399", "dsl": "d R w/1 sa uM+0 sM+0"}
+{"id": "ty0686", "text": "3 working days from now", "src_id": "r-taxt2-0019", "dsl": "d +3b"}
+{"id": "ty0687", "text": "starting 1 dec", "src_id": "r-v2t0-0079", "dsl": "d 12-01>"}
+{"id": "ty0688", "text": "two days ago midnight", "src_id": "r-web4p2-0090", "dsl": "dt -2d 00:00"}
+{"id": "ty0689", "text": "November 20 2 p.m. - 3 p.m.", "src_id": "r-web4p0-0063", "dsl": "dt 11-20 14:00>15:00"}
+{"id": "ty0690", "text": "last 2 fri", "src_id": "r-taxt1-0228", "dsl": "d fr-1,fr-2"}
+{"id": "ty0691", "text": "11 sept. 2014", "src_id": "r-webp2-0021", "dsl": "d 2014-09-11"}
+{"id": "ty0692", "text": "mondays at 8am for the next 10 weeks", "src_id": "r-taxt1-0305", "dsl": "dt R w/1 mo u+10w 08:00 s+0d"}
+{"id": "ty0693", "text": "July 23, 2026 at 3:30 PM", "src_id": "r-web4p0-0022", "dsl": "dt 2026-07-23 15:30"}
+{"id": "ty0694", "text": "thu nov 5 9am-10:30am", "src_id": "r-ht0-0072", "dsl": "dt 11-05 09:00>10:30"}
+{"id": "ty0695", "text": "Your yoga class is every thursday at 6pm", "src_id": "r-v2t0-0368", "dsl": "dt R w/1 th 18:00"}
+{"id": "ty0696", "text": "Senior center closed Wed 7/1 through Fri 7/3 for floor refinishing", "src_id": "r-ht1-0176", "dsl": "d 07-01>07-03"}
+{"id": "ty0697", "text": "foo 11:00 a.m., Pacific Time, January 13, 2016 bar", "src_id": "r-webp2-0377", "dsl": "dt 2016-01-13 11:00"}
+{"id": "ty0698", "text": "sat nite", "src_id": "r-t0-0116", "dsl": "d sa"}
+{"id": "ty0699", "text": "working days in november", "src_id": "r-taxt1-0349", "dsl": "d R d/1 mo,tu,we,th,fr uM@11 sM@11"}
+{"id": "ty0700", "text": "weekly for 10 weeks", "src_id": "r-t0-0222", "dsl": "d R w/1 n10"}
+{"id": "ty0701", "text": "upcoming 2 weeks", "src_id": "r-taxt0-0381", "dsl": "d +0d>+2w"}
+{"id": "ty0702", "text": "sat 4:00", "src_id": "r-web4p0-0209", "dsl": "dt sa 4?"}
+{"id": "ty0703", "text": "At 01:00 PM, only on Monday", "src_id": "r-webp2-0229", "dsl": "dt R w/1 mo 13:00"}
+{"id": "ty0704", "text": "weekly cut and blow dry saturdays 9am", "src_id": "r-t0-0210", "dsl": "dt R w/1 sa 09:00"}
+{"id": "ty0705", "text": "3 years from today", "src_id": "r-webp0-0388", "dsl": "d +3y"}
+{"id": "ty0706", "text": "let us meet on tuesday next, around 11 am only", "src_id": "r-ht0-0235", "dsl": "dt tu+1 11:00"}
+{"id": "ty0707", "text": "please remind me about the dentist on wed at 2", "src_id": "r-t0-0413", "dsl": "dt we 2?"}
+{"id": "ty0708", "text": "At 11:00 PM, Monday through Friday", "src_id": "r-webp0-0219", "dsl": "dt R d/1 mo,tu,we,th,fr 23:00"}
+{"id": "ty0709", "text": "drop me a line at next wednesday", "src_id": "r-webp0-0162", "dsl": "d we+1"}
+{"id": "ty0710", "text": "turns 90 today", "src_id": "r-web5p0-0109", "dsl": "d +0d"}
+{"id": "ty0711", "text": "Thu Nov 12 3pm", "src_id": "r-t0-0374", "dsl": "dt 11-12 15:00"}
+{"id": "ty0712", "text": "1st of june", "src_id": "r-web4p2-0240", "dsl": "d 06-01"}
+{"id": "ty0713", "text": "July 13-15", "src_id": "r-web4p1-0316", "dsl": "d 07-13>07-15"}
+{"id": "ty0714", "text": "next friday 2 pm CET", "src_id": "r-web4p0-0253", "dsl": "dt fr+1 14:00"}
+{"id": "ty0715", "text": "every first monday at 9am until june", "src_id": "r-taxt1-0149", "dsl": "dt R m/1 mo#1 uM@06 09:00"}
+{"id": "ty0716", "text": "from 3 nov until 7 nov", "src_id": "r-taxt1-0028", "dsl": "d 11-03>11-07"}
+{"id": "ty0717", "text": "15th march 2027", "src_id": "r-t1-0147", "dsl": "d 2027-03-15"}
+{"id": "ty0718", "text": "at noon for 1 hour", "src_id": "r-v2t0-0011", "dsl": "t 12:00>+1h"}
+{"id": "ty0719", "text": "5pm 25th August, 2006", "src_id": "r-web4p0-0314", "dsl": "dt 2006-08-25 17:00"}
+{"id": "ty0720", "text": "sep 13 2013", "src_id": "r-web4p0-0070", "dsl": "d 2013-09-13"}
+{"id": "ty0721", "text": "friday 21st nov", "src_id": "r-t0-0391", "dsl": "d 11-21"}
+{"id": "ty0722", "text": "13 de junio de 2003", "src_id": "r-webp3-0257", "dsl": "d 2003-06-13"}
+{"id": "ty0723", "text": "the day after christmas", "src_id": "r-taxt1-0151", "dsl": "d 12-25~+1d"}
+{"id": "ty0724", "text": "day after tomorrow at 4ish", "src_id": "r-ht0-0207", "dsl": "dt +2d 4?"}
+{"id": "ty0725", "text": "today at 02:00:00 AM", "src_id": "r-web4p1-0046", "dsl": "dt +0d 02:00"}
+{"id": "ty0726", "text": "today 5pm for 25 minutes", "src_id": "r-v2t1-0100", "dsl": "dt +0d 17:00>+25m"}
+{"id": "ty0727", "text": "December 31 2023", "src_id": "r-web6p0-0231", "dsl": "d 2023-12-31"}
+{"id": "ty0728", "text": "dec 28 - jan", "src_id": "r-t0-0314", "dsl": "d 12-28"}
+{"id": "ty0729", "text": "Monday 26 October to Friday 30 October", "src_id": "r-web6p0-0036", "dsl": "d 10-26>10-30"}
+{"id": "ty0730", "text": "mornings last week", "src_id": "r-taxd0078", "dsl": "d W-1"}
+{"id": "ty0731", "text": "26th Mar 2027 - 9th Apr 2027", "src_id": "r-web6p0-0049", "dsl": "d 2027-03-26>2027-04-09"}
+{"id": "ty0732", "text": "daily 6am for the next 21 days", "src_id": "r-ht0-0352", "dsl": "dt R d/1 n21 06:00"}
+{"id": "ty0733", "text": "5 business days after oct 1", "src_id": "r-taxt1-0136", "dsl": "d 10-01~+5b"}
+{"id": "ty0734", "text": "oct 1,1980", "src_id": "r-web4p1-0173", "dsl": "d 1980-10-01"}
+{"id": "ty0735", "text": "4pm for half hour", "src_id": "r-v2t0-0189", "dsl": "t 16:00>+30m"}
+{"id": "ty0736", "text": "yesterday afternoon at 2", "src_id": "r-web4p0-0064", "dsl": "dt -1d 14:00"}
+{"id": "ty0737", "text": "past 5 weekends", "src_id": "r-taxt0-0148", "dsl": "d R w/1 sa,su u+0d s-5w"}
+{"id": "ty0738", "text": "sprint review: the next 4 fridays", "src_id": "r-taxd0149", "dsl": "d fr+1,fr+2,fr+3,fr+4"}
+{"id": "ty0739", "text": "the 24th of may, victoria day, all day", "src_id": "r-ht1-0200", "dsl": "d 05-24"}
+{"id": "ty0740", "text": "next tuesday at 10am", "src_id": "r-v2t0-0113", "dsl": "dt tu+1 10:00"}
+{"id": "ty0741", "text": "Sunrise service on Easter morning, April 5, 6:30 AM, behind the church", "src_id": "r-ht1-0097", "dsl": "dt 04-05 06:30"}
+{"id": "ty0742", "text": "Evening of Remembrance, Sunday, November 2nd, 4:00 PM, sanctuary", "src_id": "r-ht0-0110", "dsl": "dt 11-02 16:00"}
+{"id": "ty0743", "text": "next tuesday at 14:00", "src_id": "r-web4p0-0090", "dsl": "dt tu+1 14:00"}
+{"id": "ty0744", "text": "novemeber 3", "src_id": "r-ht1-0270", "dsl": "d 11-03"}
+{"id": "ty0745", "text": "Table booked for Thursday night, 8:30, under the name Rivera", "src_id": "r-ht1-0116", "dsl": "dt th 20:30"}
+{"id": "ty0746", "text": "Your tutoring session is tomorrow 4pm for an hour, see you then", "src_id": "r-v2t0-0101", "dsl": "dt +1d 16:00>+1h"}
+{"id": "ty0747", "text": "every tuesday and thursday until dec 15", "src_id": "r-ht1-0114", "dsl": "d R w/1 tu,th u12-15"}
+{"id": "ty0748", "text": "the next 3 thursdays at 8pm", "src_id": "r-taxt1-0246", "dsl": "dt th+1,th+2,th+3 20:00"}
+{"id": "ty0749", "text": "the 1st day of March 2015", "src_id": "r-web4p1-0374", "dsl": "d 2015-03-01"}
+{"id": "ty0750", "text": "all weekends in november", "src_id": "r-taxt2-0009", "dsl": "d R w/1 sa,su uM@11 sM@11"}
+{"id": "ty0751", "text": "game on sat 3pm", "src_id": "r-t0-0381", "dsl": "dt sa 15:00"}
+{"id": "ty0752", "text": "every year every sat in august", "src_id": "r-taxt0-0089", "dsl": "d R w/1 sa M@08"}
+{"id": "ty0753", "text": "3rd friday jan", "src_id": "r-webp2-0233", "dsl": "d fr#3@01"}
+{"id": "ty0754", "text": "Appointment reminder: tuesday at 3pm for 20 minutes with Dr. Lee", "src_id": "r-v2t0-0055", "dsl": "dt tu 15:00>+20m"}
+{"id": "ty0755", "text": "two days ago 0:0:0 am", "src_id": "r-web4p0-0331", "dsl": "dt -2d 00:00"}
+{"id": "ty0756", "text": "m-f every september", "src_id": "r-taxt0-0052", "dsl": "d R d/1 mo,tu,we,th,fr M@09"}
+{"id": "ty0757", "text": "remind me in 2 days", "src_id": "r-t0-0403", "dsl": "d +2d"}
+{"id": "ty0758", "text": "Every Monday and Wednesday", "src_id": "r-webp2-0094", "dsl": "d R w/1 mo,we"}
+{"id": "ty0759", "text": "next tues at 11", "src_id": "r-t0-0238", "dsl": "dt tu+1 11?"}
+{"id": "ty0760", "text": "the last thursday in november", "src_id": "r-web4p2-0102", "dsl": "d th#-1@11"}
+{"id": "ty0761", "text": "Your meal kit delivery is scheduled for Sunday between 8am and noon", "src_id": "r-ht1-0235", "dsl": "dt su 08:00>12:00"}
+{"id": "ty0762", "text": "Office hours are after 2pm on wednesdays, room 214", "src_id": "r-v2t0-0243", "dsl": "dt we 14:00>"}
+{"id": "ty0763", "text": "fridays at 3pm for the next 6 weeks", "src_id": "r-taxt1-0284", "dsl": "dt R w/1 fr u+6w 15:00 s+0d"}
+{"id": "ty0764", "text": "weekdays for the next 6 weeks", "src_id": "r-taxt0-0201", "dsl": "d R d/1 mo,tu,we,th,fr u+6w s+0d"}
+{"id": "ty0765", "text": "come tuesday evening", "src_id": "r-t0-0069", "dsl": "d tu"}
+{"id": "ty0766", "text": "5 days prior to the 1st of march", "src_id": "r-taxd0004", "dsl": "d 03-01~-5d"}
+{"id": "ty0767", "text": "tommorrow at noon", "src_id": "r-ht0-0377", "dsl": "dt +1d 12:00"}
+{"id": "ty0768", "text": "Fri at 19:00", "src_id": "r-webp2-0331", "dsl": "dt fr 19:00"}
+{"id": "ty0769", "text": "Your gym freeze ends monday, billing resumes the 6th", "src_id": "r-v2t1-0088", "dsl": "d mo"}
+{"id": "ty0770", "text": "Aug 25th, 2006 5pm", "src_id": "r-web4p1-0200", "dsl": "dt 2006-08-25 17:00"}
+{"id": "ty0771", "text": "Your invoice is dated nov 15, 2026", "src_id": "r-v2t0-0083", "dsl": "d 2026-11-15"}
+{"id": "ty0772", "text": "i need thursdays in december", "src_id": "r-taxt1-0152", "dsl": "d R w/1 th uM@12 sM@12"}
+{"id": "ty0773", "text": "Tomorrow 2pm", "src_id": "r-webp0-0043", "dsl": "dt +1d 14:00"}
+{"id": "ty0774", "text": "pickup at 3:20 weekdays", "src_id": "r-t1-0360", "dsl": "dt R d/1 mo,tu,we,th,fr 3:20?"}
+{"id": "ty0775", "text": "vr jan 24, 2014 12:49", "src_id": "r-web4p1-0047", "dsl": "dt 2014-01-24 12:49?"}
+{"id": "ty0776", "text": "ea. wk tues 10am", "src_id": "r-ht0-0117", "dsl": "dt R w/1 tu 10:00"}
+{"id": "ty0777", "text": "2 days ago at 00:30", "src_id": "r-web4p1-0342", "dsl": "dt -2d 00:30"}
+{"id": "ty0778", "text": "every aug on day 20 and 30", "src_id": "r-webp1-0266", "dsl": "d R m/1 d20,d30 M@08"}
+{"id": "ty0779", "text": "18:03 1 July", "src_id": "r-webp0-0091", "dsl": "dt 07-01 18:03"}
+{"id": "ty0780", "text": "Flight BA 287 SFO-LHR leaves Thursday night 11/5 at 9:10 PM", "src_id": "r-ht1-0063", "dsl": "dt 11-05 21:10"}
+{"id": "ty0781", "text": "quarter to five tomorrow", "src_id": "r-ht0-0223", "dsl": "dt +1d 4:45?"}
+{"id": "ty0782", "text": "weekdays next month", "src_id": "r-taxt1-0260", "dsl": "d R d/1 mo,tu,we,th,fr uM+1 sM+1"}
+{"id": "ty0783", "text": "March 25, 1995", "src_id": "r-webp0-0275", "dsl": "d 1995-03-25"}
+{"id": "ty0784", "text": "@every 2 weeks", "src_id": "r-web5p0-0031", "dsl": "d R w/2"}
+{"id": "ty0785", "text": "all of next month", "src_id": "r-taxt0-0382", "dsl": "d M+1"}
+{"id": "ty0786", "text": "next 4 mondays at 9am", "src_id": "r-taxt2-0005", "dsl": "dt mo+1,mo+2,mo+3,mo+4 09:00"}
+{"id": "ty0787", "text": "Knitting circle, Mondays at 2 PM, Room 5 -- all skill levels welcome!", "src_id": "r-ht1-0019", "dsl": "dt R w/1 mo 14:00"}
+{"id": "ty0788", "text": "last day of February 2016", "src_id": "r-web5p0-0157", "dsl": "d 2016-02-29"}
+{"id": "ty0789", "text": "9am tomorrow", "src_id": "r-v2t0-0069", "dsl": "dt +1d 09:00"}
+{"id": "ty0790", "text": "all fridays since 1 sept", "src_id": "r-taxt0-0363", "dsl": "d R w/1 fr u+0d s09-01<"}
+{"id": "ty0791", "text": "lunch tomorrow 2 p.m.", "src_id": "r-webp2-0253", "dsl": "dt +1d 14:00"}
+{"id": "ty0792", "text": "every 1st", "src_id": "r-v2t0-0386", "dsl": "d R m/1 d1"}
+{"id": "ty0793", "text": "bi-weekly fridays", "src_id": "r-t0-0143", "dsl": "d R w/2 fr"}
+{"id": "ty0794", "text": "Monthly on the 2nd and 15th of the month for 10 occurrences", "src_id": "r-webp1-0225", "dsl": "d R m/1 d2,d15 n10"}
+{"id": "ty0795", "text": "the last 4 wednesdays", "src_id": "r-taxt0-0030", "dsl": "d we-1,we-2,we-3,we-4"}
+{"id": "ty0796", "text": "the nxt 4 mon", "src_id": "r-taxt1-0137", "dsl": "d mo+1,mo+2,mo+3,mo+4"}
+{"id": "ty0797", "text": "all week apart from monday", "src_id": "r-taxt1-0328", "dsl": "d R d/1 tu,we,th,fr,sa,su uW+0 sW+0"}
+{"id": "ty0798", "text": "between 9:30 and 11:00 on thursday", "src_id": "r-webp1-0242", "dsl": "dt th 9:30?>11?"}
+{"id": "ty0799", "text": "January 4th", "src_id": "r-web4p1-0076", "dsl": "d 01-04"}
+{"id": "ty0800", "text": "inspection at the lakeside unit wed 5:15 sharp", "src_id": "r-t1-0072", "dsl": "dt we 5:15?"}
+{"id": "ty0801", "text": "the 1st and 15th every month", "src_id": "r-t0-0341", "dsl": "d R m/1 d1,d15"}
+{"id": "ty0802", "text": "please block 2pm for 2 hours", "src_id": "r-v2t0-0050", "dsl": "t 14:00>+2h"}
+{"id": "ty0803", "text": "last 60 days", "src_id": "r-web5p0-0059", "dsl": "d -60d>+0d"}
+{"id": "ty0804", "text": "Monday December 4th, 1995", "src_id": "r-web4p1-0190", "dsl": "d 1995-12-04"}
+{"id": "ty0805", "text": "October 14, 1983 at 1:30:23 PM EDT", "src_id": "r-webp2-0101", "dsl": "dt 1983-10-14 13:30"}
+{"id": "ty0806", "text": "2nd and last fri of each month", "src_id": "r-webp0-0201", "dsl": "d R m/1 fr#2,fr#-1"}
+{"id": "ty0807", "text": "everyday until aug 3", "src_id": "r-webp2-0032", "dsl": "d R d/1 u08-03"}
+{"id": "ty0808", "text": "Cake pickup Saturday the 21st, before noon, Sweet Crumb Bakery", "src_id": "r-ht1-0073", "dsl": "d 11-21"}
+{"id": "ty0809", "text": "sep 13, 2013", "src_id": "r-web4p1-0352", "dsl": "d 2013-09-13"}
+{"id": "ty0810", "text": "the last fortnight", "src_id": "r-taxt0-0281", "dsl": "d -2w>+0d"}
+{"id": "ty0811", "text": "Office closed Monday, May 25 in observance of Memorial Day", "src_id": "r-ht1-0209", "dsl": "d 05-25"}
+{"id": "ty0812", "text": "mondays every june thanks", "src_id": "r-taxt1-0177", "dsl": "d R w/1 mo M@06"}
+{"id": "ty0813", "text": "covering your shift weds 3 to 11", "src_id": "r-t2-0120", "dsl": "dt we 3?>11?"}
+{"id": "ty0814", "text": "10th of next october", "src_id": "r-web4p1-0273", "dsl": "d 10-10"}
+{"id": "ty0815", "text": "friday arvo", "src_id": "r-t0-0219", "dsl": "d fr"}
+{"id": "ty0816", "text": "5 August 5pm", "src_id": "r-web4p0-0353", "dsl": "dt 08-05 17:00"}
+{"id": "ty0817", "text": "13 February to 21 February 2027", "src_id": "r-web6p0-0183", "dsl": "d 2027-02-13>2027-02-21"}
+{"id": "ty0818", "text": "\"15 Jul 2024\"", "src_id": "r-web5p0-0164", "dsl": "d 2024-07-15"}
+{"id": "ty0819", "text": "june 1, 2, 3 and 4", "src_id": "r-taxt0-0308", "dsl": "d 06-01,06-02,06-03,06-04"}
+{"id": "ty0820", "text": "Monday 4", "src_id": "r-web5p0-0117", "dsl": "dt mo 4?"}
+{"id": "ty0821", "text": "15 mar", "src_id": "r-t0-0005", "dsl": "d 03-15"}
+{"id": "ty0822", "text": "tonight 815", "src_id": "r-web4p0-0033", "dsl": "dt +0d 20:15"}
+{"id": "ty0823", "text": "February 4th, 2019", "src_id": "r-webp1-0021", "dsl": "d 2019-02-04"}
+{"id": "ty0824", "text": "the 1st and the 15th of each month", "src_id": "r-taxt1-0322", "dsl": "d R m/1 d1,d15"}
+{"id": "ty0825", "text": "weekdays each january", "src_id": "r-taxt0-0083", "dsl": "d R d/1 mo,tu,we,th,fr M@01"}
+{"id": "ty0826", "text": "Tomorrow afternoon", "src_id": "r-web4p0-0182", "dsl": "d +1d"}
+{"id": "ty0827", "text": "Pool party for the swim team! Friday, July 24, 6-8 PM at the Johnsons'", "src_id": "r-ht0-0195", "dsl": "dt 07-24 18:00>20:00"}
+{"id": "ty0828", "text": "thurs 5:30 for half an hour, pickup", "src_id": "r-v2t0-0216", "dsl": "dt th 5:30?>+30m"}
+{"id": "ty0829", "text": "every july on sundays", "src_id": "r-taxt1-0397", "dsl": "d R w/1 su M@07"}
+{"id": "ty0830", "text": "need my prescription ready by this friday at 5", "src_id": "r-t2-0082", "dsl": "dt fr 5?"}
+{"id": "ty0831", "text": "ten past 3 tomorrow", "src_id": "r-t0-0277", "dsl": "dt +1d 3:10?"}
+{"id": "ty0832", "text": "after lunch fri", "src_id": "r-t0-0032", "dsl": "d fr"}
+{"id": "ty0833", "text": "fridays until the end of the year", "src_id": "r-taxd0156", "dsl": "d R w/1 fr uY+0"}
+{"id": "ty0834", "text": "11 december 8am", "src_id": "r-web4p1-0240", "dsl": "dt 12-11 08:00"}
+{"id": "ty0835", "text": "every day through nov 30 but not weekends", "src_id": "r-taxt0-0361", "dsl": "d R d/1 mo,tu,we,th,fr u11-30"}
+{"id": "ty0836", "text": "weekends only, 10 to noon", "src_id": "r-ht0-0315", "dsl": "dt R w/1 sa,su 10:00>12:00"}
+{"id": "ty0837", "text": "Snow day make-up will be held Saturday, March 14, 9:00 AM - 12:00 PM", "src_id": "r-ht0-0367", "dsl": "dt 03-14 09:00>12:00"}
+{"id": "ty0838", "text": "4 years ago", "src_id": "r-web4p2-0176", "dsl": "d -4y"}
+{"id": "ty0839", "text": "15 Apr 2009", "src_id": "r-web4p2-0094", "dsl": "d 2009-04-15"}
+{"id": "ty0840", "text": "Please RSVP no later than friday so we can finalize the headcount", "src_id": "r-v2d0082", "dsl": "d >fr"}
+{"id": "ty0841", "text": "need the next 3 weekends off", "src_id": "r-taxt0-0346", "dsl": "d R w/1 sa,su n6"}
+{"id": "ty0842", "text": "twenty sixth of june nineteen eighty one", "src_id": "r-web4p2-0258", "dsl": "d 1981-06-26"}
+{"id": "ty0843", "text": "At 8PM on August 5th", "src_id": "r-web4p2-0044", "dsl": "dt 08-05 20:00"}
+{"id": "ty0844", "text": "Tue, 23 Apr 1996 13:28:27 -0400", "src_id": "r-webp3-0221", "dsl": "dt 1996-04-23 13:28"}
+{"id": "ty0845", "text": "ring pharmacy at 2 tomorrow", "src_id": "r-t1-0234", "dsl": "dt +1d 2?"}
+{"id": "ty0846", "text": "weekdays for the next 2 weeks", "src_id": "r-ht1-0112", "dsl": "d R d/1 mo,tu,we,th,fr n10"}
+{"id": "ty0847", "text": "cake tasting sat 11:30", "src_id": "r-t1-0116", "dsl": "dt sa 11:30?"}
+{"id": "ty0848", "text": "mon 9am for 1 hour", "src_id": "r-v2t0-0054", "dsl": "dt mo 09:00>+1h"}
+{"id": "ty0849", "text": "every wednesday in november", "src_id": "r-taxt0-0167", "dsl": "d R w/1 we uM@11 sM@11"}
+{"id": "ty0850", "text": "8:25 a.m. Dec. 12, 2014", "src_id": "r-webp0-0254", "dsl": "dt 2014-12-12 08:25"}
+{"id": "ty0851", "text": "/remind #design Design critique meeting every Thursday", "src_id": "r-webp3-0082", "dsl": "d R w/1 th"}
+{"id": "ty0852", "text": "weekdays during the past 3 weeks", "src_id": "r-taxt1-0233", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-3w"}
+{"id": "ty0853", "text": "Jog every week starting from today", "src_id": "r-web5p0-0000", "dsl": "d R w/1 s+0d"}
+{"id": "ty0854", "text": "docking lambs next wk", "src_id": "r-t0-0082", "dsl": "d W+1"}
+{"id": "ty0855", "text": "yesterday at 10am", "src_id": "r-web6p0-0115", "dsl": "dt -1d 10:00"}
+{"id": "ty0856", "text": "November 4 @ 2:00 pm - 2:45 pm", "src_id": "r-web6p0-0299", "dsl": "dt 11-04 14:00>14:45"}
+{"id": "ty0857", "text": "nex tuesdy", "src_id": "r-t1-0337", "dsl": "d tu+1"}
+{"id": "ty0858", "text": "Last call for pre-orders: Dec 2 at 11:59pm PT. Ships Dec 9.", "src_id": "r-ht0-0236", "dsl": "dt 12-02 23:59"}
+{"id": "ty0859", "text": "seven years ago at 3pm", "src_id": "r-web4p1-0294", "dsl": "dt -7y 15:00"}
+{"id": "ty0860", "text": "18 December 2027 to 3 January 2028", "src_id": "r-web6p0-0035", "dsl": "d 2027-12-18>2028-01-03"}
+{"id": "ty0861", "text": "per diem hearing tues 1:30pm", "src_id": "r-t1-0230", "dsl": "dt tu 13:30"}
+{"id": "ty0862", "text": "1 October 2026 \u2013 31 December 2026", "src_id": "r-webp2-0269", "dsl": "d 2026-10-01>2026-12-31"}
+{"id": "ty0863", "text": "what were the last 3 mondays", "src_id": "r-taxt0-0254", "dsl": "d mo-1,mo-2,mo-3"}
+{"id": "ty0864", "text": "Buy 2 tickets for the 7:30 show on saturday", "src_id": "r-v2d0073", "dsl": "dt sa 7:30?"}
+{"id": "ty0865", "text": "The concert will be on February 4th at the ampitheater.", "src_id": "r-webp0-0076", "dsl": "d 02-04"}
+{"id": "ty0866", "text": "Every week on Tuesday", "src_id": "r-webp0-0120", "dsl": "d R w/1 tu"}
+{"id": "ty0867", "text": "lemme know bout sun 2 pm", "src_id": "r-t1-0252", "dsl": "dt su 14:00"}
+{"id": "ty0868", "text": "Remind me monday at 8am to call the landlord", "src_id": "r-v2t0-0045", "dsl": "dt mo 08:00"}
+{"id": "ty0869", "text": "Nov 14, 2023", "src_id": "r-web5p0-0133", "dsl": "d 2023-11-14"}
+{"id": "ty0870", "text": "mid-morning sunday", "src_id": "r-t1-0023", "dsl": "d su"}
+{"id": "ty0871", "text": "friday at ten to noon", "src_id": "r-t1-0122", "dsl": "dt fr 11:50"}
+{"id": "ty0872", "text": "next wednesday at 2:25 p.m.", "src_id": "r-web4p2-0104", "dsl": "dt we+1 14:25"}
+{"id": "ty0873", "text": "every week starts this wednesday", "src_id": "r-web4p1-0359", "dsl": "d R w/1 we"}
+{"id": "ty0874", "text": "weekdays at 6am over the past 2 weeks", "src_id": "r-taxt1-0364", "dsl": "dt R d/1 mo,tu,we,th,fr u+0d 06:00 s-2w"}
+{"id": "ty0875", "text": "ends this week", "src_id": "r-web4p0-0346", "dsl": "d W+0"}
+{"id": "ty0876", "text": "7 working days after oct 14", "src_id": "r-taxt1-0231", "dsl": "d 10-14~+7b"}
+{"id": "ty0877", "text": "rink booked fri 5:15pm", "src_id": "r-t1-0143", "dsl": "dt fr 17:15"}
+{"id": "ty0878", "text": "Water plants every 3 days", "src_id": "r-webp0-0238", "dsl": "d R d/3"}
+{"id": "ty0879", "text": "three working days from now", "src_id": "r-taxt1-0217", "dsl": "d +3b"}
+{"id": "ty0880", "text": "2 weeks ago at 9am", "src_id": "r-web4p1-0312", "dsl": "dt -2w 09:00"}
+{"id": "ty0881", "text": "nov 11th", "src_id": "r-taxt0-0141", "dsl": "d 11-11"}
+{"id": "ty0882", "text": "from nine am to five pm thursday", "src_id": "r-t1-0315", "dsl": "dt th 09:00>17:00"}
+{"id": "ty0883", "text": "advent starts nov 29", "src_id": "r-t0-0370", "dsl": "d 11-29"}
+{"id": "ty0884", "text": "every thurs nite", "src_id": "r-t1-0352", "dsl": "d R w/1 th"}
+{"id": "ty0885", "text": "the whole month of february", "src_id": "r-ht1-0152", "dsl": "d M@02"}
+{"id": "ty0886", "text": "all mondays in 2027", "src_id": "r-taxt1-0262", "dsl": "d R w/1 mo uY@2027 sY@2027"}
+{"id": "ty0887", "text": "10 am for 15 minutes", "src_id": "r-v2d0054", "dsl": "t 10:00>+15m"}
+{"id": "ty0888", "text": "weekdays nxt week", "src_id": "r-taxt0-0070", "dsl": "d R d/1 mo,tu,we,th,fr uW+1 sW+1"}
+{"id": "ty0889", "text": "the next 5 sundays", "src_id": "r-taxd0136", "dsl": "d su+1,su+2,su+3,su+4,su+5"}
+{"id": "ty0890", "text": "nov 4th and 18th", "src_id": "r-taxt1-0362", "dsl": "d 11-04,11-18"}
+{"id": "ty0891", "text": "business days this week", "src_id": "r-taxd0166", "dsl": "d R d/1 mo,tu,we,th,fr uW+0 sW+0"}
+{"id": "ty0892", "text": "what is the weather next friday evening", "src_id": "r-web5p0-0172", "dsl": "d fr+1"}
+{"id": "ty0893", "text": "Open gym volleyball, Sundays 3 to 5 PM, ages 16+, Westside Rec", "src_id": "r-ht1-0037", "dsl": "dt R w/1 su 15:00>17:00"}
+{"id": "ty0894", "text": "Candlemas (2 February)", "src_id": "r-webp0-0130", "dsl": "d 02-02"}
+{"id": "ty0895", "text": "every year on the fourth thursday in november", "src_id": "r-webp2-0200", "dsl": "d R m/1 th#4 M@11"}
+{"id": "ty0896", "text": "now + 1 day", "src_id": "r-webp1-0383", "dsl": "d +1d"}
+{"id": "ty0897", "text": "remind me to X on Monday", "src_id": "r-web5p0-0063", "dsl": "d mo"}
+{"id": "ty0898", "text": "two business days after receipt on nov 4", "src_id": "r-taxt0-0283", "dsl": "d 11-04~+2b"}
+{"id": "ty0899", "text": "three pm tomorrow", "src_id": "r-t0-0359", "dsl": "dt +1d 15:00"}
+{"id": "ty0900", "text": "one hundred and thirty-six years ago", "src_id": "r-webp1-0063", "dsl": "d -136y"}
+{"id": "ty0901", "text": "7/17 4-5 PM or 5-6 PM today", "src_id": "r-webp2-0068", "dsl": "dt 07-17 16:00>17:00"}
+{"id": "ty0902", "text": "22nd of june", "src_id": "r-webp2-0081", "dsl": "d 06-22"}
+{"id": "ty0903", "text": "Great news, your gym membership begins starting nov 1", "src_id": "r-v2t0-0183", "dsl": "d 11-01>"}
+{"id": "ty0904", "text": "tom evening", "src_id": "r-webp0-0276", "dsl": "d +1d"}
+{"id": "ty0905", "text": "Hey Google, remind me every Sunday at 8pm to prep meals for the week.", "src_id": "r-webp0-0096", "dsl": "dt R w/1 su 20:00"}
+{"id": "ty0906", "text": "tomorrow end of day", "src_id": "r-web4p0-0300", "dsl": "d +1d"}
+{"id": "ty0907", "text": "friday 10:30", "src_id": "r-webp1-0362", "dsl": "dt fr 10:30?"}
+{"id": "ty0908", "text": "new task every two days next monday at 19:00", "src_id": "r-web4p1-0357", "dsl": "dt R d/2 19:00 smo+1"}
+{"id": "ty0909", "text": "fridays only for the next 12 weeks", "src_id": "r-taxt1-0182", "dsl": "d R w/1 fr u+12w s+0d"}
+{"id": "ty0910", "text": "yesterday 3p", "src_id": "r-webp0-0369", "dsl": "dt -1d 15:00"}
+{"id": "ty0911", "text": "last 3 fridays", "src_id": "r-taxt0-0328", "dsl": "d fr-1,fr-2,fr-3"}
+{"id": "ty0912", "text": "21 Nov 2023", "src_id": "r-web5p0-0051", "dsl": "d 2023-11-21"}
+{"id": "ty0913", "text": "Bill due december 28", "src_id": "r-v2t0-0322", "dsl": "d 12-28"}
+{"id": "ty0914", "text": "Juni", "src_id": "r-web4p1-0377", "dsl": "d M@06"}
+{"id": "ty0915", "text": "tuesdays every september", "src_id": "r-taxt1-0044", "dsl": "d R w/1 tu M@09"}
+{"id": "ty0916", "text": "reading week 4 to 8 nov", "src_id": "r-t0-0218", "dsl": "d 11-04>11-08"}
+{"id": "ty0917", "text": "M W F next month", "src_id": "r-taxt1-0363", "dsl": "d R w/1 mo,we,fr uM+1 sM+1"}
+{"id": "ty0918", "text": "plz send for the rest of the month", "src_id": "r-taxt1-0086", "dsl": "d +0d>M+0"}
+{"id": "ty0919", "text": "next tuesday at 2p", "src_id": "r-web4p1-0321", "dsl": "dt tu+1 14:00"}
+{"id": "ty0920", "text": "big bank meeting weds 2pm", "src_id": "r-t0-0271", "dsl": "dt we 14:00"}
+{"id": "ty0921", "text": "tonight at eight", "src_id": "r-ht0-0380", "dsl": "dt +0d 20:00"}
+{"id": "ty0922", "text": "all day friday", "src_id": "r-t0-0086", "dsl": "d fr"}
+{"id": "ty0923", "text": "Jan 30 2025", "src_id": "r-web4p0-0068", "dsl": "d 2025-01-30"}
+{"id": "ty0924", "text": "Message me in one week from now", "src_id": "r-web6p0-0070", "dsl": "d +1w"}
+{"id": "ty0925", "text": "Call dentist tomorrow at 10am", "src_id": "r-webp2-0382", "dsl": "dt +1d 10:00"}
+{"id": "ty0926", "text": "next christmas", "src_id": "r-web4p1-0054", "dsl": "d 12-25"}
+{"id": "ty0927", "text": "jan 3rd, 2027", "src_id": "r-t0-0286", "dsl": "d 2027-01-03"}
+{"id": "ty0928", "text": "Sep 12-13", "src_id": "r-web4p2-0155", "dsl": "d 09-12>09-13"}
+{"id": "ty0929", "text": "show me flights to london in next week", "src_id": "r-web4p0-0289", "dsl": "d W+1"}
+{"id": "ty0930", "text": "March 30th, 1979", "src_id": "r-webp3-0234", "dsl": "d 1979-03-30"}
+{"id": "ty0931", "text": "sun, 11/21/2010", "src_id": "r-web4p1-0398", "dsl": "d 2010-11-21"}
+{"id": "ty0932", "text": "i need the last 3 fridays pls", "src_id": "r-taxt0-0221", "dsl": "d fr-1,fr-2,fr-3"}
+{"id": "ty0933", "text": "every aug 20 and 30", "src_id": "r-webp1-0387", "dsl": "d R m/1 d20,d30 M@08"}
+{"id": "ty0934", "text": "Deadline to order yearbooks is Friday, March 27th, 3 PM", "src_id": "r-ht0-0390", "dsl": "dt 03-27 15:00"}
+{"id": "ty0935", "text": "whole of next week", "src_id": "r-t1-0050", "dsl": "d W+1"}
+{"id": "ty0936", "text": "three weeks from tomorrow", "src_id": "r-webp3-0181", "dsl": "d +22d"}
+{"id": "ty0937", "text": "dec 25 2026", "src_id": "r-taxd0028", "dsl": "d 2026-12-25"}
+{"id": "ty0938", "text": "show weekdays over the last 3 weeks", "src_id": "r-taxt0-0314", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-3w"}
+{"id": "ty0939", "text": "Tues 9th Aug, 2015", "src_id": "r-webp2-0344", "dsl": "d 2015-08-09"}
+{"id": "ty0940", "text": "fri @ 4:30", "src_id": "r-t0-0149", "dsl": "dt fr 4:30?"}
+{"id": "ty0941", "text": "on the 3rd of next month at half past two", "src_id": "r-ht1-0148", "dsl": "dt 12-03 2:30?"}
+{"id": "ty0942", "text": "my next 2 saturdays", "src_id": "r-taxt0-0109", "dsl": "d sa+1,sa+2"}
+{"id": "ty0943", "text": "every other friday starting nov 6", "src_id": "r-ht0-0026", "dsl": "d R w/2 fr s11-06"}
+{"id": "ty0944", "text": "until next tuesday", "src_id": "r-v2t0-0041", "dsl": "d >tu+1"}
+{"id": "ty0945", "text": "each day but saturday", "src_id": "r-taxt0-0108", "dsl": "d R d/1 mo,tu,we,th,fr,su"}
+{"id": "ty0946", "text": "february 14, 2004", "src_id": "r-webp2-0248", "dsl": "d 2004-02-14"}
+{"id": "ty0947", "text": "Mon December 4th, 1995", "src_id": "r-web4p1-0001", "dsl": "d 1995-12-04"}
+{"id": "ty0948", "text": "last friday of every month at 5pm", "src_id": "r-taxt0-0282", "dsl": "dt R m/1 fr#-1 17:00"}
+{"id": "ty0949", "text": "guest availability the week of nov 17", "src_id": "r-t0-0382", "dsl": "d 11-17"}
+{"id": "ty0950", "text": "before fri", "src_id": "r-v2t0-0353", "dsl": "d >fr"}
+{"id": "ty0951", "text": "Art walk downtown, Friday, June 5, 5:00 PM - 9:00 PM, free admission", "src_id": "r-ht0-0314", "dsl": "dt 06-05 17:00>21:00"}
+{"id": "ty0952", "text": "everyday at 4pm", "src_id": "r-t1-0103", "dsl": "dt R d/1 16:00"}
+{"id": "ty0953", "text": "in 10 days at 9", "src_id": "r-t1-0135", "dsl": "dt +10d 9?"}
+{"id": "ty0954", "text": "Saturday at 9am", "src_id": "r-web4p0-0088", "dsl": "dt sa 09:00"}
+{"id": "ty0955", "text": "3 days hence", "src_id": "r-ht0-0338", "dsl": "d +3d"}
+{"id": "ty0956", "text": "every tues until dec 15", "src_id": "r-t1-0192", "dsl": "d R w/1 tu u12-15"}
+{"id": "ty0957", "text": "billable hours year to date", "src_id": "r-taxd0064", "dsl": "d Y+0>+0d"}
+{"id": "ty0958", "text": "fourth Thursday in November", "src_id": "r-webp0-0066", "dsl": "d th#4@11"}
+{"id": "ty0959", "text": "10 am for half an hour", "src_id": "r-v2d0052", "dsl": "t 10:00>+30m"}
+{"id": "ty0960", "text": "Homework help every school day 3:15-4:15 PM, library annex, grades 3-6", "src_id": "r-ht0-0239", "dsl": "dt R d/1 mo,tu,we,th,fr 15:15>16:15"}
+{"id": "ty0961", "text": "fridays every october", "src_id": "r-taxt0-0150", "dsl": "d R w/1 fr M@10"}
+{"id": "ty0962", "text": "on the third tuesday of each month", "src_id": "r-web4p0-0366", "dsl": "d R m/1 tu#3"}
+{"id": "ty0963", "text": "last 2 months", "src_id": "r-web4p0-0192", "dsl": "d -2m>+0d"}
+{"id": "ty0964", "text": "nov 3rd + nov 10th", "src_id": "r-taxt0-0203", "dsl": "d 11-03,11-10"}
+{"id": "ty0965", "text": "two days before valentines day", "src_id": "r-taxt0-0049", "dsl": "d 02-14~-2d"}
+{"id": "ty0966", "text": "retro thursday 2pm for an hour", "src_id": "r-v2t0-0235", "dsl": "dt th 14:00>+1h"}
+{"id": "ty0967", "text": "final Thursday in November", "src_id": "r-webp3-0049", "dsl": "d th#-1@11"}
+{"id": "ty0968", "text": "today night", "src_id": "r-webp3-0038", "dsl": "d +0d"}
+{"id": "ty0969", "text": "all day thursday", "src_id": "r-t2-0027", "dsl": "d th"}
+{"id": "ty0970", "text": "Your dog's grooming appointment is thursday 1pm for 90 minutes", "src_id": "r-v2t0-0315", "dsl": "dt th 13:00>+90m"}
+{"id": "ty0971", "text": "first and third friday of each month", "src_id": "r-webp2-0297", "dsl": "d R m/1 fr#1,fr#3"}
+{"id": "ty0972", "text": "sundays each september", "src_id": "r-taxd0048", "dsl": "d R w/1 su M@09"}
+{"id": "ty0973", "text": "lunchtime friday", "src_id": "r-ht1-0322", "dsl": "d fr"}
+{"id": "ty0974", "text": "7 to 9 pm thursday", "src_id": "r-ht1-0212", "dsl": "dt th 19:00>21:00"}
+{"id": "ty0975", "text": "8th January", "src_id": "r-web4p0-0095", "dsl": "d 01-08"}
+{"id": "ty0976", "text": "Science fair projects are due Thursday morning, March 5th, by 8 AM", "src_id": "r-ht1-0101", "dsl": "dt 03-05 08:00"}
+{"id": "ty0977", "text": "monday at nine for an hour", "src_id": "r-v2t1-0033", "dsl": "dt mo 9?>+1h"}
+{"id": "ty0978", "text": "ten am for forty five minutes", "src_id": "r-v2t0-0284", "dsl": "t 10:00>+45m"}
+{"id": "ty0979", "text": "Last Sunday in March at 01:00 UTC", "src_id": "r-webp0-0213", "dsl": "dt su#-1@03 01:00"}
+{"id": "ty0980", "text": "tue thru thurs", "src_id": "r-t1-0405", "dsl": "d tu>th"}
+{"id": "ty0981", "text": "saint paddys day", "src_id": "r-web4p1-0074", "dsl": "d 03-17"}
+{"id": "ty0982", "text": "3 days following dec 1", "src_id": "r-taxt2-0033", "dsl": "d 12-01~+3d"}
+{"id": "ty0983", "text": "8 oclock tomorrow morning", "src_id": "r-t0-0354", "dsl": "dt +1d 08:00"}
+{"id": "ty0984", "text": "jan 1 to jan 15", "src_id": "r-taxt1-0145", "dsl": "d 01-01>01-15"}
+{"id": "ty0985", "text": "Remind me about tomorrow\u2019s deadline.", "src_id": "r-web4p0-0322", "dsl": "d +1d"}
+{"id": "ty0986", "text": "Lunch every Tuesday until 2/5", "src_id": "r-webp0-0195", "dsl": "d R w/1 tu u02-05"}
+{"id": "ty0987", "text": "jan 15, apr 15, jun 15, sep 15", "src_id": "r-taxt1-0235", "dsl": "d 01-15,04-15,06-15,09-15"}
+{"id": "ty0988", "text": "Remind me every Monday at 9 AM to send the weekly report.", "src_id": "r-webp0-0002", "dsl": "dt R w/1 mo 09:00"}
+{"id": "ty0989", "text": "weekends this year", "src_id": "r-taxt1-0127", "dsl": "d R w/1 sa,su uY+0 sY+0"}
+{"id": "ty0990", "text": "next sunday at 8p", "src_id": "r-t0-0043", "dsl": "dt su+1 20:00"}
+{"id": "ty0991", "text": "tom afternoon", "src_id": "r-webp3-0145", "dsl": "d +1d"}
+{"id": "ty0992", "text": "the 10th of the month", "src_id": "r-web4p0-0305", "dsl": "d D@10"}
+{"id": "ty0993", "text": "meeting on June 15 at three in the afternoon", "src_id": "r-web5p0-0058", "dsl": "dt 06-15 15:00"}
+{"id": "ty0994", "text": "Reservation for 6 people on friday at 8:30pm", "src_id": "r-v2d0083", "dsl": "dt fr 20:30"}
+{"id": "ty0995", "text": "next 7 days", "src_id": "r-taxd0095", "dsl": "d +0d>+7d"}
+{"id": "ty0996", "text": "Thank you for your RSVP! See you at Camp Willow, July 10 - 12, 2026", "src_id": "r-ht0-0098", "dsl": "d 2026-07-10>2026-07-12"}
+{"id": "ty0997", "text": "11 augustus 2014", "src_id": "r-web4p2-0003", "dsl": "d 2014-08-11"}
+{"id": "ty0998", "text": "practice every mon wed fri 3:45", "src_id": "r-t0-0140", "dsl": "dt R w/1 mo,we,fr 3:45?"}
+{"id": "ty0999", "text": "eat pasty buns today at 2pm", "src_id": "r-web4p0-0147", "dsl": "dt +0d 14:00"}
+{"id": "ty1000", "text": "dinner w/ sara fri 7:30", "src_id": "r-t0-0015", "dsl": "dt fr 7:30?"}
+{"id": "ty1001", "text": "the rest of the year", "src_id": "r-taxt0-0134", "dsl": "d +0d>Y+0"}
+{"id": "ty1002", "text": "~1 week from now", "src_id": "r-web5p0-0013", "dsl": "d +1w"}
+{"id": "ty1003", "text": "Oil change tomorrow 9am for 45 minutes, shuttle available", "src_id": "r-v2t1-0046", "dsl": "dt +1d 09:00>+45m"}
+{"id": "ty1004", "text": "fri 10a", "src_id": "r-t0-0227", "dsl": "dt fr 10:00"}
+{"id": "ty1005", "text": "fri at 4", "src_id": "r-t1-0277", "dsl": "dt fr 4?"}
+{"id": "ty1006", "text": "Pick up the milk tomorrow", "src_id": "r-webp2-0034", "dsl": "d +1d"}
+{"id": "ty1007", "text": "the 4th of the month", "src_id": "r-v2t0-0287", "dsl": "d D@04"}
+{"id": "ty1008", "text": "yesterday at 4", "src_id": "r-t2-0031", "dsl": "dt -1d 4?"}
+{"id": "ty1009", "text": "5pm Aug 05", "src_id": "r-web4p1-0125", "dsl": "dt 08-05 17:00"}
+{"id": "ty1010", "text": "Call the bank on monday morning", "src_id": "r-v2t1-0015", "dsl": "d mo"}
+{"id": "ty1011", "text": "Thursday from 9:30 untill 11:00", "src_id": "r-web4p1-0180", "dsl": "dt th 9:30?>11?"}
+{"id": "ty1012", "text": "Tuesday 8th September - Whole school returns", "src_id": "r-web6p0-0109", "dsl": "d 09-08"}
+{"id": "ty1013", "text": "see u sat arvo around 3ish", "src_id": "r-t1-0174", "dsl": "dt sa 15:00"}
+{"id": "ty1014", "text": "repeat every fortnight on wednesday", "src_id": "r-t2-0111", "dsl": "d R w/2 we"}
+{"id": "ty1015", "text": "yoga mondays and weds 6pm", "src_id": "r-t1-0084", "dsl": "dt R w/1 mo,we 18:00"}
+{"id": "ty1016", "text": "first fri every month at 6pm", "src_id": "r-t2-0017", "dsl": "dt R m/1 fr#1 18:00"}
+{"id": "ty1017", "text": "last Thursday of November next", "src_id": "r-webp0-0377", "dsl": "d th#-1@11"}
+{"id": "ty1018", "text": "2-3:30p thurs", "src_id": "r-ht0-0230", "dsl": "dt th 14:00>15:30"}
+{"id": "ty1019", "text": "pst 2 weekends", "src_id": "r-taxt1-0355", "dsl": "d sa-1,su-1,sa-2,su-2"}
+{"id": "ty1020", "text": "Estimated arrival: Fri, Nov 6 - Tue, Nov 10 via USPS Priority Mail", "src_id": "r-ht0-0045", "dsl": "d 11-06>11-10"}
+{"id": "ty1021", "text": "next 3 sundays", "src_id": "r-taxt0-0285", "dsl": "d su+1,su+2,su+3"}
+{"id": "ty1022", "text": "fifth of october at ten past ten at night", "src_id": "r-ht1-0170", "dsl": "dt 10-05 22:10"}
+{"id": "ty1023", "text": "Reminder from your landlord: inspection monday 10am for 30 minutes", "src_id": "r-v2t0-0139", "dsl": "dt mo 10:00>+30m"}
+{"id": "ty1024", "text": "12 noon", "src_id": "r-t1-0128", "dsl": "t 12:00"}
+{"id": "ty1025", "text": "last september", "src_id": "r-web4p1-0170", "dsl": "d M@09<"}
+{"id": "ty1026", "text": "today evening", "src_id": "r-webp3-0090", "dsl": "d +0d"}
+{"id": "ty1027", "text": "standup 9:15 every weekday", "src_id": "r-t0-0128", "dsl": "dt R d/1 mo,tu,we,th,fr 9:15?"}
+{"id": "ty1028", "text": "until march third", "src_id": "r-v2t0-0202", "dsl": "d >03-03"}
+{"id": "ty1029", "text": "What's the weather next Friday?", "src_id": "r-web5p0-0101", "dsl": "d fr+1"}
+{"id": "ty1030", "text": "Reminder: library books due back by Mon. Feb 2 or fines will apply", "src_id": "r-ht1-0211", "dsl": "d 02-02"}
+{"id": "ty1031", "text": "each weekday except tuesdays and thursdays", "src_id": "r-taxt0-0250", "dsl": "d R d/1 mo,we,fr"}
+{"id": "ty1032", "text": "gandhi jayanti, 2 oct", "src_id": "r-ht0-0166", "dsl": "d 10-02"}
+{"id": "ty1033", "text": "everyday 7pm", "src_id": "r-t2-0075", "dsl": "dt R d/1 19:00"}
+{"id": "ty1034", "text": "from june 1 to aug 31", "src_id": "r-taxt0-0101", "dsl": "d 06-01>08-31"}
+{"id": "ty1035", "text": "the first of every month", "src_id": "r-webp1-0100", "dsl": "d R m/1 d1"}
+{"id": "ty1036", "text": "1st Monday in September", "src_id": "r-webp1-0205", "dsl": "d mo#1@09"}
+{"id": "ty1037", "text": "August 5th 5pm", "src_id": "r-web4p0-0195", "dsl": "dt 08-05 17:00"}
+{"id": "ty1038", "text": "mow lawn this sat", "src_id": "r-t1-0146", "dsl": "d sa"}
+{"id": "ty1039", "text": "oil change next tues 8am", "src_id": "r-t1-0042", "dsl": "dt tu+1 08:00"}
+{"id": "ty1040", "text": "t/th until june", "src_id": "r-taxt0-0315", "dsl": "d R w/1 tu,th uM@06"}
+{"id": "ty1041", "text": "please block out two days after xmas", "src_id": "r-taxt0-0116", "dsl": "d 12-25~+2d"}
+{"id": "ty1042", "text": "daily until friday", "src_id": "r-t2-0040", "dsl": "d R d/1 ufr"}
+{"id": "ty1043", "text": "1000 years ago", "src_id": "r-web4p0-0281", "dsl": "d -1000y"}
+{"id": "ty1044", "text": "2 days after xmas", "src_id": "r-taxt1-0258", "dsl": "d 12-25~+2d"}
+{"id": "ty1045", "text": "sundays for the past 5 weeks", "src_id": "r-taxt1-0033", "dsl": "d R w/1 su u+0d s-5w"}
+{"id": "ty1046", "text": "today 4PM to today 4:30PM", "src_id": "r-web4p2-0063", "dsl": "dt +0d 16:00>+0d 16:30"}
+{"id": "ty1047", "text": "five years after 11 May 2017", "src_id": "r-web4p1-0375", "dsl": "d 2017-05-11~+5y"}
+{"id": "ty1048", "text": "The last 30 days", "src_id": "r-web5p0-0041", "dsl": "d -30d>+0d"}
+{"id": "ty1049", "text": "Your massage on saturday 4pm is for 60 minutes", "src_id": "r-v2d0007", "dsl": "dt sa 16:00>+60m"}
+{"id": "ty1050", "text": "next six thursdays", "src_id": "r-taxt1-0238", "dsl": "d th+1,th+2,th+3,th+4,th+5,th+6"}
+{"id": "ty1051", "text": "Martinmas (11 November)", "src_id": "r-webp0-0187", "dsl": "d 11-11"}
+{"id": "ty1052", "text": "every 20th and 30th of aug", "src_id": "r-webp3-0051", "dsl": "d R m/1 d20,d30 M@08"}
+{"id": "ty1053", "text": "dec 1 - dec 5", "src_id": "r-taxt1-0268", "dsl": "d 12-01>12-05"}
+{"id": "ty1054", "text": "valentines day dinner 7:30", "src_id": "r-ht1-0000", "dsl": "dt 02-14 7:30?"}
+{"id": "ty1055", "text": "today: '2026-01-01'", "src_id": "r-web4p0-0198", "dsl": "d 2026-01-01"}
+{"id": "ty1056", "text": "Every week for 20 times", "src_id": "r-webp3-0017", "dsl": "d R w/1 n20"}
+{"id": "ty1057", "text": "hmm maybe saturday around 2", "src_id": "r-t0-0260", "dsl": "dt sa 2?"}
+{"id": "ty1058", "text": "Term 1: Monday 2nd February - Tuesday 2nd April 2026", "src_id": "r-web6p0-0031", "dsl": "d 2026-02-02>2026-04-02"}
+{"id": "ty1059", "text": "the day before christmas eve", "src_id": "r-ht0-0164", "dsl": "d 12-23"}
+{"id": "ty1060", "text": "every day at six in the morning", "src_id": "r-ht1-0185", "dsl": "dt R d/1 06:00"}
+{"id": "ty1061", "text": "every may weekdays", "src_id": "r-taxd0190", "dsl": "d R d/1 mo,tu,we,th,fr M@05"}
+{"id": "ty1062", "text": "6 o'clock tomorrow morning", "src_id": "r-t0-0257", "dsl": "dt +1d 06:00"}
+{"id": "ty1063", "text": "feb 29", "src_id": "r-t2-0101", "dsl": "d 02-29"}
+{"id": "ty1064", "text": "sept 9", "src_id": "r-t0-0376", "dsl": "d 09-09"}
+{"id": "ty1065", "text": "ok tomorrow 10 for 1 hour", "src_id": "r-v2t1-0068", "dsl": "dt +1d 10?>+1h"}
+{"id": "ty1066", "text": "the coming 3 weeks", "src_id": "r-taxt0-0207", "dsl": "d +0d>+3w"}
+{"id": "ty1067", "text": "christmas evening", "src_id": "r-web4p1-0389", "dsl": "d 12-25"}
+{"id": "ty1068", "text": "later today around 4", "src_id": "r-ht0-0245", "dsl": "dt +0d 4?"}
+{"id": "ty1069", "text": "Every Thursday in March, forever", "src_id": "r-webp2-0259", "dsl": "d R w/1 th M@03"}
+{"id": "ty1070", "text": "Call Lizzie at 9am Thursday", "src_id": "r-webp0-0181", "dsl": "dt th 09:00"}
+{"id": "ty1071", "text": "remind me to make a doctor's appointment tomorrow at noon", "src_id": "r-web4p0-0206", "dsl": "dt +1d 12:00"}
+{"id": "ty1072", "text": "wed even", "src_id": "r-t2-0056", "dsl": "d we"}
+{"id": "ty1073", "text": "Order of 12 donuts for friday morning", "src_id": "r-v2t0-0193", "dsl": "d fr"}
+{"id": "ty1074", "text": "the 14th of march at 2pm", "src_id": "r-ht0-0359", "dsl": "dt 03-14 14:00"}
+{"id": "ty1075", "text": "weekdays since monday", "src_id": "r-taxd0179", "dsl": "d R d/1 mo,tu,we,th,fr u+0d smo<"}
+{"id": "ty1076", "text": "until march 3", "src_id": "r-v2t0-0111", "dsl": "d >03-03"}
+{"id": "ty1077", "text": "4 banking days from friday", "src_id": "r-taxt1-0377", "dsl": "d fr~+4b"}
+{"id": "ty1078", "text": "July 4th, 1776", "src_id": "r-webp2-0298", "dsl": "d 1776-07-04"}
+{"id": "ty1079", "text": "Spring semester begins January 19, 2027, with add/drop until Jan 29", "src_id": "r-ht0-0368", "dsl": "d 2027-01-19"}
+{"id": "ty1080", "text": "50 days before new year's eve", "src_id": "r-webp0-0001", "dsl": "d 12-31~-50d"}
+{"id": "ty1081", "text": "ev monday, friday", "src_id": "r-webp0-0317", "dsl": "d R w/1 mo,fr"}
+{"id": "ty1082", "text": "Table for 2 at Caf\u00e9 Bleu tonight at 6:45 pm, confirmation #A83921", "src_id": "r-ht1-0130", "dsl": "dt +0d 18:45"}
+{"id": "ty1083", "text": "my birthday was 3 days ago", "src_id": "r-web5p0-0035", "dsl": "d -3d"}
+{"id": "ty1084", "text": "19. Februar 2012", "src_id": "r-web4p2-0181", "dsl": "d 2012-02-19"}
+{"id": "ty1085", "text": "tuesday and thursday evenings for the past 5 weeks", "src_id": "r-taxd0023", "dsl": "d R w/1 tu,th u+0d s-5w"}
+{"id": "ty1086", "text": "3 September 2026", "src_id": "r-web6p0-0126", "dsl": "d 2026-09-03"}
+{"id": "ty1087", "text": "mon wed fri every june", "src_id": "r-taxt2-0042", "dsl": "d R w/1 mo,we,fr M@06"}
+{"id": "ty1088", "text": "last 5 sundays", "src_id": "r-taxt0-0160", "dsl": "d su-1,su-2,su-3,su-4,su-5"}
+{"id": "ty1089", "text": "First Sunday in April at 03:00", "src_id": "r-webp0-0117", "dsl": "dt su#1@04 03:00"}
+{"id": "ty1090", "text": "pay day is the 25th", "src_id": "r-v2d0055", "dsl": "d D@25"}
+{"id": "ty1091", "text": "dec 1st to dec 3rd", "src_id": "r-t0-0317", "dsl": "d 12-01>12-03"}
+{"id": "ty1092", "text": "weds 11a", "src_id": "r-ht0-0262", "dsl": "dt we 11:00"}
+{"id": "ty1093", "text": "August 29, 2006 - September 2, 2006", "src_id": "r-web4p0-0204", "dsl": "d 2006-08-29>2006-09-02"}
+{"id": "ty1094", "text": "all sundays of every november", "src_id": "r-taxt1-0104", "dsl": "d R w/1 su M@11"}
+{"id": "ty1095", "text": "It's gonna snow! How about skiing tomorrow", "src_id": "r-web4p0-0221", "dsl": "d +1d"}
+{"id": "ty1096", "text": "the thirty first of July", "src_id": "r-webp2-0303", "dsl": "d 07-31"}
+{"id": "ty1097", "text": "'Sixth June'", "src_id": "r-web5p0-0052", "dsl": "d 06-06"}
+{"id": "ty1098", "text": "need it for 5 business days after oct 1 ok", "src_id": "r-taxt1-0207", "dsl": "d 10-01~+5b"}
+{"id": "ty1099", "text": "Friday 31 March 2028", "src_id": "r-web6p0-0221", "dsl": "d 2028-03-31"}
+{"id": "ty1100", "text": "every 2 wks on mon", "src_id": "r-t0-0196", "dsl": "d R w/2 mo"}
+{"id": "ty1101", "text": "lets do the 23rd at noon", "src_id": "r-v2t0-0124", "dsl": "dt D@23 12:00"}
+{"id": "ty1102", "text": "nine o'clock sharp wednesday", "src_id": "r-t1-0297", "dsl": "dt we 9?"}
+{"id": "ty1103", "text": "I intend to become a zombie on December, 21st 2012.", "src_id": "r-web4p1-0338", "dsl": "d 2012-12-21"}
+{"id": "ty1104", "text": "March 3, Friday", "src_id": "r-web4p2-0133", "dsl": "d 03-03"}
+{"id": "ty1105", "text": "Hi Ana, your piano lesson is saturday 10am for 30 minutes", "src_id": "r-v2d0092", "dsl": "dt sa 10:00>+30m"}
+{"id": "ty1106", "text": "every Mon-Wed for the next 2 months", "src_id": "r-webp1-0043", "dsl": "d R w/1 mo,tu,we u+2m s+0d"}
+{"id": "ty1107", "text": "after nine tonight", "src_id": "r-v2d0037", "dsl": "dt +0d 21:00>"}
+{"id": "ty1108", "text": "come thurs about 5ish", "src_id": "r-t0-0203", "dsl": "dt th 5?"}
+{"id": "ty1109", "text": "im out of office until nov 3", "src_id": "r-v2t0-0283", "dsl": "d >11-03"}
+{"id": "ty1110", "text": "At 11:10 AM, every day", "src_id": "r-webp0-0292", "dsl": "dt R d/1 11:10"}
+{"id": "ty1111", "text": "mwf 5:30a for 8 weeks", "src_id": "r-taxd0123", "dsl": "dt R w/1 mo,we,fr u+8w 05:30"}
+{"id": "ty1112", "text": "Monday 8 February to Friday 12 February", "src_id": "r-web6p0-0273", "dsl": "d 02-08>02-12"}
+{"id": "ty1113", "text": "weekdays each july", "src_id": "r-taxt1-0335", "dsl": "d R d/1 mo,tu,we,th,fr M@07"}
+{"id": "ty1114", "text": "every wed at 6:30pm", "src_id": "r-t2-0090", "dsl": "dt R w/1 we 18:30"}
+{"id": "ty1115", "text": "every other week on tues", "src_id": "r-t0-0206", "dsl": "d R w/2 tu"}
+{"id": "ty1116", "text": "last 4 weds", "src_id": "r-taxt0-0074", "dsl": "d we-1,we-2,we-3,we-4"}
+{"id": "ty1117", "text": "Nov 6, 2026", "src_id": "r-web6p0-0201", "dsl": "d 2026-11-06"}
+{"id": "ty1118", "text": "may 31 till june 2", "src_id": "r-t1-0094", "dsl": "d 05-31>06-02"}
+{"id": "ty1119", "text": "last 3 fridays at noon", "src_id": "r-taxt1-0280", "dsl": "dt fr-1,fr-2,fr-3 12:00"}
+{"id": "ty1120", "text": "Remind me to join the Zoom meeting at 2 PM tomorrow.", "src_id": "r-webp0-0165", "dsl": "dt +1d 14:00"}
+{"id": "ty1121", "text": "mon/wed for the next 10 weeks", "src_id": "r-taxt0-0124", "dsl": "d R w/1 mo,we u+10w s+0d"}
+{"id": "ty1122", "text": "mon may 15 to 16", "src_id": "r-web4p0-0263", "dsl": "d 05-15>05-16"}
+{"id": "ty1123", "text": "yearly on june 4", "src_id": "r-t1-0374", "dsl": "d R y/1 06-04"}
+{"id": "ty1124", "text": "Tuesday: 8am to 6pm", "src_id": "r-web6p0-0178", "dsl": "dt tu 08:00>18:00"}
+{"id": "ty1125", "text": "Wednesday 2nd September 2026 for year 7s only.", "src_id": "r-web6p0-0208", "dsl": "d 2026-09-02"}
+{"id": "ty1126", "text": "kids back from hols jan 27", "src_id": "r-t1-0091", "dsl": "d 01-27"}
+{"id": "ty1127", "text": "Late-night shuttle from the venue leaves at 12:30 AM on Sunday morning", "src_id": "r-ht0-0047", "dsl": "dt su 00:30"}
+{"id": "ty1128", "text": "past 2 weekends at brunch time", "src_id": "r-taxt1-0180", "dsl": "d sa-1,su-1,sa-2,su-2"}
+{"id": "ty1129", "text": "1 business day after oct 31", "src_id": "r-taxd0083", "dsl": "d 10-31~+1b"}
+{"id": "ty1130", "text": "semester starts 23 sept", "src_id": "r-t1-0412", "dsl": "d 09-23"}
+{"id": "ty1131", "text": "remind me to call mom  at 7 o'clock tonight", "src_id": "r-web5p0-0126", "dsl": "dt +0d 19:00"}
+{"id": "ty1132", "text": "past 3 wednesdays", "src_id": "r-taxt1-0120", "dsl": "d we-1,we-2,we-3"}
+{"id": "ty1133", "text": "off work sat", "src_id": "r-t0-0036", "dsl": "d sa"}
+{"id": "ty1134", "text": "November 26: Thanksgiving Day", "src_id": "r-web6p0-0173", "dsl": "d 11-26"}
+{"id": "ty1135", "text": "last 8 thursdays", "src_id": "r-taxd0161", "dsl": "d th-1,th-2,th-3,th-4,th-5,th-6,th-7,th-8"}
+{"id": "ty1136", "text": "jan 5 through jan 9", "src_id": "r-v2t1-0087", "dsl": "d 01-05>01-09"}
+{"id": "ty1137", "text": "Daily until December 24, 1997", "src_id": "r-webp2-0274", "dsl": "d R d/1 u1997-12-24"}
+{"id": "ty1138", "text": "12 midnight sunday", "src_id": "r-ht1-0091", "dsl": "dt su 00:00"}
+{"id": "ty1139", "text": "every tenth", "src_id": "r-v2t0-0062", "dsl": "d R m/1 d10"}
+{"id": "ty1140", "text": "Thu, 1 July 2004 22:30:00 GMT", "src_id": "r-webp1-0000", "dsl": "dt 2004-07-01 22:30"}
+{"id": "ty1141", "text": "a week from oct 5", "src_id": "r-taxd0197", "dsl": "d 10-05~+1w"}
+{"id": "ty1142", "text": "October 14, 1983 at 1:30 PM EDT", "src_id": "r-webp0-0065", "dsl": "dt 1983-10-14 13:30"}
+{"id": "ty1143", "text": "Submit project report every Friday at 9am p1 #Work", "src_id": "r-webp1-0070", "dsl": "dt R w/1 fr 09:00"}
+{"id": "ty1144", "text": "December 04, 1995", "src_id": "r-web4p1-0276", "dsl": "d 1995-12-04"}
+{"id": "ty1145", "text": "July   4 ,  1976   12:01:02   am", "src_id": "r-webp0-0055", "dsl": "dt 1976-07-04 00:01"}
+{"id": "ty1146", "text": "7:30 am (1 hour)", "src_id": "r-v2t0-0299", "dsl": "t 07:30>+1h"}
+{"id": "ty1147", "text": "every 4th of the month", "src_id": "r-ht0-0247", "dsl": "d R m/1 d4"}
+{"id": "ty1148", "text": "every thurs till xmas", "src_id": "r-t1-0117", "dsl": "d R w/1 th u12-25"}
+{"id": "ty1149", "text": "1 week after mlk day", "src_id": "r-taxt1-0215", "dsl": "d mo#3@01~+1w"}
+{"id": "ty1150", "text": "2nd of jan", "src_id": "r-t2-0119", "dsl": "d 01-02"}
+{"id": "ty1151", "text": "tomorrow at 12 am", "src_id": "r-web6p0-0104", "dsl": "dt +1d 00:00"}
+{"id": "ty1152", "text": "5-7 june", "src_id": "r-ht0-0383", "dsl": "d 06-05>06-07"}
+{"id": "ty1153", "text": "mornings today", "src_id": "r-taxd0044", "dsl": "d +0d"}
+{"id": "ty1154", "text": "November 19, 2014 at noon", "src_id": "r-web4p1-0390", "dsl": "dt 2014-11-19 12:00"}
+{"id": "ty1155", "text": "4 July", "src_id": "r-web5p0-0077", "dsl": "d 07-04"}
+{"id": "ty1156", "text": "daily until nov 30", "src_id": "r-t0-0234", "dsl": "d R d/1 u11-30"}
+{"id": "ty1157", "text": "before twelve noon", "src_id": "r-v2t0-0384", "dsl": "t >12:00"}
+{"id": "ty1158", "text": "a week from tomorrow", "src_id": "r-t0-0141", "dsl": "d +8d"}
+{"id": "ty1159", "text": "diwali 12 nov off", "src_id": "r-t1-0233", "dsl": "d 11-12"}
+{"id": "ty1160", "text": "5 june 2027", "src_id": "r-t0-0142", "dsl": "d 2027-06-05"}
+{"id": "ty1161", "text": "Tuesday Tots Extra EventOctober 15, 2026", "src_id": "r-web6p0-0298", "dsl": "d 2026-10-15"}
+{"id": "ty1162", "text": "Remind me to X tomorrow at 9am", "src_id": "r-web4p2-0219", "dsl": "dt +1d 09:00"}
+{"id": "ty1163", "text": "today + 12 days", "src_id": "r-webp0-0106", "dsl": "d +12d"}
+{"id": "ty1164", "text": "weekends last month", "src_id": "r-taxd0063", "dsl": "d R w/1 sa,su uM-1 sM-1"}
+{"id": "ty1165", "text": "aug 12-14", "src_id": "r-t1-0295", "dsl": "d 08-12>08-14"}
+{"id": "ty1166", "text": "Tue 2024-04-09", "src_id": "r-web4p2-0064", "dsl": "d 2024-04-09"}
+{"id": "ty1167", "text": "every weds till christmas", "src_id": "r-t2-0036", "dsl": "d R w/1 we u12-25"}
+{"id": "ty1168", "text": "for 10 days starting monday", "src_id": "r-t0-0130", "dsl": "d R d/1 n10 smo"}
+{"id": "ty1169", "text": "jan 12 to ja", "src_id": "r-t1-0272", "dsl": "d 01-12"}
+{"id": "ty1170", "text": "05th Aug 5pm", "src_id": "r-web4p1-0186", "dsl": "dt 08-05 17:00"}
+{"id": "ty1171", "text": "next friday 8pm", "src_id": "r-webp2-0175", "dsl": "dt fr+1 20:00"}
+{"id": "ty1172", "text": "this coming mon", "src_id": "r-web4p0-0124", "dsl": "d mo"}
+{"id": "ty1173", "text": "every friday at 4pm until christmas", "src_id": "r-taxt1-0296", "dsl": "dt R w/1 fr u12-25 16:00"}
+{"id": "ty1174", "text": "next fri 8pm", "src_id": "r-webp2-0061", "dsl": "dt fr+1 20:00"}
+{"id": "ty1175", "text": "2nd fri in feb at 9am", "src_id": "r-webp0-0372", "dsl": "dt fr#2@02 09:00"}
+{"id": "ty1176", "text": "the past 5 weeks every tuesday", "src_id": "r-taxt1-0344", "dsl": "d R w/1 tu u+0d s-5w"}
+{"id": "ty1177", "text": "wednesdays for the last 12 weeks", "src_id": "r-taxt1-0017", "dsl": "d R w/1 we u+0d s-12w"}
+{"id": "ty1178", "text": "Alexa, remind me to call Mom this Saturday at noon.", "src_id": "r-webp2-0312", "dsl": "dt sa 12:00"}
+{"id": "ty1179", "text": "mwf over the last month", "src_id": "r-taxd0147", "dsl": "d R w/1 mo,we,fr u+0d s-1m"}
+{"id": "ty1180", "text": "All Items Due Today", "src_id": "r-web5p0-0090", "dsl": "d +0d"}
+{"id": "ty1181", "text": "every tuesday for the next 2 months", "src_id": "r-taxt1-0125", "dsl": "d R w/1 tu u+2m s+0d"}
+{"id": "ty1182", "text": "Do task every third Friday of the month", "src_id": "r-web5p0-0130", "dsl": "d R m/1 fr#3"}
+{"id": "ty1183", "text": "Dec 25th, 2007", "src_id": "r-webp3-0133", "dsl": "d 2007-12-25"}
+{"id": "ty1184", "text": "please book me in for friday at 10", "src_id": "r-t0-0010", "dsl": "dt fr 10?"}
+{"id": "ty1185", "text": "schedule the walk-ins for rest of this week", "src_id": "r-taxt1-0274", "dsl": "d +0d>W+0"}
+{"id": "ty1186", "text": "3 jan 2000", "src_id": "r-webp3-0125", "dsl": "d 2000-01-03"}
+{"id": "ty1187", "text": "fortnightly on fridays at 4pm", "src_id": "r-ht0-0070", "dsl": "dt R w/2 fr 16:00"}
+{"id": "ty1188", "text": "last June 13", "src_id": "r-web4p1-0311", "dsl": "d 06-13<"}
+{"id": "ty1189", "text": "haircut sat 11 for 1 hr", "src_id": "r-v2t0-0369", "dsl": "dt sa 11?>+1h"}
+{"id": "ty1190", "text": "the next 2 weekends please", "src_id": "r-taxt0-0140", "dsl": "d R w/1 sa,su n4"}
+{"id": "ty1191", "text": "the friday before labour day", "src_id": "r-taxd0022", "dsl": "d mo#1@09~-3d"}
+{"id": "ty1192", "text": "aftr oct 12", "src_id": "r-v2t0-0132", "dsl": "d 10-12>"}
+{"id": "ty1193", "text": "-6 months", "src_id": "r-web6p0-0083", "dsl": "d -6m"}
+{"id": "ty1194", "text": "10 working days from today", "src_id": "r-taxd0017", "dsl": "d +10b"}
+{"id": "ty1195", "text": "in a decade", "src_id": "r-web4p0-0019", "dsl": "d +10y"}
+{"id": "ty1196", "text": "anytime after 2 on friday", "src_id": "r-web4p1-0115", "dsl": "dt fr 2?>"}
+{"id": "ty1197", "text": "notarize thurs 3", "src_id": "r-t1-0299", "dsl": "dt th 3?"}
+{"id": "ty1198", "text": "weekdays across the last 30 days", "src_id": "r-taxt1-0171", "dsl": "d R d/1 mo,tu,we,th,fr u+0d s-30d"}
+{"id": "ty1199", "text": "june 3 and june 10 at noon", "src_id": "r-taxt0-0153", "dsl": "dt 06-03,06-10 12:00"}
