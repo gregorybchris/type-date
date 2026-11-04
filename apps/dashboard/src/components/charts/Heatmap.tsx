@@ -47,7 +47,7 @@ export function Heatmap({ runs, splits, version, mode }: { runs: Run[]; splits: 
                       <button
                         onClick={() => setSel({ run: r, split: s })}
                         className="num h-11 w-full min-w-[54px] cursor-pointer rounded-[6px] font-medium outline-offset-1"
-                        style={{ background: `color-mix(in srgb, var(--accent) ${strong}%, var(--surface))`, color: t > 0.5 ? "var(--accent-fg)" : "var(--fg)", outline: on ? "2px solid var(--fg)" : undefined, opacity: c.small ? 0.7 : 1 }}
+                        style={{ background: `color-mix(in srgb, var(--accent) ${strong}%, var(--surface))`, color: t > 0.5 ? "var(--accent-fg)" : "var(--fg)", outline: on ? "2px solid var(--fg)" : undefined, border: c.small ? "1px dashed color-mix(in srgb, var(--fg) 55%, transparent)" : undefined }}
                         title={`${r.config.id}, ${s}: ${pc(c.acc)} accuracy, ${c.errors} errors of ${c.n}${c.small ? " (under 30 rows)" : ""}`}
                       >
                         {mode === "accuracy" ? (c.acc * 100).toFixed(1) : ((1 - c.acc) * 100).toFixed(1)}
@@ -69,7 +69,7 @@ export function Heatmap({ runs, splits, version, mode }: { runs: Run[]; splits: 
             <span><b className="text-fg">{sel.run.config.id}</b> has no result on <b className="text-fg">{sel.split}</b> in {version}.</span>
           )
         ) : (
-          <span>Tap a cell for counts. Cells show {mode === "accuracy" ? "resolved accuracy" : "error rate"} in percent for eval {version}. Darker is better. † means under 30 rows. Hatched n/a means no result.</span>
+          <span>Tap a cell for counts. Cells show {mode === "accuracy" ? "resolved accuracy" : "error rate"} in percent for eval {version}. Darker is better. A dashed border and † mean under 30 rows (the shade still follows the score). Hatched n/a means no result.</span>
         )}
       </div>
     </div>
