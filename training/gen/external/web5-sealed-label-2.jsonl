@@ -1,0 +1,260 @@
+{"id": "web5sm0000", "text": "what was this morning's weather", "dsl": "d +0d"}
+{"id": "web5sm0001", "text": "@every 2 weekdays", "dsl": "x", "unsure": true}
+{"id": "web5sm0002", "text": "next Tuesday at 2pm", "dsl": "dt tu+1 14:00"}
+{"id": "web5sm0003", "text": "remind me to call mom at 06 30", "dsl": "t 6:30?"}
+{"id": "web5sm0004", "text": "this time last week", "dsl": "x", "unsure": true}
+{"id": "web5sm0005", "text": "Oct 2013", "dsl": "x", "unsure": true}
+{"id": "web5sm0006", "text": "repeat 7 days after last completion", "dsl": "x", "unsure": true}
+{"id": "web5sm0007", "text": "for 8 tonight", "dsl": "dt +0d 20:00"}
+{"id": "web5sm0008", "text": "set an alarm wednesday at 7 o'clock", "dsl": "dt we 7?"}
+{"id": "web5sm0009", "text": "Call Sam every Friday", "dsl": "d R w/1 fr"}
+{"id": "web5sm0010", "text": "Skype Mom at 12:45 pm next Thursday", "dsl": "dt th+1 12:45"}
+{"id": "web5sm0011", "text": "Jog 12:30 PM", "dsl": "t 12:30"}
+{"id": "web5sm0012", "text": "repeat every Monday", "dsl": "d R w/1 mo"}
+{"id": "web5sm0013", "text": "next holiday", "dsl": "x", "unsure": true}
+{"id": "web5sm0014", "text": "++5", "dsl": "x", "unsure": true}
+{"id": "web5sm0015", "text": "Buy fireworks on the 4th of July", "dsl": "d 07-04"}
+{"id": "web5sm0016", "text": "8:00 pm - 9:30 pm", "dsl": "t 20:00>21:30"}
+{"id": "web5sm0017", "text": "record the NFL playoff games this weekend", "dsl": "x", "unsure": true}
+{"id": "web5sm0018", "text": "in ten minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0019", "text": "<2007-05-16 Wed 12:30 +1w>", "dsl": "x", "unsure": true}
+{"id": "web5sm0020", "text": "Play Rick Astley music 2 days from Friday", "dsl": "d fr~+2d"}
+{"id": "web5sm0021", "text": "once a day", "dsl": "d R d/1"}
+{"id": "web5sm0022", "text": "Date has year and month", "dsl": "x"}
+{"id": "web5sm0023", "text": "on the evening of june 5th 2017 remind me to", "dsl": "d 2017-06-05"}
+{"id": "web5sm0024", "text": "Go to the theater tomorrow 20PM-21PM", "dsl": "dt +1d 20:00>21:00"}
+{"id": "web5sm0025", "text": "Apr 27 10am", "dsl": "dt 04-27 10:00"}
+{"id": "web5sm0026", "text": "7 may 09:05 PM", "dsl": "dt 05-07 21:05"}
+{"id": "web5sm0027", "text": "I am in California today", "dsl": "d +0d"}
+{"id": "web5sm0028", "text": "6th Dec", "dsl": "d 12-06"}
+{"id": "web5sm0029", "text": "wednesday next week", "dsl": "x", "unsure": true}
+{"id": "web5sm0030", "text": "remind me to call mom in 2 hours", "dsl": "x", "unsure": true}
+{"id": "web5sm0031", "text": "Sept 12, 2013", "dsl": "d 2013-09-12"}
+{"id": "web5sm0032", "text": "5 days overdue", "dsl": "x", "unsure": true}
+{"id": "web5sm0033", "text": "remind me to call mom this evening at 7 o'clock", "dsl": "dt +0d 19:00"}
+{"id": "web5sm0034", "text": "23 sept at 15:00", "dsl": "dt 09-23 15:00"}
+{"id": "web5sm0035", "text": "@every 1 week", "dsl": "d R w/1"}
+{"id": "web5sm0036", "text": "@every weekday 6am", "dsl": "dt R d/1 mo,tu,we,th,fr 06:00"}
+{"id": "web5sm0037", "text": "quick call this afternoon?", "dsl": "d +0d"}
+{"id": "web5sm0038", "text": "lets meet tonight", "dsl": "d +0d"}
+{"id": "web5sm0039", "text": "11am+2:15", "dsl": "x", "unsure": true}
+{"id": "web5sm0040", "text": "~7 weeks ago", "dsl": "d -7w"}
+{"id": "web5sm0041", "text": "-1 months", "dsl": "d -1m"}
+{"id": "web5sm0042", "text": "\"2 weeks ago\"", "dsl": "d -2w"}
+{"id": "web5sm0043", "text": "remind me to buy milk tomorrow at 8pm", "dsl": "dt +1d 20:00"}
+{"id": "web5sm0044", "text": "on Sunday the 15th December at 1 p.m", "dsl": "dt 12-15 13:00"}
+{"id": "web5sm0045", "text": "I'm out of the office from 10am-noon tomorrow", "dsl": "dt +1d 10:00>12:00"}
+{"id": "web5sm0046", "text": "@dec 24", "dsl": "d 12-24"}
+{"id": "web5sm0047", "text": "@mar 3", "dsl": "d 03-03"}
+{"id": "web5sm0048", "text": "@Oct 8 2021", "dsl": "d 2021-10-08"}
+{"id": "web5sm0049", "text": "\"next weekend\"", "dsl": "x", "unsure": true}
+{"id": "web5sm0050", "text": "sometime this week", "dsl": "d W+0"}
+{"id": "web5sm0051", "text": "March to June 2023", "dsl": "d 2023-03-01>2023-06-30"}
+{"id": "web5sm0052", "text": "oct 31 12am", "dsl": "dt 10-31 00:00"}
+{"id": "web5sm0053", "text": "Review every proposal Friday", "dsl": "x", "unsure": true}
+{"id": "web5sm0054", "text": "\"weekdays at 9am\"", "dsl": "dt R d/1 mo,tu,we,th,fr 09:00"}
+{"id": "web5sm0055", "text": "4th July, 2024", "dsl": "d 2024-07-04"}
+{"id": "web5sm0056", "text": "Apr 27", "dsl": "d 04-27"}
+{"id": "web5sm0057", "text": "+2h", "dsl": "x", "unsure": true}
+{"id": "web5sm0058", "text": "today tomorrow 16:00", "dsl": "x", "unsure": true}
+{"id": "web5sm0059", "text": "13 years, 1 month, 4 weeks ago", "dsl": "x", "unsure": true}
+{"id": "web5sm0060", "text": "Weekly sync /start:monday /due:friday !Work", "dsl": "x", "unsure": true}
+{"id": "web5sm0061", "text": "5:15 pm - 6:15 pm", "dsl": "t 17:15>18:15"}
+{"id": "web5sm0062", "text": "before Thursday", "dsl": "d >th"}
+{"id": "web5sm0063", "text": "Jog at 8 PM", "dsl": "t 20:00"}
+{"id": "web5sm0064", "text": "Hey Siri, set a timer for 25 minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0065", "text": "May I know what time it is tomorrow", "dsl": "d +1d"}
+{"id": "web5sm0066", "text": "weekly on Thursdays at 2pm", "dsl": "dt R w/1 th 14:00"}
+{"id": "web5sm0067", "text": "Jog weekly starting from today", "dsl": "d R w/1 s+0d"}
+{"id": "web5sm0068", "text": "Hey Google, set a timer for 15 minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0069", "text": "5minutes ago", "dsl": "x", "unsure": true}
+{"id": "web5sm0070", "text": "lets meet at 5pm", "dsl": "t 17:00"}
+{"id": "web5sm0071", "text": "Set the ambush for 5 days from today", "dsl": "d +5d"}
+{"id": "web5sm0072", "text": "remind me to call mom in half an hour", "dsl": "x", "unsure": true}
+{"id": "web5sm0073", "text": "february 29 2020 at noon", "dsl": "dt 2020-02-29 12:00"}
+{"id": "web5sm0074", "text": "\"tomorrow morning\"", "dsl": "d +1d"}
+{"id": "web5sm0075", "text": "Show me bookings for next Tuesday", "dsl": "d tu+1"}
+{"id": "web5sm0076", "text": "Saturday, Dec 12", "dsl": "d 12-12"}
+{"id": "web5sm0077", "text": "in a couple of years", "dsl": "x", "unsure": true}
+{"id": "web5sm0078", "text": "my birthday is 2 days from yesterday", "dsl": "d +1d"}
+{"id": "web5sm0079", "text": "remind me to call mom in fifteen minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0080", "text": "what changed in the last 3 days", "dsl": "d -3d>+0d"}
+{"id": "web5sm0081", "text": "Friday, February 18th, 2011 at 10pm", "dsl": "dt 2011-02-18 22:00"}
+{"id": "web5sm0082", "text": "i had dinner yesterday at 6", "dsl": "dt -1d 6?"}
+{"id": "web5sm0083", "text": "3 days old", "dsl": "x", "unsure": true}
+{"id": "web5sm0084", "text": "set an alarm at 9 o'clock for tonight", "dsl": "dt +0d 21:00"}
+{"id": "web5sm0085", "text": "what is the weather next friday morning", "dsl": "d fr+1"}
+{"id": "web5sm0086", "text": "@2friday tomorrow", "dsl": "x", "unsure": true}
+{"id": "web5sm0087", "text": "conversations from this week", "dsl": "d W+0"}
+{"id": "web5sm0088", "text": "7:00 pm - 8:00 pm", "dsl": "t 19:00>20:00"}
+{"id": "web5sm0089", "text": "Jog at 12:30 PM Friday", "dsl": "dt fr 12:30"}
+{"id": "web5sm0090", "text": "in a couple of minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0091", "text": "sunset + 3 hours", "dsl": "x", "unsure": true}
+{"id": "web5sm0092", "text": "tomorrow 11:00", "dsl": "dt +1d 11:00"}
+{"id": "web5sm0093", "text": "next friday 2pm", "dsl": "dt fr+1 14:00"}
+{"id": "web5sm0094", "text": "every X days", "dsl": "x", "unsure": true}
+{"id": "web5sm0095", "text": "remind me to wake up in 4 years", "dsl": "d +4y"}
+{"id": "web5sm0096", "text": "remind me to call mom at 7 o'clock", "dsl": "t 7?"}
+{"id": "web5sm0097", "text": "Begin the invasion on Thursday at 0500", "dsl": "dt th 05:00"}
+{"id": "web5sm0098", "text": "remind me in 2 hours and 30 minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0099", "text": "On 1XX January", "dsl": "x", "unsure": true}
+{"id": "web5sm0100", "text": "23 sept at 3pm", "dsl": "dt 09-23 15:00"}
+{"id": "web5sm0101", "text": "1D-3hour10m", "dsl": "x", "unsure": true}
+{"id": "web5sm0102", "text": "January 21st - Jan 24th 2014", "dsl": "d 2014-01-21>2014-01-24"}
+{"id": "web5sm0103", "text": "Jog every day starting from today", "dsl": "d R d/1 s+0d"}
+{"id": "web5sm0104", "text": "@weekly 6am", "dsl": "dt R w/1 06:00"}
+{"id": "web5sm0105", "text": "schedule this for next Friday", "dsl": "d fr+1"}
+{"id": "web5sm0106", "text": "\"3 months ago\"", "dsl": "d -3m"}
+{"id": "web5sm0107", "text": "Jog every 4 days starting from today", "dsl": "d R d/4 s+0d"}
+{"id": "web5sm0108", "text": "<2004-08-23 Mon>--<2004-08-26 Thu>", "dsl": "x", "unsure": true}
+{"id": "web5sm0109", "text": "Jog at 8 o'clock AM", "dsl": "t 08:00"}
+{"id": "web5sm0110", "text": "1mo 2 days -5h", "dsl": "x", "unsure": true}
+{"id": "web5sm0111", "text": "remind me about this tomorrow", "dsl": "d +1d"}
+{"id": "web5sm0112", "text": "\"October 14th\"", "dsl": "d 10-14"}
+{"id": "web5sm0113", "text": "Task @friday", "dsl": "d fr"}
+{"id": "web5sm0114", "text": "Hal: Snooze all notifications for 2 hours", "dsl": "x", "unsure": true}
+{"id": "web5sm0115", "text": "Feb 10, 2024", "dsl": "d 2024-02-10"}
+{"id": "web5sm0116", "text": "in two hours and thirty minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0117", "text": "remind me tuesday at 8am", "dsl": "dt tu 08:00"}
+{"id": "web5sm0118", "text": "Jog every 3 days", "dsl": "d R d/3"}
+{"id": "web5sm0119", "text": "When is the next billing date?", "dsl": "x"}
+{"id": "web5sm0120", "text": "From January to February", "dsl": "d M@01>M@02"}
+{"id": "web5sm0121", "text": "Jog every 5 months", "dsl": "d R m/5"}
+{"id": "web5sm0122", "text": "every friday at 20:15", "dsl": "dt R w/1 fr 20:15"}
+{"id": "web5sm0123", "text": "11am-1:15pm", "dsl": "t 11:00>13:15"}
+{"id": "web5sm0124", "text": "r call my boss in 23 days", "dsl": "d +23d"}
+{"id": "web5sm0125", "text": "last fall", "dsl": "x", "unsure": true}
+{"id": "web5sm0126", "text": "Date has year, month and day", "dsl": "x"}
+{"id": "web5sm0127", "text": "next month's first Monday", "dsl": "x", "unsure": true}
+{"id": "web5sm0128", "text": "What is the day after tomorrow's weather?", "dsl": "d +2d"}
+{"id": "web5sm0129", "text": "Call doctor tomorrow at 3pm", "dsl": "dt +1d 15:00"}
+{"id": "web5sm0130", "text": "january 10, 2026", "dsl": "d 2026-01-10"}
+{"id": "web5sm0131", "text": "you are the 2nd one", "dsl": "x"}
+{"id": "web5sm0132", "text": "third monday of february 2037", "dsl": "x", "unsure": true}
+{"id": "web5sm0133", "text": "in the previous month", "dsl": "d M-1"}
+{"id": "web5sm0134", "text": "every week on Friday", "dsl": "d R w/1 fr"}
+{"id": "web5sm0135", "text": "quarter to three", "dsl": "t 2:45?"}
+{"id": "web5sm0136", "text": "remind me to wake up at 8 a.m", "dsl": "t 08:00"}
+{"id": "web5sm0137", "text": "2012 w4 fri", "dsl": "x", "unsure": true}
+{"id": "web5sm0138", "text": "what is tomorrow's weather", "dsl": "d +1d"}
+{"id": "web5sm0139", "text": "send client status report each Monday", "dsl": "d R w/1 mo"}
+{"id": "web5sm0140", "text": "Summarize my inbox every morning at 8", "dsl": "dt R d/1 8?"}
+{"id": "web5sm0141", "text": "-1 month", "dsl": "d -1m"}
+{"id": "web5sm0142", "text": "remind me to call mom next tuesday", "dsl": "d tu+1"}
+{"id": "web5sm0143", "text": "August 17-19, 2026", "dsl": "d 2026-08-17>2026-08-19"}
+{"id": "web5sm0144", "text": "my birthday is 2 days after yesterday", "dsl": "d +1d"}
+{"id": "web5sm0145", "text": "my birthday was 1 day ago", "dsl": "d -1d"}
+{"id": "web5sm0146", "text": "remind me to call mom in 3 months", "dsl": "d +3m"}
+{"id": "web5sm0147", "text": "All day event", "dsl": "x"}
+{"id": "web5sm0148", "text": "Turn off the lights in 30 minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0149", "text": "lets meet in 5minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0150", "text": "first monday of week", "dsl": "x", "unsure": true}
+{"id": "web5sm0151", "text": "two hours", "dsl": "x", "unsure": true}
+{"id": "web5sm0152", "text": "once a day, at 01:30 local time", "dsl": "dt R d/1 01:30"}
+{"id": "web5sm0153", "text": "On Dec 31, 2023", "dsl": "d 2023-12-31"}
+{"id": "web5sm0154", "text": "Pay rent @every 15th", "dsl": "d R m/1 d15"}
+{"id": "web5sm0155", "text": "3 January 2013", "dsl": "d 2013-01-03"}
+{"id": "web5sm0156", "text": "remind me to call mom at 1730", "dsl": "t 17:30"}
+{"id": "web5sm0157", "text": "this is the 2nd", "dsl": "x", "unsure": true}
+{"id": "web5sm0158", "text": "remind me to do something at 2 to 2", "dsl": "x", "unsure": true}
+{"id": "web5sm0159", "text": "Beginning on February 1,    1998", "dsl": "d 1998-02-01"}
+{"id": "web5sm0160", "text": "remind me tomorrow at noon", "dsl": "dt +1d 12:00"}
+{"id": "web5sm0161", "text": "past 30 days", "dsl": "d -30d>+0d"}
+{"id": "web5sm0162", "text": "first monday of 4 Jun 2022", "dsl": "x", "unsure": true}
+{"id": "web5sm0163", "text": "this week monday", "dsl": "x", "unsure": true}
+{"id": "web5sm0164", "text": "in a couple months", "dsl": "x", "unsure": true}
+{"id": "web5sm0165", "text": "@18h demain", "dsl": "x", "unsure": true}
+{"id": "web5sm0166", "text": "call grandma every Wednesday", "dsl": "d R w/1 we"}
+{"id": "web5sm0167", "text": "December 11, 23", "dsl": "x", "unsure": true}
+{"id": "web5sm0168", "text": "Every Tuesday at 3 PM", "dsl": "dt R w/1 tu 15:00"}
+{"id": "web5sm0169", "text": "12 Aug 2011", "dsl": "d 2011-08-12"}
+{"id": "web5sm0170", "text": "I will be in China tomorrow", "dsl": "d +1d"}
+{"id": "web5sm0171", "text": "Today is the most wonderful 30th March 2025", "dsl": "d 2025-03-30"}
+{"id": "web5sm0172", "text": "how many days until Easter", "dsl": "x", "unsure": true}
+{"id": "web5sm0173", "text": "for 8:30pm tonight", "dsl": "dt +0d 20:30"}
+{"id": "web5sm0174", "text": "do you know when the next bus comes?", "dsl": "x"}
+{"id": "web5sm0175", "text": "12-Oct-1984", "dsl": "d 1984-10-12"}
+{"id": "web5sm0176", "text": "+1 Weekday", "dsl": "d +1b"}
+{"id": "web5sm0177", "text": "Call Sam Friday at 3pm", "dsl": "dt fr 15:00"}
+{"id": "web5sm0178", "text": "45 days from now", "dsl": "d +45d"}
+{"id": "web5sm0179", "text": "Recurring meeting on the 25th of every month", "dsl": "d R m/1 d25"}
+{"id": "web5sm0180", "text": "by Friday", "dsl": "d >fr"}
+{"id": "web5sm0181", "text": "17/02/2015 AM", "dsl": "d 2015-02-17"}
+{"id": "web5sm0182", "text": "Jog daily starting from today", "dsl": "d R d/1 s+0d"}
+{"id": "web5sm0183", "text": "Jog every 2 weeks", "dsl": "d R w/2"}
+{"id": "web5sm0184", "text": "@weekly", "dsl": "d R w/1"}
+{"id": "web5sm0185", "text": "Take medication every day", "dsl": "d R d/1"}
+{"id": "web5sm0186", "text": "14th Street", "dsl": "x"}
+{"id": "web5sm0187", "text": "go live 15th March", "dsl": "d 03-15"}
+{"id": "web5sm0188", "text": "what is weather like night", "dsl": "x"}
+{"id": "web5sm0189", "text": "11am--1:15pm", "dsl": "t 11:00>13:15"}
+{"id": "web5sm0190", "text": "2013 Oct 27", "dsl": "d 2013-10-27"}
+{"id": "web5sm0191", "text": "Jog every week", "dsl": "d R w/1"}
+{"id": "web5sm0192", "text": "early Feb", "dsl": "x", "unsure": true}
+{"id": "web5sm0193", "text": "When is my next train leaving?", "dsl": "x"}
+{"id": "web5sm0194", "text": "remind me about the game tonight at 11:30", "dsl": "dt +0d 23:30"}
+{"id": "web5sm0195", "text": "Begin the invasion at 8 in the evening on Thursday", "dsl": "dt th 20:00"}
+{"id": "web5sm0196", "text": "dinner on December 24 at eight", "dsl": "dt 12-24 8?"}
+{"id": "web5sm0197", "text": "@last Friday 2pm", "dsl": "dt fr-1 14:00"}
+{"id": "web5sm0198", "text": "+6 Weekdays", "dsl": "d +6b"}
+{"id": "web5sm0199", "text": "@every friday 15 Uhr", "dsl": "dt R w/1 fr 15:00"}
+{"id": "web5sm0200", "text": "thursday 9pm", "dsl": "dt th 21:00"}
+{"id": "web5sm0201", "text": "two weeks before Pesach", "dsl": "x", "unsure": true}
+{"id": "web5sm0202", "text": "Jog every day", "dsl": "d R d/1"}
+{"id": "web5sm0203", "text": "remind me to call mom at 0630", "dsl": "t 06:30"}
+{"id": "web5sm0204", "text": "set an alarm for wednesday evening at 8", "dsl": "dt we 20:00"}
+{"id": "web5sm0205", "text": "August 3 12:00 PM", "dsl": "dt 08-03 12:00"}
+{"id": "web5sm0206", "text": "sunrise + 1 hour", "dsl": "x", "unsure": true}
+{"id": "web5sm0207", "text": "@tomorrow 3pm", "dsl": "dt +1d 15:00"}
+{"id": "web5sm0208", "text": "The last couple of years", "dsl": "x", "unsure": true}
+{"id": "web5sm0209", "text": "all unread mail from today at 14:00", "dsl": "dt +0d 14:00"}
+{"id": "web5sm0210", "text": "due 12 Oct", "dsl": "d 10-12"}
+{"id": "web5sm0211", "text": "my birthday is 2 days after today", "dsl": "d +2d"}
+{"id": "web5sm0212", "text": "@daily 6am", "dsl": "dt R d/1 06:00"}
+{"id": "web5sm0213", "text": "at 14:00 show all unread mail from today", "dsl": "dt +0d 14:00"}
+{"id": "web5sm0214", "text": "1.1.2016 10:00 eod", "dsl": "dt 2016-01-01 10:00"}
+{"id": "web5sm0215", "text": "on thursday what is the weather", "dsl": "d th"}
+{"id": "web5sm0216", "text": "11/4/03 00:01 AM", "dsl": "dt 2003-11-04 00:01"}
+{"id": "web5sm0217", "text": "+4d", "dsl": "d +4d"}
+{"id": "web5sm0218", "text": "two hours and rest and relax", "dsl": "x", "unsure": true}
+{"id": "web5sm0219", "text": "remind me at 2:30 pm to do laundry", "dsl": "t 14:30"}
+{"id": "web5sm0220", "text": "over 3 days ago", "dsl": "x", "unsure": true}
+{"id": "web5sm0221", "text": "Set a timer for 10 minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0222", "text": "Bi-weekly sprint planning", "dsl": "x", "unsure": true}
+{"id": "web5sm0223", "text": "Go get the mail today @2:20PM", "dsl": "dt +0d 14:20"}
+{"id": "web5sm0224", "text": "audit my X timeline every morning", "dsl": "x", "unsure": true}
+{"id": "web5sm0225", "text": "set alarm at 7:30 on weekdays", "dsl": "dt R d/1 mo,tu,we,th,fr 7:30?"}
+{"id": "web5sm0226", "text": "7:30 pm - 9:00 pm", "dsl": "t 19:30>21:00"}
+{"id": "web5sm0227", "text": "remind me to call mom in two hours", "dsl": "x", "unsure": true}
+{"id": "web5sm0228", "text": "Research AI news every Friday", "dsl": "d R w/1 fr"}
+{"id": "web5sm0229", "text": "Jog 8 AM", "dsl": "t 08:00"}
+{"id": "web5sm0230", "text": "lets meet in 2hours", "dsl": "x", "unsure": true}
+{"id": "web5sm0231", "text": "<2003-09-16 Tue 12:00-12:30>", "dsl": "x", "unsure": true}
+{"id": "web5sm0232", "text": "Feb 2nd, 2022 to", "dsl": "d 2022-02-02"}
+{"id": "web5sm0233", "text": "2years", "dsl": "x", "unsure": true}
+{"id": "web5sm0234", "text": "\"Team sync tomorrow at 10am\"", "dsl": "dt +1d 10:00"}
+{"id": "web5sm0235", "text": "Monday 4pm", "dsl": "dt mo 16:00"}
+{"id": "web5sm0236", "text": "@9h30 friday", "dsl": "dt fr 9:30?"}
+{"id": "web5sm0237", "text": "Assignment due this Friday", "dsl": "d fr"}
+{"id": "web5sm0238", "text": "2 aug 3pm", "dsl": "dt 08-02 15:00"}
+{"id": "web5sm0239", "text": "around two weeks ago", "dsl": "d -2w"}
+{"id": "web5sm0240", "text": "emailed this week", "dsl": "d W+0"}
+{"id": "web5sm0241", "text": "Friday at 3pm", "dsl": "dt fr 15:00"}
+{"id": "web5sm0242", "text": "Search for a flight next Monday", "dsl": "d mo+1"}
+{"id": "web5sm0243", "text": "Jog monthly", "dsl": "d R m/1"}
+{"id": "web5sm0244", "text": "in 20 minutes", "dsl": "x", "unsure": true}
+{"id": "web5sm0245", "text": "Let's meet next Tuesday at 3pm", "dsl": "dt tu+1 15:00"}
+{"id": "web5sm0246", "text": "next Friday + 3weeks", "dsl": "d fr+1~+3w"}
+{"id": "web5sm0247", "text": "22 sept 0:34", "dsl": "dt 09-22 00:34"}
+{"id": "web5sm0248", "text": "@daily", "dsl": "d R d/1"}
+{"id": "web5sm0249", "text": "lets meet in 1 hour", "dsl": "x", "unsure": true}
+{"id": "web5sm0250", "text": "morning brief", "dsl": "x"}
+{"id": "web5sm0251", "text": "@today 14:20", "dsl": "dt +0d 14:20"}
+{"id": "web5sm0252", "text": "10/10/2014 7 am", "dsl": "dt 2014-10-10 07:00"}
+{"id": "web5sm0253", "text": "Finish draft next Friday", "dsl": "d fr+1"}
+{"id": "web5sm0254", "text": "@every 3 days", "dsl": "d R d/3"}
+{"id": "web5sm0255", "text": "clean & lube the bike chain every 2w", "dsl": "d R w/2"}
+{"id": "web5sm0256", "text": "\"every day at 9am\"", "dsl": "dt R d/1 09:00"}
+{"id": "web5sm0257", "text": "moms bday august 5", "dsl": "d 08-05"}
+{"id": "web5sm0258", "text": "@every friday 3pm", "dsl": "dt R w/1 fr 15:00"}
+{"id": "web5sm0259", "text": "first monday each month", "dsl": "d R m/1 mo#1"}
