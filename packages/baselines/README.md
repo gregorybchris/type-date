@@ -13,6 +13,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `h6` | `src/h6.ts` | h5 plus DSL v2 forms (open ranges, day of month, durations, lists, bounds, windows, offsets). | 24.0 kB |
 | `h7` | `src/h7.ts` | h6 plus web-pool fixes. DSL v2 families and the fixes sit in `src/h7/v2-forms.ts`, loaded on demand (not an engine). | 19.0 kB eager + 10.6 kB lazy |
 | `h8` | `src/h8.ts` | h7 behind a normalization layer (`src/h8/`: typo and abbreviation rewrites, day of a relative month, score and dozen). h7 is unchanged except one `export`. | 21.9 kB eager + 10.7 kB lazy |
+| `h9` | `src/h9.ts` | h8 behind rules (`src/h9/`, lazy chunk): named dates, nth weekday of a relative month, weekday plus day of month, ranges with day-of-month or period ends, recurrence bounds and counts, weekday exclusions, lone hour words, foreign month names, noise tokens. h8 unchanged. | 21.9 kB eager + 16.4 kB lazy |
 
 Engine ids are the same in the registry (`src/index.ts`, `scripts/eval.ts`), `runs/<id>/`, the dashboard and the picker demo. Notes per engine: `specs/engines/<id>.md`. Each file exports the engine object `hN` and `parseHN`.
 
@@ -26,6 +27,7 @@ pnpm --filter @type-date/baselines eval --engine h8 --eval-version e10   # prima
 make rescore-baselines EVAL=e10 [ENGINES="h7 h8"]            # adds metrics.json evals[e10] for the listed engines (--no-primary)
 make rescore-all                                             # every engine on every eval version
 pnpm --filter @type-date/baselines exec tsx scripts/dev.ts h8 --split val --show 20   # failures, train or val only
+pnpm --filter @type-date/baselines exec tsx scripts/pools.ts h9 --out <dir> --tags      # every open labeled pool, predictions to <dir>, failures to <dir>/../fails-h9.jsonl
 ```
 
 `scripts/eval.ts` writes `runs/<engine>/{config,metrics}.json` and `errors/<eval version>.jsonl` as in `specs/contracts.md`. It adds `by_split.<split>.resolved`, `model.size_bytes_minified` and `node_latency_ms` (p50, p95, p99 per call in Node). `model.size_bytes` is the esbuild minified and gzipped bundle, dependencies included. The one-sentence description of each engine is in its `REGISTRY` entry.

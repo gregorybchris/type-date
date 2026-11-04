@@ -24,6 +24,7 @@ const REGISTRY: Record<string, { file: string; perDay: boolean; description: str
   h6: { file: "h6.ts", perDay: false, description: "h5 plus DSL v2 forms: open ranges, day of month, durations, lists, recurrence bounds, windows, anchored and business-day offsets." },
   h7: { file: "h7.ts", perDay: false, description: "h6 plus web-pool fixes: years after day, seconds and zone strip, date-time joins, cron English, arithmetic forms." },
   h8: { file: "h8.ts", perDay: false, description: "h7 behind a normalization layer for typos and abbreviations, plus day of a relative month, score and dozen." },
+  h9: { file: "h9.ts", perDay: false, description: "h8 behind rules for named dates, nth weekday of a relative month, bounded recurrences, weekday exclusions, lone hour words, foreign month names and noise tokens." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.

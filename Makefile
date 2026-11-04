@@ -45,10 +45,10 @@ serve-status:  ## Check both dev servers
 eval-coverage:  ## Matrix of engines by eval version, gaps marked
 	cd training && uv run td eval coverage
 
-# Engines in dashboard order: chrono (comparison baseline), then h1..h8 (heuristic parser generations)
-ENGINES = chrono h1 h2 h3 h4 h5 h6 h7 h8
-rescore-baselines:  ## Score engines on one eval version: make rescore-baselines EVAL=e10 [ENGINES="h7 h8"]
-	@test -n "$(EVAL)" || (echo 'usage: make rescore-baselines EVAL=e10 [ENGINES="h7 h8"]'; exit 2)
+# Engines in dashboard order: chrono (comparison baseline), then h1..h9 (heuristic parser generations)
+ENGINES = chrono h1 h2 h3 h4 h5 h6 h7 h8 h9
+rescore-baselines:  ## Score engines on one eval version: make rescore-baselines EVAL=e10 [ENGINES="h8 h9"]
+	@test -n "$(EVAL)" || (echo 'usage: make rescore-baselines EVAL=e10 [ENGINES="h8 h9"]'; exit 2)
 	$(foreach e,$(ENGINES),pnpm --filter @type-date/baselines eval --engine $(e) --eval-version $(EVAL) --no-primary &&) true
 
 # All eval versions, full and quick subsets

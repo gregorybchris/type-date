@@ -190,6 +190,7 @@ Three small forms, all single days. They are valid wherever a single day is (ran
 | `b#K@M±N` | "the last weekday of the month", "last business day of this month" | `d b#-1@M+0` | 2026-11-30 |
 | | "first business day of next month" | `d b#1@M+1` | 2026-12-01 |
 | `WD&DNN` | "next friday the 13th", "friday the 13th" | `d fr&D13` | 2026-11-13 |
+| | "the next tuesday the 1st", "first sunday that is the 7th" | `d tu&D01`, `d su&D07` | 2026-12-01, 2027-02-07 |
 
 Rules:
 - `WD#K@M±N` is the same as `WD#K@MM` (a named month) except the month is `N` months from the current one. `K` is -1 (last) or 1-5. If the month has no such weekday (`fr#5@M+0` in November 2026), the line resolves to `x`, as for `D31@M-1`.
