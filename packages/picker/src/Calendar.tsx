@@ -26,7 +26,11 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
   const days = gridDays(view, weekStart);
   const rootRef = useRef<HTMLDivElement>(null);
   const wantFocus = useRef(false);
-  const [focus, setFocus] = useState(sel.lo ?? today);
+  const first = sel.lo ?? [...sel.occ][0];
+  const [focus, setFocus] = useState(first ?? today);
+  useEffect(() => {
+    if (first) setFocus(first);
+  }, [first]);
   const inGrid = days.includes(focus) && focus.slice(0, 7) === ymd(view.y, view.m, 1).slice(0, 7);
   const tabDate = inGrid ? focus : ymd(view.y, view.m, 1);
 

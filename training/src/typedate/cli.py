@@ -42,6 +42,22 @@ def data_build(
     typer.echo(f"counts: {meta['counts']}  dropped_conflicts: {meta['dropped_conflicts']}")
 
 
+@data_app.command("ingest-llm")
+def data_ingest_llm(
+    version: str = typer.Argument(..., help="New version, e.g. v002"),
+    base: str = typer.Option("v001"),
+    test_frac: float = typer.Option(0.3, help="Share of intents held out as test_llm"),
+) -> None:
+    """Add LLM paraphrases from training/gen/out/ to a copy of a base dataset."""
+    from pathlib import Path
+
+    from .datagen.llm import ingest
+
+    gen = Path(__file__).resolve().parents[2] / "gen"
+    meta = ingest(base, version, gen, test_frac)
+    typer.echo(f"counts: {meta['counts']} skipped: {meta['llm_skipped']}")
+
+
 @data_app.command("intents")
 def data_intents(
     n: int = typer.Option(1200, help="Number of intents"),
@@ -73,6 +89,37 @@ def data_intents(
         path = root / f"shard-{i // shard_size:02d}.jsonl"
         path.write_text("\n".join(json.dumps(r) for r in rows[i : i + shard_size]) + "\n")
     typer.echo(f"wrote {n} intents in {(n + shard_size - 1) // shard_size} shards to {root}")
+
+
+train_app = typer.Typer(no_args_is_help=True, help="Training commands")
+app.add_typer(train_app, name="train")
+
+
+@train_app.command("run")
+def train_run(
+    exp: int = typer.Argument(..., help="Experiment number"),
+    title: str = typer.Option(..., help="Short experiment title"),
+    dataset: str = typer.Option("v001"),
+    d_model: int = typer.Option(256),
+    d_ff: int = typer.Option(1024),
+    heads: int = typer.Option(4),
+    enc_layers: int = typer.Option(4),
+    dec_layers: int = typer.Option(4),
+    vocab: int = typer.Option(1000),
+    epochs: int = typer.Option(8),
+    batch_size: int = typer.Option(128),
+    lr: float = typer.Option(1e-3),
+    max_train: int = typer.Option(0, help="Limit train rows (0 = all)"),
+    notes: str = typer.Option(""),
+) -> None:
+    """Train from scratch, evaluate, and write runs/exp-NNN/."""
+    from .train import TrainConfig, run
+
+    cfg = TrainConfig(exp, title, dataset, d_model, d_ff, heads, enc_layers, dec_layers, vocab,
+                      epochs, batch_size, lr, 0, notes, max_train)  # fmt: skip
+    res = run(cfg)
+    ev = res["metrics"]["eval"]
+    typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")
 
 
 if __name__ == "__main__":

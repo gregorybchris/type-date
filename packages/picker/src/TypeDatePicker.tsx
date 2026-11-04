@@ -125,6 +125,12 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     if (value && value !== latest.current.result) commit(value, false);
   }, [value, commit]);
 
+  useEffect(() => {
+    if (props.defaultText) run(props.defaultText);
+    // Parse the initial text once.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(
     () => () => {
       clearTimeout(timer.current);
