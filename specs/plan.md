@@ -1,3 +1,5 @@
+> 2026-11-04: Model phases (training, ONNX export, browser engines, model benchmarks, model timing) were removed from the project. The heuristic parser, the DSL, the eval sets, the picker and the dashboard remain. Sections below on models are kept as history. See `specs/idea.md`.
+
 # Plan
 
 Status key: [ ] todo, [x] done. Update as work proceeds.

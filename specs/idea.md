@@ -31,7 +31,8 @@ Before building, confirm whether this already exists. Research result: it does n
 
 ## Decision log
 
-- 2026-11-03: Model work is parked. After round 1 (see `specs/research/experiments/round-1-screening.md`) a hand-written heuristic parser beats every model we tried by a wide margin on accuracy, size, latency, and memory. The best scratch model reached about 59% on e5 against 95% for heuristic-full-5. Work now focuses on the heuristic, the DSL, the eval sets, and the picker. The model tooling (training, export, ONNX engine, prompt runners) stays in the repo and can be revived if a model could add value on the residue the heuristic cannot parse.
+- 2026-11-04: Model work is removed. Training, export, zero-shot runners, the ONNX engine package, the browser benchmark, the model runs (exp-004 to 008, 010 to 012), their artifacts and the Hugging Face cache were deleted. They are in git history. The Python project keeps only data and eval-set tooling. The dashboard compares heuristic engines only. Every engine is scored on every eval version.
+- 2026-11-03: Model work is parked. After round 1 (see `specs/research/experiments/round-1-screening.md`) a hand-written heuristic parser beats every model we tried by a wide margin on accuracy, size, latency, and memory. The best scratch model reached about 59% on e5 against 95% for heuristic-full-5. Work now focuses on the heuristic, the DSL, the eval sets, and the picker. The model tooling was removed on 2026-11-04 (see below).
 
 ## Approach
 

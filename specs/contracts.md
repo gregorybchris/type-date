@@ -1,6 +1,6 @@
 # Contracts
 
-File formats and interfaces shared by training, benchmarks, the dashboard, and the picker. Change them here first.
+File formats and interfaces shared by the eval scripts, the dashboard, and the picker. Change them here first. Since 2026-11-04 there are no model runs: `timing.json`, `bench.json` and the engine load contract are unused (history only).
 
 ## Dataset: `data/<version>/`
 

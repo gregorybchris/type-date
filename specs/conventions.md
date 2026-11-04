@@ -42,11 +42,11 @@ Eval sets are versioned and immutable (`evals/e1`, ...). Cut a new version conse
 
 ## Experiment titles and descriptions
 
-Every experiment has a short `title` and a one or two sentence `description` in its `config.json`. Experiment numbers alone are not informative on charts. Write them when the experiment is created (`td train run --title ... --description ...`).
+Every experiment has a short `title` and a one or two sentence `description` in its `config.json`. Experiment numbers alone are not informative on charts. Write them when the experiment is created (`--title ... --description ...` on `scripts/eval.ts`).
 
 ## Time observability
 
-Every experiment records where wall time goes (`runs/exp-NNN/timing.json`). Look at the biggest bucket first and optimize it to speed up the outer loop. Do not guess: measure, then optimize, then measure again. Time includes training, eval, export, benchmark, and the gaps between experiments.
+Wall-time buckets are not tracked any more: scoring a heuristic engine on an eval version takes seconds.
 
 ## Do not stall
 
