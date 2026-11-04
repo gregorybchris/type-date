@@ -20,9 +20,10 @@ Eval sets are separate from training datasets. Training rows must not overlap ev
 3. Additive by default. Prefer `e(n+1)` = `e(n)` plus new rows. Then results from `e(n)` stay comparable on the shared part: report the old split names on the old rows and the new rows as extra splits (`test_new_*`). Only the new rows need scoring for old models.
 4. Conservative cutting. A new version needs a written reason: a coverage gap shown by data (for example real user input that fails but is not represented, a missing tag family, a label policy change). Batch several reasons into one cut. Do not cut for a small tweak.
 5. Policy changes that alter labels (for example the meaning of "next friday") are the most expensive. They change the expected answers, so the old and new versions are not comparable even on shared rows. Treat them as a full re-score.
-6. Re-evaluate on cut. Retained experiments are re-scored on the new version (`td eval rerun`). Baselines re-run by code. This needs the checkpoint, so keep at least an fp16 or int8 checkpoint for every experiment that stays in comparisons. If a checkpoint was pruned, the experiment is marked `not re-evaluable` and shown greyed out under the new version.
-7. Headline numbers always name the eval version. The default view uses the latest version for which an experiment has results.
-8. Keep dataset (train) and eval versions independent. A new train dataset version does not change the eval version.
+6. Baselines are always re-scored on a new eval version. They are the floor every model is compared to, they are cheap to run, and a version without them cannot be read. Run the non-model baselines (chrono, every heuristic variant) on the new version before any model result is discussed. Then re-score retained models.
+7. Re-evaluate on cut. Retained experiments are re-scored on the new version (`td eval rerun`). Baselines re-run by code. This needs the checkpoint, so keep at least an fp16 or int8 checkpoint for every experiment that stays in comparisons. If a checkpoint was pruned, the experiment is marked `not re-evaluable` and shown greyed out under the new version.
+8. Headline numbers always name the eval version. The default view uses the latest version for which an experiment has results.
+9. Keep dataset (train) and eval versions independent. A new train dataset version does not change the eval version.
 
 ## Procedure to cut a new version
 
@@ -30,7 +31,7 @@ Eval sets are separate from training datasets. Training rows must not overlap ev
 2. Build the new rows (generator, LLM cells, hand-written, mined). Dedupe against all existing eval and train rows.
 3. `td eval create <new> --parent <old>`: copies the old rows, adds the new ones, writes hashes.
 4. `td eval check-leak <dataset> --eval <new>` for every train dataset still in use. Remove leaked rows from train, and record a new dataset version.
-5. `td eval rerun <new> --all`: re-score retained experiments. Baselines: `make eval-baselines`.
+5. Baselines first: `make rescore-baselines EVAL=<new>`. Then models: `td eval rerun <exp> --eval-version <new>` for each retained experiment. Rescoring must add results under `metrics.evals[<new>]`, not replace the old ones.
 6. Write `specs/research/experiments/evals-<new>.md`: why, what changed, how rankings moved.
 
 ## Costs
