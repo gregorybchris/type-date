@@ -40,6 +40,10 @@ Run `make help` for the full list.
 | `make py-fix` | ruff autofix and format |
 | `make py-test` | pytest |
 | `make td ARGS="--help"` | Run the `td` CLI |
+| `make export EXP=5` | Export an experiment to ONNX int8 |
+| `make bench EXP=5 ARGS="--profile mobile-4x"` | Browser benchmark, writes runs/exp-005/bench.json |
+| `make dashboard`, `make picker-demo` | Dev servers (ports 5173, 5199) |
+| `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
 ## Recording user preferences
 
@@ -56,4 +60,6 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - Tokenizer: do not add a `Lowercase` normalizer. The DSL has uppercase tokens (`R`, `W+1`, `M@10`). Lowercase the input text in code (`norm_in`) instead. This bug cost exp-004.
 - A typer app with one command collapses it into the root command. Add an `@app.callback()` or a second command.
 - Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
+- Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
+- WebGPU with the int8 ONNX model gave 0% accuracy and 1.5 s latency (exp-004). Use fp32 or fp16 for WebGPU.
 - Agents running Playwright and training at once slow each other. Check `ps` before blaming the code.
