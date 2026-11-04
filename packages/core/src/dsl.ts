@@ -125,10 +125,8 @@ function parseRecurrence(tokens: string[]): RecSpec | null {
       const until = parseDate(tok.slice(1));
       if (!until) return null;
       rec.until = until;
-    } else if (tok.startsWith("s") && tok.length > 1) {
-      const start = parseDate(tok.slice(1));
-      if (!start) return null;
-      rec.start = start;
+    } else if (tok.startsWith("s") && tok.length > 2 && parseDate(tok.slice(1))) {
+      rec.start = parseDate(tok.slice(1)) as DateSpec; // "sa" and "su" are weekdays, not starts
     } else if (tok.includes(">") || parseTime(tok)) {
       const [a, b, ...rest] = tok.split(">");
       const ta = a ? parseTime(a) : null;
@@ -174,7 +172,7 @@ export function parseDsl(input: string): Parsed {
 function modeMatches(mode: "d" | "t" | "dt", p: Point): boolean {
   if (mode === "d") return !!p.date && !p.time;
   if (mode === "t") return !p.date && !!p.time;
-  return !!p.time; // dt: time required, date required on the start point
+  return !!p.time && !!p.date; // dt: start point needs a date and a time
 }
 
 function fmtTime(t: TimeSpec): string {

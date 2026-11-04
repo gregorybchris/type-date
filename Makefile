@@ -1,7 +1,7 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test dashboard
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck
 
 help:  ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -20,3 +20,9 @@ py-test:  ## pytest
 
 td:  ## Run the td CLI: make td ARGS="--help"
 	cd training && uv run td $(ARGS)
+
+js-test:  ## Vitest across workspaces
+	pnpm -r --if-present test
+
+js-typecheck:  ## tsc across workspaces
+	pnpm -r --if-present typecheck
