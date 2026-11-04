@@ -1,7 +1,7 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo
 
 help:  ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -29,3 +29,6 @@ js-typecheck:  ## tsc across workspaces
 
 dashboard:  ## Dev server for the experiment dashboard (apps/dashboard)
 	pnpm --filter @type-date/dashboard dev
+
+picker-demo:  ## Dev server for the picker demo (http://localhost:5199)
+	pnpm --filter @type-date/picker dev
