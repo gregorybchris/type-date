@@ -11,12 +11,60 @@
         "eval_predict": 1.142969375,
         "bundle_size": 0.03087087500000007
       }
+    },
+    "bench-js-desktop": {
+      "total_s": 0.884,
+      "buckets": {
+        "setup": 0,
+        "esbuild_bundle": 0.065,
+        "server_start": 0.002,
+        "browser_launch": 0.268,
+        "page_open": 0.38,
+        "run_in_browser": 0.104,
+        "write_results": 0.065,
+        "run_in_browser/model_load": 0,
+        "run_in_browser/predictions": 0.037
+      },
+      "rows": 100
+    },
+    "bench-js-mobile-4x": {
+      "total_s": 0.665,
+      "buckets": {
+        "setup": 0,
+        "esbuild_bundle": 0.066,
+        "server_start": 0.001,
+        "browser_launch": 0.103,
+        "page_open": 0.246,
+        "run_in_browser": 0.206,
+        "write_results": 0.043,
+        "run_in_browser/model_load": 0,
+        "run_in_browser/predictions": 0.115
+      },
+      "rows": 100
     }
   },
-  "total_s": 1.250531,
+  "total_s": 2.8,
   "buckets": {
     "eval.load_data": 0.07670554199999999,
     "eval.eval_predict": 1.142969375,
-    "eval.bundle_size": 0.03087087500000007
+    "eval.bundle_size": 0.03087087500000007,
+    "bench-js-desktop.setup": 0,
+    "bench-js-desktop.esbuild_bundle": 0.065,
+    "bench-js-desktop.server_start": 0.002,
+    "bench-js-desktop.browser_launch": 0.268,
+    "bench-js-desktop.page_open": 0.38,
+    "bench-js-desktop.run_in_browser": 0.104,
+    "bench-js-desktop.write_results": 0.065,
+    "bench-js-desktop.run_in_browser/model_load": 0,
+    "bench-js-desktop.run_in_browser/predictions": 0.037,
+    "bench-js-mobile-4x.setup": 0,
+    "bench-js-mobile-4x.esbuild_bundle": 0.066,
+    "bench-js-mobile-4x.server_start": 0.001,
+    "bench-js-mobile-4x.browser_launch": 0.103,
+    "bench-js-mobile-4x.page_open": 0.246,
+    "bench-js-mobile-4x.run_in_browser": 0.206,
+    "bench-js-mobile-4x.write_results": 0.043,
+    "bench-js-mobile-4x.run_in_browser/model_load": 0,
+    "bench-js-mobile-4x.run_in_browser/predictions": 0.115
   }
 }

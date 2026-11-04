@@ -14,6 +14,11 @@ function localToday(): string {
 /** Engines shown in the demo. The default is the best solution so far (see `specs/research/experiments`). */
 const ENGINES = [
   {
+    id: "heuristic-full-5",
+    label: "Heuristic (full v5)",
+    note: "exp-015 · 15.9 kB · 95.0% resolved on eval e4, 95.1% realistic, 90.2% hard external input",
+  },
+  {
     id: "heuristic-full-4",
     label: "Heuristic (full v4)",
     note: "exp-014 · 14.6 kB · 95.1% resolved on eval e3, 94.5% realistic, 89.9% hard external input",
@@ -55,7 +60,7 @@ const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(q.get("today") ?? "") ? (q.get("today")
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">(q.get("theme") === "dark" ? "dark" : "light");
   const [weekStart, setWeekStart] = useState<0 | 1>(q.get("ws") === "0" ? 0 : 1);
-  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full-4");
+  const [engineId, setEngineId] = useState<string>(q.get("engine") ?? "heuristic-full-5");
   const [last, setLast] = useState<{ dsl: string; ms: number } | null>(null);
   const [text, setText] = useState(q.get("q") ?? "");
   const engine = ENGINES.find((e) => e.id === engineId) ?? ENGINES[0];

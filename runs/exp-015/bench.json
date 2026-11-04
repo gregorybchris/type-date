@@ -1,0 +1,42 @@
+[
+  {
+    "engine": "heuristic-full-5",
+    "backend": "js",
+    "browser": "chromium",
+    "profile": "desktop",
+    "threads": 1,
+    "load_ms": 0,
+    "cold_first_ms": 4.1,
+    "latency_ms": {
+      "p50": 0.095,
+      "p95": 1.535,
+      "p99": 2.045
+    },
+    "tokens_per_s": 0,
+    "memory_mb": 48,
+    "download_bytes": 15877,
+    "n": 100,
+    "browser_accuracy": 0.89,
+    "data": "evals/e3q/test_external_hard.jsonl"
+  },
+  {
+    "engine": "heuristic-full-5",
+    "backend": "js",
+    "browser": "chromium",
+    "profile": "mobile-4x",
+    "threads": 1,
+    "load_ms": 0,
+    "cold_first_ms": 12.5,
+    "latency_ms": {
+      "p50": 0.555,
+      "p95": 5.02,
+      "p99": 6.005
+    },
+    "tokens_per_s": 0,
+    "memory_mb": 13,
+    "download_bytes": 15877,
+    "n": 100,
+    "browser_accuracy": 0.89,
+    "data": "evals/e3q/test_external_hard.jsonl"
+  }
+]
