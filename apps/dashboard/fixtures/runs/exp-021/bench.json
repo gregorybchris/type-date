@@ -1,0 +1,146 @@
+[
+ {
+  "engine": "ort-custom",
+  "backend": "wasm",
+  "browser": "chromium",
+  "load_ms": 251,
+  "cold_first_ms": 14,
+  "latency_ms": {
+   "p50": 4.1,
+   "p95": 6.6,
+   "p99": 9.4
+  },
+  "tokens_per_s": 2683,
+  "memory_mb": 45,
+  "download_bytes": 4049770,
+  "n": 200,
+  "browser_accuracy": 0.8745,
+  "profile": "desktop"
+ },
+ {
+  "engine": "ort-custom",
+  "backend": "webgpu",
+  "browser": "chromium",
+  "load_ms": 206,
+  "cold_first_ms": 8,
+  "latency_ms": {
+   "p50": 2.3,
+   "p95": 3.7,
+   "p99": 5.3
+  },
+  "tokens_per_s": 4783,
+  "memory_mb": 50,
+  "download_bytes": 4049770,
+  "n": 200,
+  "browser_accuracy": 0.8686,
+  "profile": "desktop"
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "wasm",
+  "browser": "chromium",
+  "load_ms": 322,
+  "cold_first_ms": 27,
+  "latency_ms": {
+   "p50": 7.6,
+   "p95": 12.2,
+   "p99": 17.5
+  },
+  "tokens_per_s": 1447,
+  "memory_mb": 49,
+  "download_bytes": 4049770,
+  "n": 200,
+  "browser_accuracy": 0.8745,
+  "profile": "desktop"
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "webgpu",
+  "browser": "chromium",
+  "load_ms": 241,
+  "cold_first_ms": 12,
+  "latency_ms": {
+   "p50": 3.5,
+   "p95": 5.6,
+   "p99": 8
+  },
+  "tokens_per_s": 3143,
+  "memory_mb": 53,
+  "download_bytes": 4049770,
+  "n": 200,
+  "browser_accuracy": 0.8737,
+  "profile": "desktop"
+ },
+ {
+  "engine": "ort-custom",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 803,
+  "cold_first_ms": 47.6,
+  "latency_ms": {
+   "p50": 14.76,
+   "p95": 25.08,
+   "p99": 37.6
+  },
+  "tokens_per_s": 745,
+  "memory_mb": 45,
+  "download_bytes": 4049770,
+  "n": 100,
+  "browser_accuracy": 0.8745,
+  "profile": "mobile-4x"
+ },
+ {
+  "engine": "ort-custom",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 1205,
+  "cold_first_ms": 71.4,
+  "latency_ms": {
+   "p50": 22.14,
+   "p95": 37.62,
+   "p99": 56.4
+  },
+  "tokens_per_s": 497,
+  "memory_mb": 45,
+  "download_bytes": 4049770,
+  "n": 100,
+  "browser_accuracy": 0.8745,
+  "profile": "mobile-6x"
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 1030,
+  "cold_first_ms": 91.8,
+  "latency_ms": {
+   "p50": 27.36,
+   "p95": 46.36,
+   "p99": 70
+  },
+  "tokens_per_s": 402,
+  "memory_mb": 49,
+  "download_bytes": 4049770,
+  "n": 100,
+  "browser_accuracy": 0.8745,
+  "profile": "mobile-4x"
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 1546,
+  "cold_first_ms": 137.7,
+  "latency_ms": {
+   "p50": 41.04,
+   "p95": 69.54,
+   "p99": 105
+  },
+  "tokens_per_s": 268,
+  "memory_mb": 49,
+  "download_bytes": 4049770,
+  "n": 100,
+  "browser_accuracy": 0.8745,
+  "profile": "mobile-6x"
+ }
+]

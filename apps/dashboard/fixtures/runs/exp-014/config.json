@@ -2,13 +2,15 @@
  "id": "exp-014",
  "number": 14,
  "title": "enc-dec 8M distilled",
+ "description": "Distilled from exp-012.",
  "created": "2026-11-03T22:00:00Z",
  "dataset": "v002",
  "format": "dsl-v1",
  "notes": "Distilled from exp-012.",
  "parent": "exp-012",
  "model": {
-  "family": "enc-dec-scratch",
+  "family": "scratch",
+  "base": "enc-dec-scratch",
   "params": 8000000,
   "layers": "4+4",
   "vocab": 4000

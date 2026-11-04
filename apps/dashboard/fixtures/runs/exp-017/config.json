@@ -1,0 +1,20 @@
+{
+ "id": "exp-017",
+ "number": 17,
+ "title": "date library baseline",
+ "description": "Second rule-based library with a DSL adapter.",
+ "created": "2026-11-04T01:00:00Z",
+ "dataset": "v002",
+ "format": "dsl-v1",
+ "notes": "Second rule-based library with a DSL adapter.",
+ "parent": null,
+ "model": {
+  "family": "library",
+  "params": 0
+ },
+ "train": {},
+ "export": {
+  "format": "js",
+  "quant": "none"
+ }
+}

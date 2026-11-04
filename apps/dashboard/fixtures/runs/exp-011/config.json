@@ -2,13 +2,15 @@
  "id": "exp-011",
  "number": 11,
  "title": "t5-small on v002",
+ "description": "",
  "created": "2026-11-03T19:00:00Z",
  "dataset": "v002",
  "format": "dsl-v1",
  "notes": "",
  "parent": "exp-008",
  "model": {
-  "family": "t5-small",
+  "family": "finetune",
+  "base": "t5-small",
   "params": 60000000,
   "layers": "6+6",
   "vocab": 4000

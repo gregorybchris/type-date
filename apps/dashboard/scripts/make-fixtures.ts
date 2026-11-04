@@ -286,7 +286,20 @@ function mutate(r: R, dsl: string): string {
 
 interface Exp {
   title: string; family: string; params: number; dataset: string; quant: string; fmt: string; skill: number; parent: number | null; notes: string;
-  kind?: "model" | "library" | "heuristic"; sizeBytes?: number; engine?: string;
+  kind?: "model" | "library" | "heuristic"; sizeBytes?: number; engine?: string; zero?: boolean;
+}
+
+/** Maps a model name onto the five families in the contract. */
+function familyGroup(e: Exp): string {
+  if (e.kind === "library" || e.kind === "heuristic") return e.kind;
+  if (e.zero) return "zero-shot";
+  return e.family.includes("scratch") ? "scratch" : "finetune";
+}
+
+/** A second eval version: slightly harder rows, so scores drop a little. */
+function rescore(ev: { exact: number; resolved: number; n: number; by_split: Record<string, { n: number; exact: number }>; by_tag: Record<string, { n: number; exact: number }>; by_modifier: Record<string, { n: number; exact: number }> }, f: number) {
+  const sc = (m: Record<string, { n: number; exact: number }>) => Object.fromEntries(Object.entries(m).map(([k, v]) => [k, { n: Math.round(v.n * 1.05), exact: round(Math.max(0, Math.min(1, v.exact * f)), 4) }]));
+  return { exact: round(ev.exact * f), resolved: round(Math.min(1, ev.resolved * f)), n: Math.round(ev.n * 1.05), by_split: sc(ev.by_split), by_tag: sc(ev.by_tag), by_modifier: sc(ev.by_modifier) };
 }
 const EXPS: Exp[] = [
   { title: "chrono-node adapter", family: "library", params: 0, dataset: "v001", quant: "none", fmt: "js", skill: 0.40, parent: null, kind: "library", sizeBytes: 182000, notes: "Rule-based library with a DSL adapter." },
@@ -303,6 +316,14 @@ const EXPS: Exp[] = [
   { title: "smollm-135m q4 on v002", family: "smollm-135m", params: 135e6, dataset: "v002", quant: "int4", fmt: "gguf", skill: 0.945, parent: 9, notes: "4-bit weights." },
   { title: "qwen2.5-0.5b q4", family: "qwen2.5-0.5b", params: 500e6, dataset: "v002", quant: "int4", fmt: "gguf", skill: 0.965, parent: null, notes: "Largest model tried." },
   { title: "enc-dec 8M distilled", family: "enc-dec-scratch", params: 8e6, dataset: "v002", quant: "int8", fmt: "onnx", skill: 0.905, parent: 12, notes: "Distilled from exp-012." },
+  { title: "qwen2.5-0.5b zero-shot", family: "qwen2.5-0.5b", params: 500e6, dataset: "v002", quant: "int4", fmt: "gguf", skill: 0.1, parent: null, zero: true, notes: "Few-shot prompt with the DSL grammar, no fine-tuning." },
+  { title: "smollm-135m zero-shot", family: "smollm-135m", params: 135e6, dataset: "v002", quant: "int4", fmt: "gguf", skill: 0.04, parent: null, zero: true, notes: "Same prompt as exp-015 on a smaller model." },
+  { title: "date library baseline", family: "library", params: 0, dataset: "v002", quant: "none", fmt: "js", skill: 0.45, parent: null, kind: "library", sizeBytes: 96000, notes: "Second rule-based library with a DSL adapter." },
+  { title: "heuristic-mid", family: "heuristic", params: 0, dataset: "v002", quant: "none", fmt: "js", skill: 0.52, parent: 3, kind: "heuristic", sizeBytes: 18500, notes: "Regex rules for ranges and weekdays, no fuzzy matching." },
+  { title: "t5-small 1 epoch", family: "t5-small", params: 60e6, dataset: "v002", quant: "int8", fmt: "onnx", skill: 0.8, parent: 11, notes: "Short fine-tune to see how fast accuracy rises." },
+  { title: "enc-dec 4M scratch", family: "enc-dec-scratch", params: 4e6, dataset: "v002", quant: "int8", fmt: "onnx", skill: 0.84, parent: 10, notes: "Half the width of exp-010." },
+  { title: "enc-dec 4M distilled", family: "enc-dec-scratch", params: 4e6, dataset: "v002", quant: "int8", fmt: "onnx", skill: 0.885, parent: 20, notes: "Distilled from exp-013." },
+  { title: "smollm-135m 2 epochs", family: "smollm-135m", params: 135e6, dataset: "v002", quant: "int8", fmt: "gguf", skill: 0.915, parent: 9, notes: "Two epochs at int8 instead of q4." },
 ];
 
 const QBYTES: Record<string, number> = { fp32: 4, fp16: 2, int8: 1, int4: 0.55 };
@@ -313,6 +334,53 @@ function writeJson(file: string, v: unknown) {
 }
 const jsonl = (rows: unknown[]) => rows.map((x) => JSON.stringify(x)).join("\n") + "\n";
 const round = (x: number, d = 4) => Number(x.toFixed(d));
+
+// Wall clock for fixture timing. Each trained experiment starts after an idle gap.
+let clock = Date.UTC(2026, 10, 3, 8, 0, 0);
+const iso = (ms: number) => new Date(ms).toISOString().replace(".000", "");
+
+function makeTiming(e: Exp, r: R, bench: Array<{ backend: string; profile?: string }>, exportBase: number) {
+  const stages: Record<string, unknown> = {};
+  const lib = e.kind === "library" || e.kind === "heuristic";
+  let total = 0;
+  if (!lib) {
+    const loop = e.params / 1e6 * 38 + 500 + r() * 60;
+    const gen = e.params / 1e6 * (e.fmt === "gguf" ? 2.2 : 1.1) + 70 + r() * 20;
+    const score = 1.5 + r() * 2;
+    const setup = { data_load: 0.2 + r() * 0.3, tokenizer_train: 0.1 + r() * 0.2, encode_train: 0.3 + r() * 1.5, model_init: 0.3 + r() * 0.4, save_checkpoint: 0.1 + r() * 0.5, write_results: 0.1 };
+    const f = 0.40 + r() * 0.06, b = 0.40 + r() * 0.06, o = 0.07 + r() * 0.03, c = 0.02 + r() * 0.02;
+    const sync = Math.max(0.01, 1 - f - b - o - c);
+    const buckets: Record<string, number> = {
+      ...setup, train_loop: loop, "train_loop/forward": loop * f, "train_loop/backward": loop * b, "train_loop/optim": loop * o,
+      "train_loop/collate": loop * c, "train_loop/sync_loss": loop * sync, eval_generate: gen, eval_score: score,
+    };
+    const top = Object.entries(buckets).filter(([k]) => !k.includes("/")).reduce((s, [, v]) => s + v, 0);
+    const unacc = 0.1 + r() * 0.4;
+    const startMs = clock;
+    const finish = startMs + (top + unacc) * 1000;
+    const steps = 20000;
+    stages.train = {
+      stages: { started_at: iso(startMs), finished_at: iso(finish) }, total_s: round(top + unacc, 2),
+      buckets: Object.fromEntries(Object.entries(buckets).map(([k, v]) => [k, round(v, 2)])), unaccounted_s: round(unacc, 2),
+      train_profile: { steps, step_ms: round(loop / steps * 1000, 1), samples_per_s: Math.round(128 / (loop / steps)) },
+    };
+    total += top + unacc;
+    clock = finish + (r() < 0.2 ? int(r, 5, 9) * 3600e3 : int(r, 4, 90) * 60e3);
+    const ex = exportBase + e.params / 1e6 * 0.12;
+    stages.export = { total_s: round(ex, 2), buckets: { [e.fmt === "gguf" ? "gguf_convert" : "onnx_export"]: round(ex * 0.75, 2), quantize: round(ex * 0.25, 2) } };
+    total += ex;
+  }
+  for (const b of bench) {
+    const prof = b.profile ?? "desktop";
+    const k = prof === "mobile-4x" ? 2.2 : prof === "mobile-6x" ? 3 : 1;
+    const run = (lib ? 2 : 8 + e.params / 1e6 * 0.05) * k * (0.9 + r() * 0.2);
+    const bk = { esbuild_bundle: 0.3, server_start: 0.05, browser_launch: 0.9 + r() * 0.3, page_open: 0.4, run_in_browser: run, write_results: 0.2 };
+    const t = Object.values(bk).reduce((s, v) => s + v, 0);
+    stages[`bench-${b.backend}-${prof}`] = { total_s: round(t, 2), buckets: Object.fromEntries(Object.entries(bk).map(([k, v]) => [k, round(v, 2)])) };
+    total += t;
+  }
+  return { total_s: round(total, 2), stages };
+}
 
 function main() {
   fs.rmSync(OUT, { recursive: true, force: true });
@@ -374,14 +442,17 @@ function main() {
     const sizeBytes = e.sizeBytes ?? Math.round(e.params * (QBYTES[e.quant] ?? 1) * (0.97 + r() * 0.06));
     const dir = path.join(OUT, "runs", id);
     writeJson(path.join(dir, "config.json"), {
-      id, number: num, title: e.title, created: new Date(Date.UTC(2026, 10, 3, 8 + num)).toISOString().replace(".000", ""),
-      dataset: e.dataset, format: "dsl-v1", notes: e.notes, parent: e.parent ? `exp-${pad(e.parent, 3)}` : null,
-      model: lib ? { family: e.family, params: 0 } : { family: e.family, params: e.params, layers: e.params < 20e6 ? "4+4" : "6+6", vocab: 4000 },
-      train: lib ? {} : { epochs: 10, batch_size: 128, lr: 0.0005, seed: 0, device: "mps" },
+      id, number: num, title: e.title, description: e.notes + (num === 4 ? " Invalid: scored before the eval sets were versioned." : ""), created: new Date(Date.UTC(2026, 10, 3, 8 + num)).toISOString().replace(".000", ""),
+      dataset: e.zero ? "none" : e.dataset, format: "dsl-v1", notes: e.notes, parent: e.parent ? `exp-${pad(e.parent, 3)}` : null,
+      model: lib ? { family: e.family, params: 0 } : { family: familyGroup(e), base: e.family, params: e.params, layers: e.params < 20e6 ? "4+4" : "6+6", vocab: 4000 },
+      train: lib || e.zero ? {} : { epochs: 10, batch_size: 128, lr: 0.0005, seed: 0, device: "mps" },
       export: { format: e.fmt, quant: e.quant },
     });
+    const mainEval = { exact: round(exact), resolved: round(Math.min(1, resolvedOk / n)), n, by_split: score(bySplit), by_tag: score(byTag), by_modifier: score(byMod) };
     writeJson(path.join(dir, "metrics.json"), {
-      eval: { exact: round(exact), resolved: round(Math.min(1, resolvedOk / n)), n, by_split: score(bySplit), by_tag: score(byTag), by_modifier: score(byMod) },
+      eval: { version: num === 4 ? "pre-e1" : "e1", ...mainEval },
+      // Only newer experiments were re-scored on e1q.
+      evals: num >= 7 && num !== 9 ? { e1q: rescore(mainEval, 0.955) } : undefined,
       model: { params: e.params, size_bytes: sizeBytes, avg_output_tokens: lib ? undefined : round(9 + r() * 5, 1) },
       train: lib ? undefined : { seconds: Math.round(e.params / 1e6 * 40 + 600), steps: 20000, final_loss: round(0.02 + (1 - e.skill) * 0.4) },
     });
@@ -416,6 +487,7 @@ function main() {
           n: 100,
         })),
       );
+    writeJson(path.join(dir, "timing.json"), makeTiming(e, r, [...bench.map((b) => ({ backend: b.backend, profile: "desktop" })), ...mobile.map((b) => ({ backend: b.backend, profile: b.profile }))], 12 + r() * 6));
     writeJson(path.join(dir, "bench.json"), [...bench.map((b) => ({ ...b, profile: "desktop" })), ...mobile]);
     fs.writeFileSync(path.join(dir, "errors.jsonl"), jsonl(errors));
     if (!lib) {

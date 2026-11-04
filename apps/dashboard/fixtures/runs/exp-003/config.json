@@ -2,6 +2,7 @@
  "id": "exp-003",
  "number": 3,
  "title": "heuristic-full",
+ "description": "Broad rule set with fuzzy month and weekday matching.",
  "created": "2026-11-03T11:00:00Z",
  "dataset": "v001",
  "format": "dsl-v1",

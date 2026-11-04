@@ -2,13 +2,15 @@
  "id": "exp-013",
  "number": 13,
  "title": "qwen2.5-0.5b q4",
+ "description": "Largest model tried.",
  "created": "2026-11-03T21:00:00Z",
  "dataset": "v002",
  "format": "dsl-v1",
  "notes": "Largest model tried.",
  "parent": null,
  "model": {
-  "family": "qwen2.5-0.5b",
+  "family": "finetune",
+  "base": "qwen2.5-0.5b",
   "params": 500000000,
   "layers": "6+6",
   "vocab": 4000

@@ -1,0 +1,38 @@
+{
+ "total_s": 18.65,
+ "stages": {
+  "bench-js-desktop": {
+   "total_s": 4.09,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 1.08,
+    "page_open": 0.4,
+    "run_in_browser": 2.07,
+    "write_results": 0.2
+   }
+  },
+  "bench-js-mobile-4x": {
+   "total_s": 5.88,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 0.92,
+    "page_open": 0.4,
+    "run_in_browser": 4.01,
+    "write_results": 0.2
+   }
+  },
+  "bench-js-mobile-6x": {
+   "total_s": 8.68,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 1.17,
+    "page_open": 0.4,
+    "run_in_browser": 6.56,
+    "write_results": 0.2
+   }
+  }
+ }
+}

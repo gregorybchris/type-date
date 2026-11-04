@@ -110,7 +110,7 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
       <div className="grid min-w-0 gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
         <Card className="order-2 flex flex-col gap-4 self-start p-4 lg:order-1">
           <Field label="Experiment">
-            <Select value={expId} onChange={(v) => setParams({ exp: v })} options={[...runs].reverse().map((r) => ({ value: r.config.id, label: r.config.id, hint: `${(r.metrics.eval.exact * 100).toFixed(1)}%` }))} />
+            <Select value={expId} onChange={(v) => setParams({ exp: v })} options={[...runs].reverse().map((r) => ({ value: r.config.id, label: `${r.config.id} ${r.config.title}`, hint: `${(r.metrics.eval.exact * 100).toFixed(1)}%` }))} />
           </Field>
           <div className="-mt-2 truncate text-[12px] text-muted">{run?.config.title}</div>
           <Field label="Engine">

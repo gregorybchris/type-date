@@ -81,7 +81,8 @@ export function loadRuns(roots: Roots): RunsResponse {
     const manifest =
       readJson<Manifest>(path.join(roots.repo, "artifacts", id, "manifest.json")) ??
       readJson<Manifest>(path.join(base, "manifest.json"));
-    runs.push({ config, metrics, bench, manifest });
+    const timing = readJson<Run["timing"]>(path.join(base, "timing.json"));
+    runs.push({ config, metrics, bench, manifest, timing });
   }
   runs.sort((a, b) => a.config.number - b.config.number);
   return { sample, runs };

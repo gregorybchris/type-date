@@ -4,6 +4,8 @@ export interface RunConfig {
   id: string;
   number: number;
   title: string;
+  /** One or two sentences: what the experiment is and why. */
+  description?: string;
   created: string;
   dataset: string;
   format: string;
@@ -19,15 +21,20 @@ export interface TagScore {
   exact: number;
 }
 
+export interface EvalBlock {
+  version?: string;
+  exact: number;
+  resolved: number;
+  n: number;
+  by_split: Record<string, TagScore>;
+  by_tag: Record<string, TagScore>;
+  by_modifier: Record<string, TagScore>;
+}
+
 export interface RunMetrics {
-  eval: {
-    exact: number;
-    resolved: number;
-    n: number;
-    by_split: Record<string, TagScore>;
-    by_tag: Record<string, TagScore>;
-    by_modifier: Record<string, TagScore>;
-  };
+  eval: EvalBlock;
+  /** Re-scores on other eval versions, keyed by version. */
+  evals?: Record<string, EvalBlock>;
   model: { params: number; size_bytes: number; avg_output_tokens?: number };
   train?: { seconds?: number; steps?: number; final_loss?: number };
 }
@@ -56,7 +63,23 @@ export interface Manifest {
   config: Record<string, number | string>;
 }
 
+export interface StageTiming {
+  total_s: number;
+  stages?: { started_at?: string; finished_at?: string };
+  buckets: Record<string, number>;
+  unaccounted_s?: number;
+  train_profile?: { steps: number; step_ms: number; samples_per_s: number };
+  [k: string]: unknown;
+}
+
+export interface Timing {
+  total_s: number;
+  stages: Record<string, StageTiming>;
+  buckets?: Record<string, number>;
+}
+
 export interface Run {
+  timing?: Timing | null;
   config: RunConfig;
   metrics: RunMetrics;
   bench: BenchEntry[];

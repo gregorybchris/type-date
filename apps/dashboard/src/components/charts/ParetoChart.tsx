@@ -7,6 +7,43 @@ import { useSize } from "@/lib/useSize";
 import { Marker } from "./Marker";
 import { makeXScale, makeYScale } from "./scales";
 
+interface LabelPos {
+  dx: number;
+  dy: number;
+  anchor: "start" | "end" | "middle";
+  text: string;
+}
+
+/** Greedy label placement. Front points go first. A label that fits nowhere is dropped (the tooltip still names the point). */
+function placeLabels(items: Array<{ key: string; px: number; py: number; r: number; text: string; front: boolean }>, bounds: { w: number; h: number }): Map<string, LabelPos> {
+  const out = new Map<string, LabelPos>();
+  type Rect = [number, number, number, number];
+  const used: Rect[] = items.map((i) => [i.px - i.r - 1, i.py - i.r - 1, i.px + i.r + 1, i.py + i.r + 1]);
+  const hit = (a: Rect, b: Rect) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
+  const order = [...items].sort((a, b) => Number(b.front) - Number(a.front) || a.px - b.px);
+  for (const it of order) {
+    const wTxt = it.text.length * 6.3 + 2;
+    const cands: Array<[number, number, LabelPos["anchor"]]> = [
+      [it.r + 4, -it.r + 2, "start"],
+      [it.r + 4, it.r + 10, "start"],
+      [-(it.r + 4), -it.r + 2, "end"],
+      [-(it.r + 4), it.r + 10, "end"],
+      [0, -it.r - 5, "middle"],
+      [0, it.r + 14, "middle"],
+    ];
+    for (const [dx, dy, anchor] of cands) {
+      const x0 = anchor === "start" ? it.px + dx : anchor === "end" ? it.px + dx - wTxt : it.px - wTxt / 2;
+      const rect: Rect = [x0, it.py + dy - 10, x0 + wTxt, it.py + dy + 3];
+      if (rect[0] < -4 || rect[2] > bounds.w + 20 || rect[1] < -14 || rect[3] > bounds.h + 4) continue;
+      if (used.some((u) => hit(rect, u))) continue;
+      used.push(rect);
+      out.set(it.key, { dx, dy, anchor, text: it.text });
+      break;
+    }
+  }
+  return out;
+}
+
 const MD = { top: 16, right: 24, bottom: 40, left: 62 };
 const MS = { top: 24, right: 30, bottom: 38, left: 40 };
 
@@ -54,7 +91,15 @@ export function ParetoChart({
     const ys = makeYScale(points.map((p) => p.y), ih);
     return { x: xs, y: ys };
   }, [points, xAxis, iw, ih]);
-  const rScale = useMemo(() => scaleSqrt().domain([0, 500]).range([4.5, 11]), []);
+  const many = points.length > 20;
+  const rScale = useMemo(() => scaleSqrt().domain([0, 500]).range(many ? [3.5, 8] : [4.5, 11]), [many]);
+  const labels = useMemo(() => {
+    const wide = w >= 700;
+    return placeLabels(
+      points.map((p) => ({ key: p.key, px: x.scale(p.x), py: y.scale(p.y), r: p.kind === "baseline" ? (many ? 5 : 6) : rScale(p.paramsM), text: wide && frontKeys.has(p.key) && points.length <= 40 ? `${p.label} ${p.title.length > 18 ? p.title.slice(0, 17) + "…" : p.title}` : p.label, front: frontKeys.has(p.key) })),
+      { w: iw, h: ih },
+    );
+  }, [points, x, y, rScale, frontKeys, iw, ih, w, many]);
   const d = useMemo(() => frontPath(front, x.scale, y.scale), [front, x, y]);
   const frontSig = front.map((p) => p.key).join();
   const hp = points.find((p) => p.key === (pin ?? hover));
@@ -103,7 +148,8 @@ export function ParetoChart({
               const onFront = frontKeys.has(p.key);
               const px = x.scale(p.x);
               const py = y.scale(p.y);
-              const r = p.kind === "baseline" ? 6 : rScale(p.paramsM);
+              const r = p.kind === "baseline" ? (many ? 5 : 6) : rScale(p.paramsM);
+              const lab = labels.get(p.key);
               const active = hover === p.key || selected === p.runId || pin === p.key;
               return (
                 <m.g
@@ -136,9 +182,11 @@ export function ParetoChart({
                     stroke={onFront ? "var(--accent)" : "var(--chart-dim)"}
                     opacity={onFront ? 0.92 : 1}
                   />
-                  <text x={r + 4} y={-r - 1} fontSize={10.5} fontWeight={onFront ? 600 : 500} fill={onFront ? "var(--fg)" : "var(--muted)"} className="num" pointerEvents="none">
-                    {p.label}
-                  </text>
+                  {lab && (
+                    <text x={lab.dx} y={lab.dy} textAnchor={lab.anchor} fontSize={10.5} fontWeight={onFront ? 600 : 500} fill={onFront ? "var(--fg)" : "var(--muted)"} className="num" pointerEvents="none">
+                      {lab.text}
+                    </text>
+                  )}
                 </m.g>
               );
             })}
@@ -147,17 +195,19 @@ export function ParetoChart({
       )}
       {hp && (
         <div
-          className={`absolute z-10 w-52 rounded-card border border-border bg-surface p-3 text-[12px] shadow-pop ${pin ? "" : "pointer-events-none"}`}
+          className={`absolute z-10 w-56 rounded-card border border-border bg-surface p-3 text-[12px] shadow-pop ${pin ? "" : "pointer-events-none"}`}
           style={{
-            left: M.left + x.scale(hp.x) + 14 + 208 > w ? Math.max(8, M.left + x.scale(hp.x) - 14 - 208) : M.left + x.scale(hp.x) + 14,
-            top: Math.max(8, M.top + y.scale(hp.y) - 70),
+            left: M.left + x.scale(hp.x) + 14 + 224 > w ? Math.max(8, M.left + x.scale(hp.x) - 14 - 224) : M.left + x.scale(hp.x) + 14,
+            top: Math.max(8, Math.min(height - 190, M.top + y.scale(hp.y) - 70)),
           }}
         >
           <div className="flex items-center justify-between">
             <span className="font-semibold text-fg">exp-{String(hp.number).padStart(3, "0")}</span>
-            <span className="text-subtle">{hp.kind === "baseline" ? "baseline" : "model"}</span>
+            <span className="text-subtle">{hp.family}</span>
           </div>
-          <div className="mt-0.5 text-muted">{hp.engine} {hp.backend !== "-" && `/ ${hp.backend}`}</div>
+          <div className="mt-0.5 text-[12px] font-medium text-fg">{hp.title}</div>
+          {hp.description && <div className="mt-0.5 line-clamp-3 text-[11.5px] text-muted">{hp.description}</div>}
+          <div className="mt-1 text-muted">{hp.engine} {hp.backend !== "-" && `/ ${hp.backend}`}</div>
           <div className="dotted-t my-2" />
           <div className="flex justify-between"><span className="text-muted">{yInfo.label}</span><span className="num font-medium">{(hp.y * 100).toFixed(1)}%</span></div>
           <div className="flex justify-between"><span className="text-muted">{xInfo.label}</span><span className="num font-medium">{fmtX(xAxis, hp.x)}</span></div>

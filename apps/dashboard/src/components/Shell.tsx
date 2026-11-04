@@ -1,8 +1,9 @@
-import { Bug, ChartScatter, Database, FlaskConical, Moon, Play, Search, Sun } from "lucide-react";
+import { Bug, ChartScatter, Database, FlaskConical, Moon, Play, Search, Sun, Timer } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
 import { Tip } from "@/components/ui/tooltip";
+import { VersionSelect } from "@/components/VersionSelect";
 import { href } from "@/lib/router";
 import { useStore } from "@/lib/store";
 import { useTheme } from "@/lib/theme";
@@ -13,6 +14,7 @@ export const NAV = [
   { view: "pareto", label: "Pareto front", icon: ChartScatter },
   { view: "errors", label: "Error analysis", icon: Bug },
   { view: "playground", label: "Playground", icon: Play },
+  { view: "outer-loop", label: "Outer loop", icon: Timer },
   { view: "data", label: "Data", icon: Database },
 ] as const;
 
@@ -44,10 +46,10 @@ export function BottomNav({ view }: { view: string }) {
             key={n.view}
             href={href(n.view)}
             aria-current={on ? "page" : undefined}
-            className={cn("flex min-h-12 min-w-14 flex-1 flex-col items-center justify-center gap-0.5 rounded-field text-[10.5px] font-medium", on ? "bg-hover text-fg" : "text-muted")}
+            className={cn("flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-0.5 rounded-field text-[10.5px] font-medium", on ? "bg-hover text-fg" : "text-muted")}
           >
             <Icon className="size-5" strokeWidth={1.75} />
-            <span>{n.label.split(" ")[0]}</span>
+            <span className="truncate">{n.label.split(" ")[0]}</span>
           </a>
         );
       })}
@@ -103,6 +105,7 @@ export function TopBar({ onPalette, crumbs, view }: { onPalette: () => void; cru
     <div className="dotted-b sticky top-0 z-20 flex h-12 shrink-0 items-center justify-between gap-2 bg-surface/90 px-3 backdrop-blur md:px-5" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className="min-w-0 truncate text-[13px] text-muted">{crumbs}</div>
       <div className="flex items-center gap-2">
+        {["experiments", "pareto", "errors"].includes(view) && <VersionSelect />}
         {(view === "data" ? sampleData : sampleRuns) && (
           <Tip label={view === "data" ? "No datasets in data/ yet. Showing generated fixtures from apps/dashboard/fixtures." : "No experiments in runs/ yet. Showing generated fixtures from apps/dashboard/fixtures."}>
             <Badge tone="warn" className="cursor-default">Sample<span className="hidden sm:inline">&nbsp;data</span></Badge>

@@ -2,6 +2,7 @@
  "id": "exp-001",
  "number": 1,
  "title": "chrono-node adapter",
+ "description": "Rule-based library with a DSL adapter.",
  "created": "2026-11-03T09:00:00Z",
  "dataset": "v001",
  "format": "dsl-v1",

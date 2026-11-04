@@ -2,13 +2,15 @@
  "id": "exp-006",
  "number": 6,
  "title": "enc-dec 15M",
+ "description": "Wider model.",
  "created": "2026-11-03T14:00:00Z",
  "dataset": "v001",
  "format": "dsl-v1",
  "notes": "Wider model.",
  "parent": "exp-005",
  "model": {
-  "family": "enc-dec-scratch",
+  "family": "scratch",
+  "base": "enc-dec-scratch",
   "params": 15000000,
   "layers": "4+4",
   "vocab": 4000

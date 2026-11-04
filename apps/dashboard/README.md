@@ -27,6 +27,14 @@ Cmd/Ctrl+K opens the quick switcher.
 
 Breakdowns (error analysis, experiment detail) use `components/Breakdown.tsx`: a Tag/Modifier/Split switch and an Error rate / Accuracy / Share of errors toggle. The percentage is the headline, "errors of n" is grey, groups under 30 examples get a hatched bar and an `n=` flag, and a dotted line marks the overall rate. Error counts are derived from `metrics.json` (`n * (1 - exact)`), so the breakdown always covers the whole experiment, not the table filters.
 
+## Eval versions, families, titles
+
+- The Eval selector in the top bar (experiments, Pareto, detail, errors) picks the version for every metric. Default: the version with the most results, latest on ties. Runs without results for it are greyed with "Not evaluated on X" and left out of charts. Runs with `eval.version` `pre-*` are marked invalid. Deltas and comparisons only use runs scored on the same version.
+- Family chips (heuristic, library, zero-shot, finetune, scratch) filter the table and the Pareto plot. Other `config.model.family` names are mapped by substring.
+- Titles show next to the experiment number; descriptions show in the table (truncated, full text on hover), cards, tooltips and the detail header.
+- Pareto labels are placed greedily; labels that would collide are dropped and the tooltip names the point.
+- Outer loop view and the "Where the time went" card read `timing.json` (see `lib/timing.ts`).
+
 ## Mobile
 
 - Below 768 px the sidebar becomes a bottom bar (safe-area padding) and the window fills the screen (`dvh`). 768 to 1023 px uses an icon rail. Tables become stacked cards below 1024 px. Wide tables that remain scroll inside their container, never the page.

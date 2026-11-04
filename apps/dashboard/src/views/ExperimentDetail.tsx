@@ -1,5 +1,7 @@
 import { ArrowLeft, Bug, Play } from "lucide-react";
 import { useMemo, useState } from "react";
+import { TimeCard } from "@/components/TimeCard";
+import { evalFor, isInvalidVersion, notEvaluatedNote, ownVersion } from "@/lib/evals";
 import { Delta } from "@/components/Bars";
 import { Breakdown, BreakdownLegend, MetricToggle, SMALL_N, rowsFromScores, type Metric } from "@/components/Breakdown";
 import { Flow, Pct } from "@/components/Num";
@@ -24,24 +26,28 @@ function KV({ k, v }: { k: string; v: React.ReactNode }) {
 }
 
 export function ExperimentDetail({ id, params }: { id: string; params: URLSearchParams }) {
-  const { runs, run: getRun } = useStore();
+  const { runs, run: getRun, version } = useStore();
   const setParams = useSetParams();
   const r = getRun(id);
   const defaultCmp = r ? (r.config.parent ?? runs.filter((x) => x.config.number < r.config.number).slice(-1)[0]?.config.id ?? "") : "";
   const cmpId = params.has("compare") ? params.get("compare")! : defaultCmp;
-  const cmp = cmpId ? getRun(cmpId) : undefined;
+  const sel = r ? evalFor(r, version) : null;
+  const evVersion = sel ? version : r ? ownVersion(r) : version;
+  const cmpRun = cmpId ? getRun(cmpId) : undefined;
+  const cev = cmpRun ? evalFor(cmpRun, evVersion) : null;
+  const cmp = cev ? cmpRun : undefined;
   const profile = params.get("profile") ?? "desktop";
   const [metric, setMetric] = useState<Metric>("error");
 
-  const options = useMemo(() => runs.filter((x) => x.config.id !== id).map((x) => ({ value: x.config.id, label: x.config.id, hint: x.config.title })), [runs, id]);
+  const options = useMemo(() => runs.filter((x) => x.config.id !== id && evalFor(x, evVersion)).map((x) => ({ value: x.config.id, label: x.config.id, hint: x.config.title })), [runs, id, evVersion]);
 
   if (!r) return <Empty>No experiment {id}</Empty>;
-  const ev = r.metrics.eval;
+  const ev = sel ?? r.metrics.eval;
   const totalErrors = Math.round(ev.n * (1 - ev.exact));
   const b = bestBench(r, profile);
   const base = isBaseline(r);
-  const dEx = cmp ? (ev.exact - cmp.metrics.eval.exact) * 100 : null;
-  const dRes = cmp ? (ev.resolved - cmp.metrics.eval.resolved) * 100 : null;
+  const dEx = cmp ? (ev.exact - cev!.exact) * 100 : null;
+  const dRes = cmp ? (ev.resolved - cev!.resolved) * 100 : null;
   const cb = cmp ? bestBench(cmp, profile) : undefined;
 
   return (
@@ -54,15 +60,21 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
               <h1 className="text-[20px] font-semibold tracking-tight">{r.config.id}</h1>
               {base && <Badge>Baseline</Badge>}
               <Badge tone="accent">{r.config.dataset}</Badge>
+              <Badge tone={isInvalidVersion(evVersion) ? "danger" : "neutral"}>eval {evVersion}</Badge>
             </div>
-            <p className="mt-0.5 text-[14px] text-fg">{r.config.title}</p>
-            {r.config.notes && <p className="mt-0.5 text-[13px] text-muted">{r.config.notes}</p>}
+            <p className="mt-0.5 text-[14px] font-medium text-fg">{r.config.title}</p>
+            {(r.config.description ?? r.config.notes) && <p className="mt-1 max-w-[62ch] text-[13px] leading-5 text-muted">{r.config.description ?? r.config.notes}</p>}
+            {!sel && (
+              <p className="mt-2 inline-block rounded-field border border-warn/30 bg-warn-soft px-2.5 py-1.5 text-[12.5px] text-warn">
+                {notEvaluatedNote(r, version).replace(/\.$/, "")}. Showing {evVersion} results below.
+              </p>
+            )}
           </div>
           <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
             <span className="text-[12px] text-muted">Compare with</span>
             <Select
               className="w-full sm:w-52"
-              value={cmpId}
+              value={cmp ? cmpId : ""}
               onChange={(v) => setParams({ compare: v || "none" })}
               options={options}
               allLabel="Nothing"
@@ -94,7 +106,13 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
             </div>
           ))}
         </div>
-        {cmp && <p className="mt-2 text-[12px] text-subtle">Deltas are against {cmp.config.id} ({cmp.config.title}). Accuracy deltas in percentage points.</p>}
+        {cmp && <p className="mt-2 text-[12px] text-subtle">Deltas are against {cmp.config.id} ({cmp.config.title}), both on eval {evVersion}. Accuracy deltas in percentage points.</p>}
+      </StaggerItem>
+
+      <Dotted />
+
+      <StaggerItem>
+        <TimeCard timing={r.timing} />
       </StaggerItem>
 
       <Dotted />
@@ -107,16 +125,16 @@ export function ExperimentDetail({ id, params }: { id: string; params: URLSearch
         <div className="grid min-w-0 gap-8 lg:grid-cols-2">
           <section className="min-w-0">
             <SectionTitle>Primary tags</SectionTitle>
-            <Breakdown rows={rowsFromScores(ev.by_tag)} compare={cmp ? rowsFromScores(cmp.metrics.eval.by_tag) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { tag: t }))} />
+            <Breakdown rows={rowsFromScores(ev.by_tag)} compare={cmp ? rowsFromScores(cev!.by_tag) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { tag: t }))} />
           </section>
           <div className="flex min-w-0 flex-col gap-8">
             <section>
               <SectionTitle>Modifier tags</SectionTitle>
-              <Breakdown rows={rowsFromScores(ev.by_modifier)} compare={cmp ? rowsFromScores(cmp.metrics.eval.by_modifier) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { modifier: t }))} />
+              <Breakdown rows={rowsFromScores(ev.by_modifier)} compare={cmp ? rowsFromScores(cev!.by_modifier) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { modifier: t }))} />
             </section>
             <section>
               <SectionTitle>Splits</SectionTitle>
-              <Breakdown rows={rowsFromScores(ev.by_split)} compare={cmp ? rowsFromScores(cmp.metrics.eval.by_split) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { split: t }))} />
+              <Breakdown rows={rowsFromScores(ev.by_split)} compare={cmp ? rowsFromScores(cev!.by_split) : null} totalErrors={totalErrors} totalN={ev.n} metric={metric} onSelect={(t) => navigate(href("errors", id, { split: t }))} />
             </section>
           </div>
         </div>

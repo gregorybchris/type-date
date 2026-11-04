@@ -1,0 +1,85 @@
+{
+ "total_s": 937.23,
+ "stages": {
+  "train": {
+   "stages": {
+    "started_at": "2026-11-05T04:31:43.223Z",
+    "finished_at": "2026-11-05T04:44:53.922Z"
+   },
+   "total_s": 790.7,
+   "buckets": {
+    "data_load": 0.37,
+    "tokenizer_train": 0.17,
+    "encode_train": 0.97,
+    "model_init": 0.37,
+    "save_checkpoint": 0.6,
+    "write_results": 0.1,
+    "train_loop": 698.29,
+    "train_loop/forward": 309.51,
+    "train_loop/backward": 309.18,
+    "train_loop/optim": 65.82,
+    "train_loop/collate": 14.67,
+    "train_loop/sync_loss": 6.98,
+    "eval_generate": 87.78,
+    "eval_score": 1.66
+   },
+   "unaccounted_s": 0.4,
+   "train_profile": {
+    "steps": 20000,
+    "step_ms": 34.9,
+    "samples_per_s": 3666
+   }
+  },
+  "export": {
+   "total_s": 13.28,
+   "buckets": {
+    "onnx_export": 9.96,
+    "quantize": 3.32
+   }
+  },
+  "bench-wasm-desktop": {
+   "total_s": 9.69,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 1.17,
+    "page_open": 0.4,
+    "run_in_browser": 7.57,
+    "write_results": 0.2
+   }
+  },
+  "bench-webgpu-desktop": {
+   "total_s": 10.32,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 1.1,
+    "page_open": 0.4,
+    "run_in_browser": 8.27,
+    "write_results": 0.2
+   }
+  },
+  "bench-wasm-mobile-4x": {
+   "total_s": 19.63,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 0.96,
+    "page_open": 0.4,
+    "run_in_browser": 17.72,
+    "write_results": 0.2
+   }
+  },
+  "bench-wasm-mobile-6x": {
+   "total_s": 28.25,
+   "buckets": {
+    "esbuild_bundle": 0.3,
+    "server_start": 0.05,
+    "browser_launch": 1.04,
+    "page_open": 0.4,
+    "run_in_browser": 26.26,
+    "write_results": 0.2
+   }
+  }
+ }
+}

@@ -1,5 +1,6 @@
 import { AnimatePresence } from "motion/react";
 import { useMemo, useState } from "react";
+import { FamilyChips, useToggleSet } from "@/components/FamilyChips";
 import { Marker } from "@/components/charts/Marker";
 import { ParetoChart } from "@/components/charts/ParetoChart";
 import { Badge } from "@/components/ui/badge";
@@ -7,44 +8,32 @@ import { Card, Empty, PageHeader, SectionTitle } from "@/components/ui/misc";
 import { Segmented } from "@/components/ui/segmented";
 import { Switch } from "@/components/ui/switch";
 import { fmtMs } from "@/lib/format";
-import { buildPoints, paretoFront, PROFILES, X_AXES, Y_AXES, type XAxis, type YAxis } from "@/lib/pareto";
+import { evalFor, notEvaluatedNote } from "@/lib/evals";
+import { buildPoints, familyOf, paretoFront, PROFILES, X_AXES, Y_AXES, type XAxis, type YAxis } from "@/lib/pareto";
 import { href, navigate } from "@/lib/router";
 import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
-function LegendToggle({ on, onClick, kind, label }: { on: boolean; onClick: () => void; kind: "model" | "baseline"; label: string }) {
-  return (
-    <button
-      onClick={onClick}
-      aria-pressed={on}
-      className={cn("inline-flex h-8 cursor-pointer items-center gap-2 rounded-field border px-2.5 text-[13px] font-medium shadow-input transition-colors", on ? "border-border bg-surface text-fg" : "border-border bg-sunken text-subtle")}
-    >
-      <svg width="16" height="16" viewBox="-8 -8 16 16" aria-hidden><Marker kind={kind} r={4.5} fill={on ? "var(--accent)" : "transparent"} stroke={on ? "var(--accent)" : "var(--chart-dim)"} /></svg>
-      {label}
-    </button>
-  );
-}
-
 export function ParetoView() {
-  const { runs } = useStore();
+  const { runs, version } = useStore();
   const [profile, setProfile] = useState<string>("desktop");
   const [x, setX] = useState<XAxis>("latency");
   const [y, setY] = useState<YAxis>("exact");
   const [perEngine, setPerEngine] = useState(false);
-  const [models, setModels] = useState(true);
-  const [baselines, setBaselines] = useState(true);
+  const [off, toggleFamily] = useToggleSet();
 
   const xInfo = X_AXES.find((a) => a.key === x)!;
   const yInfo = Y_AXES.find((a) => a.key === y)!;
   const points = useMemo(
-    () => buildPoints(runs, { x, y, perEngine, profile }).filter((p) => (p.kind === "model" ? models : baselines)),
-    [runs, x, y, perEngine, profile, models, baselines],
+    () => buildPoints(runs, { x, y, perEngine, profile, version }).filter((p) => !off.has(p.family)),
+    [runs, x, y, perEngine, profile, version, off],
   );
   const front = useMemo(() => paretoFront(points), [points]);
+  const missing = useMemo(() => runs.filter((r) => !evalFor(r, version)), [runs, version]);
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title="Pareto front" subtitle="Higher accuracy and lower cost are better. The line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU)." />
+      <PageHeader title="Pareto front" subtitle={`Accuracy on eval ${version}. Higher accuracy and lower cost are better; the line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU).`} />
       <div className="flex flex-wrap items-end gap-x-5 gap-y-3 [&>div]:max-w-full">
         <div className="flex flex-col gap-1">
           <span className="text-[12px] font-medium text-muted">X axis</span>
@@ -59,11 +48,8 @@ export function ParetoView() {
           <Segmented value={profile} onChange={setProfile} options={PROFILES.map((p) => ({ value: p, label: p === "desktop" ? "Desktop" : p.replace("mobile-", "Phone ") }))} />
         </div>
         <div className="flex flex-col gap-1">
-          <span className="text-[12px] font-medium text-muted">Show</span>
-          <div className="flex gap-2">
-            <LegendToggle on={models} onClick={() => setModels((v) => !v)} kind="model" label="Models" />
-            <LegendToggle on={baselines} onClick={() => setBaselines((v) => !v)} kind="baseline" label="Baselines" />
-          </div>
+          <span className="text-[12px] font-medium text-muted">Family</span>
+          <FamilyChips runs={runs} off={off} onToggle={toggleFamily} />
         </div>
         <div className="pb-1.5"><Switch checked={perEngine} onChange={setPerEngine} label="One point per engine and backend" /></div>
       </div>
@@ -85,6 +71,12 @@ export function ParetoView() {
         </div>
       </Card>
 
+      {missing.length > 0 && (
+        <p className="-mt-2 text-[12px] text-subtle">
+          Not plotted (no results for {version}): {missing.map((r) => `${r.config.id}${notEvaluatedNote(r, version).startsWith("Invalid") ? " (invalid)" : ""}`).join(", ")}.
+        </p>
+      )}
+
       <section>
         <SectionTitle>On the front ({front.length})</SectionTitle>
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -94,9 +86,10 @@ export function ParetoView() {
               <button key={p.key} onClick={() => navigate(href("experiments", p.runId))} className="cursor-pointer rounded-card border border-border bg-surface p-3 text-left shadow-input transition-colors hover:bg-hover">
                 <div className="flex items-center justify-between">
                   <span className="text-[13px] font-semibold">{p.runId}</span>
-                  {p.kind === "baseline" && <Badge>Baseline</Badge>}
+                  <Badge>{familyOf(r)}</Badge>
                 </div>
-                <div className="mt-0.5 truncate text-[12px] text-muted">{r.config.title}</div>
+                <div className="mt-0.5 truncate text-[12px] font-medium text-fg">{r.config.title}</div>
+                {r.config.description && <div className="mt-0.5 line-clamp-2 text-[11.5px] text-muted" title={r.config.description}>{r.config.description}</div>}
                 <div className="num mt-2 flex gap-4 text-[12px] text-muted">
                   <span><b className="font-medium text-fg">{(p.y * 100).toFixed(1)}%</b> {yInfo.label.split(" ")[0]!.toLowerCase()}</span>
                   <span><b className="font-medium text-fg">{x === "latency" ? fmtMs(p.x) : `${+p.x.toFixed(1)} ${xInfo.unit}`}</b></span>

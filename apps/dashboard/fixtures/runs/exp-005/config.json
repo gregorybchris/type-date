@@ -2,13 +2,15 @@
  "id": "exp-005",
  "number": 5,
  "title": "enc-dec 8M, noise aug",
+ "description": "Added typo and casing noise to train.",
  "created": "2026-11-03T13:00:00Z",
  "dataset": "v001",
  "format": "dsl-v1",
  "notes": "Added typo and casing noise to train.",
  "parent": "exp-004",
  "model": {
-  "family": "enc-dec-scratch",
+  "family": "scratch",
+  "base": "enc-dec-scratch",
   "params": 8000000,
   "layers": "4+4",
   "vocab": 4000

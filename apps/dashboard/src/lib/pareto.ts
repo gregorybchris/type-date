@@ -1,3 +1,4 @@
+import { evalFor } from "./evals";
 import type { BenchEntry, Run } from "./types";
 
 export type XAxis = "latency" | "memory" | "size" | "params";
@@ -30,6 +31,9 @@ export interface Point {
   runId: string;
   number: number;
   label: string;
+  title: string;
+  description: string;
+  family: string;
   engine: string;
   backend: string;
   kind: EntryKind;
@@ -39,8 +43,22 @@ export interface Point {
   paramsM: number;
 }
 
-export function isBaseline(run: Run): boolean {
+export const FAMILIES = ["heuristic", "library", "zero-shot", "finetune", "scratch"] as const;
+
+/** Maps config.model.family onto the five groups. Unknown values are kept as they are. */
+export function familyOf(run: Run): string {
   const f = run.config.model.family;
+  if ((FAMILIES as readonly string[]).includes(f)) return f;
+  if (f.includes("scratch")) return "scratch";
+  if (f.includes("zero")) return "zero-shot";
+  if (f.includes("heuristic")) return "heuristic";
+  if (f.includes("library")) return "library";
+  return "finetune";
+}
+
+/** Non-model entries: library and heuristic parsers. */
+export function isBaseline(run: Run): boolean {
+  const f = familyOf(run);
   return f === "library" || f === "heuristic";
 }
 
@@ -57,9 +75,11 @@ export function xValue(run: Run, entry: BenchEntry | undefined, axis: XAxis): nu
   }
 }
 
-export function yValue(run: Run, entry: BenchEntry | undefined, axis: YAxis): number | null {
-  if (axis === "exact") return run.metrics.eval.exact;
-  if (axis === "resolved") return run.metrics.eval.resolved;
+export function yValue(run: Run, entry: BenchEntry | undefined, axis: YAxis, version = "e1"): number | null {
+  const ev = evalFor(run, version);
+  if (!ev) return null;
+  if (axis === "exact") return ev.exact;
+  if (axis === "resolved") return ev.resolved;
   return entry?.browser_accuracy ?? null;
 }
 
@@ -84,6 +104,8 @@ export interface PointOptions {
   y: YAxis;
   /** One point per bench entry instead of the fastest entry per run. */
   perEngine: boolean;
+  /** Eval version. Runs without results for it are left out. Defaults to the run's own version. */
+  version?: string;
   /** Bench profile. Defaults to desktop. */
   profile?: string;
 }
@@ -96,13 +118,16 @@ export function buildPoints(runs: Run[], o: PointOptions): Point[] {
     const entries: Array<BenchEntry | undefined> = o.perEngine ? (own.length ? own : [undefined]) : [bestBench(run, profile)];
     for (const e of entries) {
       const x = xValue(run, e, o.x);
-      const y = yValue(run, e, o.y);
+      const y = yValue(run, e, o.y, o.version ?? (run.metrics.eval.version ?? "e1"));
       if (x === null || y === null) continue;
       out.push({
         key: `${run.config.id}|${e?.engine ?? "-"}|${e?.backend ?? "-"}|${profile}`,
         runId: run.config.id,
         number: run.config.number,
         label: String(run.config.number),
+        title: run.config.title,
+        description: run.config.description ?? "",
+        family: familyOf(run),
         engine: e?.engine ?? "-",
         backend: e?.backend ?? "-",
         kind: isBaseline(run) ? "baseline" : "model",
@@ -148,11 +173,15 @@ export function frontPath(front: Array<{ x: number; y: number }>, sx: (v: number
 }
 
 /** Best exact accuracy so far, by experiment number. */
-export function bestSoFar(runs: Run[]): Array<{ number: number; id: string; exact: number; best: number }> {
+export function bestSoFar(runs: Run[], version?: string): Array<{ number: number; id: string; title: string; exact: number; best: number }> {
   const sorted = [...runs].sort((a, b) => a.config.number - b.config.number);
   let best = 0;
-  return sorted.map((r) => {
-    best = Math.max(best, r.metrics.eval.exact);
-    return { number: r.config.number, id: r.config.id, exact: r.metrics.eval.exact, best };
-  });
+  const out: Array<{ number: number; id: string; title: string; exact: number; best: number }> = [];
+  for (const r of sorted) {
+    const ev = evalFor(r, version ?? (r.metrics.eval.version ?? "e1"));
+    if (!ev) continue;
+    best = Math.max(best, ev.exact);
+    out.push({ number: r.config.number, id: r.config.id, title: r.config.title, exact: ev.exact, best });
+  }
+  return out;
 }

@@ -1,6 +1,6 @@
 import * as RT from "@radix-ui/react-tooltip";
 import { AnimatePresence, LazyMotion, MotionConfig, m } from "motion/react";
-import { Bug, ChartScatter, Database, FlaskConical, Moon, Play, Sun } from "lucide-react";
+import { Bug, ChartScatter, Database, FlaskConical, Moon, Play, Sun, Timer } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Toaster } from "sonner";
 import { CommandPalette, type Command } from "./components/CommandPalette";
@@ -9,6 +9,7 @@ import { Empty } from "./components/ui/misc";
 import { href, navigate, useRoute } from "./lib/router";
 import { StoreProvider, useStore } from "./lib/store";
 import { ThemeProvider, useTheme } from "./lib/theme";
+import { OuterLoopView } from "./views/OuterLoopView";
 import { DataView } from "./views/DataView";
 import { ErrorsView } from "./views/ErrorsView";
 import { ExperimentDetail } from "./views/ExperimentDetail";
@@ -19,7 +20,7 @@ import { PlaygroundView } from "./views/PlaygroundView";
 const loadFeatures = () => import("./features").then((r) => r.default);
 
 function Crumbs({ view, id }: { view: string; id: string }) {
-  const names: Record<string, string> = { experiments: "Experiments", pareto: "Pareto front", errors: "Error analysis", playground: "Playground", data: "Data" };
+  const names: Record<string, string> = { "outer-loop": "Outer loop", experiments: "Experiments", pareto: "Pareto front", errors: "Error analysis", playground: "Playground", data: "Data" };
   return (
     <span>
       <a className="hover:text-fg" href={href(view)}>{names[view] ?? view}</a>
@@ -55,6 +56,7 @@ function Routes() {
       { id: "n-par", label: "Pareto front", group: "Views", icon: <ChartScatter />, run: () => navigate(href("pareto")) },
       { id: "n-err", label: "Error analysis", group: "Views", icon: <Bug />, run: () => navigate(href("errors")) },
       { id: "n-play", label: "Playground", group: "Views", icon: <Play />, run: () => navigate(href("playground")) },
+      { id: "n-loop", label: "Outer loop", group: "Views", icon: <Timer />, run: () => navigate(href("outer-loop")) },
       { id: "n-data", label: "Data", group: "Views", icon: <Database />, run: () => navigate(href("data")) },
       { id: "a-theme", label: theme === "dark" ? "Switch to light theme" : "Switch to dark theme", group: "Actions", icon: theme === "dark" ? <Sun /> : <Moon />, run: toggle },
     ];
@@ -82,6 +84,9 @@ function Routes() {
         break;
       case "playground":
         page = <PlaygroundView params={route.params} />;
+        break;
+      case "outer-loop":
+        page = <OuterLoopView />;
         break;
       case "data":
         page = <DataView params={route.params} />;

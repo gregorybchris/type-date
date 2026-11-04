@@ -2,13 +2,15 @@
  "id": "exp-004",
  "number": 4,
  "title": "from-scratch enc-dec 8M",
+ "description": "First trained model. Invalid: scored before the eval sets were versioned.",
  "created": "2026-11-03T12:00:00Z",
  "dataset": "v001",
  "format": "dsl-v1",
  "notes": "First trained model.",
  "parent": null,
  "model": {
-  "family": "enc-dec-scratch",
+  "family": "scratch",
+  "base": "enc-dec-scratch",
   "params": 8000000,
   "layers": "4+4",
   "vocab": 4000

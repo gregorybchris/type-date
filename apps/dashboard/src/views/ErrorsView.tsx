@@ -12,6 +12,7 @@ import { Card, Empty, Field, Input, PageHeader, SectionTitle } from "@/component
 import { Select } from "@/components/ui/select";
 import { fetchErrors, useAsync } from "@/lib/api";
 import { diffDsl, type DiffToken } from "@/lib/diff";
+import { isInvalidVersion, ownVersion } from "@/lib/evals";
 import { resolveText } from "@/lib/format";
 import { href, navigate, useSetParams } from "@/lib/router";
 import { useStore } from "@/lib/store";
@@ -62,7 +63,7 @@ async function copy(text: string) {
 }
 
 export function ErrorsView({ id, params }: { id: string; params: URLSearchParams }) {
-  const { runs, run: getRun } = useStore();
+  const { runs, run: getRun, version } = useStore();
   const setParams = useSetParams();
   const expId = id || runs[runs.length - 1]?.config.id || "";
   const run = getRun(expId);
@@ -139,10 +140,16 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
         />
       </PageHeader>
 
+      {ownVersion(run) !== version && (
+        <p className="rounded-field border border-warn/30 bg-warn-soft px-3 py-2 text-[12.5px] text-warn">
+          errors.jsonl for {run.config.id} comes from eval {ownVersion(run)}, not {version}. {isInvalidVersion(ownVersion(run)) ? "This run is invalid. " : ""}Numbers below are for {ownVersion(run)}.
+        </p>
+      )}
+
       <section>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-[13px] font-semibold">Where the errors are</h2>
+            <h2 className="text-[13px] font-semibold">Where the errors are on {ownVersion(run)}</h2>
             <p className="text-[12px] text-muted">Whole experiment. Click a row to filter the table below.</p>
           </div>
           <div className="flex max-w-full flex-wrap items-center gap-2">

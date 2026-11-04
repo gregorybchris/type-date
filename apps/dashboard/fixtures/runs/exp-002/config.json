@@ -2,6 +2,7 @@
  "id": "exp-002",
  "number": 2,
  "title": "heuristic-small",
+ "description": "Tokenizer and a few regex rules.",
  "created": "2026-11-03T10:00:00Z",
  "dataset": "v001",
  "format": "dsl-v1",

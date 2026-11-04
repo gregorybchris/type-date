@@ -1,0 +1,23 @@
+{
+ "id": "exp-016",
+ "number": 16,
+ "title": "smollm-135m zero-shot",
+ "description": "Same prompt as exp-015 on a smaller model.",
+ "created": "2026-11-04T00:00:00Z",
+ "dataset": "none",
+ "format": "dsl-v1",
+ "notes": "Same prompt as exp-015 on a smaller model.",
+ "parent": null,
+ "model": {
+  "family": "zero-shot",
+  "base": "smollm-135m",
+  "params": 135000000,
+  "layers": "6+6",
+  "vocab": 4000
+ },
+ "train": {},
+ "export": {
+  "format": "gguf",
+  "quant": "int4"
+ }
+}
