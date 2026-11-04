@@ -130,4 +130,40 @@ def decontaminate(base: str, version: str, eval_version: str) -> dict:
     return {"train_before": len(train), "train_after": len(kept)}
 
 
+def coverage() -> None:
+    """Print resolved accuracy per experiment and eval version. `-` means not scored."""
+    from rich.console import Console
+    from rich.table import Table
+
+    versions = sorted(p.name for p in (ROOT / "evals").iterdir() if p.is_dir())
+    t = Table(title="Resolved accuracy by eval version (- = not scored)")
+    t.add_column("exp")
+    t.add_column("title")
+    for v in versions:
+        t.add_column(v, justify="right")
+    t.add_column("other")
+    missing = 0
+    for d in sorted((ROOT / "runs").glob("exp-*")):
+        mp = d / "metrics.json"
+        if not mp.exists():
+            continue
+        m = json.loads(mp.read_text())
+        c = json.loads((d / "config.json").read_text())
+        have = {}
+        if m.get("eval", {}).get("version"):
+            have[m["eval"]["version"]] = m["eval"]
+        have.update(m.get("evals", {}))
+        cells = []
+        for v in versions:
+            if v in have:
+                cells.append(f"{100 * have[v]['resolved']:.1f}%")
+            else:
+                cells.append("[red]-[/red]")
+                missing += 1
+        other = ", ".join(k for k in have if k not in versions)
+        t.add_row(c["id"], c.get("title", "")[:34], *cells, other)
+    Console().print(t)
+    Console().print(f"{missing} missing cells")
+
+
 __all__ = ["create", "quick", "load_eval", "check_leak", "decontaminate"]

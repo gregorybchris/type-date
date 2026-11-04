@@ -233,6 +233,33 @@ def eval_rerun(
     )
 
 
+@train_app.command("finetune")
+def train_finetune(
+    exp: int = typer.Argument(...),
+    model_id: str = typer.Option(..., "--model", help="HF causal LM id"),
+    title: str = typer.Option(...),
+    description: str = typer.Option(...),
+    dataset: str = typer.Option("v003"),
+    eval_version: str = typer.Option("e1q"),
+    n_train: int = typer.Option(6000),
+    epochs: int = typer.Option(1),
+    lr: float = typer.Option(5e-5),
+) -> None:
+    """Short full fine-tune of a pretrained causal LM, then score it."""
+    from .finetune import run
+
+    ev = run(exp, model_id, title, description, dataset, eval_version, n_train, epochs, lr=lr)
+    typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")
+
+
+@eval_app.command("coverage")
+def eval_coverage() -> None:
+    """Matrix of experiments by eval version, with the gaps marked."""
+    from .evalsets import coverage
+
+    coverage()
+
+
 exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")
 app.add_typer(exp_app, name="exp")
 

@@ -55,3 +55,6 @@ eval-baselines:  ## Score the non-model baselines (chrono, heuristic-small, heur
 
 timing:  ## Where experiment wall time goes: make timing ARGS="--last 5"
 	cd training && uv run td exp timing $(ARGS)
+
+eval-coverage:  ## Matrix of experiments by eval version, gaps marked
+	cd training && uv run td eval coverage
