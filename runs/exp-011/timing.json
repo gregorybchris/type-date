@@ -1,0 +1,55 @@
+{
+  "stages": {
+    "train": {
+      "stages": {
+        "started_at": "2026-11-04T06:00:22+00:00",
+        "finished_at": "2026-11-04T06:04:38+00:00"
+      },
+      "total_s": 256.515,
+      "buckets": {
+        "data_load": 0.226,
+        "encode_train": 0.592,
+        "eval_generate": 14.938,
+        "eval_score": 0.818,
+        "eval_score/resolver_subprocess": 0.809,
+        "model_init": 0.162,
+        "save_checkpoint": 0.109,
+        "tokenizer_train": 0.163,
+        "train_loop": 239.413,
+        "train_loop/backward": 132.82,
+        "train_loop/collate": 5.025,
+        "train_loop/forward": 76.42,
+        "train_loop/optim": 24.661,
+        "train_loop/sync_loss": 0.486,
+        "write_results": 0.018
+      },
+      "unaccounted_s": 0.076,
+      "train_profile": {
+        "sampled_steps": 56,
+        "steps": 1410,
+        "step_ms": 169.8,
+        "sampled_step_ms": 180.69,
+        "samples_per_s": 753.8
+      },
+      "eval_rows": 10948
+    }
+  },
+  "total_s": 256.515,
+  "buckets": {
+    "train.data_load": 0.226,
+    "train.encode_train": 0.592,
+    "train.eval_generate": 14.938,
+    "train.eval_score": 0.818,
+    "train.eval_score/resolver_subprocess": 0.809,
+    "train.model_init": 0.162,
+    "train.save_checkpoint": 0.109,
+    "train.tokenizer_train": 0.163,
+    "train.train_loop": 239.413,
+    "train.train_loop/backward": 132.82,
+    "train.train_loop/collate": 5.025,
+    "train.train_loop/forward": 76.42,
+    "train.train_loop/optim": 24.661,
+    "train.train_loop/sync_loss": 0.486,
+    "train.write_results": 0.018
+  }
+}

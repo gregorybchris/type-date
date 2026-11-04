@@ -10,6 +10,7 @@ Non-model baselines. Each one implements the `Engine` interface from `@type-date
 | `heuristic-full-2` | `src/heuristic-full-2.ts` | heuristic-full plus clock words, filler, 2-edit typos, more recurrence. | 8.8 kB |
 | `heuristic-full-3` | `src/heuristic-full-3.ts` | heuristic-full-2 plus span extraction around unknown words, day parts, slang. | 10.3 kB |
 | `heuristic-full-4` | `src/heuristic-full-4.ts` | heuristic-full-3 plus span composition for pasted messages, bounded recurrences, calendar phrases. | 14.6 kB |
+| `heuristic-full-5` | `src/heuristic-full-5.ts` | heuristic-full-4 plus date validity checks and developer-written date formats. | 15.9 kB |
 
 `predict(text, signal?, { today })` takes an optional reference day. Only `chrono` uses it, because chrono returns absolute dates. The heuristics output relative DSL and ignore it.
 

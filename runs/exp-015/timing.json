@@ -1,0 +1,22 @@
+{
+  "stages": {
+    "eval": {
+      "stages": {
+        "started_at": "2026-11-04T06:07:18.008Z",
+        "finished_at": "2026-11-04T06:07:19.258Z"
+      },
+      "total_s": 1.250531,
+      "buckets": {
+        "load_data": 0.07670554199999999,
+        "eval_predict": 1.142969375,
+        "bundle_size": 0.03087087500000007
+      }
+    }
+  },
+  "total_s": 1.250531,
+  "buckets": {
+    "eval.load_data": 0.07670554199999999,
+    "eval.eval_predict": 1.142969375,
+    "eval.bundle_size": 0.03087087500000007
+  }
+}
