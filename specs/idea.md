@@ -90,6 +90,8 @@ Requirements:
 
 ## Process
 
+- Developer preferences (uv, ruff, ty, pytest, typer; codify repeated actions as CLI commands and Makefile targets) are in `specs/conventions.md`.
+
 - Create `specs/` with this file, plus `specs/research/` containing `experiments/` (one file per experiment) and `background/` (research findings as markdown).
 - Maintain `CLAUDE.md` with prose preferences and pitfalls. Agents update it as they learn.
 - Write concisely. No mannered or flowery prose.
