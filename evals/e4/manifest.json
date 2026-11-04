@@ -36,5 +36,8 @@
       "n": 218,
       "sha256": "e5c0aa893c2e826bb9c25d2f1f75755df9939021113134cffa60cf6f6c11fee6"
     }
-  }
+  },
+  "known_issues": [
+    "test_public is no longer independent for experiments from exp-015 on: the example formats in the formats-data writer brief (WRITER4.md) were chosen after the orchestrator inspected heuristic-full-4 failures on test_public. No test rows were copied, but the failure classes were. Treat exp-015's test_public score as a development number. Use test_public2 (e5) for an independent public check."
+  ]
 }
