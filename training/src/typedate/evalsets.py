@@ -188,6 +188,106 @@ def tag_from_dsl(dsl: str) -> str:
     return "basic-date"
 
 
+_MER = re.compile(
+    r"\b(am|pm|a\.m\.?|p\.m\.?|noon|midnight|midday|morning|afternoon|evening|night|arvo|tonight)\b"
+    r"|\d\s?[ap]\b|\d[ap]m",
+    re.I,
+)
+_WD_START = re.compile(
+    r"^\W*(on\s+)?(mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)[a-z]*\b"
+    r"(?!.*\b(every|each|weekly|daily|until|till|for|x\d)\b)",
+    re.I,
+)
+
+
+_MON = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?"
+_WDN = r"(?:mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)[a-z]*\.?"
+_WD_RANGE = re.compile(rf"^\W*{_WDN}\s*(?:-|–|to|through|thru|till|until)\s*{_WDN}\W*$", re.I)
+_BARE_TAIL = re.compile(
+    rf"\b{_MON}\s+\d{{1,2}}(?:st|nd|rd|th)?,?\s+\d{{2}}\b(?![\d:]|\s*[ap]\.?m)"
+    rf"|\b\d{{1,2}}(?:st|nd|rd|th)?\s+{_MON},?\s+\d{{2}}\b(?![\d:]|\s*[ap]\.?m)",
+    re.I,
+)
+_MIN_TO = re.compile(
+    r"\b(?:five|ten|quarter|twenty|twenty[ -]five)\s+(?:to|of|till|before)\s+"
+    r"(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d{1,2})\b",
+    re.I,
+)
+_EVERY_NTH = re.compile(rf"\bevery\s+(?:\d+(?:st|nd|rd|th)|second|third|fourth)\s+{_WDN}", re.I)
+_TO_NOON = re.compile(r"\b\d{1,2}(?::\d{2})?\s*(?:to|till|until|-|–)\s*noon\b", re.I)
+_V2_OPEN = re.compile(
+    r"\b(?:after|before|by|since|no later than|not before)\s+(?:\d|noon|midnight|mid-?day)", re.I
+)
+_V2_DURATION = re.compile(
+    r"\bfor\s+(?:an?|\d+|one|two|three|four|five|six|half)\s*(?:h|hr|hrs|hours?|mins?|minutes?)\b",
+    re.I,
+)
+_V2_DOM = re.compile(r"^\W*(?:on\s+)?(?:the\s+)?\d{1,2}(?:st|nd|rd|th)\W*$", re.I)
+
+
+def policy_flags(row: dict, legacy_v2: bool = True) -> list[str]:
+    """Label-policy classes in which the text does not determine the label (see exp-009 note)."""
+    t, d = row["text"].lower(), row["dsl"]
+    flags = []
+    if re.search(r"(\d{2}:\d{2}|\d\?)", d):
+        unknown = "?" in d
+        stated = bool(_MER.search(t))
+        if unknown and stated:
+            flags.append("meridiem")
+        elif not unknown and not stated:
+            m = re.search(r"(?<!\d)(\d{1,2}):(\d{2})", t)
+            if not m or not (
+                int(m.group(1)) >= 13 or (len(m.group(1)) == 2 and m.group(1)[0] == "0")
+            ):
+                flags.append("meridiem")
+    if d.startswith(("d R", "dt R")) and _WD_START.match(t):
+        flags.append("on-weekday-recurrence")
+    if re.search(r"(?<!\d)\d{1,2}\.\d{2}(?!\d)", row["text"]):
+        flags.append("dotted-numeric")
+    if d.startswith(("d R", "dt R")) and _WD_RANGE.match(t):
+        flags.append("weekday-range-vs-recurrence")
+    if _BARE_TAIL.search(row["text"]):
+        flags.append("bare-number-after-month-date")
+    if _MIN_TO.search(t) and not _MER.search(t) and ":" not in t:
+        flags.append("minute-word-to-hour")
+    if "#" in d and _EVERY_NTH.search(t) and " of " not in t:
+        flags.append("every-nth-weekday")
+    if _TO_NOON.search(t) and re.search(r"(?<!\?)\b\d{2}:\d{2}>", d):
+        flags.append("start-hour-before-noon")
+    if legacy_v2 and (_V2_OPEN.search(t) or _V2_DURATION.search(t) or _V2_DOM.match(row["text"])):
+        flags.append(
+            "v2-feature"
+        )  # legacy rows with these phrasings were labeled before DSL v2 existed
+    return flags
+
+
+def cut_clean(version: str, parent: str, extra: dict[str, list[dict]], reason: str) -> dict:
+    """New eval version: parent minus policy-ambiguous rows, plus new splits. Not a superset."""
+    base = load_eval(parent)
+    dropped: dict[str, dict[str, int]] = {}
+    out: dict[str, list[dict]] = {}
+    for sp, rows in base.items():
+        keep = []
+        cnt: dict[str, int] = defaultdict(int)
+        for r in rows:
+            fl = policy_flags(r)
+            if fl:
+                for f in fl:
+                    cnt[f] += 1
+                cnt["rows_dropped"] += 1
+            else:
+                keep.append(r)
+        out[sp] = keep
+        dropped[sp] = dict(cnt)
+    out.update(extra)
+    return _write(
+        version,
+        out,
+        {"parent": parent, "subset_of": None, "reason": reason, "added_splits": sorted(extra),
+         "dropped_by_policy": dropped, "comparable_with_parent": False},
+    )  # fmt: skip
+
+
 def extend(version: str, parent: str, extra: dict[str, list[dict]], reason: str) -> dict:
     """New eval version: parent rows unchanged plus new splits. Parent results stay comparable."""
     base = load_eval(parent)
