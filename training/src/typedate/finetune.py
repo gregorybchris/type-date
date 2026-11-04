@@ -12,7 +12,8 @@ from .timing import Timer
 from .train import ROOT, load_jsonl
 
 os.environ.setdefault("HF_HOME", str(ROOT / "training" / ".hf"))
-os.environ.setdefault("PYTORCH_MPS_HIGH_WATERMARK_RATIO", "0.6")  # cap MPS memory growth
+os.environ.setdefault("PYTORCH_MPS_HIGH_WATERMARK_RATIO", "0.7")  # cap MPS memory growth
+os.environ.setdefault("PYTORCH_MPS_LOW_WATERMARK_RATIO", "0.5")  # must be below the high ratio
 
 
 def run(
