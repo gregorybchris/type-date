@@ -17,8 +17,10 @@ export interface TypeDatePickerProps {
   onChange?: (r: Resolved) => void;
   /** Called on Enter with the current result. */
   onConfirm?: (r: Resolved | null) => void;
-  /** Called on Escape when the input is already empty. */
+  /** Called on Escape when the picker is already empty. */
   onEscape?: () => void;
+  /** Called when the picker is cleared (Escape, or the text emptied). */
+  onClear?: () => void;
   /** YYYY-MM-DD. Defaults to the local date. */
   today?: string;
   weekStart?: 0 | 1;
@@ -164,7 +166,26 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     [],
   );
 
+  const resetRef = useRef<() => void>(() => {});
+  /** Clear text, selected dates and times, the assumed AM/PM, any anchor, and go back to today's month. */
+  const reset = () => {
+    clearTimeout(timer.current);
+    seq.current++;
+    setText("");
+    setResult(null);
+    latest.current.result = null;
+    setPending(false);
+    setMuted(false);
+    setAnchor(null);
+    setTarget("start");
+    show(viewOf(today));
+    props.onClear?.();
+  };
+
+  resetRef.current = reset;
+
   const onText = (t: string) => {
+    if (!t.trim()) return reset();
     setText(t);
     clearTimeout(timer.current);
     timer.current = setTimeout(() => run(t), debounceMs);
@@ -174,6 +195,8 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   // on empty space). The text input has its own handler below.
   const textRef = useRef(text);
   textRef.current = text;
+  const resultRef = useRef(result);
+  resultRef.current = result;
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape" || e.defaultPrevented) return;
@@ -182,8 +205,8 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       if (target?.closest("dialog, input, textarea, select, [contenteditable]") && !root.current?.contains(target)) return;
       if (target instanceof HTMLInputElement && root.current?.contains(target)) return;
       if (el && el !== document.body && !root.current?.contains(el)) return;
-      if (textRef.current) {
-        onText("");
+      if (textRef.current || resultRef.current) {
+        resetRef.current();
         root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
       } else props.onEscape?.();
     };
@@ -196,7 +219,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       clearTimeout(timer.current);
       run(text).then(() => props.onConfirm?.(latest.current.result));
     } else if (e.key === "Escape") {
-      if (text) onText("");
+      if (text || result) reset();
       else props.onEscape?.();
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
