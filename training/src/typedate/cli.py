@@ -264,6 +264,98 @@ def data_mix(
     _ = Path
 
 
+@data_app.command("web-batch")
+def data_web_batch(
+    pattern: str = typer.Option(
+        "gen/external/web-*.jsonl", help="Web research files, relative to training/"
+    ),
+    per_source: int = typer.Option(120, help="Max phrases per source"),
+    sealed_sources: str = typer.Option(
+        "", help="Comma list of source substrings sealed as whole sources"
+    ),
+    sealed_frac: float = typer.Option(0.2, help="Share of the other rows sealed at random"),
+    chunk: int = typer.Option(400),
+    seed: int = typer.Option(3),
+    max_len: int = typer.Option(90),
+) -> None:
+    """Sample web phrases by source, drop anything seen before, split dev/sealed, write labeling chunks."""
+    import glob
+    import random
+    from collections import defaultdict
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    repo = root.parent
+
+    def norm(t: str) -> str:
+        return " ".join(t.lower().split())
+
+    banned: set[str] = set()
+    for f in [
+        *glob.glob(str(repo / "data/*/*.jsonl")),
+        *glob.glob(str(repo / "data/pool/*/*.jsonl")),
+        *glob.glob(str(repo / "evals/*/*.jsonl")),
+        *glob.glob(str(root / "gen/external/*inputs*.jsonl")),
+    ]:
+        for line in Path(f).read_text().splitlines():
+            if line.strip():
+                with contextlib.suppress(json.JSONDecodeError, KeyError):
+                    banned.add(norm(json.loads(line)["text"]))
+    by_src: dict[str, list[dict]] = defaultdict(list)
+    seen: set[str] = set()
+    for f in sorted(glob.glob(str(root / pattern))):
+        for line in Path(f).read_text().splitlines():
+            if not line.strip():
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            t = str(r.get("text", "")).strip()
+            k = norm(t)
+            if not k or k in seen or k in banned or len(t) > max_len or len(t) < 2:
+                continue
+            seen.add(k)
+            by_src[r.get("source", "unknown")].append({**r, "text": t})
+    rng = random.Random(seed)
+    picked: list[dict] = []
+    for _, rows in sorted(by_src.items()):
+        rng.shuffle(rows)
+        picked += rows[:per_source]
+    rng.shuffle(picked)
+    sealed_keys = [x.strip().lower() for x in sealed_sources.split(",") if x.strip()]
+
+    def is_sealed_src(r: dict) -> bool:
+        return any(k in r.get("source", "").lower() for k in sealed_keys)
+
+    held = [r for r in picked if is_sealed_src(r)]
+    rest = [r for r in picked if not is_sealed_src(r)]
+    n_seal = int(len(rest) * sealed_frac)
+    sealed_mixed, pool = rest[:n_seal], rest[n_seal:]
+    ext = root / "gen/external"
+    meta = {}
+
+    def write(name: str, items: list[dict], prefix: str) -> None:
+        lines = []
+        for i, r in enumerate(items):
+            rid = f"{prefix}{i:04d}"
+            meta[rid] = {k: r.get(k) for k in ("source", "url", "license", "note")}
+            lines.append(json.dumps({"id": rid, "text": r["text"]}))
+        (ext / name).write_text("\n".join(lines) + "\n")
+
+    write("web-heldout-inputs.jsonl", held, "whs")
+    write("web-sealed-inputs.jsonl", sealed_mixed, "wsm")
+    chunks = [pool[i : i + chunk] for i in range(0, len(pool), chunk)]
+    for k, c in enumerate(chunks):
+        write(f"web-pool-inputs-{k}.jsonl", c, f"wp{k}-")
+    (ext / "web-meta.json").write_text(json.dumps(meta))
+    typer.echo(json.dumps({
+        "sources": {k: len(v) for k, v in sorted(by_src.items())},
+        "picked": len(picked), "heldout_sources": len(held), "sealed_mixed": len(sealed_mixed),
+        "pool_chunks": [len(c) for c in chunks],
+    }, indent=1))  # fmt: skip
+
+
 @data_app.command("retag")
 def data_retag(
     paths: list[str] = typer.Argument(..., help="JSONL files (relative to the repo root)"),
