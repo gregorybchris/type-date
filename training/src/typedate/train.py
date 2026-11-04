@@ -8,7 +8,7 @@ import subprocess
 import time
 from collections import defaultdict
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import torch
@@ -77,7 +77,9 @@ def build_tokenizer(rows: list[dict], vocab: int) -> PreTrainedTokenizerFast:
 def encode_rows(tok, rows: list[dict]):
     src = tok([norm_in(r["text"]) for r in rows], add_special_tokens=False)["input_ids"]
     tgt = tok([r["dsl"] for r in rows], add_special_tokens=False)["input_ids"]
-    return [(s[: MAX_IN - 1] + [EOS], t[: MAX_OUT - 1] + [EOS]) for s, t in zip(src, tgt)]
+    return [
+        (s[: MAX_IN - 1] + [EOS], t[: MAX_OUT - 1] + [EOS]) for s, t in zip(src, tgt, strict=False)
+    ]
 
 
 def collate(batch, device):
@@ -140,7 +142,7 @@ def predict(model, tok, rows: list[dict], device, bs: int = 256) -> list[str]:
             do_sample=False,
         )
         texts = tok.batch_decode(gen, skip_special_tokens=True)
-        for j, t in zip(idx, texts):
+        for j, t in zip(idx, texts, strict=False):
             out[j] = " ".join(t.split())
     preds = [out[i] for i in range(len(rows))]
     return preds
@@ -168,14 +170,14 @@ def evaluate(rows_by_split: dict[str, list[dict]], preds_by_split: dict[str, lis
     tot = ok = 0
     pairs = []
     for split, rows in rows_by_split.items():
-        for r, p in zip(rows, preds_by_split[split]):
+        for r, p in zip(rows, preds_by_split[split], strict=False):
             pairs.append({"exp": r["dsl"], "pred": p})
     res = resolved_equal(pairs)
     res_ok = sum(res)
     k = 0
     for split, rows in rows_by_split.items():
         s_ok = 0
-        for r, p in zip(rows, preds_by_split[split]):
+        for r, p in zip(rows, preds_by_split[split], strict=False):
             good = p == r["dsl"]
             s_ok += good
             tag_stats[r["primary_tag"]][0] += 1
@@ -234,7 +236,9 @@ def run(cfg: TrainConfig) -> dict:
     warm = max(1, int(0.05 * total))
     sched = torch.optim.lr_scheduler.LambdaLR(
         opt,
-        lambda s: min(1.0, (s + 1) / warm) * (0.5 * (1 + math.cos(math.pi * s / total)) * 0.95 + 0.05),
+        lambda s: (
+            min(1.0, (s + 1) / warm) * (0.5 * (1 + math.cos(math.pi * s / total)) * 0.95 + 0.05)
+        ),
     )
     t0 = time.time()
     step = 0
@@ -276,7 +280,7 @@ def run(cfg: TrainConfig) -> dict:
         "id": f"exp-{cfg.exp:03d}",
         "number": cfg.exp,
         "title": cfg.title,
-        "created": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "created": datetime.now(UTC).isoformat(timespec="seconds"),
         "dataset": cfg.dataset,
         "format": "dsl-v1",
         "notes": cfg.notes,

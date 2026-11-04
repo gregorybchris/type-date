@@ -4,7 +4,7 @@ import json
 import re
 import shutil
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from .build import h, norm
@@ -15,10 +15,7 @@ SLASH = re.compile(r"(?<![\d:])(\d{1,2})/(\d{1,2})(?!\d)")
 
 def bad_numeric_order(text: str, dsl: str) -> bool:
     """True if a slash date in the text is not month/day matching a date in the label."""
-    for a, b in SLASH.findall(text):
-        if f"{int(a):02d}-{int(b):02d}" not in dsl:
-            return True
-    return False
+    return any(f"{int(a):02d}-{int(b):02d}" not in dsl for a, b in SLASH.findall(text))
 
 
 def ingest(base: str, version: str, gen_dir: Path, test_frac: float = 0.3) -> dict:
@@ -87,7 +84,7 @@ def ingest(base: str, version: str, gen_dir: Path, test_frac: float = 0.3) -> di
     meta = json.loads((out / "meta.json").read_text())
     meta.update(
         version=version,
-        created=datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        created=datetime.now(UTC).isoformat(timespec="seconds"),
         base=base,
         notes=f"{base} plus LLM paraphrases (Claude haiku subagents); "
         f"{len(new_test)} held out as test_llm",

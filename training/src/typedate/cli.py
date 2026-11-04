@@ -1,5 +1,7 @@
 """Command line entry point. Run `uv run td --help` from `training/`."""
 
+import json
+
 import typer
 
 app = typer.Typer(no_args_is_help=True, help="type-date data, training, and eval commands")
@@ -84,7 +86,9 @@ def data_intents(
         if ex.text in seen:
             continue
         seen.add(ex.text)
-        rows.append({"iid": f"i{len(rows):05d}", "canonical": ex.text, "dsl": ex.dsl, "tag": ex.tag})
+        rows.append(
+            {"iid": f"i{len(rows):05d}", "canonical": ex.text, "dsl": ex.dsl, "tag": ex.tag}
+        )
     for i in range(0, n, shard_size):
         path = root / f"shard-{i // shard_size:02d}.jsonl"
         path.write_text("\n".join(json.dumps(r) for r in rows[i : i + shard_size]) + "\n")
@@ -120,6 +124,22 @@ def train_run(
     res = run(cfg)
     ev = res["metrics"]["eval"]
     typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")
+
+
+export_app = typer.Typer(no_args_is_help=True, help="Export commands")
+app.add_typer(export_app, name="export")
+
+
+@export_app.command("run")
+def export_run(
+    exp: int = typer.Argument(...),
+    quant: str = typer.Option("int8", help="fp32 or int8"),
+) -> None:
+    """Export artifacts/exp-NNN/torch to ONNX and quantize."""
+    from .export import export
+
+    res = export(exp, quant)
+    typer.echo(json.dumps(res, indent=2))
 
 
 if __name__ == "__main__":
