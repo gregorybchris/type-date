@@ -14,6 +14,11 @@ function localToday(): string {
 /** Engines shown in the demo. The default is the best solution so far (see `specs/engines`). */
 const ENGINES = [
   {
+    id: "h9",
+    label: "h9",
+    note: "21.9 kB + 16.4 kB lazy · named dates, last weekday of a month, friday the 13th, number words, bounded recurrences",
+  },
+  {
     id: "h8",
     label: "h8",
     note: "21.9 kB + 10.7 kB lazy · typos, abbreviations, score and dozen counts, day of a relative month",
@@ -110,7 +115,7 @@ interface Prefs {
   engineId: string;
   details: boolean;
 }
-const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h8", details: false };
+const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h9", details: false };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};

@@ -52,7 +52,7 @@ rescore-baselines:  ## Score engines on one eval version: make rescore-baselines
 	$(foreach e,$(ENGINES),pnpm --filter @type-date/baselines eval --engine $(e) --eval-version $(EVAL) --no-primary &&) true
 
 # All eval versions, full and quick subsets
-EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10
+EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10 e11
 rescore-all:  ## Score every engine on every eval version (fast, run after adding an engine or eval)
 	$(foreach v,$(EVALS),$(MAKE) rescore-baselines EVAL=$(v) &&) true
 
