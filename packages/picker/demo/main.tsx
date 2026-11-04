@@ -14,6 +14,11 @@ function localToday(): string {
 /** Engines shown in the demo. The default is the best solution so far (see `specs/research/experiments`). */
 const ENGINES = [
   {
+    id: "heuristic-full-8",
+    label: "Heuristic (full v8)",
+    note: "exp-018 · 21.9 kB + 10.7 kB lazy · typos, abbreviations, score and dozen counts, day of a relative month",
+  },
+  {
     id: "heuristic-full-7",
     label: "Heuristic (full v7)",
     note: "exp-017 · 19.0 kB + 10.6 kB lazy · 93.1% exact on eval e7, 88.5% on sealed web phrases",
@@ -61,6 +66,8 @@ const EXAMPLES = [
   "dec 28 to jan 3",
   "every other friday until dec 31",
   "noon",
+  "four score and seven years ago",
+  "13th of last month",
 ];
 
 /** DSL v2 lines for a few phrases. The heuristic engines do not produce v2 yet. Enabled with `?parse=v2demo`. */
@@ -100,7 +107,7 @@ interface Prefs {
   engineId: string;
   details: boolean;
 }
-const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "heuristic-full-7", details: false };
+const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "heuristic-full-8", details: false };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};
