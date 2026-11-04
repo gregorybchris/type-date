@@ -1,6 +1,6 @@
 # type-date
 
-Natural-language datetime picker. The user types "oct 2 to oct 5" or "every other sunday". A tiny model running in the browser turns the text into a structured result. A React picker shows it. See `specs/idea.md` for the goal and `specs/plan.md` for the plan.
+Natural-language datetime picker. The user types "oct 2 to oct 5" or "every other sunday". A small rule-based parser (heuristics, no model) running in the browser turns the text into a structured result. A React picker shows it. See `specs/idea.md` for the goal and `specs/plan.md` for the plan. Model work (small seq2seq models, SmolLM2, Qwen, ONNX) did not meet the requirements and was removed on 2026-11-04; it is in git history.
 
 ## Prose rules
 
@@ -15,25 +15,24 @@ Apply these to all docs, comments, commit messages, and UI copy.
 ## Working rules
 
 - Commit often to git with informative messages. Do not push. There is no remote.
-- Keep total disk use under 10GB. Delete checkpoints that are not on the Pareto front or needed for a comparison. Record metrics before deleting.
-- Mobile matters: UI must be responsive and the model must be fast on phones (see `specs/design.md`, `specs/plan.md` Mobile).
+- Mobile matters: UI must be responsive and the parser must be fast on phones (see `specs/design.md`).
 - `design-ideas/` is gitignored. Look at the images there before doing UI work.
-- Work coarse to fine. Follow the staged plan in `specs/research/design-space.md`: one factor per experiment, time-boxed, no deep latency tuning until the broad design is chosen.
 - Eval sets are versioned and immutable (`evals/eN`). Compare only within one eval version. Cut a new one rarely. A new version must be scored on all baselines first. See `specs/research/eval-versioning.md`.
 - Heuristic work uses the data reuse protocol in `specs/research/eval-versioning.md`: one labeled pool for error analysis, a sealed test per round, burn it after use, report accuracy per family and source.
 - Never let information from a held-out eval set (even failure categories you saw as eval owner) reach data briefs or tuning. If it does, record the issue in the eval manifest (`known_issues`) and cut a fresh independent set. This happened with e4 `test_public`.
 - Every experiment needs a short `title` and a 1-2 sentence `description` in `config.json` (shown in the dashboard).
-- Every run writes `timing.json` (wall time by bucket). Use `make timing` and optimize the biggest bucket first.
-- Every experiment gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
+- Every experiment (one heuristic engine) gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
+- Every baseline is scored on every eval version, so the dashboard has no gaps. After adding an engine or an eval version run `make rescore-all`.
+- Engine files are named `heuristic-full-N.ts`; parts go in `src/full-N/`. See `specs/conventions.md`.
 - Background research goes in `specs/research/background/` as markdown.
 
 ## Tooling preferences
 
 Full list in `specs/conventions.md`.
 
-- Python: `uv`, `ruff`, `ty`, `pytest`, `typer`. Python project is `training/`. Run with `uv run`.
+- Python: `uv`, `ruff`, `ty`, `pytest`, `typer`. Python project is `training/` (data and eval-set tooling only). Run with `uv run`.
 - TypeScript: pnpm workspaces, Vitest.
-- Codify actions we repeat as commands. Python and ML actions are `td` subcommands (typer, `training/src/typedate/cli.py`). Repo-level actions are Makefile targets. When you run a command a third time, add it as a command and list it below.
+- Codify actions we repeat as commands. Python data and eval-set actions are `td` subcommands (typer, `training/src/typedate/cli.py`). Repo-level actions are Makefile targets. When you run a command a third time, add it as a command and list it below.
 
 ## Commands
 
@@ -46,9 +45,8 @@ Run `make help` for the full list.
 | `make py-fix` | ruff autofix and format |
 | `make py-test` | pytest |
 | `make td ARGS="--help"` | Run the `td` CLI |
-| `make timing` | Wall time by bucket per experiment and overall |
-| `make export EXP=5` | Export an experiment to ONNX int8 |
-| `make bench EXP=5 ARGS="--profile mobile-4x"` | Browser benchmark, writes runs/exp-005/bench.json |
+| `make rescore-all` | Score every baseline on every eval version |
+| `make rescore-baselines EVAL=e10` | Score every baseline on one eval version |
 | `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
 | `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
@@ -64,13 +62,10 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 
 ## Pitfalls
 
-- Tokenizer: do not add a `Lowercase` normalizer. The DSL has uppercase tokens (`R`, `W+1`, `M@10`). Lowercase the input text in code (`norm_in`) instead. This bug cost exp-004.
 - A typer app with one command collapses it into the root command. Add an `@app.callback()` or a second command.
 - Gate commits on checks: `uv run ruff check src && uv run ty check src && git commit`. Piping ruff through `tail` hides its exit code, and a broken file got committed once (editing a file by slicing between two `def` lines also deleted the functions between them).
 - Never stall. Do not block on a wait loop longer than about 30 seconds. Start long jobs in the background (nohup scripts or `run_in_background`), do other useful work, and check status with quick non-blocking commands. Long blocking waits made the user cancel a session.
 - Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
-- Memory: this machine is shared with other apps and swap fills up (a SmolLM2-135M fine-tune grew to 13GB and stalled everything). Check `sysctl vm.swapusage` and `top -o mem` before launching a job. Keep MPS jobs small: fixed padding lengths, `torch.mps.empty_cache()` every few dozen steps, `PYTORCH_MPS_HIGH_WATERMARK_RATIO`. Never kill processes you did not start.
 - Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
-- WebGPU with the int8 ONNX model gave 0% accuracy and 1.5 s latency (exp-004). Use fp32 or fp16 for WebGPU.
 - Dev servers: the user watches ports 5173 (dashboard) and 5199 (picker demo). Never start, stop, or kill servers on those ports except with `make serve*`. Agents that need a server for screenshots use other ports (5300+). Servers started from a tool call die when the session cleans up (exit 143); `scripts/serve.sh` runs them under nohup with a restart loop.
 - Agents running Playwright and training at once slow each other. Check `ps` before blaming the code.
