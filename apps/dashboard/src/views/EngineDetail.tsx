@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { SplitBars } from "@/components/SplitBars";
 import { evalFor, hardResolved, notEvaluatedNote, ownVersion, realisticResolved } from "@/lib/evals";
 import { Delta } from "@/components/Bars";
-import { Breakdown, BreakdownLegend, MetricToggle, SMALL_N, rowsFromScores, type Metric } from "@/components/Breakdown";
+import { Breakdown, BreakdownLegend, MetricToggle, rowsFromScores, type Metric } from "@/components/Breakdown";
 import { Pct } from "@/components/Num";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -118,7 +118,7 @@ export function EngineDetail({ id, params }: { id: string; params: URLSearchPara
 
       <StaggerItem className="flex flex-col gap-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-[12px] text-muted">Click a row to see its failures. Counts are shown in grey. Hatched bars have fewer than {SMALL_N} examples.</p>
+          <p className="text-[12px] text-muted">Click a row to see its failures. Counts are shown in grey. Whiskers show the 95% interval, so groups with few examples have wide whiskers.</p>
           <MetricToggle value={metric} onChange={setMetric} />
         </div>
         <div className="grid min-w-0 gap-8 lg:grid-cols-2">

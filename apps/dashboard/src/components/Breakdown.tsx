@@ -33,6 +33,17 @@ export function MetricToggle({ value, onChange }: { value: Metric; onChange: (m:
 
 const rate = (r: BreakRow) => (r.n ? r.errors / r.n : 0);
 
+/** 95% Wilson score interval for an error rate. Wide when n is small. */
+export function wilson(errors: number, n: number): [number, number] {
+  if (!n) return [0, 1];
+  const z = 1.96;
+  const p = errors / n;
+  const d = 1 + (z * z) / n;
+  const center = (p + (z * z) / (2 * n)) / d;
+  const half = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / d;
+  return [Math.max(0, center - half), Math.min(1, center + half)];
+}
+
 /** Red grows with the error rate. Saturates at 60%. */
 function rateColor(errRate: number): string {
   const t = Math.round(Math.min(1, errRate / 0.6) * 82);
@@ -43,7 +54,7 @@ const pctText = (x: number) => `${(x * 100).toFixed(x > 0 && x < 0.01 ? 2 : 1)}%
 
 /**
  * Rows of label, bar and a percentage. Rate is the headline. Counts and n stay visible as muted text.
- * Sorted worst first. Bars for groups under SMALL_N are hatched.
+ * Sorted worst first. Every bar has a 95% interval whisker, so small groups show as wide whiskers.
  */
 export function Breakdown({
   rows,
@@ -75,11 +86,16 @@ export function Breakdown({
     <div className="flex flex-col">
       {sorted.map((r) => {
         const v = value(r);
-        const small = r.n < SMALL_N;
+        const [lo, hi] = wilson(r.errors, r.n);
         const c = cmp.get(r.key);
         const barPct = metric === "share" ? (share(r) / maxShare) * 100 : v * 100;
+        // Interval on the plotted quantity. Accuracy flips the error interval. Share scales the rate interval by group size.
+        const [a, b] = metric === "accuracy" ? [1 - hi, 1 - lo] : metric === "share" ? [(lo * r.n) / Math.max(1, totalErrors), (hi * r.n) / Math.max(1, totalErrors)] : [lo, hi];
+        const scale = metric === "share" ? 100 / maxShare : 100;
+        const wLo = Math.min(100, a * scale);
+        const wHi = Math.min(100, b * scale);
         const color = metric === "share" ? "var(--accent)" : metric === "accuracy" ? rateColor(rate(r)) : rateColor(rate(r));
-        const detail = `${r.errors} errors of ${r.n} examples. Error rate ${pctText(rate(r))}. ${pctText(share(r))} of all ${totalErrors} errors.${small ? ` Under ${SMALL_N} examples, so the rate is unreliable.` : ""}`;
+        const detail = `${r.errors} errors of ${r.n} examples. Error rate ${pctText(rate(r))}. ${pctText(share(r))} of all ${totalErrors} errors.95% interval for the error rate: ${pctText(lo)} to ${pctText(hi)}.`;
         return (
           <Tip key={r.key} label={detail}>
             <m.button
@@ -94,25 +110,28 @@ export function Breakdown({
               )}
             >
               <span className="truncate text-[13px] text-fg max-sm:col-start-1 max-sm:row-start-1" title={r.key}>{r.key}</span>
-              <span className="relative col-span-2 h-2 overflow-hidden rounded-full bg-sunken max-sm:row-start-2 sm:col-span-1">
-                <m.span
-                  className="absolute inset-y-0 left-0 rounded-full"
-                  style={{
-                    background: small
-                      ? `repeating-linear-gradient(135deg, ${color} 0 3px, transparent 3px 6px)`
-                      : color,
-                  }}
-                  initial={false}
-                  animate={{ width: `${Math.max(barPct, v > 0 ? 1.5 : 0)}%` }}
-                  transition={{ type: "spring", stiffness: 160, damping: 26 }}
-                />
+              <span className="relative col-span-2 h-2 max-sm:row-start-2 sm:col-span-1">
+                <span className="absolute inset-0 overflow-hidden rounded-full bg-sunken">
+                  <m.span
+                    className="absolute inset-y-0 left-0 rounded-full"
+                    style={{ background: color }}
+                    initial={false}
+                    animate={{ width: `${Math.max(barPct, v > 0 ? 1.5 : 0)}%` }}
+                    transition={{ type: "spring", stiffness: 160, damping: 26 }}
+                  />
+                </span>
                 {metric !== "share" && (
                   <span
-                    className="absolute inset-y-[-2px] w-px bg-fg/40"
+                    className="absolute inset-y-[-3px] w-px border-l border-dashed border-fg/30"
                     style={{ left: `${(metric === "accuracy" ? 1 - overall : overall) * 100}%` }}
                     aria-hidden
                   />
                 )}
+                <span className="pointer-events-none absolute inset-y-0 flex items-center" style={{ left: `${wLo}%`, width: `${Math.max(0, wHi - wLo)}%` }} aria-hidden>
+                  <span className="absolute inset-x-0 h-px bg-fg/70" />
+                  <span className="absolute left-0 h-2.5 w-[1.5px] rounded-full bg-fg/70" />
+                  <span className="absolute right-0 h-2.5 w-[1.5px] rounded-full bg-fg/70" />
+                </span>
               </span>
               <span className="num text-right text-[14px] font-semibold text-fg max-sm:col-start-2 max-sm:row-start-1 sm:text-[13.5px]">
                 <Flow value={v * 100} digits={1} suffix="%" />
@@ -121,11 +140,6 @@ export function Breakdown({
                 <span className="truncate">
                   {metric === "share" ? `${r.errors} errors, ${pctText(rate(r))} rate` : `${r.errors} of ${r.n}`}
                 </span>
-                {small && (
-                  <span className="inline-flex shrink-0 items-center gap-1 rounded-chip border border-warn/30 bg-warn-soft px-1 text-[10.5px] font-medium leading-4 text-warn">
-                    <span className="size-1 rounded-full bg-warn" />n={r.n}
-                  </span>
-                )}
                 {c && metric !== "share" && (
                   <Delta
                     value={metric === "accuracy" ? (rate(c) - rate(r)) * 100 : (rate(r) - rate(c)) * 100}
@@ -145,8 +159,8 @@ export function BreakdownLegend({ metric, overall }: { metric: Metric; overall: 
   return (
     <p className="mt-2 px-2 text-[11.5px] leading-4 text-subtle">
       {metric === "share"
-        ? "Share of all errors that fall in each group. Large groups rank high even at a low rate."
-        : `Dotted line marks the overall ${metric === "accuracy" ? "accuracy" : "error rate"} (${pctText(metric === "accuracy" ? 1 - overall : overall)}). Hatched bars have fewer than ${SMALL_N} examples.`}
+        ? "Share of all errors that fall in each group. Large groups rank high even at a low rate. Whiskers show the 95% interval implied by the group's rate."
+        : `Vertical line marks the overall ${metric === "accuracy" ? "accuracy" : "error rate"} (${pctText(metric === "accuracy" ? 1 - overall : overall)}). Whiskers show the 95% interval; a wide whisker means few examples.`}
     </p>
   );
 }

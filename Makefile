@@ -1,7 +1,7 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo  serve serve-stop serve-status rescore-baselines rescore-all eval-coverage results robustness
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo  serve serve-stop serve-status demo-video rescore-baselines rescore-all eval-coverage results robustness
 
 help:  ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-18s %s\n", $$1, $$2}'
@@ -63,3 +63,10 @@ results:  ## Results table for an eval version: make results EVAL=e10
 
 robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=h8
 	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),h8)
+
+demo-video:  ## Record the demo video and GIF into docs/media and open both in Chrome (uses port 5301, not the dev servers)
+	@cd packages/picker && { curl -s -o /dev/null localhost:5301 && started= || { (nohup pnpm exec vite --config demo/vite.config.ts --port 5301 --strictPort > ../../.run/demo-video-vite.log 2>&1 & echo $$! > ../../.run/demo-video-vite.pid); started=1; until curl -s -o /dev/null localhost:5301; do :; done; }; \
+	  node scripts/demo-video.mjs ../../docs/media; rc=$$?; \
+	  [ -z "$$started" ] || kill $$(lsof -ti :5301) 2>/dev/null; exit $$rc; }
+	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH packages/picker/scripts/demo-gif.sh docs/media/demo.webm docs/media/demo.gif
+	@open -a "Google Chrome" docs/media/demo.webm docs/media/demo.gif

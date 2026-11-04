@@ -10,10 +10,15 @@ await mkdir(out, { recursive: true });
 // "~" before a character types the next character wrong, pauses, then backspaces and fixes it.
 const phrases = [
   "oct 2 to oct 5",
-  "every other fr~iday until dec 31",
-  "next monday 9am to 5pm",
+  "every other fr~i until dec 31",
+  "next mon 9am to 5pm",
   "half past nine the day after tomorrow",
-  "last friday of the month",
+  "last fri of the month",
+  "feb 12 to mar 2",
+  "every wkday at 9",
+  "four score and seven years ago",
+  "next pi day",
+  "may the fourth be with you",
 ];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
