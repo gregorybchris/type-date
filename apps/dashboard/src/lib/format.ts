@@ -1,4 +1,4 @@
-import type { Resolved } from "@type-date/core";
+import { resolveDsl, type Resolved } from "@type-date/core";
 
 export const pct = (x: number, d = 1) => `${(x * 100).toFixed(d)}%`;
 
@@ -50,3 +50,12 @@ export function fmtResolved(r: Resolved): string {
   return (e ? `${s} to ${e}` : s) + (r.ambiguous ? " (am/pm guessed)" : "");
 }
 
+
+/** Resolve a DSL line and format it. Returns "invalid" if the resolver throws. */
+export function resolveText(dsl: string, today: string): string {
+  try {
+    return fmtResolved(resolveDsl(dsl, { today }));
+  } catch {
+    return "invalid";
+  }
+}

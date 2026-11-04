@@ -68,7 +68,7 @@ export class MockEngine implements Engine {
   readonly id = "mock";
   private p50 = 12;
   constructor(p50?: number) {
-    if (p50) this.p50 = p50;
+    if (p50) this.p50 = Math.min(p50, 60);
   }
   async load(opts: LoadOptions): Promise<void> {
     for (let i = 1; i <= 5; i++) {

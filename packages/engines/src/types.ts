@@ -21,9 +21,14 @@ export interface LoadOptions {
   onProgress?: (p: number) => void;
 }
 
+export interface PredictOptions {
+  /** Reference day as YYYY-MM-DD. Only engines that return absolute dates (chrono) use it. */
+  today?: string;
+}
+
 export interface Engine {
   readonly id: string;
   load(opts: LoadOptions): Promise<void>;
-  predict(text: string, signal?: AbortSignal): Promise<PredictResult>;
+  predict(text: string, signal?: AbortSignal, opts?: PredictOptions): Promise<PredictResult>;
   dispose(): void;
 }

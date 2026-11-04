@@ -47,7 +47,7 @@ export function Select({
         <RS.Content
           position="popper"
           sideOffset={4}
-          className="z-50 max-h-72 min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-card border border-border bg-surface p-1 shadow-pop data-[state=open]:animate-in data-[state=open]:fade-in-0"
+          className="z-50 max-h-72 min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-card border border-border bg-surface p-1 shadow-pop"
         >
           <RS.Viewport>
             {allLabel && <Item value={ALL} label={allLabel} />}

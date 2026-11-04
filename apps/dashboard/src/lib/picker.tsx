@@ -1,4 +1,4 @@
-// Thin wrapper so the dashboard imports the picker from one place.
-// Swap the export below to "@type-date/picker" when packages/picker is ready.
-export { TypeDatePicker } from "./stubs/picker-stub";
-export type { TypeDatePickerProps } from "./stubs/picker-stub";
+// Single import point for the picker so the dashboard can swap implementations.
+import "@type-date/picker/styles.css";
+export { TypeDatePicker } from "@type-date/picker";
+export type { TypeDatePickerProps } from "@type-date/picker";

@@ -86,6 +86,10 @@ export interface Engine {
 
 Non-model baselines (chrono-node adapter, heuristic parsers) implement the same `Engine` interface. They have no `manifest.files`, and `load` may do nothing. Their `config.json` uses `model.family` of `library` or `heuristic`, `params` of 0, and `download_bytes` equal to the bundled code size. The dashboard treats them like any other entry.
 
+`@type-date/engines` also exports `createEngine(id: string): Engine` and a registry `engines: Record<string, () => Engine>`. The dashboard Playground uses them.
+
+Baselines have a `manifest.json` of `{"experiment": "exp-001", "engine": "chrono", "files": {}, "config": {}}`. Their `bench.json` entries use `backend: "js"`.
+
 The picker takes a `parse: (text: string) => Promise<string>` prop (returns a DSL line) so it does not depend on any engine.
 
 ## Picker props (`packages/picker`)
