@@ -1,0 +1,120 @@
+{"id": "rm0001", "text": "13th of last month", "dsl": "d D13@M-1"}
+{"id": "rm0003", "text": "on the 22nd of this month at 9am", "dsl": "dt D22@M+0 09:00"}
+{"id": "rm0005", "text": "the 5th next month", "dsl": "d D05@M+1"}
+{"id": "rm0007", "text": "the fifteenth of this month", "dsl": "d D15@M+0"}
+{"id": "rm0009", "text": "last month", "dsl": "d M-1"}
+{"id": "rm0011", "text": "the 2nd of the month before last", "dsl": "d D02@M-2"}
+{"id": "rm0013", "text": "17th, next month", "dsl": "d D17@M+1"}
+{"id": "rm0015", "text": "on the 4th of this month", "dsl": "d D04@M+0"}
+{"id": "rm0017", "text": "the 13th", "dsl": "d D@13"}
+{"id": "rm0019", "text": "10th last mth", "dsl": "d D10@M-1"}
+{"id": "rm0021", "text": "next month the 19th at 7pm", "dsl": "dt D19@M+1 19:00"}
+{"id": "rm0023", "text": "21 of last month", "dsl": "d D21@M-1"}
+{"id": "rm0025", "text": "13th of March", "dsl": "d 03-13"}
+{"id": "rm0027", "text": "on the 16th of last month at 5pm", "dsl": "dt D16@M-1 17:00"}
+{"id": "rm0029", "text": "the twenty-second of last month", "dsl": "d D22@M-1"}
+{"id": "rm0031", "text": "the 18th this month", "dsl": "d D18@M+0"}
+{"id": "rm0033", "text": "every month on the 13th", "dsl": "d R m/1 d13"}
+{"id": "rm0035", "text": "the 23rd of next month", "dsl": "d D23@M+1"}
+{"id": "rm0037", "text": "the 8th of the month before last at 10am", "dsl": "dt D08@M-2 10:00"}
+{"id": "rm0039", "text": "24th of a month ago", "dsl": "d D24@M-1"}
+{"id": "rm0041", "text": "thirtieth of last month", "dsl": "d D30@M-1"}
+{"id": "rm0043", "text": "the 13th of next year", "dsl": "x", "unsure": true}
+{"id": "rm0045", "text": "on the 26th of this month at 6:45pm", "dsl": "dt D26@M+0 18:45"}
+{"id": "rm0047", "text": "19 next month", "dsl": "d D19@M+1"}
+{"id": "rm0049", "text": "the 3rd of nxt month", "dsl": "d D03@M+1"}
+{"id": "rm0051", "text": "16th of last mth", "dsl": "d D16@M-1"}
+{"id": "rm0053", "text": "the 21st day of this month", "dsl": "d D21@M+0"}
+{"id": "rm0055", "text": "the 10th in a couple of months", "dsl": "d D10@M+2"}
+{"id": "rm0057", "text": "the 6th of next month", "dsl": "d D06@M+1"}
+{"id": "rm0059", "text": "the 17th of the month before last", "dsl": "d D17@M-2"}
+{"id": "rm0061", "text": "next month", "dsl": "d M+1"}
+{"id": "rm0063", "text": "the 13th day of last month at 2pm", "dsl": "dt D13@M-1 14:00"}
+{"id": "rm0065", "text": "on the 5th of last month", "dsl": "d D05@M-1"}
+{"id": "rm0067", "text": "the eighteenth of last month", "dsl": "d D18@M-1"}
+{"id": "rm0069", "text": "the 2nd of a month from now", "dsl": "d D02@M+1"}
+{"id": "rm0071", "text": "13th, last month", "dsl": "d D13@M-1"}
+{"id": "rm0073", "text": "the 7th of previous mo", "dsl": "d D07@M-1"}
+{"id": "rm0075", "text": "the 3rd of every month", "dsl": "d R m/1 d3"}
+{"id": "rm0077", "text": "the 11th next month at 4pm", "dsl": "dt D11@M+1 16:00"}
+{"id": "rm0079", "text": "the twenty-fifth of this month", "dsl": "d D25@M+0"}
+{"id": "rm0081", "text": "the 14th this month at 1:15pm", "dsl": "dt D14@M+0 13:15"}
+{"id": "rm0083", "text": "next month, the 9th", "dsl": "d D09@M+1"}
+{"id": "rm0085", "text": "the 27th", "dsl": "d D@27"}
+{"id": "rm0087", "text": "the 1st of the next month at midnight", "dsl": "dt D01@M+1 00:00"}
+{"id": "rm0089", "text": "the 13th of lst month", "dsl": "d D13@M-1"}
+{"id": "rm0091", "text": "the 5th day of next month at 8am", "dsl": "dt D05@M+1 08:00"}
+{"id": "rm0093", "text": "the 6th, this month", "dsl": "d D06@M+0"}
+{"id": "rm0095", "text": "the thirteenth of last month", "dsl": "d D13@M-1"}
+{"id": "rm0097", "text": "the 18th of next mth", "dsl": "d D18@M+1"}
+{"id": "rm0099", "text": "last month on the 30th", "dsl": "d D30@M-1"}
+{"id": "rm0101", "text": "Aug 5th of last month", "dsl": "x", "unsure": true}
+{"id": "rm0103", "text": "the 9th of the previous month", "dsl": "d D09@M-1"}
+{"id": "rm0105", "text": "20th of next month", "dsl": "d D20@M+1"}
+{"id": "rm0107", "text": "the 3rd day of the month before last", "dsl": "d D03@M-2"}
+{"id": "rm0109", "text": "the 17th of last month at 3:30 pm", "dsl": "dt D17@M-1 15:30"}
+{"id": "rm0111", "text": "13th of last month at 6pm", "dsl": "dt D13@M-1 18:00"}
+{"id": "rm0113", "text": "the 4th this month", "dsl": "d D04@M+0"}
+{"id": "rm0115", "text": "11 of last month", "dsl": "d D11@M-1"}
+{"id": "rm0117", "text": "the 21st of the month before last", "dsl": "d D21@M-2"}
+{"id": "rm0119", "text": "the 13th of this month", "dsl": "d D13@M+0"}
+{"id": "rm0121", "text": "the 2nd of last mnth", "dsl": "d D02@M-1"}
+{"id": "rm0123", "text": "two months from now on the 6th", "dsl": "d D06@M+2"}
+{"id": "rm0125", "text": "the 30th of next month at 5pm", "dsl": "dt D30@M+1 17:00"}
+{"id": "rm0127", "text": "the 7th of this month at 11:45am", "dsl": "dt D07@M+0 11:45"}
+{"id": "rm0129", "text": "in a month on the 12th", "dsl": "d D12@M+1"}
+{"id": "rm0131", "text": "4th of last month at 6pm", "dsl": "dt D04@M-1 18:00"}
+{"id": "rm0133", "text": "the 20th of previous month", "dsl": "d D20@M-1"}
+{"id": "rm0135", "text": "the 8th of this mo at 4:30pm", "dsl": "dt D08@M+0 16:30"}
+{"id": "rm0137", "text": "last month 18th", "dsl": "d D18@M-1"}
+{"id": "rm0139", "text": "the 14th of the last month", "dsl": "d D14@M-1"}
+{"id": "rm0141", "text": "the 3rd", "dsl": "d D@03"}
+{"id": "rm0143", "text": "9th of this month", "dsl": "d D09@M+0"}
+{"id": "rm0145", "text": "the 11th of last month at 21:00", "dsl": "dt D11@M-1 21:00"}
+{"id": "rm0147", "text": "on the 15th of next month at noon", "dsl": "dt D15@M+1 12:00"}
+{"id": "rm0149", "text": "the 5th of nex month", "dsl": "d D05@M+1"}
+{"id": "rm0151", "text": "the 24th next month at 8:30", "dsl": "dt D24@M+1 8:30?"}
+{"id": "rm0153", "text": "20 of the month before last", "dsl": "d D20@M-2"}
+{"id": "rm0155", "text": "the 19th of last month", "dsl": "d D19@M-1"}
+{"id": "rm0157", "text": "the 2nd of 3 months from now", "dsl": "d D02@M+3"}
+{"id": "rm0159", "text": "the 13th of every other month", "dsl": "d R m/2 d13"}
+{"id": "rm0161", "text": "the 26th of the previous month at 1pm", "dsl": "dt D26@M-1 13:00"}
+{"id": "rm0163", "text": "the sixth of this month", "dsl": "d D06@M+0"}
+{"id": "rm0165", "text": "the 4th of next month at 12:00", "dsl": "dt D04@M+1 12?"}
+{"id": "rm0167", "text": "the 27th of last month at 9am", "dsl": "dt D27@M-1 09:00"}
+{"id": "rm0169", "text": "the 16th of this month", "dsl": "d D16@M+0"}
+{"id": "rm0171", "text": "this month on the 23rd", "dsl": "d D23@M+0"}
+{"id": "rm0173", "text": "the 14th of last month", "dsl": "d D14@M-1"}
+{"id": "rm0175", "text": "the 2nd of this month", "dsl": "d D02@M+0"}
+{"id": "rm0177", "text": "the 17th of next month", "dsl": "d D17@M+1"}
+{"id": "rm0179", "text": "in 3 months", "dsl": "d +3m"}
+{"id": "rm0181", "text": "the 12th next month at 5:30pm", "dsl": "dt D12@M+1 17:30"}
+{"id": "rm0183", "text": "the 25th day of last month", "dsl": "d D25@M-1"}
+{"id": "rm0185", "text": "the 22nd of two months from now", "dsl": "d D22@M+2"}
+{"id": "rm0187", "text": "the 13th of this month at 4pm", "dsl": "dt D13@M+0 16:00"}
+{"id": "rm0189", "text": "the 11th of this month", "dsl": "d D11@M+0"}
+{"id": "rm0191", "text": "the 18th of June", "dsl": "d 06-18"}
+{"id": "rm0193", "text": "the 28th last month at 10am", "dsl": "dt D28@M-1 10:00"}
+{"id": "rm0195", "text": "the 4th in 2 months at 9:15am", "dsl": "dt D04@M+2 09:15"}
+{"id": "rm0197", "text": "the 9th of next month", "dsl": "d D09@M+1"}
+{"id": "rm0199", "text": "the 31st of the next month", "dsl": "d D31@M+1"}
+{"id": "rm0201", "text": "next month on the 1st at 8am", "dsl": "dt D01@M+1 08:00"}
+{"id": "rm0203", "text": "the 24th of previous month", "dsl": "d D24@M-1"}
+{"id": "rm0205", "text": "the 27th of this month at 7:30pm", "dsl": "dt D27@M+0 19:30"}
+{"id": "rm0207", "text": "the 8th of three months from now", "dsl": "d D08@M+3"}
+{"id": "rm0209", "text": "the 13th of last month at 8:30am", "dsl": "dt D13@M-1 08:30"}
+{"id": "rm0211", "text": "the 21st of this month", "dsl": "d D21@M+0"}
+{"id": "rm0213", "text": "the 30th in 2 months", "dsl": "d D30@M+2"}
+{"id": "rm0215", "text": "the 10th of the previous month", "dsl": "d D10@M-1"}
+{"id": "rm0217", "text": "the 15th of next month", "dsl": "d D15@M+1"}
+{"id": "rm0219", "text": "the 6th, last month", "dsl": "d D06@M-1"}
+{"id": "rm0221", "text": "the 18th of the month before last at noon", "dsl": "dt D18@M-2 12:00"}
+{"id": "rm0223", "text": "the 29th of the previous month at 4pm", "dsl": "dt D29@M-1 16:00"}
+{"id": "rm0225", "text": "the 9th of this month at 7:00", "dsl": "dt D09@M+0 7?"}
+{"id": "rm0227", "text": "the twenty-eighth of next month", "dsl": "d D28@M+1"}
+{"id": "rm0229", "text": "on the 7th of the next month", "dsl": "d D07@M+1"}
+{"id": "rm0231", "text": "the 16th of last month", "dsl": "d D16@M-1"}
+{"id": "rm0233", "text": "the 22nd of previous mo at 1:30pm", "dsl": "dt D22@M-1 13:30"}
+{"id": "rm0235", "text": "the 19th of last month", "dsl": "d D19@M-1"}
+{"id": "rm0237", "text": "the 8th of this month at 5pm", "dsl": "dt D08@M+0 17:00"}
+{"id": "rm0239", "text": "the 5th of last month at 9:45am", "dsl": "dt D05@M-1 09:45"}

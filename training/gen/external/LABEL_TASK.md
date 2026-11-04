@@ -6,3 +6,4 @@
 4. Recurrence token order is: frequency, days, month filter, count, until (`u`), time, start (`s`). `D@` is two digits.
 5. Validate: copy your output to the given empty directory and run `cd /Users/chris/Documents/Code/Projects/Current/type-date/packages/core && pnpm exec tsx scripts/validate-data.ts <that directory>`. Fix any line the validator rejects unless it is a legitimate form the validator cannot know about (say so).
 6. Output format and reply: as in LABELER.md. Reply with one line: count labeled, count unsure, count validator rejected.
+7. Day of a relative month is a DSL form (see the last section of specs/dsl.md): "13th of last month" is `d D13@M-1`, "the 1st of next month at 9am" is `dt D01@M+1 09:00`. A day the month may lack is still written the same way. "13th of last week", "last day of next month", and year offsets have no form: write `x` with `"unsure": true`.
