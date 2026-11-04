@@ -18,6 +18,10 @@ Example line:
 
 `source` is `grammar`, `llm`, `mined`, `handwritten`, `noise`, or `prefix`. The label is a DSL line (see `specs/dsl.md`). Labels do not depend on the current date.
 
+## Eval sets: `evals/<version>/`
+
+Versioned, immutable eval sets (`e1`, `e2`, ...). Rules in `specs/research/eval-versioning.md`. Files: `manifest.json`, and one JSONL per split (`val`, `test_template`, `test_noise`, `test_llm`, `test_external`) with the same row format as dataset rows. Training datasets under `data/` hold training rows only (older versions still contain their original test files).
+
 ## Run: `runs/exp-NNN/`
 
 One directory per experiment. Committed to git. Small files only. `NNN` is a zero-padded sequential number. The matching write-up is `specs/research/experiments/exp-NNN-<slug>.md`.
@@ -35,7 +39,7 @@ One directory per experiment. Committed to git. Small files only. `NNN` is a zer
 `metrics.json`:
 
 ```json
-{"eval": {"exact": 0.93, "resolved": 0.95, "n": 5000,
+{"eval": {"version": "e1", "exact": 0.93, "resolved": 0.95, "n": 5000,
           "by_split": {"val": {"n": 3000, "exact": 0.97}, "test_template": {"n": 1000, "exact": 0.85}},
           "by_tag": {"basic-date": {"n": 120, "exact": 0.99}},
           "by_modifier": {"typo": {"n": 400, "exact": 0.88}}},
@@ -43,7 +47,7 @@ One directory per experiment. Committed to git. Small files only. `NNN` is a zer
  "train": {"seconds": 3600, "steps": 20000, "final_loss": 0.04}}
 ```
 
-`exact` is exact match on the normalized DSL line. `resolved` is equality of resolved dates over several reference dates.
+`eval.version` names the eval set (`evals/<version>`). Re-scores on other versions are stored under `evals` as `{"e2": {...same shape as eval...}}`. Compare only within one version. `exact` is exact match on the normalized DSL line. `resolved` is equality of resolved dates over several reference dates.
 
 `errors.jsonl`: one line per failure on the eval sets.
 

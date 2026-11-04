@@ -38,6 +38,10 @@ Command palette (reference): search field with a magnifier, a list with small av
 
 Lead with percentages. In error analysis and per-tag views the main figure is the error rate (or accuracy), because absolute counts mislead when groups differ in size. Counts stay available: show them as secondary text, a tooltip, or a Rate/Count toggle, plus the denominator (`n`) so the reader can judge how reliable a rate is. Sort and color by rate. Flag small samples (for example n < 30) so a 100% error rate on 3 rows is not read as a trend.
 
+## Eval versions
+
+Every metric shown in the dashboard names its eval version. A version selector sits near the top of the experiments, Pareto, detail, and error analysis views. Experiments that have no results for the selected version are greyed out with a "not evaluated on e2" note. Never put numbers from different eval versions in one chart or delta without a visible warning.
+
 ## Responsive and mobile
 
 Mobile is a hard requirement.
