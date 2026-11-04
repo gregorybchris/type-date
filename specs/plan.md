@@ -27,6 +27,17 @@ artifacts/exp-NNN/         model files (gitignored, pruned to fit disk budget)
 bench/                     Playwright benchmark harness (Node)
 ```
 
+## Current direction (2026-11-03)
+
+Heuristics only. Model experiments are parked (exp-010 fine-tune was stopped). Active workstreams:
+1. Label-policy decisions and a cleaned eval (e6).
+2. DSL v2 (open ranges, day of month, durations): `specs/dsl.md`, `specs/dsl-v2-proposal.md`.
+3. Heuristic iterations with fresh realistic data (heuristic-full-6).
+4. Label-free robustness tests (meaning-preserving transforms).
+5. More independent data rounds and public test suites.
+6. Alternatives and confidence output for ambiguous input.
+7. Picker and dashboard polish, packaging the parser as the default engine.
+
 ## Phases
 
 ### Phase 0: scaffold

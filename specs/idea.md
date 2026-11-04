@@ -29,6 +29,10 @@ Ship an npm package with a React datetime picker component that:
 
 Before building, confirm whether this already exists. Research result: it does not. Existing tools are rule-based parsers (chrono-node, when, compromise-dates) or incomplete recurrence parsers (rrule.js `fromText`). No React picker parses free text live. No public in-browser fine-tuned model does this. See `specs/research/background/`.
 
+## Decision log
+
+- 2026-11-03: Model work is parked. After round 1 (see `specs/research/experiments/round-1-screening.md`) a hand-written heuristic parser beats every model we tried by a wide margin on accuracy, size, latency, and memory. The best scratch model reached about 59% on e5 against 95% for heuristic-full-5. Work now focuses on the heuristic, the DSL, the eval sets, and the picker. The model tooling (training, export, ONNX engine, prompt runners) stays in the repo and can be revived if a model could add value on the residue the heuristic cannot parse.
+
 ## Approach
 
 Find a good off-the-shelf model (or train a tiny one) and fine-tune it locally. Build a dataset that maps typed date strings to the expected structure.
