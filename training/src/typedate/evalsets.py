@@ -130,6 +130,45 @@ def decontaminate(base: str, version: str, eval_version: str) -> dict:
     return {"train_before": len(train), "train_after": len(kept)}
 
 
+def tag_from_dsl(dsl: str) -> str:
+    """Coarse primary tag for rows that have no generator tag (externally written rows)."""
+    if dsl == "x":
+        return "non-date-noise"
+    mode, _, body = dsl.partition(" ")
+    if body.startswith("R "):
+        return "recurrence"
+    rng = ">" in body
+    if mode == "t":
+        return "time-range" if rng else "time-only"
+    if mode == "dt":
+        return "datetime-range" if rng else "datetime"
+    if rng:
+        return "basic-date-range"
+    if body[:1] in "WMY" and body[1:2] in "+-@":
+        return "period-relative"
+    if body.startswith(("+", "-")):
+        return "relative-offset"
+    if "#" in body:
+        return "nth-weekday-of-month"
+    return "basic-date"
+
+
+def extend(version: str, parent: str, extra: dict[str, list[dict]], reason: str) -> dict:
+    """New eval version: parent rows unchanged plus new splits. Parent results stay comparable."""
+    base = load_eval(parent)
+    pm = json.loads((ROOT / "evals" / parent / "manifest.json").read_text())
+    for s, info in pm["files"].items():
+        if sha256(ROOT / "evals" / parent / f"{s}.jsonl") != info["sha256"]:
+            raise SystemExit(f"evals/{parent}/{s}.jsonl was modified since it was cut")
+    if set(extra) & set(base):
+        raise SystemExit("extra splits must be new split names")
+    return _write(
+        version,
+        {**base, **extra},
+        {"parent": parent, "subset_of": None, "reason": reason, "added_splits": sorted(extra)},
+    )
+
+
 def coverage() -> None:
     """Print resolved accuracy per experiment and eval version. `-` means not scored."""
     from rich.console import Console
@@ -166,4 +205,4 @@ def coverage() -> None:
     Console().print(f"{missing} missing cells")
 
 
-__all__ = ["create", "quick", "load_eval", "check_leak", "decontaminate"]
+__all__ = ["extend", "tag_from_dsl", "create", "quick", "load_eval", "check_leak", "decontaminate"]
