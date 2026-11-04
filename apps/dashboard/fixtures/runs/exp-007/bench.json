@@ -14,7 +14,8 @@
   "memory_mb": 74,
   "download_bytes": 16304489,
   "n": 200,
-  "browser_accuracy": 0.8051
+  "browser_accuracy": 0.8051,
+  "profile": "desktop"
  },
  {
   "engine": "ort-custom",
@@ -31,7 +32,8 @@
   "memory_mb": 94,
   "download_bytes": 16304489,
   "n": 200,
-  "browser_accuracy": 0.7989
+  "browser_accuracy": 0.7989,
+  "profile": "desktop"
  },
  {
   "engine": "transformers-js",
@@ -48,7 +50,8 @@
   "memory_mb": 90,
   "download_bytes": 16304489,
   "n": 200,
-  "browser_accuracy": 0.8068
+  "browser_accuracy": 0.8068,
+  "profile": "desktop"
  },
  {
   "engine": "transformers-js",
@@ -65,6 +68,79 @@
   "memory_mb": 109,
   "download_bytes": 16304489,
   "n": 200,
-  "browser_accuracy": 0.8012
+  "browser_accuracy": 0.8012,
+  "profile": "desktop"
+ },
+ {
+  "engine": "ort-custom",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 1786,
+  "cold_first_ms": 95.2,
+  "latency_ms": {
+   "p50": 28.8,
+   "p95": 48.64,
+   "p99": 73.6
+  },
+  "tokens_per_s": 382,
+  "memory_mb": 74,
+  "download_bytes": 16304489,
+  "n": 100,
+  "browser_accuracy": 0.8051,
+  "profile": "mobile-4x"
+ },
+ {
+  "engine": "ort-custom",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 2678,
+  "cold_first_ms": 142.8,
+  "latency_ms": {
+   "p50": 43.2,
+   "p95": 72.96,
+   "p99": 110.4
+  },
+  "tokens_per_s": 255,
+  "memory_mb": 74,
+  "download_bytes": 16304489,
+  "n": 100,
+  "browser_accuracy": 0.8051,
+  "profile": "mobile-6x"
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 2698,
+  "cold_first_ms": 149.6,
+  "latency_ms": {
+   "p50": 45.36,
+   "p95": 76.76,
+   "p99": 116
+  },
+  "tokens_per_s": 243,
+  "memory_mb": 90,
+  "download_bytes": 16304489,
+  "n": 100,
+  "browser_accuracy": 0.8068,
+  "profile": "mobile-4x"
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 4046,
+  "cold_first_ms": 224.4,
+  "latency_ms": {
+   "p50": 68.04,
+   "p95": 115.14,
+   "p99": 174
+  },
+  "tokens_per_s": 162,
+  "memory_mb": 90,
+  "download_bytes": 16304489,
+  "n": 100,
+  "browser_accuracy": 0.8068,
+  "profile": "mobile-6x"
  }
 ]

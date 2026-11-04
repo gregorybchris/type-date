@@ -111,7 +111,7 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
     <div className="flex flex-col gap-6">
       <PageHeader title="Error analysis" subtitle="Failures by tag. Select rows and copy them as JSONL to steer data generation.">
         <Select
-          className="w-64"
+          className="w-full sm:w-64"
           value={expId}
           onChange={(v) => navigate(href("errors", v))}
           options={runs.map((r) => ({ value: r.config.id, label: r.config.id, hint: r.config.title }))}
@@ -121,10 +121,10 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)]">
         <section>
-          <SectionTitle right={<span className="text-[12px] text-subtle">Failures per primary tag. Click to filter.</span>}>Failures by tag</SectionTitle>
+          <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Failures per primary tag. Click to filter.</span>}>Failures by tag</SectionTitle>
           <div className="flex flex-col">
             {Object.entries(base.data?.facets.by_tag ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([k, n]) => (
-              <button key={k} onClick={() => setParams({ tag: tag === k ? undefined : k })} className={cn("grid cursor-pointer grid-cols-[minmax(0,170px)_1fr_40px] items-center gap-3 rounded-[6px] px-1.5 py-[5px] text-left hover:bg-hover", tag === k && "bg-hover")}>
+              <button key={k} onClick={() => setParams({ tag: tag === k ? undefined : k })} className={cn("grid cursor-pointer grid-cols-[minmax(0,120px)_1fr_36px] sm:grid-cols-[minmax(0,170px)_1fr_40px] items-center gap-3 rounded-[6px] px-1.5 py-[5px] text-left hover:bg-hover", tag === k && "bg-hover")}>
                 <span className="truncate text-[12.5px]">{k}</span>
                 <span className="h-2 overflow-hidden rounded-full bg-sunken"><span className="block h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${(n / maxTag) * 100}%` }} /></span>
                 <span className="num text-right text-[12px] font-medium">{n}</span>
@@ -150,15 +150,15 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
       <div className="dotted-t" />
 
       <section className="flex flex-col gap-3">
-        <div className="flex flex-wrap items-end gap-3">
-          <Field label="Primary tag"><Select className="w-48" value={tag} onChange={(v) => setParams({ tag: v || undefined })} options={tagOptions} allLabel="All tags" /></Field>
-          <Field label="Modifier"><Select className="w-40" value={modifier} onChange={(v) => setParams({ modifier: v || undefined })} options={modOptions} allLabel="All modifiers" /></Field>
-          <Field label="Split"><Select className="w-40" value={split} onChange={(v) => setParams({ split: v || undefined })} options={splitOptions} allLabel="All splits" /></Field>
-          <Field label="Text search" className="w-56">
+        <div className="grid grid-cols-2 items-end gap-3 sm:flex sm:flex-wrap">
+          <Field label="Primary tag" className="col-span-2 sm:col-span-1"><Select className="w-full sm:w-48" value={tag} onChange={(v) => setParams({ tag: v || undefined })} options={tagOptions} allLabel="All tags" /></Field>
+          <Field label="Modifier"><Select className="w-full sm:w-40" value={modifier} onChange={(v) => setParams({ modifier: v || undefined })} options={modOptions} allLabel="All modifiers" /></Field>
+          <Field label="Split"><Select className="w-full sm:w-40" value={split} onChange={(v) => setParams({ split: v || undefined })} options={splitOptions} allLabel="All splits" /></Field>
+          <Field label="Text search" className="col-span-2 sm:col-span-1 sm:w-56">
             <div className="relative"><Search className="pointer-events-none absolute left-2.5 top-2 size-4 text-subtle" /><Input className="pl-8" placeholder="Search text or DSL" value={qDraft} onChange={(e) => setQDraft(e.target.value)} /></div>
           </Field>
-          <Field label="Today"><Input type="date" className="w-40" value={today} onChange={(e) => setToday(e.target.value)} /></Field>
-          <div className="ml-auto flex items-center gap-2">
+          <Field label="Today" className="col-span-2 sm:col-span-1"><Input type="date" className="w-full sm:w-40" value={today} onChange={(e) => setToday(e.target.value)} /></Field>
+          <div className="col-span-2 flex flex-wrap items-center gap-2 sm:ml-auto">
             <span className="num text-[12px] text-muted">{picked.size} selected</span>
             <Button onClick={selectAllFiltered} disabled={total === 0}>Select all {total}</Button>
             <Button onClick={() => setPicked(new Map())} disabled={picked.size === 0} variant="ghost">Clear</Button>
@@ -166,7 +166,7 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="hidden overflow-x-auto lg:block">
           <table className="w-full min-w-[980px] border-collapse text-[13px]">
             <thead>
               <tr className="dotted-b text-left text-[12px] font-medium text-subtle">
@@ -201,8 +201,32 @@ export function ErrorsView({ id, params }: { id: string; params: URLSearchParams
           </table>
           {!list.loading && rows.length === 0 && <Empty>No failures match these filters</Empty>}
         </div>
+        <div className={cn("flex flex-col gap-2 lg:hidden", list.loading && "opacity-60")}>
+          {rows.map((r, i) => {
+            const d = diffDsl(r.expected, r.predicted);
+            const res = resolved[i];
+            return (
+              <div key={r.id} className={cn("rounded-card border border-border p-3", picked.has(r.id) ? "bg-accent-soft/50" : "bg-surface")}>
+                <div className="flex items-start gap-3">
+                  <Checkbox className="mt-0.5 size-5" aria-label={`Select ${r.text}`} checked={picked.has(r.id)} onChange={(v) => toggle(r, v)} />
+                  <div className="min-w-0 flex-1">
+                    <div className="break-words font-medium">{r.text}</div>
+                    <div className="mt-1 flex flex-wrap gap-1"><Badge tone="accent">{r.primary_tag}</Badge>{r.modifier_tags.map((m) => <Badge key={m}>{m}</Badge>)}<Badge className="text-subtle">{r.split}</Badge></div>
+                  </div>
+                </div>
+                <div className="dotted-t mt-2.5 grid grid-cols-[64px_1fr] gap-x-2 gap-y-1.5 pt-2.5 text-[12px]">
+                  <span className="text-subtle">Expected</span><Tokens tokens={d.expected} tone="ok" />
+                  <span className="text-subtle">Predicted</span><Tokens tokens={d.predicted} tone="danger" />
+                  <span className="text-subtle">Dates</span>
+                  <span><span className="text-fg">{res?.exp}</span><br /><span className={res && res.exp === res.got ? "text-ok" : "text-danger"}>{res?.got}{res && res.exp === res.got && " (same dates)"}</span></span>
+                </div>
+              </div>
+            );
+          })}
+          {!list.loading && rows.length === 0 && <Empty>No failures match these filters</Empty>}
+        </div>
 
-        <div className="flex items-center justify-between text-[12px] text-muted">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-[12px] text-muted">
           <span className="num">{total === 0 ? 0 : page * PAGE + 1}-{Math.min(total, (page + 1) * PAGE)} of {total}</span>
           <div className="flex items-center gap-2">
             <Button size="sm" disabled={page === 0} onClick={() => setPage((p) => p - 1)}>Previous</Button>

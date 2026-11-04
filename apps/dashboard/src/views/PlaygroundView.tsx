@@ -107,8 +107,8 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
   return (
     <div className="flex flex-col gap-6">
       <PageHeader title="Playground" subtitle="Load an experiment checkpoint in this browser and type into the picker." />
-      <div className="grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
-        <Card className="flex flex-col gap-4 self-start p-4">
+      <div className="grid min-w-0 gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
+        <Card className="order-2 flex flex-col gap-4 self-start p-4 lg:order-1">
           <Field label="Experiment">
             <Select value={expId} onChange={(v) => setParams({ exp: v })} options={[...runs].reverse().map((r) => ({ value: r.config.id, label: r.config.id, hint: `${(r.metrics.eval.exact * 100).toFixed(1)}%` }))} />
           </Field>
@@ -145,8 +145,8 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
           {handle?.reason && <p className="text-[12px] text-subtle">{handle.reason}. The mock knows a few phrases such as "oct 2 to oct 5" and "last friday".</p>}
         </Card>
 
-        <div className="flex min-w-0 flex-col gap-6">
-          <Card className="p-5">
+        <div className="order-1 flex min-w-0 flex-col gap-6 lg:order-2">
+          <Card className="p-3 sm:p-5">
             <SectionTitle>Picker</SectionTitle>
             {handle ? (
               <TypeDatePicker key={`${expId}${effectiveEngine}${backend}${handle.engine.id}${loadMs}`} parse={parse} today={today} theme={theme} placeholder="oct 2 to oct 5" />
@@ -154,7 +154,7 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
               <div className="flex h-24 items-center justify-center rounded-field border border-dashed border-border text-[13px] text-subtle">Load a checkpoint to try the picker</div>
             )}
           </Card>
-          <Card className="p-5">
+          <Card className="p-3 sm:p-5">
             <div className="grid grid-cols-2 gap-y-4 sm:grid-cols-4">
               {[
                 { l: "Last parse", v: last ? <Flow value={last.ms} digits={last.ms < 10 ? 2 : 1} suffix=" ms" className="text-[22px] font-medium" /> : <span className="text-[22px] text-subtle">-</span> },
@@ -162,8 +162,8 @@ export function PlaygroundView({ params }: { params: URLSearchParams }) {
                 { l: "Bench p50", v: benchEntry ? <Flow value={benchEntry.latency_ms.p50} digits={benchEntry.latency_ms.p50 < 10 ? 2 : 1} suffix=" ms" className="text-[22px] font-medium" /> : <span className="text-[22px] text-subtle">-</span> },
                 { l: "Calls", v: <Flow value={calls.length} className="text-[22px] font-medium" /> },
               ].map((s, i) => (
-                <div key={s.l} className="pr-3" style={i < 3 ? { borderRight: "1px dotted var(--dotted)" } : undefined}>
-                  <div className={i ? "pl-3" : ""}><StatLabel>{s.l}</StatLabel><div className="mt-1">{s.v}</div></div>
+                <div key={s.l} className={i < 3 ? "pr-3 sep-sm" : "pr-3"}>
+                  <div className={i ? "max-sm:even:pl-3 sm:pl-3" : ""}><StatLabel>{s.l}</StatLabel><div className="mt-1">{s.v}</div></div>
                 </div>
               ))}
             </div>

@@ -13,6 +13,41 @@
   "memory_mb": 2,
   "download_bytes": 6400,
   "n": 200,
-  "browser_accuracy": 0.3685
+  "browser_accuracy": 0.3685,
+  "profile": "desktop"
+ },
+ {
+  "engine": "baseline-heuristic-small",
+  "backend": "js",
+  "browser": "chromium-mobile",
+  "load_ms": 45,
+  "cold_first_ms": 2,
+  "latency_ms": {
+   "p50": 0.72,
+   "p95": 1.14,
+   "p99": 2
+  },
+  "memory_mb": 2,
+  "download_bytes": 6400,
+  "n": 100,
+  "browser_accuracy": 0.3685,
+  "profile": "mobile-4x"
+ },
+ {
+  "engine": "baseline-heuristic-small",
+  "backend": "js",
+  "browser": "chromium-mobile",
+  "load_ms": 67,
+  "cold_first_ms": 3.1,
+  "latency_ms": {
+   "p50": 1.08,
+   "p95": 1.71,
+   "p99": 3
+  },
+  "memory_mb": 2,
+  "download_bytes": 6400,
+  "n": 100,
+  "browser_accuracy": 0.3685,
+  "profile": "mobile-6x"
  }
 ]

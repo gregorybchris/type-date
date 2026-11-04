@@ -54,14 +54,16 @@ function hasDatasets(dir: string): boolean {
   return listDirs(dir, DATA_RE).some((d) => fs.existsSync(path.join(dir, d, "meta.json")));
 }
 
-/** Directory of runs to use and whether it is sample data. */
+/** Directory of runs to use and whether it is sample data. DASHBOARD_SAMPLE=1 forces fixtures. */
 export function runsDir(roots: Roots): { dir: string; sample: boolean } {
+  if (process.env.DASHBOARD_SAMPLE === "1") return { dir: path.join(roots.fixtures, "runs"), sample: true };
   const real = path.join(roots.repo, "runs");
   if (hasRuns(real)) return { dir: real, sample: false };
   return { dir: path.join(roots.fixtures, "runs"), sample: true };
 }
 
 export function dataDir(roots: Roots): { dir: string; sample: boolean } {
+  if (process.env.DASHBOARD_SAMPLE === "1") return { dir: path.join(roots.fixtures, "data"), sample: true };
   const real = path.join(roots.repo, "data");
   if (hasDatasets(real)) return { dir: real, sample: false };
   return { dir: path.join(roots.fixtures, "data"), sample: true };

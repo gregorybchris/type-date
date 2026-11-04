@@ -25,6 +25,13 @@ pnpm --filter @type-date/dashboard shots       # Playwright screenshots, needs t
 
 Cmd/Ctrl+K opens the quick switcher.
 
+## Mobile
+
+- Below 768 px the sidebar becomes a bottom bar (safe-area padding) and the window fills the screen (`dvh`). 768 to 1023 px uses an icon rail. Tables become stacked cards below 1024 px. Wide tables that remain scroll inside their container, never the page.
+- Chart tooltips work by tap: the first tap on a Pareto point pins its tooltip with an Open button, a second tap on the progress chart opens the run. Hit areas are at least 36 px.
+- `pnpm shots` takes `WIDTHS=360,390,768,1024,1440` and reports overflow. `DASHBOARD_SAMPLE=1 pnpm dev` forces fixtures when `runs/` has real data.
+- Bench entries have a `profile` (`desktop`, `mobile-4x`, `mobile-6x`; missing means `desktop`). The Pareto and detail views have a profile selector. Fixtures include emulated phone profiles for wasm/js entries.
+
 ## Data
 
 The Vite plugin (`server/plugin.ts`, logic in `server/data.ts`) serves:
@@ -41,6 +48,10 @@ If `runs/` has no experiment, or `data/` has no version, the dashboard reads `fi
 `src/lib/engine.ts` has `getEngine(manifest)`. It imports `@type-date/engines` and calls `createEngine(manifest.engine)` or looks up `engines[manifest.engine]`. If neither exists, or loading fails, it uses `MockEngine` (a few hard-coded phrases, simulated latency) and the Playground says so. `src/lib/picker.tsx` is the only import of `@type-date/picker`; Vite aliases it to `packages/picker/src` so edits show without a rebuild.
 
 ## Dashboard pitfalls
+
+- Grid and flex children need `min-w-0`, or a `min-width` table inside an `overflow-x-auto` wrapper still widens the page on phones. Check with `scroller.scrollWidth - clientWidth`, since `html` has `overflow: hidden` and page-level checks pass anyway.
+- Real `runs/` data hides the fixtures. Use `DASHBOARD_SAMPLE=1` for screenshots.
+- Phone pointer events: hover handlers fire after a tap. Track `pointerType` on pointerdown and ignore `mouseenter` for touch.
 
 - Vite `alias` entries for `@type-date/picker/styles.css` must come before the bare package alias. Use the array form with a regex for the bare name.
 - A global `:focus-visible` rule outside `@layer` beats Tailwind utilities such as `outline-none`. Keep global rules in `@layer base`.

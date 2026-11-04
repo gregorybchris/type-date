@@ -44,7 +44,7 @@ export function ExperimentsView() {
     <div className="flex flex-col gap-7">
       <PageHeader title="Experiments" subtitle="Accuracy, speed and size for every run, ordered by experiment number." />
 
-      <div className="grid grid-cols-2 gap-y-4 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-y-5 md:grid-cols-4">
         <Stat label="Best exact">{stats.best && <Pct value={stats.best.metrics.eval.exact} className="text-[22px] font-medium" />}<div className="text-[12px] text-muted">{stats.best?.config.id}</div></Stat>
         <Stat label="Experiments"><Flow value={stats.count} className="text-[22px] font-medium" /><div className="text-[12px] text-muted">{runs.filter(isBaseline).length} baselines</div></Stat>
         <Stat label="Fastest p50">{Number.isFinite(stats.fastest) && <Flow value={stats.fastest} digits={2} suffix=" ms" className="text-[22px] font-medium" />}<div className="text-[12px] text-muted">best bench entry</div></Stat>
@@ -54,7 +54,7 @@ export function ExperimentsView() {
       <div className="dotted-t" />
 
       <section>
-        <SectionTitle right={<span className="text-[12px] text-subtle">Best exact accuracy so far. Diamonds are baselines.</span>}>Progress over time</SectionTitle>
+        <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Best exact accuracy so far. Diamonds are baselines.</span>}>Progress over time</SectionTitle>
         <Card className="p-3">
           <ProgressChart runs={runs} onOpen={(id) => navigate(href("experiments", id))} />
         </Card>
@@ -67,12 +67,12 @@ export function ExperimentsView() {
             onChange={setFilter}
             options={[{ value: "all", label: "All" }, { value: "models", label: "Models" }, { value: "baselines", label: "Baselines" }]}
           />
-          <div className="relative w-64">
+          <div className="relative w-full sm:w-64">
             <Search className="pointer-events-none absolute left-2.5 top-2 size-4 text-subtle" />
             <Input className="pl-8" placeholder="Search experiments" value={q} onChange={(e) => setQ(e.target.value)} />
           </div>
         </div>
-        <div className="overflow-x-auto">
+        <div className="hidden overflow-x-auto lg:block">
           <table className="w-full min-w-[1040px] border-collapse text-[13px]">
             <thead>
               <tr className="dotted-b text-left text-[12px] font-medium text-subtle">
@@ -120,6 +120,38 @@ export function ExperimentsView() {
           </table>
           {rows.length === 0 && <Empty>No experiments match</Empty>}
         </div>
+        <div className="flex flex-col gap-2 lg:hidden">
+          {rows.map((r) => {
+            const b = bestBench(r);
+            const base = isBaseline(r);
+            return (
+              <a key={r.config.id} href={href("experiments", r.config.id)} className="block rounded-card border border-border bg-surface p-3 shadow-input active:bg-hover">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5">
+                      <span className="num text-[13px] font-semibold">{r.config.id}</span>
+                      {base && <Badge>Baseline</Badge>}
+                      {stats.best?.config.id === r.config.id && <Badge tone="accent">Best</Badge>}
+                    </div>
+                    <div className="mt-0.5 truncate text-[13px] text-fg">{r.config.title}</div>
+                    <div className="mt-0.5 text-[12px] text-muted">{r.config.model.family} / {r.config.dataset} / {fmtParams(r.metrics.model.params)}</div>
+                  </div>
+                  <div className="shrink-0 text-right">
+                    <Pct value={r.metrics.eval.exact} className="text-[18px] font-medium" />
+                    <div className="text-[11px] text-subtle">exact</div>
+                  </div>
+                </div>
+                <div className="dotted-t mt-2.5 grid grid-cols-4 gap-2 pt-2.5 text-[12px]">
+                  <div><div className="text-subtle">Resolved</div><div className="num font-medium">{(r.metrics.eval.resolved * 100).toFixed(1)}%</div></div>
+                  <div><div className="text-subtle">p50</div><div className="num font-medium">{b ? `${b.latency_ms.p50.toFixed(b.latency_ms.p50 < 10 ? 2 : 1)} ms` : "-"}</div></div>
+                  <div><div className="text-subtle">Memory</div><div className="num font-medium">{b ? `${Math.round(b.memory_mb)} MB` : "-"}</div></div>
+                  <div><div className="text-subtle">Size</div><div className="num font-medium">{fmtBytes(b?.download_bytes ?? r.metrics.model.size_bytes)}</div></div>
+                </div>
+              </a>
+            );
+          })}
+          {rows.length === 0 && <Empty>No experiments match</Empty>}
+        </div>
       </section>
     </div>
   );
@@ -127,7 +159,7 @@ export function ExperimentsView() {
 
 function Stat({ label, children, last }: { label: string; children: React.ReactNode; last?: boolean }) {
   return (
-    <div className="pr-4 md:[&:not(:first-child)]:pl-5" style={!last ? { borderRight: "1px dotted var(--dotted)" } : undefined}>
+    <div className={cn("pr-4 md:[&:not(:first-child)]:pl-5", !last && "sep-md", "max-md:even:pl-4")}>
       <StatLabel>{label}</StatLabel>
       <div className="mt-1">{children}</div>
     </div>

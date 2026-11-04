@@ -14,7 +14,8 @@
   "memory_mb": 541,
   "download_bytes": 131805589,
   "n": 200,
-  "browser_accuracy": 0.8845
+  "browser_accuracy": 0.8845,
+  "profile": "desktop"
  },
  {
   "engine": "wllama",
@@ -31,6 +32,43 @@
   "memory_mb": 731,
   "download_bytes": 131805589,
   "n": 200,
-  "browser_accuracy": 0.8846
+  "browser_accuracy": 0.8846,
+  "profile": "desktop"
+ },
+ {
+  "engine": "wllama",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 95379,
+  "cold_first_ms": 4753.2,
+  "latency_ms": {
+   "p50": 1438.2,
+   "p95": 2428.96,
+   "p99": 3675.2
+  },
+  "tokens_per_s": 8,
+  "memory_mb": 541,
+  "download_bytes": 131805589,
+  "n": 100,
+  "browser_accuracy": 0.8845,
+  "profile": "mobile-4x"
+ },
+ {
+  "engine": "wllama",
+  "backend": "wasm",
+  "browser": "chromium-mobile",
+  "load_ms": 143069,
+  "cold_first_ms": 7129.8,
+  "latency_ms": {
+   "p50": 2157.3,
+   "p95": 3643.44,
+   "p99": 5512.8
+  },
+  "tokens_per_s": 5,
+  "memory_mb": 541,
+  "download_bytes": 131805589,
+  "n": 100,
+  "browser_accuracy": 0.8845,
+  "profile": "mobile-6x"
  }
 ]

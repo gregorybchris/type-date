@@ -15,6 +15,14 @@ export function logTicks(lo: number, hi: number): number[] {
   return out;
 }
 
+/** On narrow charts keep decade ticks (1, 10, 100) so labels do not collide. */
+function thin(ticks: number[], width: number): number[] {
+  if (width >= 420) return ticks;
+  const lead = (t: number) => String(t).replace(/^0\.0*/, "")[0];
+  const decades = ticks.filter((t) => t === 0 || lead(t) === "1");
+  return decades.length >= 3 ? decades : ticks.filter((t) => t === 0 || lead(t) === "1" || lead(t) === "5");
+}
+
 export function makeXScale(axis: XAxis, values: number[], width: number) {
   const hasZero = values.some((v) => v <= 0);
   const lo = Math.min(...values, Infinity);
@@ -22,10 +30,10 @@ export function makeXScale(axis: XAxis, values: number[], width: number) {
   if (axis === "params" || hasZero) {
     const s = scaleSymlog().constant(2).domain([0, hi * 1.15]).range([0, width]);
     const ticks = [0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000].filter((t) => t <= hi * 1.15);
-    return { scale: s as (v: number) => number, ticks };
+    return { scale: s as (v: number) => number, ticks: thin(ticks, width) };
   }
   const s = scaleLog().domain([lo * 0.8, hi * 1.25]).range([0, width]);
-  return { scale: s as (v: number) => number, ticks: logTicks(lo * 0.8, hi * 1.25) };
+  return { scale: s as (v: number) => number, ticks: thin(logTicks(lo * 0.8, hi * 1.25), width) };
 }
 
 export function makeYScale(values: number[], height: number) {

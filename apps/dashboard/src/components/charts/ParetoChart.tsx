@@ -1,13 +1,14 @@
 import { m } from "motion/react";
 import { scaleSqrt } from "d3-scale";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { fmtMs } from "@/lib/format";
 import { frontPath, paretoFront, type AxisInfo, type Point, type XAxis, type YAxis } from "@/lib/pareto";
 import { useSize } from "@/lib/useSize";
 import { Marker } from "./Marker";
 import { makeXScale, makeYScale } from "./scales";
 
-const M = { top: 16, right: 24, bottom: 40, left: 62 };
+const MD = { top: 16, right: 24, bottom: 40, left: 62 };
+const MS = { top: 24, right: 30, bottom: 38, left: 40 };
 
 function fmtX(axis: XAxis, v: number): string {
   if (axis === "latency") return fmtMs(v);
@@ -25,7 +26,7 @@ export function ParetoChart({
   yInfo,
   onOpen,
   selected,
-  height = 420,
+  height: heightProp = 420,
 }: {
   points: Point[];
   xAxis: XAxis;
@@ -38,6 +39,11 @@ export function ParetoChart({
 }) {
   const [ref, { w }] = useSize<HTMLDivElement>();
   const [hover, setHover] = useState<string | null>(null);
+  /** Tapped point on touch devices. Its tooltip has an Open button. */
+  const [pin, setPin] = useState<string | null>(null);
+  const touch = useRef(false);
+  const M = w < 560 ? MS : MD;
+  const height = w < 560 ? Math.min(heightProp, 340) : heightProp;
   const iw = Math.max(0, w - M.left - M.right);
   const ih = height - M.top - M.bottom;
 
@@ -51,12 +57,12 @@ export function ParetoChart({
   const rScale = useMemo(() => scaleSqrt().domain([0, 500]).range([4.5, 11]), []);
   const d = useMemo(() => frontPath(front, x.scale, y.scale), [front, x, y]);
   const frontSig = front.map((p) => p.key).join();
-  const hp = points.find((p) => p.key === hover);
+  const hp = points.find((p) => p.key === (pin ?? hover));
 
   return (
-    <div ref={ref} className="relative w-full" style={{ height }}>
+    <div ref={ref} className="relative w-full" style={{ height }} onPointerLeave={() => {}}>
       {w > 0 && (
-        <svg width={w} height={height} role="img" aria-label={`${yInfo.label} against ${xInfo.label}`}>
+        <svg width={w} height={height} role="img" onPointerDown={(e) => { if (e.target === e.currentTarget) setPin(null); }} aria-label={`${yInfo.label} against ${xInfo.label}`}>
           <g transform={`translate(${M.left},${M.top})`}>
             {y.ticks.map((t) => (
               <g key={t} transform={`translate(0,${y.scale(t)})`}>
@@ -72,7 +78,11 @@ export function ParetoChart({
             ))}
             <line x2={iw} y1={ih} y2={ih} stroke="var(--border-strong)" />
             <text x={iw / 2} y={ih + 36} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{xInfo.label} ({xInfo.unit}{xAxis !== "params" ? ", log scale" : ""})</text>
-            <text transform={`translate(-50,${ih / 2}) rotate(-90)`} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{yInfo.label}</text>
+            {w < 560 ? (
+              <text x={-M.left + 6} y={-10} fontSize={11.5} fill="var(--muted)">{yInfo.label}</text>
+            ) : (
+              <text transform={`translate(${-M.left + 14},${ih / 2}) rotate(-90)`} textAnchor="middle" fontSize={11.5} fill="var(--muted)">{yInfo.label}</text>
+            )}
 
             {front.length > 1 && (
               <m.path
@@ -94,7 +104,7 @@ export function ParetoChart({
               const px = x.scale(p.x);
               const py = y.scale(p.y);
               const r = p.kind === "baseline" ? 6 : rScale(p.paramsM);
-              const active = hover === p.key || selected === p.runId;
+              const active = hover === p.key || selected === p.runId || pin === p.key;
               return (
                 <m.g
                   key={p.key}
@@ -106,14 +116,19 @@ export function ParetoChart({
                   tabIndex={0}
                   role="button"
                   aria-label={`exp ${p.number}, ${p.engine} ${p.backend}`}
-                  onMouseEnter={() => setHover(p.key)}
+                  onPointerDown={(e) => { touch.current = e.pointerType !== "mouse"; }}
+                  onMouseEnter={() => !touch.current && setHover(p.key)}
                   onMouseLeave={() => setHover(null)}
                   onFocus={() => setHover(p.key)}
                   onBlur={() => setHover(null)}
-                  onClick={() => onOpen(p.runId)}
+                  onClick={() => {
+                    if (touch.current && pin !== p.key) setPin(p.key);
+                    else onOpen(p.runId);
+                  }}
                   onKeyDown={(e) => e.key === "Enter" && onOpen(p.runId)}
                 >
-                  {active && <circle r={r + 5} fill="var(--accent)" opacity={0.14} />}
+                  <circle r={Math.max(r + 6, 18)} fill="transparent" />
+                  {(active || pin === p.key) && <circle r={r + 5} fill="var(--accent)" opacity={0.14} />}
                   <Marker
                     kind={p.kind}
                     r={r}
@@ -132,7 +147,7 @@ export function ParetoChart({
       )}
       {hp && (
         <div
-          className="pointer-events-none absolute z-10 w-52 rounded-card border border-border bg-surface p-3 text-[12px] shadow-pop"
+          className={`absolute z-10 w-52 rounded-card border border-border bg-surface p-3 text-[12px] shadow-pop ${pin ? "" : "pointer-events-none"}`}
           style={{
             left: M.left + x.scale(hp.x) + 14 + 208 > w ? Math.max(8, M.left + x.scale(hp.x) - 14 - 208) : M.left + x.scale(hp.x) + 14,
             top: Math.max(8, M.top + y.scale(hp.y) - 70),
@@ -146,7 +161,10 @@ export function ParetoChart({
           <div className="dotted-t my-2" />
           <div className="flex justify-between"><span className="text-muted">{yInfo.label}</span><span className="num font-medium">{(hp.y * 100).toFixed(1)}%</span></div>
           <div className="flex justify-between"><span className="text-muted">{xInfo.label}</span><span className="num font-medium">{fmtX(xAxis, hp.x)}</span></div>
-          <div className="mt-1.5 text-[11px] text-subtle">{frontKeys.has(hp.key) ? "On the Pareto front" : "Dominated"}. Click to open.</div>
+          <div className="mt-1.5 text-[11px] text-subtle">{frontKeys.has(hp.key) ? "On the Pareto front" : "Dominated"}.{!pin && " Click to open."}</div>
+          {pin && (
+            <button onClick={() => onOpen(hp.runId)} className="mt-2 h-9 w-full cursor-pointer rounded-field bg-primary text-[13px] font-medium text-primary-fg">Open exp-{String(hp.number).padStart(3, "0")}</button>
+          )}
         </div>
       )}
     </div>

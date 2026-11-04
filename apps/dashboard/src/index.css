@@ -98,6 +98,32 @@ html,
 body,
 #root {
   height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+button,
+a,
+[role="tab"],
+[role="button"] {
+  touch-action: manipulation;
+}
+
+/* Dotted column separators. Phones stack stats, so separators start at a breakpoint. */
+@media (min-width: 768px) {
+  .sep-md {
+    border-right: 1px dotted var(--dotted);
+  }
+}
+@media (min-width: 1024px) {
+  .sep-lg {
+    border-right: 1px dotted var(--dotted);
+  }
+}
+@media (min-width: 640px) {
+  .sep-sm {
+    border-right: 1px dotted var(--dotted);
+  }
 }
 
 body {

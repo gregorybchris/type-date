@@ -16,7 +16,7 @@ export function Segmented<T extends string>({
 }) {
   const id = useId();
   return (
-    <div role="tablist" className={cn("inline-flex rounded-field border border-border bg-sunken p-0.5", className)}>
+    <div role="tablist" className={cn("inline-flex max-w-full overflow-x-auto rounded-field border border-border bg-sunken p-0.5", className)}>
       {options.map((o) => {
         const on = o.value === value;
         return (
@@ -26,7 +26,7 @@ export function Segmented<T extends string>({
             aria-selected={on}
             onClick={() => onChange(o.value)}
             className={cn(
-              "relative h-7 cursor-pointer rounded-[6px] px-3 text-[13px] font-medium transition-colors",
+              "relative h-8 shrink-0 cursor-pointer whitespace-nowrap rounded-[6px] px-3 md:h-7 text-[13px] font-medium transition-colors",
               on ? "text-fg" : "text-subtle hover:text-fg",
             )}
           >

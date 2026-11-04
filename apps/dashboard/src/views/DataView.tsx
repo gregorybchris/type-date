@@ -55,9 +55,9 @@ export function DataView({ params }: { params: URLSearchParams }) {
       </PageHeader>
 
       <div className="grid grid-cols-2 gap-y-4 md:grid-cols-6">
-        <div className="pr-3" style={{ borderRight: "1px dotted var(--dotted)" }}><StatLabel>Total</StatLabel><Flow value={total} className="mt-1 block text-[22px] font-medium" /></div>
+        <div className="pr-3 sep-md"><StatLabel>Total</StatLabel><Flow value={total} className="mt-1 block text-[22px] font-medium" /></div>
         {splits.slice(0, 5).map((s, i) => (
-          <div key={s} className="px-3" style={i < splits.length - 1 && i < 4 ? { borderRight: "1px dotted var(--dotted)" } : undefined}>
+          <div key={s} className={cn("px-3 max-md:odd:pl-0", i < splits.length - 1 && i < 4 && "sep-md")}>
             <StatLabel>{s}</StatLabel><Flow value={ds.counts[s]!} className="mt-1 block text-[22px] font-medium" />
           </div>
         ))}
@@ -68,7 +68,7 @@ export function DataView({ params }: { params: URLSearchParams }) {
         <SectionTitle>Counts by split</SectionTitle>
         <div className="flex flex-col gap-1.5">
           {splits.map((s, i) => (
-            <button key={s} onClick={() => setParams({ split: split === s ? undefined : s })} className={cn("grid cursor-pointer grid-cols-[130px_1fr_60px] items-center gap-3 rounded-[6px] px-1.5 py-1 text-left hover:bg-hover", split === s && "bg-hover")}>
+            <button key={s} onClick={() => setParams({ split: split === s ? undefined : s })} className={cn("grid cursor-pointer grid-cols-[100px_1fr_48px] sm:grid-cols-[130px_1fr_60px] items-center gap-3 rounded-[6px] px-1.5 py-1 text-left hover:bg-hover", split === s && "bg-hover")}>
               <span className="text-[12.5px]">{s}</span>
               <span className="h-2 overflow-hidden rounded-full bg-sunken"><m.span className="block h-full rounded-full bg-accent" initial={{ width: 0 }} animate={{ width: `${(ds.counts[s]! / maxCount) * 100}%` }} transition={{ duration: 0.5, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }} /></span>
               <span className="num text-right text-[12px] font-medium">{ds.counts[s]}</span>
@@ -78,7 +78,7 @@ export function DataView({ params }: { params: URLSearchParams }) {
       </section>
 
       <section>
-        <SectionTitle right={<span className="text-[12px] text-subtle">Click a tag to filter samples.</span>}>Counts by tag and split</SectionTitle>
+        <SectionTitle right={<span className="hidden text-[12px] text-subtle sm:inline">Click a tag to filter samples.</span>}>Counts by tag and split</SectionTitle>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-[12.5px]">
             <thead>
@@ -112,14 +112,14 @@ export function DataView({ params }: { params: URLSearchParams }) {
 
       <section className="flex flex-col gap-3">
         <SectionTitle>Samples</SectionTitle>
-        <div className="flex flex-wrap items-end gap-3">
-          <Field label="Split"><Select className="w-40" value={split} onChange={(v) => setParams({ split: v || undefined })} options={splits.map((s) => ({ value: s, label: s }))} allLabel="All splits" /></Field>
-          <Field label="Primary tag"><Select className="w-48" value={tag} onChange={(v) => setParams({ tag: v || undefined })} options={tags.map((s) => ({ value: s, label: s }))} allLabel="All tags" /></Field>
-          <Field label="Modifier"><Select className="w-40" value={modifier} onChange={(v) => setParams({ modifier: v || undefined })} options={Object.keys(res.data?.facets.by_modifier ?? {}).concat(modifier && !res.data?.facets.by_modifier[modifier] ? [modifier] : []).sort().map((s) => ({ value: s, label: s }))} allLabel="All modifiers" /></Field>
-          <Field label="Source"><Select className="w-36" value={source} onChange={(v) => setParams({ source: v || undefined })} options={["grammar", "llm", "mined", "handwritten", "noise", "prefix"].map((s) => ({ value: s, label: s }))} allLabel="All sources" /></Field>
-          <Field label="Text search" className="w-56"><div className="relative"><Search className="pointer-events-none absolute left-2.5 top-2 size-4 text-subtle" /><Input className="pl-8" placeholder="Search text or DSL" value={qDraft} onChange={(e) => setQDraft(e.target.value)} /></div></Field>
+        <div className="grid grid-cols-2 items-end gap-3 sm:flex sm:flex-wrap">
+          <Field label="Split"><Select className="w-full sm:w-40" value={split} onChange={(v) => setParams({ split: v || undefined })} options={splits.map((s) => ({ value: s, label: s }))} allLabel="All splits" /></Field>
+          <Field label="Primary tag"><Select className="w-full sm:w-48" value={tag} onChange={(v) => setParams({ tag: v || undefined })} options={tags.map((s) => ({ value: s, label: s }))} allLabel="All tags" /></Field>
+          <Field label="Modifier"><Select className="w-full sm:w-40" value={modifier} onChange={(v) => setParams({ modifier: v || undefined })} options={Object.keys(res.data?.facets.by_modifier ?? {}).concat(modifier && !res.data?.facets.by_modifier[modifier] ? [modifier] : []).sort().map((s) => ({ value: s, label: s }))} allLabel="All modifiers" /></Field>
+          <Field label="Source"><Select className="w-full sm:w-36" value={source} onChange={(v) => setParams({ source: v || undefined })} options={["grammar", "llm", "mined", "handwritten", "noise", "prefix"].map((s) => ({ value: s, label: s }))} allLabel="All sources" /></Field>
+          <Field label="Text search" className="col-span-2 sm:col-span-1 sm:w-56"><div className="relative"><Search className="pointer-events-none absolute left-2.5 top-2 size-4 text-subtle" /><Input className="pl-8" placeholder="Search text or DSL" value={qDraft} onChange={(e) => setQDraft(e.target.value)} /></div></Field>
         </div>
-        <Card className="overflow-x-auto">
+        <Card className="hidden overflow-x-auto lg:block">
           <table className="w-full min-w-[820px] border-collapse text-[13px]">
             <thead><tr className="dotted-b text-left text-[12px] text-subtle"><th className="px-3 py-2.5 font-medium">Text</th><th className="px-2 py-2.5 font-medium">DSL</th><th className="px-2 py-2.5 font-medium">Tags</th><th className="px-2 py-2.5 font-medium">Source</th><th className="px-2 py-2.5 font-medium">Split</th></tr></thead>
             <tbody className={cn(res.loading && "opacity-60")}>
@@ -136,7 +136,17 @@ export function DataView({ params }: { params: URLSearchParams }) {
           </table>
           {!res.loading && items.length === 0 && <Empty>No samples match</Empty>}
         </Card>
-        <div className="flex items-center justify-between text-[12px] text-muted">
+        <div className={cn("flex flex-col gap-2 lg:hidden", res.loading && "opacity-60")}>
+          {items.map((s) => (
+            <div key={s.id} className="rounded-card border border-border bg-surface p-3">
+              <div className="break-words font-medium">{s.text}</div>
+              <code className="mt-1 block break-all font-mono text-[12px] text-muted">{s.dsl}</code>
+              <div className="mt-2 flex flex-wrap gap-1"><Badge tone="accent">{s.primary_tag}</Badge>{s.modifier_tags.map((t) => <Badge key={t}>{t}</Badge>)}<Badge>{s.source}</Badge><Badge className="text-subtle">{s.split}</Badge></div>
+            </div>
+          ))}
+          {!res.loading && items.length === 0 && <Empty>No samples match</Empty>}
+        </div>
+        <div className="flex flex-wrap items-center justify-between gap-2 text-[12px] text-muted">
           <span className="num">{n === 0 ? 0 : page * PAGE + 1}-{Math.min(n, (page + 1) * PAGE)} of {n}</span>
           <div className="flex items-center gap-2">
             <Button size="sm" disabled={page === 0} onClick={() => setPage((p) => p - 1)}>Previous</Button>

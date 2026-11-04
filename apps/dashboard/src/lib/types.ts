@@ -36,6 +36,8 @@ export interface BenchEntry {
   engine: string;
   backend: string;
   browser?: string;
+  /** "desktop" when missing. */
+  profile?: string;
   load_ms: number;
   cold_first_ms: number;
   latency_ms: { p50: number; p95: number; p99: number };

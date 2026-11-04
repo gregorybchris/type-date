@@ -7,7 +7,7 @@ import { Card, Empty, PageHeader, SectionTitle } from "@/components/ui/misc";
 import { Segmented } from "@/components/ui/segmented";
 import { Switch } from "@/components/ui/switch";
 import { fmtMs } from "@/lib/format";
-import { buildPoints, paretoFront, X_AXES, Y_AXES, type XAxis, type YAxis } from "@/lib/pareto";
+import { buildPoints, paretoFront, PROFILES, X_AXES, Y_AXES, type XAxis, type YAxis } from "@/lib/pareto";
 import { href, navigate } from "@/lib/router";
 import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
@@ -27,6 +27,7 @@ function LegendToggle({ on, onClick, kind, label }: { on: boolean; onClick: () =
 
 export function ParetoView() {
   const { runs } = useStore();
+  const [profile, setProfile] = useState<string>("desktop");
   const [x, setX] = useState<XAxis>("latency");
   const [y, setY] = useState<YAxis>("exact");
   const [perEngine, setPerEngine] = useState(false);
@@ -36,15 +37,15 @@ export function ParetoView() {
   const xInfo = X_AXES.find((a) => a.key === x)!;
   const yInfo = Y_AXES.find((a) => a.key === y)!;
   const points = useMemo(
-    () => buildPoints(runs, { x, y, perEngine }).filter((p) => (p.kind === "model" ? models : baselines)),
-    [runs, x, y, perEngine, models, baselines],
+    () => buildPoints(runs, { x, y, perEngine, profile }).filter((p) => (p.kind === "model" ? models : baselines)),
+    [runs, x, y, perEngine, profile, models, baselines],
   );
   const front = useMemo(() => paretoFront(points), [points]);
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title="Pareto front" subtitle="Higher accuracy and lower cost are better. The line joins points no other point beats on both axes." />
-      <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
+      <PageHeader title="Pareto front" subtitle="Higher accuracy and lower cost are better. The line joins points no other point beats on both axes. Phone profiles are emulated (CPU throttle, no WebGPU)." />
+      <div className="flex flex-wrap items-end gap-x-5 gap-y-3 [&>div]:max-w-full">
         <div className="flex flex-col gap-1">
           <span className="text-[12px] font-medium text-muted">X axis</span>
           <Segmented<XAxis> value={x} onChange={setX} options={X_AXES.map((a) => ({ value: a.key, label: a.label }))} />
@@ -52,6 +53,10 @@ export function ParetoView() {
         <div className="flex flex-col gap-1">
           <span className="text-[12px] font-medium text-muted">Y axis</span>
           <Segmented<YAxis> value={y} onChange={setY} options={Y_AXES.map((a) => ({ value: a.key, label: a.label.replace(" accuracy", "") }))} />
+        </div>
+        <div className="flex max-w-full flex-col gap-1">
+          <span className="text-[12px] font-medium text-muted">Bench profile</span>
+          <Segmented value={profile} onChange={setProfile} options={PROFILES.map((p) => ({ value: p, label: p === "desktop" ? "Desktop" : p.replace("mobile-", "Phone ") }))} />
         </div>
         <div className="flex flex-col gap-1">
           <span className="text-[12px] font-medium text-muted">Show</span>
@@ -63,9 +68,9 @@ export function ParetoView() {
         <div className="pb-1.5"><Switch checked={perEngine} onChange={setPerEngine} label="One point per engine and backend" /></div>
       </div>
 
-      <Card className="p-3">
+      <Card className="p-2 sm:p-3">
         {points.length === 0 ? (
-          <Empty>Nothing to plot</Empty>
+          <Empty>Nothing to plot for this profile</Empty>
         ) : (
           <AnimatePresence>
             <ParetoChart points={points} xAxis={x} yAxis={y} xInfo={xInfo} yInfo={yInfo} onOpen={(id) => navigate(href("experiments", id))} />

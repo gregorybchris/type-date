@@ -36,10 +36,10 @@ export function AccuracyBars({
             key={k}
             disabled={!onSelect}
             onClick={() => onSelect?.(k)}
-            className={cn("grid grid-cols-[minmax(0,170px)_1fr_auto] items-center gap-3 rounded-[6px] px-1.5 py-[5px] text-left", onSelect && "cursor-pointer hover:bg-hover", selected === k && "bg-hover")}
+            className={cn("grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1 rounded-[6px] px-1.5 py-2 text-left sm:grid-cols-[minmax(0,170px)_1fr_auto] sm:py-[5px]", onSelect && "cursor-pointer hover:bg-hover", selected === k && "bg-hover")}
           >
             <span className="truncate text-[12.5px] text-fg" title={k}>{k}</span>
-            <span className="relative h-2 overflow-hidden rounded-full bg-sunken">
+            <span className="relative order-last col-span-2 h-2 overflow-hidden rounded-full bg-sunken sm:order-none sm:col-span-1">
               <m.span
                 className="absolute inset-y-0 left-0 rounded-full"
                 style={{ background: color }}
@@ -48,9 +48,9 @@ export function AccuracyBars({
                 transition={{ duration: 0.5, delay: Math.min(i, 12) * 0.02, ease: [0.22, 1, 0.36, 1] }}
               />
             </span>
-            <span className="num flex w-[168px] items-baseline justify-end gap-2 text-[12px]">
+            <span className="num flex items-baseline justify-end gap-2 text-[12px] sm:w-[168px]">
               <span className="font-medium text-fg">{(v.exact * 100).toFixed(1)}%</span>
-              <span className="w-12 text-right text-subtle">n={v.n}</span>
+              <span className="hidden w-12 text-right text-subtle sm:inline">n={v.n}</span>
               {compare ? c ? <span className="w-16 whitespace-nowrap text-right"><Delta value={(v.exact - c.exact) * 100} /></span> : <span className="w-16" /> : null}
             </span>
           </button>

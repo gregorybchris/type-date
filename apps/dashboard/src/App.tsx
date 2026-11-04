@@ -4,7 +4,7 @@ import { Bug, ChartScatter, Database, FlaskConical, Moon, Play, Sun } from "luci
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Toaster } from "sonner";
 import { CommandPalette, type Command } from "./components/CommandPalette";
-import { Sidebar, TopBar } from "./components/Shell";
+import { BottomNav, Sidebar, TopBar } from "./components/Shell";
 import { Empty } from "./components/ui/misc";
 import { href, navigate, useRoute } from "./lib/router";
 import { StoreProvider, useStore } from "./lib/store";
@@ -92,11 +92,11 @@ function Routes() {
 
   return (
     <>
-      <div className="fixed inset-2 flex overflow-hidden rounded-[20px] border border-white/60 bg-window shadow-[var(--shadow-window)] dark:border-white/10 md:inset-5 md:rounded-[24px] xl:inset-8">
+      <div className="fixed inset-x-0 top-0 flex h-dvh flex-col overflow-hidden bg-window md:inset-5 md:h-auto md:flex-row md:rounded-[24px] md:border md:border-white/60 md:shadow-[var(--shadow-window)] md:dark:border-white/10 xl:inset-8">
         <Sidebar view={route.view} />
-        <main className="my-2 mr-2 flex min-w-0 flex-1 flex-col overflow-hidden rounded-[16px] border border-border bg-surface">
+        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden bg-surface md:my-2 md:mr-2 md:rounded-[16px] md:border md:border-border">
           <TopBar view={route.view} onPalette={() => setPalette(true)} crumbs={<Crumbs view={route.view} id={route.id} />} />
-          <div ref={scroller} className="relative min-h-0 flex-1 overflow-y-auto">
+          <div ref={scroller} className="relative min-h-0 flex-1 overflow-x-hidden overflow-y-auto">
             <AnimatePresence mode="wait" initial={false}>
               <m.div
                 key={`${route.view}/${route.id}`}
@@ -104,16 +104,17 @@ function Routes() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                className="mx-auto w-full max-w-[1280px] px-6 py-6"
+                className="mx-auto w-full max-w-[1280px] px-4 py-5 md:px-6 md:py-6"
               >
                 {page}
               </m.div>
             </AnimatePresence>
           </div>
         </main>
+        <BottomNav view={route.view} />
       </div>
       <CommandPalette open={palette} onOpenChange={setPalette} commands={commands} />
-      <Toaster position="bottom-right" theme={theme} toastOptions={{ style: { fontFamily: "var(--font-sans)", fontSize: 13, borderRadius: 12, border: "1px solid var(--border)", background: "var(--surface)", color: "var(--fg)" } }} />
+      <Toaster position="bottom-right" theme={theme} mobileOffset={{ bottom: "calc(76px + env(safe-area-inset-bottom))", left: 12, right: 12 }} toastOptions={{ style: { fontFamily: "var(--font-sans)", fontSize: 13, borderRadius: 12, border: "1px solid var(--border)", background: "var(--surface)", color: "var(--fg)" } }} />
     </>
   );
 }

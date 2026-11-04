@@ -49,6 +49,13 @@ describe("buildPoints", () => {
   it("skips entries without browser accuracy", () => {
     expect(buildPoints([runs[0]!], { x: "latency", y: "browser", perEngine: true })).toHaveLength(1);
   });
+  it("filters bench entries by profile", () => {
+    const r = run(1, 0.8);
+    r.bench.push({ ...r.bench[0]!, profile: "mobile-4x", latency_ms: { p50: 40, p95: 50, p99: 60 } });
+    expect(buildPoints([r], { x: "latency", y: "exact", perEngine: false, profile: "mobile-4x" })[0]!.x).toBe(40);
+    expect(buildPoints([r], { x: "latency", y: "exact", perEngine: false })[0]!.x).toBe(5);
+    expect(buildPoints([r], { x: "latency", y: "exact", perEngine: false, profile: "mobile-6x" })).toHaveLength(0);
+  });
   it("puts baselines at 0 params", () => {
     expect(buildPoints(runs, { x: "params", y: "exact", perEngine: false })[1]!.x).toBe(0);
   });

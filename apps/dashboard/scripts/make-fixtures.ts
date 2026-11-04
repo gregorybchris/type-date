@@ -402,7 +402,21 @@ function main() {
         download_bytes: sizeBytes, n: 200, browser_accuracy: round(exact - 0.004 - r() * 0.012),
       };
     });
-    writeJson(path.join(dir, "bench.json"), bench);
+    // Emulated phone profiles: CPU throttle on the wasm/js entries (no WebGPU on phones).
+    const mobile = bench
+      .filter((b) => b.backend !== "webgpu")
+      .flatMap((b) =>
+        ([["mobile-4x", 4], ["mobile-6x", 6]] as const).map(([profile, k]) => ({
+          ...b, profile,
+          load_ms: Math.round(b.load_ms * k * 0.8),
+          cold_first_ms: round(b.cold_first_ms * k * 0.85, 1),
+          latency_ms: { p50: round(b.latency_ms.p50 * k * 0.9, 2), p95: round(b.latency_ms.p95 * k * 0.95, 2), p99: round(b.latency_ms.p99 * k, 2) },
+          tokens_per_s: b.tokens_per_s ? Math.round(b.tokens_per_s / (k * 0.9)) : undefined,
+          browser: "chromium-mobile",
+          n: 100,
+        })),
+      );
+    writeJson(path.join(dir, "bench.json"), [...bench.map((b) => ({ ...b, profile: "desktop" })), ...mobile]);
     fs.writeFileSync(path.join(dir, "errors.jsonl"), jsonl(errors));
     if (!lib) {
       writeJson(path.join(dir, "manifest.json"), {

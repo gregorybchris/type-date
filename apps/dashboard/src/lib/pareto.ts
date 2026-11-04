@@ -63,8 +63,20 @@ export function yValue(run: Run, entry: BenchEntry | undefined, axis: YAxis): nu
   return entry?.browser_accuracy ?? null;
 }
 
-export function bestBench(run: Run): BenchEntry | undefined {
-  return [...run.bench].sort((a, b) => a.latency_ms.p50 - b.latency_ms.p50)[0];
+export const PROFILES = ["desktop", "mobile-4x", "mobile-6x"] as const;
+export type Profile = (typeof PROFILES)[number];
+
+export function profileOf(e: BenchEntry): string {
+  return e.profile ?? "desktop";
+}
+
+export function benchFor(run: Run, profile: string): BenchEntry[] {
+  return run.bench.filter((e) => profileOf(e) === profile);
+}
+
+/** Fastest bench entry for a profile. */
+export function bestBench(run: Run, profile: string = "desktop"): BenchEntry | undefined {
+  return [...benchFor(run, profile)].sort((a, b) => a.latency_ms.p50 - b.latency_ms.p50)[0];
 }
 
 export interface PointOptions {
@@ -72,18 +84,22 @@ export interface PointOptions {
   y: YAxis;
   /** One point per bench entry instead of the fastest entry per run. */
   perEngine: boolean;
+  /** Bench profile. Defaults to desktop. */
+  profile?: string;
 }
 
 export function buildPoints(runs: Run[], o: PointOptions): Point[] {
   const out: Point[] = [];
   for (const run of runs) {
-    const entries: Array<BenchEntry | undefined> = o.perEngine ? (run.bench.length ? run.bench : [undefined]) : [bestBench(run)];
+    const profile = o.profile ?? "desktop";
+    const own = benchFor(run, profile);
+    const entries: Array<BenchEntry | undefined> = o.perEngine ? (own.length ? own : [undefined]) : [bestBench(run, profile)];
     for (const e of entries) {
       const x = xValue(run, e, o.x);
       const y = yValue(run, e, o.y);
       if (x === null || y === null) continue;
       out.push({
-        key: `${run.config.id}|${e?.engine ?? "-"}|${e?.backend ?? "-"}`,
+        key: `${run.config.id}|${e?.engine ?? "-"}|${e?.backend ?? "-"}|${profile}`,
         runId: run.config.id,
         number: run.config.number,
         label: String(run.config.number),

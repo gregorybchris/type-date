@@ -73,7 +73,7 @@ export function CommandPalette({ open, onOpenChange, commands }: { open: boolean
         <Dialog.Content
           aria-describedby={undefined}
           onKeyDown={onKey}
-          className="fixed left-1/2 top-[18vh] z-50 w-[min(600px,calc(100vw-32px))] -translate-x-1/2 overflow-hidden rounded-[18px] border border-border bg-surface shadow-pop outline-none"
+          className="fixed left-1/2 top-[8dvh] sm:top-[18dvh] z-50 w-[min(600px,calc(100vw-32px))] -translate-x-1/2 overflow-hidden rounded-[18px] border border-border bg-surface shadow-pop outline-none"
         >
           <Dialog.Title className="sr-only">Quick switcher</Dialog.Title>
           <div className="flex items-center gap-3 border-b border-border px-4">
@@ -86,7 +86,7 @@ export function CommandPalette({ open, onOpenChange, commands }: { open: boolean
               className="h-14 flex-1 bg-transparent text-[15px] text-fg outline-none placeholder:text-subtle"
             />
           </div>
-          <div ref={list} className="max-h-[340px] overflow-y-auto p-2">
+          <div ref={list} className="max-h-[min(340px,50dvh)] overflow-y-auto p-2">
             {results.length === 0 && <div className="py-8 text-center text-[13px] text-subtle">No matches</div>}
             {results.map((c, i) => {
               const head = c.group !== lastGroup;

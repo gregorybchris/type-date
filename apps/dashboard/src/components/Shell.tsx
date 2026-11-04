@@ -29,10 +29,36 @@ function Logo() {
   );
 }
 
+export function BottomNav({ view }: { view: string }) {
+  return (
+    <nav
+      aria-label="Views"
+      className="dotted-t flex shrink-0 items-stretch justify-around bg-sidebar px-1 pt-1 md:hidden"
+      style={{ paddingBottom: "max(4px, env(safe-area-inset-bottom))" }}
+    >
+      {NAV.map((n) => {
+        const on = view === n.view;
+        const Icon = n.icon;
+        return (
+          <a
+            key={n.view}
+            href={href(n.view)}
+            aria-current={on ? "page" : undefined}
+            className={cn("flex min-h-12 min-w-14 flex-1 flex-col items-center justify-center gap-0.5 rounded-field text-[10.5px] font-medium", on ? "bg-hover text-fg" : "text-muted")}
+          >
+            <Icon className="size-5" strokeWidth={1.75} />
+            <span>{n.label.split(" ")[0]}</span>
+          </a>
+        );
+      })}
+    </nav>
+  );
+}
+
 export function Sidebar({ view }: { view: string }) {
   const { runs } = useStore();
   return (
-    <aside className="flex w-[60px] shrink-0 flex-col px-2.5 pb-3 pt-3 lg:w-[228px] lg:px-3">
+    <aside className="hidden w-[60px] shrink-0 flex-col px-2.5 pb-3 pt-3 md:flex lg:w-[228px] lg:px-3">
       <div className="mb-4 flex items-center gap-1.5 px-2 pt-0.5" aria-hidden>
         <span className="size-3 rounded-full bg-[#ff5f57]" />
         <span className="size-3 rounded-full bg-[#febc2e]" />
@@ -74,18 +100,18 @@ export function TopBar({ onPalette, crumbs, view }: { onPalette: () => void; cru
   const { sampleRuns, sampleData } = useStore();
   const isMac = typeof navigator !== "undefined" && /Mac/.test(navigator.platform);
   return (
-    <div className="dotted-b sticky top-0 z-20 flex h-12 shrink-0 items-center justify-between gap-3 bg-surface/90 px-5 backdrop-blur">
+    <div className="dotted-b sticky top-0 z-20 flex h-12 shrink-0 items-center justify-between gap-2 bg-surface/90 px-3 backdrop-blur md:px-5" style={{ paddingTop: "env(safe-area-inset-top)" }}>
       <div className="min-w-0 truncate text-[13px] text-muted">{crumbs}</div>
       <div className="flex items-center gap-2">
         {(view === "data" ? sampleData : sampleRuns) && (
           <Tip label={view === "data" ? "No datasets in data/ yet. Showing generated fixtures from apps/dashboard/fixtures." : "No experiments in runs/ yet. Showing generated fixtures from apps/dashboard/fixtures."}>
-            <Badge tone="warn" className="cursor-default">Sample data</Badge>
+            <Badge tone="warn" className="cursor-default">Sample<span className="hidden sm:inline">&nbsp;data</span></Badge>
           </Tip>
         )}
-        <Button variant="secondary" onClick={onPalette} className="gap-2 text-muted" aria-label="Open quick switcher">
+        <Button variant="secondary" onClick={onPalette} className="gap-2 px-2 text-muted sm:px-3" aria-label="Open quick switcher">
           <Search />
           <span className="hidden sm:inline">Search</span>
-          <span className="flex gap-1"><Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd><Kbd>K</Kbd></span>
+          <span className="hidden gap-1 sm:flex"><Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd><Kbd>K</Kbd></span>
         </Button>
         <Tip label={theme === "dark" ? "Light theme" : "Dark theme"}>
           <Button variant="secondary" size="icon" onClick={toggle} aria-label="Toggle theme">
