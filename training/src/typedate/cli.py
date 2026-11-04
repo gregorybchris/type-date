@@ -121,8 +121,12 @@ def train_run(
     """Train from scratch, evaluate, and write runs/exp-NNN/."""
     from .train import TrainConfig, run
 
-    cfg = TrainConfig(exp, title, dataset, d_model, d_ff, heads, enc_layers, dec_layers, vocab,
-                      epochs, batch_size, lr, seed, notes, max_train, digit_split, parent)  # fmt: skip
+    cfg = TrainConfig(
+        exp=exp, title=title, dataset=dataset, d_model=d_model, d_ff=d_ff, heads=heads,
+        enc_layers=enc_layers, dec_layers=dec_layers, vocab=vocab, epochs=epochs,
+        batch_size=batch_size, lr=lr, seed=seed, notes=notes, max_train=max_train,
+        digit_split=digit_split, parent=parent,
+    )  # fmt: skip
     res = run(cfg)
     ev = res["metrics"]["eval"]
     typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")
