@@ -24,6 +24,7 @@ Two independent labelers disagreed on these, mostly because one wrote `x` and th
 | Bare `12` | `12?`. `noon` and `midday` are `12:00`. |
 | Bare hour in a datetime ("next sunday at 9") | Unknown: `9?`. |
 | `on <weekday>` alone | A plain date (`fr`), not a recurrence. Recurrence needs every, each, weekly, daily, a plural weekday, or a limit (for N, until). |
+| Invalid dates (`February 30`, `2024-13-01`, `May 33`) | Label `x`. The parser must check that the date exists. |
 | Dotted `7.20` | Ambiguous between date and time. Excluded from eval. Not generated. |
 | Single spelled number ("eight") | Excluded from eval as ambiguous. |
 | Vague day part with no clock time ("tonight", "this evening", "tomorrow morning") | Date only (`d +0d`, `d +1d`). Labelers were told this. Some wrote `x`, so these rows are often unsure. |

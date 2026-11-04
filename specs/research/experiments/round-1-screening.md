@@ -28,6 +28,10 @@ All rows are scored on eval e3 (10,948 rows: val, test_template, test_noise, tes
 5. The first scratch-trained model (10M parameters, 20 epochs on grammar data) reaches 60% overall and 55% on realistic input. It mixes up digits in dates. Training on realistic data and fine-tuning a pretrained model are being tested (exp-010 to exp-012).
 6. Eval hygiene mattered: 3 to 29% of the first eval rows overlapped training text, and about 9% had label-policy ambiguities. Both were fixed by cutting new eval versions. See `specs/research/eval-versioning.md`.
 
+## Generalization check on developer-written phrases (eval e4)
+
+e4 adds `test_public`: 218 phrases mined from chrono-node's public test suite (written by library developers, relabeled with our DSL by two agreeing labelers). Resolved accuracy there: chrono-node 71.6%, heuristic-full-4 67.9%, heuristic-full-3 64.2%, heuristic-full 44.0%. Our heuristics score 94% on LLM-written input but about 68% on developer-written phrases. The gap comes from formats our data never covered: year-first and ISO-like dates (`2012/8/10`, `09-JAN-2017`), two-digit years, `later` / `next day` relative forms, and invalid dates that must return `x` (`February 30`). A formats-focused data round is in progress (see `specs/research/dsl-gaps.md`). chrono-node's number is flattered because these phrases come from its own tests.
+
 ## Caveats
 
 - Test input comes from LLM writers and LLM labelers, not real users. The realistic and hard splits were never read by the author of the heuristics, but they share a source family with the data used to tune them.
