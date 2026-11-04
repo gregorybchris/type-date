@@ -9,6 +9,8 @@ const cases: [string, string][] = [
   // untouched
   ["in 9 months", "d +9m"],
   ["every 9m", "x"],
+  ["5m ago", "x"],
+  ["in 5m", "x"],
 ];
 
 describe("h10", () => {
