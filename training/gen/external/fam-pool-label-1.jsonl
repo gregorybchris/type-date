@@ -1,0 +1,160 @@
+{"id": "fam0001", "text": "the ides of march", "dsl": "d 03-15"}
+{"id": "fam0003", "text": "may the fourth", "dsl": "d 05-04"}
+{"id": "fam0005", "text": "valentines day", "dsl": "d 02-14"}
+{"id": "fam0007", "text": "halloween at 8pm", "dsl": "dt 10-31 20:00"}
+{"id": "fam0009", "text": "new years eve", "dsl": "d 12-31"}
+{"id": "fam0011", "text": "the solstice", "dsl": "x", "unsure": true}
+{"id": "fam0013", "text": "st patricks day", "dsl": "d 03-17"}
+{"id": "fam0015", "text": "bastille day", "dsl": "d 07-14"}
+{"id": "fam0017", "text": "australia day", "dsl": "d 01-26"}
+{"id": "fam0019", "text": "guy fawkes night", "dsl": "d 11-05"}
+{"id": "fam0021", "text": "earth day", "dsl": "d 04-22"}
+{"id": "fam0023", "text": "thanksgiving", "dsl": "x", "unsure": true}
+{"id": "fam0025", "text": "cyber monday", "dsl": "x", "unsure": true}
+{"id": "fam0027", "text": "juneteenth", "dsl": "d 06-19"}
+{"id": "fam0029", "text": "bonfire night 7pm", "dsl": "dt 11-05 19:00"}
+{"id": "fam0031", "text": "summer solstice at 6am", "dsl": "x", "unsure": true}
+{"id": "fam0033", "text": "the spring equinox", "dsl": "x", "unsure": true}
+{"id": "fam0035", "text": "fathers day", "dsl": "x", "unsure": true}
+{"id": "fam0037", "text": "super bowl sunday", "dsl": "x", "unsure": true}
+{"id": "fam0039", "text": "armistice day", "dsl": "d 11-11"}
+{"id": "fam0041", "text": "valentins day dinner 7:30pm", "dsl": "dt 02-14 19:30"}
+{"id": "fam0043", "text": "st davids day", "dsl": "d 03-01"}
+{"id": "fam0045", "text": "the next tuesday the 1st", "dsl": "d tu&D01"}
+{"id": "fam0047", "text": "the next saturday the 30th at 9pm", "dsl": "dt sa&D30 21:00"}
+{"id": "fam0049", "text": "first sunday that is the 7th", "dsl": "d su&D07"}
+{"id": "fam0051", "text": "the next thursday the 2nd at 10am", "dsl": "dt th&D02 10:00"}
+{"id": "fam0053", "text": "next sunday the 28th, 4pm", "dsl": "dt su&D28 16:00"}
+{"id": "fam0055", "text": "nxt friday the 13th", "dsl": "d fr&D13"}
+{"id": "fam0057", "text": "the next monday that's the 4th", "dsl": "d mo&D04"}
+{"id": "fam0059", "text": "the soonest wednesday the 11th", "dsl": "d we&D11"}
+{"id": "fam0061", "text": "the next sunday the 3rd", "dsl": "d su&D03"}
+{"id": "fam0063", "text": "the next tuesday that is the 31st", "dsl": "d tu&D31"}
+{"id": "fam0065", "text": "the next wednesday the 25th evening", "dsl": "d we&D25"}
+{"id": "fam0067", "text": "next tuesday the 10th at 3:15pm", "dsl": "dt tu&D10 15:15"}
+{"id": "fam0069", "text": "thursday the 19th this month", "dsl": "d th&D19"}
+{"id": "fam0071", "text": "next sat the 5th", "dsl": "d sa&D05"}
+{"id": "fam0073", "text": "the next tuesday the 12th at 7am", "dsl": "dt tu&D12 07:00"}
+{"id": "fam0075", "text": "last friday of the month", "dsl": "d fr#-1@M+0"}
+{"id": "fam0077", "text": "second tuesday of every month", "dsl": "d R m/1 tu#2"}
+{"id": "fam0079", "text": "third thursday in november", "dsl": "d th#3@11"}
+{"id": "fam0081", "text": "first friday of december at 6pm", "dsl": "dt fr#1@12 18:00"}
+{"id": "fam0083", "text": "last monday of the month at 9am", "dsl": "dt mo#-1@M+0 09:00"}
+{"id": "fam0085", "text": "the first weekday of next month", "dsl": "d b#1@M+1"}
+{"id": "fam0087", "text": "last day of the month", "dsl": "x", "unsure": true}
+{"id": "fam0089", "text": "the third monday in january", "dsl": "d mo#3@01"}
+{"id": "fam0091", "text": "every last thursday", "dsl": "d R m/1 th#-1"}
+{"id": "fam0093", "text": "the last working day of next month", "dsl": "d b#-1@M+1"}
+{"id": "fam0095", "text": "last wednesday of every month", "dsl": "d R m/1 we#-1"}
+{"id": "fam0097", "text": "last weekend of the month", "dsl": "x", "unsure": true}
+{"id": "fam0099", "text": "secnd tuesday of next month", "dsl": "d tu#2@M+1"}
+{"id": "fam0101", "text": "every second wednesday of the month at noon", "dsl": "dt R m/1 we#2 12:00"}
+{"id": "fam0103", "text": "the final weekday of the month", "dsl": "d b#-1@M+0"}
+{"id": "fam0105", "text": "last thursday of november", "dsl": "d th#-1@11"}
+{"id": "fam0107", "text": "every 3rd friday", "dsl": "d R w/3 fr"}
+{"id": "fam0109", "text": "second monday of the month", "dsl": "d mo#2@M+0"}
+{"id": "fam0111", "text": "a couple weeks from next tuesday", "dsl": "d tu+1~+2w"}
+{"id": "fam0113", "text": "the monday after next", "dsl": "d mo+2"}
+{"id": "fam0115", "text": "a week from friday", "dsl": "d fr~+1w"}
+{"id": "fam0117", "text": "the friday after next", "dsl": "d fr+2"}
+{"id": "fam0119", "text": "a few days after tomorrow", "dsl": "x", "unsure": true}
+{"id": "fam0121", "text": "the week after next", "dsl": "d W+2"}
+{"id": "fam0123", "text": "3 weeks from tomorrow", "dsl": "d +1d~+3w"}
+{"id": "fam0125", "text": "five days after the day after tomorrow", "dsl": "d +2d~+5d"}
+{"id": "fam0127", "text": "the day after tomorrow at 4pm", "dsl": "dt +2d 16:00"}
+{"id": "fam0129", "text": "a week from today at noon", "dsl": "dt +1w 12:00"}
+{"id": "fam0131", "text": "one week before the 1st of next month", "dsl": "d D01@M+1~-1w"}
+{"id": "fam0133", "text": "the thursday after next", "dsl": "d th+2"}
+{"id": "fam0135", "text": "a couple days before the end of the month", "dsl": "x", "unsure": true}
+{"id": "fam0137", "text": "the sunday before last", "dsl": "d su-2"}
+{"id": "fam0139", "text": "three weeks before christmas", "dsl": "d 12-25~-3w"}
+{"id": "fam0141", "text": "the day after next friday", "dsl": "d fr+1~+1d"}
+{"id": "fam0143", "text": "the day after the day after the day after tomorrow", "dsl": "d +4d"}
+{"id": "fam0145", "text": "the saturday after next at 10am", "dsl": "dt sa+2 10:00"}
+{"id": "fam0147", "text": "half past nine the day after tomorrow", "dsl": "dt +2d 9:30?"}
+{"id": "fam0149", "text": "noon on the first", "dsl": "dt D@01 12:00"}
+{"id": "fam0151", "text": "the crack of dawn friday", "dsl": "d fr"}
+{"id": "fam0153", "text": "half past noon on the 20th", "dsl": "dt D@20 12:30"}
+{"id": "fam0155", "text": "midnight on the first of next month", "dsl": "dt D01@M+1 00:00"}
+{"id": "fam0157", "text": "twenty past eight tonight", "dsl": "dt +0d 20:20"}
+{"id": "fam0159", "text": "half past 7 the monday after next", "dsl": "dt mo+2 7:30?"}
+{"id": "fam0161", "text": "crack of dawn on the 4th", "dsl": "d D@04"}
+{"id": "fam0163", "text": "quarter after 2 on the 15th", "dsl": "dt D@15 2:15?"}
+{"id": "fam0165", "text": "midnight on new years eve", "dsl": "dt 12-31 00:00"}
+{"id": "fam0167", "text": "a quarter to eight this friday", "dsl": "dt fr 7:45?"}
+{"id": "fam0169", "text": "dawn on monday", "dsl": "d mo"}
+{"id": "fam0171", "text": "quarter to one in the afternoon tomorrow", "dsl": "dt +1d 12:45"}
+{"id": "fam0173", "text": "sunset tomorrow", "dsl": "d +1d"}
+{"id": "fam0175", "text": "quater past five on the 3rd", "dsl": "dt D@03 5:15?"}
+{"id": "fam0177", "text": "twenty to nine next wednesday", "dsl": "dt we+1 8:40?"}
+{"id": "fam0179", "text": "this weekend through monday", "dsl": "d sa>mo"}
+{"id": "fam0181", "text": "from the 3rd to the 9th", "dsl": "d D@03>D@09"}
+{"id": "fam0183", "text": "from friday until the end of the month", "dsl": "d fr>M+0"}
+{"id": "fam0185", "text": "from the 12th till the 18th", "dsl": "d D@12>D@18"}
+{"id": "fam0187", "text": "the 1st until the 5th of next month", "dsl": "d D01@M+1>D05@M+1"}
+{"id": "fam0189", "text": "from now until the end of the week", "dsl": "d +0d>W+0"}
+{"id": "fam0191", "text": "this friday through next tuesday", "dsl": "d fr>tu+1"}
+{"id": "fam0193", "text": "from the 5th to the 10th at 9am", "dsl": "dt D@05 09:00>D@10"}
+{"id": "fam0195", "text": "from next wednesday until the 28th", "dsl": "d we+1>D@28"}
+{"id": "fam0197", "text": "from the 1st to the last day of the month", "dsl": "x", "unsure": true}
+{"id": "fam0199", "text": "the 14th through the 17th", "dsl": "d D@14>D@17"}
+{"id": "fam0201", "text": "through the end of next week", "dsl": "d >W+1"}
+{"id": "fam0203", "text": "the 8th until the end of the month", "dsl": "d D@08>M+0"}
+{"id": "fam0205", "text": "sat to the following wed", "dsl": "d sa>we"}
+{"id": "fam0207", "text": "the 2nd thru the 6th", "dsl": "d D@02>D@06"}
+{"id": "fam0209", "text": "from the middle of the month until the 30th", "dsl": "x", "unsure": true}
+{"id": "fam0211", "text": "from the 9th until next friday", "dsl": "d D@09>fr+1"}
+{"id": "fam0213", "text": "from the 18th to the 22nd of next month", "dsl": "d D18@M+1>D22@M+1"}
+{"id": "fam0215", "text": "from noon friday until monday morning", "dsl": "dt fr 12:00>mo"}
+{"id": "fam0217", "text": "business days from nov 2 to nov 20", "dsl": "d R d/1 mo,tu,we,th,fr u11-20 s11-02"}
+{"id": "fam0219", "text": "weekdays between the 5th and the 19th", "dsl": "d R d/1 mo,tu,we,th,fr uD@19 sD@05"}
+{"id": "fam0221", "text": "mondays and wednesdays in november", "dsl": "d R w/1 mo,we uM@11 sM@11"}
+{"id": "fam0223", "text": "every other friday through june", "dsl": "d R w/2 fr uM@06"}
+{"id": "fam0225", "text": "weekends in august", "dsl": "d R w/1 sa,su uM@08 sM@08"}
+{"id": "fam0227", "text": "every tuesday and thursday until the end of the month", "dsl": "d R w/1 tu,th uM+0"}
+{"id": "fam0229", "text": "every sunday in december", "dsl": "d R w/1 su uM@12 sM@12"}
+{"id": "fam0231", "text": "weekdays through the end of next month", "dsl": "d R d/1 mo,tu,we,th,fr uM+1"}
+{"id": "fam0233", "text": "mon wed fri from the 2nd to the 30th", "dsl": "d R w/1 mo,we,fr uD@30 sD@02"}
+{"id": "fam0235", "text": "every other monday from the 5th until february", "dsl": "d R w/2 mo uM@02 sD@05"}
+{"id": "fam0237", "text": "business days until the 20th", "dsl": "d R d/1 mo,tu,we,th,fr uD@20"}
+{"id": "fam0239", "text": "every day for the rest of the week", "dsl": "d R d/1 uW+0"}
+{"id": "fam0241", "text": "every weekend until labor day", "dsl": "x", "unsure": true}
+{"id": "fam0243", "text": "every other day until the 15th", "dsl": "d R d/2 uD@15"}
+{"id": "fam0245", "text": "all weekends in july", "dsl": "d R w/1 sa,su uM@07 sM@07"}
+{"id": "fam0247", "text": "every morning this week at 6am", "dsl": "dt R d/1 uW+0 06:00 sW+0"}
+{"id": "fam0249", "text": "every second tuesday until the 31st", "dsl": "d R w/2 tu uD@31"}
+{"id": "fam0251", "text": "evry weekday until the 12th", "dsl": "d R d/1 mo,tu,we,th,fr uD@12"}
+{"id": "fam0253", "text": "every tuesday for 6 weeks", "dsl": "d R w/1 tu n6"}
+{"id": "fam0255", "text": "every 3 days starting tomorrow for 2 weeks", "dsl": "x", "unsure": true}
+{"id": "fam0257", "text": "every day for 10 days", "dsl": "d R d/1 n10"}
+{"id": "fam0259", "text": "every wednesday for the next 8 weeks", "dsl": "d R w/1 we u+8w s+0d"}
+{"id": "fam0261", "text": "next 6 business days", "dsl": "d +1b,+2b,+3b,+4b,+5b,+6b"}
+{"id": "fam0263", "text": "twice a week for 4 weeks", "dsl": "x", "unsure": true}
+{"id": "fam0265", "text": "every other day for 12 days", "dsl": "d R d/2 n6"}
+{"id": "fam0267", "text": "the next 7 days", "dsl": "d +0d>+7d"}
+{"id": "fam0269", "text": "the next 3 tuesdays at 7pm", "dsl": "dt tu+1,tu+2,tu+3 19:00"}
+{"id": "fam0271", "text": "monthly on the 5th for 6 months", "dsl": "d R m/1 d5 n6"}
+{"id": "fam0273", "text": "the next 10 weekdays", "dsl": "d +1b,+2b,+3b,+4b,+5b,+6b,+7b,+8b,+9b,+10b"}
+{"id": "fam0275", "text": "every 3rd day starting today, 9 times", "dsl": "d R d/3 n9 s+0d"}
+{"id": "fam0277", "text": "the next 4 saturdays", "dsl": "d sa+1,sa+2,sa+3,sa+4"}
+{"id": "fam0279", "text": "every 2 days for a week", "dsl": "d R d/2 n4"}
+{"id": "fam0281", "text": "every thursday for 12 weeks", "dsl": "d R w/1 th n12"}
+{"id": "fam0283", "text": "first and third mondays of the month for 6 months", "dsl": "d R m/1 mo#1,mo#3 n12"}
+{"id": "fam0285", "text": "every other week on tuesday for 10 weeks", "dsl": "d R w/2 tu n5"}
+{"id": "fam0287", "text": "every 10 days starting the 5th, 4 times", "dsl": "d R d/10 n4 sD@05"}
+{"id": "fam0289", "text": "every weekday at noon for 3 weeks", "dsl": "dt R d/1 mo,tu,we,th,fr n15 12:00"}
+{"id": "fam0291", "text": "st stephens day", "dsl": "d 12-26"}
+{"id": "fam0293", "text": "victoria day", "dsl": "x", "unsure": true}
+{"id": "fam0295", "text": "national day of germany", "dsl": "d 10-03"}
+{"id": "fam0297", "text": "leap day at noon", "dsl": "dt 02-29 12:00"}
+{"id": "fam0299", "text": "the equinox in september", "dsl": "x", "unsure": true}
+{"id": "fam0301", "text": "mlk day", "dsl": "x", "unsure": true}
+{"id": "fam0303", "text": "quarter to ten the sunday after next", "dsl": "dt su+2 9:45?"}
+{"id": "fam0305", "text": "the first of next month at noon", "dsl": "dt D01@M+1 12:00"}
+{"id": "fam0307", "text": "tomorrow at the crack of dawn", "dsl": "d +1d"}
+{"id": "fam0309", "text": "from the 4th until the 11th of december", "dsl": "d 12-04>12-11"}
+{"id": "fam0311", "text": "from monday until the 14th", "dsl": "d mo>D@14"}
+{"id": "fam0313", "text": "every weekday in the first week of next month", "dsl": "x", "unsure": true}
+{"id": "fam0315", "text": "saturdays in september", "dsl": "d R w/1 sa uM@09 sM@09"}
+{"id": "fam0317", "text": "the next 2 weekends", "dsl": "x", "unsure": true}
+{"id": "fam0319", "text": "every tuesday for 3 weeks starting the 10th", "dsl": "d R w/1 tu n3 sD@10"}

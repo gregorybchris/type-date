@@ -1,0 +1,25 @@
+{"id": "r-num00", "text": "one", "dsl": "t 1?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-0"}
+{"id": "r-num01", "text": "two", "dsl": "t 2?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-1"}
+{"id": "r-num02", "text": "three", "dsl": "t 3?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-2"}
+{"id": "r-num03", "text": "four", "dsl": "t 4?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-3"}
+{"id": "r-num04", "text": "five", "dsl": "t 5?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-4"}
+{"id": "r-num05", "text": "six", "dsl": "t 6?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-5"}
+{"id": "r-num06", "text": "seven", "dsl": "t 7?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-6"}
+{"id": "r-num07", "text": "eight", "dsl": "t 8?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-7"}
+{"id": "r-num08", "text": "nine", "dsl": "t 9?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-8"}
+{"id": "r-num09", "text": "ten", "dsl": "t 10?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-9"}
+{"id": "r-num10", "text": "eleven", "dsl": "t 11?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-10"}
+{"id": "r-num11", "text": "twelve", "dsl": "t 12?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-11"}
+{"id": "r-num12", "text": "Three", "dsl": "t 3?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-12"}
+{"id": "r-num13", "text": "NINE", "dsl": "t 9?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-13"}
+{"id": "r-num14", "text": "three oclock", "dsl": "t 3?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-14"}
+{"id": "r-num15", "text": "seven o'clock", "dsl": "t 7?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-15"}
+{"id": "r-num16", "text": "eleven", "dsl": "t 11?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-16"}
+{"id": "r-num17", "text": "tomorrow three", "dsl": "dt +1d 3?", "primary_tag": "datetime", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-17"}
+{"id": "r-num18", "text": "tomorrow nine", "dsl": "dt +1d 9?", "primary_tag": "datetime", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-18"}
+{"id": "r-num19", "text": "nine thirty", "dsl": "t 9:30?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-19"}
+{"id": "r-num20", "text": "two to four", "dsl": "t 2?>4?", "primary_tag": "time-only", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-20"}
+{"id": "r-num21", "text": "monday five", "dsl": "dt mo 5?", "primary_tag": "datetime", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-21"}
+{"id": "r-num22", "text": "one of these days", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-22"}
+{"id": "r-num23", "text": "ten percent", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-23"}
+{"id": "r-num24", "text": "no", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "hand-written-numwords", "split": "test", "parent_id": null, "group": "num-24"}
