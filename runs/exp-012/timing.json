@@ -1,0 +1,71 @@
+{
+  "stages": {
+    "train": {
+      "stages": {
+        "started_at": "2026-11-04T06:04:43+00:00",
+        "finished_at": "2026-11-04T06:11:24+00:00"
+      },
+      "total_s": 401.041,
+      "buckets": {
+        "data_load": 0.227,
+        "encode_train": 0.679,
+        "eval_generate": 19.193,
+        "eval_score": 0.558,
+        "eval_score/resolver_subprocess": 0.546,
+        "model_init": 0.147,
+        "save_checkpoint": 0.119,
+        "tokenizer_train": 0.16,
+        "train_loop": 379.894,
+        "train_loop/backward": 220.671,
+        "train_loop/collate": 6.035,
+        "train_loop/forward": 125.941,
+        "train_loop/optim": 26.738,
+        "train_loop/sync_loss": 0.509,
+        "write_results": 0.016
+      },
+      "unaccounted_s": 0.048,
+      "train_profile": {
+        "sampled_steps": 56,
+        "steps": 1410,
+        "step_ms": 269.43,
+        "sampled_step_ms": 287.05,
+        "samples_per_s": 475.1
+      },
+      "eval_rows": 10948
+    },
+    "rerun-e5": {
+      "stages": {
+        "started_at": "2026-11-04T06:12:27+00:00",
+        "finished_at": "2026-11-04T06:12:44+00:00"
+      },
+      "total_s": 16.939,
+      "buckets": {
+        "eval_generate": 16.303,
+        "eval_score": 0.526,
+        "model_load": 0.075
+      },
+      "unaccounted_s": 0.035
+    }
+  },
+  "total_s": 417.98,
+  "buckets": {
+    "train.data_load": 0.227,
+    "train.encode_train": 0.679,
+    "train.eval_generate": 19.193,
+    "train.eval_score": 0.558,
+    "train.eval_score/resolver_subprocess": 0.546,
+    "train.model_init": 0.147,
+    "train.save_checkpoint": 0.119,
+    "train.tokenizer_train": 0.16,
+    "train.train_loop": 379.894,
+    "train.train_loop/backward": 220.671,
+    "train.train_loop/collate": 6.035,
+    "train.train_loop/forward": 125.941,
+    "train.train_loop/optim": 26.738,
+    "train.train_loop/sync_loss": 0.509,
+    "train.write_results": 0.016,
+    "rerun-e5.eval_generate": 16.303,
+    "rerun-e5.eval_score": 0.526,
+    "rerun-e5.model_load": 0.075
+  }
+}

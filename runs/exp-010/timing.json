@@ -1,0 +1,32 @@
+{
+  "stages": {
+    "eval": {
+      "stages": {
+        "started_at": "2026-11-04T06:31:29+00:00",
+        "finished_at": "2026-11-04T06:44:30+00:00"
+      },
+      "total_s": 781.467,
+      "buckets": {
+        "data_load": 0.248,
+        "encode_train": 0.371,
+        "eval_generate": 324.948,
+        "eval_score": 1.041,
+        "model_load": 1.968,
+        "save_checkpoint": 1.025,
+        "train_loop": 450.536
+      },
+      "unaccounted_s": 1.33,
+      "eval_rows": 11287
+    }
+  },
+  "total_s": 781.467,
+  "buckets": {
+    "eval.data_load": 0.248,
+    "eval.encode_train": 0.371,
+    "eval.eval_generate": 324.948,
+    "eval.eval_score": 1.041,
+    "eval.model_load": 1.968,
+    "eval.save_checkpoint": 1.025,
+    "eval.train_loop": 450.536
+  }
+}

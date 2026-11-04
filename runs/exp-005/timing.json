@@ -51,9 +51,22 @@
         "model_load": 0.117
       },
       "unaccounted_s": 0.069
+    },
+    "rerun-e5": {
+      "stages": {
+        "started_at": "2026-11-04T06:11:47+00:00",
+        "finished_at": "2026-11-04T06:12:03+00:00"
+      },
+      "total_s": 16.313,
+      "buckets": {
+        "eval_generate": 15.547,
+        "eval_score": 0.648,
+        "model_load": 0.084
+      },
+      "unaccounted_s": 0.034
     }
   },
-  "total_s": 65.851,
+  "total_s": 82.164,
   "buckets": {
     "rerun-e1.eval_generate": 25.511,
     "rerun-e1.eval_score": 1.241,
@@ -66,6 +79,9 @@
     "rerun-e2.model_load": 0.097,
     "rerun-e3.eval_generate": 14.295,
     "rerun-e3.eval_score": 0.502,
-    "rerun-e3.model_load": 0.117
+    "rerun-e3.model_load": 0.117,
+    "rerun-e5.eval_generate": 15.547,
+    "rerun-e5.eval_score": 0.648,
+    "rerun-e5.model_load": 0.084
   }
 }

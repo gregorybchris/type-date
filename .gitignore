@@ -10,3 +10,6 @@ models/
 checkpoints/
 *.log
 .run/
+artifacts/
+training/.hf/
+training/.venv/
