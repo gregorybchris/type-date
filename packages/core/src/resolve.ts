@@ -88,7 +88,21 @@ function nextWeekday(from: string, wd: Weekday): string {
   return addDays(from, diff);
 }
 
-function nthWeekdayOfMonth(y: number, m: number, wd: Weekday, nth: number): string | null {
+function nthWeekdayOfMonth(y: number, m: number, wd: Weekday | "b", nth: number): string | null {
+  if (wd === "b") {
+    const dim = daysInMonth(y, m);
+    if (nth < 0) {
+      let d = ymd(y, m, dim);
+      while (isWeekend(d)) d = addDays(d, -1);
+      return d;
+    }
+    let left = nth;
+    for (let i = 1; i <= dim; i++) {
+      const d = ymd(y, m, i);
+      if (!isWeekend(d) && --left === 0) return d;
+    }
+    return null;
+  }
   if (nth > 0) {
     const first = ymd(y, m, 1);
     const day = addDays(nextWeekday(first, wd), (nth - 1) * 7);
@@ -161,7 +175,27 @@ export function resolveDate(
       const back = ((weekdayOf(today) - wdIndex(spec.wd) + 6) % 7) + 1; // 1..7 days back
       return single(addDays(today, -back - (-spec.n - 1) * 7));
     }
+    case "wdom": {
+      // First date on or after ref that is the weekday and day-of-month. 60 months always contain one.
+      const [ry, rm] = parts(ref);
+      for (let i = 0; i < 60; i++) {
+        const idx = ry * 12 + (rm - 1) + i;
+        const y = Math.floor(idx / 12);
+        const m = (idx % 12) + 1;
+        if (spec.d > daysInMonth(y, m)) continue;
+        const cand = ymd(y, m, spec.d);
+        if (toDays(cand) >= toDays(ref) && weekdayOf(cand) === wdIndex(spec.wd)) return single(cand);
+      }
+      return null;
+    }
     case "nth": {
+      if (spec.rel !== undefined) {
+        const [ty, tm] = parts(today);
+        const idx = ty * 12 + (tm - 1) + spec.rel;
+        const y = Math.floor(idx / 12);
+        const cand = nthWeekdayOfMonth(y, (idx % 12) + 1, spec.wd, spec.nth);
+        return cand ? single(cand) : null;
+      }
       const [ry] = parts(ref);
       for (let y = ry; y <= ry + 2; y++) {
         const cand = nthWeekdayOfMonth(y, spec.month, spec.wd, spec.nth);

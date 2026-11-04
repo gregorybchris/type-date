@@ -901,3 +901,58 @@ describe("day of a relative month (D13@M-1)", () => {
     expect(serializeDsl(parseDsl("d D5@M-1")!)).toBe("d D05@M-1");
   });
 });
+
+describe("h9 forms: nth weekday of a relative month, weekday and day of month, ranges with relative ends", () => {
+  const today = "2026-11-04"; // Wednesday
+  const day = (l: string, t = today) => resolveDsl(l, { today: t }).start?.date;
+  it("round trips", () => {
+    for (const l of ["d fr#-1@M+0", "d mo#1@M+1", "d b#-1@M+0", "d b#1@M-1", "d fr&D13", "d 03-14", "d sa>mo", "d D01@M+1>D15@M+1", "d D01@M+1>D@15"]) {
+      expect(serializeDsl(parseDsl(l))).toBe(l);
+    }
+  });
+  it("last friday of this month", () => {
+    expect(day("d fr#-1@M+0")).toBe("2026-11-27");
+    expect(day("d fr#-1@M+1")).toBe("2026-12-25");
+    expect(day("d mo#1@M-1")).toBe("2026-10-05");
+    expect(day("d fr#5@M+0")).toBeUndefined(); // no 5th Friday in Nov 2026
+    expect(day("d fr#5@M+1")).toBeUndefined(); // December 2026 has four Fridays
+  });
+  it("business day of a month", () => {
+    expect(day("d b#-1@M+0")).toBe("2026-11-30");
+    expect(day("d b#-1@M+3")).toBe("2027-02-26");
+    expect(day("d b#1@M+0")).toBe("2026-11-02");
+    expect(day("d b#1@M+1")).toBe("2026-12-01");
+    expect(day("d b#-1@M-1")).toBe("2026-10-30");
+  });
+  it("weekday that is also a day of month", () => {
+    expect(day("d fr&D13")).toBe("2026-11-13");
+    expect(day("d fr&D13", "2026-11-14")).toBe("2027-08-13");
+    expect(day("d fr&D13", "2026-02-01")).toBe("2026-02-13");
+    expect(day("d th&D29")).toBe("2027-04-29");
+    expect(day("d mo&D31")).toBeDefined();
+  });
+  it("named dates and leap day", () => {
+    expect(day("d 03-14")).toBe("2027-03-14");
+    expect(day("d 03-15")).toBe("2027-03-15");
+    expect(day("d 02-29")).toBe("2028-02-29");
+    expect(day("d 02-29", "2028-02-29")).toBe("2028-02-29");
+    expect(day("d 02-29", "2028-03-01")).toBe("2032-02-29");
+  });
+  it("range ends relative to the start", () => {
+    const r = resolveDsl("d sa>mo", { today });
+    expect([r.start?.date, r.end?.date]).toEqual(["2026-11-07", "2026-11-09"]);
+    const r2 = resolveDsl("d D01@M+1>D15@M+1", { today });
+    expect([r2.start?.date, r2.end?.date]).toEqual(["2026-12-01", "2026-12-15"]);
+    const r3 = resolveDsl("d D01@M+1>D@15", { today });
+    expect([r3.start?.date, r3.end?.date]).toEqual(["2026-12-01", "2026-12-15"]);
+  });
+  it("rejects bad forms", () => {
+    for (const l of ["d fr#0@M+0", "d fr#6@M+0", "d b#0@M+0", "d b#24@M+0", "d fr&D32", "d fr&D00", "d fr&D1", "d xx#1@M+0"]) {
+      expect(parseDsl(l).mode).toBe("x");
+    }
+  });
+  it("accepts the new forms in lists, anchors and bounds", () => {
+    expect(parseDsl("d fr&D13,fr&D13~+1w").mode).not.toBe("x");
+    expect(serializeDsl(parseDsl("d R d/1 mo,tu,we,th,fr u11-20 s11-02"))).toBe("d R d/1 mo,tu,we,th,fr u11-20 s11-02");
+  });
+});

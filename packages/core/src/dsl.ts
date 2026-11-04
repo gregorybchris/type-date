@@ -14,9 +14,14 @@ function validMonthDay(m: number, d: number): boolean {
   return inRange(d, 1, max);
 }
 
+function validNth(wd: string, nth: number): boolean {
+  if (nth === 0) return false;
+  return wd === "b" ? nth === -1 || inRange(nth, 1, 23) : inRange(nth, -1, 5);
+}
+
 /** Forms that name one day. Lists and anchors accept only these. */
 function isSingleDay(d: DateSpec): boolean {
-  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "dom" || d.k === "pdom" || d.k === "anc";
+  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc";
 }
 
 export function parseDate(s: string): DateSpec | null {
@@ -53,10 +58,19 @@ export function parseDate(s: string): DateSpec | null {
     const n = +m[2]!;
     return n === 0 ? null : { k: "wd", wd: m[1] as Weekday, n };
   }
-  if ((m = s.match(new RegExp(`^(${WD_RE})#(-?\\d+)@(\\d{2})$`)))) {
+  if ((m = s.match(new RegExp(`^(${WD_RE}|b)#(-?\\d+)@(\\d{2})$`)))) {
     const [nth, month] = [+m[2]!, +m[3]!];
-    if (!inRange(month, 1, 12) || nth === 0 || !inRange(nth, -1, 5)) return null;
-    return { k: "nth", wd: m[1] as Weekday, nth, month };
+    if (!inRange(month, 1, 12) || !validNth(m[1]!, nth)) return null;
+    return { k: "nth", wd: m[1] as Weekday | "b", nth, month };
+  }
+  if ((m = s.match(new RegExp(`^(${WD_RE}|b)#(-?\\d+)@M([+-]\\d+)$`)))) {
+    const [nth, rel] = [+m[2]!, +m[3]!];
+    if (!validNth(m[1]!, nth)) return null;
+    return { k: "nth", wd: m[1] as Weekday | "b", nth, month: 0, rel };
+  }
+  if ((m = s.match(new RegExp(`^(${WD_RE})&D(\\d{2})$`)))) {
+    const d = +m[2]!;
+    return inRange(d, 1, 31) ? { k: "wdom", wd: m[1] as Weekday, d } : null;
   }
   if ((m = s.match(/^([WMYQ])([+-]\d+)$/))) {
     return { k: "per", u: m[1]!.toLowerCase() as "w" | "m" | "y" | "q", n: +m[2]! };
@@ -266,7 +280,9 @@ function fmtDate(d: DateSpec): string {
     case "wd":
       return d.n === 0 ? `${d.wd}${d.past ? "<" : ""}` : `${d.wd}${d.n > 0 ? "+" : ""}${d.n}`;
     case "nth":
-      return `${d.wd}#${d.nth}@${p2(d.month)}`;
+      return `${d.wd}#${d.nth}@${d.rel !== undefined ? `M${d.rel >= 0 ? "+" : ""}${d.rel}` : p2(d.month)}`;
+    case "wdom":
+      return `${d.wd}&D${p2(d.d)}`;
     case "per":
       return `${d.u.toUpperCase()}${d.n >= 0 ? "+" : ""}${d.n}`;
     case "mon":

@@ -10,7 +10,8 @@ export type DateSpec =
   | { k: "abs"; y: number | null; m: number; d: number; past?: true } // past: on or before today
   | { k: "off"; n: number; u: OffUnit }
   | { k: "wd"; wd: Weekday; n: number; past?: true } // n = 0 means bare weekday
-  | { k: "nth"; wd: Weekday; nth: number; month: number }
+  | { k: "nth"; wd: Weekday | "b"; nth: number; month: number; rel?: number } // rel: month n months from this one (`fr#-1@M+0`), month is 0. wd "b": business day
+  | { k: "wdom"; wd: Weekday; d: number } // weekday that is also day d of the month (`fr&D13`)
   | { k: "per"; u: "w" | "m" | "y" | "q"; n: number }
   | { k: "mon"; month: number; past?: true }
   | { k: "qtr"; q: number } // Q@N: nearest quarter on or after today

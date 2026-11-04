@@ -17,6 +17,9 @@ DATE   := YYYY-MM-DD                            absolute
         | WD                                    next occurrence of weekday, on or after today
         | WD(+|-)N                              Nth occurrence strictly after (+) or before (-) today, N >= 1
         | WD#K@MM                               Kth weekday of month MM. K=-1 is last. Nearest on or after today
+        | WD#K@M(+|-)N                           Kth weekday of the month N months from this one (h9)
+        | b#K@M(+|-)N                           Kth business day (Mon-Fri) of that month, K=-1 last (h9)
+        | WD'&D'DD                             first weekday WD on or after today that is also day DD of its month (h9)
         | W(+|-)N | M(+|-)N | Y(+|-)N           whole week / month / year relative to now. Expands to a range
         | M@MM | Y@YYYY                         whole named month (nearest on or after today) / whole year
         | DDD@M±N                               day DD of the month N months from this one (`D13@M-1` is the 13th of last month). The month lacks the day: `x`
@@ -174,3 +177,28 @@ When the text states the end date again, the label writes it: "today 4PM to toda
 ## Day of a relative month (added 2026-11-04)
 
 `D13@M-1` is the 13th of last month, `D01@M+1` the 1st of next month, `D15@M+0` the 15th of this month. The day is two digits in canonical form; the parser also accepts one digit. If the target month has no such day (`D31@M-1` in May), the line resolves to `x`. Phrases: "13th of last month", "the 15th of next month", "last month on the 3rd", "the 1st of this month". Year offsets ("the 15th of next year") are not covered.
+
+## Nth weekday of a relative month, weekday with a day of month (added 2026-11-04, h9)
+
+Three small forms, all single days. They are valid wherever a single day is (ranges, lists, anchors, `s` and `u` bounds).
+
+| Form | Input | Output | Resolves (today 2026-11-04) |
+|---|---|---|---|
+| `WD#K@M±N` | "last friday of the month", "last friday of this month" | `d fr#-1@M+0` | 2026-11-27 |
+| | "the first monday of next month" | `d mo#1@M+1` | 2026-12-07 |
+| | "second tuesday of last month" | `d tu#2@M-1` | 2026-10-13 |
+| `b#K@M±N` | "the last weekday of the month", "last business day of this month" | `d b#-1@M+0` | 2026-11-30 |
+| | "first business day of next month" | `d b#1@M+1` | 2026-12-01 |
+| `WD&DNN` | "next friday the 13th", "friday the 13th" | `d fr&D13` | 2026-11-13 |
+
+Rules:
+- `WD#K@M±N` is the same as `WD#K@MM` (a named month) except the month is `N` months from the current one. `K` is -1 (last) or 1-5. If the month has no such weekday (`fr#5@M+0` in November 2026), the line resolves to `x`, as for `D31@M-1`.
+- `b#K@M±N` counts Monday to Friday days only (no holidays). `K` is -1 or 1-23. `K` beyond the month's business days resolves to `x`. Only the relative-month form exists for `b`; `b#K@MM` with a month number is also accepted by the parser and resolves the nearest such month like `WD#K@MM`.
+- A recurrence still uses `R m/1 fr#-1` ("last friday of every month"). The single-day form is for "of the month" (this month) without a repeat cue.
+- `WD&DNN` is the first date on or after today (in a range end: on or after the start) whose weekday is `WD` and whose day of month is `NN` (`NN`, two digits, 01-31). Months without the day are skipped. It never gives `x` for a valid `NN`. "Next" is not encoded: if today is itself a Friday the 13th, today is the answer. Use the anchored form `fr&D13~...` if a later date is needed.
+- Named dates need no new form: "the ides of march" is `d 03-15`, "pi day" is `d 03-14`, "may the fourth" is `d 05-04`. "Next leap day" is `d 02-29`: `MM-DD` already skips years where the date does not exist (2026-11-04 gives 2028-02-29).
+
+Existing forms that cover other requested phrases (no change to the DSL):
+- A range end that is a weekday resolves on or after the start: "this weekend through monday" is `d sa>mo` (Saturday to the following Monday).
+- A range end that is a day of month resolves on or after the start: "the first of next month until the 15th" is `d D01@M+1>D15@M+1` (or `D01@M+1>D@15`; same dates). Canonical label: explicit `D15@M+1`.
+- Recurrence bounded on both sides: "business days from nov 2 to nov 20" is `d R d/1 mo,tu,we,th,fr u11-20 s11-02`.
