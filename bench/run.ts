@@ -25,14 +25,23 @@ const mark = (name: string) => {
 };
 const exp = Number(arg("exp"));
 if (!exp) throw new Error("--exp N required");
-const backend = (arg("backend", "wasm") as "wasm" | "webgpu");
+const backend = (arg("backend", isBaselineArg() ? "js" : "wasm") as "wasm" | "webgpu" | "js");
+function isBaselineArg() {
+  return ["chrono", "heuristic-small", "heuristic-full", "heuristic-full-2"].includes(arg("engine") ?? "");
+}
 const profile = arg("profile", "desktop") as "desktop" | "mobile-4x" | "mobile-6x";
 const dataPath = resolve(root, arg("data", "data/v002/test_llm.jsonl")!);
 const n = Number(arg("n", "200"));
 const threads = Number(arg("threads", "1"));
 const name = `exp-${String(exp).padStart(3, "0")}`;
 const artDir = join(root, "artifacts", name);
-const manifest = JSON.parse(readFileSync(join(artDir, "manifest.json"), "utf8"));
+const engineArg = arg("engine");
+const manifestPath = join(artDir, "manifest.json");
+const baselineIds = ["chrono", "heuristic-small", "heuristic-full", "heuristic-full-2"];
+const isBaseline = !!engineArg && baselineIds.includes(engineArg);
+const manifest = isBaseline
+  ? { experiment: name, engine: engineArg, quant: "none", files: {}, config: {} }
+  : JSON.parse(readFileSync(manifestPath, "utf8"));
 
 mark("setup");
 // bundle the page
@@ -120,7 +129,7 @@ page.on("requestfailed", (r) => console.error("requestfailed", r.url()));
 await page.goto(`http://localhost:${port}/`);
 // strings, not closures: tsx injects `__name` helpers into closures, which do not exist in the page
 await page.waitForFunction("typeof window.runBench === 'function'");
-if (backend === "webgpu") {
+if (backend === "webgpu" && !isBaseline) {
   const hasGpu = await page.evaluate(async () => {
     const g = (navigator as unknown as { gpu?: { requestAdapter(): Promise<unknown> } }).gpu;
     return !!g && !!(await g.requestAdapter());
@@ -133,7 +142,7 @@ let peak = rss0;
 const timer = setInterval(() => (peak = Math.max(peak, rssOf(pid))), 100);
 const res = (await page.evaluate(
   (a) => (window as unknown as { runBench: (x: unknown) => Promise<unknown> }).runBench(a),
-  { baseUrl: `http://localhost:${port}/artifacts/${name}`, manifest, backend, rows, threads },
+  { baseUrl: `http://localhost:${port}/artifacts/${name}`, manifest, backend, rows, threads, engine: engineArg, today: "2026-11-03" },
 )) as { loadMs: number; coldFirstMs: number; lat: number[]; toks: number[]; ok: number; n: number };
 mark("run_in_browser");
 clearInterval(timer);
@@ -143,10 +152,14 @@ server.close();
 
 const sorted = [...res.lat].sort((a, b) => a - b);
 const q = (p: number) => sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * p))]!;
-const dir = join(artDir, manifest.dir ?? "");
-const dl = Object.values(manifest.files as Record<string, string>)
+const dir = join(artDir, (manifest as { dir?: string }).dir ?? "");
+let dl = Object.values(manifest.files as Record<string, string>)
   .filter((f) => ["encoder", "decoder", "tokenizer"].some((k) => manifest.files[k] === f))
   .reduce((s, f) => s + (existsSync(join(dir, f)) ? statSync(join(dir, f)).size : 0), 0);
+if (isBaseline) {
+  const mp = join(root, "runs", name, "metrics.json");
+  dl = JSON.parse(readFileSync(mp, "utf8")).model?.size_bytes ?? 0;
+}
 const totalMs = res.lat.reduce((a, b) => a + b, 0);
 const totalToks = res.toks.reduce((a, b) => a + b, 0);
 const entry = {
@@ -165,7 +178,7 @@ const entry = {
   browser_accuracy: res.ok / res.n,
   data: arg("data", "data/v002/test_llm.jsonl"),
 };
-function round(x: number) { return Math.round(x * 10) / 10; }
+function round(x: number) { return Math.round(x * 1000) / 1000; }
 const runDir = join(root, "runs", name);
 mkdirSync(runDir, { recursive: true });
 const benchPath = join(runDir, "bench.json");

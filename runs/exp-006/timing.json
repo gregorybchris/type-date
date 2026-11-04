@@ -1,0 +1,25 @@
+{
+  "stages": {
+    "eval": {
+      "stages": {
+        "started_at": "2026-11-04T03:58:50+00:00",
+        "finished_at": "2026-11-04T04:04:55+00:00"
+      },
+      "total_s": 364.811,
+      "buckets": {
+        "eval_generate": 350.125,
+        "eval_score": 0.532,
+        "model_load": 13.741
+      },
+      "unaccounted_s": 0.413,
+      "eval_rows": 600,
+      "prompt_tokens": 855
+    }
+  },
+  "total_s": 364.811,
+  "buckets": {
+    "eval.eval_generate": 350.125,
+    "eval.eval_score": 0.532,
+    "eval.model_load": 13.741
+  }
+}

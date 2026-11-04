@@ -1,0 +1,42 @@
+[
+  {
+    "engine": "heuristic-full",
+    "backend": "js",
+    "browser": "chromium",
+    "profile": "desktop",
+    "threads": 1,
+    "load_ms": 0,
+    "cold_first_ms": 2.9,
+    "latency_ms": {
+      "p50": 0.02,
+      "p95": 0.205,
+      "p99": 1.285
+    },
+    "tokens_per_s": 0,
+    "memory_mb": 0,
+    "download_bytes": 7859,
+    "n": 200,
+    "browser_accuracy": 0.835,
+    "data": "evals/e1q/test_llm.jsonl"
+  },
+  {
+    "engine": "heuristic-full",
+    "backend": "js",
+    "browser": "chromium",
+    "profile": "mobile-4x",
+    "threads": 1,
+    "load_ms": 1,
+    "cold_first_ms": 6.1,
+    "latency_ms": {
+      "p50": 0.015,
+      "p95": 0.82,
+      "p99": 2.345
+    },
+    "tokens_per_s": 0,
+    "memory_mb": 12,
+    "download_bytes": 7859,
+    "n": 200,
+    "browser_accuracy": 0.835,
+    "data": "evals/e1q/test_llm.jsonl"
+  }
+]

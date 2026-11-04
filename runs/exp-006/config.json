@@ -1,0 +1,24 @@
+{
+  "id": "exp-006",
+  "number": 6,
+  "title": "SmolLM2-135M few-shot",
+  "description": "Pretrained SmolLM2-135M-Instruct with a 24-example prompt and no training. Tests how far a tiny general LLM gets with prompting alone.",
+  "created": "2026-11-04T04:04:55+00:00",
+  "dataset": null,
+  "format": "dsl-v1",
+  "notes": "Few-shot prompt (24 examples, 855 tokens), greedy, fp32, MPS.",
+  "parent": null,
+  "model": {
+    "family": "zero-shot",
+    "params": 134515008,
+    "hf_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "n_shots": 24
+  },
+  "train": {
+    "trained": false
+  },
+  "export": {
+    "format": "none",
+    "quant": "none"
+  }
+}

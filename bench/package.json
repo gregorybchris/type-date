@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@type-date/engines": "workspace:*",
-    "onnxruntime-web": "1.31.1"
+    "onnxruntime-web": "1.31.1",
+    "@type-date/baselines": "workspace:*"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",
