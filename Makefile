@@ -47,14 +47,16 @@ eval-coverage:  ## Matrix of engines by eval version, gaps marked
 
 # Engines in dashboard order: chrono (comparison baseline), then h1..h9 (heuristic parser generations)
 ENGINES = chrono h1 h2 h3 h4 h5 h6 h7 h8 h9
+# Engines are scored in parallel (one process per engine, 8 at a time); each process walks the eval versions in order.
+SCORE = pnpm exec tsx scripts/eval.ts --no-primary
 rescore-baselines:  ## Score engines on one eval version: make rescore-baselines EVAL=e10 [ENGINES="h8 h9"]
 	@test -n "$(EVAL)" || (echo 'usage: make rescore-baselines EVAL=e10 [ENGINES="h8 h9"]'; exit 2)
-	$(foreach e,$(ENGINES),pnpm --filter @type-date/baselines eval --engine $(e) --eval-version $(EVAL) --no-primary &&) true
+	@printf '%s\n' $(ENGINES) | xargs -P 8 -I{} sh -c 'cd packages/baselines && $(SCORE) --engine {} --eval-version $(EVAL) | sed "s/^/{} $(EVAL): /"'
 
 # All eval versions, full and quick subsets
 EVALS = e1 e1q e2 e2q e3 e3q e4 e5 e6 e6q e7 e8 e9 e10 e11
-rescore-all:  ## Score every engine on every eval version (fast, run after adding an engine or eval)
-	$(foreach v,$(EVALS),$(MAKE) rescore-baselines EVAL=$(v) &&) true
+rescore-all:  ## Score every engine on every eval version in parallel (about 2 minutes): make rescore-all [ENGINES="h8 h9"]
+	@printf '%s\n' $(ENGINES) | xargs -P 8 -I{} sh -c 'cd packages/baselines && for v in $(EVALS); do $(SCORE) --engine {} --eval-version $$v | grep -E "^{}:" | sed "s/^/$$v /" || exit 1; done'
 
 results:  ## Results table for an eval version: make results EVAL=e10
 	cd training && uv run td results --eval-version $(or $(EVAL),e10)
