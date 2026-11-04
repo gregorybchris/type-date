@@ -1,14 +1,27 @@
 """Consensus labels from two independent labelers (agree and neither unsure)."""
 
 import json
+import re
 from pathlib import Path
 
 from .evalsets import policy_flags, tag_from_dsl
 from .train import resolved_equal
 
 
+def _norm_dsl(dsl: str) -> str:
+    """String-level cleanup of label variants: spaces, and one-digit day of month (D@4 -> D@04)."""
+    dsl = " ".join(dsl.split())
+    return re.sub(r"D@(\d)(?!\d)", r"D@0\1", dsl)
+
+
 def _read(path: Path) -> dict[str, dict]:
-    return {json.loads(x)["id"]: json.loads(x) for x in path.read_text().splitlines() if x.strip()}
+    out = {}
+    for line in path.read_text().splitlines():
+        if line.strip():
+            r = json.loads(line)
+            r["dsl"] = _norm_dsl(r["dsl"])
+            out[r["id"]] = r
+    return out
 
 
 def consensus(
