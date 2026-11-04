@@ -346,6 +346,26 @@ def eval_coverage() -> None:
     coverage()
 
 
+@eval_app.command("extend")
+def eval_extend(
+    version: str = typer.Argument(..., help="e.g. e3"),
+    parent: str = typer.Option("e2"),
+    extra: list[str] | None = typer.Option(None, "--extra", help="split=path.jsonl (repeatable)"),
+    reason: str = typer.Option(...),
+) -> None:
+    """Cut a new eval version that keeps every parent row and adds new splits."""
+    from pathlib import Path
+
+    from .evalsets import extend as _extend
+
+    adds = {}
+    for e in extra or []:
+        name, path = e.split("=", 1)
+        adds[name] = [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+    m = _extend(version, parent, adds, reason)
+    typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
+
+
 @eval_app.command("cut-clean")
 def eval_cut_clean(
     version: str = typer.Argument(..., help="e.g. e2"),
