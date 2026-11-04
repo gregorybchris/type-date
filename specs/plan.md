@@ -141,11 +141,15 @@ The staged queue is in `specs/research/design-space.md`. Numbering so far:
 6. exp-006: SmolLM2-135M few-shot, no training (e1q)
 7. exp-007: SmolLM2-360M few-shot, no training (e1q)
 8. exp-008: Qwen2.5-0.5B few-shot, no training (e1q)
-9. exp-009: heuristic-full-2 (improved heuristic, in progress)
-10. exp-010: SmolLM2-135M fine-tuned 1 epoch on 6k rows (e1q)
-11. exp-011: scratch enc-dec, 3 epochs on 8k rows (e1q)
-12. exp-012: scratch enc-dec with digit tokens, 3 epochs on 8k rows (e1q)
-13. exp-013: reserved for a second heuristic iteration
+9. exp-009: heuristic-full-2: 94.9% resolved on e2, 70.7% on realistic test_external
+10. exp-010: SmolLM2-135M fine-tuned 1 epoch on 6k rows of v003 (e1q)
+11. exp-011: scratch enc-dec, 6 epochs on 30k rows of v005 (full e2)
+12. exp-012: scratch enc-dec with digit tokens, same budget
+13. exp-013: heuristic-full-3 (span extraction for filler words, uses data/real)
+14-17. exp-014..017: prompt study on Qwen2.5-0.5B-Instruct (fixed, chat, retrieval, retrieval+chat) on e2q
+18+. backbone sweep with the best prompt (SmolLM2 135M/360M, Qwen2.5-1.5B, Qwen3-0.6B, others)
+
+Data and eval versions: eval e1 (first), e2 (cleaned e1 plus realistic test_external). Training sets: v003 (decontaminated vs e1), v004 (policy fixes, vs e2), v005 (v004 plus 725 realistic rows x6). Realistic data: `data/real/{dev,train}.jsonl` (consensus of two independent labelers).
 
 The first broad comparison (exp-001..012) is the screening round. Canceled: digit-split 20 epochs, seeds 1 and 2 of R0. They return only if a model path is worth the time.
 
