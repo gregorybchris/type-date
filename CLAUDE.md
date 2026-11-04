@@ -20,6 +20,7 @@ Apply these to all docs, comments, commit messages, and UI copy.
 - `design-ideas/` is gitignored. Look at the images there before doing UI work.
 - Work coarse to fine. Follow the staged plan in `specs/research/design-space.md`: one factor per experiment, time-boxed, no deep latency tuning until the broad design is chosen.
 - Eval sets are versioned and immutable (`evals/eN`). Compare only within one eval version. Cut a new one rarely. A new version must be scored on all baselines first. See `specs/research/eval-versioning.md`.
+- Never let information from a held-out eval set (even failure categories you saw as eval owner) reach data briefs or tuning. If it does, record the issue in the eval manifest (`known_issues`) and cut a fresh independent set. This happened with e4 `test_public`.
 - Every experiment needs a short `title` and a 1-2 sentence `description` in `config.json` (shown in the dashboard).
 - Every run writes `timing.json` (wall time by bucket). Use `make timing` and optimize the biggest bucket first.
 - Every experiment gets a sequential number (`exp-001`, `exp-002`, ...). Write one file per experiment in `specs/research/experiments/`.
