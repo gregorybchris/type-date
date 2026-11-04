@@ -263,6 +263,90 @@ def data_mix(
     _ = Path
 
 
+@data_app.command("prepare-batch")
+def data_prepare_batch(
+    name: str = typer.Argument(..., help="Batch name, e.g. tax"),
+    pattern: str = typer.Argument(
+        ..., help="Glob of writer files, relative to training/, e.g. 'gen/external/tax-*.jsonl'"
+    ),
+    dev: int = typer.Option(250, help="Rows for the dev set"),
+    test: int = typer.Option(
+        0, help="Rows for a hidden test set (written as NAME-test-inputs.jsonl)"
+    ),
+    chunk: int = typer.Option(400, help="Rows per labeling chunk"),
+    seed: int = typer.Option(1),
+    max_len: int = typer.Option(120),
+) -> None:
+    """Merge writer files, drop duplicates and anything seen in train or eval, split for labeling."""
+    import glob
+    import random
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    repo = root.parent
+
+    def norm(t: str) -> str:
+        return " ".join(t.lower().split())
+
+    rows = []
+    for f in sorted(glob.glob(str(root / pattern))):
+        for line in Path(f).read_text().splitlines():
+            if line.strip():
+                try:
+                    rows.append(json.loads(line)["text"])
+                except (json.JSONDecodeError, KeyError):
+                    pass
+    banned: set[str] = set()
+    sources = [*glob.glob(str(repo / "data/*/*.jsonl")), *glob.glob(str(repo / "evals/*/*.jsonl"))]
+    for f in sources:
+        for line in Path(f).read_text().splitlines():
+            if line.strip():
+                try:
+                    banned.add(norm(json.loads(line)["text"]))
+                except (json.JSONDecodeError, KeyError):
+                    pass
+    for f in glob.glob(str(root / "gen/external/*inputs*.jsonl")):
+        for line in Path(f).read_text().splitlines():
+            if line.strip():
+                banned.add(norm(json.loads(line)["text"]))
+    seen: set[str] = set()
+    out = []
+    for t in rows:
+        k = norm(t)
+        if k and k not in seen and k not in banned and len(t) <= max_len:
+            seen.add(k)
+            out.append(t)
+    random.Random(seed).shuffle(out)
+    ext = root / "gen/external"
+
+    def write(fname: str, items: list[str], prefix: str) -> None:
+        (ext / fname).write_text(
+            "".join(
+                json.dumps({"id": f"{prefix}{i:04d}", "text": t}) + "\n"
+                for i, t in enumerate(items)
+            )
+        )
+
+    dev_rows, test_rows, train = out[:dev], out[dev : dev + test], out[dev + test :]
+    write(f"{name}-dev-inputs.jsonl", dev_rows, f"{name}d")
+    if test:
+        write(f"{name}-test-inputs.jsonl", test_rows, f"{name}x")
+    chunks = [train[i : i + chunk] for i in range(0, len(train), chunk)]
+    for k, c in enumerate(chunks):
+        write(f"{name}-train-inputs-{k}.jsonl", c, f"{name}t{k}-")
+    typer.echo(
+        json.dumps(
+            {
+                "raw": len(rows),
+                "kept": len(out),
+                "dev": len(dev_rows),
+                "test": len(test_rows),
+                "train_chunks": [len(c) for c in chunks],
+            }
+        )
+    )
+
+
 @data_app.command("decontaminate")
 def data_decontaminate(
     version: str = typer.Argument(..., help="New train-only version, e.g. v003"),
