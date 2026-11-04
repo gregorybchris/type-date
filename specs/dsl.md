@@ -1,4 +1,4 @@
-# DSL v1
+# DSL v2 (superset of v1)
 
 The model emits one line of text. A deterministic resolver (`packages/core`) turns it into dates. The model never computes calendar dates. Rationale: `specs/research/background/output-format.md`.
 
@@ -71,3 +71,45 @@ Input preprocessing: the model input is the typed text lowercased with whitespac
 - Month and year offsets clamp to the end of the month.
 - Recurrence start: first match on or after today unless `s<DATE>` is given.
 - Time zone: floating wall-clock time. The resolver attaches the user zone.
+
+## v2 additions (adopted 2026-11-03)
+
+v2 is a superset of v1: every v1 line keeps its meaning.
+
+```
+RANGE  := PT '>' PT | PT '>'            open end ("after 2pm")
+        | '>' PT                         open start ("before noon")
+        | PT '>' '+' N ('h'|'m')        duration end ("3pm for 2 hours"); start must have a time
+DATE   += 'D@' DD                        day of month only ("the 15th"); DD is 1-31
+```
+
+| Input | Output | Meaning |
+|---|---|---|
+| after 2pm | `t 14:00>` | from 14:00, no end |
+| before noon | `t >12:00` | until 12:00, no start |
+| after oct 5 | `d 10-05>` | from Oct 5, no end |
+| until friday | `d >fr` | until the next Friday |
+| the 15th | `d D@15` | next 15th on or after today |
+| 3pm for 2 hours | `t 15:00>+2h` | 15:00 to 17:00 |
+| tomorrow 9am for 90 min | `dt +1d 09:00>+90m` | 09:00 to 10:30 |
+
+Rules:
+- `+Nh` and `+Nm` are only valid as the end of a range whose start has a time. N is 1-48 for hours and 1-1440 for minutes. An unknown meridiem start (`3?`) resolves with the usual rule, then the offset is added. An end that passes midnight moves the end date to the next day.
+- Open ranges resolve to an object with one side missing and `open: "start"` or `open: "end"`.
+- `D@DD` resolves to the first date on or after today whose day of month is DD. Months with fewer days are skipped (`D@31` in April gives May 31).
+- Not in v2: week-of, quarters, fuzzy parts of months, last day of the year.
+
+## Label policy decisions (adopted 2026-11-03)
+
+| Class | Decision |
+|---|---|
+| Weekday range alone (`mon-fri`, `monday to friday`) | A date range `mo>fr` (end resolves on or after the start). A recurrence needs a cue: every, each, weekly, daily, weekdays, a limit. |
+| `every 2nd <weekday>`, `every second <weekday>` | Every other week: `R w/2 <wd>`. Monthly nth is written `2nd <weekday> of every month`. |
+| `D Mon NN` (month-name date followed by a bare 2-digit number) | Excluded from eval and training: ambiguous between a year and an hour. With four digits it is a year; with am/pm or a colon it is a time. |
+| `ten to seven`, `five of nine` (minute word, `to` or `of`, then an hour with no am/pm) | A time (`6:50?`, `8:55?`). With am/pm or a colon on either side it is a range. |
+| Start hour before `noon` (`10 to noon`, `9 till noon`) | Start meridiem unknown: `10?>12:00`. |
+| Messages with two times (`depart 9am return 5pm`) | A range only if a cue word joins them (`to`, `until`, `-`, `through`, `return`). Otherwise label the first time. |
+| Several dates in one message | The first date is the label. |
+| Invalid dates | `x`. |
+
+Rows in the first, third, fourth and fifth classes that the old data labels the other way are removed from eval (`policy_flags` in `training/src/typedate/evalsets.py`) and from heuristic training data.
