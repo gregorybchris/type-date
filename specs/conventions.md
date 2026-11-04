@@ -55,3 +55,7 @@ Never block on a long wait. Run long jobs in the background and keep working on 
 ## Experiment method
 
 Decide coarse design questions with controlled one-factor experiments before fine-grained optimization. Time-box each factor. Do not rabbit-hole on one thing (for example mobile latency) while the broad design is open. See `specs/research/design-space.md`.
+
+## Baseline engine naming
+
+One engine file per experiment: `packages/baselines/src/heuristic-full-N.ts` (N = parser generation). Parts of an engine that are split out (for example a lazily loaded module) go in a directory named after the engine, `src/full-N/`, and are not registered as engines. Do not add suffixes such as `-v2` to engine files; "v2" already means DSL v2.
