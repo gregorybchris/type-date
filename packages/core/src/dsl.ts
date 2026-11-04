@@ -16,7 +16,7 @@ function validMonthDay(m: number, d: number): boolean {
 
 /** Forms that name one day. Lists and anchors accept only these. */
 function isSingleDay(d: DateSpec): boolean {
-  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "dom" || d.k === "anc";
+  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "dom" || d.k === "pdom" || d.k === "anc";
 }
 
 export function parseDate(s: string): DateSpec | null {
@@ -65,6 +65,7 @@ export function parseDate(s: string): DateSpec | null {
     return inRange(+m[1]!, 1, 12) ? { k: "mon", month: +m[1]! } : null;
   }
   if ((m = s.match(/^Y@(\d{4})$/))) return { k: "yr", year: +m[1]! };
+  if ((m = s.match(/^D(\d{1,2})@M([+-]\d+)$/))) return inRange(+m[1]!, 1, 31) ? { k: "pdom", d: +m[1]!, n: +m[2]! } : null;
   if ((m = s.match(/^D@(\d{1,2})$/))) return inRange(+m[1]!, 1, 31) ? { k: "dom", d: +m[1]! } : null;
   return null;
 }
@@ -278,6 +279,8 @@ function fmtDate(d: DateSpec): string {
       return `Y@${d.year}`;
     case "dom":
       return `D@${p2(d.d)}`;
+    case "pdom":
+      return `D${p2(d.d)}@M${d.n >= 0 ? "+" : ""}${d.n}`;
   }
 }
 

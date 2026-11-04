@@ -176,6 +176,9 @@ describe("v2 round trips", () => {
     "d D@15",
     "d D@05",
     "d D@31>D@05",
+    "d D13@M-1",
+    "d D05@M+1",
+    "dt D13@M-1 15:00",
     "t 15:00>+2h",
     "t 3?>+30m",
     "t 10:00>+1440m",
@@ -874,5 +877,27 @@ describe("v2 labeling-feedback rules", () => {
     expect(serializeDsl(parseDsl("dt >+0d 21:00"))).toBe("dt >+0d 21:00");
     expect(serializeDsl(parseDsl("d >+0d"))).toBe("d >+0d");
     expect(at("dt >+0d 9?").end).toEqual({ date: "2026-11-03", time: "09:00" });
+  });
+});
+
+describe("day of a relative month (D13@M-1)", () => {
+  const today = "2026-11-04";
+  it("resolves last, this and next month", () => {
+    expect(resolveDsl("d D13@M-1", { today }).start?.date).toBe("2026-10-13");
+    expect(resolveDsl("d D13@M+0", { today }).start?.date).toBe("2026-11-13");
+    expect(resolveDsl("d D01@M+2", { today }).start?.date).toBe("2027-01-01");
+    expect(resolveDsl("d D15@M-11", { today }).start?.date).toBe("2025-12-15");
+  });
+  it("keeps the time", () => {
+    const r = resolveDsl("dt D13@M-1 15:00", { today });
+    expect([r.start?.date, r.start?.time]).toEqual(["2026-10-13", "15:00"]);
+  });
+  it("is invalid when the month lacks the day", () => {
+    expect(resolveDsl("d D31@M-1", { today: "2026-05-04" }).mode).toBe("x"); // April has 30 days
+    expect(resolveDsl("d D31@M-1", { today }).start?.date).toBe("2026-10-31");
+    expect(resolveDsl("d D29@M+3", { today }).mode).toBe("x"); // February 2027
+  });
+  it("normalizes one-digit days", () => {
+    expect(serializeDsl(parseDsl("d D5@M-1")!)).toBe("d D05@M-1");
   });
 });

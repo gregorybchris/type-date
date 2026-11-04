@@ -207,6 +207,14 @@ export function resolveDate(
     }
     case "yr":
       return { start: ymd(spec.year, 1, 1), end: ymd(spec.year, 12, 31) };
+    case "pdom": {
+      // Day d of the month n months from today's month. A day the month lacks (31 in April) is invalid.
+      const [ty, tm] = parts(today);
+      const idx = ty * 12 + (tm - 1) + spec.n;
+      const y = Math.floor(idx / 12);
+      const m = (idx % 12) + 1;
+      return spec.d > daysInMonth(y, m) ? null : single(ymd(y, m, spec.d));
+    }
     case "dom": {
       // Months with fewer days are skipped. 4 years of months always contain a 31st and a leap 29th.
       const [ry, rm] = parts(ref);

@@ -16,7 +16,8 @@ export type DateSpec =
   | { k: "qtr"; q: number } // Q@N: nearest quarter on or after today
   | { k: "anc"; base: DateSpec; n: number; u: OffUnit } // DATE~(+|-)N unit
   | { k: "yr"; year: number }
-  | { k: "dom"; d: number }; // day of month only, 1-31
+  | { k: "dom"; d: number } // day of month only, 1-31
+  | { k: "pdom"; d: number; n: number }; // day d of the month n months from this one (D13@M-1)
 
 /** Known times are 24h. Ambiguous times have an hour 1-12 and no meridiem. */
 export interface TimeSpec {

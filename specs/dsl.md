@@ -19,6 +19,7 @@ DATE   := YYYY-MM-DD                            absolute
         | WD#K@MM                               Kth weekday of month MM. K=-1 is last. Nearest on or after today
         | W(+|-)N | M(+|-)N | Y(+|-)N           whole week / month / year relative to now. Expands to a range
         | M@MM | Y@YYYY                         whole named month (nearest on or after today) / whole year
+        | DDD@M±N                               day DD of the month N months from this one (`D13@M-1` is the 13th of last month). The month lacks the day: `x`
 TIME   := HH:MM                                 24h, known
         | H[:MM]'?'                             hour 1-12, am/pm unknown
 REC    := 'R' ' ' F '/' N [' ' DAYS] [' ' LIMIT] [' ' TIMES] [' ' 's' DATE]
@@ -169,3 +170,7 @@ Canonical order inside a recurrence (serializer output): frequency, days or nth 
 ## Range end that repeats the start date (decided 2026-11-04)
 
 When the text states the end date again, the label writes it: "today 4PM to today 5:15PM" is `dt +0d 16:00>+0d 17:15`. When the text gives only an end time ("mon 4pm to 5pm"), the end omits the date: `dt mo 16:00>17:00`. Both forms resolve to the same dates; the rule only fixes the exact-match string. Three `web4` pool rows were relabeled to follow this. No e7 row is affected.
+
+## Day of a relative month (added 2026-11-04)
+
+`D13@M-1` is the 13th of last month, `D01@M+1` the 1st of next month, `D15@M+0` the 15th of this month. The day is two digits in canonical form; the parser also accepts one digit. If the target month has no such day (`D31@M-1` in May), the line resolves to `x`. Phrases: "13th of last month", "the 15th of next month", "last month on the 3rd", "the 1st of this month". Year offsets ("the 15th of next year") are not covered.
