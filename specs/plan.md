@@ -146,8 +146,9 @@ The staged queue is in `specs/research/design-space.md`. Numbering so far:
 11. exp-011: scratch enc-dec, 6 epochs on 30k rows of v005 (full e2)
 12. exp-012: scratch enc-dec with digit tokens, same budget
 13. exp-013: heuristic-full-3 (span extraction for filler words, uses data/real)
-14-17. exp-014..017: prompt study on Qwen2.5-0.5B-Instruct (fixed, chat, retrieval, retrieval+chat) on e2q
-18+. backbone sweep with the best prompt (SmolLM2 135M/360M, Qwen2.5-1.5B, Qwen3-0.6B, others)
+14. exp-014: heuristic-full-4 (iterate on hard-style dev data `data/real-hard`)
+15-18. exp-015..018: prompt study on Qwen2.5-0.5B-Instruct (fixed, chat, retrieval, retrieval+chat), deferred behind the e3 re-scoring queue
+19+. backbone sweep with the best prompt (SmolLM2 135M/360M, Qwen2.5-1.5B, Qwen3-0.6B, others)
 
 Data and eval versions: eval e1 (first), e2 (cleaned e1 plus realistic test_external). Training sets: v003 (decontaminated vs e1), v004 (policy fixes, vs e2), v005 (v004 plus 725 realistic rows x6). Realistic data: `data/real/{dev,train}.jsonl` (consensus of two independent labelers).
 
