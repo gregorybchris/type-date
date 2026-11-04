@@ -71,3 +71,6 @@ rescore-baselines:  ## Re-score baselines on another eval: make rescore-baseline
 
 results:  ## Results table for an eval version: make results EVAL=e3
 	cd training && uv run td exp table --eval-version $(or $(EVAL),e3)
+
+robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=heuristic-full-5
+	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),heuristic-full-5)

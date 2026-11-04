@@ -1,6 +1,6 @@
 # Task: label what people typed with a date/time DSL
 
-Input file: a JSONL file of strings people typed into a "when?" box ({"id","text"} per line; path in your instructions). For each string write the DSL line that captures its meaning. Read ONLY `specs/dsl.md` in the repository (the DSL definition and examples) and this file. Do not read anything else in the repository, and do not look at any predictions from other systems. Do not write a script that guesses labels: decide each one yourself.
+Input file: a JSONL file of strings people typed into a "when?" box ({"id","text"} per line; path in your instructions). For each string write the DSL line that captures its meaning. Read ONLY `specs/dsl.md` in the repository (the DSL definition, the v2 additions section, and the label policy decisions section: they override anything above them) and this file. Do not read anything else in the repository, and do not look at any predictions from other systems. Do not write a script that guesses labels: decide each one yourself.
 
 Policy (follow exactly, these decide ambiguous cases):
 - Month/day order is US: 10/2 is October 2.
@@ -17,6 +17,10 @@ Policy (follow exactly, these decide ambiguous cases):
 - Seconds in a time are ignored ("10:00:00" -> `10:00`).
 - Relative offsets: "2 days later", "3 weeks hence", "in 2 yrs", "next day" (= tomorrow) are future offsets (`+2d`, `+3w`, `+2y`, `+1d`); "ago", "before", "last night" are past. "a week before yesterday" -> `-8d`; "2 day after tomorrow" -> `+3d`. Use d, w, m, y units only; minutes, hours and seconds offsets -> `x` with unsure true.
 - Numbers that are not dates or times ("I'm at 10", "room 12", "101 points", "$10.99", "version 2.5") -> `x`.
+- DSL v2: "after 2pm" -> `t 14:00>`; "before noon" -> `t >12:00`; "after oct 5" -> `d 10-05>`; "until friday" -> `d >fr`; "the 15th" -> `d D@15`; "3pm for 2 hours" -> `t 15:00>+2h`; "tomorrow 9am for 90 min" -> `dt +1d 09:00>+90m`. Use them whenever the text means exactly that. If the duration or open range has no time to anchor it ("for 2 hours" alone), write `x` and set unsure true.
+- Weekday range alone ("mon-fri", "monday to friday") -> `d mo>fr` (a range). A recurrence needs a cue like every, each, weekly, daily, weekdays, until or for.
+- "every 2nd wed" -> `R w/2 we`. "ten to seven" (minute word, then to or of, then an hour, with no am/pm) -> `t 6:50?`.
+- A month-name date followed by a bare two-digit number ("5 Nov 18", "oct 2 15") is ambiguous: write `x` and set unsure true.
 - If the text has no clear single meaning in the DSL, write `x` and add a field "unsure": true.
 
 Check your work: put your output file in its own empty directory and run

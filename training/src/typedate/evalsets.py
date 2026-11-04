@@ -174,6 +174,31 @@ _WD_START = re.compile(
 )
 
 
+_MON = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?"
+_WDN = r"(?:mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)[a-z]*\.?"
+_WD_RANGE = re.compile(rf"^\W*{_WDN}\s*(?:-|–|to|through|thru|till|until)\s*{_WDN}\W*$", re.I)
+_BARE_TAIL = re.compile(
+    rf"\b{_MON}\s+\d{{1,2}}(?:st|nd|rd|th)?,?\s+\d{{2}}\b(?![\d:]|\s*[ap]\.?m)"
+    rf"|\b\d{{1,2}}(?:st|nd|rd|th)?\s+{_MON},?\s+\d{{2}}\b(?![\d:]|\s*[ap]\.?m)",
+    re.I,
+)
+_MIN_TO = re.compile(
+    r"\b(?:five|ten|quarter|twenty|twenty[ -]five)\s+(?:to|of|till|before)\s+"
+    r"(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d{1,2})\b",
+    re.I,
+)
+_EVERY_NTH = re.compile(rf"\bevery\s+(?:\d+(?:st|nd|rd|th)|second|third|fourth)\s+{_WDN}", re.I)
+_TO_NOON = re.compile(r"\b\d{1,2}(?::\d{2})?\s*(?:to|till|until|-|–)\s*noon\b", re.I)
+_V2_OPEN = re.compile(
+    r"\b(?:after|before|by|since|no later than|not before)\s+(?:\d|noon|midnight|mid-?day)", re.I
+)
+_V2_DURATION = re.compile(
+    r"\bfor\s+(?:an?|\d+|one|two|three|four|five|six|half)\s*(?:h|hr|hrs|hours?|mins?|minutes?)\b",
+    re.I,
+)
+_V2_DOM = re.compile(r"^\W*(?:on\s+)?(?:the\s+)?\d{1,2}(?:st|nd|rd|th)\W*$", re.I)
+
+
 def policy_flags(row: dict) -> list[str]:
     """Label-policy classes in which the text does not determine the label (see exp-009 note)."""
     t, d = row["text"].lower(), row["dsl"]
@@ -193,6 +218,18 @@ def policy_flags(row: dict) -> list[str]:
         flags.append("on-weekday-recurrence")
     if re.search(r"(?<!\d)\d{1,2}\.\d{2}(?!\d)", row["text"]):
         flags.append("dotted-numeric")
+    if d.startswith(("d R", "dt R")) and _WD_RANGE.match(t):
+        flags.append("weekday-range-vs-recurrence")
+    if _BARE_TAIL.search(row["text"]):
+        flags.append("bare-number-after-month-date")
+    if _MIN_TO.search(t) and not _MER.search(t) and ":" not in t:
+        flags.append("minute-word-to-hour")
+    if "#" in d and _EVERY_NTH.search(t) and " of " not in t:
+        flags.append("every-nth-weekday")
+    if _TO_NOON.search(t) and re.search(r"(?<!\?)\b\d{2}:\d{2}>", d):
+        flags.append("start-hour-before-noon")
+    if _V2_OPEN.search(t) or _V2_DURATION.search(t) or _V2_DOM.match(row["text"]):
+        flags.append("v2-feature")
     return flags
 
 
