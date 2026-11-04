@@ -113,13 +113,14 @@ def train_run(
     batch_size: int = typer.Option(128),
     lr: float = typer.Option(1e-3),
     max_train: int = typer.Option(0, help="Limit train rows (0 = all)"),
+    digit_split: bool = typer.Option(False, help="Tokenize digits one by one"),
     notes: str = typer.Option(""),
 ) -> None:
     """Train from scratch, evaluate, and write runs/exp-NNN/."""
     from .train import TrainConfig, run
 
     cfg = TrainConfig(exp, title, dataset, d_model, d_ff, heads, enc_layers, dec_layers, vocab,
-                      epochs, batch_size, lr, 0, notes, max_train)  # fmt: skip
+                      epochs, batch_size, lr, 0, notes, max_train, digit_split)  # fmt: skip
     res = run(cfg)
     ev = res["metrics"]["eval"]
     typer.echo(f"exp-{exp:03d} exact={ev['exact']:.4f} resolved={ev['resolved']:.4f}")

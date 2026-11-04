@@ -12,7 +12,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 import torch
-from tokenizers import Tokenizer, decoders, models, normalizers, pre_tokenizers, trainers
+from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
 from transformers import PreTrainedTokenizerFast, T5Config, T5ForConditionalGeneration
 
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
@@ -39,6 +39,7 @@ class TrainConfig:
     seed: int = 0
     notes: str = ""
     max_train: int = 0  # 0 = all
+    digit_split: bool = False
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -51,15 +52,20 @@ def norm_in(text: str) -> str:
     return " ".join(text.lower().split())
 
 
-def build_tokenizer(rows: list[dict], vocab: int) -> PreTrainedTokenizerFast:
+def build_tokenizer(
+    rows: list[dict], vocab: int, digit_split: bool = False
+) -> PreTrainedTokenizerFast:
     tok = Tokenizer(models.BPE(unk_token="<unk>"))
-    tok.normalizer = normalizers.Sequence([normalizers.Lowercase()])
-    tok.pre_tokenizer = pre_tokenizers.Metaspace(replacement="▁", prepend_scheme="never")
+    # No normalizer: input is lowercased by `norm_in`, and the DSL needs its uppercase letters.
+    pre = [pre_tokenizers.Metaspace(replacement="▁", prepend_scheme="never")]
+    if digit_split:
+        pre.append(pre_tokenizers.Digits(individual_digits=True))
+    tok.pre_tokenizer = pre_tokenizers.Sequence(pre)
     tok.decoder = decoders.Metaspace(replacement="▁", prepend_scheme="never")
     trainer = trainers.BpeTrainer(
         vocab_size=vocab,
         special_tokens=["<pad>", "</s>", "<unk>"],
-        initial_alphabet=list("abcdefghijklmnopqrstuvwxyz0123456789 -+/#@?:,.<>"),
+        initial_alphabet=list("abcdefghijklmnopqrstuvwxyz0123456789 -+/#@?:,.<>RWMY"),
         show_progress=False,
     )
 
@@ -226,7 +232,7 @@ def run(cfg: TrainConfig) -> dict:
     if cfg.max_train:
         random.shuffle(train_rows)
         train_rows = train_rows[: cfg.max_train]
-    tok = build_tokenizer(train_rows, cfg.vocab)
+    tok = build_tokenizer(train_rows, cfg.vocab, cfg.digit_split)
     model = make_model(cfg, len(tok)).to(device)
     n_params = sum(p.numel() for p in model.parameters())
     data_enc = encode_rows(tok, train_rows)
@@ -291,6 +297,7 @@ def run(cfg: TrainConfig) -> dict:
             "d_model": cfg.d_model,
             "layers": f"{cfg.enc_layers}+{cfg.dec_layers}",
             "vocab": len(tok),
+            "digit_split": cfg.digit_split,
         },
         "train": {
             "epochs": cfg.epochs,
