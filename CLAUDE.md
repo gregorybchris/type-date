@@ -66,6 +66,7 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - A typer app with one command collapses it into the root command. Add an `@app.callback()` or a second command.
 - Never stall. Do not block on a wait loop longer than about 30 seconds. Start long jobs in the background (nohup scripts or `run_in_background`), do other useful work, and check status with quick non-blocking commands. Long blocking waits made the user cancel a session.
 - Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
+- Memory: this machine is shared with other apps and swap fills up (a SmolLM2-135M fine-tune grew to 13GB and stalled everything). Check `sysctl vm.swapusage` and `top -o mem` before launching a job. Keep MPS jobs small: fixed padding lengths, `torch.mps.empty_cache()` every few dozen steps, `PYTORCH_MPS_HIGH_WATERMARK_RATIO`. Never kill processes you did not start.
 - Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
 - WebGPU with the int8 ONNX model gave 0% accuracy and 1.5 s latency (exp-004). Use fp32 or fp16 for WebGPU.
 - Dev servers: the user watches ports 5173 (dashboard) and 5199 (picker demo). Never start, stop, or kill servers on those ports except with `make serve*`. Agents that need a server for screenshots use other ports (5300+). Servers started from a tool call die when the session cleans up (exit 143); `scripts/serve.sh` runs them under nohup with a restart loop.
