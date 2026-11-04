@@ -1,0 +1,70 @@
+[
+ {
+  "engine": "ort-custom",
+  "backend": "wasm",
+  "browser": "chromium",
+  "load_ms": 558,
+  "cold_first_ms": 28,
+  "latency_ms": {
+   "p50": 8,
+   "p95": 12.8,
+   "p99": 18.4
+  },
+  "tokens_per_s": 1375,
+  "memory_mb": 74,
+  "download_bytes": 16304489,
+  "n": 200,
+  "browser_accuracy": 0.8051
+ },
+ {
+  "engine": "ort-custom",
+  "backend": "webgpu",
+  "browser": "chromium",
+  "load_ms": 374,
+  "cold_first_ms": 15,
+  "latency_ms": {
+   "p50": 4.2,
+   "p95": 6.7,
+   "p99": 9.7
+  },
+  "tokens_per_s": 2619,
+  "memory_mb": 94,
+  "download_bytes": 16304489,
+  "n": 200,
+  "browser_accuracy": 0.7989
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "wasm",
+  "browser": "chromium",
+  "load_ms": 843,
+  "cold_first_ms": 44,
+  "latency_ms": {
+   "p50": 12.6,
+   "p95": 20.2,
+   "p99": 29
+  },
+  "tokens_per_s": 873,
+  "memory_mb": 90,
+  "download_bytes": 16304489,
+  "n": 200,
+  "browser_accuracy": 0.8068
+ },
+ {
+  "engine": "transformers-js",
+  "backend": "webgpu",
+  "browser": "chromium",
+  "load_ms": 517,
+  "cold_first_ms": 25,
+  "latency_ms": {
+   "p50": 7.2,
+   "p95": 11.5,
+   "p99": 16.6
+  },
+  "tokens_per_s": 1528,
+  "memory_mb": 109,
+  "download_bytes": 16304489,
+  "n": 200,
+  "browser_accuracy": 0.8012
+ }
+]

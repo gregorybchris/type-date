@@ -1,0 +1,1000 @@
+{"id":"n-002600","text":"in 5 wees","dsl":"d +5w","primary_tag":"relative-offset","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002601","text":"october 19","dsl":"d 10-19","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002602","text":"aug 6-9","dsl":"d 08-06>08-09","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002603","text":"25","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002604","text":"xmsa eve","dsl":"d 12-24","primary_tag":"named-holiday","modifier_tags":["colloquial","typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002605","text":"8/21/26","dsl":"d 2026-08-21","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002606","text":"saturday","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002607","text":"february","dsl":"d M@02","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002608","text":"sat","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002609","text":"tomorrow 7:5pm","dsl":"dt +1d 19:15","primary_tag":"datetime","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002610","text":"last week","dsl":"d W-1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002611","text":"thursday 3-5pm","dsl":"dt th 15:00>17:00","primary_tag":"datetime-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002612","text":"dec 26","dsl":"d 12-26","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002613","text":"third monday of february","dsl":"d mo#3@02","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002614","text":"dec 18","dsl":"d 12-18","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002615","text":"every friday","dsl":"d R w/1 fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002616","text":"third sunday of december","dsl":"d su#3@12","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002617","text":"The 18th Of July","dsl":"d 07-18","primary_tag":"ordinal-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002618","text":"The 4th Of January","dsl":"d 01-04","primary_tag":"ordinal-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002619","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002620","text":"2 to 2:30","dsl":"t 2?>2:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002621","text":"10/18/27","dsl":"d 2027-10-18","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002622","text":"jul 51","dsl":"d 07-15","primary_tag":"basic-date","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002623","text":"sun","dsl":"d su","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002624","text":"Next Month","dsl":"d M+1","primary_tag":"period-relative","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002625","text":"may 27","dsl":"d 05-27","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002626","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002627","text":"9 to 9:30","dsl":"t 9?>9:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002628","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002629","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002630","text":"second tuesday of september","dsl":"d tu#2@09","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002631","text":"friday","dsl":"d fr","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002632","text":"room 4b","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002633","text":"mar 16-18","dsl":"d 03-16>03-18","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002634","text":"sep 10 3pm to sep 13 noon","dsl":"dt 09-10 15:00>09-13 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002635","text":"romo 4b","dsl":"x","primary_tag":"non-date-noise","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002636","text":"oct 12-14","dsl":"d 10-12>10-14","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"p-002637","text":"jul 7 t","dsl":"d 07-07","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"n-002638","text":"LAST WEDNESDAY OF MARCH","dsl":"d we#-1@03","primary_tag":"nth-weekday-of-month","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002639","text":"jan 25 3pmtojan 28 noon","dsl":"dt 01-25 15:00>01-28 12:00","primary_tag":"datetime-range","modifier_tags":["spacing"],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002640","text":"mar 13, 2026","dsl":"d 2026-03-13","primary_tag":"basic-date-year","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002641","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002642","text":"can we do tuesda 12-2pm please","dsl":"dt tu 12:00>14:00","primary_tag":"datetime-range","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002643","text":"next week","dsl":"d W+1","primary_tag":"period-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002644","text":"march","dsl":"d M@03","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002645","text":"4 months ago","dsl":"d -4m","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002646","text":"SEPTEMBER","dsl":"d M@09","primary_tag":"month-or-year-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002647","text":"jul 14 at 8pm","dsl":"dt 07-14 20:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002648","text":"3 months ago","dsl":"d -3m","primary_tag":"relative-offset","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002649","text":"new years eve","dsl":"d 12-31","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002650","text":"april 20 until april 21","dsl":"d 04-20>04-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002651","text":"july","dsl":"d M@07","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002652","text":"15:15","dsl":"t 15:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002653","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002654","text":"maybe today or so","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002655","text":"dec 2 4- january 14","dsl":"d 12-24>01-14","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002656","text":"tomorrow 11:15am","dsl":"dt +1d 11:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002657","text":"THIS WEEK","dsl":"d W+0","primary_tag":"period-relative","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002658","text":"monthly on the 23rd","dsl":"d R m/1 d23","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002659","text":"monthly on the 18th","dsl":"d R m/1 d18","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002660","text":"evety day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":["typo-keyboard"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002661","text":"mar 11","dsl":"d 03-11","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002662","text":"this thursday","dsl":"d th","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002663","text":"every saturfay","dsl":"d R w/1 sa","primary_tag":"recurrence-weekly","modifier_tags":["typo-keyboard"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002664","text":"3/21/27","dsl":"d 2027-03-21","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002665","text":"like every tuesday or so","dsl":"d R w/1 tu","primary_tag":"recurrence-weekly","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002666","text":"february 14","dsl":"d 02-14","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002667","text":"mar 2","dsl":"d 03-02","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002668","text":"every other thursday","dsl":"d R w/2 th","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002669","text":"buy milk","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002670","text":"maybe last weke please","dsl":"d W-1","primary_tag":"period-relative","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002671","text":"sep 13 3pm to sep 16 noon","dsl":"dt 09-13 15:00>09-16 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002672","text":"mar 16-apr 12","dsl":"d 03-16>04-12","primary_tag":"basic-date-range","modifier_tags":["spacing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002673","text":"mar 9 at 5pm","dsl":"dt 03-09 17:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002674","text":"asdf","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002675","text":"9/15/27","dsl":"d 2027-09-15","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002676","text":"Noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002677","text":"tody","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002678","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002679","text":"last sunday ofmay","dsl":"d su#-1@05","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002680","text":"2pm-5pm","dsl":"t 14:00>17:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002681","text":"eveery day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002682","text":"third friday of june","dsl":"d fr#3@06","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002683","text":"next week","dsl":"d W+1","primary_tag":"period-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002684","text":"at 9","dsl":"t 9?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-002685","text":"jan 17 t","dsl":"d 01-17","primary_tag":"basic-date-range","modifier_tags":["typo","partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"g-002686","text":"dec 23, 2027","dsl":"d 2027-12-23","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002687","text":"jun 7 - june 9","dsl":"d 06-07>06-09","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002688","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002689","text":"daily for 10 days","dsl":"d R d/1 n10","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002690","text":"monday","dsl":"d mo","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002691","text":"8:15am","dsl":"t 08:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002692","text":"the 1st of january","dsl":"d 01-01","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002693","text":"saturday","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002694","text":"7am-10am","dsl":"t 07:00>10:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-002695","text":"dec 13 t","dsl":"d 12-13","primary_tag":"basic-date-range","modifier_tags":["typo-keyboard","partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"l-002696","text":"9:15pm","dsl":"t 21:15","primary_tag":"time-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002697","text":"jun 23","dsl":"d 06-23","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002698","text":"aug1 0 until aug 13","dsl":"d 08-10>08-13","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002699","text":"2 month ago","dsl":"d -2m","primary_tag":"relative-offset","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002700","text":"tomorrow 6:15pm","dsl":"dt +1d 18:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002701","text":"10m-1pm","dsl":"t 10:00>13:00","primary_tag":"time-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002702","text":"nov 21 3pm to nov 24 noon","dsl":"dt 11-21 15:00>11-24 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002703","text":"Every Other Tuesday","dsl":"d R w/2 tu","primary_tag":"recurrence-interval","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002704","text":"july 1 - jul 2","dsl":"d 07-01>07-02","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002705","text":"daily for 9 days","dsl":"d R d/1 n9","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002706","text":"lets say daily for 5 days","dsl":"d R d/1 n5","primary_tag":"recurrence-bounded","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002707","text":"2026","dsl":"d Y@2026","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002708","text":"thursday","dsl":"d th","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002709","text":"oct 27","dsl":"d 10-27","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002710","text":"sunday 1-3pm","dsl":"dt su 13:00>15:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002711","text":"6:15pm","dsl":"t 18:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-002712","text":"june 15 t","dsl":"d 06-15","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"n-002713","text":"maybe APR 14 AT 2PM","dsl":"dt 04-14 14:00","primary_tag":"datetime","modifier_tags":["casing","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002714","text":"last monday","dsl":"d mo-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002715","text":"next monday","dsl":"d mo+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002716","text":"APRIL 3 UNTIL MAY 23","dsl":"d 04-03>05-23","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002717","text":"jul 10 - jul 11","dsl":"d 07-10>07-11","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002718","text":"lets say oct 21 3pm to oct 24 noon or so","dsl":"dt 10-21 15:00>10-24 12:00","primary_tag":"datetime-range","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002719","text":"thanksgiving","dsl":"d th#4@11","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002720","text":"oct 20-22","dsl":"d 10-20>10-22","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002721","text":"like march 7","dsl":"d 03-07","primary_tag":"basic-date","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002722","text":"Every Other Friday","dsl":"d R w/2 fr","primary_tag":"recurrence-interval","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002723","text":"friday","dsl":"d fr","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002724","text":"jun 18 at 4pm","dsl":"dt 06-18 16:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002725","text":"friday 2-4mp","dsl":"dt fr 14:00>16:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002726","text":"jul 3-4","dsl":"d 07-03>07-04","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002727","text":"in five days","dsl":"d +5d","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-002728","text":"april 21 t","dsl":"d 04-21","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"g-002729","text":"1 adult","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002730","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002731","text":"MON WED FRI","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002732","text":"like nov 21-22","dsl":"d 11-21>11-22","primary_tag":"date-range-shared-month","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002733","text":"july","dsl":"d M@07","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002734","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002735","text":"jul 4 at 3pm","dsl":"dt 07-04 15:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002736","text":"the 11th of september","dsl":"d 09-11","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-002737","text":"jul 4 t","dsl":"d 07-04","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"g-002738","text":"tomorrow 12:15pm","dsl":"dt +1d 12:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002739","text":"april 11","dsl":"d 04-11","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002740","text":"can we do tomorrow 4:15pm please","dsl":"dt +1d 16:15","primary_tag":"datetime","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002741","text":"every weekday","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002742","text":"Yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002743","text":"21:15","dsl":"t 21:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002744","text":"jul 22 at 6pm","dsl":"dt 07-22 18:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002745","text":"the 3rd of august","dsl":"d 08-03","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002746","text":"Tomorrow 3:15pm","dsl":"dt +1d 15:15","primary_tag":"datetime","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002747","text":"the 24th of june","dsl":"d 06-24","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002748","text":"tuesday","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002749","text":"feb 22 at 2pm","dsl":"dt 02-22 14:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002750","text":"monday 9-11am","dsl":"dt mo 09:00>11:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002751","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002752","text":"thanksgiving","dsl":"d th#4@11","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002753","text":"september 18, 2026","dsl":"d 2026-09-18","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002754","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002755","text":"day after tomrorow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002756","text":"every weekday","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002757","text":"december 4, 2028","dsl":"d 2028-12-04","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002758","text":"november 21, 2028","dsl":"d 2028-11-21","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002759","text":"25","dsl":"x","primary_tag":"non-date-noise","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002760","text":"lets say september 11 until september 13 or so","dsl":"d 09-11>09-13","primary_tag":"basic-date-range","modifier_tags":["filler-words","long-input"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002761","text":"8am","dsl":"t 08:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002762","text":"march 9 until march 11","dsl":"d 03-09>03-11","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002763","text":"FEBRUARY 7 TO FEB 8","dsl":"d 02-07>02-08","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002764","text":"lets say last monday","dsl":"d mo-1","primary_tag":"weekday-relative","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002765","text":"maybe sep 17-220 please","dsl":"d 09-17>09-20","primary_tag":"date-range-shared-month","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002766","text":"sep 14 3pm to sep 17 noon","dsl":"dt 09-14 15:00>09-17 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002767","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002768","text":"march 18 until apr 3","dsl":"d 03-18>04-03","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"p-002769","text":"oct 18-oct 20 t","dsl":"d 10-18","primary_tag":"basic-date-range","modifier_tags":["spacing","partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"g-002770","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002771","text":"dec 28 at 9am","dsl":"dt 12-28 09:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002772","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002773","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002774","text":"daily at 7am","dsl":"dt R d/1 07:00","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002775","text":"wednesday 11-1pm","dsl":"dt we 11:00>13:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002776","text":"may 9, 2027","dsl":"d 2027-05-09","primary_tag":"basic-date-year","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002777","text":"april 3 to may 22","dsl":"d 04-03>05-22","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002778","text":"9:0pm","dsl":"t 21:30","primary_tag":"time-only","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002779","text":"11am-2pm","dsl":"t 11:00>14:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002780","text":"10:00","dsl":"t 10:00","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002781","text":"oct 11","dsl":"d 10-11","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002782","text":"thursday 2-4pm","dsl":"dt th 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002783","text":"next month","dsl":"d M+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002784","text":"december 21, 2028","dsl":"d 2028-12-21","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002785","text":"the 14th of august","dsl":"d 08-14","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002786","text":"2pm","dsl":"t 14:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002787","text":"third wednesday of december","dsl":"d we#3@12","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002788","text":"nv 3","dsl":"d 11-03","primary_tag":"basic-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002789","text":"10am-12pm","dsl":"t 10:00>12:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002790","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002791","text":"10/4/26","dsl":"d 2026-10-04","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002792","text":"dec 12 at 6pm","dsl":"dt 12-12 18:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002793","text":"next thursday","dsl":"d th+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002794","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002795","text":"wednesdsy 10-12pm","dsl":"dt we 10:00>12:00","primary_tag":"datetime-range","modifier_tags":["typo-keyboard"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002796","text":"nov 9 3pm to nov 12 noon","dsl":"dt 11-09 15:00>11-12 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002797","text":"saturday 11-1pm","dsl":"dt sa 11:00>13:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002798","text":"tomorrow 3:15pm","dsl":"dt +1d 15:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002799","text":"april 13 until may 21","dsl":"d 04-13>05-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002800","text":"every weekday at 9","dsl":"dt R d/1 mo,tu,we,th,fr 9?","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002801","text":"EVERY THURSDAY","dsl":"d R w/1 th","primary_tag":"recurrence-weekly","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002802","text":"the 19th of january","dsl":"d 01-19","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002803","text":"oct 8-11","dsl":"d 10-08>10-11","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002804","text":"in 6 weeks","dsl":"d +6w","primary_tag":"relative-offset","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002805","text":"Mar 13, 2026","dsl":"d 2026-03-13","primary_tag":"basic-date-year","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002806","text":"at 1","dsl":"t 1?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002807","text":"apr 17 - may 20","dsl":"d 04-17>05-20","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002808","text":"evvery weekday","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002809","text":"every 4 weeks","dsl":"d R w/3","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002810","text":"day after tomorow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002811","text":"10am-12pm","dsl":"t 10:00>12:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002812","text":"11am-1pm","dsl":"t 11:00>13:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002813","text":"at 8","dsl":"t 8?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002814","text":"sep 11 3pm to sep 14 noon","dsl":"dt 09-11 15:00>09-14 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002815","text":"ju l16 - july 17","dsl":"d 07-16>07-17","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002816","text":"every tuesday","dsl":"d R w/1 tu","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002817","text":"feb 1 at 1pm","dsl":"dt 02-01 13:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002818","text":"last saturday of april","dsl":"d sa#-1@04","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002819","text":"monday","dsl":"d mo","primary_tag":"weekday-bare","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002820","text":"last tuesday","dsl":"d tu-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002821","text":"sunday 10-12pm","dsl":"dt su 10:00>12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002822","text":"next saturday","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002823","text":"9am-10am","dsl":"t 09:00>10:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002824","text":"1 to 1:30","dsl":"t 1?>1:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002825","text":"dec 20","dsl":"d 12-20","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002826","text":"NEXT WEDNESDAY","dsl":"d we+1","primary_tag":"weekday-relative","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002827","text":"every tuesday until dec 16","dsl":"d R w/1 tu u12-16","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002828","text":"like last tuesday of july please","dsl":"d tu#-1@07","primary_tag":"nth-weekday-of-month","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002829","text":"thurs","dsl":"d th","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002830","text":"second friday of february","dsl":"d fr#2@02","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002831","text":"3pm","dsl":"t 15:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002832","text":"apr 1-15","dsl":"d 04-12>04-15","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002833","text":"can we do 1pm-3pm or so","dsl":"t 13:00>15:00","primary_tag":"time-range","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002834","text":"every other monday","dsl":"d R w/2 mo","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002835","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002836","text":"8/8/28","dsl":"d 2028-08-08","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002837","text":"friday evening","dsl":"dt fr 18:00>22:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002838","text":"the 25th of march","dsl":"d 03-25","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002839","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002840","text":"TOMRROW 1:15PM","dsl":"dt +1d 13:15","primary_tag":"datetime","modifier_tags":["typo","casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002841","text":"maybe yesterday please","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002842","text":"everyy day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002843","text":"4/6/28","dsl":"d 2028-04-06","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002844","text":"march 16","dsl":"d 03-16","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002845","text":"10am-11am","dsl":"t 10:00>11:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002846","text":"the 5th of july","dsl":"d 07-05","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002847","text":"4 months ago","dsl":"d -4m","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002848","text":"first friday of november","dsl":"d fr#1@11","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002849","text":"three months ago","dsl":"d -3m","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-002850","text":"dec 24 t","dsl":"d 12-24","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"p-002851","text":"march 3 t","dsl":"d 03-03","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"n-002852","text":"maybe second saturday of october or so","dsl":"d sa#2@10","primary_tag":"nth-weekday-of-month","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002853","text":"fri","dsl":"d fr","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002854","text":"every sunday","dsl":"d R w/1 su","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002855","text":"wed","dsl":"d we","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002856","text":"11:30am","dsl":"t 11:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002857","text":"last tuesday","dsl":"d tu-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002858","text":"3pm","dsl":"t 15:00","primary_tag":"time-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002859","text":"may 8","dsl":"d 05-18","primary_tag":"basic-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002860","text":"the 25th of january","dsl":"d 01-25","primary_tag":"ordinal-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002861","text":"may 13 to may 16","dsl":"d 05-13>05-16","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002862","text":"like noon or so","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002863","text":"lst tuesday","dsl":"d tu-1","primary_tag":"weekday-relative","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002864","text":"jun 6 3pm to jun 9 noon","dsl":"dt 06-06 15:00>06-09 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002865","text":"APR 7","dsl":"d 04-07","primary_tag":"basic-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002866","text":"tomorrow 11:15am","dsl":"dt +1d 11:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002867","text":"thurs","dsl":"d th","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002868","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002869","text":"tuesday 2-4pm","dsl":"dt tu 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002870","text":"monthly on the 2nd","dsl":"d R m/1 d2","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002871","text":"daily at 7am","dsl":"dt R d/1 07:00","primary_tag":"recurrence-daily","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002872","text":"wednesday","dsl":"d we","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002873","text":"next week","dsl":"d W+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002874","text":"mon","dsl":"d mo","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002875","text":"the 4th of january","dsl":"d 01-04","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002876","text":"apr 2-25","dsl":"d 04-23>04-25","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002877","text":"3 months ago","dsl":"d -3m","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002878","text":"maybe march 21 please","dsl":"d 03-21","primary_tag":"basic-date","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002879","text":"wednesday 11-1pm","dsl":"dt we 11:00>13:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002880","text":"valentines day","dsl":"d 02-14","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002881","text":"mar 8-11","dsl":"d 03-08>03-11","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002882","text":"april 10, 2026","dsl":"d 2026-04-10","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002883","text":"12pm-3pm","dsl":"t 12:00>15:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002884","text":"first wednesday of every month","dsl":"d R m/1 we#1","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002885","text":"5 wks ago","dsl":"d -5w","primary_tag":"relative-offset","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002886","text":"every 3 weeks","dsl":"d R w/4","primary_tag":"recurrence-interval","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002887","text":"this sunday","dsl":"d su","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002888","text":"11am-2pm","dsl":"t 11:00>14:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002889","text":"7am-8am","dsl":"t 07:00>08:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002890","text":"everry 4 weeks","dsl":"d R w/3","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002891","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002892","text":"DEC 6T O DEC 7","dsl":"d 12-06>12-07","primary_tag":"basic-date-range","modifier_tags":["typo","casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002893","text":"nov 19 to nov 20","dsl":"d 11-19>11-20","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002894","text":"every weekday at 9","dsl":"dt R d/1 mo,tu,we,th,fr 9?","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002895","text":"Feb 11 Until Mar 10","dsl":"d 02-11>03-10","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002896","text":"2pm-5pm","dsl":"t 14:00>17:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002897","text":"jul 22","dsl":"d 07-22","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002898","text":"Sep 23","dsl":"d 09-23","primary_tag":"basic-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002899","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002900","text":"every 4 weks","dsl":"d R w/3","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002901","text":"can we do next wednesday or so","dsl":"d we+1","primary_tag":"weekday-relative","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002902","text":"everry sunday","dsl":"d R w/1 su","primary_tag":"recurrence-weekly","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002903","text":"feb 24 3pm to feb 27 noon","dsl":"dt 02-24 15:00>02-27 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002904","text":"nov 8","dsl":"d 11-08","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002905","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002906","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002907","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002908","text":"toay","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002909","text":"maybe meeting notes please","dsl":"x","primary_tag":"non-date-noise","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002910","text":"july 10","dsl":"d 07-10","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002911","text":"this monday","dsl":"d mo","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002912","text":"every other wednesday","dsl":"d R w/2 we","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002913","text":"this thurs","dsl":"d th","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002914","text":"every 4 weeks","dsl":"d R w/3","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002915","text":"sunday","dsl":"d su","primary_tag":"weekday-bare","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002916","text":"SEP 6, 2027","dsl":"d 2027-09-06","primary_tag":"basic-date-year","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002917","text":"may 6 at 5pm","dsl":"dt 05-06 17:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002918","text":"tomorrow morning","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002919","text":"daily for 3 days","dsl":"d R d/1 n3","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002920","text":"every other tuesday","dsl":"d R w/2 tu","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002921","text":"every other wednesday","dsl":"d R w/2 we","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002922","text":"thursday 2-4pm","dsl":"dt th 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002923","text":"next month","dsl":"d M+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002924","text":"this week","dsl":"d W+0","primary_tag":"period-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002925","text":"Yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002926","text":"the 5th of march","dsl":"d 03-05","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002927","text":"every 3 weeks","dsl":"d R w/4","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002928","text":"may 13 - may 16","dsl":"d 05-13>05-16","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002929","text":"JAN 10 - FEB 16","dsl":"d 01-10>02-16","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002930","text":"may 16","dsl":"d 05-16","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002931","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002932","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002933","text":"wednesday","dsl":"d we","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002934","text":"sep 16 3pm to sep 19 noon","dsl":"dt 09-16 15:00>09-19 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002935","text":"april 15","dsl":"d 04-15","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002936","text":"december 5","dsl":"d 12-05","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002937","text":"4/12/227","dsl":"d 2027-04-12","primary_tag":"numeric-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002938","text":"aug 9  sep 9","dsl":"d 08-09>09-09","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002939","text":"wednesday","dsl":"d we","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002940","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002941","text":"daily at 7am","dsl":"dt R d/1 07:00","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002942","text":"YESTERDAY","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002943","text":"july 18 until july 19","dsl":"d 07-18>07-19","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002944","text":"tomorrow 6:15pm","dsl":"dt +1d 18:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002945","text":"november 4, 2026","dsl":"d 2026-11-04","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002946","text":"mar 20 3pm to mar 23 noon","dsl":"dt 03-20 15:00>03-23 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002947","text":"apr 22","dsl":"d 04-22","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002948","text":"8:15am","dsl":"t 08:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002949","text":"may 19 3pm to may 22 noon","dsl":"dt 05-19 15:00>05-22 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002950","text":"the 14th of jsnuary","dsl":"d 01-14","primary_tag":"ordinal-date","modifier_tags":["typo-keyboard"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002951","text":"every friday uuntil jun 26","dsl":"d R w/1 fr u06-26","primary_tag":"recurrence-bounded","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002952","text":"tomorrow 3:15pm","dsl":"dt +1d 15:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002953","text":"november 14 to december 21","dsl":"d 11-14>12-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002954","text":"July 9 - July 12","dsl":"d 07-09>07-12","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002955","text":"JUL 2 AT 4PM","dsl":"dt 07-02 16:00","primary_tag":"datetime","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002956","text":"this monday","dsl":"d mo","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002957","text":"AUG 28","dsl":"d 08-28","primary_tag":"basic-date","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002958","text":"dec 1-3","dsl":"d 12-01>12-03","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002959","text":"jan 41-17","dsl":"d 01-14>01-17","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002960","text":"next week","dsl":"d W+1","primary_tag":"period-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-002961","text":"AT 10","dsl":"t 10?","primary_tag":"ampm-ambiguous","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002962","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002963","text":"5pm","dsl":"t 17:00","primary_tag":"time-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002964","text":"9/26/27","dsl":"d 2027-09-26","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002965","text":"EVERY OTHER FRIDAY","dsl":"d R w/2 fr","primary_tag":"recurrence-interval","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002966","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002967","text":"lets say today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"p-002968","text":"mar 21 t","dsl":"d 03-21","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"n-002969","text":"augustt 10, 2028","dsl":"d 2028-08-10","primary_tag":"basic-date-year","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002970","text":"thurs","dsl":"d th","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002971","text":"aril 15","dsl":"d 04-15","primary_tag":"basic-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002972","text":"april 21","dsl":"d 04-21","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002973","text":"tomorrow 9:15am","dsl":"dt +1d 09:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002974","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002975","text":"the 17th of may","dsl":"d 05-17","primary_tag":"ordinal-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002976","text":"jun 7-9","dsl":"d 06-07>06-09","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002977","text":"sunday 22-4pm","dsl":"dt su 14:00>16:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002978","text":"next friday","dsl":"d fr+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002979","text":"jan 8-21","dsl":"d 01-18>01-21","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002980","text":"lets say 2/32/28","dsl":"d 2028-02-23","primary_tag":"numeric-date","modifier_tags":["typo","filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002981","text":"last saturday of august","dsl":"d sa#-1@08","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-002982","text":"like 42 items","dsl":"x","primary_tag":"non-date-noise","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-002983","text":"tuesday","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002984","text":"jan 3 at 2pm","dsl":"dt 01-03 14:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002985","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002986","text":"jun 20 - jun 21","dsl":"d 06-20>06-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002987","text":"maybe march 10, 2026 or so","dsl":"d 2026-03-10","primary_tag":"basic-date-year","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002988","text":"jan 23 to february 5","dsl":"d 01-23>02-05","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002989","text":"sep 13-15","dsl":"d 09-13>09-15","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002990","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002991","text":"may 25 - jun 11","dsl":"d 05-25>06-11","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002992","text":"tomorrow morning","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-002993","text":"wednesday 3-pm","dsl":"dt we 15:00>17:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-002994","text":"lets say at 7 please","dsl":"t 7?","primary_tag":"ampm-ambiguous","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-002995","text":"Hello","dsl":"x","primary_tag":"non-date-noise","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-002996","text":"octobeer 18","dsl":"d 10-18","primary_tag":"basic-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-002997","text":"june 4, 2027","dsl":"d 2027-06-04","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002998","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-002999","text":"feb 22, 2027","dsl":"d 2027-02-22","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-003000","text":"dec 6 t","dsl":"d 12-06","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"l-003001","text":"last friday o fmarch","dsl":"d fr#-1@03","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003002","text":"tomorrow 3:15pm","dsl":"dt +1d 15:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003003","text":"every other fridday","dsl":"d R w/2 fr","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003004","text":"apr 16-19","dsl":"d 04-16>04-19","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003005","text":"june","dsl":"d M@06","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003006","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003007","text":"MAY 21-22","dsl":"d 05-21>05-22","primary_tag":"date-range-shared-month","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003008","text":"every weekday at 9","dsl":"dt R d/1 mo,tu,we,th,fr 9?","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003009","text":"valentines day","dsl":"d 02-14","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003010","text":"september","dsl":"d M@09","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003011","text":"second sunday of february","dsl":"d su#2@02","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003012","text":"february 5","dsl":"d 02-05","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003013","text":"in three months","dsl":"d +3m","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003014","text":"next year","dsl":"d Y+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003015","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003016","text":"09:00","dsl":"t 09:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003017","text":"every oher friday","dsl":"d R w/2 fr","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003018","text":"last week","dsl":"d W-1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003019","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003020","text":"4/9/28","dsl":"d 2028-04-09","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003021","text":"lets say apr 25 at 10am please","dsl":"dt 04-25 10:00","primary_tag":"datetime","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003022","text":"next saturday","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003023","text":"friday evening","dsl":"dt fr 18:00>22:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003024","text":"mon","dsl":"d mo","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003025","text":"every 3 weeks","dsl":"d R w/4","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003026","text":"every 3 weeks","dsl":"d R w/3","primary_tag":"recurrence-interval","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003027","text":"every other tuesday","dsl":"d R w/2 tu","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003028","text":"maybe the 14th of april please","dsl":"d 04-14","primary_tag":"ordinal-date","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003029","text":"in 5 wks","dsl":"d +5w","primary_tag":"relative-offset","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003030","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003031","text":"like 3 wks ago or so","dsl":"d -3w","primary_tag":"relative-offset","modifier_tags":["abbreviation","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003032","text":"mar 23","dsl":"d 03-23","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003033","text":"jun 8-10","dsl":"d 06-08>06-10","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003034","text":"7/23/27","dsl":"d 2027-07-23","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003035","text":"nov 2","dsl":"d 11-02","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003036","text":"apr 1","dsl":"d 04-01","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003037","text":"NOON","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003038","text":"NEXT TUESDAY","dsl":"d tu+1","primary_tag":"weekday-relative","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003039","text":"next tueday","dsl":"d tu+1","primary_tag":"weekday-relative","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003040","text":"Next Saturday","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003041","text":"nov 21to nov 24","dsl":"d 11-21>11-24","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003042","text":"jun 3","dsl":"d 06-03","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003043","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003044","text":"sat","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003045","text":"tonigt","dsl":"dt +0d 20:00","primary_tag":"fuzzy-period","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003046","text":"6 days ago","dsl":"d -6d","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003047","text":"thaanksgiving","dsl":"d th#4@11","primary_tag":"named-holiday","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003048","text":"thanksgiving","dsl":"d th#4@11","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003049","text":"2/3/6","dsl":"d 2026-02-03","primary_tag":"numeric-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003050","text":"net sat","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003051","text":"aug 24 - september 22","dsl":"d 08-24>09-22","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003052","text":"in 6 wks","dsl":"d +6w","primary_tag":"relative-offset","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003053","text":"feb 4 3pm to feb 7 noon","dsl":"dt 02-04 15:00>02-07 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003054","text":"noveember 9","dsl":"d 11-09","primary_tag":"basic-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003055","text":"every nov 16","dsl":"d R y/1","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003056","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003057","text":"february 13 to march 20","dsl":"d 02-13>03-20","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003058","text":"Tomorrow 6:15pm","dsl":"dt +1d 18:15","primary_tag":"datetime","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003059","text":"every thursday","dsl":"d R w/1 th","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003060","text":"sunday","dsl":"d su","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003061","text":"january 1, 2026","dsl":"d 2026-01-17","primary_tag":"basic-date-year","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003062","text":"february 23 - march 15","dsl":"d 02-23>03-15","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003063","text":"january 28","dsl":"d 01-28","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003064","text":"2pm-5pm","dsl":"t 14:00>17:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003065","text":"june 20, 2028","dsl":"d 2028-06-20","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003066","text":"at 2","dsl":"t 2?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003067","text":"jan 12","dsl":"d 01-12","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003068","text":"the 23rd of december","dsl":"d 12-23","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003069","text":"11:15am","dsl":"t 11:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003070","text":"like dec 24 or so","dsl":"d 12-24","primary_tag":"basic-date","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003071","text":"Jul 4, 2027","dsl":"d 2027-07-04","primary_tag":"basic-date-year","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003072","text":"mayy 15, 2026","dsl":"d 2026-05-15","primary_tag":"basic-date-year","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003073","text":"in 2 days","dsl":"d +2d","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003074","text":"oct 4-6","dsl":"d 10-04>10-06","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003075","text":"tomorrow 2:15pm","dsl":"dt +1d 14:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003076","text":"next month","dsl":"d M+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003077","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003078","text":"fri","dsl":"d fr","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003079","text":"this asturday","dsl":"d sa","primary_tag":"weekday-relative","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003080","text":"10/10/28","dsl":"d 2028-10-10","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003081","text":"7am","dsl":"t 07:00","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003082","text":"the 18thof february","dsl":"d 02-18","primary_tag":"ordinal-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003083","text":"aug 6-7","dsl":"d 08-06>08-07","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003084","text":"last saturday of february","dsl":"d sa#-1@02","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003085","text":"3 months ago","dsl":"d -3m","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003086","text":"6/17/26","dsl":"d 2026-06-17","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003087","text":"9am-11am","dsl":"t 09:00>11:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003088","text":"july 11, 2027","dsl":"d 2027-07-11","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003089","text":"last saturday","dsl":"d sa-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003090","text":"15:00","dsl":"t 15:00","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003091","text":"every weekday","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003092","text":"tuesday","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003093","text":"in 2 days","dsl":"d +2d","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003094","text":"may 21 3pm to may 24 noon","dsl":"dt 05-21 15:00>05-24 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003095","text":"daily for 5 days","dsl":"d R d/1 n5","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003096","text":"valentines day","dsl":"d 02-14","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003097","text":"apr 16 to april 19","dsl":"d 04-16>04-19","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003098","text":"august 7","dsl":"d 08-07","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003099","text":"maybe 2pm-5pm","dsl":"t 14:00>17:00","primary_tag":"time-range","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003100","text":"Sat","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":["abbreviation","casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003101","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003102","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003103","text":"april 4","dsl":"d 04-04","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003104","text":"next tuesday","dsl":"d tu+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003105","text":"every weekday at 9","dsl":"dt R d/1 mo,tu,we,th,fr 9?","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003106","text":"can we do today or so","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003107","text":"saturday","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003108","text":"feb 26, 2026","dsl":"d 2026-02-26","primary_tag":"basic-date-year","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003109","text":"jul 4 3pm to jull 7 noon","dsl":"dt 07-04 15:00>07-07 12:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003110","text":"at 7","dsl":"t 7?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003111","text":"this friday","dsl":"d fr","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003112","text":"first friday of every month","dsl":"d R m/1 fr#1","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003113","text":"every weekady","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003114","text":"hello","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003115","text":"first monday of october","dsl":"d mo#1@10","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003116","text":"july 14 to aug 10","dsl":"d 07-14>08-10","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003117","text":"10am-12pm","dsl":"t 10:00>12:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003118","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003119","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003120","text":"last tuesday","dsl":"d tu-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003121","text":"feb 20 until february 22","dsl":"d 02-20>02-22","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003122","text":"like in3  weeks please","dsl":"d +3w","primary_tag":"relative-offset","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003123","text":"wednesday 1-3pm","dsl":"dt we 13:00>15:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003124","text":"next sun","dsl":"d su+1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003125","text":"aug 15 a t8pm","dsl":"dt 08-15 20:00","primary_tag":"datetime","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003126","text":"every weekday","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003127","text":"9/1/26","dsl":"d 2026-09-01","primary_tag":"numeric-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003128","text":"dec 19","dsl":"d 12-19","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003129","text":"Every Other Wednesday","dsl":"d R w/2 we","primary_tag":"recurrence-interval","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003130","text":"jul 7","dsl":"d 07-07","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003131","text":"10:30am","dsl":"t 10:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003132","text":"second wednesday of march","dsl":"d we#2@03","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003133","text":"Apr 5 At 4pm","dsl":"dt 04-05 16:00","primary_tag":"datetime","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003134","text":"third saturday of april","dsl":"d sa#3@04","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003135","text":"first saturday of april","dsl":"d sa#1@04","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003136","text":"3:30pm","dsl":"t 15:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003137","text":"august 14, 2027","dsl":"d 2027-08-14","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003138","text":"last sunday","dsl":"d su-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003139","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003140","text":"october 1, 2027","dsl":"d 2027-10-01","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003141","text":"the 25th of january","dsl":"d 01-25","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003142","text":"the 8t of february","dsl":"d 02-08","primary_tag":"ordinal-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003143","text":"2 to 2:30","dsl":"t 2?>2:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003144","text":"5to5:30","dsl":"t 5?>5:30?","primary_tag":"ampm-ambiguous","modifier_tags":["spacing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003145","text":"10:15am","dsl":"t 10:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003146","text":"wednesday 1-3pm","dsl":"dt we 13:00>15:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003147","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003148","text":"second sunday of july","dsl":"d su#2@07","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003149","text":"tomorrow 4:15pm","dsl":"dt +1d 16:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003150","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003151","text":"in four months","dsl":"d +4m","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003152","text":"feb 5 3pm to feb 8 noon","dsl":"dt 02-05 15:00>02-08 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003153","text":"monthly on the 7th","dsl":"d R m/1 d7","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003154","text":"4pm","dsl":"t 16:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003155","text":"tuesday 1-3pm","dsl":"dt tu 13:00>15:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003156","text":"7 to 7:30","dsl":"t 7?>7:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003157","text":"every tuesday until jun 12","dsl":"d R w/1 tu u06-12","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003158","text":"4pm","dsl":"t 16:00","primary_tag":"time-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003159","text":"Daily At 7am","dsl":"dt R d/1 07:00","primary_tag":"recurrence-daily","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003160","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003161","text":"7am-88am","dsl":"t 07:00>08:00","primary_tag":"time-range","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003162","text":"march 28","dsl":"d 03-28","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003163","text":"january 4","dsl":"d 01-04","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003164","text":"every sunday","dsl":"d R w/1 su","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003165","text":"every 4 weeks","dsl":"d R w/3","primary_tag":"recurrence-interval","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003166","text":"monthly on the 24th","dsl":"d R m/1 d24","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003167","text":"june 26","dsl":"d 06-26","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003168","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003169","text":"TOMORROW MORNING","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003170","text":"every weekday","dsl":"d R d/1 mo,tu,we,th,fr","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003171","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003172","text":"2:15pm","dsl":"t 14:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003173","text":"feb 7-8","dsl":"d 02-07>02-08","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003174","text":"can we do day after tommorrow please","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003175","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003176","text":"every other tuesday","dsl":"d R w/2 tu","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003177","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003178","text":"sun","dsl":"d su","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003179","text":"second sunday of july","dsl":"d su#2@07","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003180","text":"aug 11 - sep 15","dsl":"d 08-11>09-15","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003181","text":"mar 15-17","dsl":"d 03-15>03-17","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003182","text":"next week","dsl":"d W+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003183","text":"thhird friday of august","dsl":"d fr#3@08","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003184","text":"every other sunday","dsl":"d R w/2 su","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003185","text":"august 5 to sep 8","dsl":"d 08-05>09-08","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003186","text":"last saturday of february","dsl":"d sa#-1@02","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003187","text":"last monday","dsl":"d mo-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003188","text":"in three months","dsl":"d +3m","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003189","text":"nov 17-20","dsl":"d 11-17>11-20","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003190","text":"saturday 11-1pm","dsl":"dt sa 11:00>13:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003191","text":"the 22ndo f august","dsl":"d 08-22","primary_tag":"ordinal-date","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003192","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003193","text":"2027","dsl":"d Y@2027","primary_tag":"month-or-year-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003194","text":"dec 24","dsl":"d 12-24","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003195","text":"daily for 3 days","dsl":"d R d/1 n3","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003196","text":"at 1","dsl":"t 1?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003197","text":"jan 24","dsl":"d 01-24","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003198","text":"tomorrow 12:15pm","dsl":"dt +1d 12:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003199","text":"august 1","dsl":"d 08-01","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003200","text":"5pm","dsl":"t 17:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003201","text":"Jul 7","dsl":"d 07-07","primary_tag":"basic-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003202","text":"3pm-6pm","dsl":"t 15:00>18:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003203","text":"hello","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003204","text":"third friday of january","dsl":"d fr#3@01","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003205","text":"feb 10-13","dsl":"d 02-10>02-13","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003206","text":"every thursday","dsl":"d R w/1 th","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003207","text":"Day After Tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003208","text":"mar 224","dsl":"d 03-24","primary_tag":"basic-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003209","text":"aug 9-12","dsl":"d 08-09>08-12","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003210","text":"this sunday","dsl":"d su","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003211","text":"2pm-5pm","dsl":"t 14:00>17:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003212","text":"the 26th of january","dsl":"d 01-26","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003213","text":"halloween","dsl":"d 10-31","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003214","text":"jun 18 at 1pm","dsl":"dt 06-18 13:00","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003215","text":"can we do daily for 5 days","dsl":"d R d/1 n5","primary_tag":"recurrence-bounded","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003216","text":"september 8","dsl":"d 09-08","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003217","text":"january 23","dsl":"d 01-23","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003218","text":"tomorrow 11:15am","dsl":"dt +1d 11:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003219","text":"7 to 7:30","dsl":"t 7?>7:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003220","text":"every thursday","dsl":"d R w/1 th","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003221","text":"tomorrow 4:15pm","dsl":"dt +1d 16:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003222","text":"jan 10 at 9am","dsl":"dt 01-10 09:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003223","text":"nov 6","dsl":"d 11-06","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003224","text":"12pm-3pm","dsl":"t 12:00>15:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003225","text":"like JUNE","dsl":"d M@06","primary_tag":"month-or-year-only","modifier_tags":["casing","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003226","text":"5/20/28","dsl":"d 2028-05-20","primary_tag":"numeric-date","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003227","text":"sep 24 to oct 4","dsl":"d 09-24>10-04","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003228","text":"may 25 at 8pm","dsl":"dt 05-25 20:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003229","text":"aprr 25 at 9am","dsl":"dt 04-25 09:00","primary_tag":"datetime","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003230","text":"every other tuesday","dsl":"d R w/2 tu","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003231","text":"tomorrow morning","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003232","text":"maybe mon wed fri please","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003233","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003234","text":"aug 16 until ag 17","dsl":"d 08-16>08-17","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003235","text":"can we do ROOM 4B","dsl":"x","primary_tag":"non-date-noise","modifier_tags":["casing","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003236","text":"buy milk","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003237","text":"jun 4 until june 5","dsl":"d 06-04>06-05","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003238","text":"3pm-5pm","dsl":"t 15:00>17:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003239","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003240","text":"can we do 7am-9am","dsl":"t 07:00>09:00","primary_tag":"time-range","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003241","text":"monthly on the 2nd","dsl":"d R m/1 d2","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003242","text":"tomorrow 7:15pm","dsl":"dt +1d 19:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003243","text":"asdf","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003244","text":"1/7/26","dsl":"d 2026-01-07","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003245","text":"first saturday of august","dsl":"d sa#1@08","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003246","text":"january 26","dsl":"d 01-26","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003247","text":"jun -58","dsl":"d 06-05>06-08","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003248","text":"jun 23-26","dsl":"d 06-23>06-26","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003249","text":"like last monday of march","dsl":"d mo#-1@03","primary_tag":"nth-weekday-of-month","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003250","text":"can we do jun7 or so","dsl":"d 06-07","primary_tag":"basic-date","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003251","text":"noon","dsl":"t 12:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003252","text":"25","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003253","text":"first tuesday of december","dsl":"d tu#1@12","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003254","text":"oct 26","dsl":"d 10-26","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003255","text":"8AM-10AM","dsl":"t 08:00>10:00","primary_tag":"time-range","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003256","text":"the 28th of january","dsl":"d 01-28","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003257","text":"friday","dsl":"d fr","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003258","text":"this weekend","dsl":"d sa>su","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003259","text":"lets say nov 2-3 or so","dsl":"d 11-02>11-03","primary_tag":"date-range-shared-month","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003260","text":"jun2 3","dsl":"d 06-23","primary_tag":"basic-date","modifier_tags":["typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003261","text":"this friday","dsl":"d fr","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003262","text":"nov 27 at 8pm","dsl":"dt 11-27 20:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003263","text":"next tuesdday","dsl":"d tu+1","primary_tag":"weekday-relative","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003264","text":"decembe 13 until dec 16","dsl":"d 12-13>12-16","primary_tag":"basic-date-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003265","text":"apr 5 until apr 7","dsl":"d 04-05>04-07","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003266","text":"tomorrow 11:15am","dsl":"dt +1d 11:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003267","text":"Last Sun","dsl":"d su-1","primary_tag":"weekday-relative","modifier_tags":["abbreviation","casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003268","text":"next saturday","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003269","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003270","text":"maybe every thursday","dsl":"d R w/1 th","primary_tag":"recurrence-weekly","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003271","text":"second thursday of october","dsl":"d th#2@10","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003272","text":"lets say april 13 please","dsl":"d 04-13","primary_tag":"basic-date","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003273","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003274","text":"sat","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003275","text":"meeting notes","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003276","text":"jul 1-4","dsl":"d 07-01>07-04","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003277","text":"5/1/27","dsl":"d 2027-05-01","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003278","text":"tuesday 2-4pm","dsl":"dt tu 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003279","text":"first friday of june","dsl":"d fr#1@06","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003280","text":"7/23/28","dsl":"d 2028-07-23","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003281","text":"apr 19, 2027","dsl":"d 2027-04-19","primary_tag":"basic-date-year","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003282","text":"dec 23, 2026","dsl":"d 2026-12-23","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003283","text":"monday 3-5pm","dsl":"dt mo 15:00>17:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003284","text":"every weekday at 9","dsl":"dt R d/1 mo,tu,we,th,fr 9?","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003285","text":"2pm-3pm","dsl":"t 14:00>15:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003286","text":"september 16 until oct 9","dsl":"d 09-16>10-09","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003287","text":"mar 3 at 4pm","dsl":"dt 03-03 16:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003288","text":"at 10","dsl":"t 10?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003289","text":"saturday 2-4pm","dsl":"dt sa 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003290","text":"this sunday","dsl":"d su","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003291","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003292","text":"TOMORROW MORNING","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003293","text":"every 3 weeks","dsl":"d R w/4","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003294","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003295","text":"june 21, 2026","dsl":"d 2026-06-21","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003296","text":"december 24-dec 27","dsl":"d 12-24>12-27","primary_tag":"basic-date-range","modifier_tags":["spacing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003297","text":"oct 27, 2027","dsl":"d 2027-10-27","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003298","text":"tonight","dsl":"dt +0d 20:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003299","text":"can we do jul 16 3pm to jul 19 noon","dsl":"dt 07-16 15:00>07-19 12:00","primary_tag":"datetime-range","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003300","text":"aug 26","dsl":"d 08-26","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003301","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003302","text":"november 9 until dec 21","dsl":"d 11-09>12-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003303","text":"the 4th of may","dsl":"d 05-04","primary_tag":"ordinal-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003304","text":"like oct 25","dsl":"d 10-25","primary_tag":"basic-date","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003305","text":"last fri","dsl":"d fr-1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003306","text":"every thursday until may 20","dsl":"d R w/1 th u05-20","primary_tag":"recurrence-bounded","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003307","text":"at 8","dsl":"t 8?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003308","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003309","text":"tonight","dsl":"dt +0d 20:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003310","text":"4 months ago","dsl":"d -4m","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003311","text":"xmas eve","dsl":"d 12-24","primary_tag":"named-holiday","modifier_tags":["colloquial"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003312","text":"jan 10 at 10am","dsl":"dt 01-10 10:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003313","text":"1 adult","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003314","text":"tomorrow 2:15pm","dsl":"dt +1d 14:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003315","text":"december 22","dsl":"d 12-22","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003316","text":"JAN 1-2","dsl":"d 01-01>01-02","primary_tag":"date-range-shared-month","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003317","text":"can we do third tuesday of september or so","dsl":"d tu#3@09","primary_tag":"nth-weekday-of-month","modifier_tags":["filler-words","long-input"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003318","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003319","text":"11/25/28","dsl":"d 2028-11-25","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003320","text":"february 12 - march 22","dsl":"d 02-12>03-22","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003321","text":"this wed","dsl":"d we","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003322","text":"january 13","dsl":"d 01-13","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003323","text":"January 13 To February 22","dsl":"d 01-13>02-22","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003324","text":"16:00","dsl":"t 16:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003325","text":"thanksgiving","dsl":"d th#4@11","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003326","text":"apr 7, 2026","dsl":"d 2026-04-07","primary_tag":"basic-date-year","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003327","text":"tomorrow 5:15pm","dsl":"dt +1d 17:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003328","text":"1/2/28","dsl":"d 2028-01-02","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003329","text":"mar 18 to april 11","dsl":"d 03-18>04-11","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003330","text":"9pm","dsl":"t 21:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003331","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003332","text":"next sun","dsl":"d su+1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003333","text":"maybe jan 18 3pm to jan 21 noon please","dsl":"dt 01-18 15:00>01-21 12:00","primary_tag":"datetime-range","modifier_tags":["filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003334","text":"Sep 27, 2026","dsl":"d 2026-09-27","primary_tag":"basic-date-year","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003335","text":"saturday","dsl":"d sa","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003336","text":"in 4 weeks","dsl":"d +4w","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003337","text":"every other monday","dsl":"d R w/2 mo","primary_tag":"recurrence-interval","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003338","text":"like THE 20TH OF AUGUST please","dsl":"d 08-20","primary_tag":"ordinal-date","modifier_tags":["casing","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003339","text":"saurday 11-1pm","dsl":"dt sa 11:00>13:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003340","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003341","text":"every other tuesday","dsl":"d R w/2 tu","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003342","text":"february 20 to february 21","dsl":"d 02-20>02-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003343","text":"october 7 until oct 10","dsl":"d 10-07>10-10","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003344","text":"in 4 weeks","dsl":"d +4w","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003345","text":"nov 13 3pm to nov 16 noon","dsl":"dt 11-13 15:00>11-16 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003346","text":"oct 26 at 6pm","dsl":"dt 10-26 18:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003347","text":"2 weeks ago","dsl":"d -2w","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003348","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003349","text":"every saturday","dsl":"d R w/1 sa","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003350","text":"the 21st of december","dsl":"d 12-21","primary_tag":"ordinal-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003351","text":"maybe in 5 ks please","dsl":"d +5w","primary_tag":"relative-offset","modifier_tags":["abbreviation","typo","filler-words"],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003352","text":"like SEP 28 please","dsl":"d 09-28","primary_tag":"basic-date","modifier_tags":["casing","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003353","text":"christmas","dsl":"d 12-25","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003354","text":"next sunday","dsl":"d su+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003355","text":"15:15","dsl":"t 15:15","primary_tag":"time-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003356","text":"tonight","dsl":"dt +0d 20:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003357","text":"FRI","dsl":"d fr","primary_tag":"weekday-bare","modifier_tags":["abbreviation","casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003358","text":"tuesday 0-12pm","dsl":"dt tu 10:00>12:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003359","text":"sun","dsl":"d su","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003360","text":"every other saturday","dsl":"d R w/2 sa","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003361","text":"october 4 until october 7","dsl":"d 10-04>10-07","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003362","text":"this wed","dsl":"d we","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003363","text":"dec 1-2","dsl":"d 12-01>12-02","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003364","text":"eevry tuesday","dsl":"d R w/1 tu","primary_tag":"recurrence-weekly","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003365","text":"like chriistmas","dsl":"d 12-25","primary_tag":"named-holiday","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003366","text":"feb 7 until feb 10","dsl":"d 02-07>02-10","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003367","text":"can we do feb 1-14 or so","dsl":"d 02-13>02-14","primary_tag":"date-range-shared-month","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003368","text":"first tuesday of january","dsl":"d tu#1@01","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003369","text":"in four days","dsl":"d +4d","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003370","text":"saturday 2-4pm","dsl":"dt sa 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003371","text":"feb 24 at 3pm","dsl":"dt 02-24 15:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003372","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003373","text":"room 4b","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003374","text":"may 3-6","dsl":"d 05-03>05-06","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003375","text":"next sat","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003376","text":"july 12","dsl":"d 07-12","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003377","text":"jna 4, 2027","dsl":"d 2027-01-04","primary_tag":"basic-date-year","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003378","text":"Sep 15, 2028","dsl":"d 2028-09-15","primary_tag":"basic-date-year","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003379","text":"last month","dsl":"d M-1","primary_tag":"period-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003380","text":"10 to 10:30","dsl":"t 10?>10:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003381","text":"buy milk","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003382","text":"at 6","dsl":"t 6?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003383","text":"mar 7-10","dsl":"d 03-07>03-10","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003384","text":"tues","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003385","text":"3pm-4pm","dsl":"t 15:00>16:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003386","text":"first saturday of august","dsl":"d sa#1@08","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003387","text":"9am-12pm","dsl":"t 09:00>12:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003388","text":"in 5 weeks","dsl":"d +5w","primary_tag":"relative-offset","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003389","text":"11am-1pm","dsl":"t 11:00>13:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003390","text":"8am-10am","dsl":"t 08:00>10:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003391","text":"12:30","dsl":"t 12:30","primary_tag":"time-only","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003392","text":"at 2","dsl":"t 2?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003393","text":"asdf","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003394","text":"jun 7 at 2pm","dsl":"dt 06-07 14:00","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003395","text":"yeserday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003396","text":"lets say jan 14 to february 17 or so","dsl":"d 01-14>02-17","primary_tag":"basic-date-range","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003397","text":"maybe dec 23 at 2pm please","dsl":"dt 12-23 14:00","primary_tag":"datetime","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003398","text":"MAY 9 AT 2PM","dsl":"dt 05-09 14:00","primary_tag":"datetime","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003399","text":"first saturday of june","dsl":"d sa#1@06","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003400","text":"Tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003401","text":"october 27, 2028","dsl":"d 2028-10-27","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003402","text":"this wednesday","dsl":"d we","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003403","text":"next saturday","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003404","text":"3 to 3:30","dsl":"t 3?>3:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003405","text":"at 4","dsl":"t 4?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003406","text":"eveyr other monday","dsl":"d R w/2 mo","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003407","text":"dec 12 until december 14","dsl":"d 12-12>12-14","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003408","text":"12pm-1pm","dsl":"t 12:00>13:00","primary_tag":"time-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003409","text":"10 To 10:30","dsl":"t 10?>10:30?","primary_tag":"ampm-ambiguous","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003410","text":"this monday","dsl":"d mo","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003411","text":"oct 9","dsl":"d 10-09","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003412","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003413","text":"thanksgiving","dsl":"d th#4@11","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003414","text":"tomorrow 2:15pm","dsl":"dt +1d 14:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003415","text":"42 items","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003416","text":"last month","dsl":"d M-1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003417","text":"7:30am","dsl":"t 07:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003418","text":"last tuesday of march","dsl":"d tu#-1@03","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003419","text":"in two weeks","dsl":"d +2w","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003420","text":"tuesday","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003421","text":"16:15","dsl":"t 16:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003422","text":"07:30","dsl":"t 07:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003423","text":"dec 16-19","dsl":"d 12-16>12-19","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003424","text":"halloween","dsl":"d 10-31","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003425","text":"last tues","dsl":"d tu-1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003426","text":"maybe Every Other Thursday","dsl":"d R w/2 th","primary_tag":"recurrence-interval","modifier_tags":["casing","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003427","text":"sunday 11-1pm","dsl":"dt su 11:00>13:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003428","text":"october 3 to november 21","dsl":"d 10-03>11-21","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003429","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003430","text":"valentines day","dsl":"d 02-14","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003431","text":"ever day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003432","text":"every jul 3","dsl":"d R y/1","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003433","text":"saturday 12-2pm","dsl":"dt sa 12:00>14:00","primary_tag":"datetime-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003434","text":"dec 19-21","dsl":"d 12-19>12-21","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003435","text":"tuesday","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003436","text":"tonight","dsl":"dt +0d 20:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003437","text":"every other saturday","dsl":"d R w/2 sa","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003438","text":"jul 11 until aug 11","dsl":"d 07-11>08-11","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003439","text":"apr 4 at 8am","dsl":"dt 04-04 08:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003440","text":"jan 6 to january 9","dsl":"d 01-06>01-09","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003441","text":"nov 2-4","dsl":"d 11-02>11-04","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003442","text":"the 8th of june","dsl":"d 06-08","primary_tag":"ordinal-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003443","text":"last friday","dsl":"d fr-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003444","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003445","text":"5 days ago","dsl":"d -5d","primary_tag":"relative-offset","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003446","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003447","text":"next sat","dsl":"d sa+1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003448","text":"last saturday","dsl":"d sa-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003449","text":"can we do at 9 or so","dsl":"t 9?","primary_tag":"ampm-ambiguous","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003450","text":"nov 11 until december 17","dsl":"d 11-11>12-17","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003451","text":"this sun","dsl":"d su","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003452","text":"1pm-4pm","dsl":"t 13:00>16:00","primary_tag":"time-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003453","text":"2:30pm","dsl":"t 14:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003454","text":"may 17","dsl":"d 05-17","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003455","text":"november","dsl":"d M@11","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003456","text":"every day","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003457","text":"june","dsl":"d M@06","primary_tag":"month-or-year-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003458","text":"the 21st of august","dsl":"d 08-21","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003459","text":"first tuesday of every month","dsl":"d R m/1 tu#1","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003460","text":"3:15pm","dsl":"t 15:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003461","text":"daily ffor 10 days","dsl":"d R d/1 n10","primary_tag":"recurrence-bounded","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003462","text":"in five days","dsl":"d +5d","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003463","text":"friday evening","dsl":"dt fr 18:00>22:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003464","text":"tomorrow 8:15am","dsl":"dt +1d 08:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003465","text":"tuesday 12-2pm","dsl":"dt tu 12:00>14:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003466","text":"ma 13, 2028","dsl":"d 2028-03-13","primary_tag":"basic-date-year","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003467","text":"May 25 To May 26","dsl":"d 05-25>05-26","primary_tag":"basic-date-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003468","text":"every 3weeks","dsl":"d R w/4","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003469","text":"9:15pm","dsl":"t 21:15","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003470","text":"tomorrow morning","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003471","text":"sep 20","dsl":"d 09-20","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003472","text":"tomorrow 9:15am","dsl":"dt +1d 09:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003473","text":"january 3 until jan 4","dsl":"d 01-03>01-04","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003474","text":"like this sun or so","dsl":"d su","primary_tag":"weekday-relative","modifier_tags":["abbreviation","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003475","text":"monthly on the 27th","dsl":"d R m/1 d27","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003476","text":"tomorrow 5:15pm","dsl":"dt +1d 17:15","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003477","text":"in 2 wweeks","dsl":"d +2w","primary_tag":"relative-offset","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003478","text":"maybe 3 to 3:30 or so","dsl":"t 3?>3:30?","primary_tag":"ampm-ambiguous","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003479","text":"august 6, 2028","dsl":"d 2028-08-06","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003480","text":"last monday","dsl":"d mo-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003481","text":"7:30am","dsl":"t 07:30","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003482","text":"aug 17-20","dsl":"d 08-17>08-20","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003483","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003484","text":"the 23rd of february","dsl":"d 02-23","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003485","text":"yesterday","dsl":"d -1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003486","text":"tomorrow 10:15am","dsl":"dt +1d 10:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003487","text":"friday evening","dsl":"dt fr 18:00>22:00","primary_tag":"fuzzy-period","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003488","text":"at 11","dsl":"t 11?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003489","text":"10am-12pm","dsl":"t 10:00>12:00","primary_tag":"time-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003490","text":"2/110/27","dsl":"d 2027-02-10","primary_tag":"numeric-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003491","text":"tues","dsl":"d tu","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003492","text":"monthly on the 27th","dsl":"d R m/1 d27","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003493","text":"april 28","dsl":"d 04-28","primary_tag":"basic-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003494","text":"can we do first wednesday of october or so","dsl":"d we#1@10","primary_tag":"nth-weekday-of-month","modifier_tags":["filler-words","long-input"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003495","text":"june 15","dsl":"d 06-15","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003496","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003497","text":"halloween","dsl":"d 10-31","primary_tag":"named-holiday","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003498","text":"second friday of october","dsl":"d fr#2@10","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003499","text":"1//27","dsl":"d 2027-01-06","primary_tag":"numeric-date","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003500","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003501","text":"12/22/27","dsl":"d 2027-12-22","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003502","text":"every other mondaay","dsl":"d R w/2 mo","primary_tag":"recurrence-interval","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003503","text":"6/23/26","dsl":"d 2026-06-23","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003504","text":"this saturday","dsl":"d sa","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003505","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003506","text":"9am-10am","dsl":"t 09:00>10:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003507","text":"8am-11am","dsl":"t 08:00>11:00","primary_tag":"time-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003508","text":"42 items","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003509","text":"3 months ago","dsl":"d -3m","primary_tag":"relative-offset","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003510","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003511","text":"last monday","dsl":"d mo-1","primary_tag":"weekday-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003512","text":"the 15th of february","dsl":"d 02-15","primary_tag":"ordinal-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003513","text":"this thursday","dsl":"d th","primary_tag":"weekday-relative","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003514","text":"may 8","dsl":"d 05-08","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003515","text":"nov 25-27","dsl":"d 11-25>11-27","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003516","text":"wednesday 2-4pm","dsl":"dt we 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003517","text":"august 22","dsl":"d 08-22","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003518","text":"march 24, 2027","dsl":"d 2027-03-24","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003519","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003520","text":"second sunday of march","dsl":"d su#2@03","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003521","text":"tomorrow 7:15pm","dsl":"dt +1d 19:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003522","text":"mar 22 3pm to mar 25 noon","dsl":"dt 03-22 15:00>03-25 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003523","text":"wednesday 10-12pm","dsl":"dt we 10:00>12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003524","text":"tomorrow","dsl":"d +1d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003525","text":"may 18 - may 20","dsl":"d 05-18>05-20","primary_tag":"basic-date-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003526","text":"11 to 11:30","dsl":"t 11?>11:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003527","text":"march 9","dsl":"d 03-09","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003528","text":"7/24/28","dsl":"d 2028-07-24","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003529","text":"last thurs","dsl":"d th-1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003530","text":"maybe christmas","dsl":"d 12-25","primary_tag":"named-holiday","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003531","text":"new years eve","dsl":"d 12-31","primary_tag":"named-holiday","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003532","text":"mar 2-3","dsl":"d 03-02>03-03","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003533","text":"every other monday","dsl":"d R w/2 mo","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003534","text":"8/18/27","dsl":"d 2027-08-18","primary_tag":"numeric-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003535","text":"in two weeks","dsl":"d +2w","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003536","text":"19:00","dsl":"t 19:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003537","text":"mon wed fri","dsl":"d R w/1 mo,we,fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"p-003538","text":"august 15 t","dsl":"d 08-15","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"source":"prefix","split":"val","parent_id":null}
+{"id":"g-003539","text":"the 20th of march","dsl":"d 03-20","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003540","text":"every 4 weeks","dsl":"d R w/4","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003541","text":"tomorrow 7:15pm","dsl":"dt +1d 19:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003542","text":"march 11, 2026","dsl":"d 2026-03-11","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003543","text":"six months ago","dsl":"d -6m","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003544","text":"every weekday at 9","dsl":"dt R d/1 mo,tu,we,th,fr 9?","primary_tag":"recurrence-daily","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003545","text":"today","dsl":"d +0d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003546","text":"14:00","dsl":"t 14:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003547","text":"in thhree months","dsl":"d +3m","primary_tag":"relative-offset","modifier_tags":["word-numbers","typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003548","text":"7to7:30","dsl":"t 7?>7:30?","primary_tag":"ampm-ambiguous","modifier_tags":["spacing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003549","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003550","text":"maybe daily at 7am or so","dsl":"dt R d/1 07:00","primary_tag":"recurrence-daily","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003551","text":"room 4b","dsl":"x","primary_tag":"non-date-noise","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003552","text":"mar 4 3pm to mar 7 moon","dsl":"dt 03-04 15:00>03-07 12:00","primary_tag":"datetime-range","modifier_tags":["typo-keyboard"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003553","text":"this week","dsl":"d W+0","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003554","text":"EVERY DAY","dsl":"d R d/1","primary_tag":"recurrence-daily","modifier_tags":["casing"],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003555","text":"tomorrow 3:15pm","dsl":"dt +1d 15:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003556","text":"5/8/26","dsl":"d 2026-05-08","primary_tag":"numeric-date","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003557","text":"monthly on the 17th","dsl":"d R m/1 d17","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003558","text":"tomorrow 10:15am","dsl":"dt +1d 10:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003559","text":"dec 16 at 1pm","dsl":"dt 12-16 13:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003560","text":"5PM","dsl":"t 17:00","primary_tag":"time-only","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"l-003561","text":"every thursday","dsl":"d R w/1 th","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003562","text":"every friday","dsl":"d R w/1 fr","primary_tag":"recurrence-weekly","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003563","text":"last sun","dsl":"d su-1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003564","text":"jul 19 at 3pm","dsl":"dt 07-19 15:00","primary_tag":"datetime","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003565","text":"thursday 1-3pm","dsl":"dt th 13:00>15:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003566","text":"monthly on the 11th","dsl":"d R m/1 d11","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003567","text":"day after tomorrow","dsl":"d +2d","primary_tag":"relative-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003568","text":"thursday","dsl":"d th","primary_tag":"weekday-bare","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"n-003569","text":"like tomorow morning","dsl":"dt +1d 08:00>12:00","primary_tag":"fuzzy-period","modifier_tags":["typo","filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003570","text":"friday 81-0am","dsl":"dt fr 08:00>10:00","primary_tag":"datetime-range","modifier_tags":["typo"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003571","text":"last mon","dsl":"d mo-1","primary_tag":"weekday-relative","modifier_tags":["abbreviation"],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003572","text":"apr 16-19","dsl":"d 04-16>04-19","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003573","text":"every other wednesday","dsl":"d R w/2 we","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003574","text":"MONDAY 9-11AM","dsl":"dt mo 09:00>11:00","primary_tag":"datetime-range","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003575","text":"the 23rd of february","dsl":"d 02-23","primary_tag":"ordinal-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003576","text":"thisthurs","dsl":"d th","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"source":"llm","split":"val","parent_id":null}
+{"id":"l-003577","text":"jun 1 3pm to jun 4 noon","dsl":"dt 06-01 15:00>06-04 12:00","primary_tag":"datetime-range","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003578","text":"next month","dsl":"d M+1","primary_tag":"period-relative","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003579","text":"7pm","dsl":"t 19:00","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003580","text":"lets say may 24 at 3pm","dsl":"dt 05-24 15:00","primary_tag":"datetime","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003581","text":"MONTHLY ON THE 25TH","dsl":"d R m/1 d25","primary_tag":"recurrence-monthly-yearly","modifier_tags":["casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003582","text":"every other monday","dsl":"d R w/2 mo","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003583","text":"last sunday of november","dsl":"d su#-1@11","primary_tag":"nth-weekday-of-month","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003584","text":"17:30","dsl":"t 17:30","primary_tag":"time-only","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003585","text":"monday 11-1pm","dsl":"dt mo 11:00>13:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003586","text":"jun 12 at 1pm","dsl":"dt 06-12 13:00","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003587","text":"aug 28","dsl":"d 08-28","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003588","text":"every other saturday","dsl":"d R w/2 sa","primary_tag":"recurrence-interval","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003589","text":"monday 2-4pm","dsl":"dt mo 14:00>16:00","primary_tag":"datetime-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003590","text":"at 6","dsl":"t 6?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"l-003591","text":"jan 14-16","dsl":"d 01-14>01-16","primary_tag":"date-range-shared-month","modifier_tags":[],"source":"llm","split":"val","parent_id":null}
+{"id":"g-003592","text":"feb 16 to feb 19","dsl":"d 02-16>02-19","primary_tag":"basic-date-range","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003593","text":"9 to 9:30","dsl":"t 9?>9:30?","primary_tag":"ampm-ambiguous","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003594","text":"november 4","dsl":"d 11-04","primary_tag":"basic-date","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003595","text":"wednesday","dsl":"d we","primary_tag":"weekday-bare","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"g-003596","text":"march 19, 2026","dsl":"d 2026-03-19","primary_tag":"basic-date-year","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}
+{"id":"n-003597","text":"7//26","dsl":"d 2026-07-09","primary_tag":"numeric-date","modifier_tags":["typo","casing"],"source":"noise","split":"val","parent_id":null}
+{"id":"n-003598","text":"like this wednesday","dsl":"d we","primary_tag":"weekday-relative","modifier_tags":["filler-words"],"source":"noise","split":"val","parent_id":null}
+{"id":"g-003599","text":"tomorrow 11:15am","dsl":"dt +1d 11:15","primary_tag":"datetime","modifier_tags":[],"source":"grammar","split":"val","parent_id":null}

@@ -1,0 +1,27 @@
+{
+ "id": "exp-008",
+ "number": 8,
+ "title": "t5-small ft",
+ "created": "2026-11-03T16:00:00Z",
+ "dataset": "v001",
+ "format": "dsl-v1",
+ "notes": "",
+ "parent": null,
+ "model": {
+  "family": "t5-small",
+  "params": 60000000,
+  "layers": "6+6",
+  "vocab": 4000
+ },
+ "train": {
+  "epochs": 10,
+  "batch_size": 128,
+  "lr": 0.0005,
+  "seed": 0,
+  "device": "mps"
+ },
+ "export": {
+  "format": "onnx",
+  "quant": "int8"
+ }
+}

@@ -1,0 +1,18 @@
+[
+ {
+  "engine": "baseline-chrono",
+  "backend": "js",
+  "browser": "chromium",
+  "load_ms": 16,
+  "cold_first_ms": 3.6,
+  "latency_ms": {
+   "p50": 1.21,
+   "p95": 1.9,
+   "p99": 2.8
+  },
+  "memory_mb": 2.7,
+  "download_bytes": 182000,
+  "n": 200,
+  "browser_accuracy": 0.3556
+ }
+]

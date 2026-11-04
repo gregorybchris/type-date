@@ -1,0 +1,27 @@
+{
+ "id": "exp-014",
+ "number": 14,
+ "title": "enc-dec 8M distilled",
+ "created": "2026-11-03T22:00:00Z",
+ "dataset": "v002",
+ "format": "dsl-v1",
+ "notes": "Distilled from exp-012.",
+ "parent": "exp-012",
+ "model": {
+  "family": "enc-dec-scratch",
+  "params": 8000000,
+  "layers": "4+4",
+  "vocab": 4000
+ },
+ "train": {
+  "epochs": 10,
+  "batch_size": 128,
+  "lr": 0.0005,
+  "seed": 0,
+  "device": "mps"
+ },
+ "export": {
+  "format": "onnx",
+  "quant": "int8"
+ }
+}

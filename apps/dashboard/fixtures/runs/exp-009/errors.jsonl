@@ -1,0 +1,259 @@
+{"id":"g-001518","text":"wednesday","split":"val","primary_tag":"weekday-bare","modifier_tags":[],"expected":"d we","predicted":"dt we"}
+{"id":"g-001525","text":"next month","split":"val","primary_tag":"period-relative","modifier_tags":[],"expected":"d M+1","predicted":"x"}
+{"id":"n-001537","text":"wednesday -5pm","split":"val","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt we 15:00>17:00","predicted":"dt th 15:00>17:00"}
+{"id":"g-001564","text":"2 to 2:30","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 2?>2:30?","predicted":"t 2?"}
+{"id":"g-001580","text":"this week","split":"val","primary_tag":"period-relative","modifier_tags":[],"expected":"d W+0","predicted":"dt W+0"}
+{"id":"n-001585","text":"like every thursday until feb 2 or so","split":"val","primary_tag":"recurrence-bounded","modifier_tags":["filler-words"],"expected":"d R w/1 th u02-02","predicted":"d R w/2 th u02-02"}
+{"id":"g-001589","text":"wednesday 9-11am","split":"val","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt we 09:00>11:00","predicted":"dt we 21:00>11:00"}
+{"id":"g-001600","text":"oct 9 3pm to oct 12 noon","split":"val","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 10-09 15:00>10-12 12:00","predicted":"dt 10-09 03:00>10-12 12:00"}
+{"id":"g-001618","text":"this weekend","split":"val","primary_tag":"fuzzy-period","modifier_tags":[],"expected":"d sa>su","predicted":"x"}
+{"id":"n-001630","text":"Jan 6 Until January 8","split":"val","primary_tag":"basic-date-range","modifier_tags":["casing"],"expected":"d 01-06>01-08","predicted":"x"}
+{"id":"n-001639","text":"noovember","split":"val","primary_tag":"month-or-year-only","modifier_tags":["typo"],"expected":"d M@11","predicted":"x"}
+{"id":"n-001640","text":"at  10","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":["typo"],"expected":"t 10?","predicted":"x"}
+{"id":"n-001649","text":"maybe every sunday please","split":"val","primary_tag":"recurrence-weekly","modifier_tags":["filler-words"],"expected":"d R w/1 su","predicted":"x"}
+{"id":"n-001655","text":"lets say last mondsy","split":"val","primary_tag":"weekday-relative","modifier_tags":["typo-keyboard","filler-words"],"expected":"d mo-1","predicted":"dt mo-1"}
+{"id":"g-001664","text":"wednesday 12-2pm","split":"val","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt we 12:00>14:00","predicted":"dt we 00:00>14:00"}
+{"id":"g-001671","text":"two days ago","split":"val","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"expected":"d -2d","predicted":"x"}
+{"id":"g-001698","text":"every tuesday until apr 3","split":"val","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 tu u04-03","predicted":"d R w/1 we u04-03"}
+{"id":"n-001706","text":"in four wekes","split":"val","primary_tag":"relative-offset","modifier_tags":["word-numbers","typo"],"expected":"d +4w","predicted":"dt +4w"}
+{"id":"g-001740","text":"every other saturday","split":"val","primary_tag":"recurrence-interval","modifier_tags":[],"expected":"d R w/2 sa","predicted":"dt R w/2 sa"}
+{"id":"g-001776","text":"4 to 4:30","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 4?>4:30?","predicted":"x"}
+{"id":"g-001799","text":"8 to 8:30","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 8?>8:30?","predicted":"x"}
+{"id":"g-001817","text":"daily for 6 days","split":"val","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 n6","predicted":"x"}
+{"id":"n-001902","text":"11 to 1:130","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":["typo"],"expected":"t 11?>11:30?","predicted":"t 11>11:30?"}
+{"id":"n-001915","text":"like tofay please","split":"val","primary_tag":"relative-date","modifier_tags":["typo-keyboard","filler-words"],"expected":"d +0d","predicted":"dt +0d"}
+{"id":"n-001987","text":"lets say eveyr saturday please","split":"val","primary_tag":"recurrence-weekly","modifier_tags":["typo","filler-words"],"expected":"d R w/1 sa","predicted":"x"}
+{"id":"g-001993","text":"7am-10am","split":"val","primary_tag":"time-range","modifier_tags":[],"expected":"t 07:00>10:00","predicted":"x"}
+{"id":"g-002016","text":"3/11/27","split":"val","primary_tag":"numeric-date","modifier_tags":[],"expected":"d 2027-03-11","predicted":"x"}
+{"id":"n-002032","text":"Second Sunday Of October","split":"val","primary_tag":"nth-weekday-of-month","modifier_tags":["casing"],"expected":"d su#2@10","predicted":"d mo#2@10"}
+{"id":"g-002044","text":"daily for 8 days","split":"val","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 n8","predicted":"x"}
+{"id":"g-002048","text":"first saturday of every month","split":"val","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"expected":"d R m/1 sa#1","predicted":"d R m/1 su#1"}
+{"id":"n-002064","text":"can we do wednesday 2-4pm or so","split":"val","primary_tag":"datetime-range","modifier_tags":["filler-words"],"expected":"dt we 14:00>16:00","predicted":"dt we 02:00>16:00"}
+{"id":"g-002091","text":"five months ago","split":"val","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"expected":"d -5m","predicted":"x"}
+{"id":"g-002092","text":"third friday of january","split":"val","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d fr#3@01","predicted":"x"}
+{"id":"g-002112","text":"first monday of every month","split":"val","primary_tag":"recurrence-monthly-yearly","modifier_tags":[],"expected":"d R m/1 mo#1","predicted":"x"}
+{"id":"g-002120","text":"mar 7 at 3pm","split":"val","primary_tag":"datetime","modifier_tags":[],"expected":"dt 03-07 15:00","predicted":"x"}
+{"id":"g-002126","text":"last tuesday of november","split":"val","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d tu#-1@11","predicted":"d we#-1@11"}
+{"id":"g-002127","text":"tomorrow 6:15pm","split":"val","primary_tag":"datetime","modifier_tags":[],"expected":"dt +1d 18:15","predicted":"dt +1d 06:15"}
+{"id":"n-002149","text":"chritmas","split":"val","primary_tag":"named-holiday","modifier_tags":["typo"],"expected":"d 12-25","predicted":"x"}
+{"id":"n-002157","text":"frifay 1-3pm","split":"val","primary_tag":"datetime-range","modifier_tags":["typo-keyboard"],"expected":"dt fr 13:00>15:00","predicted":"dt sa 13:00>15:00"}
+{"id":"n-002159","text":"nxt month","split":"val","primary_tag":"period-relative","modifier_tags":["typo"],"expected":"d M+1","predicted":"x"}
+{"id":"n-002160","text":"tonght","split":"val","primary_tag":"fuzzy-period","modifier_tags":["typo"],"expected":"dt +0d 20:00","predicted":"d +0d 20:00"}
+{"id":"p-002162","text":"jul 8 t","split":"val","primary_tag":"basic-date-range","modifier_tags":["partial-prefix"],"expected":"d 07-08","predicted":"x"}
+{"id":"g-002179","text":"this weekend","split":"val","primary_tag":"fuzzy-period","modifier_tags":[],"expected":"d sa>su","predicted":"dt sa>su"}
+{"id":"g-002184","text":"oct 2 3pm to oct 5 noon","split":"val","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 10-02 15:00>10-05 12:00","predicted":"x"}
+{"id":"g-002196","text":"mar 24 at 1pm","split":"val","primary_tag":"datetime","modifier_tags":[],"expected":"dt 03-24 13:00","predicted":"dt 03-24 01:00"}
+{"id":"g-002200","text":"mar 15 - march 17","split":"val","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 03-15>03-17","predicted":"x"}
+{"id":"g-002215","text":"mar 11-12","split":"val","primary_tag":"date-range-shared-month","modifier_tags":[],"expected":"d 03-11>03-12","predicted":"d 03-11"}
+{"id":"n-002219","text":"like this weekend or so","split":"val","primary_tag":"fuzzy-period","modifier_tags":["filler-words"],"expected":"d sa>su","predicted":"d sa"}
+{"id":"g-002234","text":"every day","split":"val","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"d R d/1","predicted":"dt R d/1"}
+{"id":"g-002274","text":"oct 23-26","split":"val","primary_tag":"date-range-shared-month","modifier_tags":[],"expected":"d 10-23>10-26","predicted":"dt 10-23>10-26"}
+{"id":"n-002279","text":"lets say the 266th of may or so","split":"val","primary_tag":"ordinal-date","modifier_tags":["typo","filler-words"],"expected":"d 05-26","predicted":"d 05-27"}
+{"id":"n-002282","text":"thursday 10-1p2m","split":"val","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt th 10:00>12:00","predicted":"dt th 10:00"}
+{"id":"n-002297","text":"like second thursday of january please","split":"val","primary_tag":"nth-weekday-of-month","modifier_tags":["filler-words"],"expected":"d th#2@01","predicted":"d fr#2@01"}
+{"id":"n-002308","text":"valentine day","split":"val","primary_tag":"named-holiday","modifier_tags":["typo"],"expected":"d 02-14","predicted":"x"}
+{"id":"g-002334","text":"every other friday","split":"val","primary_tag":"recurrence-interval","modifier_tags":[],"expected":"d R w/2 fr","predicted":"dt R w/2 fr"}
+{"id":"g-002359","text":"every thursday until mar 8","split":"val","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 th u03-08","predicted":"d R w/2 th u03-08"}
+{"id":"g-002367","text":"in three days","split":"val","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"expected":"d +3d","predicted":"dt +3d"}
+{"id":"g-002372","text":"3 wks ago","split":"val","primary_tag":"relative-offset","modifier_tags":["abbreviation"],"expected":"d -3w","predicted":"x"}
+{"id":"g-002376","text":"next wednesday","split":"val","primary_tag":"weekday-relative","modifier_tags":[],"expected":"d we+1","predicted":"dt we+1"}
+{"id":"g-002389","text":"9 to 9:30","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 9?>9:30?","predicted":"x"}
+{"id":"g-002400","text":"wednesday 9-11am","split":"val","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt we 09:00>11:00","predicted":"x"}
+{"id":"g-002420","text":"daily for 4 days","split":"val","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 n4","predicted":"dt R d/1 n4"}
+{"id":"n-002423","text":"6 To 6:30","split":"val","primary_tag":"ampm-ambiguous","modifier_tags":["casing"],"expected":"t 6?>6:30?","predicted":"t 6?"}
+{"id":"g-002429","text":"2026","split":"val","primary_tag":"month-or-year-only","modifier_tags":[],"expected":"d Y@2026","predicted":"x"}
+{"id":"g-002464","text":"jun 14 at 3pm","split":"val","primary_tag":"datetime","modifier_tags":[],"expected":"dt 06-14 15:00","predicted":"x"}
+{"id":"g-002482","text":"daily at 7am","split":"val","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"dt R d/1 07:00","predicted":"d R d/1 07:00"}
+{"id":"g-002498","text":"four months ago","split":"val","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"expected":"d -4m","predicted":"x"}
+{"id":"n-002522","text":"maybe every may 25 or so","split":"test_template","primary_tag":"recurrence-monthly-yearly","modifier_tags":["filler-words"],"expected":"d R y/1","predicted":"dt R y/1"}
+{"id":"g-002523","text":"tomorrow 10:15am","split":"test_template","primary_tag":"datetime","modifier_tags":[],"expected":"dt +1d 10:15","predicted":"dt +1d 22:15"}
+{"id":"g-002528","text":"three weeks ago","split":"test_template","primary_tag":"relative-offset","modifier_tags":["word-numbers"],"expected":"d -3w","predicted":"x"}
+{"id":"g-002545","text":"at 7","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 7?","predicted":"x"}
+{"id":"g-002552","text":"at 6","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 6?","predicted":"x"}
+{"id":"g-002560","text":"friday evening","split":"test_template","primary_tag":"fuzzy-period","modifier_tags":[],"expected":"dt fr 18:00>22:00","predicted":"dt fr 18:00"}
+{"id":"g-002580","text":"every wednesday until jun 7","split":"test_template","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 we u06-07","predicted":"d R w/1 we u06-08"}
+{"id":"g-002586","text":"october 15 through oct 18","split":"test_template","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 10-15>10-18","predicted":"d 10-15"}
+{"id":"g-002587","text":"tonight","split":"test_template","primary_tag":"fuzzy-period","modifier_tags":[],"expected":"dt +0d 20:00","predicted":"x"}
+{"id":"g-002594","text":"every weekday at 9","split":"test_template","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"dt R d/1 mo,tu,we,th,fr 9?","predicted":"dt R d/1 mo,tu,we,th,fr 9"}
+{"id":"g-002595","text":"10.24.2026","split":"test_template","primary_tag":"numeric-date","modifier_tags":[],"expected":"d 2026-10-24","predicted":"dt 2026-10-24"}
+{"id":"n-002610","text":"Aug 15 3pm Toaug 18 Noon","split":"test_template","primary_tag":"datetime-range","modifier_tags":["typo","casing"],"expected":"dt 08-15 15:00>08-18 12:00","predicted":"x"}
+{"id":"g-002631","text":"tonight","split":"test_template","primary_tag":"fuzzy-period","modifier_tags":[],"expected":"dt +0d 20:00","predicted":"d +0d 20:00"}
+{"id":"g-002648","text":"28 october","split":"test_template","primary_tag":"basic-date","modifier_tags":[],"expected":"d 10-28","predicted":"x"}
+{"id":"n-002649","text":"5:330pm","split":"test_template","primary_tag":"time-only","modifier_tags":["typo"],"expected":"t 17:30","predicted":"x"}
+{"id":"n-002670","text":"Day After Tomorrow","split":"test_template","primary_tag":"relative-date","modifier_tags":["casing"],"expected":"d +2d","predicted":"x"}
+{"id":"g-002673","text":"every 4 weeks","split":"test_template","primary_tag":"recurrence-interval","modifier_tags":[],"expected":"d R w/4","predicted":"x"}
+{"id":"g-002695","text":"6th to 9th of jun","split":"test_template","primary_tag":"date-range-shared-month","modifier_tags":[],"expected":"d 06-06>06-09","predicted":"dt 06-06>06-09"}
+{"id":"g-002699","text":"9:15am","split":"test_template","primary_tag":"time-only","modifier_tags":[],"expected":"t 09:15","predicted":"x"}
+{"id":"g-002704","text":"at 9","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 9?","predicted":"t 9"}
+{"id":"n-002721","text":"can we do room 4b or so","split":"test_template","primary_tag":"non-date-noise","modifier_tags":["filler-words"],"expected":"x","predicted":"x"}
+{"id":"g-002743","text":"noon","split":"test_template","primary_tag":"time-only","modifier_tags":[],"expected":"t 12:00","predicted":"t 00:00"}
+{"id":"n-002769","text":"lets say 2 wkss ago please","split":"test_template","primary_tag":"relative-offset","modifier_tags":["abbreviation","typo","filler-words"],"expected":"d -2w","predicted":"x"}
+{"id":"n-002782","text":"jun 7at 6pm","split":"test_template","primary_tag":"datetime","modifier_tags":["typo"],"expected":"dt 06-07 18:00","predicted":"dt 06-08 18:00"}
+{"id":"g-002805","text":"last thursday","split":"test_template","primary_tag":"weekday-relative","modifier_tags":[],"expected":"d th-1","predicted":"x"}
+{"id":"g-002815","text":"25","split":"test_template","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"x"}
+{"id":"g-002825","text":"at 1","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 1?","predicted":"t 1"}
+{"id":"n-002827","text":"june 9 htrough june 12","split":"test_template","primary_tag":"basic-date-range","modifier_tags":["typo"],"expected":"d 06-09>06-12","predicted":"d 06-09"}
+{"id":"g-002829","text":"second tuesday of june","split":"test_template","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d tu#2@06","predicted":"x"}
+{"id":"g-002864","text":"at 11","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 11?","predicted":"x"}
+{"id":"g-002881","text":"at 11","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 11?","predicted":"x"}
+{"id":"g-002882","text":"meeting notes","split":"test_template","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"x"}
+{"id":"g-002885","text":"at 8","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 8?","predicted":"x"}
+{"id":"g-002890","text":"first tuesday of april","split":"test_template","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d tu#1@04","predicted":"dt tu#1@04"}
+{"id":"g-002899","text":"at 11","split":"test_template","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 11?","predicted":"t 11"}
+{"id":"g-002900","text":"jul 2, 2028","split":"test_template","primary_tag":"basic-date-year","modifier_tags":[],"expected":"d 2028-07-02","predicted":"dt 2028-07-02"}
+{"id":"n-002945","text":"like may 19 3pm to may 22 noon or so","split":"test_template","primary_tag":"datetime-range","modifier_tags":["filler-words"],"expected":"dt 05-19 15:00>05-22 12:00","predicted":"x"}
+{"id":"g-002947","text":"last wednesday of august","split":"test_template","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d we#-1@08","predicted":"dt we#-1@08"}
+{"id":"g-002989","text":"oct 21 - oct 22","split":"test_template","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 10-21>10-22","predicted":"x"}
+{"id":"g-003008","text":"every thursday until jun 24","split":"test_template","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 th u06-24","predicted":"d R w/1 fr u06-24"}
+{"id":"g-003011","text":"third saturday of december","split":"test_template","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d sa#3@12","predicted":"x"}
+{"id":"n-003035","text":"every weekdy","split":"test_template","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"d R d/1 mo,tu,we,th,fr","predicted":"d R d/1 tu,tu,we,th,fr"}
+{"id":"n-003036","text":"friday 110-12pm","split":"test_template","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt fr 10:00>12:00","predicted":"dt fr 10:00"}
+{"id":"n-003060","text":"monday 8-100am","split":"test_template","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt mo 08:00>10:00","predicted":"x"}
+{"id":"g-003064","text":"1 jan","split":"test_template","primary_tag":"basic-date","modifier_tags":[],"expected":"d 01-01","predicted":"x"}
+{"id":"g-003087","text":"first wednesday of october","split":"test_template","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d we#1@10","predicted":"dt we#1@10"}
+{"id":"n-003092","text":"ma y23 3pm to may 26 noon","split":"test_template","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt 05-23 15:00>05-26 12:00","predicted":"x"}
+{"id":"n-003105","text":"last ttuesday","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo"],"expected":"d tu-1","predicted":"dt tu-1"}
+{"id":"n-003117","text":"next monyh","split":"test_noise","primary_tag":"period-relative","modifier_tags":["typo-keyboard"],"expected":"d M+1","predicted":"x"}
+{"id":"n-003125","text":"aprol 20 until april 23","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo-keyboard"],"expected":"d 04-20>04-23","predicted":"dt 04-20>04-23"}
+{"id":"n-003137","text":"new yeras eve","split":"test_noise","primary_tag":"named-holiday","modifier_tags":["typo"],"expected":"d 12-31","predicted":"x"}
+{"id":"n-003138","text":"xams eve","split":"test_noise","primary_tag":"named-holiday","modifier_tags":["colloquial","typo"],"expected":"d 12-24","predicted":"x"}
+{"id":"n-003159","text":"sep 4 3pm to se 7 noon","split":"test_noise","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt 09-04 15:00>09-07 12:00","predicted":"x"}
+{"id":"n-003160","text":"everry saturday until feb 5","split":"test_noise","primary_tag":"recurrence-bounded","modifier_tags":["typo"],"expected":"d R w/1 sa u02-05","predicted":"x"}
+{"id":"n-003167","text":"monthly on thee 23rd","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 d23","predicted":"x"}
+{"id":"p-003168","text":"february 4 t","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo","partial-prefix"],"expected":"d 02-04","predicted":"dt 02-04"}
+{"id":"n-003169","text":"lets say friday rvening please","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["typo-keyboard","filler-words"],"expected":"dt fr 18:00>22:00","predicted":"d fr 18:00>22:00"}
+{"id":"n-003172","text":"every eekday","split":"test_noise","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"d R d/1 mo,tu,we,th,fr","predicted":"dt R d/1 mo,tu,we,th,fr"}
+{"id":"n-003178","text":"nov 1 3pm to nov 4  noon","split":"test_noise","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt 11-01 15:00>11-04 12:00","predicted":"dt 11-01 03:00>11-04 12:00"}
+{"id":"n-003182","text":"i nthree days","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["word-numbers","typo"],"expected":"d +3d","predicted":"x"}
+{"id":"n-003191","text":"net thurs","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"expected":"d th+1","predicted":"d fr+1"}
+{"id":"n-003197","text":"aug12-15","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"expected":"d 08-12>08-15","predicted":"x"}
+{"id":"n-003199","text":"second mnday of september","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"expected":"d mo#2@09","predicted":"dt mo#2@09"}
+{"id":"n-003200","text":"1/11/26","split":"test_noise","primary_tag":"numeric-date","modifier_tags":["typo"],"expected":"d 2026-11-11","predicted":"x"}
+{"id":"n-003204","text":"juen 10 until june 13","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo"],"expected":"d 06-10>06-13","predicted":"d 06-10"}
+{"id":"n-003220","text":"daaily at 7am","split":"test_noise","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"dt R d/1 07:00","predicted":"dt R d/2 07:00"}
+{"id":"n-003227","text":"11/528","split":"test_noise","primary_tag":"numeric-date","modifier_tags":["typo"],"expected":"d 2028-11-05","predicted":"d 2028-12-05"}
+{"id":"p-003234","text":"september1 9 t","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo","partial-prefix"],"expected":"d 09-19","predicted":"d 09-20"}
+{"id":"n-003236","text":"tomorrow 7:155pm","split":"test_noise","primary_tag":"datetime","modifier_tags":["typo"],"expected":"dt +1d 19:15","predicted":"d +1d 19:15"}
+{"id":"n-003240","text":"this thursdya","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo"],"expected":"d th","predicted":"d fr"}
+{"id":"n-003245","text":"every wenesday until jan 12","split":"test_noise","primary_tag":"recurrence-bounded","modifier_tags":["typo"],"expected":"d R w/1 we u01-12","predicted":"d R w/1 we u01-13"}
+{"id":"n-003246","text":"sep 2 a t11am","split":"test_noise","primary_tag":"datetime","modifier_tags":["typo"],"expected":"dt 09-02 11:00","predicted":"dt 09-02 23:00"}
+{"id":"n-003249","text":"monthl on the 20th","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 d20","predicted":"x"}
+{"id":"n-003255","text":"novemmber 19 to november 22","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo"],"expected":"d 11-19>11-22","predicted":"d 11-19"}
+{"id":"n-003265","text":"firt friday of every month","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 fr#1","predicted":"dt R m/1 fr#1"}
+{"id":"n-003266","text":"second fridayo f june","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"expected":"d fr#2@06","predicted":"x"}
+{"id":"n-003270","text":"apr 4 3pmtospr 7 noon","split":"test_noise","primary_tag":"datetime-range","modifier_tags":["typo-keyboard","spacing"],"expected":"dt 04-04 15:00>04-07 12:00","predicted":"dt 04-05 15:00>04-07 12:00"}
+{"id":"n-003280","text":"can we do daiy for 9 days","split":"test_noise","primary_tag":"recurrence-bounded","modifier_tags":["typo","filler-words"],"expected":"d R d/1 n9","predicted":"x"}
+{"id":"n-003283","text":"Every 3 Eeks","split":"test_noise","primary_tag":"recurrence-interval","modifier_tags":["typo","casing"],"expected":"d R w/3","predicted":"dt R w/3"}
+{"id":"n-003285","text":"thi smonday","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo"],"expected":"d mo","predicted":"x"}
+{"id":"n-003292","text":"may 81-1","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["typo"],"expected":"d 05-08>05-11","predicted":"d 05-09>05-11"}
+{"id":"n-003298","text":"second thrusday of august","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"expected":"d th#2@08","predicted":"x"}
+{"id":"n-003321","text":"7pm","split":"test_noise","primary_tag":"time-only","modifier_tags":["casing"],"expected":"t 19:00","predicted":"t 07:00"}
+{"id":"n-003326","text":"first saturday of every mnoth","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 sa#1","predicted":"dt R m/1 sa#1"}
+{"id":"n-003348","text":"4//22/26","split":"test_noise","primary_tag":"numeric-date","modifier_tags":["typo"],"expected":"d 2026-04-22","predicted":"x"}
+{"id":"n-003354","text":"may 166tojun 14","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo","spacing"],"expected":"d 05-16>06-14","predicted":"dt 05-16>06-14"}
+{"id":"n-003359","text":"maybe 8a-m9am or so","split":"test_noise","primary_tag":"time-range","modifier_tags":["typo","filler-words"],"expected":"t 08:00>09:00","predicted":"x"}
+{"id":"n-003369","text":"second monday ofmay","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"expected":"d mo#2@05","predicted":"dt mo#2@05"}
+{"id":"n-003375","text":"sunday 3-5m","split":"test_noise","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt su 15:00>17:00","predicted":"x"}
+{"id":"n-003381","text":"like oct 1315 or so","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["typo","filler-words"],"expected":"d 10-13>10-15","predicted":"d 10-14>10-15"}
+{"id":"n-003386","text":"first tuesday of eevery month","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 tu#1","predicted":"d R m/2 tu#1"}
+{"id":"n-003390","text":"last eek","split":"test_noise","primary_tag":"period-relative","modifier_tags":["typo"],"expected":"d W-1","predicted":"d W+1"}
+{"id":"n-003397","text":"tis fri","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"expected":"d fr","predicted":"dt fr"}
+{"id":"n-003399","text":"Second Thursday Of Octoober","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo","casing"],"expected":"d th#2@10","predicted":"x"}
+{"id":"n-003407","text":"tomorro morning","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["typo"],"expected":"dt +1d 08:00>12:00","predicted":"dt +1d 20:00>12:00"}
+{"id":"n-003412","text":"5T O 5:30","split":"test_noise","primary_tag":"ampm-ambiguous","modifier_tags":["typo","casing"],"expected":"t 5?>5:30?","predicted":"t 5>5:30?"}
+{"id":"n-003414","text":"i 3 days","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["typo"],"expected":"d +3d","predicted":"x"}
+{"id":"n-003417","text":"thnaksgiving","split":"test_noise","primary_tag":"named-holiday","modifier_tags":["typo"],"expected":"d th#4@11","predicted":"d fr#4@11"}
+{"id":"n-003418","text":"3 ks ago","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["abbreviation","typo"],"expected":"d -3w","predicted":"x"}
+{"id":"n-003422","text":"monthly on te 14th","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 d14","predicted":"x"}
+{"id":"n-003427","text":"april 24 to msy 21","split":"test_noise","primary_tag":"basic-date-range","modifier_tags":["typo-keyboard"],"expected":"d 04-24>05-21","predicted":"x"}
+{"id":"n-003428","text":"2 ot 2:30","split":"test_noise","primary_tag":"ampm-ambiguous","modifier_tags":["typo"],"expected":"t 2?>2:30?","predicted":"t 2>2:30?"}
+{"id":"n-003443","text":"1 to 1::30","split":"test_noise","primary_tag":"ampm-ambiguous","modifier_tags":["typo"],"expected":"t 1?>1:30?","predicted":"t 1>1:30?"}
+{"id":"n-003449","text":"msy 3-4","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["typo-keyboard"],"expected":"d 05-03>05-04","predicted":"d 05-03"}
+{"id":"n-003451","text":"every other thursdya","split":"test_noise","primary_tag":"recurrence-interval","modifier_tags":["typo"],"expected":"d R w/2 th","predicted":"dt R w/2 th"}
+{"id":"g-003471","text":"at 6","split":"test_noise","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 6?","predicted":"x"}
+{"id":"n-003475","text":"like two eeks ago please","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["word-numbers","typo","filler-words"],"expected":"d -2w","predicted":"x"}
+{"id":"n-003479","text":"next friady","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo"],"expected":"d fr+1","predicted":"dt fr+1"}
+{"id":"n-003500","text":"maybe thhurs or so","split":"test_noise","primary_tag":"weekday-bare","modifier_tags":["abbreviation","typo","filler-words"],"expected":"d th","predicted":"x"}
+{"id":"n-003505","text":"nex year","split":"test_noise","primary_tag":"period-relative","modifier_tags":["typo"],"expected":"d Y+1","predicted":"dt Y+1"}
+{"id":"n-003507","text":"every weekday","split":"test_noise","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"d R d/1 mo,tu,we,th,fr","predicted":"x"}
+{"id":"n-003517","text":"every nov1 4","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R y/1","predicted":"dt R y/1"}
+{"id":"n-003518","text":"10 t 10:30","split":"test_noise","primary_tag":"ampm-ambiguous","modifier_tags":["typo"],"expected":"t 10?>10:30?","predicted":"t 10?>22:30?"}
+{"id":"n-003519","text":"tomorrow 9:15sm","split":"test_noise","primary_tag":"datetime","modifier_tags":["typo-keyboard"],"expected":"dt +1d 09:15","predicted":"x"}
+{"id":"n-003522","text":"last tuesday of jne","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"expected":"d tu#-1@06","predicted":"x"}
+{"id":"n-003537","text":"net saturday","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo"],"expected":"d sa+1","predicted":"d su+1"}
+{"id":"n-003538","text":"thisw ednesday","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo"],"expected":"d we","predicted":"d th"}
+{"id":"n-003549","text":"tomorrow 8:15sm","split":"test_noise","primary_tag":"datetime","modifier_tags":["typo-keyboard"],"expected":"dt +1d 08:15","predicted":"dt +1d 20:15"}
+{"id":"n-003558","text":"Otc 3-5","split":"test_noise","primary_tag":"date-range-shared-month","modifier_tags":["typo","casing"],"expected":"d 10-03>10-05","predicted":"d 10-04>10-05"}
+{"id":"n-003565","text":"lasy friday","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo-keyboard"],"expected":"d fr-1","predicted":"x"}
+{"id":"n-003571","text":"secpnd sunday of december","split":"test_noise","primary_tag":"nth-weekday-of-month","modifier_tags":["typo-keyboard"],"expected":"d su#2@12","predicted":"d mo#2@12"}
+{"id":"n-003589","text":"this momday","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["typo-keyboard"],"expected":"d mo","predicted":"dt mo"}
+{"id":"n-003591","text":"15:0","split":"test_noise","primary_tag":"time-only","modifier_tags":["typo"],"expected":"t 15:00","predicted":"t 03:00"}
+{"id":"n-003593","text":"lets say xmas evve or so","split":"test_noise","primary_tag":"named-holiday","modifier_tags":["colloquial","typo","filler-words"],"expected":"d 12-24","predicted":"dt 12-24"}
+{"id":"n-003599","text":"toomrrow morning","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["typo"],"expected":"dt +1d 08:00>12:00","predicted":"x"}
+{"id":"n-003600","text":"every other froday","split":"test_noise","primary_tag":"recurrence-interval","modifier_tags":["typo-keyboard"],"expected":"d R w/2 fr","predicted":"d R w/2 sa"}
+{"id":"n-003605","text":"friday evennig","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["typo"],"expected":"dt fr 18:00>22:00","predicted":"dt sa 18:00>22:00"}
+{"id":"n-003608","text":"eveyr weekday","split":"test_noise","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"d R d/1 mo,tu,we,th,fr","predicted":"d R d/1 tu,tu,we,th,fr"}
+{"id":"n-003609","text":"the 21st o june","split":"test_noise","primary_tag":"ordinal-date","modifier_tags":["typo"],"expected":"d 06-21","predicted":"x"}
+{"id":"n-003610","text":"nxet thurs","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo"],"expected":"d th+1","predicted":"d fr+1"}
+{"id":"n-003611","text":"buuy milk","split":"test_noise","primary_tag":"non-date-noise","modifier_tags":["typo"],"expected":"x","predicted":"x"}
+{"id":"n-003613","text":"may 5 3pm to may  noon","split":"test_noise","primary_tag":"datetime-range","modifier_tags":["typo"],"expected":"dt 05-05 15:00>05-08 12:00","predicted":"dt 05-05 15:00"}
+{"id":"n-003635","text":"jam 25","split":"test_noise","primary_tag":"basic-date","modifier_tags":["typo-keyboard"],"expected":"d 01-25","predicted":"x"}
+{"id":"n-003657","text":"in 4 dyas","split":"test_noise","primary_tag":"relative-offset","modifier_tags":["typo"],"expected":"d +4d","predicted":"x"}
+{"id":"n-003664","text":"LAST FFRI","split":"test_noise","primary_tag":"weekday-relative","modifier_tags":["abbreviation","typo","casing"],"expected":"d fr-1","predicted":"dt fr-1"}
+{"id":"n-003674","text":"tomorrow moning","split":"test_noise","primary_tag":"fuzzy-period","modifier_tags":["typo"],"expected":"dt +1d 08:00>12:00","predicted":"dt +1w 08:00>12:00"}
+{"id":"n-003678","text":"lets say EVEERY 3 WEEKS or so","split":"test_noise","primary_tag":"recurrence-interval","modifier_tags":["typo","casing","filler-words"],"expected":"d R w/4","predicted":"dt R w/4"}
+{"id":"n-003679","text":"every aapr 15","split":"test_noise","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R y/1","predicted":"x"}
+{"id":"n-003690","text":"tomoorrow 10:15am","split":"test_noise","primary_tag":"datetime","modifier_tags":["typo"],"expected":"dt +1d 10:15","predicted":"dt +1w 10:15"}
+{"id":"n-003691","text":"every weekdayy at 9","split":"test_noise","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"dt R d/1 mo,tu,we,th,fr 9?","predicted":"dt R d/1 tu,tu,we,th,fr 9?"}
+{"id":"h-003718","text":"jul 3 3pm to jul 6 noon","split":"test_external","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 07-03 15:00>07-06 12:00","predicted":"x"}
+{"id":"h-003723","text":"today","split":"test_external","primary_tag":"relative-date","modifier_tags":[],"expected":"d +0d","predicted":"x"}
+{"id":"m-003728","text":"third tuuesday of july","split":"test_external","primary_tag":"nth-weekday-of-month","modifier_tags":["typo"],"expected":"d tu#3@07","predicted":"d we#3@07"}
+{"id":"h-003733","text":"feb 22 3pm to feb 25 noon","split":"test_external","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 02-22 15:00>02-25 12:00","predicted":"dt 02-22 03:00>02-25 12:00"}
+{"id":"h-003742","text":"october","split":"test_external","primary_tag":"month-or-year-only","modifier_tags":[],"expected":"d M@10","predicted":"x"}
+{"id":"h-003750","text":"tomorrow 7:15pm","split":"test_external","primary_tag":"datetime","modifier_tags":[],"expected":"dt +1d 19:15","predicted":"x"}
+{"id":"m-003751","text":"next month","split":"test_external","primary_tag":"period-relative","modifier_tags":[],"expected":"d M+1","predicted":"x"}
+{"id":"h-003752","text":"daily for 7 days","split":"test_external","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 n7","predicted":"d R d/2 n7"}
+{"id":"h-003757","text":"every thursday until mar 28","split":"test_external","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 th u03-28","predicted":"d R w/1 fr u03-28"}
+{"id":"h-003763","text":"first thrsday of every month","split":"test_external","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 th#1","predicted":"d R m/2 th#1"}
+{"id":"h-003767","text":"2nd to 3rd of sep","split":"test_external","primary_tag":"date-range-shared-month","modifier_tags":[],"expected":"d 09-02>09-03","predicted":"dt 09-02>09-03"}
+{"id":"m-003786","text":"last friday of september","split":"test_external","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d fr#-1@09","predicted":"x"}
+{"id":"h-003789","text":"can we do last sun","split":"test_external","primary_tag":"weekday-relative","modifier_tags":["abbreviation","filler-words"],"expected":"d su-1","predicted":"d su+1"}
+{"id":"m-003793","text":"asdf","split":"test_external","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"x"}
+{"id":"m-003796","text":"12pm-3pm","split":"test_external","primary_tag":"time-range","modifier_tags":[],"expected":"t 12:00>15:00","predicted":"t 00:00>15:00"}
+{"id":"m-003801","text":"lets say 17th To 18th Of May","split":"test_external","primary_tag":"date-range-shared-month","modifier_tags":["casing","filler-words"],"expected":"d 05-17>05-18","predicted":"d 05-17"}
+{"id":"m-003803","text":"at10","split":"test_external","primary_tag":"ampm-ambiguous","modifier_tags":["typo"],"expected":"t 10?","predicted":"x"}
+{"id":"m-003811","text":"christmas","split":"test_external","primary_tag":"named-holiday","modifier_tags":[],"expected":"d 12-25","predicted":"x"}
+{"id":"h-003825","text":"mar 2 at 6pm","split":"test_external","primary_tag":"datetime","modifier_tags":[],"expected":"dt 03-02 18:00","predicted":"dt 03-03 18:00"}
+{"id":"h-003840","text":"sunday","split":"test_external","primary_tag":"weekday-bare","modifier_tags":[],"expected":"d su","predicted":"dt su"}
+{"id":"h-003844","text":"mn wed fri","split":"test_external","primary_tag":"recurrence-weekly","modifier_tags":["typo"],"expected":"d R w/1 mo,we,fr","predicted":"dt R w/1 mo,we,fr"}
+{"id":"h-003846","text":"at 10","split":"test_external","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 10?","predicted":"t 10"}
+{"id":"h-003859","text":"jan 4, 2026","split":"test_external","primary_tag":"basic-date-year","modifier_tags":[],"expected":"d 2026-01-04","predicted":"d 2026-02-04"}
+{"id":"h-003860","text":"apr 14 -m ay 9","split":"test_external","primary_tag":"basic-date-range","modifier_tags":["typo"],"expected":"d 04-14>05-09","predicted":"x"}
+{"id":"m-003863","text":"2026","split":"test_external","primary_tag":"month-or-year-only","modifier_tags":[],"expected":"d Y@2026","predicted":"x"}
+{"id":"h-003864","text":"firsttuesday of every month","split":"test_external","primary_tag":"recurrence-monthly-yearly","modifier_tags":["typo"],"expected":"d R m/1 tu#1","predicted":"x"}
+{"id":"h-003865","text":"november 14, 2028","split":"test_external","primary_tag":"basic-date-year","modifier_tags":[],"expected":"d 2028-11-14","predicted":"d 2028-12-14"}
+{"id":"m-003870","text":"daily for 3 days","split":"test_external","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R d/1 n3","predicted":"x"}
+{"id":"h-003875","text":"13:30","split":"test_external","primary_tag":"time-only","modifier_tags":[],"expected":"t 13:30","predicted":"x"}
+{"id":"h-003887","text":"7 aug","split":"test_external","primary_tag":"basic-date","modifier_tags":[],"expected":"d 08-07","predicted":"dt 08-07"}
+{"id":"m-003906","text":"Feb 22 Through March 10","split":"test_external","primary_tag":"basic-date-range","modifier_tags":["casing"],"expected":"d 02-22>03-10","predicted":"d 02-22"}
+{"id":"m-003913","text":"next satutday","split":"test_external","primary_tag":"weekday-relative","modifier_tags":["typo-keyboard"],"expected":"d sa+1","predicted":"d su+1"}
+{"id":"h-003941","text":"3pm-5pm","split":"test_external","primary_tag":"time-range","modifier_tags":[],"expected":"t 15:00>17:00","predicted":"x"}
+{"id":"h-003944","text":"fri","split":"test_external","primary_tag":"weekday-bare","modifier_tags":["abbreviation"],"expected":"d fr","predicted":"x"}
+{"id":"m-003954","text":"new years eve","split":"test_external","primary_tag":"named-holiday","modifier_tags":[],"expected":"d 12-31","predicted":"x"}
+{"id":"h-003956","text":"oct 8 3pm to oct 11 noon","split":"test_external","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 10-08 15:00>10-11 12:00","predicted":"x"}
+{"id":"h-003958","text":"can we do at 6 or so","split":"test_external","primary_tag":"ampm-ambiguous","modifier_tags":["filler-words"],"expected":"t 6?","predicted":"x"}
+{"id":"m-003977","text":"at 3","split":"test_external","primary_tag":"ampm-ambiguous","modifier_tags":[],"expected":"t 3?","predicted":"t 3"}
+{"id":"m-003992","text":"monday 10-12pm","split":"test_external","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt mo 10:00>12:00","predicted":"dt mo 10:00"}
+{"id":"m-004002","text":"thus","split":"test_external","primary_tag":"weekday-bare","modifier_tags":["abbreviation","typo"],"expected":"d th","predicted":"x"}
+{"id":"h-004009","text":"every wednesday until feb 26","split":"test_external","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 we u02-26","predicted":"d R w/1 th u02-26"}
+{"id":"h-004010","text":"mon wed fri","split":"test_external","primary_tag":"recurrence-weekly","modifier_tags":[],"expected":"d R w/1 mo,we,fr","predicted":"x"}
+{"id":"m-004018","text":"ever weekday at 9","split":"test_external","primary_tag":"recurrence-daily","modifier_tags":["typo"],"expected":"dt R d/1 mo,tu,we,th,fr 9?","predicted":"x"}
+{"id":"m-004030","text":"nov 10 - dec 14","split":"test_external","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 11-10>12-14","predicted":"d 11-10"}
+{"id":"h-004038","text":"march","split":"test_external","primary_tag":"month-or-year-only","modifier_tags":[],"expected":"d M@03","predicted":"dt M@03"}
+{"id":"h-004049","text":"jul 20 at 11am","split":"test_external","primary_tag":"datetime","modifier_tags":[],"expected":"dt 07-20 11:00","predicted":"d 07-20 11:00"}
+{"id":"m-004057","text":"first sunday of march","split":"test_external","primary_tag":"nth-weekday-of-month","modifier_tags":[],"expected":"d su#1@03","predicted":"x"}
+{"id":"h-004059","text":"feb 23 3pm to feb 26 noon","split":"test_external","primary_tag":"datetime-range","modifier_tags":[],"expected":"dt 02-23 15:00>02-26 12:00","predicted":"x"}
+{"id":"m-004072","text":"13th to 14th of may","split":"test_external","primary_tag":"date-range-shared-month","modifier_tags":[],"expected":"d 05-13>05-14","predicted":"dt 05-13>05-14"}
+{"id":"h-004075","text":"tomorrow :715pm","split":"test_external","primary_tag":"datetime","modifier_tags":["typo"],"expected":"dt +1d 19:15","predicted":"dt +1w 19:15"}
+{"id":"m-004095","text":"every day","split":"test_external","primary_tag":"recurrence-daily","modifier_tags":[],"expected":"d R d/1","predicted":"x"}
+{"id":"m-004099","text":"oct 13 - november 18","split":"test_external","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d 10-13>11-18","predicted":"d 10-13"}

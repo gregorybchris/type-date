@@ -1,0 +1,173 @@
+{
+ "eval": {
+  "exact": 0.37,
+  "resolved": 0.5269,
+  "n": 2600,
+  "by_split": {
+   "test_external": {
+    "n": 400,
+    "exact": 0.3475
+   },
+   "test_noise": {
+    "n": 600,
+    "exact": 0.16
+   },
+   "test_template": {
+    "n": 600,
+    "exact": 0.3833
+   },
+   "val": {
+    "n": 1000,
+    "exact": 0.497
+   }
+  },
+  "by_tag": {
+   "ampm-ambiguous": {
+    "n": 101,
+    "exact": 0.0891
+   },
+   "basic-date": {
+    "n": 201,
+    "exact": 0.7662
+   },
+   "basic-date-range": {
+    "n": 203,
+    "exact": 0.399
+   },
+   "basic-date-year": {
+    "n": 87,
+    "exact": 0.6897
+   },
+   "date-range-shared-month": {
+    "n": 93,
+    "exact": 0.3548
+   },
+   "datetime": {
+    "n": 146,
+    "exact": 0.3425
+   },
+   "datetime-range": {
+    "n": 129,
+    "exact": 0.0853
+   },
+   "fuzzy-period": {
+    "n": 70,
+    "exact": 0.0286
+   },
+   "month-or-year-only": {
+    "n": 53,
+    "exact": 0.4151
+   },
+   "named-holiday": {
+    "n": 55,
+    "exact": 0.1818
+   },
+   "non-date-noise": {
+    "n": 67,
+    "exact": 0.4925
+   },
+   "nth-weekday-of-month": {
+    "n": 85,
+    "exact": 0.0824
+   },
+   "numeric-date": {
+    "n": 93,
+    "exact": 0.3011
+   },
+   "ordinal-date": {
+    "n": 77,
+    "exact": 0.4416
+   },
+   "period-relative": {
+    "n": 76,
+    "exact": 0.3553
+   },
+   "recurrence-bounded": {
+    "n": 53,
+    "exact": 0.0189
+   },
+   "recurrence-daily": {
+    "n": 85,
+    "exact": 0.0588
+   },
+   "recurrence-interval": {
+    "n": 75,
+    "exact": 0.0133
+   },
+   "recurrence-monthly-yearly": {
+    "n": 57,
+    "exact": 0.0175
+   },
+   "recurrence-weekly": {
+    "n": 72,
+    "exact": 0.1389
+   },
+   "relative-date": {
+    "n": 117,
+    "exact": 0.7692
+   },
+   "relative-offset": {
+    "n": 130,
+    "exact": 0.4846
+   },
+   "time-only": {
+    "n": 142,
+    "exact": 0.5845
+   },
+   "time-range": {
+    "n": 87,
+    "exact": 0.4483
+   },
+   "weekday-bare": {
+    "n": 98,
+    "exact": 0.6429
+   },
+   "weekday-relative": {
+    "n": 148,
+    "exact": 0.3041
+   }
+  },
+  "by_modifier": {
+   "abbreviation": {
+    "n": 84,
+    "exact": 0.4524
+   },
+   "casing": {
+    "n": 194,
+    "exact": 0.3247
+   },
+   "colloquial": {
+    "n": 8,
+    "exact": 0
+   },
+   "filler-words": {
+    "n": 105,
+    "exact": 0.2476
+   },
+   "partial-prefix": {
+    "n": 34,
+    "exact": 0.2353
+   },
+   "spacing": {
+    "n": 9,
+    "exact": 0.2222
+   },
+   "typo": {
+    "n": 689,
+    "exact": 0.1495
+   },
+   "typo-keyboard": {
+    "n": 87,
+    "exact": 0.1034
+   },
+   "word-numbers": {
+    "n": 49,
+    "exact": 0.4898
+   }
+  }
+ },
+ "model": {
+  "params": 0,
+  "size_bytes": 182000
+ }
+}

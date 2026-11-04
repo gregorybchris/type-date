@@ -1,0 +1,18 @@
+[
+ {
+  "engine": "baseline-heuristic-small",
+  "backend": "js",
+  "browser": "chromium",
+  "load_ms": 14,
+  "cold_first_ms": 0.6,
+  "latency_ms": {
+   "p50": 0.2,
+   "p95": 0.3,
+   "p99": 0.5
+  },
+  "memory_mb": 2,
+  "download_bytes": 6400,
+  "n": 200,
+  "browser_accuracy": 0.3685
+ }
+]

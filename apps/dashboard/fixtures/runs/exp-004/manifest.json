@@ -1,0 +1,16 @@
+{
+ "experiment": "exp-004",
+ "engine": "ort-custom",
+ "quant": "fp32",
+ "files": {
+  "encoder": "encoder_model.onnx",
+  "decoder": "decoder_model.onnx",
+  "tokenizer": "tokenizer.json"
+ },
+ "config": {
+  "max_input_tokens": 48,
+  "max_output_tokens": 32,
+  "decoder_start_token_id": 0,
+  "eos_token_id": 1
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "experiment": "exp-009",
+ "engine": "wllama",
+ "quant": "int8",
+ "files": {
+  "model": "model.gguf"
+ },
+ "config": {
+  "max_input_tokens": 48,
+  "max_output_tokens": 32,
+  "decoder_start_token_id": 0,
+  "eos_token_id": 1
+ }
+}

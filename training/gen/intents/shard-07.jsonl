@@ -1,0 +1,100 @@
+{"iid": "i00700", "canonical": "every 3 weeks starting 5/6", "dsl": "d R w/3 s05-06", "tag": "recurrence-interval"}
+{"iid": "i00701", "canonical": "wednesday and monday for six times", "dsl": "d R w/1 mo,we n6", "tag": "recurrence-weekly"}
+{"iid": "i00702", "canonical": "last tues in dec", "dsl": "d tu#-1@12", "tag": "nth-weekday-of-month"}
+{"iid": "i00703", "canonical": "noon tomorrow", "dsl": "dt +1d 12:00", "tag": "datetime"}
+{"iid": "i00704", "canonical": "25 november to 11th dec", "dsl": "d 11-25>12-11", "tag": "basic-date-range"}
+{"iid": "i00705", "canonical": "from today to aug 24", "dsl": "d +0d>08-24", "tag": "basic-date-range"}
+{"iid": "i00706", "canonical": "on halloween", "dsl": "d 10-31", "tag": "named-holiday"}
+{"iid": "i00707", "canonical": "mon-fri at 20:30 for 3 days", "dsl": "dt R d/1 mo,tu,we,th,fr n3 20:30", "tag": "recurrence-daily"}
+{"iid": "i00708", "canonical": "every month on the 20th", "dsl": "d R m/1 d20", "tag": "recurrence-monthly-yearly"}
+{"iid": "i00709", "canonical": "tomorrow at 12:30 to 2pm", "dsl": "dt +1d 12:30>14:00", "tag": "datetime-range"}
+{"iid": "i00710", "canonical": "new years day", "dsl": "d 01-01", "tag": "named-holiday"}
+{"iid": "i00711", "canonical": "in 3 weeks", "dsl": "d +3w", "tag": "relative-offset"}
+{"iid": "i00712", "canonical": "every four days", "dsl": "d R d/4", "tag": "recurrence-interval"}
+{"iid": "i00713", "canonical": "jan twenty first 8:00 a.m. until feb 19 07:00", "dsl": "dt 01-21 08:00>02-19 07:00", "tag": "datetime-range"}
+{"iid": "i00714", "canonical": "4 months from now", "dsl": "d +4m", "tag": "relative-offset"}
+{"iid": "i00715", "canonical": "22 jan \u2013 feb 1st", "dsl": "d 01-22>02-01", "tag": "basic-date-range"}
+{"iid": "i00716", "canonical": "between february 7th and jan 19", "dsl": "d 02-07>01-19", "tag": "basic-date-range"}
+{"iid": "i00717", "canonical": "1:30 pm", "dsl": "t 13:30", "tag": "time-only"}
+{"iid": "i00718", "canonical": "8:30pm on tomorrow", "dsl": "dt +1d 20:30", "tag": "datetime"}
+{"iid": "i00719", "canonical": "the month of january", "dsl": "d M@01", "tag": "month-or-year-only"}
+{"iid": "i00720", "canonical": "the day after tomorrow", "dsl": "d +2d", "tag": "relative-date"}
+{"iid": "i00721", "canonical": "june seventh", "dsl": "d 06-07", "tag": "basic-date"}
+{"iid": "i00722", "canonical": "sept. 26", "dsl": "d 09-26", "tag": "basic-date"}
+{"iid": "i00723", "canonical": "14th feb", "dsl": "d 02-14", "tag": "basic-date"}
+{"iid": "i00724", "canonical": "22:30 to 23:00", "dsl": "t 22:30>23:00", "tag": "time-range"}
+{"iid": "i00725", "canonical": "september 13 through 16", "dsl": "d 09-13>09-16", "tag": "date-range-shared-month"}
+{"iid": "i00726", "canonical": "new year's day", "dsl": "d 01-01", "tag": "named-holiday"}
+{"iid": "i00727", "canonical": "every month on the 15th for five times", "dsl": "d R m/1 d15 n5", "tag": "recurrence-monthly-yearly"}
+{"iid": "i00728", "canonical": "every wednesday 6:50 pm until 16/5", "dsl": "dt R w/1 we u05-16 18:50", "tag": "recurrence-weekly"}
+{"iid": "i00729", "canonical": "12:45 pm jul. 23", "dsl": "dt 07-23 12:45", "tag": "datetime"}
+{"iid": "i00730", "canonical": "3", "dsl": "t 3?", "tag": "time-only"}
+{"iid": "i00731", "canonical": "1", "dsl": "t 1?", "tag": "time-only"}
+{"iid": "i00732", "canonical": "12 jan 2030", "dsl": "d 2030-01-12", "tag": "basic-date-year"}
+{"iid": "i00733", "canonical": "from 05:00 to 06:00", "dsl": "t 05:00>06:00", "tag": "time-range"}
+{"iid": "i00734", "canonical": "tmr at 15:00", "dsl": "dt +1d 15:00", "tag": "datetime"}
+{"iid": "i00735", "canonical": "in 14 weeks 6:15", "dsl": "dt +14w 6:15?", "tag": "datetime"}
+{"iid": "i00736", "canonical": "december. 25 1 till 2pm", "dsl": "dt 12-25 13:00>14:00", "tag": "datetime-range"}
+{"iid": "i00737", "canonical": "independence day", "dsl": "d 07-04", "tag": "named-holiday"}
+{"iid": "i00738", "canonical": "5 to 6:00 pm", "dsl": "t 17:00>18:00", "tag": "time-range"}
+{"iid": "i00739", "canonical": "two weeks from today", "dsl": "d +2w", "tag": "relative-offset"}
+{"iid": "i00740", "canonical": "every third wednesday of every month 5:45pm- 18:00", "dsl": "dt R m/1 we#3 17:45>18:00", "tag": "recurrence-monthly-yearly"}
+{"iid": "i00741", "canonical": "every thursdays at 14:50 until 6/6", "dsl": "dt R w/1 th u06-06 14:50", "tag": "recurrence-weekly"}
+{"iid": "i00742", "canonical": "ninth november", "dsl": "d 11-09", "tag": "basic-date"}
+{"iid": "i00743", "canonical": "october seventeenth to 21", "dsl": "d 10-17>10-21", "tag": "date-range-shared-month"}
+{"iid": "i00744", "canonical": "from march 21st 5 a.m. to oct 3rd 11:30am", "dsl": "dt 03-21 05:00>10-03 11:30", "tag": "datetime-range"}
+{"iid": "i00745", "canonical": "every first thurs of every month", "dsl": "d R m/1 th#1", "tag": "recurrence-monthly-yearly"}
+{"iid": "i00746", "canonical": "17/9 10 to 6", "dsl": "dt 09-17 10?>6?", "tag": "datetime-range"}
+{"iid": "i00747", "canonical": "from this thursday to previous sat", "dsl": "d th>sa-1", "tag": "basic-date-range"}
+{"iid": "i00748", "canonical": "from 1:30 to 2", "dsl": "t 1:30?>2?", "tag": "time-range"}
+{"iid": "i00749", "canonical": "from 6 to 7", "dsl": "t 6?>7?", "tag": "time-range"}
+{"iid": "i00750", "canonical": "the third weds of december", "dsl": "d we#3@12", "tag": "nth-weekday-of-month"}
+{"iid": "i00751", "canonical": "9 to 10", "dsl": "t 9?>10?", "tag": "time-range"}
+{"iid": "i00752", "canonical": "11 jul \u2013 30 october", "dsl": "d 07-11>10-30", "tag": "basic-date-range"}
+{"iid": "i00753", "canonical": "previous tue", "dsl": "d tu-1", "tag": "weekday-relative"}
+{"iid": "i00754", "canonical": "9/28/2025", "dsl": "d 2025-09-28", "tag": "basic-date-year"}
+{"iid": "i00755", "canonical": "fri", "dsl": "d fr", "tag": "weekday-bare"}
+{"iid": "i00756", "canonical": "from 17:00 to 17:15", "dsl": "t 17:00>17:15", "tag": "time-range"}
+{"iid": "i00757", "canonical": "weekdays 10:30 to 11:30", "dsl": "dt R d/1 mo,tu,we,th,fr 10:30?>11:30?", "tag": "recurrence-daily"}
+{"iid": "i00758", "canonical": "9:30 to noon", "dsl": "t 9:30?>12:00", "tag": "time-range"}
+{"iid": "i00759", "canonical": "last monday", "dsl": "d mo-1", "tag": "weekday-relative"}
+{"iid": "i00760", "canonical": "previous year", "dsl": "d Y-1", "tag": "period-relative"}
+{"iid": "i00761", "canonical": "every fri", "dsl": "d R w/1 fr", "tag": "recurrence-weekly"}
+{"iid": "i00762", "canonical": "saturday and tuesday and sunday 18:15", "dsl": "dt R w/1 tu,sa,su 18:15", "tag": "recurrence-weekly"}
+{"iid": "i00763", "canonical": "from nxt mon 7 to tomorrow 5", "dsl": "dt mo+1 7?>+1d 5?", "tag": "datetime-range"}
+{"iid": "i00764", "canonical": "31 mar from 3pm to 11 pm", "dsl": "dt 03-31 15:00>23:00", "tag": "datetime-range"}
+{"iid": "i00765", "canonical": "3-18 3:00 in the afternoon", "dsl": "dt 03-18 15:00", "tag": "datetime"}
+{"iid": "i00766", "canonical": "every month on the 20th at 3:30 for 12 times", "dsl": "dt R m/1 d20 n12 3:30?", "tag": "recurrence-monthly-yearly"}
+{"iid": "i00767", "canonical": "2pm", "dsl": "t 14:00", "tag": "time-only"}
+{"iid": "i00768", "canonical": "10:30 to 11", "dsl": "t 10:30?>11?", "tag": "time-range"}
+{"iid": "i00769", "canonical": "xmas eve", "dsl": "d 12-24", "tag": "named-holiday"}
+{"iid": "i00770", "canonical": "last monday at 1:50pm", "dsl": "dt mo-1 13:50", "tag": "datetime"}
+{"iid": "i00771", "canonical": "december 18 at 1:45pm", "dsl": "dt 12-18 13:45", "tag": "datetime"}
+{"iid": "i00772", "canonical": "last friday of every month for 5 times", "dsl": "d R m/1 fr#-1 n5", "tag": "recurrence-monthly-yearly"}
+{"iid": "i00773", "canonical": "in 1 mo", "dsl": "d +1m", "tag": "relative-offset"}
+{"iid": "i00774", "canonical": "18:50 on aug 31st", "dsl": "dt 08-31 18:50", "tag": "datetime"}
+{"iid": "i00775", "canonical": "around 10:00", "dsl": "t 10:00", "tag": "time-only"}
+{"iid": "i00776", "canonical": "from mon. to this saturday", "dsl": "d mo>sa", "tag": "basic-date-range"}
+{"iid": "i00777", "canonical": "3rd august to aug 11", "dsl": "d 08-03>08-11", "tag": "basic-date-range"}
+{"iid": "i00778", "canonical": "in three days", "dsl": "d +3d", "tag": "relative-offset"}
+{"iid": "i00779", "canonical": "five weeks ago", "dsl": "d -5w", "tag": "relative-offset"}
+{"iid": "i00780", "canonical": "between 10/13 and oct 28th", "dsl": "d 10-13>10-28", "tag": "basic-date-range"}
+{"iid": "i00781", "canonical": "nxt weds", "dsl": "d we+1", "tag": "weekday-relative"}
+{"iid": "i00782", "canonical": "at 4:30pm", "dsl": "t 16:30", "tag": "time-only"}
+{"iid": "i00783", "canonical": "@ 15:30", "dsl": "t 15:30", "tag": "time-only"}
+{"iid": "i00784", "canonical": "every tue 4:30", "dsl": "dt R w/1 tu 4:30?", "tag": "recurrence-weekly"}
+{"iid": "i00785", "canonical": "every three days from oct. 15", "dsl": "d R d/3 s10-15", "tag": "recurrence-interval"}
+{"iid": "i00786", "canonical": "every other week through 9 july", "dsl": "d R w/2 u07-09", "tag": "recurrence-interval"}
+{"iid": "i00787", "canonical": "at 6", "dsl": "t 6?", "tag": "time-only"}
+{"iid": "i00788", "canonical": "this sunday 1:20", "dsl": "dt su 1:20?", "tag": "datetime"}
+{"iid": "i00789", "canonical": "wednesday - next thursday", "dsl": "d we>th+1", "tag": "basic-date-range"}
+{"iid": "i00790", "canonical": "8 till 4", "dsl": "t 8?>4?", "tag": "time-range"}
+{"iid": "i00791", "canonical": "at 9:30 pm", "dsl": "t 21:30", "tag": "time-only"}
+{"iid": "i00792", "canonical": "every mons through may first", "dsl": "d R w/1 mo u05-01", "tag": "recurrence-weekly"}
+{"iid": "i00793", "canonical": "aug. 9th - the 28th of august", "dsl": "d 08-09>08-28", "tag": "basic-date-range"}
+{"iid": "i00794", "canonical": "wednesday 10", "dsl": "dt we 10?", "tag": "datetime"}
+{"iid": "i00795", "canonical": "every other saturday at 3 in the afternoon ending jul 1st", "dsl": "dt R w/2 sa u07-01 15:00", "tag": "recurrence-interval"}
+{"iid": "i00796", "canonical": "every thursday and friday and sunday", "dsl": "d R w/1 th,fr,su", "tag": "recurrence-weekly"}
+{"iid": "i00797", "canonical": "jan 26", "dsl": "d 01-26", "tag": "basic-date"}
+{"iid": "i00798", "canonical": "september 4th to 13th", "dsl": "d 09-04>09-13", "tag": "date-range-shared-month"}
+{"iid": "i00799", "canonical": "october 1 to feb. 19", "dsl": "d 10-01>02-19", "tag": "basic-date-range"}

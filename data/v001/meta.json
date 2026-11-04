@@ -1,0 +1,245 @@
+{
+  "version": "v001",
+  "created": "2026-11-04T03:11:13+00:00",
+  "seed": 0,
+  "params": {
+    "n": 60000,
+    "noise_rate": 0.3,
+    "prefix_rate": 0.15
+  },
+  "counts": {
+    "train": 47332,
+    "test_template": 5249,
+    "val": 2591,
+    "test_noise": 1499
+  },
+  "dropped_conflicts": 3485,
+  "conflict_texts": [
+    "05:00 to 6am",
+    "1",
+    "1 to",
+    "10",
+    "10 feb",
+    "10 to",
+    "10:05",
+    "10:10",
+    "10:15",
+    "10:30",
+    "10:30 to",
+    "10:30 to 11:30",
+    "10:45",
+    "10:45 to 11:30",
+    "10:45 to 11:45",
+    "10:50",
+    "10am to 11am",
+    "11 aug",
+    "11:05",
+    "11:10",
+    "11:15",
+    "11:30",
+    "11:30 -",
+    "11:30 on today",
+    "11:30 to 12:30",
+    "11:30 until 12:30",
+    "11:40",
+    "11:45",
+    "11:45 to 12:15",
+    "11:50",
+    "11am",
+    "11am to",
+    "11am to 12pm",
+    "11th mar",
+    "12",
+    "12 to",
+    "12-",
+    "12:10",
+    "12:15",
+    "12:15 on",
+    "12:20",
+    "12:30",
+    "12:30 to",
+    "12:40",
+    "12:45",
+    "12:50",
+    "17 february",
+    "18 jun.",
+    "18th nov",
+    "19 april"
+  ],
+  "held_out_templates": [
+    "basic-date-range.between.abs_mon_d_d_mon",
+    "basic-date-range.between.abs_mon_d_mon_dot_d",
+    "basic-date-range.between.abs_mon_d_the_ord_of_mon",
+    "basic-date-range.between.rel_bare_next",
+    "basic-date-range.between.rel_nxt_coming",
+    "basic-date-range.between.rel_ord_mon_the_ord_of_mon",
+    "basic-date-range.between.rel_rel_day_nxt",
+    "basic-date-range.between.rel_slash_d_mon",
+    "basic-date-range.from.abs_d_mon_d_mon",
+    "basic-date-range.from.abs_mon_dot_d_slash_dm",
+    "basic-date-range.from.abs_slash_dm_d_mon",
+    "basic-date-range.from.abs_the_ord_of_mon_slash_dm",
+    "basic-date-range.from.rel_bare_bare",
+    "basic-date-range.from.rel_bare_past",
+    "basic-date-range.from.rel_d_mon_d_mon",
+    "basic-date-range.from.rel_d_mon_mon_d",
+    "basic-date-range.from.rel_last_on",
+    "basic-date-range.from.rel_mon_d_mon_dot_d",
+    "basic-date-range.from.rel_mon_d_the_ord_of_mon",
+    "basic-date-range.from.rel_next_bare",
+    "basic-date-range.from.rel_next_last",
+    "basic-date-range.from.rel_slash_dm_d_mon",
+    "basic-date-range.from.rel_slash_mon_d",
+    "basic-date-range.plain.abs_d_mon_d_mon",
+    "basic-date-range.plain.abs_d_mon_slash_dm",
+    "basic-date-range.plain.abs_mon_d_d_mon",
+    "basic-date-range.plain.abs_mon_d_slash",
+    "basic-date-range.plain.abs_mon_dot_d_d_mon",
+    "basic-date-range.plain.abs_mon_dot_d_mon_d",
+    "basic-date-range.plain.abs_slash_dm_d_mon",
+    "basic-date-range.plain.abs_slash_dm_slash",
+    "basic-date-range.plain.abs_slash_mon_dot_d",
+    "basic-date-range.plain.abs_the_ord_of_mon_mon_d",
+    "basic-date-range.plain.rel_coming_bare",
+    "basic-date-range.plain.rel_coming_this",
+    "basic-date-range.plain.rel_last_on",
+    "basic-date-range.plain.rel_lst_last",
+    "basic-date-range.plain.rel_mon_dot_d_the_ord_of_mon",
+    "basic-date-range.plain.rel_nxt_on",
+    "basic-date-range.plain.rel_on_last",
+    "basic-date-range.plain.rel_ord_mon_d_mon",
+    "basic-date-range.plain.rel_previous_bare",
+    "basic-date-range.plain.rel_previous_last",
+    "basic-date-range.plain.rel_rel_day_past",
+    "basic-date-range.plain.rel_slash_dm_d_mon",
+    "basic-date-range.plain.rel_slash_slash_dm",
+    "basic-date-range.plain.rel_this_coming",
+    "datetime-range.one-date.noon_end",
+    "datetime.@.next",
+    "datetime.@.slash_yy",
+    "datetime.@.this",
+    "datetime.at.off_in",
+    "datetime.at.on",
+    "datetime.on_rev.mon_dot_d",
+    "datetime.on_rev.the_ord_of_mon",
+    "datetime.plain.coming",
+    "recurrence-weekly.weekly",
+    "relative-date.word",
+    "time-range.h24.between",
+    "time-range.known.between",
+    "weekday-relative.past"
+  ],
+  "by_tag": {
+    "basic-date": {
+      "train": 3570,
+      "val": 192,
+      "test_noise": 186
+    },
+    "basic-date-range": {
+      "train": 5403,
+      "test_template": 956,
+      "val": 278,
+      "test_noise": 67
+    },
+    "basic-date-year": {
+      "train": 1863,
+      "val": 88,
+      "test_noise": 80
+    },
+    "date-range-shared-month": {
+      "train": 1521,
+      "val": 103,
+      "test_noise": 13
+    },
+    "datetime": {
+      "train": 7051,
+      "test_template": 196,
+      "val": 387,
+      "test_noise": 116
+    },
+    "datetime-range": {
+      "train": 6049,
+      "test_template": 94,
+      "val": 342,
+      "test_noise": 79
+    },
+    "fuzzy-period": {
+      "train": 113,
+      "val": 10,
+      "test_noise": 22
+    },
+    "month-or-year-only": {
+      "train": 327,
+      "val": 23,
+      "test_noise": 59
+    },
+    "named-holiday": {
+      "train": 637,
+      "val": 29,
+      "test_noise": 48
+    },
+    "non-date-noise": {
+      "train": 725,
+      "val": 41
+    },
+    "nth-weekday-of-month": {
+      "train": 2366,
+      "val": 124,
+      "test_noise": 37
+    },
+    "period-relative": {
+      "train": 589,
+      "val": 26,
+      "test_noise": 90
+    },
+    "recurrence-daily": {
+      "train": 1308,
+      "val": 55,
+      "test_noise": 50
+    },
+    "recurrence-interval": {
+      "train": 2532,
+      "val": 139,
+      "test_noise": 43
+    },
+    "recurrence-monthly-yearly": {
+      "train": 3827,
+      "val": 176,
+      "test_noise": 44
+    },
+    "recurrence-weekly": {
+      "test_template": 3268
+    },
+    "relative-date": {
+      "test_template": 417
+    },
+    "relative-offset": {
+      "train": 1553,
+      "val": 85,
+      "test_noise": 51
+    },
+    "time-only": {
+      "train": 1716,
+      "val": 127,
+      "test_noise": 186
+    },
+    "time-range": {
+      "train": 4903,
+      "test_template": 220,
+      "val": 286,
+      "test_noise": 137
+    },
+    "weekday-bare": {
+      "train": 124,
+      "val": 9,
+      "test_noise": 41
+    },
+    "weekday-relative": {
+      "train": 1155,
+      "test_template": 98,
+      "val": 71,
+      "test_noise": 150
+    }
+  },
+  "notes": "grammar only, first pass"
+}

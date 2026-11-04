@@ -1,0 +1,19 @@
+{
+ "id": "exp-003",
+ "number": 3,
+ "title": "heuristic-full",
+ "created": "2026-11-03T11:00:00Z",
+ "dataset": "v001",
+ "format": "dsl-v1",
+ "notes": "Broad rule set with fuzzy month and weekday matching.",
+ "parent": "exp-002",
+ "model": {
+  "family": "heuristic",
+  "params": 0
+ },
+ "train": {},
+ "export": {
+  "format": "js",
+  "quant": "none"
+ }
+}

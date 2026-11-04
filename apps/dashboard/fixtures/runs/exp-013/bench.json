@@ -1,0 +1,36 @@
+[
+ {
+  "engine": "wllama",
+  "backend": "wasm",
+  "browser": "chromium",
+  "load_ms": 63384,
+  "cold_first_ms": 4830,
+  "latency_ms": {
+   "p50": 1380.1,
+   "p95": 2208.2,
+   "p99": 3174.2
+  },
+  "tokens_per_s": 8,
+  "memory_mb": 1114,
+  "download_bytes": 281041718,
+  "n": 200,
+  "browser_accuracy": 0.9528
+ },
+ {
+  "engine": "wllama",
+  "backend": "webgpu",
+  "browser": "chromium",
+  "load_ms": 21228,
+  "cold_first_ms": 1705,
+  "latency_ms": {
+   "p50": 487,
+   "p95": 779.2,
+   "p99": 1120.1
+  },
+  "tokens_per_s": 23,
+  "memory_mb": 1519,
+  "download_bytes": 281041718,
+  "n": 200,
+  "browser_accuracy": 0.9513
+ }
+]

@@ -1,0 +1,27 @@
+{
+ "id": "exp-009",
+ "number": 9,
+ "title": "smollm-135m ft",
+ "created": "2026-11-03T17:00:00Z",
+ "dataset": "v001",
+ "format": "dsl-v1",
+ "notes": "Decoder only.",
+ "parent": null,
+ "model": {
+  "family": "smollm-135m",
+  "params": 135000000,
+  "layers": "6+6",
+  "vocab": 4000
+ },
+ "train": {
+  "epochs": 10,
+  "batch_size": 128,
+  "lr": 0.0005,
+  "seed": 0,
+  "device": "mps"
+ },
+ "export": {
+  "format": "gguf",
+  "quant": "int8"
+ }
+}
