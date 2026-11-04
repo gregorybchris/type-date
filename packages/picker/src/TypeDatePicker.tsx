@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
-import { describeRecurrence, fmtDate, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
+import { describeRecurrence, fmtDate, fmtDuration, fmtShort, fmtShortDay, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
 import { flipMeridiem, pickDate, pickTime, summarize } from "./edit";
 import type { Target } from "./edit";
@@ -416,8 +416,8 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
               {rec.months && <span className="td-chip">Every {monthNames(rec.months)}</span>}
               {bound && <span className="td-chip">{bound}</span>}
               <span className="td-next">
-                {upcoming.length || !sel.occ.size ? "Next" : "Last"}{" "}
-                {nextList.length ? nextList.map(fmtShort).join(" · ") : "none"}
+                {upcoming.length || !sel.occ.size ? "Upcoming dates:" : "Most recent dates:"}{" "}
+                {nextList.length ? nextList.map(fmtShortDay).join(" · ") : "none"}
               </span>
             </div>
           )}
