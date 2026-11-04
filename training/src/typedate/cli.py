@@ -213,6 +213,55 @@ def data_consensus(
     typer.echo(json.dumps(stats))
 
 
+@data_app.command("mix")
+def data_mix(
+    version: str = typer.Argument(..., help="New train-only version, e.g. v005"),
+    base: str = typer.Option("v004"),
+    add: str = typer.Option(
+        ..., help="JSONL to add (path relative to repo root, e.g. data/real/train.jsonl)"
+    ),
+    repeat: int = typer.Option(1, help="Repeat the added rows this many times"),
+    eval_version: str = typer.Option(
+        "e2", help="Drop added rows whose text is in this eval version"
+    ),
+) -> None:
+    """Add extra labeled rows (for example realistic data) to a train set, upsampled."""
+    from datetime import UTC, datetime
+    from pathlib import Path
+
+    from .evalsets import load_eval
+    from .train import ROOT, load_jsonl
+
+    banned = set()
+    for rows in load_eval(eval_version).values():
+        banned |= {" ".join(r["text"].lower().split()) for r in rows}
+    base_rows = load_jsonl(ROOT / "data" / base / "train.jsonl")
+    extra = [r for r in load_jsonl(ROOT / add) if " ".join(r["text"].lower().split()) not in banned]
+    out = ROOT / "data" / version
+    out.mkdir(parents=True, exist_ok=True)
+    rows = base_rows + extra * repeat
+    (out / "train.jsonl").write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
+    )
+    meta = {
+        "version": version, "created": datetime.now(UTC).isoformat(timespec="seconds"),
+        "base": base, "counts": {"train": len(rows)}, "decontaminated_against": eval_version,
+        "notes": f"{base} plus {len(extra)} rows from {add} repeated {repeat}x.",
+    }  # fmt: skip
+    (out / "meta.json").write_text(json.dumps(meta, indent=2))
+    typer.echo(
+        json.dumps(
+            {
+                "base": len(base_rows),
+                "added_unique": len(extra),
+                "repeat": repeat,
+                "total": len(rows),
+            }
+        )
+    )
+    _ = Path
+
+
 @data_app.command("decontaminate")
 def data_decontaminate(
     version: str = typer.Argument(..., help="New train-only version, e.g. v003"),
