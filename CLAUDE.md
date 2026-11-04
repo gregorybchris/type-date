@@ -40,6 +40,10 @@ Run `make help` for the full list.
 | `make py-test` | pytest |
 | `make td ARGS="--help"` | Run the `td` CLI |
 
+## Recording user preferences
+
+When the user states a preference, write it down so it is not lost. Put detail in `specs/conventions.md` (or the relevant spec) and add at most one short line to CLAUDE.md. Keep CLAUDE.md small: link to specs instead of copying. It is fine to push back on a preference. If you agree with it, codify it, since the user likely said it for a reason.
+
 ## Updating this file
 
 Agents are encouraged to update CLAUDE.md as they work. Put CLAUDE.md changes in a separate commit (or a separate PR if the project has PRs) from code changes. This helps other agents that start with an empty context.
