@@ -391,15 +391,15 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
               {isRange && open !== "end" && (
                 <div className="td-fg">
                   {!open && <span className="td-to">to</span>}
+                  {showCal && dateOf("end") && (mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
+                    <Field icon onClick={() => jump("end")}>
+                      {fmtDate(dateOf("end")!)}
+                    </Field>
+                  )}
                   {showTime && endTime && (
                     <Field active={tgt === "end"} onClick={() => setTarget("end")}>
                       {fmtTime(endTime)}
                       {result?.endNextDay ? " (+1 day)" : ""}
-                    </Field>
-                  )}
-                  {showCal && dateOf("end") && (mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
-                    <Field icon onClick={() => jump("end")}>
-                      {fmtDate(dateOf("end")!)}
                     </Field>
                   )}
                 </div>
