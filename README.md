@@ -6,18 +6,7 @@ Write <code>oct 2 to oct 5</code> or <code>every other sunday</code> and the cal
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/dark-range.png">
-    <img src="docs/images/light-range.png" alt="Picker showing Oct 2 to Oct 5, 2026" width="31%">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/dark-recurrence.png">
-    <img src="docs/images/light-recurrence.png" alt="Picker showing every 2 weeks on Friday until Dec 31" width="31%">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/dark-datetime.png">
-    <img src="docs/images/light-datetime.png" alt="Picker showing next Monday 9:00 AM to 5:00 PM" width="31%">
-  </picture>
+  <img src="docs/media/demo.gif" alt="Typing ten phrases into the picker, from oct 2 to oct 5 to four score and seven years ago" width="450">
 </p>
 
 ## The idea
