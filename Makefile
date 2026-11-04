@@ -1,7 +1,7 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo export bench serve serve-stop serve-status
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck dashboard picker-demo export bench serve serve-stop serve-status timing eval-baselines
 
 help:  ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-14s %s\n", $$1, $$2}'
@@ -47,3 +47,11 @@ serve-stop:  ## Stop the supervised dev servers
 
 serve-status:  ## Check both dev servers
 	scripts/serve.sh status
+
+eval-baselines:  ## Score the non-model baselines (chrono, heuristic-small, heuristic-full) into runs/exp-001..003
+	pnpm --filter @type-date/baselines eval --engine chrono --exp 1 --title "chrono-node + DSL adapter"
+	pnpm --filter @type-date/baselines eval --engine heuristic-small --exp 2 --title "heuristic-small (regex rules)"
+	pnpm --filter @type-date/baselines eval --engine heuristic-full --exp 3 --title "heuristic-full (grammar parser, fuzzy words)"
+
+timing:  ## Where experiment wall time goes: make timing ARGS="--last 5"
+	cd training && uv run td exp timing $(ARGS)

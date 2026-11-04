@@ -148,5 +148,19 @@ def export_run(
     typer.echo(json.dumps(res, indent=2))
 
 
+exp_app = typer.Typer(no_args_is_help=True, help="Experiment bookkeeping")
+app.add_typer(exp_app, name="exp")
+
+
+@exp_app.command("timing")
+def exp_timing(
+    last: int = typer.Option(0, help="Only the last N experiments (0 = all)"),
+) -> None:
+    """Show where wall time goes per experiment and across the outer loop."""
+    from .timing_report import report
+
+    report(last)
+
+
 if __name__ == "__main__":
     app()

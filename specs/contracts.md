@@ -49,6 +49,23 @@ One directory per experiment. Committed to git. Small files only. `NNN` is a zer
 
 `eval.version` names the eval set (`evals/<version>`). Re-scores on other versions are stored under `evals` as `{"e2": {...same shape as eval...}}`. Compare only within one version. `exact` is exact match on the normalized DSL line. `resolved` is equality of resolved dates over several reference dates.
 
+`timing.json`: wall time per stage and bucket. Written by `td train run` (stage `train`), `td export run` (stage `export`), and `bench/run.ts` (stages `bench-<backend>-<profile>`). Shape:
+
+```json
+{"total_s": 812.4,
+ "stages": {"train": {"stages": {"started_at": "...", "finished_at": "..."}, "total_s": 790.1,
+                      "buckets": {"data_load": 0.2, "tokenizer_train": 0.1, "encode_train": 0.3, "model_init": 0.3,
+                                  "train_loop": 640.0, "train_loop/forward": 280.0, "train_loop/backward": 290.0,
+                                  "train_loop/optim": 60.0, "train_loop/collate": 5.0, "train_loop/sync_loss": 5.0,
+                                  "eval_generate": 120.0, "eval_score": 2.0, "save_checkpoint": 0.2, "write_results": 0.1},
+                      "unaccounted_s": 0.1, "train_profile": {"steps": 7980, "step_ms": 80.2, "samples_per_s": 1600}},
+            "export": {"total_s": 20.1, "buckets": {"onnx_export": 15.0, "quantize": 4.0}},
+            "bench-wasm-desktop": {"total_s": 14.0, "buckets": {"esbuild_bundle": 0.3, "browser_launch": 1.0, "run_in_browser": 10.0}}},
+ "buckets": {"train.train_loop": 640.0, "export.onnx_export": 15.0}}
+```
+
+Buckets with `/` are sub-buckets of the parent and are not added into totals. `train_loop/*` shares come from sampled steps with device syncs, scaled to the loop total. `td exp timing` prints the summary.
+
 `errors.jsonl`: one line per failure on the eval sets.
 
 ```json

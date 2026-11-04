@@ -79,6 +79,17 @@ Whether a heuristic is good enough is an empirical question. Baselines run throu
 - [ ] Motion: CSS only, reduced-motion support
 - [ ] npm packaging (`exports`, types, CSS)
 
+### Outer-loop speed (applies to every phase)
+Goal: make the experiment loop fast. Measure where wall time goes, pick the biggest bucket, optimize it, repeat.
+- [x] `timing.json` per run (train, export, bench stages) and `td exp timing`
+- [ ] Review the first runs: biggest bucket, and the training-loop phase split (forward, backward, optimizer, collate)
+- [ ] Optimize the biggest bucket first. Candidates for the train loop: larger batch, length-bucketed batches to cut padding, avoiding per-step `.item()` syncs, fused AdamW, bf16/fp16 autocast if MPS supports it, `torch.compile` (check MPS support)
+- [ ] Candidates for eval: batched greedy decoding with a custom loop instead of HF `generate`, evaluate only changed splits, skip the resolver subprocess when strings match
+- [ ] Candidates for the rest: cache tokenizer and encoded data per dataset version, export/quantize only candidates on the Pareto front, bench with fewer rows first
+- [ ] Track the gap between experiments (queue idle, implementation, waiting): reduce with a queue runner that starts the next experiment automatically
+- [ ] Dashboard: "where the time went" per experiment and an outer-loop view across experiments
+- [ ] Record each optimization (before and after) in `specs/research/experiments/outer-loop.md`
+
 ### Mobile (applies to every phase)
 - [ ] Picker and dashboard layouts are responsive and checked with Playwright screenshots at 360, 390, 768, 1024, 1440 px
 - [ ] Dashboard narrow-width pass (the dashboard agent only checked 1440x900)

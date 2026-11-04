@@ -15,9 +15,12 @@ import torch
 from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
 from transformers import PreTrainedTokenizerFast, T5Config, T5ForConditionalGeneration
 
+from .timing import Timer, merge_timing  # noqa: E402
+
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
 ROOT = Path(__file__).resolve().parents[3]
+EVAL_TIMES: dict[str, float] = {}
 PAD, EOS, UNK = 0, 1, 2
 MAX_IN, MAX_OUT = 64, 40
 
@@ -179,7 +182,9 @@ def evaluate(rows_by_split: dict[str, list[dict]], preds_by_split: dict[str, lis
     for split, rows in rows_by_split.items():
         for r, p in zip(rows, preds_by_split[split], strict=False):
             pairs.append({"exp": r["dsl"], "pred": p})
+    t_res = time.perf_counter()
     res = resolved_equal(pairs)
+    EVAL_TIMES["resolver_subprocess"] = time.perf_counter() - t_res
     res_ok = sum(res)
     k = 0
     for split, rows in rows_by_split.items():
@@ -221,22 +226,27 @@ def evaluate(rows_by_split: dict[str, list[dict]], preds_by_split: dict[str, lis
 
 
 def run(cfg: TrainConfig) -> dict:
+    tm = Timer()
     random.seed(cfg.seed)
     torch.manual_seed(cfg.seed)
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     data = ROOT / "data" / cfg.dataset
-    splits = {
-        s: load_jsonl(data / f"{s}.jsonl")
-        for s in ["train", "val", "test_template", "test_noise", "test_external"]
-    }
+    with tm.bucket("data_load"):
+        splits = {
+            s: load_jsonl(data / f"{s}.jsonl")
+            for s in ["train", "val", "test_template", "test_noise", "test_llm", "test_external"]
+        }
     train_rows = splits["train"]
     if cfg.max_train:
         random.shuffle(train_rows)
         train_rows = train_rows[: cfg.max_train]
-    tok = build_tokenizer(train_rows, cfg.vocab, cfg.digit_split)
-    model = make_model(cfg, len(tok)).to(device)
+    with tm.bucket("tokenizer_train"):
+        tok = build_tokenizer(train_rows, cfg.vocab, cfg.digit_split)
+    with tm.bucket("model_init"):
+        model = make_model(cfg, len(tok)).to(device)
     n_params = sum(p.numel() for p in model.parameters())
-    data_enc = encode_rows(tok, train_rows)
+    with tm.bucket("encode_train"):
+        data_enc = encode_rows(tok, train_rows)
     steps_per_epoch = math.ceil(len(data_enc) / cfg.batch_size)
     total = steps_per_epoch * cfg.epochs
     opt = torch.optim.AdamW(model.parameters(), lr=cfg.lr, weight_decay=0.01)
@@ -250,39 +260,85 @@ def run(cfg: TrainConfig) -> dict:
     t0 = time.time()
     step = 0
     last_loss = 0.0
+    sync = torch.mps.synchronize if device == "mps" else (lambda: None)
+    phase = {"collate": 0.0, "forward": 0.0, "backward": 0.0, "optim": 0.0, "sync_loss": 0.0}
+    prof_steps = 0
+    prof_wall = 0.0
+    pc = time.perf_counter
     for ep in range(cfg.epochs):
         model.train()
         random.shuffle(data_enc)
         for i in range(0, len(data_enc), cfg.batch_size):
+            profile = (
+                step > 0 and step % 25 == 0
+            )  # sampled steps use device syncs; skip step 0 (warm-up)
+            if profile:
+                sync()
+                ts = pc()
             x, m, y = collate(data_enc[i : i + cfg.batch_size], device)
+            if profile:
+                sync()
+                t1 = pc()
             loss = model(input_ids=x, attention_mask=m, labels=y).loss
+            if profile:
+                sync()
+                t2 = pc()
             loss.backward()
+            if profile:
+                sync()
+                t3 = pc()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             opt.step()
             sched.step()
             opt.zero_grad(set_to_none=True)
+            if profile:
+                sync()
+                t4 = pc()
             step += 1
             last_loss = loss.item()
+            if profile:
+                t5 = pc()
+                phase["collate"] += t1 - ts
+                phase["forward"] += t2 - t1
+                phase["backward"] += t3 - t2
+                phase["optim"] += t4 - t3
+                phase["sync_loss"] += t5 - t4
+                prof_steps += 1
+                prof_wall += t5 - ts
             if step % 200 == 0:
                 print(f"ep {ep} step {step}/{total} loss {last_loss:.4f}", flush=True)
     train_s = time.time() - t0
+    tm.add("train_loop", train_s)
+    if prof_steps and prof_wall > 0:
+        # scale the sampled phase shares up to the whole loop
+        for k, v in phase.items():
+            tm.add(f"train_loop/{k}", train_s * v / prof_wall)
+        tm.extra["train_profile"] = {
+            "sampled_steps": prof_steps,
+            "steps": step,
+            "step_ms": round(1000 * train_s / max(1, step), 2),
+            "sampled_step_ms": round(1000 * prof_wall / prof_steps, 2),
+            "samples_per_s": round(step * cfg.batch_size / train_s, 1),
+        }
 
     eval_rows = {s: r for s, r in splits.items() if s != "train" and r}
     t1 = time.time()
-    preds = {s: predict(model, tok, r, device) for s, r in eval_rows.items()}
+    with tm.bucket("eval_generate"):
+        preds = {s: predict(model, tok, r, device) for s, r in eval_rows.items()}
     eval_s = time.time() - t1
-    ev, errors = evaluate(eval_rows, preds)
+    with tm.bucket("eval_score"):
+        ev, errors = evaluate(eval_rows, preds)
+    tm.extra["eval_rows"] = sum(len(r) for r in eval_rows.values())
     print(f"exact {ev['exact']:.4f} resolved {ev['resolved']:.4f}", flush=True)
 
-    out_tok = tok(["x"], add_special_tokens=False)
-    _ = out_tok
     lens = [len(t) for _, t in encode_rows(tok, splits["val"][:2000])]
     run_dir = ROOT / "runs" / f"exp-{cfg.exp:03d}"
     art_dir = ROOT / "artifacts" / f"exp-{cfg.exp:03d}"
     run_dir.mkdir(parents=True, exist_ok=True)
     art_dir.mkdir(parents=True, exist_ok=True)
-    model.save_pretrained(art_dir / "torch")
-    tok.save_pretrained(art_dir / "torch")
+    with tm.bucket("save_checkpoint"):
+        model.save_pretrained(art_dir / "torch")
+        tok.save_pretrained(art_dir / "torch")
     config = {
         "id": f"exp-{cfg.exp:03d}",
         "number": cfg.exp,
@@ -326,7 +382,9 @@ def run(cfg: TrainConfig) -> dict:
     }
     (run_dir / "config.json").write_text(json.dumps(config, indent=2))
     (run_dir / "metrics.json").write_text(json.dumps(metrics, indent=2))
-    with (run_dir / "errors.jsonl").open("w") as f:
+    with tm.bucket("write_results"), (run_dir / "errors.jsonl").open("w") as f:
         for e in errors:
             f.write(json.dumps(e, ensure_ascii=False) + "\n")
+    tm.add("eval_score/resolver_subprocess", EVAL_TIMES.get("resolver_subprocess", 0.0))
+    merge_timing(run_dir, "train", tm.to_dict())
     return {"config": asdict(cfg), "metrics": metrics}

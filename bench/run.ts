@@ -15,6 +15,14 @@ const arg = (k: string, d?: string) => {
   const i = process.argv.indexOf(`--${k}`);
   return i >= 0 ? process.argv[i + 1] : d;
 };
+const T0 = performance.now();
+const marks: Record<string, number> = {};
+let lastMark = T0;
+const mark = (name: string) => {
+  const now = performance.now();
+  marks[name] = (marks[name] ?? 0) + (now - lastMark) / 1000;
+  lastMark = now;
+};
 const exp = Number(arg("exp"));
 if (!exp) throw new Error("--exp N required");
 const backend = (arg("backend", "wasm") as "wasm" | "webgpu");
@@ -26,6 +34,7 @@ const name = `exp-${String(exp).padStart(3, "0")}`;
 const artDir = join(root, "artifacts", name);
 const manifest = JSON.parse(readFileSync(join(artDir, "manifest.json"), "utf8"));
 
+mark("setup");
 // bundle the page
 const outDir = join(here, ".dist");
 mkdirSync(outDir, { recursive: true });
@@ -38,6 +47,7 @@ await build({
   target: "es2022",
   logLevel: "error",
 });
+mark("esbuild_bundle");
 const ortDist = join(here, "node_modules/onnxruntime-web/dist");
 
 const mime: Record<string, string> = {
@@ -67,6 +77,7 @@ const server = createServer((req, res) => {
 await new Promise<void>((r) => server.listen(0, r));
 const port = (server.address() as { port: number }).port;
 
+mark("server_start");
 const rows = readFileSync(dataPath, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)).slice(0, n);
 
 const rssOf = (pid: number): number => {
@@ -92,6 +103,7 @@ const rssOf = (pid: number): number => {
 const args = ["--enable-unsafe-webgpu", "--enable-features=WebGPU", "--use-angle=metal", "--enable-precise-memory-info"];
 const browser = await chromium.launch({ headless: true, args });
 const pid = process.pid; // browser is our child: sum RSS of descendants only
+mark("browser_launch");
 const ctx = await browser.newContext(
   profile === "desktop"
     ? { viewport: { width: 1280, height: 800 } }
@@ -115,6 +127,7 @@ if (backend === "webgpu") {
   });
   if (!hasGpu) throw new Error("WebGPU adapter not available in headless Chromium");
 }
+mark("page_open");
 const rss0 = rssOf(pid);
 let peak = rss0;
 const timer = setInterval(() => (peak = Math.max(peak, rssOf(pid))), 100);
@@ -122,6 +135,7 @@ const res = (await page.evaluate(
   (a) => (window as unknown as { runBench: (x: unknown) => Promise<unknown> }).runBench(a),
   { baseUrl: `http://localhost:${port}/artifacts/${name}`, manifest, backend, rows, threads },
 )) as { loadMs: number; coldFirstMs: number; lat: number[]; toks: number[]; ok: number; n: number };
+mark("run_in_browser");
 clearInterval(timer);
 peak = Math.max(peak, rssOf(pid));
 await browser.close();
@@ -159,4 +173,28 @@ let all: Record<string, unknown>[] = existsSync(benchPath) ? JSON.parse(readFile
 all = all.filter((e) => !(e.engine === entry.engine && e.backend === entry.backend && (e.profile ?? "desktop") === entry.profile && e.threads === entry.threads));
 all.push(entry);
 writeFileSync(benchPath, JSON.stringify(all, null, 2));
+mark("write_results");
+mergeTiming();
 console.log(JSON.stringify(entry));
+
+function mergeTiming() {
+  const path = join(runDir, "timing.json");
+  const data = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : { stages: {} };
+  const stage = `bench-${backend}-${profile}`;
+  const total = (performance.now() - T0) / 1000;
+  const buckets: Record<string, number> = {};
+  for (const [k, v] of Object.entries(marks)) buckets[k] = Math.round(v * 1000) / 1000;
+  // in-page split: model load vs timed predictions
+  buckets["run_in_browser/model_load"] = Math.round(res.loadMs) / 1000;
+  buckets["run_in_browser/predictions"] = Math.round(res.lat.reduce((a, b) => a + b, 0)) / 1000;
+  data.stages[stage] = { total_s: Math.round(total * 1000) / 1000, buckets, rows: res.n };
+  let all = 0;
+  const flat: Record<string, number> = {};
+  for (const [st, d] of Object.entries(data.stages) as [string, { total_s: number; buckets?: Record<string, number> }][]) {
+    all += d.total_s ?? 0;
+    for (const [k, v] of Object.entries(d.buckets ?? {})) flat[`${st}.${k}`] = v;
+  }
+  data.total_s = Math.round(all * 1000) / 1000;
+  data.buckets = flat;
+  writeFileSync(path, JSON.stringify(data, null, 2));
+}

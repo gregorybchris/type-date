@@ -5,42 +5,44 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from .timing import Timer, merge_timing
+
 ROOT = Path(__file__).resolve().parents[3]
 
 
 def export(exp: int, quant: str = "int8", prune_torch: bool = False) -> dict:
+    tm = Timer()
     name = f"exp-{exp:03d}"
     art = ROOT / "artifacts" / name
     src = art / "torch"
     fp32 = art / "onnx-fp32"
     if fp32.exists():
         shutil.rmtree(fp32)
-    subprocess.run(
-        [
-            "uv", "run", "optimum-cli", "export", "onnx",
-            "--model", str(src),
-            "--task", "text2text-generation-with-past",
-            "--opset", "17",
-            str(fp32),
-        ],
-        check=True,
-        cwd=ROOT / "training",
-    )  # fmt: skip
+    cmd = [
+        "uv", "run", "optimum-cli", "export", "onnx",
+        "--model", str(src),
+        "--task", "text2text-generation-with-past",
+        "--opset", "17",
+        str(fp32),
+    ]  # fmt: skip
+    with tm.bucket("onnx_export"):
+        subprocess.run(cmd, check=True, cwd=ROOT / "training")
     out = art / f"onnx-{quant}"
     if out.exists():
         shutil.rmtree(out)
     out.mkdir()
     from onnxruntime.quantization import QuantType, quantize_dynamic
 
-    for f in sorted(fp32.glob("*.onnx")):
-        if quant == "fp32":
-            shutil.copy(f, out / f.name)
-        else:
-            quantize_dynamic(
-                str(f),
-                str(out / f.name),
-                weight_type=QuantType.QUInt8 if quant == "int8" else QuantType.QInt8,
-            )
+    with tm.bucket("quantize"):
+        for f in sorted(fp32.glob("*.onnx")):
+            if quant == "fp32":
+                shutil.copy(f, out / f.name)
+            else:
+                quantize_dynamic(
+                    str(f),
+                    str(out / f.name),
+                    weight_type=QuantType.QUInt8 if quant == "int8" else QuantType.QInt8,
+                )
     for f in fp32.glob("*.json"):
         shutil.copy(f, out / f.name)
     for f in src.glob("tokenizer*"):
@@ -94,4 +96,5 @@ def export(exp: int, quant: str = "int8", prune_torch: bool = False) -> dict:
     mp.write_text(json.dumps(m, indent=2))
     if prune_torch:
         shutil.rmtree(fp32)
+    merge_timing(run_dir, "export", tm.to_dict())
     return {"sizes": sizes, "download_bytes": total}
