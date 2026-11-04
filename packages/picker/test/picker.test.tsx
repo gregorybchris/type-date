@@ -15,7 +15,7 @@ const TODAY = "2026-09-14";
 const DB = 5;
 
 function setup(parse: TypeDatePickerProps["parse"], extra: Partial<TypeDatePickerProps> = {}) {
-  const utils = render(<TypeDatePicker parse={parse} today={TODAY} debounceMs={DB} {...extra} />);
+  const utils = render(<TypeDatePicker parse={parse} today={TODAY} debounceMs={DB} showRule {...extra} />);
   const input = screen.getByLabelText("Date and time") as HTMLInputElement;
   const type = (v: string) => fireEvent.change(input, { target: { value: v } });
   return { ...utils, input, type, root: utils.container.querySelector(".td-root") as HTMLElement };
@@ -431,5 +431,14 @@ describe("DSL v2 results", () => {
     type("a");
     await waitFor(() => expect(screen.getByRole("status").textContent).toBe("Every day at 9:30 - 9:45 AM"));
     expect(screen.getAllByRole("option", { selected: true })).toHaveLength(2);
+  });
+});
+
+describe("recurrence rule", () => {
+  it("is hidden unless showRule is set", async () => {
+    const { type, container } = setup(table({ a: "d R w/2 su" }), { showRule: false });
+    type("a");
+    await waitFor(() => expect(container.querySelector(".td-root")?.getAttribute("data-kind")).toBe("recurrence"));
+    expect(container.querySelector(".td-rrule")).toBeNull();
   });
 });

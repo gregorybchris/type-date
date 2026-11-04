@@ -15,6 +15,8 @@ export interface TypeDatePickerProps {
   parse: (text: string) => Promise<string>;
   value?: Resolved;
   onChange?: (r: Resolved) => void;
+  /** Show the RFC 5545 recurrence rule (FREQ=WEEKLY;...) for repeating results. Off by default. */
+  showRule?: boolean;
   /** Called on Enter with the current result. */
   onConfirm?: (r: Resolved | null) => void;
   /** Called on Escape when the picker is already empty. */
@@ -393,13 +395,14 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
         </div>
       </div>
 
-      <Collapse open={!!rec || !!chip || (!!result?.ambiguous && showTime) || muted || !!anchor}>
+      <Collapse open={(!!rec && (!!props.showRule || !!rec.months || !!bound)) || !!chip || (!!result?.ambiguous && showTime) || muted || !!anchor}>
         <div className="td-extras">
           {muted && <span className="td-note">No date found. Showing the last result.</span>}
           {anchor && !muted && <span className="td-note">Tap an end date</span>}
           {chip && <span className="td-chip">{chip}</span>}
-          {rec && (
+          {rec && (props.showRule || rec.months || bound) && (
             <div className="td-rec">
+              {props.showRule && (
               <code className="td-rrule">
                 {toRRule(rec)
                   .split(";")
@@ -411,6 +414,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
                     </span>
                   ))}
               </code>
+              )}
               {rec.months && <span className="td-chip">Every {monthNames(rec.months)}</span>}
               {bound && <span className="td-chip">{bound}</span>}
             </div>

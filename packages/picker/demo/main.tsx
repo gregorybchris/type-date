@@ -114,8 +114,9 @@ interface Prefs {
   weekStart: 0 | 1;
   engineId: string;
   details: boolean;
+  rule: boolean;
 }
-const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h9", details: false };
+const DEFAULTS: Prefs = { theme: "light", weekStart: 1, engineId: "h9", details: false, rule: false };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};
@@ -133,6 +134,7 @@ function loadPrefs(): Prefs {
     weekStart: saved.weekStart === 0 ? 0 : 1,
     engineId: engineOk ? (saved.engineId as string) : DEFAULTS.engineId,
     details: saved.details === true,
+    rule: saved.rule === true,
   };
   // URL parameters win over saved preferences (used by screenshot scripts and shared links)
   if (q.get("theme")) base.theme = q.get("theme") === "dark" ? "dark" : "light";
@@ -245,6 +247,10 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
           <input type="checkbox" checked={prefs.details} onChange={(e) => set({ details: e.target.checked })} />
           <span>Show parse details under the picker</span>
         </label>
+        <label className="demo-check">
+          <input type="checkbox" checked={prefs.rule} onChange={(e) => set({ rule: e.target.checked })} />
+          <span>Show the recurrence rule (RRULE) for repeating dates</span>
+        </label>
         <div className="demo-modal-foot">
           <span>Today is {TODAY}. Saved in this browser.</span>
           <button type="button" className="demo-link" onClick={props.reset}>
@@ -258,7 +264,7 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
 
 function App() {
   const [prefs, setPrefs] = useState<Prefs>(loadPrefs);
-  const { theme, weekStart, engineId, details } = prefs;
+  const { theme, weekStart, engineId, details, rule } = prefs;
   const set = (p: Partial<Prefs>) => setPrefs((cur) => ({ ...cur, ...p }));
   useEffect(() => savePrefs(prefs), [prefs]);
   const [last, setLast] = useState<{ dsl: string; ms: number } | null>(null);
@@ -291,6 +297,7 @@ function App() {
         theme={theme}
         weekStart={weekStart}
         today={TODAY}
+        showRule={rule}
         defaultText={text}
         onConfirm={(r) => console.log("confirm", r)}
       />
