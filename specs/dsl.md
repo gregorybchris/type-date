@@ -113,3 +113,34 @@ Rules:
 | Invalid dates | `x`. |
 
 Rows in the first, third, fourth and fifth classes that the old data labels the other way are removed from eval (`policy_flags` in `training/src/typedate/evalsets.py`) and from heuristic training data.
+
+## v2 additions, part B (adopted 2026-11-03)
+
+Added after the coverage review in `specs/research/coverage-taxonomy.md`. Superset of part A.
+
+| Feature | Form | Example input | Output | Meaning |
+|---|---|---|---|---|
+| Date list | `DATE(,DATE)*` with an optional shared time | "oct 2, oct 9 and oct 16" | `d 10-02,10-09,10-16` | three dates, each a single day |
+| | | "oct 2 and 9 at 3pm" | `dt 10-02,10-09 15:00` | two dates, same time |
+| | | "last 3 fridays" | `d fr-1,fr-2,fr-3` | three past Fridays |
+| | | "the 1st and 15th" | `d D@1,D@15` | next 1st and next 15th |
+| Past marker | suffix `<` on `MM-DD`, bare `WD`, `M@MM` | "since october" (bound) | `M@10<` | the most recent occurrence on or before today |
+| Period bounds | `s` and `u` accept a period token. `s` uses its first day, `u` its last day | "tuesdays in march" | `d R w/1 tu sM@03 uM@03` | |
+| | | "weekends since october" | `d R w/1 sa,su sM@10< u+0d` | |
+| | | "fridays this month" | `d R w/1 fr sM+0 uM+0` | |
+| | | "weekdays next week" | `d R d/1 mo,tu,we,th,fr sW+1 uW+1` | |
+| Nth list | `WD#K(,WD#K)*` in a monthly recurrence | "first and third tuesday of every month" | `d R m/1 tu#1,tu#3` | |
+| Quarter | `Q+N`, `Q-N`, `Q@N` (N 1-4); a period like `W`, `M`, `Y` | "this quarter", "Q3" | `d Q+0`, `d Q@3` | whole quarter as a range |
+| Anchored offset | `DATE~(+|-)N(d|w|m|y|b)` | "3 days before oct 15" | `d 10-15~-3d` | |
+| | | "2 days after xmas" | `d 12-25~+2d` | |
+| Business days | unit `b` in offsets and anchored offsets | "next business day", "3 working days from now" | `d +1b`, `d +3b` | weekdays only (no holidays) |
+| Period as range end | a period as the end point of a range means its last day; as the start, its first day | "rest of the month" | `d +0d>M+0` | already true in the resolver |
+
+Rules:
+- A list element is a single day: periods (`W+1`), ranges and recurrences are not allowed inside a list. Lists have 2 to 31 items. A shared time may follow the list.
+- `<` resolves the date on or before today (today counts). It is only valid on the forms listed.
+- A recurrence `s` bound is the first day of the period, `u` bound is the last day. When `u` is in the past, the recurrence lists only past dates.
+- Anchored offsets apply the offset to the resolved anchor date. The anchor is any DATE form that resolves to one day.
+- `b` offsets skip Saturdays and Sundays. Resolver option `businessDays` may later support holidays.
+
+Not supported (label `x`): frequency without days ("twice a week"), fuzzy spans ("summer", "christmas week"), minute or hour offsets from now, last business day of a month, halves of a month, nth week of a month.

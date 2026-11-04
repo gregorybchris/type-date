@@ -21,6 +21,7 @@ Policy (follow exactly, these decide ambiguous cases):
 - Weekday range alone ("mon-fri", "monday to friday") -> `d mo>fr` (a range). A recurrence needs a cue like every, each, weekly, daily, weekdays, until or for.
 - "every 2nd wed" -> `R w/2 we`. "ten to seven" (minute word, then to or of, then an hour, with no am/pm) -> `t 6:50?`.
 - A month-name date followed by a bare two-digit number ("5 Nov 18", "oct 2 15") is ambiguous: write `x` and set unsure true.
+- DSL v2 part B (see specs/dsl.md): "last 3 fridays" -> `d fr-1,fr-2,fr-3`; "next 3 fridays" -> `d fr+1,fr+2,fr+3`; "oct 2, oct 9 and oct 16" -> `d 10-02,10-09,10-16`; "the 1st and 15th" -> `d D@1,D@15`; "oct 2 and 9 at 3pm" -> `dt 10-02,10-09 15:00`; "weekends since october" -> `d R w/1 sa,su sM@10< u+0d`; "tuesdays in march" -> `d R w/1 tu sM@03 uM@03`; "fridays this month" -> `d R w/1 fr sM+0 uM+0`; "weekdays next week" -> `d R d/1 mo,tu,we,th,fr sW+1 uW+1`; "first and third tuesday of every month" -> `d R m/1 tu#1,tu#3`; "this quarter" -> `d Q+0`; "q3" -> `d Q@3`; "3 days before oct 15" -> `d 10-15~-3d`; "2 days after xmas" -> `d 12-25~+2d`; "next business day" -> `d +1b`; "last 30 days" -> `d -30d>+0d`; "rest of the month" -> `d +0d>M+0`; "every day except sunday" -> `d R d/1 mo,tu,we,th,fr,sa`. Frequency without days ("twice a week"), fuzzy spans ("summer"), minutes or hours from now -> `x` with unsure true.
 - If the text has no clear single meaning in the DSL, write `x` and add a field "unsure": true.
 
 Check your work: put your output file in its own empty directory and run
