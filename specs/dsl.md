@@ -125,14 +125,14 @@ Added after the coverage review in `specs/research/coverage-taxonomy.md`. Supers
 | | | "last 3 fridays" | `d fr-1,fr-2,fr-3` | three past Fridays |
 | | | "the 1st and 15th" | `d D@1,D@15` | next 1st and next 15th |
 | Past marker | suffix `<` on `MM-DD`, bare `WD`, `M@MM` | "since october" (bound) | `M@10<` | the most recent occurrence on or before today |
-| Period bounds | `s` and `u` accept a period token. `s` uses its first day, `u` its last day | "tuesdays in march" | `d R w/1 tu sM@03 uM@03` | |
-| | | "weekends since october" | `d R w/1 sa,su sM@10< u+0d` | |
-| | | "fridays this month" | `d R w/1 fr sM+0 uM+0` | |
-| | | "weekdays next week" | `d R d/1 mo,tu,we,th,fr sW+1 uW+1` | |
+| Period bounds | `s` and `u` accept a period token. `s` uses its first day, `u` its last day | "tuesdays in march" | `d R w/1 tu uM@03 sM@03` | |
+| | | "weekends since october" | `d R w/1 sa,su u+0d sM@10<` | |
+| | | "fridays this month" | `d R w/1 fr uM+0 sM+0` | |
+| | | "weekdays next week" | `d R d/1 mo,tu,we,th,fr uW+1 sW+1` | |
 | Month filter (repeats every year) | `M@MM(,M@MM)*` token inside a recurrence, after the day spec | "weekdays every august" | `d R d/1 mo,tu,we,th,fr M@08` | every weekday in August, every year |
 | | | "mondays in june and july, every year" | `d R w/1 mo M@06,M@07` | |
-| Rolling window bound | `s` and `u` accept offsets | "M/T/W over the past 6 weeks" | `d R w/1 mo,tu,we s-6w u+0d` | |
-| | | "fridays for the next 3 months" | `d R w/1 fr s+0d u+3m` | |
+| Rolling window bound | `s` and `u` accept offsets | "M/T/W over the past 6 weeks" | `d R w/1 mo,tu,we u+0d s-6w` | |
+| | | "fridays for the next 3 months" | `d R w/1 fr u+3m s+0d` | |
 | Nth list | `WD#K(,WD#K)*` in a monthly recurrence | "first and third tuesday of every month" | `d R m/1 tu#1,tu#3` | |
 | Quarter | `Q+N`, `Q-N`, `Q@N` (N 1-4); a period like `W`, `M`, `Y` | "this quarter", "Q3" | `d Q+0`, `d Q@3` | whole quarter as a range |
 | Anchored offset | `DATE~(+|-)N(d|w|m|y|b)` | "3 days before oct 15" | `d 10-15~-3d` | |
@@ -155,3 +155,5 @@ Additional v2 rules (from labeling feedback):
 - `D@DD` is always two digits (`D@04`, `D@15`).
 - A recurrence time may end with a duration: `dt R d/1 09:30>+15m` ("standup every day 9:30 for 15 min"). In the grammar, the recurrence `TIMES` token is `TIME ['>' TIME | '>' '+' N ('h'|'m')]`.
 - An open start may carry a date and a time: `dt >+0d 21:00` ("by 9pm tonight").
+
+Canonical order inside a recurrence (serializer output): frequency, days or nth list or month days or year day, month filter, count, until (`u`), time, start (`s`). The parser accepts any order; labels are canonicalized when stored. Examples above use this order (until before start).

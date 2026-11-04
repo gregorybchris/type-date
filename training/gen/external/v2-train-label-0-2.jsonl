@@ -1,0 +1,400 @@
+{"id": "v2t0-0000", "text": "Your rental car must be returned by 8pm on the 14th", "dsl": "dt >D@14 20:00"}
+{"id": "v2t0-0001", "text": "the 13th", "dsl": "d D@13"}
+{"id": "v2t0-0002", "text": "the 24th at 6pm", "dsl": "dt D@24 18:00"}
+{"id": "v2t0-0003", "text": "tonight 8pm for 2 hours", "dsl": "dt +0d 20:00>+2h"}
+{"id": "v2t0-0004", "text": "Your class meets tuesdays and thursdays from 6pm for 90 minutes", "dsl": "dt R w/1 tu,th 18:00>+90m"}
+{"id": "v2t0-0005", "text": "not available before noon tomorrow, sorry", "dsl": "dt +1d 12:00>"}
+{"id": "v2t0-0006", "text": "car payment due the 28th", "dsl": "d D@28"}
+{"id": "v2t0-0007", "text": "before the 5th", "dsl": "d >D@5"}
+{"id": "v2t0-0008", "text": "Your visa interview is on the 10th at 8:45am", "dsl": "dt D@10 08:45"}
+{"id": "v2t0-0009", "text": "december 12 at 4pm", "dsl": "dt 12-12 16:00"}
+{"id": "v2t0-0010", "text": "until the 9th of may", "dsl": "d >05-09"}
+{"id": "v2t0-0011", "text": "at noon for 1 hour", "dsl": "t 12:00>+1h"}
+{"id": "v2t0-0012", "text": "tha 3rd", "dsl": "d D@3"}
+{"id": "v2t0-0013", "text": "Fitting must be done before the 20th", "dsl": "d >D@20"}
+{"id": "v2t0-0014", "text": "1pm-3pm", "dsl": "t 13:00>15:00"}
+{"id": "v2t0-0015", "text": "4 tickets please", "dsl": "x"}
+{"id": "v2t0-0016", "text": "um after like 4pm tomorrow", "dsl": "dt +1d 16:00>"}
+{"id": "v2t0-0017", "text": "the 3rd around 4", "dsl": "dt D@3 4?"}
+{"id": "v2t0-0018", "text": "we close on the 17th at 10am", "dsl": "dt D@17 10:00"}
+{"id": "v2t0-0019", "text": "book it for the 6th", "dsl": "d D@6"}
+{"id": "v2t0-0020", "text": "PSA the street cleaning is on the 3rd, move your car before 8am", "dsl": "dt >D@3 08:00"}
+{"id": "v2t0-0021", "text": "2pm 1h", "dsl": "t 14:00>+1h"}
+{"id": "v2t0-0022", "text": "9/30 at 5pm", "dsl": "dt 09-30 17:00"}
+{"id": "v2t0-0023", "text": "um by the 18th", "dsl": "d >D@18"}
+{"id": "v2t0-0024", "text": "starting the 1st", "dsl": "d D@1>"}
+{"id": "v2t0-0025", "text": "mom texted: dinner is at 6, can you come after 5 and help set up", "dsl": "t 6?"}
+{"id": "v2t0-0026", "text": "after christmas", "dsl": "d 12-25>"}
+{"id": "v2t0-0027", "text": "sat noon for 3 hours", "dsl": "dt sa 12:00>+3h"}
+{"id": "v2t0-0028", "text": "the first of the month", "dsl": "d D@1"}
+{"id": "v2t0-0029", "text": "at midnight for 3 hours", "dsl": "t 00:00>+3h"}
+{"id": "v2t0-0030", "text": "delivery window is anytime after 10 on thursday, text me when you leave", "dsl": "dt th 10?>"}
+{"id": "v2t0-0031", "text": "Zoom: Product review, wed 2pm for 1 hour, link below", "dsl": "dt we 14:00>+1h"}
+{"id": "v2t0-0032", "text": "home by 10", "dsl": "t >10?"}
+{"id": "v2t0-0033", "text": "due on the tenth", "dsl": "d D@10"}
+{"id": "v2t0-0034", "text": "the pharmacy says your prescription will be ready after 4pm today", "dsl": "dt +0d 16:00>"}
+{"id": "v2t0-0035", "text": "call at four for fifteen minutes", "dsl": "t 4?>+15m"}
+{"id": "v2t0-0036", "text": "sometime before 5", "dsl": "t >5?"}
+{"id": "v2t0-0037", "text": "i can do anytime after 7 in the evening", "dsl": "t 19:00>"}
+{"id": "v2t0-0038", "text": "by friday 3pm", "dsl": "dt >fr 15:00"}
+{"id": "v2t0-0039", "text": "We are 28 people for lunch on sunday at 1", "dsl": "dt su 1?"}
+{"id": "v2t0-0040", "text": "end of day tomorrow", "dsl": "d +1d"}
+{"id": "v2t0-0041", "text": "until next tuesday", "dsl": "d >tu+1"}
+{"id": "v2t0-0042", "text": "by 7:15pm", "dsl": "t >19:15"}
+{"id": "v2t0-0043", "text": "after 5:30", "dsl": "t 5:30?>"}
+{"id": "v2t0-0044", "text": "from monday on", "dsl": "d mo>"}
+{"id": "v2t0-0045", "text": "Remind me monday at 8am to call the landlord", "dsl": "dt mo 08:00"}
+{"id": "v2t0-0046", "text": "my 2nd cousin", "dsl": "x"}
+{"id": "v2t0-0047", "text": "um the 21st", "dsl": "d D@21"}
+{"id": "v2t0-0048", "text": "Practice schedule: tues 6pm for 2 hours, field 3", "dsl": "dt tu 18:00>+2h"}
+{"id": "v2t0-0049", "text": "by 8 pm pls", "dsl": "t >20:00"}
+{"id": "v2t0-0050", "text": "please block 2pm for 2 hours", "dsl": "t 14:00>+2h"}
+{"id": "v2t0-0051", "text": "Hi, your oil delivery is booked for the 13th, please clear the path", "dsl": "d D@13"}
+{"id": "v2t0-0052", "text": "by half past six", "dsl": "t >6:30?"}
+{"id": "v2t0-0053", "text": "see you the 19th", "dsl": "d D@19"}
+{"id": "v2t0-0054", "text": "mon 9am for 1 hour", "dsl": "dt mo 09:00>+1h"}
+{"id": "v2t0-0055", "text": "Appointment reminder: tuesday at 3pm for 20 minutes with Dr. Lee", "dsl": "dt tu 15:00>+20m"}
+{"id": "v2t0-0056", "text": "until the 3rd", "dsl": "d >D@3"}
+{"id": "v2t0-0057", "text": "can we meet on the 14th at 4", "dsl": "dt D@14 4?"}
+{"id": "v2t0-0058", "text": "send invoices by the 3rd", "dsl": "d >D@3"}
+{"id": "v2t0-0059", "text": "remind me to call mom after 7pm sunday", "dsl": "dt su 19:00>"}
+{"id": "v2t0-0060", "text": "can we meet after 3 o'clock", "dsl": "t 3?>"}
+{"id": "v2t0-0061", "text": "by 11pm tonight", "dsl": "dt >+0d 23:00"}
+{"id": "v2t0-0062", "text": "every tenth", "dsl": "d R m/1 d10"}
+{"id": "v2t0-0063", "text": "Hi Sam, your statement is ready and payment is due by the 28th to avoid a late fee", "dsl": "d >D@28"}
+{"id": "v2t0-0064", "text": "10am (45 min)", "dsl": "t 10:00>+45m"}
+{"id": "v2t0-0065", "text": "get it to me by 3pm monday", "dsl": "dt >mo 15:00"}
+{"id": "v2t0-0066", "text": "from 1pm to 3pm", "dsl": "t 13:00>15:00"}
+{"id": "v2t0-0067", "text": "Reply no later than friday with your choice", "dsl": "d >fr"}
+{"id": "v2t0-0068", "text": "haircut 4pm 45 min", "dsl": "t 16:00>+45m"}
+{"id": "v2t0-0069", "text": "9am tomorrow", "dsl": "dt +1d 09:00"}
+{"id": "v2t0-0070", "text": "8 to 4 shift on monday", "dsl": "dt mo 8?>4?"}
+{"id": "v2t0-0071", "text": "the 12th at 3pm for 1 hour", "dsl": "dt D@12 15:00>+1h"}
+{"id": "v2t0-0072", "text": "deadline is before the 7th", "dsl": "d >D@7"}
+{"id": "v2t0-0073", "text": "Heads up: the bank holiday closes branches on the 11th", "dsl": "d D@11"}
+{"id": "v2t0-0074", "text": "rent due on the 1st", "dsl": "d D@1"}
+{"id": "v2t0-0075", "text": "standup 9:15 for 15 min", "dsl": "t 9:15?>+15m"}
+{"id": "v2t0-0076", "text": "Backorder expected before the 20th", "dsl": "d >D@20"}
+{"id": "v2t0-0077", "text": "Lab section meets fri 1pm for 2 hours, bring your goggles", "dsl": "dt fr 13:00>+2h"}
+{"id": "v2t0-0078", "text": "Every other wednesday at 10am", "dsl": "dt R w/2 we 10:00"}
+{"id": "v2t0-0079", "text": "starting 1 dec", "dsl": "d 12-01>"}
+{"id": "v2t0-0080", "text": "the 3 cats", "dsl": "x"}
+{"id": "v2t0-0081", "text": "Your flight departs tomorrow at 6:45am from gate 12", "dsl": "dt +1d 06:45"}
+{"id": "v2t0-0082", "text": "Dear parent, school pictures will be taken on the 12th", "dsl": "d D@12"}
+{"id": "v2t0-0083", "text": "Your invoice is dated nov 15, 2026", "dsl": "d 2026-11-15"}
+{"id": "v2t0-0084", "text": "the second at five pm", "dsl": "dt D@2 17:00"}
+{"id": "v2t0-0085", "text": "i'm free on the 27th at 3", "dsl": "dt D@27 3?"}
+{"id": "v2t0-0086", "text": "nine ish for one hour", "dsl": "t 9?>+1h"}
+{"id": "v2t0-0087", "text": "Reminder: sign the lease no later than thursday", "dsl": "d >th"}
+{"id": "v2t0-0088", "text": "dentist is the 27th", "dsl": "d D@27"}
+{"id": "v2t0-0089", "text": "at 4 for 20 min", "dsl": "t 4?>+20m"}
+{"id": "v2t0-0090", "text": "Dentist 10/14 at 9am", "dsl": "dt 10-14 09:00"}
+{"id": "v2t0-0091", "text": "from the 1st onward", "dsl": "d D@1>"}
+{"id": "v2t0-0092", "text": "Jury duty report date is the 6th, arrive before 8am", "dsl": "dt >D@6 08:00"}
+{"id": "v2t0-0093", "text": "Pool is open from 6am on weekdays", "dsl": "dt R d/1 mo,tu,we,th,fr 06:00"}
+{"id": "v2t0-0094", "text": "Book a table for 4 at 6:30", "dsl": "t 6:30?"}
+{"id": "v2t0-0095", "text": "thu 4pm for an hour and a half", "dsl": "dt th 16:00>+90m"}
+{"id": "v2t0-0096", "text": "Pay rent on december 1", "dsl": "d 12-01"}
+{"id": "v2t0-0097", "text": "meeting on the 13th at 2", "dsl": "dt D@13 2?"}
+{"id": "v2t0-0098", "text": "Webinar tomorrow 1pm for 90 minutes, register now", "dsl": "dt +1d 13:00>+90m"}
+{"id": "v2t0-0099", "text": "today 3pm for an hour, budget review", "dsl": "dt +0d 15:00>+1h"}
+{"id": "v2t0-0100", "text": "tue 11am (30 min)", "dsl": "dt tu 11:00>+30m"}
+{"id": "v2t0-0101", "text": "Your tutoring session is tomorrow 4pm for an hour, see you then", "dsl": "dt +1d 16:00>+1h"}
+{"id": "v2t0-0102", "text": "starting the 15th", "dsl": "d D@15>"}
+{"id": "v2t0-0103", "text": "Class is mon wed fri 8 to 9", "dsl": "dt mo 8?>9?"}
+{"id": "v2t0-0104", "text": "2pm 2hrs", "dsl": "t 14:00>+2h"}
+{"id": "v2t0-0105", "text": "chapter 3", "dsl": "x"}
+{"id": "v2t0-0106", "text": "Heads up, the credit card minimum payment is due the 3rd", "dsl": "d D@3"}
+{"id": "v2t0-0107", "text": "tomorrow 9am for 90 minutes", "dsl": "dt +1d 09:00>+90m"}
+{"id": "v2t0-0108", "text": "before quarter to five", "dsl": "t >4:45?"}
+{"id": "v2t0-0109", "text": "call 555 1234", "dsl": "x"}
+{"id": "v2t0-0110", "text": "9-ish for an hour", "dsl": "t 9?>+1h"}
+{"id": "v2t0-0111", "text": "until march 3", "dsl": "d >03-03"}
+{"id": "v2t0-0112", "text": "Christmas party is on the 19th at 6", "dsl": "dt D@19 6?"}
+{"id": "v2t0-0113", "text": "next tuesday at 10am", "dsl": "dt tu+1 10:00"}
+{"id": "v2t0-0114", "text": "I need to buy cat food for the 3 cats", "dsl": "x"}
+{"id": "v2t0-0115", "text": "tonite 9pm for 2 hr", "dsl": "dt +0d 21:00>+2h"}
+{"id": "v2t0-0116", "text": "Early registration after oct 5 gets a discount", "dsl": "d 10-05>"}
+{"id": "v2t0-0117", "text": "we need the report by 8pm tonight, no exceptions", "dsl": "dt >+0d 20:00"}
+{"id": "v2t0-0118", "text": "9am 30 min", "dsl": "t 09:00>+30m"}
+{"id": "v2t0-0119", "text": "july 4th", "dsl": "d 07-04"}
+{"id": "v2t0-0120", "text": "oct 2 - oct 5", "dsl": "d 10-02>10-05"}
+{"id": "v2t0-0121", "text": "in 3 hours", "dsl": "x", "unsure": true}
+{"id": "v2t0-0122", "text": "chapter 15", "dsl": "x"}
+{"id": "v2t0-0123", "text": "the 6th morning", "dsl": "d D@6"}
+{"id": "v2t0-0124", "text": "lets do the 23rd at noon", "dsl": "dt D@23 12:00"}
+{"id": "v2t0-0125", "text": "Please settle your tab by the 28th", "dsl": "d >D@28"}
+{"id": "v2t0-0126", "text": "by the 25th", "dsl": "d >D@25"}
+{"id": "v2t0-0127", "text": "im around anytime after 6 tonight so just call me", "dsl": "dt +0d 18:00>"}
+{"id": "v2t0-0128", "text": "we can start from 3 on, whenever you get there", "dsl": "t 3?>"}
+{"id": "v2t0-0129", "text": "the 15th of this month", "dsl": "d D@15"}
+{"id": "v2t0-0130", "text": "3pm for 1.5 hours", "dsl": "t 15:00>+90m"}
+{"id": "v2t0-0131", "text": "Sam's birthday is march 19", "dsl": "d 03-19"}
+{"id": "v2t0-0132", "text": "aftr oct 12", "dsl": "d 10-12>"}
+{"id": "v2t0-0133", "text": "due the thirtieth", "dsl": "d D@30"}
+{"id": "v2t0-0134", "text": "next friday 11am for 45 min", "dsl": "dt fr+1 11:00>+45m"}
+{"id": "v2t0-0135", "text": "leaving for vacation after the 20th", "dsl": "d D@20>"}
+{"id": "v2t0-0136", "text": "at 8 for 40 mins", "dsl": "t 8?>+40m"}
+{"id": "v2t0-0137", "text": "Your car service is booked for monday 8am, expect it to take 2 hours", "dsl": "dt mo 08:00>+2h"}
+{"id": "v2t0-0138", "text": "nov 3 - nov 7", "dsl": "d 11-03>11-07"}
+{"id": "v2t0-0139", "text": "Reminder from your landlord: inspection monday 10am for 30 minutes", "dsl": "dt mo 10:00>+30m"}
+{"id": "v2t0-0140", "text": "works for me on the 13th", "dsl": "d D@13"}
+{"id": "v2t0-0141", "text": "5pm 30mins", "dsl": "t 17:00>+30m"}
+{"id": "v2t0-0142", "text": "at five for half an hour", "dsl": "t 5?>+30m"}
+{"id": "v2t0-0143", "text": "before the 20th", "dsl": "d >D@20"}
+{"id": "v2t0-0144", "text": "until aug 30", "dsl": "d >08-30"}
+{"id": "v2t0-0145", "text": "class runs 9am to 11am on wednesdays", "dsl": "dt R w/1 we 09:00>11:00"}
+{"id": "v2t0-0146", "text": "meeting wed", "dsl": "d we"}
+{"id": "v2t0-0147", "text": "Your parole check-in is the 5th at noon", "dsl": "dt D@5 12:00"}
+{"id": "v2t0-0148", "text": "Mandatory fire drill friday 11am (10 min), all floors", "dsl": "dt fr 11:00>+10m"}
+{"id": "v2t0-0149", "text": "tomorrow 9am for 90 minutes, workshop with the vendors", "dsl": "dt +1d 09:00>+90m"}
+{"id": "v2t0-0150", "text": "Class schedule update: calculus moved to wed 10am for 75 min", "dsl": "dt we 10:00>+75m"}
+{"id": "v2t0-0151", "text": "10am for 45m", "dsl": "t 10:00>+45m"}
+{"id": "v2t0-0152", "text": "Spotify premium renews on the 18th", "dsl": "d D@18"}
+{"id": "v2t0-0153", "text": "Your package will arrive after 2pm tomorrow, someone must be home", "dsl": "dt +1d 14:00>"}
+{"id": "v2t0-0154", "text": "dinner at 7", "dsl": "t 7?"}
+{"id": "v2t0-0155", "text": "after half past two", "dsl": "t 2:30?>"}
+{"id": "v2t0-0156", "text": "available since monday if you need me", "dsl": "d mo<>+0d"}
+{"id": "v2t0-0157", "text": "Every tuesday at 7pm", "dsl": "dt R w/1 tu 19:00"}
+{"id": "v2t0-0158", "text": "so the 12th at 6pm", "dsl": "dt D@12 18:00"}
+{"id": "v2t0-0159", "text": "send it before 9am wed", "dsl": "dt >we 09:00"}
+{"id": "v2t0-0160", "text": "School is closed since monday due to flooding", "dsl": "d mo<>+0d"}
+{"id": "v2t0-0161", "text": "2pm-4pm", "dsl": "t 14:00>16:00"}
+{"id": "v2t0-0162", "text": "Remind me about the 5 emails at 3pm", "dsl": "t 15:00"}
+{"id": "v2t0-0163", "text": "cc statement closes the 25th", "dsl": "d D@25"}
+{"id": "v2t0-0164", "text": "reunion 6pm for 4 hours", "dsl": "t 18:00>+4h"}
+{"id": "v2t0-0165", "text": "aftr 4pm", "dsl": "t 16:00>"}
+{"id": "v2t0-0166", "text": "sunday noon for 2 hrs", "dsl": "dt su 12:00>+2h"}
+{"id": "v2t0-0167", "text": "interview 10am for 1 hour pls", "dsl": "t 10:00>+1h"}
+{"id": "v2t0-0168", "text": "hair appt sat 10am for 2 hours, color and cut", "dsl": "dt sa 10:00>+2h"}
+{"id": "v2t0-0169", "text": "for 15 people", "dsl": "x"}
+{"id": "v2t0-0170", "text": "Rent reminder, due the 1st, late after the 5th", "dsl": "d D@1"}
+{"id": "v2t0-0171", "text": "the 9th at 2pm", "dsl": "dt D@9 14:00"}
+{"id": "v2t0-0172", "text": "since oct 1", "dsl": "d 10-01<>+0d"}
+{"id": "v2t0-0173", "text": "trash goes out the 7th", "dsl": "d D@7"}
+{"id": "v2t0-0174", "text": "friday at four pm for two hours", "dsl": "dt fr 16:00>+2h"}
+{"id": "v2t0-0175", "text": "Your appointment is on october 12 at 3pm", "dsl": "dt 10-12 15:00"}
+{"id": "v2t0-0176", "text": "aftr 5 pm", "dsl": "t 17:00>"}
+{"id": "v2t0-0177", "text": "through thursday", "dsl": "d >th"}
+{"id": "v2t0-0178", "text": "wanna hang on the 26th", "dsl": "d D@26"}
+{"id": "v2t0-0179", "text": "the 14th evening", "dsl": "d D@14"}
+{"id": "v2t0-0180", "text": "we need 2 hours of sleep lol", "dsl": "x"}
+{"id": "v2t0-0181", "text": "no later than 3pm wed", "dsl": "dt >we 15:00"}
+{"id": "v2t0-0182", "text": "Your invoice #4471 is due the 30th, thanks for your business", "dsl": "d D@30"}
+{"id": "v2t0-0183", "text": "Great news, your gym membership begins starting nov 1", "dsl": "d 11-01>"}
+{"id": "v2t0-0184", "text": "by noon tmrw", "dsl": "dt >+1d 12:00"}
+{"id": "v2t0-0185", "text": "We are open from 10 on saturdays", "dsl": "dt R w/1 sa 10?"}
+{"id": "v2t0-0186", "text": "plz book 2pm for 90 minutes", "dsl": "t 14:00>+90m"}
+{"id": "v2t0-0187", "text": "Oct 2 to oct 5 vacation", "dsl": "d 10-02>10-05"}
+{"id": "v2t0-0188", "text": "the 1st at nine", "dsl": "dt D@1 9?"}
+{"id": "v2t0-0189", "text": "4pm for half hour", "dsl": "t 16:00>+30m"}
+{"id": "v2t0-0190", "text": "submit timesheet by the 30th", "dsl": "d >D@30"}
+{"id": "v2t0-0191", "text": "wedding rsvp due by the 12th, please reply", "dsl": "d >D@12"}
+{"id": "v2t0-0192", "text": "sorry, the meeting got pushed to tomorrow 10am for 90 minutes", "dsl": "dt +1d 10:00>+90m"}
+{"id": "v2t0-0193", "text": "Order of 12 donuts for friday morning", "dsl": "d fr"}
+{"id": "v2t0-0194", "text": "please reply by 9 am monday", "dsl": "dt >mo 09:00"}
+{"id": "v2t0-0195", "text": "tomorrow nine am for ninety minutes", "dsl": "dt +1d 09:00>+90m"}
+{"id": "v2t0-0196", "text": "Hi Tom, can you be at the shop by 8am on saturday", "dsl": "dt >sa 08:00"}
+{"id": "v2t0-0197", "text": "Early bird special before 5pm", "dsl": "t >17:00"}
+{"id": "v2t0-0198", "text": "Brunch served until 3 on weekends", "dsl": "x", "unsure": true}
+{"id": "v2t0-0199", "text": "Hi Jess, the interview panel can do anytime after 1 on tuesday", "dsl": "dt tu 1?>"}
+{"id": "v2t0-0200", "text": "the 15 th", "dsl": "d D@15"}
+{"id": "v2t0-0201", "text": "anytime after 2 on sat", "dsl": "dt sa 2?>"}
+{"id": "v2t0-0202", "text": "until march third", "dsl": "d >03-03"}
+{"id": "v2t0-0203", "text": "10pm 8hrs", "dsl": "t 22:00>+8h"}
+{"id": "v2t0-0204", "text": "Staff meeting after 3 on wednesday, bring notes", "dsl": "dt we 3?>"}
+{"id": "v2t0-0205", "text": "a 2 hour drive", "dsl": "x"}
+{"id": "v2t0-0206", "text": "Your ride will arrive after 4pm", "dsl": "t 16:00>"}
+{"id": "v2t0-0207", "text": "2 pm for ninety min", "dsl": "t 14:00>+90m"}
+{"id": "v2t0-0208", "text": "okay the 21st at 7", "dsl": "dt D@21 7?"}
+{"id": "v2t0-0209", "text": "Extension due the 15th of october", "dsl": "d 10-15"}
+{"id": "v2t0-0210", "text": "Early voting starts nov 1 and ends the 2nd", "dsl": "d 11-01"}
+{"id": "v2t0-0211", "text": "i can only do mornings before 11 this week", "dsl": "t >11:00"}
+{"id": "v2t0-0212", "text": "call me 4pm for twenty mins", "dsl": "t 16:00>+20m"}
+{"id": "v2t0-0213", "text": "dec 1 to dec 3", "dsl": "d 12-01>12-03"}
+{"id": "v2t0-0214", "text": "Our appointment is tomorrow at 2", "dsl": "dt +1d 2?"}
+{"id": "v2t0-0215", "text": "im booked until 4 thursday but free after that", "dsl": "dt th 4?>"}
+{"id": "v2t0-0216", "text": "thurs 5:30 for half an hour, pickup", "dsl": "dt th 5:30?>+30m"}
+{"id": "v2t0-0217", "text": "payroll cutoff is the 12th at 5pm", "dsl": "dt D@12 17:00"}
+{"id": "v2t0-0218", "text": "Your install window is 8 to 12 on the 2nd", "dsl": "dt D@2 8?>12?"}
+{"id": "v2t0-0219", "text": "after school today", "dsl": "d +0d"}
+{"id": "v2t0-0220", "text": "Office hours: before noon on fridays only", "dsl": "x", "unsure": true}
+{"id": "v2t0-0221", "text": "nlt friday", "dsl": "d >fr"}
+{"id": "v2t0-0222", "text": "pls block 3pm for 2 hours today for the workshop", "dsl": "dt +0d 15:00>+2h"}
+{"id": "v2t0-0223", "text": "book room 10am for 2 hr tmrw", "dsl": "dt +1d 10:00>+2h"}
+{"id": "v2t0-0224", "text": "7:30am for 90 min", "dsl": "t 07:30>+90m"}
+{"id": "v2t0-0225", "text": "class 8am 50 min", "dsl": "t 08:00>+50m"}
+{"id": "v2t0-0226", "text": "before 9am on the 2nd", "dsl": "dt >D@2 09:00"}
+{"id": "v2t0-0227", "text": "meeting on the 8th", "dsl": "d D@8"}
+{"id": "v2t0-0228", "text": "on the 22nd at 8am", "dsl": "dt D@22 08:00"}
+{"id": "v2t0-0229", "text": "Doors open from 6 on, show at 8", "dsl": "t 6?>"}
+{"id": "v2t0-0230", "text": "Your Netflix will bill on the 9th", "dsl": "d D@9"}
+{"id": "v2t0-0231", "text": "starting november first", "dsl": "d 11-01>"}
+{"id": "v2t0-0232", "text": "til the 1st", "dsl": "d >D@1"}
+{"id": "v2t0-0233", "text": "Your utilities are due on the 14th, set up autopay", "dsl": "d D@14"}
+{"id": "v2t0-0234", "text": "for 2 people", "dsl": "x"}
+{"id": "v2t0-0235", "text": "retro thursday 2pm for an hour", "dsl": "dt th 14:00>+1h"}
+{"id": "v2t0-0236", "text": "quick call 11:30 10 mins", "dsl": "t 11:30?>+10m"}
+{"id": "v2t0-0237", "text": "after 2pm", "dsl": "t 14:00>"}
+{"id": "v2t0-0238", "text": "Webinar is wed 1pm for 1 hour, recording will be sent after", "dsl": "dt we 13:00>+1h"}
+{"id": "v2t0-0239", "text": "tmrw 8am 2 hrs", "dsl": "dt +1d 08:00>+2h"}
+{"id": "v2t0-0240", "text": "by the 10th pls", "dsl": "d >D@10"}
+{"id": "v2t0-0241", "text": "i have 3 cats", "dsl": "x"}
+{"id": "v2t0-0242", "text": "see you at 5", "dsl": "t 5?"}
+{"id": "v2t0-0243", "text": "Office hours are after 2pm on wednesdays, room 214", "dsl": "dt we 14:00>"}
+{"id": "v2t0-0244", "text": "at 7 tmrw", "dsl": "dt +1d 7?"}
+{"id": "v2t0-0245", "text": "Open house: the 16th, 1pm for 3 hours", "dsl": "dt D@16 13:00>+3h"}
+{"id": "v2t0-0246", "text": "before halloween", "dsl": "d >10-31"}
+{"id": "v2t0-0247", "text": "before 7:15am", "dsl": "t >07:15"}
+{"id": "v2t0-0248", "text": "sync on the 8th at 11", "dsl": "dt D@8 11?"}
+{"id": "v2t0-0249", "text": "Package weight 15 lbs, arriving next tuesday", "dsl": "d tu+1"}
+{"id": "v2t0-0250", "text": "text me when you're done, i'll be up till 11", "dsl": "t >11?"}
+{"id": "v2t0-0251", "text": "coffee 4pm 30 minutes", "dsl": "t 16:00>+30m"}
+{"id": "v2t0-0252", "text": "until 11:30", "dsl": "t >11:30?"}
+{"id": "v2t0-0253", "text": "the 2nd at 5pm", "dsl": "dt D@2 17:00"}
+{"id": "v2t0-0254", "text": "by oct 31", "dsl": "d >10-31"}
+{"id": "v2t0-0255", "text": "i'll be there on the 20th", "dsl": "d D@20"}
+{"id": "v2t0-0256", "text": "thursday 3:30 for 30 mins", "dsl": "dt th 3:30?>+30m"}
+{"id": "v2t0-0257", "text": "Your subscription renews every year on march 4", "dsl": "d R y/1 03-04"}
+{"id": "v2t0-0258", "text": "until the 15th", "dsl": "d >D@15"}
+{"id": "v2t0-0259", "text": "from 4pm on thursday", "dsl": "dt th 16:00>"}
+{"id": "v2t0-0260", "text": "11am for 30 min", "dsl": "t 11:00>+30m"}
+{"id": "v2t0-0261", "text": "sync 3pm 15min", "dsl": "t 15:00>+15m"}
+{"id": "v2t0-0262", "text": "Hearing scheduled for the 22nd at 10am", "dsl": "dt D@22 10:00"}
+{"id": "v2t0-0263", "text": "every twentieth", "dsl": "d R m/1 d20"}
+{"id": "v2t0-0264", "text": "page 28", "dsl": "x"}
+{"id": "v2t0-0265", "text": "the 3rd, 4pm", "dsl": "dt D@3 16:00"}
+{"id": "v2t0-0266", "text": "starting tomorrow at 9", "dsl": "dt +1d 9?>"}
+{"id": "v2t0-0267", "text": "every friday at 5", "dsl": "dt R w/1 fr 5?"}
+{"id": "v2t0-0268", "text": "every 20th, reminder to pay", "dsl": "d R m/1 d20"}
+{"id": "v2t0-0269", "text": "Your flight check-in opens 24 hours before departure, no later than friday for the group", "dsl": "d >fr"}
+{"id": "v2t0-0270", "text": "since july 4", "dsl": "d 07-04<>+0d"}
+{"id": "v2t0-0271", "text": "no later than friday works for me", "dsl": "d >fr"}
+{"id": "v2t0-0272", "text": "on the 7th at 9am", "dsl": "dt D@7 09:00"}
+{"id": "v2t0-0273", "text": "check in the 4th", "dsl": "d D@4"}
+{"id": "v2t0-0274", "text": "Contractor arrives 8am monday, expect work for 6 hours", "dsl": "dt mo 08:00>+6h"}
+{"id": "v2t0-0275", "text": "meeting tomorrow at 3 lasting 2 hours", "dsl": "dt +1d 3?>+2h"}
+{"id": "v2t0-0276", "text": "i have 3 meetings", "dsl": "x"}
+{"id": "v2t0-0277", "text": "Gym open 6am to 10pm daily", "dsl": "dt R d/1 06:00>22:00"}
+{"id": "v2t0-0278", "text": "Your cable bill is past due, pay by the 25th to avoid disconnection", "dsl": "d >D@25"}
+{"id": "v2t0-0279", "text": "the 3 rd", "dsl": "d D@3"}
+{"id": "v2t0-0280", "text": "after the 20th", "dsl": "d D@20>"}
+{"id": "v2t0-0281", "text": "uh before noon on friday", "dsl": "dt >fr 12:00"}
+{"id": "v2t0-0282", "text": "the 20th afternoon", "dsl": "d D@20"}
+{"id": "v2t0-0283", "text": "im out of office until nov 3", "dsl": "d >11-03"}
+{"id": "v2t0-0284", "text": "ten am for forty five minutes", "dsl": "t 10:00>+45m"}
+{"id": "v2t0-0285", "text": "Team lunch friday 12:30 for 1 hour, my treat", "dsl": "dt fr 12:30?>+1h"}
+{"id": "v2t0-0286", "text": "Your order #1523 includes 3 items and ships friday", "dsl": "d fr"}
+{"id": "v2t0-0287", "text": "the 4th of the month", "dsl": "d D@4"}
+{"id": "v2t0-0288", "text": "Quiz is on the 3rd, chapters 4 through 6", "dsl": "d D@3"}
+{"id": "v2t0-0289", "text": "Bill is $62.40 and due the 8th", "dsl": "d D@8"}
+{"id": "v2t0-0290", "text": "im off since monday so ping me if urgent", "dsl": "d mo<>+0d"}
+{"id": "v2t0-0291", "text": "since last monday", "dsl": "d mo-1>+0d"}
+{"id": "v2t0-0292", "text": "Spring term registration opens nov 1, closes the 15th", "dsl": "d 11-01"}
+{"id": "v2t0-0293", "text": "Your vet visit is on the 7th at 10am", "dsl": "dt D@7 10:00"}
+{"id": "v2t0-0294", "text": "Monthly on the first monday", "dsl": "d R m/1 mo#1"}
+{"id": "v2t0-0295", "text": "pg 15", "dsl": "x"}
+{"id": "v2t0-0296", "text": "Doctor appt jan 9 at 11:15am", "dsl": "dt 01-09 11:15"}
+{"id": "v2t0-0297", "text": "dont call me after 10pm", "dsl": "t 22:00>"}
+{"id": "v2t0-0298", "text": "Thanks for booking! Your massage is saturday 11am for 90 minutes", "dsl": "dt sa 11:00>+90m"}
+{"id": "v2t0-0299", "text": "7:30 am (1 hour)", "dsl": "t 07:30>+1h"}
+{"id": "v2t0-0300", "text": "Your table is held 15 minutes, reservation 7pm friday", "dsl": "dt fr 19:00"}
+{"id": "v2t0-0301", "text": "Flight AA 212 leaves at 7:05am on sunday", "dsl": "dt su 07:05"}
+{"id": "v2t0-0302", "text": "hey i'm free before 11am on thursday", "dsl": "dt >th 11:00"}
+{"id": "v2t0-0303", "text": "Tow truck can arrive anytime after 2", "dsl": "t 2?>"}
+{"id": "v2t0-0304", "text": "every 1st of the month", "dsl": "d R m/1 d01"}
+{"id": "v2t0-0305", "text": "on the 5th at 2pm for 2 hours", "dsl": "dt D@5 14:00>+2h"}
+{"id": "v2t0-0306", "text": "your rent is due the 1st of each month, please pay on time", "dsl": "d R m/1 d01"}
+{"id": "v2t0-0307", "text": "call at 3 for ten minutes", "dsl": "t 3?>+10m"}
+{"id": "v2t0-0308", "text": "Room 12 is booked for thursday at 1pm", "dsl": "dt th 13:00"}
+{"id": "v2t0-0309", "text": "table for 4", "dsl": "x"}
+{"id": "v2t0-0310", "text": "gym fee is charged on the 12th", "dsl": "d D@12"}
+{"id": "v2t0-0311", "text": "Weekly standup is every monday 9:15am for 15 min, zoom link below", "dsl": "dt R w/1 mo 09:15>+15m"}
+{"id": "v2t0-0312", "text": "dinner 7pm for 2 hrs", "dsl": "t 19:00>+2h"}
+{"id": "v2t0-0313", "text": "after new years", "dsl": "d 01-01>"}
+{"id": "v2t0-0314", "text": "Applications close until march 3", "dsl": "d >03-03"}
+{"id": "v2t0-0315", "text": "Your dog's grooming appointment is thursday 1pm for 90 minutes", "dsl": "dt th 13:00>+90m"}
+{"id": "v2t0-0316", "text": "after 8:45am", "dsl": "t 08:45>"}
+{"id": "v2t0-0317", "text": "birthday the 3rd", "dsl": "d D@3"}
+{"id": "v2t0-0318", "text": "this saturday at 10am", "dsl": "dt sa 10:00"}
+{"id": "v2t0-0319", "text": "Please plan on 2 hours, starting at 6pm on the 14th", "dsl": "dt D@14 18:00>+2h"}
+{"id": "v2t0-0320", "text": "we should be done by 8pm", "dsl": "t >20:00"}
+{"id": "v2t0-0321", "text": "every weekday at 8am", "dsl": "dt R d/1 mo,tu,we,th,fr 08:00"}
+{"id": "v2t0-0322", "text": "Bill due december 28", "dsl": "d 12-28"}
+{"id": "v2t0-0323", "text": "not before 8 am sunday", "dsl": "dt su 08:00>"}
+{"id": "v2t0-0324", "text": "every 20th", "dsl": "d R m/1 d20"}
+{"id": "v2t0-0325", "text": "the 16th evening", "dsl": "d D@16"}
+{"id": "v2t0-0326", "text": "from 9 to 5 tomorrow", "dsl": "dt +1d 9?>5?"}
+{"id": "v2t0-0327", "text": "by eight pm", "dsl": "t >20:00"}
+{"id": "v2t0-0328", "text": "every 10th", "dsl": "d R m/1 d10"}
+{"id": "v2t0-0329", "text": "lunch w/ boss thurs 12:15 for 1hr", "dsl": "dt th 12:15?>+1h"}
+{"id": "v2t0-0330", "text": "Shift swap: can you cover the 14th from 4 on", "dsl": "dt D@14 4?>"}
+{"id": "v2t0-0331", "text": "after seven thirty pm", "dsl": "t 19:30>"}
+{"id": "v2t0-0332", "text": "lets do it on the 23rd", "dsl": "d D@23"}
+{"id": "v2t0-0333", "text": "due on the 30th pls", "dsl": "d D@30"}
+{"id": "v2t0-0334", "text": "Daily standup at 9:30 every weekday", "dsl": "dt R d/1 mo,tu,we,th,fr 9:30?"}
+{"id": "v2t0-0335", "text": "Reminder: your electric bill of $84.12 is payment due by the 28th", "dsl": "d >D@28"}
+{"id": "v2t0-0336", "text": "saturday night", "dsl": "d sa"}
+{"id": "v2t0-0337", "text": "After the 3 cats ate, the vet called, tuesday at 4", "dsl": "dt tu 4?"}
+{"id": "v2t0-0338", "text": "Your promo code works after oct 5 only", "dsl": "d 10-05>"}
+{"id": "v2t0-0339", "text": "Your confirmation number is 3028 for saturday at noon", "dsl": "dt sa 12:00"}
+{"id": "v2t0-0340", "text": "by the thirtieth", "dsl": "d >D@30"}
+{"id": "v2t0-0341", "text": "sale ends before the 15th, hurry", "dsl": "d >D@15"}
+{"id": "v2t0-0342", "text": "flight on the 2nd at 6am", "dsl": "dt D@2 06:00"}
+{"id": "v2t0-0343", "text": "befor noon", "dsl": "t >12:00"}
+{"id": "v2t0-0344", "text": "team standup every tuesday at 10", "dsl": "dt R w/1 tu 10?"}
+{"id": "v2t0-0345", "text": "the 20th morning", "dsl": "d D@20"}
+{"id": "v2t0-0346", "text": "Your appointment is confirmed, please arrive no later than friday", "dsl": "d >fr"}
+{"id": "v2t0-0347", "text": "Technician will arrive from 1 on friday", "dsl": "dt fr 1?>"}
+{"id": "v2t0-0348", "text": "by tomorrow afternoon", "dsl": "d >+1d"}
+{"id": "v2t0-0349", "text": "zoom 1pm for one hr", "dsl": "t 13:00>+1h"}
+{"id": "v2t0-0350", "text": "The festival runs starting nov 1 through nov 3", "dsl": "d 11-01>11-03"}
+{"id": "v2t0-0351", "text": "Dr says no food after 8pm the night before the test", "dsl": "t 20:00>"}
+{"id": "v2t0-0352", "text": "flight leaves on the 2nd", "dsl": "d D@2"}
+{"id": "v2t0-0353", "text": "before fri", "dsl": "d >fr"}
+{"id": "v2t0-0354", "text": "we can meet anytime after 4 on the 12th", "dsl": "dt D@12 4?>"}
+{"id": "v2t0-0355", "text": "no later than friday please", "dsl": "d >fr"}
+{"id": "v2t0-0356", "text": "every monday at 9am", "dsl": "dt R w/1 mo 09:00"}
+{"id": "v2t0-0357", "text": "move out by the 31st", "dsl": "d >D@31"}
+{"id": "v2t0-0358", "text": "on the 3rd", "dsl": "d D@3"}
+{"id": "v2t0-0359", "text": "on the twenty fifth", "dsl": "d D@25"}
+{"id": "v2t0-0360", "text": "tax estimate due by the 15th, don't forget", "dsl": "d >D@15"}
+{"id": "v2t0-0361", "text": "Next friday at 2:30pm", "dsl": "dt fr+1 14:30"}
+{"id": "v2t0-0362", "text": "before christmas", "dsl": "d >12-25"}
+{"id": "v2t0-0363", "text": "by 6pm fri", "dsl": "dt >fr 18:00"}
+{"id": "v2t0-0364", "text": "by tuesday", "dsl": "d >tu"}
+{"id": "v2t0-0365", "text": "how about the 14th", "dsl": "d D@14"}
+{"id": "v2t0-0366", "text": "fiber install is the 11th, sometime after noon", "dsl": "dt D@11 12:00>"}
+{"id": "v2t0-0367", "text": "until friday morning", "dsl": "d >fr"}
+{"id": "v2t0-0368", "text": "Your yoga class is every thursday at 6pm", "dsl": "dt R w/1 th 18:00"}
+{"id": "v2t0-0369", "text": "haircut sat 11 for 1 hr", "dsl": "dt sa 11?>+1h"}
+{"id": "v2t0-0370", "text": "need the room 4pm for one hour", "dsl": "t 16:00>+1h"}
+{"id": "v2t0-0371", "text": "Lemme know by tonight if you're in", "dsl": "d >+0d"}
+{"id": "v2t0-0372", "text": "meeting nov 5 at 2pm for 2 hours", "dsl": "dt 11-05 14:00>+2h"}
+{"id": "v2t0-0373", "text": "before thanksgiving", "dsl": "x", "unsure": true}
+{"id": "v2t0-0374", "text": "Mortgage autopay on the 3rd, balance low, please add funds", "dsl": "d D@3"}
+{"id": "v2t0-0375", "text": "call w/ client 4pm for 30 min", "dsl": "t 16:00>+30m"}
+{"id": "v2t0-0376", "text": "Do you have anything open before noon friday", "dsl": "dt >fr 12:00"}
+{"id": "v2t0-0377", "text": "rsvp by oct 20", "dsl": "d >10-20"}
+{"id": "v2t0-0378", "text": "not until the 14th", "dsl": "d D@14>"}
+{"id": "v2t0-0379", "text": "taxes due the 15th", "dsl": "d D@15"}
+{"id": "v2t0-0380", "text": "Take 2 tablets every 8 hours", "dsl": "x", "unsure": true}
+{"id": "v2t0-0381", "text": "Reminder from Dr. Patel's office: your visit is tomorrow 9am for 30 minutes", "dsl": "dt +1d 09:00>+30m"}
+{"id": "v2t0-0382", "text": "since the 5th", "dsl": "x", "unsure": true}
+{"id": "v2t0-0383", "text": "how about the 8th", "dsl": "d D@8"}
+{"id": "v2t0-0384", "text": "before twelve noon", "dsl": "t >12:00"}
+{"id": "v2t0-0385", "text": "need the report no later than the 25th", "dsl": "d >D@25"}
+{"id": "v2t0-0386", "text": "every 1st", "dsl": "d R m/1 d01"}
+{"id": "v2t0-0387", "text": "the 4th at 3:30pm", "dsl": "dt D@4 15:30"}
+{"id": "v2t0-0388", "text": "Parking permit valid starting nov 1 through the end of the year", "dsl": "d 11-01>"}
+{"id": "v2t0-0389", "text": "after the 15th", "dsl": "d D@15>"}
+{"id": "v2t0-0390", "text": "please submit the timesheet before noon on monday", "dsl": "dt >mo 12:00"}
+{"id": "v2t0-0391", "text": "earliest is the 12th", "dsl": "d D@12>"}
+{"id": "v2t0-0392", "text": "Calendar invite: Offsite planning thurs 9am for 3 hours", "dsl": "dt th 09:00>+3h"}
+{"id": "v2t0-0393", "text": "2pm 1 hr", "dsl": "t 14:00>+1h"}
+{"id": "v2t0-0394", "text": "march 14 at 2pm", "dsl": "dt 03-14 14:00"}
+{"id": "v2t0-0395", "text": "10 am for a half hour", "dsl": "t 10:00>+30m"}
+{"id": "v2t0-0396", "text": "can we do the 19th?", "dsl": "d D@19"}
+{"id": "v2t0-0397", "text": "Your phone plan renews the 4th each month", "dsl": "d R m/1 d04"}
+{"id": "v2t0-0398", "text": "Vaccination clinic open since monday, walk ins before 4pm", "dsl": "d mo<>+0d"}
+{"id": "v2t0-0399", "text": "need answer by noon tomorrow", "dsl": "dt >+1d 12:00"}
