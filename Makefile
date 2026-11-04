@@ -64,9 +64,11 @@ results:  ## Results table for an eval version: make results EVAL=e10
 robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=h8
 	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),h8)
 
-demo-video:  ## Record the demo video and GIF into docs/media and open both in Chrome (uses port 5301, not the dev servers)
+demo-video:  ## Record the demo into docs/media (webm, mp4, gif) and open the mp4 and gif in Chrome (uses port 5301, not the dev servers)
 	@cd packages/picker && { curl -s -o /dev/null localhost:5301 && started= || { (nohup pnpm exec vite --config demo/vite.config.ts --port 5301 --strictPort > ../../.run/demo-video-vite.log 2>&1 & echo $$! > ../../.run/demo-video-vite.pid); started=1; until curl -s -o /dev/null localhost:5301; do :; done; }; \
 	  node scripts/demo-video.mjs ../../docs/media; rc=$$?; \
 	  [ -z "$$started" ] || kill $$(lsof -ti :5301) 2>/dev/null; exit $$rc; }
 	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH packages/picker/scripts/demo-gif.sh docs/media/demo.webm docs/media/demo.gif
-	@open -a "Google Chrome" docs/media/demo.webm docs/media/demo.gif
+	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH ffmpeg -loglevel error -y -i docs/media/demo.webm -c:v libx264 -crf 20 -preset slow -pix_fmt yuv420p -movflags +faststart docs/media/demo.mp4
+	@ls -la docs/media | awk 'NR>3 {print $$5, $$9}'
+	@open -a "Google Chrome" docs/media/demo.mp4 docs/media/demo.gif
