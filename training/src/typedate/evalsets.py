@@ -27,8 +27,10 @@ def sha256(path: Path) -> str:
 
 
 def load_eval(version: str) -> dict[str, list[dict]]:
+    """Load every split listed in the version's manifest."""
     d = ROOT / "evals" / version
-    return {s: rows for s in EVAL_SPLITS if (rows := _read(d / f"{s}.jsonl"))}
+    splits = list(json.loads((d / "manifest.json").read_text())["files"])
+    return {s: rows for s in splits if (rows := _read(d / f"{s}.jsonl"))}
 
 
 def _write(version: str, splits: dict[str, list[dict]], manifest: dict) -> dict:

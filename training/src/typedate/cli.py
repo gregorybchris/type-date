@@ -180,7 +180,8 @@ def eval_quick(
 
     m = quick(
         version, of,
-        {"val": 150, "test_template": 150, "test_noise": 100, "test_llm": 200, "test_external": 100},
+        {"val": 150, "test_template": 150, "test_noise": 100, "test_llm": 200, "test_external": 100,
+         "test_external_hard": 100},
     )  # fmt: skip
     typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
 

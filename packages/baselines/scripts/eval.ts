@@ -25,7 +25,11 @@ const REGISTRY: Record<string, { file: string; family: string; perDay: boolean; 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
 const DAYS = ["2026-11-03", "2026-01-31", "2027-02-28", "2028-02-29", "2026-12-31", "2026-03-15", "2026-07-04"];
 const DEFAULT_DAY = DAYS[0]!;
-const SPLITS = ["val", "test_template", "test_noise", "test_llm", "test_external"];
+/** Splits listed in evals/<version>/manifest.json, so new splits are picked up automatically. */
+function splitsOf(version: string): string[] {
+  const m = JSON.parse(readFileSync(join(ROOT, "evals", version, "manifest.json"), "utf8"));
+  return Object.keys(m.files);
+}
 
 const { values: args } = parseArgs({
   options: {
@@ -104,7 +108,7 @@ async function main() {
   const mod = await import(join(here, "../src", reg!.file));
   const engine: Engine = mod.default;
   await engine.load({ baseUrl: "" });
-  const splitNames = (args.file ? ["file"] : args.splits ? args.splits.split(",") : SPLITS).filter((s) => loadSplit(s).length > 0);
+  const splitNames = (args.file ? ["file"] : args.splits ? args.splits.split(",") : splitsOf(args["eval-version"]!)).filter((s) => loadSplit(s).length > 0);
   const rowsBySplit: Record<string, Row[]> = Object.fromEntries(splitNames.map((s) => [s, loadSplit(s)]));
 
   // warm up the JIT before timing
