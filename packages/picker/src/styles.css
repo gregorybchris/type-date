@@ -509,10 +509,6 @@
   padding: 4px var(--td-px) 12px;
   color: var(--td-fg-2);
 }
-.td-next {
-  font-size: 12px;
-  white-space: nowrap;
-}
 .td-rec {
   min-width: 0;
   max-width: 100%;

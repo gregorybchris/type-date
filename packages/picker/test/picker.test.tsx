@@ -410,15 +410,13 @@ describe("DSL v2 results", () => {
     expect(screen.getByText("Aug 3 - Sep 7")).toBeTruthy();
     const dots = screen.getAllByRole("gridcell").filter((c) => c.dataset.occ && !c.dataset.out).map((c) => c.textContent);
     expect(dots).toContain("4");
-    expect(screen.getByText(/^Most recent dates:/)).toBeTruthy();
   });
 
-  it("month filter: note and next occurrences", async () => {
+  it("month filter: note and rule", async () => {
     const { type } = setup(table({ a: "d R d/1 mo,tu,we,th,fr M@08" }));
     type("a");
     await waitFor(() => expect(screen.getByText("Every August")).toBeTruthy());
     expect(ruleText("FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR;BYMONTH=8")).toBeTruthy();
-    expect(screen.getByText(/Upcoming dates:.*Aug 2.*Aug 3.*Aug 4/)).toBeTruthy();
   });
 
   it("nth list is described and exported", async () => {

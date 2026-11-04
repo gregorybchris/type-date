@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
-import { describeRecurrence, fmtDate, fmtDuration, fmtShort, fmtShortDay, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
+import { describeRecurrence, fmtDate, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
 import { flipMeridiem, pickDate, pickTime, summarize } from "./edit";
 import type { Target } from "./edit";
@@ -291,8 +291,6 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       : result?.durationMin
         ? `${fmtDuration(result.durationMin)}${result.endNextDay ? ", ends next day" : ""}`
         : null;
-  const upcoming = [...sel.occ].filter((d) => d >= today);
-  const nextList = (upcoming.length ? upcoming : [...sel.occ].slice(-3)).slice(0, 3);
   const bound = rec?.from && rec.until ? `${fmtBound(rec.from, today)} - ${fmtBound(rec.until, today)}` : null;
 
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
@@ -415,10 +413,6 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
               </code>
               {rec.months && <span className="td-chip">Every {monthNames(rec.months)}</span>}
               {bound && <span className="td-chip">{bound}</span>}
-              <span className="td-next">
-                {upcoming.length || !sel.occ.size ? "Upcoming dates:" : "Most recent dates:"}{" "}
-                {nextList.length ? nextList.map(fmtShortDay).join(" · ") : "none"}
-              </span>
             </div>
           )}
           {result?.ambiguous && showTime && (

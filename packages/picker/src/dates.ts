@@ -35,8 +35,6 @@ export const fmtShort = (s: string) => {
   const [, m, d] = parts(s);
   return `${MON[m - 1]} ${d}`;
 };
-/** "Fri, Nov 6" */
-export const fmtShortDay = (s: string) => `${DOW[weekdayOf(s)]}, ${fmtShort(s)}`;
 export const monthLabel = (v: View) => `${MONTH[v.m - 1]} ${v.y}`;
 
 export const fmtTime = (t: string) => {
