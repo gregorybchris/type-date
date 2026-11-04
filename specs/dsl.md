@@ -58,6 +58,10 @@ Partial input: the output is the parse of the committed part of the text, or `x`
 | jan 5 at 7pm | `dt 01-05 19:00` |
 | asdf | `x` |
 
+Canonical form: weekday lists inside a recurrence are ordered `mo,tu,we,th,fr,sa,su`. Recurrence tokens are ordered: frequency, days or nth weekday or month days or year day, count, until, time, start.
+
+Input preprocessing: the model input is the typed text lowercased with whitespace collapsed. The component does this before calling the model.
+
 ## Resolver policy (defaults, configurable)
 
 - `?` hours: 7-11 are AM, 12 is noon, 1-6 are PM. In a range the end inherits the start meridiem unless that makes end <= start, then it flips. The result is flagged `ambiguous`.
