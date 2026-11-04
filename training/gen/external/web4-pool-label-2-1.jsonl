@@ -97,7 +97,7 @@
 {"id": "web4p2-0096", "text": "11th december 8am", "dsl": "dt 12-11 08:00"}
 {"id": "web4p2-0097", "text": "2 years 4 months 5 days ago", "dsl": "x", "unsure": true}
 {"id": "web4p2-0098", "text": "today 2PM to today 3PM", "dsl": "dt +0d 14:00>15:00"}
-{"id": "web4p2-0099", "text": "monday 4:00", "dsl": "dt mo 4:00?"}
+{"id": "web4p2-0099", "text": "monday 4:00", "dsl": "dt mo 4?"}
 {"id": "web4p2-0100", "text": "2011 Oct 29", "dsl": "d 2011-10-29"}
 {"id": "web4p2-0101", "text": "some duration before noon/dinner/etc", "dsl": "x", "unsure": true}
 {"id": "web4p2-0102", "text": "the last thursday in november", "dsl": "d th#-1@11"}
@@ -179,7 +179,7 @@
 {"id": "web4p2-0178", "text": "What is the data since last year", "dsl": "x", "unsure": true}
 {"id": "web4p2-0179", "text": "first day of the month", "dsl": "x", "unsure": true}
 {"id": "web4p2-0180", "text": "5.1 hours ago", "dsl": "x", "unsure": true}
-{"id": "web4p2-0181", "text": "19. Februar 2012", "dsl": "x", "unsure": true}
+{"id": "web4p2-0181", "text": "19. Februar 2012", "dsl": "d 2012-02-19"}
 {"id": "web4p2-0182", "text": "12/10/1145", "dsl": "x", "unsure": true}
 {"id": "web4p2-0183", "text": "+week", "dsl": "d +1w"}
 {"id": "web4p2-0184", "text": "first or last day of next september at 6am", "dsl": "x", "unsure": true}
@@ -236,34 +236,34 @@
 {"id": "web4p2-0235", "text": "Jan 1 this year", "dsl": "x", "unsure": true}
 {"id": "web4p2-0236", "text": "in 2 to 4 months", "dsl": "x", "unsure": true}
 {"id": "web4p2-0237", "text": "1 Jahr 2 Monate", "dsl": "x", "unsure": true}
-{"id": "web4p2-0238", "text": "today 21:00", "dsl": "x", "unsure": true}
-{"id": "web4p2-0239", "text": "every two months", "dsl": "dt +0d 21:00"}
-{"id": "web4p2-0240", "text": "1st of june", "dsl": "x", "unsure": true}
-{"id": "web4p2-0241", "text": "5 on may 28", "dsl": "d 06-01"}
+{"id": "web4p2-0238", "text": "today 21:00", "dsl": "dt +0d 21:00"}
+{"id": "web4p2-0239", "text": "every two months", "dsl": "x", "unsure": true}
+{"id": "web4p2-0240", "text": "1st of june", "dsl": "d 06-01"}
+{"id": "web4p2-0241", "text": "5 on may 28", "dsl": "x", "unsure": true}
 {"id": "web4p2-0242", "text": "remind me in two hours to buy milk", "dsl": "x", "unsure": true}
-{"id": "web4p2-0243", "text": "april fool's day", "dsl": "x", "unsure": true}
-{"id": "web4p2-0244", "text": "Fri, 09 Sep 2005 13:51:39 -0700", "dsl": "d 04-01"}
-{"id": "web4p2-0245", "text": "3:30 p m", "dsl": "dt 2005-09-09 13:51"}
-{"id": "web4p2-0246", "text": "December 4th 1995", "dsl": "t 15:30"}
-{"id": "web4p2-0247", "text": "2 days after", "dsl": "d 1995-12-04"}
+{"id": "web4p2-0243", "text": "april fool's day", "dsl": "d 04-01"}
+{"id": "web4p2-0244", "text": "Fri, 09 Sep 2005 13:51:39 -0700", "dsl": "dt 2005-09-09 13:51"}
+{"id": "web4p2-0245", "text": "3:30 p m", "dsl": "t 15:30"}
+{"id": "web4p2-0246", "text": "December 4th 1995", "dsl": "d 1995-12-04"}
+{"id": "web4p2-0247", "text": "2 days after", "dsl": "x", "unsure": true}
 {"id": "web4p2-0248", "text": "1st of every quarter", "dsl": "x", "unsure": true}
-{"id": "web4p2-0249", "text": "August 22, 12:10PM", "dsl": "x", "unsure": true}
-{"id": "web4p2-0250", "text": "between 2PM and 3PM", "dsl": "dt 08-22 12:10"}
-{"id": "web4p2-0251", "text": "5pm 8.5", "dsl": "t 14:00>15:00"}
-{"id": "web4p2-0252", "text": "tomorrow at 10 and monday at 11", "dsl": "x", "unsure": true}
-{"id": "web4p2-0253", "text": "13/03/2014", "dsl": "dt +1d 10?"}
-{"id": "web4p2-0254", "text": "5th August 5pm", "dsl": "d 2014-03-13"}
-{"id": "web4p2-0255", "text": "in the end of next week", "dsl": "dt 08-05 17:00"}
+{"id": "web4p2-0249", "text": "August 22, 12:10PM", "dsl": "dt 08-22 12:10"}
+{"id": "web4p2-0250", "text": "between 2PM and 3PM", "dsl": "t 14:00>15:00"}
+{"id": "web4p2-0251", "text": "5pm 8.5", "dsl": "x", "unsure": true}
+{"id": "web4p2-0252", "text": "tomorrow at 10 and monday at 11", "dsl": "dt +1d 10?"}
+{"id": "web4p2-0253", "text": "13/03/2014", "dsl": "d 2014-03-13"}
+{"id": "web4p2-0254", "text": "5th August 5pm", "dsl": "dt 08-05 17:00"}
+{"id": "web4p2-0255", "text": "in the end of next week", "dsl": "x", "unsure": true}
 {"id": "web4p2-0256", "text": "ninety minutes ago", "dsl": "x", "unsure": true}
-{"id": "web4p2-0257", "text": "9:15 35 cars drove by", "dsl": "x", "unsure": true}
-{"id": "web4p2-0258", "text": "twenty sixth of june nineteen eighty one", "dsl": "t 9:15?"}
-{"id": "web4p2-0259", "text": "Cafe May", "dsl": "d 1981-06-26"}
-{"id": "web4p2-0260", "text": "tonight to tomorrow morning", "dsl": "x"}
-{"id": "web4p2-0261", "text": "3h ago", "dsl": "d +0d>+1d"}
+{"id": "web4p2-0257", "text": "9:15 35 cars drove by", "dsl": "t 9:15?"}
+{"id": "web4p2-0258", "text": "twenty sixth of june nineteen eighty one", "dsl": "d 1981-06-26"}
+{"id": "web4p2-0259", "text": "Cafe May", "dsl": "x"}
+{"id": "web4p2-0260", "text": "tonight to tomorrow morning", "dsl": "d +0d>+1d"}
+{"id": "web4p2-0261", "text": "3h ago", "dsl": "x", "unsure": true}
 {"id": "web4p2-0262", "text": "for 12 minutes", "dsl": "x", "unsure": true}
-{"id": "web4p2-0263", "text": "today 0:00", "dsl": "x", "unsure": true}
-{"id": "web4p2-0264", "text": "between 5PM and 6PM", "dsl": "dt +0d 00:00"}
-{"id": "web4p2-0265", "text": "12/09/18567", "dsl": "t 17:00>18:00"}
+{"id": "web4p2-0263", "text": "today 0:00", "dsl": "dt +0d 00:00"}
+{"id": "web4p2-0264", "text": "between 5PM and 6PM", "dsl": "t 17:00>18:00"}
+{"id": "web4p2-0265", "text": "12/09/18567", "dsl": "x", "unsure": true}
 {"id": "web4p2-0266", "text": "March to May 1965", "dsl": "x", "unsure": true}
-{"id": "web4p2-0267", "text": "tonight at 4:59", "dsl": "x", "unsure": true}
-{"id": "web4p2-0268", "text": "March 10 - 7:00 pm", "dsl": "dt +0d 4:59?"}
+{"id": "web4p2-0267", "text": "tonight at 4:59", "dsl": "dt +0d 4:59?"}
+{"id": "web4p2-0268", "text": "March 10 - 7:00 pm", "dsl": "dt 03-10 19:00"}
