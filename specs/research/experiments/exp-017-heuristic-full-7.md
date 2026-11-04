@@ -107,3 +107,7 @@ Pre-existing bug (also in full-6): `dec 6th thur twenty sixth` -> `d th#6@12`, w
 - Digit minute words (`10 to 8`), `twenty-eight minutes to seven`, `on Saturday for 9am`, `we start phase two in 3 days` (`two in` read as a time), `A380 tomorrow`.
 - `first to last day of 2008`, `first to last day of this september`, `morning of xmas`, `31.xii.99`, `10-3`.
 - Source with the most failures: `dateparser test_date_parser.py` (0.72, mostly foreign words), then duckling issues and the datetime-range tag (0.81).
+
+## Fix after the run (2026-11-04)
+
+"next 3 mon thu fri" and "next 3 m/th/f" returned only the Mondays. The counted-occurrence rule (`src/full-7/v2-forms.ts`) now takes several weekdays and gives N of each, as "next 2 weekends" already did: `d mo+1,mo+2,mo+3,th+1,th+2,th+3,fr+1,fr+2,fr+3`. Lists over 31 dates are not produced. Web dev pool exact stays 96.2%. Earlier fix the same day: "dec 6th thursday" gave the invalid `th#6@12`; it now gives `d 12-06`. These two changes are not in the exp-017 scores on e7 and e8.

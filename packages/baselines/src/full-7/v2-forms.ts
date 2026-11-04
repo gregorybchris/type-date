@@ -22,13 +22,25 @@ function counted(T: Tok[]): string | null {
     const N = n.v!;
     let items: string[] | null = null;
     let used = 3;
-    if (g.k === "w") items = Array.from({ length: N }, (_, q) => `${g.s}${dir}${q + 1}`);
+    if (g.k === "w") {
+      // "next 3 mon thu fri", "next 3 m/th/f": N of each weekday
+      const wds = [g.s!];
+      let j = i + 3;
+      while (T[j] && (T[j]!.k === "and" || (T[j]!.k === "sep" && T[j]!.s === "-")) && T[j + 1]?.k === "w") j++;
+      while (T[j]?.k === "w" && wds.length < 7) {
+        wds.push(T[j]!.s!);
+        j++;
+        while (T[j] && (T[j]!.k === "and" || (T[j]!.k === "sep" && T[j]!.s === "-")) && T[j + 1]?.k === "w") j++;
+      }
+      used = j - i;
+      items = wds.flatMap((w) => Array.from({ length: N }, (_, q) => `${w}${dir}${q + 1}`));
+    }
     else if (g.k === "wkds") items = Array.from({ length: N }, (_, q) => [`sa${dir}${q + 1}`, `su${dir}${q + 1}`]).flat();
     else if (g.k === "wkd" || (g.k === "work" && T[i + 3]?.k === "u" && T[i + 3]!.s === "d")) {
       items = Array.from({ length: N }, (_, q) => `${dir}${q + 1}b`);
       if (g.k === "work") used = 4;
     }
-    if (!items) continue;
+    if (!items || items.length > 31) continue;
     const rest = [...T.slice(0, i), ...T.slice(i + used)];
     const tm = parseToks(rest);
     if (g.k !== "w" && tm.startsWith("t ") && dir === "+") {

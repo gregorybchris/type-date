@@ -46,6 +46,8 @@ const web: [string, string][] = [
   ["the 1st day of March 2015", "d 2015-03-01"],
   ["twenty sixth of june nineteen eighty one", "d 1981-06-26"],
   ["dec 6th thursday", "d 12-06"],
+  ["next 3 m/th/f", "d mo+1,mo+2,mo+3,th+1,th+2,th+3,fr+1,fr+2,fr+3"],
+  ["next 2 mon and fri", "d mo+1,mo+2,fr+1,fr+2"],
   ["dec 6th thur twenty sixth", "d 12-06"],
 ];
 
