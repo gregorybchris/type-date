@@ -14,7 +14,7 @@ Apply these to all docs, comments, commit messages, and UI copy.
 
 ## Working rules
 
-- Commit often to git with informative messages. Do not push. There is no remote.
+- Commit often to git with informative messages. The remote is `origin` (github.com/gregorybchris/type-date). Push only when the user asks. GitHub rejects files over 100 MB, so never commit model downloads or other large files (history was rewritten on 2026-11-04 to remove `training/.hf`).
 - Mobile matters: UI must be responsive and the parser must be fast on phones (see `specs/design.md`).
 - `design-ideas/` is gitignored. Look at the images there before doing UI work.
 - Eval sets are versioned and immutable (`evals/eN`). Compare only within one eval version. Cut a new one rarely. A new version must be scored on all engines first. See `specs/research/eval-versioning.md`.
