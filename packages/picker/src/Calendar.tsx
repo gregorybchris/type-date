@@ -69,6 +69,18 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
   const lo = open === "start" ? mStart : sel.lo;
   const hi = open === "end" ? mEnd : sel.hi;
   const rows = Array.from({ length: 6 }, (_, r) => days.slice(r * 7, r * 7 + 7));
+  const viewKey = `${view.y}-${String(view.m).padStart(2, "0")}`;
+  const posOf = (d: string): string | undefined => {
+    const out = d.slice(0, 7) !== viewKey;
+    if (!(lo && hi && d >= lo && d <= hi && !(open && out))) return undefined;
+    const trueLo = open !== "start" && d === lo;
+    const trueHi = open !== "end" && d === hi;
+    let pos = trueLo && trueHi ? "single" : trueLo ? "start" : trueHi ? "end" : "mid";
+    if (open && !trueLo && !trueHi && lo === hi) pos = "mid";
+    return pos;
+  };
+  // Selected days that are not part of a range (recurrences, lists). Neighbors in this set join into one block.
+  const plain = (d: string | undefined) => !!d && !posOf(d) && (!!sel.multi?.has(d) || sel.occ.has(d));
   const label = monthLabel(view);
 
   return (
@@ -95,18 +107,16 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
         <div className="td-weeks" key={`${view.y}-${view.m}`} data-dir={dir}>
           {rows.map((row, r) => (
             <div role="row" className="td-row" key={r}>
-              {row.map((d) => {
-                const out = d.slice(0, 7) !== `${view.y}-${String(view.m).padStart(2, "0")}`;
-                let pos: string | undefined;
-                if (lo && hi && d >= lo && d <= hi && !(open && out)) {
-                  const trueLo = open !== "start" && d === lo;
-                  const trueHi = open !== "end" && d === hi;
-                  pos = trueLo && trueHi ? "single" : trueLo ? "start" : trueHi ? "end" : "mid";
-                  if (open && !trueLo && !trueHi && lo === hi) pos = "mid";
-                }
+              {row.map((d, c) => {
+                const out = d.slice(0, 7) !== viewKey;
+                const pos = posOf(d);
                 const edge = pos === "mid" && open && (open === "end" ? d === mEnd : d === mStart) ? open : undefined;
                 const occ = sel.occ.has(d);
                 const selected = !!pos || sel.multi?.has(d) || occ;
+                const i = r * 7 + c;
+                const join = plain(d)
+                  ? [c > 0 && plain(days[i - 1]) ? "l" : "", c < 6 && plain(days[i + 1]) ? "r" : "", r > 0 && plain(days[i - 7]) ? "u" : "", r < 5 && plain(days[i + 7]) ? "d" : ""].join("") || undefined
+                  : undefined;
                 return (
                   <div
                     role="gridcell"
@@ -118,6 +128,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                     data-out={out || undefined}
                     data-today={d === today || undefined}
                     data-occ={occ || undefined}
+                    data-join={join}
                   >
                     <button
                       type="button"

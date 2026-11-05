@@ -451,6 +451,24 @@
   color: var(--td-on-accent);
   font-weight: 600;
 }
+/* selected days outside a range: square the corners that touch a selected neighbor, so a run reads as one block */
+.td-cell[data-join*="l"] button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.td-cell[data-join*="r"] button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.td-cell[data-join*="u"] button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.td-cell[data-join*="d"] button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: calc(100% + 3px);
+}
 .td-cell[data-range="start"][data-today] button,
 .td-cell[data-range="end"][data-today] button,
 .td-cell[data-range="single"][data-today] button,

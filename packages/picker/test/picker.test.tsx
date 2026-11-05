@@ -439,6 +439,17 @@ describe("DSL v2 results", () => {
     expect(ruleText("FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR;BYMONTH=8")).toBeTruthy();
   });
 
+  it("selected days next to each other join into one block", async () => {
+    const { type } = setup(table({ a: "d R d/1 mo,tu,we,th,fr" }), { weekStart: 0 });
+    type("a");
+    await waitFor(() => expect(screen.getAllByRole("gridcell").some((c) => c.dataset.join)).toBe(true));
+    const cell = (date: string) => screen.getAllByRole("gridcell").find((c) => c.querySelector("button")?.dataset.date === date)!;
+    // Wednesday Sep 23 2026: neighbors left and right (Tue, Thu) and above and below (Wed 16, Wed 30).
+    expect(cell("2026-09-23").dataset.join).toBe("lrud");
+    // Saturdays and Sundays are not selected and carry no join.
+    expect(cell("2026-09-19").dataset.join).toBeUndefined();
+  });
+
   it("nth list is described and exported", async () => {
     const { type } = setup(table({ a: "d R m/1 tu#1,tu#3" }));
     type("a");
