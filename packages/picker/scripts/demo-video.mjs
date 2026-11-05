@@ -120,16 +120,15 @@ await page.getByRole("textbox", { name: "Date and time" }).click();
 await page.evaluate("window.scrollTo(0, 0)");
 await sleep(1000);
 await writeFile(`${out}/demo.trim`, String(Math.max(0, (Date.now() - t0) / 1000 - 0.6).toFixed(2)));
+if (VARY) await applyLook(page, 0);
 for (const [i, p] of phrases.entries()) {
-  if (VARY) {
-    await applyLook(page, i);
-    await sleep(i === 0 ? 0 : 900); // let the 0.7 s fade finish before typing
-  }
   await type(page, p);
-  await sleep(2200);
+  await sleep(1800);
   console.log("scrollY", await page.evaluate("window.scrollY"), p);
+  // Reset and the next look change together, so the clear and the 0.7 s fade overlap.
   await page.keyboard.press("Escape");
-  await sleep(900);
+  if (VARY && i + 1 < phrases.length) await applyLook(page, i + 1);
+  await sleep(VARY ? 750 : 500);
 }
 const video = page.video();
 await ctx.close();
