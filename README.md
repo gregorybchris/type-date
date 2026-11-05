@@ -2,11 +2,11 @@
 
 <p align="center">
 A date and time picker you type into.<br>
-Write <code>oct 2 to oct 5</code> or <code>every other sunday</code> and the calendar follows.
+Just type <code>oct 2 to oct 5</code> or <code>every other sunday</code> and the calendar updates in real time.
 </p>
 
 <p align="center">
-  <img src="docs/media/demo.gif" alt="Typing ten phrases into the picker, from oct 2 to oct 5 to four score and seven years ago" width="450">
+  <img src="docs/media/demo.gif" alt="Typing ten phrases into the picker, from oct 2 to oct 5 to four score and seven years ago, with the theme and highlight color changing each time" width="400">
 </p>
 
 ## The idea
