@@ -38,6 +38,17 @@ export function TimeList({ start, end, active, open, onPick }: Props) {
   };
 
   const tabbable = options.includes(active ?? "") ? active : options[16];
+  // Closed range: color the whole span. An overnight range (end before start) fills down from start and down to end.
+  const closed = !open && !!start && !!end;
+  const overnight = closed && end! < start!;
+  const rangeOf = (t: string): "start" | "end" | "mid" | "single" | undefined => {
+    if (!closed) return undefined;
+    if (start === end && t === start) return "single";
+    if (t === start) return "start";
+    if (t === end) return "end";
+    if (overnight ? t > start! || t < end! : t > start! && t < end!) return "mid";
+    return undefined;
+  };
   return (
     <div className="td-list" role="listbox" aria-label="Time" ref={ref} onKeyDown={onKeyDown}>
       {options.map((t) => (
@@ -47,6 +58,7 @@ export function TimeList({ start, end, active, open, onPick }: Props) {
           data-time={t}
           className="td-opt"
           aria-selected={t === start || t === end}
+          data-range={rangeOf(t)}
           data-in={(open === "end" && !!start && t > start) || (open === "start" && !!end && t < end) || undefined}
           tabIndex={t === tabbable ? 0 : -1}
           onClick={() => onPick(t)}

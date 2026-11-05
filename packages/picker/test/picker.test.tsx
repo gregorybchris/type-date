@@ -261,6 +261,14 @@ describe("DSL v2 results", () => {
     expect(screen.queryByText("to")).toBeNull();
   });
 
+  it("closed time range: colors every row from start to end", async () => {
+    const { type } = setup(table({ a: "t 13:00>15:00" }));
+    type("a");
+    await waitFor(() => expect(screen.getAllByRole("option", { selected: true })).toHaveLength(2));
+    const marks = screen.getAllByRole("option").filter((o) => o.hasAttribute("data-range")).map((o) => `${o.textContent}:${o.getAttribute("data-range")}`);
+    expect(marks).toEqual(["1:00 PM:start", "1:30 PM:mid", "2:00 PM:mid", "2:30 PM:mid", "3:00 PM:end"]);
+  });
+
   it("open start time: highlights the list before the end", async () => {
     const { type } = setup(table({ a: "t >12:00" }));
     type("a");

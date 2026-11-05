@@ -499,6 +499,31 @@
   color: var(--td-fg);
   font-weight: 500;
 }
+/* closed time range: one connected block, accent ends like the calendar */
+.td-opt[data-range] {
+  background: var(--td-range);
+  color: var(--td-fg);
+  border-radius: 0;
+  box-shadow: 0 2px 0 var(--td-range);
+}
+.td-opt[data-range="start"],
+.td-opt[data-range="end"],
+.td-opt[data-range="single"] {
+  background: var(--td-accent);
+  color: var(--td-on-accent);
+  font-weight: 500;
+}
+.td-opt[data-range="start"] {
+  border-radius: 8px 8px 0 0;
+}
+.td-opt[data-range="end"] {
+  border-radius: 0 0 8px 8px;
+  box-shadow: none;
+}
+.td-opt[data-range="single"] {
+  border-radius: 8px;
+  box-shadow: none;
+}
 
 /* extras */
 .td-extras {
@@ -756,6 +781,10 @@
   }
   .td-opt[aria-selected="true"] {
     border-color: var(--td-accent);
+  }
+  .td-opt[data-range] {
+    border-radius: 8px;
+    box-shadow: none;
   }
   /* time-only: a vertical list */
   .td-body[data-cal="false"] .td-list {

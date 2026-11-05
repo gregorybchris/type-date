@@ -1,7 +1,7 @@
 // Records the demo while typing five phrases. Usage: node scripts/demo-video.mjs <outDir> [baseUrl]
 // Start the demo on a spare port first: pnpm exec vite --config demo/vite.config.ts --port 5301
 import { chromium } from "playwright";
-import { mkdir, rename } from "node:fs/promises";
+import { mkdir, rename, writeFile } from "node:fs/promises";
 
 const out = process.argv[2] ?? "video";
 const base = process.argv[3] ?? "http://localhost:5301";
@@ -10,11 +10,11 @@ await mkdir(out, { recursive: true });
 // "~" before a character types the next character wrong, pauses, then backspaces and fixes it.
 const phrases = [
   "oct 2 to oct 5",
-  "every other fr~i until dec 31",
   "next mon 9am to 5pm",
   "half past nine the day after tomorrow",
   "last fri of the month",
-  "feb 12 to mar 2",
+  "tmrw 1-2",
+  "february 12 to march 2",
   "every wkday at 9",
   "four score and seven years ago",
   "next pi day",
@@ -47,7 +47,7 @@ const PAD = 32;
 // Frame page: only the picker, top-aligned, with the same padding on every side.
 const CSS = `.demo-try, .demo-note, .demo-gear, .demo-confirmed { display: none !important }
 .demo { padding: ${PAD}px !important; justify-content: flex-start !important; align-items: center !important }`;
-const url = (q = "") => `${base}/?theme=light&ws=1&engine=h11${q ? `&q=${encodeURIComponent(q)}` : ""}`;
+const url = (q = "") => `${base}/?theme=light&ws=0&engine=h11${q ? `&q=${encodeURIComponent(q)}` : ""}`;
 
 // Probe: size of the largest card across the phrases, so the frame fits all of them.
 const probe = await browser.newPage({ viewport: { width: 900, height: 1000 } });
@@ -70,12 +70,18 @@ const ctx = await browser.newContext({
   deviceScaleFactor: 2,
   recordVideo: { dir: out, size },
 });
+// The recording starts when the page is created. Hide the extras before first paint, wait for the page to settle,
+// and write how many seconds of loading to cut from the start (demo.trim).
+await ctx.addInitScript(`document.addEventListener("DOMContentLoaded", () => { const s = document.createElement("style"); s.textContent = ${JSON.stringify(CSS)}; document.head.appendChild(s); }, { once: true })`);
+const t0 = Date.now();
 const page = await ctx.newPage();
-await page.goto(url(), { waitUntil: "domcontentloaded" });
+await page.goto(url(), { waitUntil: "networkidle" });
 await page.addStyleTag({ content: CSS });
+await page.evaluate("document.fonts.ready.then(() => 0)");
 await page.getByRole("textbox", { name: "Date and time" }).click();
 await page.evaluate("window.scrollTo(0, 0)");
-await sleep(1200);
+await sleep(1000);
+await writeFile(`${out}/demo.trim`, String(Math.max(0, (Date.now() - t0) / 1000 - 0.6).toFixed(2)));
 for (const p of phrases) {
   await type(page, p);
   await sleep(2200);
