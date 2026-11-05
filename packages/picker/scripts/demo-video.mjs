@@ -35,6 +35,13 @@ const LOOKS = [
   ["light", "#0d9488"],
   ["dark", "#e879f9"],
 ];
+// Registered color properties animate, so every var(--td-*) user fades together.
+const FADE = "0.7s";
+const TOKENS = ["bg", "bg-2", "fg", "fg-2", "fg-3", "border", "dotted", "hover", "sel", "accent", "on-accent", "range", "today-ring", "ring"];
+const FADE_CSS = `${TOKENS.map((t) => `@property --td-${t} { syntax: "<color>"; inherits: true; initial-value: #888 }`).join("\n")}
+.td-root { transition: ${TOKENS.map((t) => `--td-${t} ${FADE} ease`).join(", ")} !important }
+.demo { transition: background-color ${FADE} ease, color ${FADE} ease !important }`;
+
 async function applyLook(page, i) {
   const [theme, accent] = LOOKS[i % LOOKS.length];
   const dark = theme === "dark";
@@ -107,13 +114,17 @@ const t0 = Date.now();
 const page = await ctx.newPage();
 await page.goto(url(), { waitUntil: "networkidle" });
 await page.addStyleTag({ content: CSS });
+if (VARY) await page.addStyleTag({ content: FADE_CSS });
 await page.evaluate("document.fonts.ready.then(() => 0)");
 await page.getByRole("textbox", { name: "Date and time" }).click();
 await page.evaluate("window.scrollTo(0, 0)");
 await sleep(1000);
 await writeFile(`${out}/demo.trim`, String(Math.max(0, (Date.now() - t0) / 1000 - 0.6).toFixed(2)));
 for (const [i, p] of phrases.entries()) {
-  if (VARY) await applyLook(page, i);
+  if (VARY) {
+    await applyLook(page, i);
+    await sleep(i === 0 ? 0 : 900); // let the 0.7 s fade finish before typing
+  }
   await type(page, p);
   await sleep(2200);
   console.log("scrollY", await page.evaluate("window.scrollY"), p);

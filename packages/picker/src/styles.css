@@ -478,11 +478,14 @@
   border-bottom-right-radius: 0;
   height: calc(100% + 3px);
 }
+/* On an accent tile the ring sits inside the tile, in the number color, so there is no second border. */
 .td-cell[data-range="start"][data-today]::after,
 .td-cell[data-range="end"][data-today]::after,
 .td-cell[data-range="single"][data-today]::after,
-.td-cell[aria-selected="true"][data-today]::after {
-  box-shadow: inset 0 0 0 2px var(--td-bg), inset 0 0 0 3.5px var(--td-today-ring);
+.td-cell[aria-selected="true"][data-today]:not([data-range])::after {
+  inset: 4px 3px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1.5px var(--td-on-accent);
 }
 .td-cell[aria-selected="true"][data-out] button {
   color: var(--td-on-accent);
