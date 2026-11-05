@@ -21,6 +21,36 @@ const phrases = [
   "may the fourth be with you",
 ];
 
+// VARY=1: each phrase gets the other theme and a new highlight color.
+const VARY = !!process.env.VARY;
+const LOOKS = [
+  ["light", "#4f46e5"],
+  ["dark", "#fb7185"],
+  ["light", "#059669"],
+  ["dark", "#38bdf8"],
+  ["light", "#e11d48"],
+  ["dark", "#a3e635"],
+  ["light", "#7c3aed"],
+  ["dark", "#fb923c"],
+  ["light", "#0d9488"],
+  ["dark", "#e879f9"],
+];
+async function applyLook(page, i) {
+  const [theme, accent] = LOOKS[i % LOOKS.length];
+  const dark = theme === "dark";
+  await page.evaluate(`(() => {
+    const dark = ${dark};
+    document.querySelector("main.demo")?.setAttribute("data-theme", ${JSON.stringify(theme)});
+    const root = document.querySelector(".td-root");
+    root.setAttribute("data-theme", ${JSON.stringify(theme)});
+    root.style.setProperty("--td-accent", ${JSON.stringify(accent)});
+    root.style.setProperty("--td-on-accent", dark ? "#1c1c1c" : "#fff");
+    root.style.setProperty("--td-range", "color-mix(in srgb, ${accent} " + (dark ? 18 : 12) + "%, transparent)");
+    root.style.setProperty("--td-ring", "color-mix(in srgb, ${accent} 22%, transparent)");
+    return 0;
+  })()`);
+}
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const rnd = (a, b) => a + Math.random() * (b - a);
 
@@ -82,7 +112,8 @@ await page.getByRole("textbox", { name: "Date and time" }).click();
 await page.evaluate("window.scrollTo(0, 0)");
 await sleep(1000);
 await writeFile(`${out}/demo.trim`, String(Math.max(0, (Date.now() - t0) / 1000 - 0.6).toFixed(2)));
-for (const p of phrases) {
+for (const [i, p] of phrases.entries()) {
+  if (VARY) await applyLook(page, i);
   await type(page, p);
   await sleep(2200);
   console.log("scrollY", await page.evaluate("window.scrollY"), p);

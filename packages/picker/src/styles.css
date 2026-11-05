@@ -437,8 +437,17 @@
   }
 }
 .td-cell[data-today] button {
-  box-shadow: inset 0 0 0 1.5px var(--td-today-ring);
   font-weight: 600;
+}
+/* The today ring is drawn on the cell, above its neighbors, so joined selections and range bands never cover it. */
+.td-cell[data-today]::after {
+  content: "";
+  position: absolute;
+  inset: 1px 0;
+  z-index: 2;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1.5px var(--td-today-ring);
+  pointer-events: none;
 }
 .td-cell[data-out] button {
   color: var(--td-fg-3);
@@ -469,10 +478,10 @@
   border-bottom-right-radius: 0;
   height: calc(100% + 3px);
 }
-.td-cell[data-range="start"][data-today] button,
-.td-cell[data-range="end"][data-today] button,
-.td-cell[data-range="single"][data-today] button,
-.td-cell[aria-selected="true"][data-today] button {
+.td-cell[data-range="start"][data-today]::after,
+.td-cell[data-range="end"][data-today]::after,
+.td-cell[data-range="single"][data-today]::after,
+.td-cell[aria-selected="true"][data-today]::after {
   box-shadow: inset 0 0 0 2px var(--td-bg), inset 0 0 0 3.5px var(--td-today-ring);
 }
 .td-cell[aria-selected="true"][data-out] button {
