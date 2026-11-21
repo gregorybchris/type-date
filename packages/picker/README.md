@@ -2,7 +2,7 @@
 
 React datetime picker. The user types text such as "oct 2 to oct 5" or "every other sunday". The calendar and time list update as they type.
 
-The parser runs in the browser and is bundled: no model, no network call, no server. It is the heuristic engine `h13` (see `specs/engines/h13.md`). Its rule sets load lazily on the first keystroke, and the entry file is about 14 kB gzipped. React is the only peer dependency.
+The parser runs in the browser and is bundled: no model, no network call, no server. It is the heuristic engine `h14` (see `specs/engines/h14.md`). Its rule sets load lazily on the first keystroke, and the entry file is about 14 kB gzipped. React is the only peer dependency.
 
 ## Install
 

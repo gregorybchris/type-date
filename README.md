@@ -50,7 +50,7 @@ The parser is separate from the picker. Any function from text to a DSL line wor
 
 ## Results
 
-Each generation of the parser is an engine, `h1` to `h13`. They are compared with [chrono-node](https://github.com/wanasit/chrono), a widely used rule-based parser, on the same labeled phrases. Scores are the share of phrases that resolve to the same dates as the label, on eval set `e16` (17,111 phrases). `h13` is the engine the picker ships.
+Each generation of the parser is an engine, `h1` to `h14`. They are compared with [chrono-node](https://github.com/wanasit/chrono), a widely used rule-based parser, on the same labeled phrases. Scores are the share of phrases that resolve to the same dates as the label, on eval set `e16` (17,111 phrases). `h14` is the engine the picker ships.
 
 | Engine | All of e16 | Personas | Voice and booking | Formats and domain | Typos | Zones, written | Zones, web | Size, gzip | Median time |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -61,11 +61,12 @@ Each generation of the parser is an engine, `h1` to `h13`. They are compared wit
 | `h8` | 84.7% | 87.0% | 83.5% | 80.0% | 90.7% | 12.6% | 34.4% | 21.9 kB + 10.7 kB lazy | 0.12 ms |
 | `h11` | 85.9% | 89.6% | 93.8% | 86.9% | 91.9% | 12.6% | 34.4% | 22.1 kB + 27.9 kB lazy | 0.31 ms |
 | `h12` | 87.6% | 91.4% | 93.8% | 86.9% | 92.3% | 12.6% | 34.4% | 22.2 kB + 33.7 kB lazy | 0.35 ms |
-| **`h13`** | **92.9%** | **91.4%** | **93.8%** | **89.2%** | **93.3%** | **90.4%** | **94.5%** | 22.3 kB + 39.9 kB lazy | 0.33 ms |
+| `h13` | 92.9% | 91.4% | 93.8% | 89.2% | 93.3% | 90.4% | 94.5% | 22.3 kB + 39.9 kB lazy | 0.33 ms |
+| **`h14`** | **92.9%** | **91.4%** | **93.8%** | **89.2%** | **93.3%** | **90.6%** | **94.5%** | 22.3 kB + 43.5 kB lazy | 0.34 ms |
 
 chrono-node returns one date or one range and has no recurrence or time zone output, so it scores low on repeating schedules and zones. It is not built for typos either. Engines before `h13` ignore a time zone in the text, so their zone scores are low by design.
 
-`h13` reads the time zone in a phrase ("3pm EST", "9am PT tomorrow", "noon UTC+5:30", "10 central", "9am in Tokyo") and writes it as a last token on the result. It reads zone words next to a clock time only, so "mountain view 2pm" and "pacific rim brunch" are not zones. When a phrase gives one moment in several zones ("10:00 PST (18:00 GMT)") the first is the label. An ambiguous abbreviation such as IST or CST uses the user's zone and locale from the browser, then a default. The picker shows the zone and the time in the user's zone. Against `h12` on e16 it fixes 913 phrases and breaks 8. See [`specs/engines/h13.md`](specs/engines/h13.md). `h12` added conjunctions of recurrences ("every third tuesday and second monday", "tuesdays at 1:30 and thursdays at 3") and start and end clauses on any recurrence ([`specs/engines/h12.md`](specs/engines/h12.md)).
+`h14` reads a date range with one shared time as a daily recurrence: "tomorrow to friday 3-4pm" and "3-4pm tomorrow to friday" are 3 to 4 PM on each day from tomorrow to Friday. A time on each end ("3pm tomorrow to 4pm friday") is still one span. No eval row has this shape, so its scores match `h13` (on e16 it fixes one phrase, breaks one and changes one wrong answer). See [`specs/engines/h14.md`](specs/engines/h14.md). `h13` reads the time zone in a phrase ("3pm EST", "9am PT tomorrow", "noon UTC+5:30", "10 central", "9am in Tokyo") and writes it as a last token on the result. It reads zone words next to a clock time only, so "mountain view 2pm" and "pacific rim brunch" are not zones. When a phrase gives one moment in several zones ("10:00 PST (18:00 GMT)") the first is the label. An ambiguous abbreviation such as IST or CST uses the user's zone and locale from the browser, then a default. The picker shows the zone and the time in the user's zone. Against `h12` on e16 it fixes 913 phrases and breaks 8. See [`specs/engines/h13.md`](specs/engines/h13.md). `h12` added conjunctions of recurrences ("every third tuesday and second monday", "tuesdays at 1:30 and thursdays at 3") and start and end clauses on any recurrence ([`specs/engines/h12.md`](specs/engines/h12.md)).
 
 Where `h13` is weaker, by phrase kind (exact match, all of e16):
 
@@ -115,14 +116,14 @@ import "@type-date/picker/styles.css";
 <TypeDatePicker onChange={console.log} />;
 ```
 
-The parser (engine `h13`) is bundled in the package. The package is not published to npm yet. See [`packages/picker/README.md`](packages/picker/README.md) for props and options.
+The parser (engine `h14`) is bundled in the package. The package is not published to npm yet. See [`packages/picker/README.md`](packages/picker/README.md) for props and options.
 
 ## Repository
 
 | Path | Contents |
 |---|---|
 | `packages/core` | DSL types, parser and resolver |
-| `packages/baselines` | engines `h1` to `h13` and chrono-node wrapper; eval scripts |
+| `packages/baselines` | engines `h1` to `h14` and chrono-node wrapper; eval scripts |
 | `packages/picker` | `@type-date/picker`, the React picker with the parser bundled (the npm package) |
 | `apps/demo` | The demo site, a Vite app that uses the picker |
 | `apps/dashboard` | engine comparison dashboard |
