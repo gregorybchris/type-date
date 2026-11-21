@@ -86,27 +86,32 @@ pnpm install
 make serve          # dashboard on :5173, picker demo on :5199
 ```
 
-- The **demo** has a settings panel (gear icon) to switch parser generations and see the parsed line.
+- The **demo** (`apps/demo`) has settings for 16 color themes, week start, and time and date format.
 - The **dashboard** compares engines by eval version, split and phrase kind, plots size against accuracy, and lists errors.
-- The packages are not published to npm yet. To use the picker, pass any `parse(text) => Promise<string>`; see [`packages/picker/README.md`](packages/picker/README.md).
+
+## Use the picker
+
+```sh
+npm install @type-date/picker react react-dom
+```
 
 ```tsx
-import { baselines } from "@type-date/baselines";
 import { TypeDatePicker } from "@type-date/picker";
 import "@type-date/picker/styles.css";
 
-const parse = async (text: string) => (await baselines.h11.predict(text)).dsl;
-
-<TypeDatePicker parse={parse} onChange={console.log} />;
+<TypeDatePicker onChange={console.log} />;
 ```
+
+The parser (engine `h12`) is bundled in the package. The package is not published to npm yet. See [`packages/picker/README.md`](packages/picker/README.md) for props and options.
 
 ## Repository
 
 | Path | Contents |
 |---|---|
 | `packages/core` | DSL types, parser and resolver |
-| `packages/baselines` | engines `h1` to `h11` and chrono-node wrapper; eval scripts |
-| `packages/picker` | React picker and demo |
+| `packages/baselines` | engines `h1` to `h12` and chrono-node wrapper; eval scripts |
+| `packages/picker` | `@type-date/picker`, the React picker with the parser bundled (the npm package) |
+| `apps/demo` | The demo site, a Vite app that uses the picker |
 | `apps/dashboard` | engine comparison dashboard |
 | `evals/eN` | immutable eval sets |
 | `data/`, `training/` | labeled pools and the Python tooling that builds data and eval sets |

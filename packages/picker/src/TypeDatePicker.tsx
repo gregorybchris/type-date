@@ -10,10 +10,11 @@ import type { View } from "./dates";
 import { extendList, flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
 import { CalendarIcon, SearchIcon } from "./icons";
+import { parse as builtInParse } from "./parse";
 
 export interface TypeDatePickerProps {
-  /** Turns typed text into a DSL line. */
-  parse: (text: string) => Promise<string>;
+  /** Turns typed text into a DSL line. Defaults to the built-in parser. */
+  parse?: (text: string) => Promise<string>;
   value?: Resolved;
   onChange?: (r: Resolved) => void;
   /** Show the RFC 5545 recurrence rule (FREQ=WEEKLY;...) for repeating results. Off by default. */
@@ -72,9 +73,11 @@ function Field(props: { icon?: boolean; active?: boolean; onClick: () => void; c
 const fmtBound = (d: string, today: string) => (d.slice(0, 4) === today.slice(0, 4) ? fmtShort(d) : fmtDate(d));
 
 export function TypeDatePicker(props: TypeDatePickerProps) {
-  const { parse, value, theme = "system", weekStart = 0, debounceMs = 120 } = props;
+  const { value, theme = "system", weekStart = 0, debounceMs = 120 } = props;
   setFormats(props.timeFormat ?? "12h", props.dateFormat ?? "mdy");
   const today = useMemo(() => props.today ?? localToday(), [props.today]);
+  const customParse = props.parse;
+  const parse = useMemo(() => customParse ?? ((t: string) => builtInParse(t, today)), [customParse, today]);
   const [text, setText] = useState(props.defaultText ?? "");
   const [result, setResult] = useState<Resolved | null>(value ?? null);
   const [pending, setPending] = useState(false);

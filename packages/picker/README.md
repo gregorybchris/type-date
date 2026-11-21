@@ -2,7 +2,13 @@
 
 React datetime picker. The user types text such as "oct 2 to oct 5" or "every other sunday". The calendar and time list update as they type.
 
-The picker does not include a model. You pass `parse(text) => Promise<string>`, which returns a DSL line (see `specs/dsl.md`). `@type-date/core` resolves the line into dates.
+The parser runs in the browser and is bundled: no model, no network call, no server. It is the heuristic engine `h12` (see `specs/engines/h12.md`). Its rule sets load lazily on the first keystroke, and the entry file is about 14 kB gzipped. React is the only peer dependency.
+
+## Install
+
+```sh
+npm install @type-date/picker react react-dom
+```
 
 ## Use
 
@@ -10,31 +16,41 @@ The picker does not include a model. You pass `parse(text) => Promise<string>`, 
 import { TypeDatePicker } from "@type-date/picker";
 import "@type-date/picker/styles.css";
 
-<TypeDatePicker parse={myParse} onChange={(r) => console.log(r)} theme="system" weekStart={1} />
+<TypeDatePicker onChange={(r) => console.log(r)} theme="system" weekStart={1} />
 ```
+
+`onChange` receives a `Resolved` value: `mode` (`d`, `t` or `dt`), `kind` (`single`, `range`, `list` or `recurrence`) and the dates or recurrence. `summarize(r)` returns a plain-text description.
+
+Other exports: `parse(text, today?)` is the built-in parser (text to a DSL line, see `specs/dsl.md`). Pass your own `parse` prop to replace it.
 
 ## Props
 
 | Prop | Default | Notes |
 |---|---|---|
-| `parse` | required | text to DSL line |
-| `value`, `onChange` | none | `Resolved` from `@type-date/core`. `onChange` fires for parsed results and for clicks |
-| `onConfirm`, `onEscape` | none | Enter (after flushing the debounce) and Escape on an empty input |
+| `parse` | built-in parser | `(text) => Promise<string>`, text to DSL line |
+| `value`, `onChange` | none | `onChange` fires for parsed results and for clicks |
+| `onConfirm`, `onEscape`, `onClear` | none | Enter (after flushing the debounce), Escape on an empty input, and clearing |
 | `today` | local date | `YYYY-MM-DD` |
 | `weekStart` | `0` | 0 Sunday, 1 Monday |
+| `timeFormat` | `"12h"` | `"12h"` or `"24h"` |
+| `dateFormat` | `"mdy"` | `"mdy"` (Oct 2, 2027), `"dmy"` (2 Oct 2027) or `"iso"` (2027-10-02) |
 | `debounceMs` | `120` | |
 | `theme` | `"system"` | `light`, `dark`, or follow `prefers-color-scheme`. A `[data-theme=dark]` ancestor also works |
+| `showRule` | `false` | Show the RRULE for repeating results |
+| `autoFocus` | `false` | Focus the text input on mount |
 | `placeholder`, `defaultText`, `className` | | |
+
+Colors are CSS variables on `.td-root` (`--td-bg`, `--td-fg`, `--td-accent`, and so on). Override them to theme the picker; `apps/demo` has 16 examples.
 
 ## Behavior
 
 - The `mode` of the result picks the panels: `d` calendar, `t` time list, `dt` both. Panels collapse with `grid-template-columns` and `grid-template-rows` transitions.
 - Stale `parse` results are dropped. While a parse is pending, and when the output is `x`, the last good result stays on screen. After `x` the card is dimmed and shows a note.
-- Clicking days and times edits the value. In a range, two day clicks set start and end. In a time range, the focused time field (start or end) takes the click. The AM/PM chip appears when the resolver guessed the meridiem.
+- Clicking days and times edits the value. Drag across days, or shift-click, to select a range. Cmd or ctrl-click adds days to a list of dates. In a range, two plain day clicks set start and end. In a time range, the focused time field (start or end) takes the click. The AM/PM chip appears when the resolver guessed the meridiem.
 - Recurrences mark occurrences with dots, and show the RRULE and the next three dates.
 - Keyboard: Enter confirms, Escape clears the text, ArrowDown moves from the input into the calendar. In the grid: arrows move by day or week, PageUp and PageDown change month. In the time list: Up and Down, Enter.
 - Motion is CSS only. Tokens: `--td-dur`, `--td-dur-slow`, `--td-ease-out`, `--td-ease-io`, `--td-ease-spring` (`linear()` with a cubic-bezier fallback). `prefers-reduced-motion` turns transitions and animations off.
-- The font is `Inter, system-ui, sans-serif`. It is not bundled.
+- The font is `Inter, system-ui, sans-serif`. It is not bundled; set `font-family` on `.td-root` to change it.
 
 ## Mobile
 
@@ -48,19 +64,14 @@ import "@type-date/picker/styles.css";
 
 | Command | What it does |
 |---|---|
-| `pnpm --filter @type-date/picker dev` | Demo at http://localhost:5199 (stub `parse`, fixed today 2026-09-14) |
 | `pnpm --filter @type-date/picker test` | Vitest and Testing Library |
-| `pnpm --filter @type-date/picker build` | Vite library build, d.ts, minified CSS in `dist/` |
+| `pnpm --filter @type-date/picker build` | tsup build (ESM, bundled parser, d.ts) and minified CSS in `dist/` |
 | `pnpm --filter @type-date/picker size` | gzip size against the budget (15 kB JS, 4 kB CSS) |
-| `pnpm --filter @type-date/picker shots:mobile <dir>` | Screenshots at 360, 390, 768, 1024 in both themes. Fails on horizontal overflow or touch targets under 44px |
-| `pnpm --filter @type-date/picker shots <dir>` | Playwright screenshots of the demo, both themes |
+| `pnpm --filter @type-date/picker test:pack` | Build, `npm pack`, install the tarball in a scratch project, bundle an app that uses it and load it in a browser. Does not publish |
 
-## Picker pitfalls
+The demo app is `apps/demo`. Screenshot scripts (`shots`, `shots:mobile`) live there.
 
-- `vite` was run with the demo `root`; `playwright` `goto` waits for `load`, which hangs on the Google Fonts link in the demo. Use `waitUntil: "domcontentloaded"`.
-- macOS `sed -i` needs `-i ''`. Edit files with a script or an editor tool instead.
-- React 18 has no `inert` prop. Panels set the `inert` attribute through a ref (`inertRef` in `TypeDatePicker.tsx`).
-- Smooth `scrollTo` in the time list is cut short by Playwright `fullPage` screenshots. Wait about 1.5s before capturing.
-- A size-changing card (mode change) cannot be its own container for container queries. The picker uses an outer `.td-root` container and an inner `.td-card`.
-- `cat > file` without a heredoc in a shell call waits on stdin and hangs the tool.
-- `@type-date/core` ships TypeScript source (`main` is `src/index.ts`). The picker build leaves it external, so publishing needs a built core.
+## Pitfalls
+
+- `playwright` `goto` waits for `load`, which hangs on the Google Fonts link in the demo. Use `waitUntil: "domcontentloaded"`.
+- `@type-date/core` and `@type-date/baselines` are workspace sources, not published. `tsup` bundles them into `dist/`. Keep them out of `dependencies`, or the tarball will point at packages that do not exist on npm.

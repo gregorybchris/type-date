@@ -1,5 +1,5 @@
 // Records the demo while typing five phrases. Usage: node scripts/demo-video.mjs <outDir> [baseUrl]
-// Start the demo on a spare port first: pnpm exec vite --config demo/vite.config.ts --port 5301
+// Start the demo on a spare port first: pnpm exec vite --port 5301
 import { chromium } from "playwright";
 import { mkdir, rename, writeFile } from "node:fs/promises";
 

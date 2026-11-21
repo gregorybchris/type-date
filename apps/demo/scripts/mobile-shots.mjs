@@ -5,7 +5,7 @@ import { mkdir } from "node:fs/promises";
 
 const out = process.argv[2] ?? "shots-mobile";
 await mkdir(out, { recursive: true });
-const server = spawn("pnpm", ["exec", "vite", "--config", "demo/vite.config.ts"], { stdio: "ignore" });
+const server = spawn("pnpm", ["exec", "vite"], { stdio: "ignore" });
 await new Promise((r) => setTimeout(r, 2500));
 const browser = await chromium.launch();
 const cases = [

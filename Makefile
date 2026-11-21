@@ -31,7 +31,7 @@ dashboard:  ## Dev server for the engine dashboard (apps/dashboard)
 	pnpm --filter @type-date/dashboard dev
 
 picker-demo:  ## Dev server for the picker demo (http://localhost:5199)
-	pnpm --filter @type-date/picker dev
+	pnpm --filter @type-date/demo dev
 
 serve:  ## Start supervised dev servers (dashboard 5173, picker demo 5199). Restarts them if they exit.
 	scripts/serve.sh start
@@ -67,10 +67,10 @@ robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness 
 # OUT: output folder. VARY=1: alternate light and dark and change the highlight color for each phrase.
 OUT ?= docs/media
 demo-video:  ## Record the demo into docs/media (webm, mp4, gif) and open the mp4 and gif in Chrome: make demo-video [VARY=1 OUT=docs/media/vary]
-	@cd packages/picker && { curl -s -o /dev/null localhost:5301 && started= || { (nohup pnpm exec vite --config demo/vite.config.ts --port 5301 --strictPort > ../../.run/demo-video-vite.log 2>&1 & echo $$! > ../../.run/demo-video-vite.pid); started=1; until curl -s -o /dev/null localhost:5301; do :; done; }; \
+	@cd apps/demo && { curl -s -o /dev/null localhost:5301 && started= || { (nohup pnpm exec vite --port 5301 --strictPort > ../../.run/demo-video-vite.log 2>&1 & echo $$! > ../../.run/demo-video-vite.pid); started=1; until curl -s -o /dev/null localhost:5301; do :; done; }; \
 	  mkdir -p ../../$(OUT); node scripts/demo-video.mjs ../../$(OUT); rc=$$?; \
 	  [ -z "$$started" ] || kill $$(lsof -ti :5301) 2>/dev/null; exit $$rc; }
-	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH packages/picker/scripts/demo-gif.sh $(OUT)/demo.webm $(OUT)/demo.gif $$(cat $(OUT)/demo.trim)
+	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH apps/demo/scripts/demo-gif.sh $(OUT)/demo.webm $(OUT)/demo.gif $$(cat $(OUT)/demo.trim)
 	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH ffmpeg -loglevel error -y -ss $$(cat $(OUT)/demo.trim) -i $(OUT)/demo.webm -c:v libx264 -crf 20 -preset slow -pix_fmt yuv420p -movflags +faststart $(OUT)/demo.mp4
 	@ls -la $(OUT) | awk 'NR>3 {print $$5, $$9}'
 	@open -a "Google Chrome" $(OUT)/demo.mp4 $(OUT)/demo.gif

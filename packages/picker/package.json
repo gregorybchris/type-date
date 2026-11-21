@@ -1,13 +1,14 @@
 {
   "name": "@type-date/picker",
   "version": "0.1.0",
-  "description": "React datetime picker driven by natural-language text input.",
+  "description": "Date and time picker you type into. Reads text such as \"oct 2 to oct 5\" or \"every other sunday\" and shows the dates. React.",
   "type": "module",
   "sideEffects": [
     "**/*.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -20,24 +21,20 @@
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
-    "dev": "vite --config demo/vite.config.ts",
-    "build:demo": "vite build --config demo/vite.config.ts",
-    "build": "vite build && tsc -p tsconfig.build.json && node scripts/build-css.mjs",
+    "build": "tsup && node scripts/build-css.mjs",
     "size": "node scripts/size.mjs",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "shots": "node scripts/shots.mjs",
-    "shots:mobile": "node scripts/mobile-shots.mjs"
+    "prepack": "pnpm build",
+    "test:pack": "node scripts/verify-pack.mjs"
   },
   "peerDependencies": {
     "react": ">=18"
   },
-  "dependencies": {
-    "@type-date/core": "workspace:*"
-  },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
+    "@type-date/baselines": "workspace:*",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "esbuild": "^0.28.2",
@@ -45,9 +42,32 @@
     "playwright": "^1.49.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tsup": "^9.0.0",
     "typescript": "^5.6.0",
-    "vite": "^6.0.0",
     "vitest": "^2.1.0",
-    "@type-date/baselines": "workspace:*"
+    "@type-date/core": "workspace:*",
+    "vite": "^6.0.0"
+  },
+  "keywords": [
+    "date picker",
+    "datetime",
+    "natural language",
+    "react",
+    "parser",
+    "recurrence",
+    "calendar"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregorybchris/type-date.git",
+    "directory": "packages/picker"
+  },
+  "homepage": "https://github.com/gregorybchris/type-date#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

@@ -1,10 +1,9 @@
-import h12 from "@type-date/baselines/h12";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
-import { TypeDatePicker, summarize } from "../src";
-import type { DateFormat, TimeFormat } from "../src";
-import "../src/styles.css";
+import { TypeDatePicker, summarize } from "@type-date/picker";
+import type { DateFormat, TimeFormat } from "@type-date/picker";
+import "@type-date/picker/styles.css";
 import "./demo.css";
 import { DEFAULT_THEME, THEMES, findTheme, themeVars } from "./themes";
 
@@ -255,11 +254,6 @@ function App() {
   // Bumped on every example click, so choosing the same example again still resets the picker.
   const [run, setRun] = useState(0);
 
-  const parse = useCallback(async (t: string) => {
-    const r = await h12.predict(t.trim().toLowerCase().replace(/\s+/g, " "), undefined, { today: TODAY });
-    return r.dsl;
-  }, []);
-
   return (
     <main className="demo" data-theme={theme.mode} style={themeVars(theme) as CSSProperties}>
       <Settings prefs={prefs} set={set} reset={() => setPrefs(DEFAULTS)} />
@@ -268,7 +262,6 @@ function App() {
         {/* key remounts the picker when an example is chosen: the picker reads `defaultText` once */}
         <TypeDatePicker
           key={`${run}:${text}`}
-          parse={parse}
           theme={theme.mode}
           weekStart={weekStart}
           timeFormat={timeFormat}

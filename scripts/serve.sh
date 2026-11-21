@@ -18,7 +18,7 @@ supervise() { # name port command...
 case "$1" in
   start)
     supervise dashboard 5173 pnpm --filter @type-date/dashboard exec vite --host 0.0.0.0 --port 5173 --strictPort
-    supervise picker 5199 pnpm --filter @type-date/picker exec vite --config demo/vite.config.ts --host 0.0.0.0 --port 5199 --strictPort
+    supervise picker 5199 pnpm --filter @type-date/demo exec vite --host 0.0.0.0 --port 5199 --strictPort
     ;;
   stop)
     for n in dashboard picker; do
