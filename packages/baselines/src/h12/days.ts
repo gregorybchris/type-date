@@ -61,8 +61,11 @@ export function dayTimes(text: string, p0: P, p: P): string | null {
     times.push(mil ? t[1]!.replace(/\?/g, "") : t[1]!);
   }
   // one 24h time ("14:00") makes the others 24h ("8:00-9:30" is 08:00>09:30)
-  if (times.some((t) => /(?:^|>)(?:1[3-9]|2[0-3]):/.test(t))) {
-    times = times.map((t) => t.replace(/(\d{1,2})(?::(\d\d))?\?/g, (_, h: string, m?: string) => `${h.padStart(2, "0")}:${m ?? "00"}`));
+  // (only times written without am/pm count: "14:00", "0900", not "3pm")
+  const plain = (g: Group) => !/\b(?:am|pm|a\.m|p\.m|noon|midnight)\b|\d\s*[ap]\b/i.test(g.time);
+  const is24 = (g: Group) => plain(g) && /\b(?:1[3-9]|2[0-3])[:.]?[0-5]\d\b|\b0\d[0-5]\d\b/.test(g.time);
+  if (run.groups.some(is24)) {
+    times = times.map((t, i) => (plain(run.groups[i]!) ? t.replace(/(\d{1,2})(?::(\d\d))?\?/g, (_, h: string, m?: string) => `${h.padStart(2, "0")}:${m ?? "00"}`) : t));
   }
   const days = [...all].sort(byWeekday);
   const names = days.map((d) => FULL[d]).join(" and ");
@@ -95,7 +98,7 @@ export function registrar(orig: string, p0: P): string | null {
   const m = clean.match(CODE_RE);
   if (!m || /\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b/i.test(orig)) return null;
   const letters = [...m[1]!.replace(/[^MTWRFSU]/g, "")];
-  const seps = m[1]!.replace(/[MTWRFSU]/g, "");
+  const seps = m[1]!.trimEnd().replace(/[MTWRFSU]/g, "");
   // codes list days in week order (MWF, TR, MTWRF); "TMRW" is a word. "M-F" is a range, "T R" is too loose.
   if (letters.length < 2 || letters.some((l, i) => i && "MTWRFSU".indexOf(l) <= "MTWRFSU".indexOf(letters[i - 1]!))) return null;
   if (/-/.test(seps) && letters.length < 3) return null;
