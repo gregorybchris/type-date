@@ -33,7 +33,7 @@ export const THEMES: Theme[] = [
   { id: "github-dimmed", name: "GitHub Dim", mode: "dark", page: "#1c2128", card: "#22272e", fg: "#adbac7", accent: "#539bf5" },
 ];
 
-export const DEFAULT_THEME = "paper";
+export const DEFAULT_THEME = "rose-dawn";
 
 export function findTheme(id: string | null | undefined): Theme | undefined {
   if (id === "light") return THEMES.find((t) => t.id === "paper");

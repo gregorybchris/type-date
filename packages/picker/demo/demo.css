@@ -10,10 +10,10 @@ body {
   --f-num: var(--f-body);
   font-family: var(--f-body);
   /* Theme inputs (--t-*) are set inline from themes.ts. Everything else is derived from them. */
-  --t-page: #f5f4f0;
-  --t-card: #fff;
-  --t-fg: #171717;
-  --t-accent: #4f46e5;
+  --t-page: #faf4ed;
+  --t-card: #fffaf3;
+  --t-fg: #575279;
+  --t-accent: #b4637a;
   --t-on-accent: #fff;
   --d-bg: var(--t-card);
   --d-fg: var(--t-fg);
