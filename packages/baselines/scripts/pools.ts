@@ -10,7 +10,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(here, "../../..");
 const { values: a, positionals } = parseArgs({
   allowPositionals: true,
-  options: { only: { type: "string" }, out: { type: "string" }, extra: { type: "string", multiple: true }, tags: { type: "boolean" } },
+  options: { compare: { type: "string" }, only: { type: "string" }, out: { type: "string" }, extra: { type: "string", multiple: true }, tags: { type: "boolean" } },
 });
 const POOLS: Record<string, string> = {
   "web dev": "data/pool/web/dev.jsonl",
@@ -48,6 +48,11 @@ const DAYS = ["2026-11-03", "2026-01-31", "2027-02-28", "2028-02-29", "2026-12-3
 const sameResolved = (x: string, y: string) => DAYS.every((d) => JSON.stringify(resolveDsl(x, { today: d, weekStart: 0 })) === JSON.stringify(resolveDsl(y, { today: d, weekStart: 0 })));
 const mod = await import(join(here, "../src", positionals[0] + ".ts"));
 const engine = mod.default;
+// --compare <old engine>: count rows the old engine had right and this one gets wrong (regressions) and the reverse (gains)
+const oldEngine = a.compare ? (await import(join(here, "../src", a.compare + ".ts"))).default : null;
+const KNOWN: Set<string> = new Set(existsSync(join(ROOT, `specs/engines/${positionals[0]}-known-conflicts.json`)) ? JSON.parse(readFileSync(join(ROOT, `specs/engines/${positionals[0]}-known-conflicts.json`), "utf8")) : []);
+const regs: any[] = [];
+let nReg = 0, nKnown = 0, nGain = 0;
 const outDir = a.out;
 if (outDir) mkdirSync(outDir, { recursive: true });
 const all: Record<string, string> = { ...POOLS };
@@ -72,6 +77,12 @@ for (const [name, rel, half] of units) {
     const pred = (await engine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
     const good = pred === r.dsl || (name.startsWith("conj") && sameResolved(pred, r.dsl));
     c += +good;
+    if (oldEngine) {
+      const old = (await oldEngine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
+      const oldGood = old === r.dsl || (name.startsWith("conj") && sameResolved(old, r.dsl));
+      if (oldGood && !good) { if (KNOWN.has(r.id)) nKnown++; else { nReg++; if (half !== 1) regs.push({ pool: name, text: r.text, exp: r.dsl, got: pred }); } }
+      if (!oldGood && good) nGain++;
+    }
     const tag = r.primary_tag ?? "?";
     const st = tags.get(tag) ?? [0, 0]; st[0]++; st[1] += +good; tags.set(tag, st);
     if (!good && half !== 1) fails.push({ pool: name, id: r.id, text: r.text, exp: r.dsl, got: pred, tag });
@@ -82,6 +93,10 @@ for (const [name, rel, half] of units) {
   if (outDir) writeFileSync(join(outDir, name.replace(/\W+/g, "_") + ".jsonl"), outRows.join("\n") + "\n");
 }
 console.log(line("POOLED", T, C));
+if (oldEngine) {
+  console.log(`vs ${a.compare}: gains ${nGain}, regressions ${nReg} (plus ${nKnown} known conflicts)`);
+  for (const r of regs) console.log(`  REGRESSION [${r.pool}] ${JSON.stringify(r.text)}\n      exp ${r.exp}\n      got ${r.got}`);
+}
 if (a.tags) {
   console.log("\nper tag (worst loss first)");
   for (const [t, [n, c]] of [...tags].sort((x, y) => (y[1][0] - y[1][1]) - (x[1][0] - x[1][1]))) console.log(`  ${t.padEnd(26)} n=${String(n).padStart(5)} acc ${(c / n).toFixed(3)} wrong ${n - c}`);

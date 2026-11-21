@@ -198,11 +198,6 @@ body {
   gap: 9px;
   color: var(--d-fg);
 }
-.demo-badge {
-  width: 26px;
-  height: 26px;
-  flex: none;
-}
 .demo-wordmark {
   height: 26px;
   width: auto;

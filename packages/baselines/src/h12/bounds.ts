@@ -19,8 +19,10 @@ const FREQ: [RegExp, string][] = [
 
 /** A single date or period token from a bound operand, or null. `which` picks the side of a month-year range. */
 function operand(text: string, p: P, side: "first" | "last"): string | null {
-  const t = text.trim().replace(/^(?:on|in|the week of|week of|at|of|from|a)\s+/, "").replace(/\s+/g, " ");
+  const t = text.trim().replace(/^(?:on|in|the week of|week of|at|of|from|a)\s+/, "").replace(/(?:\s+(?:and|then)|[\s,;&]+)$/, "").replace(/\s+/g, " ");
   if (!t) return null;
+  const mn = t.replace(/\.$/, "").match(/^(?:in |of )?([a-z]+)$/);
+  if (mn && MONTHS[mn[1]!]) return `M@${MONTHS[mn[1]!]}`;
   const end = t.match(/^(?:the )?end of (?:the )?(.+)$/);
   if (end) {
     const inner = end[1]!;
@@ -40,7 +42,19 @@ function operand(text: string, p: P, side: "first" | "last"): string | null {
   return null;
 }
 
+const MONTHS: Record<string, string> = { jan: "01", january: "01", feb: "02", february: "02", mar: "03", march: "03", apr: "04", april: "04", may: "05", jun: "06", june: "06", jul: "07", july: "07", aug: "08", august: "08", sep: "09", sept: "09", september: "09", oct: "10", october: "10", nov: "11", november: "11", dec: "12", december: "12" };
 const tokens = (dsl: string) => dsl.split(" ");
+
+/** Compare bound tokens by meaning: `M@05` is the first or last day of May, `Y@2027` the first or last day of 2027. */
+function normBound(tok: string, side: "s" | "u"): string {
+  let m = tok.match(/^M@(\d\d)$/);
+  if (m) return side === "s" ? `${m[1]}-01` : `${m[1]}-end`;
+  m = tok.match(/^Y@(\d{4})$/);
+  if (m) return side === "s" ? `${m[1]}-01-01` : `${m[1]}-12-31`;
+  m = tok.match(/^(\d\d)-(28|29|30|31)$/);
+  if (m && side === "u" && ["28", "29", "30", "31"].includes(m[2]!) && [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].some((i) => [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][i]! === +m![2]! && i + 1 === +m![1]!)) return `${m[1]}-end`;
+  return tok;
+}
 
 /** Returns the DSL line with bounds, or null when the text has no usable bound clause. */
 export function withBounds(text: string, p: P): string | null {
@@ -106,7 +120,7 @@ export function withBounds(text: string, p: P): string | null {
   const toks = tokens(skel);
   // "every 8 weeks starting thursday": a weekday start with no weekday list names the day
   let startTok = sTok;
-  if (toks.length === 3 && sTok && /^(?:mo|tu|we|th|fr|sa|su)$/.test(sTok)) {
+  if (toks.length === 3 && toks[2]!.startsWith("w/") && sTok && /^(?:mo|tu|we|th|fr|sa|su)$/.test(sTok)) {
     toks.push(sTok);
     startTok = null;
   }
@@ -118,9 +132,14 @@ export function withBounds(text: string, p: P): string | null {
   });
   if (uTok) keep.push(`u${uTok}`);
   if (startTok) keep.push(`s${startTok}`);
-  // h11 already wrote the same kinds of bounds: keep its spelling (`u09-30` rather than `uM@09`)
+  // h11 already wrote the same bounds: keep its spelling (`u09-30` rather than `uM@09`)
   const base = p(text);
   const bt = tokens(base);
-  if (/^(?:d|dt) R /.test(base) && bt.some((t, i) => i > 2 && /^u\S/.test(t)) === !!uTok && bt.some((t, i) => i > 2 && isStartTok(t)) === !!sTok) return base;
+  if (/^(?:d|dt) R /.test(base)) {
+    const bu = bt.find((t, i) => i > 2 && /^u\S/.test(t))?.slice(1);
+    const bs = bt.find((t, i) => i > 2 && isStartTok(t))?.slice(1);
+    const same = (a: string | undefined, b: string | null, side: "s" | "u") => (b === null ? a === undefined : a !== undefined && normBound(a, side) === normBound(b, side));
+    if (same(bu, uTok, "u") && same(bs, startTok, "s")) return base;
+  }
   return canonRec(keep.join(" "));
 }

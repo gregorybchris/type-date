@@ -21,6 +21,8 @@ function weekdayRange(t: string): string {
 
 export function rewrite(t: string): string {
   let s = t.replace(/\bbi[ -]weekly\b/g, "biweekly");
+  // "twice a week mon and thu": the weekdays say which days
+  if (new RegExp(`\\b(?:twice|two times|2x|2 times)\\s+(?:a|per|each)\\s+week\\b.*\\b${WD_SRC}`).test(s)) s = s.replace(/\b(?:twice|two times|2x|2 times)\s+(?:a|per|each)\s+week\b/, "every");
   s = weekdayRange(s);
   // "weekly on tuesday and thursday" and "tuesdays and fridays, weekly"
   s = s.replace(new RegExp(`(?<!\\d )\\bweekly\\s+(?:on\\s+)?(?=${WD_SRC})`), "every ");

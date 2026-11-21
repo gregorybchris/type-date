@@ -6,7 +6,7 @@ const ATOM = `(?:noon|midnight|${MIL}(?![\\d:])|\\d{1,2}(?:[:.]\\d{2})?\\s*(?:am
 const DUR = "(?:\\s*(?:for|x)\\s+(?:an?|\\d+(?:\\.\\d+)?|half an)\\s*(?:min|mins|minutes?|hrs?|hours?)\\b)?";
 const TIME = `${ATOM}(?:\\s*(?:-|–|to|until|till)\\s*${ATOM})?${DUR}`;
 const GAP = /^[\s,;&@:+\-–/]*(?:(?:and|at|from|every|each|other|on|n|then|plus|the)\b[\s,;&@:+\-–/]*)*$/;
-const BOUND_CUE = /\b(?:until|till|til|thru|through|starting|beginning|commencing|for \d+ weeks?)\b/;
+const BOUND_CUE = /\b(?:until|till|til|thru|through|starting|beginning|commencing|for \d+ (?:weeks?|wks?)|from (?:the |next |this |tomorrow|\d|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec))/;
 
 type Group = { wds: string[]; time: string; plural: boolean };
 
