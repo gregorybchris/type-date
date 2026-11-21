@@ -1,0 +1,7 @@
+{
+  "id": "h13",
+  "title": "h13",
+  "description": "h12 behind a time zone layer: reads the zone named in the text (abbreviations, offsets, Z, IANA names, zone words, places), keeps only the first moment of a multi-zone phrase, lets h12 parse the rest, and writes the zone as a last token. Ambiguous abbreviations (IST, CST, BST) use a hint word in the text, then the user zone and locale, then a default.",
+  "created": "2026-11-21T10:30:55Z",
+  "format": "dsl-v1"
+}
