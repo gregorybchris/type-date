@@ -8,6 +8,10 @@ export interface PredictResult {
 export interface PredictOptions {
   /** Reference day as YYYY-MM-DD. Only chrono-node uses it. */
   today?: string;
+  /** The user's IANA time zone. h13 uses it to pick among ambiguous zone abbreviations (IST, CST, BST). */
+  zone?: string;
+  /** The user's locale (for example `en-IN`). h13 uses its region the same way. */
+  locale?: string;
 }
 
 /** A text to DSL parser. `load` and `dispose` exist for engines that need setup; the heuristics do nothing. */

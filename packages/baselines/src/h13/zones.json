@@ -56,6 +56,12 @@
   "CET": [
    "Europe/Berlin"
   ],
+  "CLT": [
+   "America/Santiago"
+  ],
+  "COT": [
+   "America/Bogota"
+  ],
   "CST": [
    "America/Chicago",
    "Asia/Shanghai",
@@ -163,6 +169,9 @@
   "PDT": [
    "America/Los_Angeles"
   ],
+  "PET": [
+   "America/Lima"
+  ],
   "PHST": [
    "Asia/Manila"
   ],
@@ -190,6 +199,12 @@
   ],
   "UTC": [
    "UTC"
+  ],
+  "UYT": [
+   "America/Montevideo"
+  ],
+  "VET": [
+   "America/Caracas"
   ],
   "WAT": [
    "Africa/Lagos"
@@ -420,6 +435,7 @@
   "America/Denver": "US",
   "America/Halifax": "CA",
   "America/Havana": "CU",
+  "America/Lima": "PE",
   "America/Los_Angeles": "US",
   "America/New_York": "US",
   "America/St_Johns": "CA",

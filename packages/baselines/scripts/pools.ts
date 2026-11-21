@@ -1,6 +1,6 @@
 // Score an engine on every open labeled pool (never test splits). Writes predictions as JSONL for validate-data.
 // Usage: tsx scripts/pools.ts <engine id> [--only <name substring>] [--out <dir>] [--extra <jsonl>] [--tags]
-import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
@@ -41,6 +41,9 @@ const POOLS: Record<string, string> = {
   "conj w6": "data/pool/conj/dev_w6.jsonl",
   "conj w10": "data/pool/conj/dev_w10.jsonl",
 };
+// Timezone pools (data/pool/tz/dev_*.jsonl) are picked up by name.
+const TZ_DIR = join(ROOT, "data/pool/tz");
+if (existsSync(TZ_DIR)) for (const f of readdirSync(TZ_DIR).filter((x) => x.startsWith("dev_")).sort()) POOLS["tz " + f.slice(4, -6)] = `data/pool/tz/${f}`;
 // Pools split by line index: even rows develop, odd rows are an internal validation set (score only, failures hidden).
 const HALVES = new Set(["persona dev", "web dev7", "web dev8", "web dev9", "conj w1", "conj w2", "conj w4", "conj w6", "conj w10"]);
 // conj pools compare resolved dates (like the "resolved" metric): `u05-31` and `uM@05` are the same bound.
@@ -65,7 +68,7 @@ const fails: any[] = [];
 const units: [string, string, number | null][] = [];
 for (const [name, rel] of Object.entries(all)) {
   if (a.only && !name.includes(a.only)) continue;
-  if (HALVES.has(name)) { units.push([name + " [even]", rel, 0], [name + " [odd]", rel, 1]); } else units.push([name, rel, null]);
+  if (HALVES.has(name) || name.startsWith("tz ")) { units.push([name + " [even]", rel, 0], [name + " [odd]", rel, 1]); } else units.push([name, rel, null]);
 }
 for (const [name, rel, half] of units) {
   const p = rel.startsWith("/") ? rel : join(ROOT, rel);
@@ -75,11 +78,11 @@ for (const [name, rel, half] of units) {
   const outRows: string[] = [];
   for (const r of rows) {
     const pred = (await engine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
-    const good = pred === r.dsl || (name.startsWith("conj") && sameResolved(pred, r.dsl));
+    const good = pred === r.dsl || ((name.startsWith("conj") || name.startsWith("tz ")) && sameResolved(pred, r.dsl));
     c += +good;
     if (oldEngine) {
       const old = (await oldEngine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
-      const oldGood = old === r.dsl || (name.startsWith("conj") && sameResolved(old, r.dsl));
+      const oldGood = old === r.dsl || ((name.startsWith("conj") || name.startsWith("tz ")) && sameResolved(old, r.dsl));
       if (oldGood && !good) { if (KNOWN.has(r.id)) nKnown++; else { nReg++; if (half !== 1) regs.push({ pool: name, text: r.text, exp: r.dsl, got: pred }); } }
       if (!oldGood && good) nGain++;
     }

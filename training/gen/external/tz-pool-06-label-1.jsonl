@@ -1,0 +1,246 @@
+{"id": "tzp6-0001", "dsl": "x", "unsure": false}
+{"id": "tzp6-0002", "dsl": "x", "unsure": false}
+{"id": "tzp6-0003", "dsl": "t 10:00 @Pacific/Honolulu", "unsure": false}
+{"id": "tzp6-0004", "dsl": "t 14:00 @UTC", "unsure": false}
+{"id": "tzp6-0005", "dsl": "t 09:00 @-10:00", "unsure": false}
+{"id": "tzp6-0006", "dsl": "t 15:00", "unsure": false}
+{"id": "tzp6-0007", "dsl": "t 14:00 @America/Denver", "unsure": true}
+{"id": "tzp6-0008", "dsl": "t 19:00 @-05:00", "unsure": false}
+{"id": "tzp6-0009", "dsl": "t 09:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0010", "dsl": "dt 1982-06-27 14:40 @UTC", "unsure": false}
+{"id": "tzp6-0011", "dsl": "dt sa 15:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0012", "dsl": "t 18:00 @Asia/Jerusalem", "unsure": false}
+{"id": "tzp6-0013", "dsl": "dt 2013-04-04 09:00 @UTC", "unsure": false}
+{"id": "tzp6-0014", "dsl": "dt sa 14:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0015", "dsl": "dt su 18:00>23:59 @UTC", "unsure": false}
+{"id": "tzp6-0016", "dsl": "t 10:00 @America/Chicago", "unsure": false}
+{"id": "tzp6-0017", "dsl": "t 09:00 @Europe/London", "unsure": false}
+{"id": "tzp6-0018", "dsl": "dt 2020-07-19 16:00 @UTC", "unsure": false}
+{"id": "tzp6-0019", "dsl": "t 11:05 @+01:00", "unsure": false}
+{"id": "tzp6-0020", "dsl": "t 12:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0021", "dsl": "dt 2006-01-02 15:04 @-07:00", "unsure": false}
+{"id": "tzp6-0022", "dsl": "dt 2026-08-13 05:00 @-05:00", "unsure": false}
+{"id": "tzp6-0023", "dsl": "x", "unsure": false}
+{"id": "tzp6-0024", "dsl": "dt 2023-01-19 13:00 @+06:00", "unsure": false}
+{"id": "tzp6-0025", "dsl": "dt sa 20:00>su 08:00 @Asia/Dubai", "unsure": false}
+{"id": "tzp6-0026", "dsl": "t 18:00 @+02:00", "unsure": false}
+{"id": "tzp6-0027", "dsl": "t 10:00 @Africa/Nairobi", "unsure": false}
+{"id": "tzp6-0028", "dsl": "t 18:30 @America/Santiago", "unsure": false}
+{"id": "tzp6-0029", "dsl": "t 14:00>15:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0030", "dsl": "dt 2012-09-17 17:00 @-05:00", "unsure": false}
+{"id": "tzp6-0031", "dsl": "t 09:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0032", "dsl": "t 18:00 @Asia/Kolkata", "unsure": false}
+{"id": "tzp6-0033", "dsl": "t 15:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0034", "dsl": "x", "unsure": false}
+{"id": "tzp6-0035", "dsl": "dt mo&D21 09:30>15:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0036", "dsl": "x", "unsure": false}
+{"id": "tzp6-0037", "dsl": "t 16:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0038", "dsl": "dt R d/1 06:00 @UTC", "unsure": true}
+{"id": "tzp6-0039", "dsl": "dt 07-18 13:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0040", "dsl": "t 15:00 @Asia/Tokyo", "unsure": false}
+{"id": "tzp6-0041", "dsl": "x", "unsure": true}
+{"id": "tzp6-0042", "dsl": "t 04:00 @UTC", "unsure": false}
+{"id": "tzp6-0043", "dsl": "x", "unsure": false}
+{"id": "tzp6-0044", "dsl": "t 20:00 @Asia/Manila", "unsure": false}
+{"id": "tzp6-0045", "dsl": "dt 2022-01-27 09:00>11:00 @Asia/Singapore", "unsure": false}
+{"id": "tzp6-0046", "dsl": "t 15:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0047", "dsl": "t 14:57 @Europe/Moscow", "unsure": false}
+{"id": "tzp6-0048", "dsl": "dt 10-09 17:09 @UTC", "unsure": false}
+{"id": "tzp6-0049", "dsl": "t 09:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0050", "dsl": "t 09:00 @America/Toronto", "unsure": false}
+{"id": "tzp6-0051", "dsl": "t 12:00 @Asia/Tokyo", "unsure": false}
+{"id": "tzp6-0052", "dsl": "t 14:00>16:00 @UTC", "unsure": false}
+{"id": "tzp6-0053", "dsl": "dt 03-08 04:00 @Europe/London", "unsure": false}
+{"id": "tzp6-0054", "dsl": "t 02:00 @UTC", "unsure": false}
+{"id": "tzp6-0055", "dsl": "t 06:00 @UTC", "unsure": false}
+{"id": "tzp6-0056", "dsl": "x", "unsure": false}
+{"id": "tzp6-0057", "dsl": "dt 0999-01-01 12:00 @UTC", "unsure": true}
+{"id": "tzp6-0058", "dsl": "t 16:00 @America/Chicago", "unsure": false}
+{"id": "tzp6-0059", "dsl": "t 20:00 @UTC", "unsure": false}
+{"id": "tzp6-0060", "dsl": "t 20:15 @America/New_York", "unsure": false}
+{"id": "tzp6-0061", "dsl": "dt 2012-09-17 10:09 @America/Los_Angeles", "unsure": true}
+{"id": "tzp6-0062", "dsl": "dt 2013-04-04 09:00 @+10:00", "unsure": true}
+{"id": "tzp6-0063", "dsl": "t 14:00 @UTC", "unsure": false}
+{"id": "tzp6-0064", "dsl": "t 14:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0065", "dsl": "x", "unsure": false}
+{"id": "tzp6-0066", "dsl": "dt 2011-12-30 00:00 @UTC", "unsure": false}
+{"id": "tzp6-0067", "dsl": "dt 2016-04-10 12:00 @+02:00", "unsure": false}
+{"id": "tzp6-0068", "dsl": "dt R d/1 05:00 @Asia/Kolkata", "unsure": true}
+{"id": "tzp6-0069", "dsl": "t 02:00 @UTC", "unsure": true}
+{"id": "tzp6-0070", "dsl": "t 23:30 @Australia/Sydney", "unsure": false}
+{"id": "tzp6-0071", "dsl": "dt th 12:30 @Asia/Seoul", "unsure": false}
+{"id": "tzp6-0072", "dsl": "dt 2024-05-30 10:13 @-05:00", "unsure": true}
+{"id": "tzp6-0073", "dsl": "t 20:00 @America/New_York", "unsure": true}
+{"id": "tzp6-0074", "dsl": "dt su 15:00 @Australia/Sydney", "unsure": false}
+{"id": "tzp6-0075", "dsl": "t 20:00 @Asia/Jakarta", "unsure": false}
+{"id": "tzp6-0076", "dsl": "t 10:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0077", "dsl": "t 21:00 @+08:00", "unsure": false}
+{"id": "tzp6-0078", "dsl": "dt 2022-07-05 05:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0079", "dsl": "t 06:00>09:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0080", "dsl": "dt R w/2 we 12:00 @UTC", "unsure": true}
+{"id": "tzp6-0081", "dsl": "t 20:00 @America/Argentina/Buenos_Aires", "unsure": false}
+{"id": "tzp6-0082", "dsl": "x", "unsure": false}
+{"id": "tzp6-0083", "dsl": "t 14:00 @+09:30", "unsure": false}
+{"id": "tzp6-0084", "dsl": "t 10:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0085", "dsl": "x", "unsure": false}
+{"id": "tzp6-0086", "dsl": "t 06:31 @UTC", "unsure": false}
+{"id": "tzp6-0087", "dsl": "dt +1d 13:30 @America/Chicago", "unsure": false}
+{"id": "tzp6-0088", "dsl": "t 17:00", "unsure": false}
+{"id": "tzp6-0089", "dsl": "x", "unsure": false}
+{"id": "tzp6-0090", "dsl": "dt th 10:00 @Pacific/Honolulu", "unsure": false}
+{"id": "tzp6-0091", "dsl": "t 05:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0092", "dsl": "t 18:00", "unsure": false}
+{"id": "tzp6-0093", "dsl": "dt 01-12 15:00 @UTC", "unsure": false}
+{"id": "tzp6-0094", "dsl": "dt >12-20 17:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0095", "dsl": "dt +1d 19:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0096", "dsl": "dt R m/1 tu#3 11:00 @America/New_York", "unsure": true}
+{"id": "tzp6-0097", "dsl": "t 15:00 @America/New_York", "unsure": true}
+{"id": "tzp6-0098", "dsl": "dt 2019-02-07 08:30 @America/Chicago", "unsure": false}
+{"id": "tzp6-0099", "dsl": "dt fr 10:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0100", "dsl": "t 09:00 @Asia/Tokyo", "unsure": false}
+{"id": "tzp6-0101", "dsl": "t 23:00 @Asia/Seoul", "unsure": false}
+{"id": "tzp6-0102", "dsl": "dt 11-21 15:00 @UTC", "unsure": false}
+{"id": "tzp6-0103", "dsl": "t 10:30", "unsure": true}
+{"id": "tzp6-0104", "dsl": "d 2020-01-01", "unsure": true}
+{"id": "tzp6-0105", "dsl": "dt th 16:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0106", "dsl": "x", "unsure": false}
+{"id": "tzp6-0107", "dsl": "t 11:00 @America/Denver", "unsure": false}
+{"id": "tzp6-0108", "dsl": "x", "unsure": false}
+{"id": "tzp6-0109", "dsl": "t 20:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0110", "dsl": "dt 2011-02-01 10:00 @-05:00", "unsure": true}
+{"id": "tzp6-0111", "dsl": "t 09:00 @+01:00", "unsure": false}
+{"id": "tzp6-0112", "dsl": "t 16:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0113", "dsl": "dt 2026-12-10 04:00 @+00:00", "unsure": true}
+{"id": "tzp6-0114", "dsl": "dt 1999-12-31 23:00 @UTC", "unsure": false}
+{"id": "tzp6-0115", "dsl": "t 03:00>09:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0116", "dsl": "t 17:00 @Europe/London", "unsure": false}
+{"id": "tzp6-0117", "dsl": "dt 2020-03-02 10:25 @-01:00", "unsure": false}
+{"id": "tzp6-0118", "dsl": "t 18:00", "unsure": false}
+{"id": "tzp6-0119", "dsl": "dt 2009-02-04 21:00 @-08:00", "unsure": false}
+{"id": "tzp6-0120", "dsl": "t 17:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0121", "dsl": "x", "unsure": false}
+{"id": "tzp6-0122", "dsl": "t 12:20 @America/New_York", "unsure": false}
+{"id": "tzp6-0123", "dsl": "dt +1d 10? @America/Denver", "unsure": false}
+{"id": "tzp6-0124", "dsl": "dt 2016-10-06 12:34 @+05:30", "unsure": false}
+{"id": "tzp6-0125", "dsl": "dt 2016-11-16 09:46 @-08:00", "unsure": false}
+{"id": "tzp6-0126", "dsl": "t 10:00 @Europe/London", "unsure": false}
+{"id": "tzp6-0127", "dsl": "t 09:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0128", "dsl": "dt D@14 09:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0129", "dsl": "t 09:00 @America/New_York", "unsure": true}
+{"id": "tzp6-0130", "dsl": "t 10:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0131", "dsl": "t 12:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0132", "dsl": "t 23:00>02:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0133", "dsl": "t 20:00 @America/Sao_Paulo", "unsure": false}
+{"id": "tzp6-0134", "dsl": "dt 01-01 18:00 @UTC", "unsure": false}
+{"id": "tzp6-0135", "dsl": "t 08:00 @-07:00", "unsure": false}
+{"id": "tzp6-0136", "dsl": "x", "unsure": false}
+{"id": "tzp6-0137", "dsl": "t 09:00 @Europe/Madrid", "unsure": false}
+{"id": "tzp6-0138", "dsl": "dt +0d 21:00 @America/Sao_Paulo", "unsure": false}
+{"id": "tzp6-0139", "dsl": "dt 2024-05-30 10:13 @-05:00", "unsure": true}
+{"id": "tzp6-0140", "dsl": "t 09:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0141", "dsl": "dt 2004-01-15 03:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0142", "dsl": "t 08:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0143", "dsl": "t 17:00 @Asia/Kolkata", "unsure": false}
+{"id": "tzp6-0144", "dsl": "t 17:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0145", "dsl": "dt 2025-10-22 10:30 @UTC", "unsure": false}
+{"id": "tzp6-0146", "dsl": "t 20:00", "unsure": false}
+{"id": "tzp6-0147", "dsl": "dt 1999-12-31 14:00 @-10:00", "unsure": false}
+{"id": "tzp6-0148", "dsl": "t 08:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0149", "dsl": "t 19:30 @Asia/Kolkata", "unsure": false}
+{"id": "tzp6-0150", "dsl": "dt 2014-02-04 12:30 @+05:00", "unsure": false}
+{"id": "tzp6-0151", "dsl": "dt R w/1 mo,tu,we,th 08:00>16:00 @Europe/Berlin", "unsure": true}
+{"id": "tzp6-0152", "dsl": "t 16:00 @Europe/London", "unsure": true}
+{"id": "tzp6-0153", "dsl": "t 06:30>09:00 @America/Los_Angeles", "unsure": true}
+{"id": "tzp6-0154", "dsl": "x", "unsure": false}
+{"id": "tzp6-0155", "dsl": "t 20:18 @UTC", "unsure": false}
+{"id": "tzp6-0156", "dsl": "t 15:00", "unsure": true}
+{"id": "tzp6-0157", "dsl": "dt sa 16:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0158", "dsl": "t 14:00", "unsure": false}
+{"id": "tzp6-0159", "dsl": "dt 2013-02-03 04:05 @+01:00", "unsure": false}
+{"id": "tzp6-0160", "dsl": "t 03:00 @UTC", "unsure": false}
+{"id": "tzp6-0161", "dsl": "dt su 00:00>+24h @UTC", "unsure": false}
+{"id": "tzp6-0162", "dsl": "dt 2003-09-25 10:49 @+03:00", "unsure": false}
+{"id": "tzp6-0163", "dsl": "t 11:00 @America/Denver", "unsure": false}
+{"id": "tzp6-0164", "dsl": "t 02:00 @Pacific/Auckland", "unsure": false}
+{"id": "tzp6-0165", "dsl": "t 10?", "unsure": false}
+{"id": "tzp6-0166", "dsl": "t 12:00 @UTC", "unsure": false}
+{"id": "tzp6-0167", "dsl": "t 06:00", "unsure": false}
+{"id": "tzp6-0168", "dsl": "dt 2022-07-05 12:00>03:00 @Australia/Sydney", "unsure": false}
+{"id": "tzp6-0169", "dsl": "t 19:00 @UTC", "unsure": false}
+{"id": "tzp6-0170", "dsl": "t 14:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0171", "dsl": "dt R d/1 mo,tu,we,th,fr 9?>5? @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0172", "dsl": "t 00:00 @UTC", "unsure": true}
+{"id": "tzp6-0173", "dsl": "dt 07-19 04:00 @Asia/Hong_Kong", "unsure": false}
+{"id": "tzp6-0174", "dsl": "t 20:00 @Australia/Sydney", "unsure": true}
+{"id": "tzp6-0175", "dsl": "dt fr 21:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0176", "dsl": "dt 2022-07-05 04:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0177", "dsl": "dt 2016-04-10 12:00 @-09:30", "unsure": false}
+{"id": "tzp6-0178", "dsl": "dt 2026-09-15 03:27 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0179", "dsl": "dt +1d 14:21 @UTC", "unsure": false}
+{"id": "tzp6-0180", "dsl": "t 14:00 @UTC", "unsure": false}
+{"id": "tzp6-0181", "dsl": "dt 1996-12-19 16:39 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0182", "dsl": "t 23:50 @Europe/London", "unsure": false}
+{"id": "tzp6-0183", "dsl": "x", "unsure": true}
+{"id": "tzp6-0184", "dsl": "t 17:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0185", "dsl": "t 06:00 @Atlantic/Reykjavik", "unsure": true}
+{"id": "tzp6-0186", "dsl": "x", "unsure": false}
+{"id": "tzp6-0187", "dsl": "t 15:00>17:55 @UTC", "unsure": false}
+{"id": "tzp6-0188", "dsl": "x", "unsure": false}
+{"id": "tzp6-0189", "dsl": "t 06:31 @UTC", "unsure": false}
+{"id": "tzp6-0190", "dsl": "d 2020-01-01", "unsure": true}
+{"id": "tzp6-0191", "dsl": "t 00:00 @+00:00", "unsure": true}
+{"id": "tzp6-0192", "dsl": "dt 09-30 21:02 @UTC", "unsure": false}
+{"id": "tzp6-0193", "dsl": "dt 2022-07-01 09:00 @+02:00", "unsure": false}
+{"id": "tzp6-0194", "dsl": "dt 1996-12-19 16:39 @America/Los_Angeles", "unsure": true}
+{"id": "tzp6-0195", "dsl": "dt tu 06:00 @UTC", "unsure": false}
+{"id": "tzp6-0196", "dsl": "x", "unsure": false}
+{"id": "tzp6-0197", "dsl": "t 07:00", "unsure": false}
+{"id": "tzp6-0198", "dsl": "dt su 18:00 @-08:00", "unsure": false}
+{"id": "tzp6-0199", "dsl": "t 14:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0200", "dsl": "t 19:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0201", "dsl": "t 17:10 @Africa/Maputo", "unsure": false}
+{"id": "tzp6-0202", "dsl": "dt su 03:00", "unsure": false}
+{"id": "tzp6-0203", "dsl": "t 20:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0204", "dsl": "x", "unsure": false}
+{"id": "tzp6-0205", "dsl": "dt 2010-01-01 12:00 @UTC", "unsure": false}
+{"id": "tzp6-0206", "dsl": "t 04:00>04:30 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0207", "dsl": "dt +0d 22:00 @Africa/Nairobi", "unsure": false}
+{"id": "tzp6-0208", "dsl": "dt we 19:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0209", "dsl": "t 18:00 @Asia/Kolkata", "unsure": false}
+{"id": "tzp6-0210", "dsl": "dt 2023-02-09 07:00 @Asia/Tokyo", "unsure": false}
+{"id": "tzp6-0211", "dsl": "dt 2011-12-30 00:00 @-09:00", "unsure": false}
+{"id": "tzp6-0212", "dsl": "t 09:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0213", "dsl": "dt su 16:00>+2h @America/New_York", "unsure": false}
+{"id": "tzp6-0214", "dsl": "t 10:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0215", "dsl": "dt 11-13 10:06 @America/New_York", "unsure": false}
+{"id": "tzp6-0216", "dsl": "dt fr#-1@M+0 16:00 @UTC", "unsure": true}
+{"id": "tzp6-0217", "dsl": "dt 2026-12-07 22:00 @UTC", "unsure": false}
+{"id": "tzp6-0218", "dsl": "x", "unsure": false}
+{"id": "tzp6-0219", "dsl": "dt R m/1 fr#-1 14:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0220", "dsl": "x", "unsure": false}
+{"id": "tzp6-0221", "dsl": "dt 1991-01-05 10:12 @America/New_York", "unsure": false}
+{"id": "tzp6-0222", "dsl": "dt 2021-03-14 23:00 @America/New_York", "unsure": false}
+{"id": "tzp6-0223", "dsl": "dt 2021-10-11 12:13 @America/New_York", "unsure": false}
+{"id": "tzp6-0224", "dsl": "dt +1d 16:00 @Pacific/Honolulu", "unsure": false}
+{"id": "tzp6-0225", "dsl": "dt mo 10:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0226", "dsl": "dt 2026-12-03 11:00 @+11:00", "unsure": true}
+{"id": "tzp6-0227", "dsl": "x", "unsure": false}
+{"id": "tzp6-0228", "dsl": "t 19:00 @Europe/Berlin", "unsure": false}
+{"id": "tzp6-0229", "dsl": "x", "unsure": false}
+{"id": "tzp6-0230", "dsl": "x", "unsure": false}
+{"id": "tzp6-0231", "dsl": "dt 10-31 12:40 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0232", "dsl": "t 05:00 @UTC", "unsure": false}
+{"id": "tzp6-0233", "dsl": "x", "unsure": false}
+{"id": "tzp6-0234", "dsl": "dt 03-04 07:31 @UTC", "unsure": false}
+{"id": "tzp6-0235", "dsl": "dt 2019-05-26 18:45 @UTC", "unsure": false}
+{"id": "tzp6-0236", "dsl": "dt 2008-09-17 20:04 @UTC", "unsure": false}
+{"id": "tzp6-0237", "dsl": "t 19:00 @UTC", "unsure": false}
+{"id": "tzp6-0238", "dsl": "t 16:00 @Europe/London", "unsure": false}
+{"id": "tzp6-0239", "dsl": "dt su 19:00 @UTC", "unsure": false}
+{"id": "tzp6-0240", "dsl": "t 16:00 @America/Vancouver", "unsure": false}
+{"id": "tzp6-0241", "dsl": "dt 11-01 02:00 @America/Los_Angeles", "unsure": false}
+{"id": "tzp6-0242", "dsl": "dt 2008-12-01 14:48 @-07:00", "unsure": false}
+{"id": "tzp6-0243", "dsl": "t 21:00 @+01:00", "unsure": true}
+{"id": "tzp6-0244", "dsl": "t 20:00", "unsure": true}
+{"id": "tzp6-0245", "dsl": "dt +0d 13:30 @UTC", "unsure": false}
+{"id": "tzp6-0246", "dsl": "t 16:00 @Europe/Berlin", "unsure": false}

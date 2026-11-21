@@ -1,0 +1,255 @@
+{"id":"tzs5-0001","dsl":"x","unsure":false}
+{"id":"tzs5-0002","dsl":"x","unsure":false}
+{"id":"tzs5-0003","dsl":"dt R d/1 n14 06:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0004","dsl":"t 19:00 @America/Toronto","unsure":true}
+{"id":"tzs5-0005","dsl":"t 09:00 @America/New_York","unsure":false}
+{"id":"tzs5-0006","dsl":"dt 2023-11-14 15:59 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0007","dsl":"dt R w/2 fr 10:00 @Africa/Lagos","unsure":false}
+{"id":"tzs5-0008","dsl":"t 20:00>00:00 @America/New_York","unsure":false}
+{"id":"tzs5-0009","dsl":"dt th 16:00 @America/New_York","unsure":false}
+{"id":"tzs5-0010","dsl":"t 21:00 @Asia/Kuala_Lumpur","unsure":false}
+{"id":"tzs5-0011","dsl":"t 10:00 @Asia/Dubai","unsure":false}
+{"id":"tzs5-0012","dsl":"x","unsure":false}
+{"id":"tzs5-0013","dsl":"t 10:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0014","dsl":"dt 1970-01-01 00:00 @UTC","unsure":true}
+{"id":"tzs5-0015","dsl":"t 10:30 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0016","dsl":"dt R w/1 mo 09:00>10:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0017","dsl":"t 20:00 @+08:00","unsure":false}
+{"id":"tzs5-0018","dsl":"x","unsure":false}
+{"id":"tzs5-0019","dsl":"x","unsure":false}
+{"id":"tzs5-0020","dsl":"t 20:00>22:00 @America/New_York","unsure":false}
+{"id":"tzs5-0021","dsl":"dt mo#1@M+0 15:00 @Australia/Sydney","unsure":true}
+{"id":"tzs5-0022","dsl":"dt 1995-11-15 06:25 @UTC","unsure":false}
+{"id":"tzs5-0023","dsl":"t 09:00 @+08:00","unsure":false}
+{"id":"tzs5-0024","dsl":"dt 1976-11-18 15:23 @-08:00","unsure":true}
+{"id":"tzs5-0025","dsl":"x","unsure":false}
+{"id":"tzs5-0026","dsl":"dt 2014-02-25 16:30 @Australia/Sydney","unsure":false}
+{"id":"tzs5-0027","dsl":"dt 1970-01-01 00:00 @UTC","unsure":false}
+{"id":"tzs5-0028","dsl":"x","unsure":false}
+{"id":"tzs5-0029","dsl":"x","unsure":true}
+{"id":"tzs5-0030","dsl":"d sa","unsure":true}
+{"id":"tzs5-0031","dsl":"dt +1d 13:00 @Europe/Helsinki","unsure":false}
+{"id":"tzs5-0032","dsl":"t 08:30 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0033","dsl":"t 12:00","unsure":true}
+{"id":"tzs5-0034","dsl":"x","unsure":false}
+{"id":"tzs5-0035","dsl":"dt R d/1 20:00>21:00 @America/Sao_Paulo","unsure":false}
+{"id":"tzs5-0036","dsl":"t 07:00 @Pacific/Auckland","unsure":false}
+{"id":"tzs5-0037","dsl":"t 09:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0038","dsl":"x","unsure":false}
+{"id":"tzs5-0039","dsl":"t 12:00 @America/New_York","unsure":true}
+{"id":"tzs5-0040","dsl":"dt 2025-10-12 05:00 @UTC","unsure":false}
+{"id":"tzs5-0041","dsl":"dt 11-28 19:00 @Asia/Karachi","unsure":false}
+{"id":"tzs5-0042","dsl":"dt 2026-11-27 21:00 @UTC","unsure":false}
+{"id":"tzs5-0043","dsl":"dt 01-05 08:00 @UTC","unsure":false}
+{"id":"tzs5-0044","dsl":"dt mo+1 08:00 @Australia/Perth","unsure":false}
+{"id":"tzs5-0045","dsl":"dt 2019-03-04 11:16 @+08:00","unsure":true}
+{"id":"tzs5-0046","dsl":"t 12:00 @Asia/Hong_Kong","unsure":false}
+{"id":"tzs5-0047","dsl":"x","unsure":false}
+{"id":"tzs5-0048","dsl":"t 06:00 @America/Denver","unsure":false}
+{"id":"tzs5-0049","dsl":"dt 2020-12-01 20:00 @+01:00","unsure":false}
+{"id":"tzs5-0050","dsl":"x","unsure":false}
+{"id":"tzs5-0051","dsl":"dt 12-05 10:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0052","dsl":"t 5? @Asia/Kolkata","unsure":true}
+{"id":"tzs5-0053","dsl":"dt R w/1 tu 1?>2? @Europe/Berlin","unsure":false}
+{"id":"tzs5-0054","dsl":"t 11:45","unsure":false}
+{"id":"tzs5-0055","dsl":"t 15:00 @America/Los_Angeles","unsure":true}
+{"id":"tzs5-0056","dsl":"t 11:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0057","dsl":"dt 1970-01-01 00:00 @UTC","unsure":true}
+{"id":"tzs5-0058","dsl":"dt R w/2 tu 16:00 @America/Denver","unsure":false}
+{"id":"tzs5-0059","dsl":"dt R w/1 sa,su 10:00>14:00 @Australia/Sydney","unsure":true}
+{"id":"tzs5-0060","dsl":"x","unsure":false}
+{"id":"tzs5-0061","dsl":"t 12:00","unsure":false}
+{"id":"tzs5-0062","dsl":"t 16:00","unsure":true}
+{"id":"tzs5-0063","dsl":"x","unsure":false}
+{"id":"tzs5-0064","dsl":"t 14:00 @+03:00","unsure":false}
+{"id":"tzs5-0065","dsl":"dt +0d 18:00> @Asia/Dubai","unsure":false}
+{"id":"tzs5-0066","dsl":"t 15:00 @+01:00","unsure":true}
+{"id":"tzs5-0067","dsl":"dt su 20:00 @America/New_York","unsure":false}
+{"id":"tzs5-0068","dsl":"t 20:00 @America/Sao_Paulo","unsure":false}
+{"id":"tzs5-0069","dsl":"dt th 10:00 @Europe/London","unsure":false}
+{"id":"tzs5-0070","dsl":"t 08:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0071","dsl":"t 20:20 @America/New_York","unsure":false}
+{"id":"tzs5-0072","dsl":"t 20:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0073","dsl":"dt 2012-08-10 10:00 @+01:00","unsure":true}
+{"id":"tzs5-0074","dsl":"t 7:30? @America/New_York","unsure":true}
+{"id":"tzs5-0075","dsl":"d +1d","unsure":false}
+{"id":"tzs5-0076","dsl":"t 15:00","unsure":false}
+{"id":"tzs5-0077","dsl":"dt 11-07 14:37 @UTC","unsure":false}
+{"id":"tzs5-0078","dsl":"x","unsure":false}
+{"id":"tzs5-0079","dsl":"dt 2024-04-09 17:00 @-07:00","unsure":false}
+{"id":"tzs5-0080","dsl":"dt fr 17:00 @UTC","unsure":true}
+{"id":"tzs5-0081","dsl":"dt 1978-08-25 12:04","unsure":false}
+{"id":"tzs5-0082","dsl":"dt fr 15:00 @America/New_York","unsure":false}
+{"id":"tzs5-0083","dsl":"t 06:59>07:00 @America/New_York","unsure":false}
+{"id":"tzs5-0084","dsl":"t 11:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0085","dsl":"dt >fr 17:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0086","dsl":"t 00:00","unsure":true}
+{"id":"tzs5-0087","dsl":"t 14:00 @America/Chicago","unsure":false}
+{"id":"tzs5-0088","dsl":"x","unsure":false}
+{"id":"tzs5-0089","dsl":"t 19:00 @Asia/Ho_Chi_Minh","unsure":false}
+{"id":"tzs5-0090","dsl":"x","unsure":false}
+{"id":"tzs5-0091","dsl":"dt we 08:00 @America/Vancouver","unsure":false}
+{"id":"tzs5-0092","dsl":"dt 11-25 11:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0093","dsl":"dt mo 14:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0094","dsl":"t 09:00 @Asia/Kolkata","unsure":true}
+{"id":"tzs5-0095","dsl":"t 03:00 @UTC","unsure":false}
+{"id":"tzs5-0096","dsl":"dt 1976-11-18 15:23 @-08:00","unsure":false}
+{"id":"tzs5-0097","dsl":"dt 2021-10-03 01:30 @Australia/Sydney","unsure":false}
+{"id":"tzs5-0098","dsl":"dt >2026-11-21 03:30 @UTC","unsure":false}
+{"id":"tzs5-0099","dsl":"dt tu 08:00 @UTC","unsure":false}
+{"id":"tzs5-0100","dsl":"t 20:00 @Asia/Karachi","unsure":false}
+{"id":"tzs5-0101","dsl":"x","unsure":false}
+{"id":"tzs5-0102","dsl":"x","unsure":false}
+{"id":"tzs5-0103","dsl":"t 22:00 @Asia/Manila","unsure":false}
+{"id":"tzs5-0104","dsl":"t 12:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0105","dsl":"dt tu 09:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0106","dsl":"dt R w/1 sa bM@12 21:00 @Europe/Moscow","unsure":false}
+{"id":"tzs5-0107","dsl":"dt 1978-08-25 00:00","unsure":false}
+{"id":"tzs5-0108","dsl":"t 10:00 @Australia/Sydney","unsure":false}
+{"id":"tzs5-0109","dsl":"t 09:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0110","dsl":"x","unsure":false}
+{"id":"tzs5-0111","dsl":"t 6?","unsure":false}
+{"id":"tzs5-0112","dsl":"t 15:00 @America/New_York","unsure":true}
+{"id":"tzs5-0113","dsl":"t 18:00","unsure":true}
+{"id":"tzs5-0114","dsl":"dt 2020-07-20 20:00 @-04:00","unsure":false}
+{"id":"tzs5-0115","dsl":"t 18:26>19:22 @UTC","unsure":false}
+{"id":"tzs5-0116","dsl":"dt +1d 09:00>11:00 @Asia/Singapore","unsure":false}
+{"id":"tzs5-0117","dsl":"t 02:00 @Australia/Sydney","unsure":true}
+{"id":"tzs5-0118","dsl":"dt R m/1 mo#1 15:00 @Africa/Lagos","unsure":false}
+{"id":"tzs5-0119","dsl":"dt +1d 15:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0120","dsl":"x","unsure":true}
+{"id":"tzs5-0121","dsl":"dt fr 11:45 @Europe/Lisbon","unsure":false}
+{"id":"tzs5-0122","dsl":"dt fr 14:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0123","dsl":"t 14:00>15:00 @America/New_York","unsure":false}
+{"id":"tzs5-0124","dsl":"dt 2000-03-04 20:00 @UTC","unsure":false}
+{"id":"tzs5-0125","dsl":"x","unsure":false}
+{"id":"tzs5-0126","dsl":"t 09:00 @America/New_York","unsure":false}
+{"id":"tzs5-0127","dsl":"t 00:00 @+04:00","unsure":false}
+{"id":"tzs5-0128","dsl":"t 01:59 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0129","dsl":"t 19:30 @Asia/Singapore","unsure":false}
+{"id":"tzs5-0130","dsl":"t 02:01 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0131","dsl":"t 15:00","unsure":false}
+{"id":"tzs5-0132","dsl":"dt fr 16:00 @-05:00","unsure":false}
+{"id":"tzs5-0133","dsl":"dt 01-12 09:00 @Australia/Sydney","unsure":false}
+{"id":"tzs5-0134","dsl":"x","unsure":false}
+{"id":"tzs5-0135","dsl":"dt fr 14:00 @America/Sao_Paulo","unsure":false}
+{"id":"tzs5-0136","dsl":"t 20:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0137","dsl":"dt R w/1 mo,tu,we,th,su 08:00>16:00 @Asia/Dubai","unsure":true}
+{"id":"tzs5-0138","dsl":"t 13:30 @UTC","unsure":false}
+{"id":"tzs5-0139","dsl":"x","unsure":false}
+{"id":"tzs5-0140","dsl":"dt 09-25 10:00","unsure":false}
+{"id":"tzs5-0141","dsl":"dt 2026-10-02 11:42 @UTC","unsure":false}
+{"id":"tzs5-0142","dsl":"dt mo 14:30 @Europe/London","unsure":false}
+{"id":"tzs5-0143","dsl":"dt 11-18 23:53 @UTC","unsure":false}
+{"id":"tzs5-0144","dsl":"dt th 10:00 @America/St_Johns","unsure":false}
+{"id":"tzs5-0145","dsl":"t 08:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0146","dsl":"dt 2026-12-01 14:00 @Africa/Lagos","unsure":false}
+{"id":"tzs5-0147","dsl":"x","unsure":false}
+{"id":"tzs5-0148","dsl":"t 17:00 @Asia/Dubai","unsure":false}
+{"id":"tzs5-0149","dsl":"dt 2020-08-07 12:00 @-07:00","unsure":false}
+{"id":"tzs5-0150","dsl":"t 15:00 @UTC","unsure":false}
+{"id":"tzs5-0151","dsl":"t 18:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0152","dsl":"t 3:30?","unsure":false}
+{"id":"tzs5-0153","dsl":"t 15:00","unsure":false}
+{"id":"tzs5-0154","dsl":"dt 11-18 21:30 @UTC","unsure":false}
+{"id":"tzs5-0155","dsl":"t 22:00 @America/Chicago","unsure":false}
+{"id":"tzs5-0156","dsl":"t 09:00>17:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0157","dsl":"x","unsure":false}
+{"id":"tzs5-0158","dsl":"t 15:00 @America/New_York","unsure":false}
+{"id":"tzs5-0159","dsl":"x","unsure":false}
+{"id":"tzs5-0160","dsl":"t 19:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0161","dsl":"dt R w/1 sa 20:30 @Asia/Manila","unsure":false}
+{"id":"tzs5-0162","dsl":"dt 2014-05-27 20:06 @+08:00","unsure":false}
+{"id":"tzs5-0163","dsl":"dt 2025-08-09 05:00 @UTC","unsure":false}
+{"id":"tzs5-0164","dsl":"dt 1970-01-01 09:00 @+09:00","unsure":true}
+{"id":"tzs5-0165","dsl":"dt 1998-05-01 09:00 @America/New_York","unsure":true}
+{"id":"tzs5-0166","dsl":"dt +1d 19:00 @+08:00","unsure":true}
+{"id":"tzs5-0167","dsl":"t 09:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0168","dsl":"dt mo 10:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0169","dsl":"d +1d","unsure":false}
+{"id":"tzs5-0170","dsl":"t 20:00","unsure":true}
+{"id":"tzs5-0171","dsl":"dt we 12:00 @Australia/Sydney","unsure":false}
+{"id":"tzs5-0172","dsl":"dt +1d 18:00","unsure":false}
+{"id":"tzs5-0173","dsl":"x","unsure":false}
+{"id":"tzs5-0174","dsl":"x","unsure":false}
+{"id":"tzs5-0175","dsl":"t 09:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0176","dsl":"t 09:29>09:30 @America/New_York","unsure":false}
+{"id":"tzs5-0177","dsl":"t 05:00","unsure":false}
+{"id":"tzs5-0178","dsl":"dt >11-30 18:00 @UTC","unsure":true}
+{"id":"tzs5-0179","dsl":"t 11:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0180","dsl":"dt 1999-05-23 23:55 @+09:00","unsure":false}
+{"id":"tzs5-0181","dsl":"t 09:00 @Asia/Kolkata","unsure":true}
+{"id":"tzs5-0182","dsl":"t 15:00 @UTC","unsure":false}
+{"id":"tzs5-0183","dsl":"d 03-07","unsure":false}
+{"id":"tzs5-0184","dsl":"dt fr 17:00","unsure":false}
+{"id":"tzs5-0185","dsl":"t 13:00 @Europe/London","unsure":false}
+{"id":"tzs5-0186","dsl":"x","unsure":false}
+{"id":"tzs5-0187","dsl":"t 08:00 @Europe/London","unsure":false}
+{"id":"tzs5-0188","dsl":"t 16:00","unsure":true}
+{"id":"tzs5-0189","dsl":"dt 2014-06-01 12:00 @UTC","unsure":false}
+{"id":"tzs5-0190","dsl":"dt 11-08 01:00 @America/New_York","unsure":false}
+{"id":"tzs5-0191","dsl":"t 09:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0192","dsl":"dt 12-01 09:00 @Asia/Karachi","unsure":false}
+{"id":"tzs5-0193","dsl":"t 6:30? @America/Chicago","unsure":true}
+{"id":"tzs5-0194","dsl":"dt 2026-11-22 18:04 @UTC","unsure":false}
+{"id":"tzs5-0195","dsl":"dt 2016-05-14 10:23 @+06:00","unsure":false}
+{"id":"tzs5-0196","dsl":"t 14:00 @America/New_York","unsure":false}
+{"id":"tzs5-0197","dsl":"dt 2016-05-14 10:23 @Europe/Paris","unsure":false}
+{"id":"tzs5-0198","dsl":"dt 2026-11-24 14:00 @-05:00","unsure":false}
+{"id":"tzs5-0199","dsl":"x","unsure":false}
+{"id":"tzs5-0200","dsl":"t 09:00 @Africa/Accra","unsure":false}
+{"id":"tzs5-0201","dsl":"dt 1997-09-02 09:00 @America/New_York","unsure":true}
+{"id":"tzs5-0202","dsl":"dt fr 09:00 @America/New_York","unsure":false}
+{"id":"tzs5-0203","dsl":"dt th 16:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0204","dsl":"t 10:00 @Africa/Lagos","unsure":false}
+{"id":"tzs5-0205","dsl":"t 14:00 @America/New_York","unsure":false}
+{"id":"tzs5-0206","dsl":"t 08:00 @Asia/Manila","unsure":true}
+{"id":"tzs5-0207","dsl":"dt su 15:00 @Asia/Dubai","unsure":false}
+{"id":"tzs5-0208","dsl":"dt 1998-01-06 09:00 @America/New_York","unsure":true}
+{"id":"tzs5-0209","dsl":"dt 1970-01-01 00:00 @UTC","unsure":true}
+{"id":"tzs5-0210","dsl":"dt +1d 12:00 @America/New_York","unsure":false}
+{"id":"tzs5-0211","dsl":"dt fr 15:00 @America/New_York","unsure":false}
+{"id":"tzs5-0212","dsl":"t 16:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0213","dsl":"t 14:00 @Europe/London","unsure":false}
+{"id":"tzs5-0214","dsl":"x","unsure":false}
+{"id":"tzs5-0215","dsl":"dt mo 09:00 @+13:00","unsure":false}
+{"id":"tzs5-0216","dsl":"dt fr 13:00 @America/Denver","unsure":true}
+{"id":"tzs5-0217","dsl":"t 09:30 @America/New_York","unsure":false}
+{"id":"tzs5-0218","dsl":"dt 1998-01-02 09:00 @America/New_York","unsure":true}
+{"id":"tzs5-0219","dsl":"x","unsure":false}
+{"id":"tzs5-0220","dsl":"dt 1997-09-02 09:00 @America/New_York","unsure":true}
+{"id":"tzs5-0221","dsl":"dt 12-04 04:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0222","dsl":"dt 12-15 14:00 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0223","dsl":"dt R d/1 23:00 @America/Sao_Paulo","unsure":false}
+{"id":"tzs5-0224","dsl":"dt mo 09:00 @America/Chicago","unsure":false}
+{"id":"tzs5-0225","dsl":"t 14:00 @Africa/Maputo","unsure":false}
+{"id":"tzs5-0226","dsl":"t 16:00 @+05:00","unsure":false}
+{"id":"tzs5-0227","dsl":"t 09:00","unsure":false}
+{"id":"tzs5-0228","dsl":"dt 1978-08-25 00:00","unsure":false}
+{"id":"tzs5-0229","dsl":"x","unsure":false}
+{"id":"tzs5-0230","dsl":"t 19:00 @Asia/Singapore","unsure":false}
+{"id":"tzs5-0231","dsl":"x","unsure":false}
+{"id":"tzs5-0232","dsl":"x","unsure":false}
+{"id":"tzs5-0233","dsl":"dt 1970-01-01 00:00 @UTC","unsure":false}
+{"id":"tzs5-0234","dsl":"dt sa 01:00 @Australia/Sydney","unsure":false}
+{"id":"tzs5-0235","dsl":"t 10:00 @Asia/Kolkata","unsure":false}
+{"id":"tzs5-0236","dsl":"t 08:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0237","dsl":"dt R d/1 9:15? @Europe/Athens","unsure":false}
+{"id":"tzs5-0238","dsl":"dt +1d 17:00 @America/New_York","unsure":false}
+{"id":"tzs5-0239","dsl":"dt mo 17:00 @+03:00","unsure":false}
+{"id":"tzs5-0240","dsl":"x","unsure":false}
+{"id":"tzs5-0241","dsl":"dt th 09:00 @+05:00","unsure":false}
+{"id":"tzs5-0242","dsl":"t 19:00 @+07:00","unsure":false}
+{"id":"tzs5-0243","dsl":"t 09:00 @Asia/Qatar","unsure":false}
+{"id":"tzs5-0244","dsl":"dt +1d 10? @+02:00","unsure":true}
+{"id":"tzs5-0245","dsl":"dt 2016-05-14 10:23 @UTC","unsure":false}
+{"id":"tzs5-0246","dsl":"t 9?","unsure":false}
+{"id":"tzs5-0247","dsl":"x","unsure":false}
+{"id":"tzs5-0248","dsl":"t 21:00 @America/Los_Angeles","unsure":false}
+{"id":"tzs5-0249","dsl":"x","unsure":false}
+{"id":"tzs5-0250","dsl":"t 22:30 @Europe/Berlin","unsure":false}
+{"id":"tzs5-0251","dsl":"dt R w/1 tu,th 18:00 @Asia/Karachi","unsure":true}
+{"id":"tzs5-0252","dsl":"dt fr 18:00","unsure":false}
+{"id":"tzs5-0253","dsl":"t 15:50>16:00 @America/New_York","unsure":false}
+{"id":"tzs5-0254","dsl":"dt R w/1 mo,we,fr 07:30 @Asia/Singapore","unsure":false}
+{"id":"tzs5-0255","dsl":"t 09:00 @Asia/Kolkata","unsure":false}

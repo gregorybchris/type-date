@@ -28,6 +28,7 @@ const REGISTRY: Record<string, { file: string; perDay: boolean; description: str
   h10: { file: "h10.ts", perDay: false, description: "h9 behind a rewrite step: an hour with a missing a or p (9m) keeps the hour with an unknown meridiem, so the rest of the phrase is still read." },
   h11: { file: "h11.ts", perDay: false, description: "h10 behind a layer of general readers: a table of named days and moving holidays (with Easter-relative dates), spoken numbers and clock idioms, numeric and machine date formats, weekday-code meeting patterns, deadline words and frequency words." },
   h12: { file: "h12.ts", perDay: false, description: "h11 behind two rules for conjunctions of recurrences: several nth weekdays joined by and (\"every third tuesday and second monday of each month\") and a separate time per weekday (\"tuesdays at 1:30 and thursdays at 3\")." },
+  h13: { file: "h13.ts", perDay: false, description: "h12 behind a time zone layer: reads the zone named in the text (abbreviations, offsets, Z, IANA names, zone words, places), keeps only the first moment of a multi-zone phrase, lets h12 parse the rest, and writes the zone as a last token. Ambiguous abbreviations (IST, CST, BST) use a hint word in the text, then the user zone and locale, then a default." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
@@ -129,7 +130,7 @@ async function main() {
 
   // warm up the JIT before timing
   const warm = rowsBySplit[splitNames[0]!]!.slice(0, 300);
-  for (let i = 0; i < 2; i++) for (const r of warm) await engine.predict(r.text, undefined, { today: DEFAULT_DAY });
+  for (let i = 0; i < 2; i++) for (const r of warm) await engine.predict(r.text, undefined, { today: DEFAULT_DAY, ...(r.context ?? {}) });
 
   const latencies: number[] = [];
   const errors: Record<string, unknown>[] = [];
@@ -141,7 +142,7 @@ async function main() {
     let sOk = 0, sRes = 0;
     for (const r of rows) {
       const t0 = performance.now();
-      const res = await engine.predict(r.text, undefined, { today: DEFAULT_DAY });
+      const res = await engine.predict(r.text, undefined, { today: DEFAULT_DAY, ...(r.context ?? {}) });
       latencies.push(performance.now() - t0);
       const pred = res.dsl;
       const good = pred === r.dsl;
@@ -149,7 +150,7 @@ async function main() {
       if (!good) {
         resolvedMatch = true;
         for (const day of DAYS) {
-          const p = reg!.perDay && day !== DEFAULT_DAY ? (await engine.predict(r.text, undefined, { today: day })).dsl : pred;
+          const p = reg!.perDay && day !== DEFAULT_DAY ? (await engine.predict(r.text, undefined, { today: day, ...(r.context ?? {}) })).dsl : pred;
           if (key(r.dsl, day) !== key(p, day)) {
             resolvedMatch = false;
             break;
