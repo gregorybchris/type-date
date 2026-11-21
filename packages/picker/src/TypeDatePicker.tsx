@@ -212,7 +212,10 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       if (textRef.current || resultRef.current) {
         resetRef.current();
         root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
-      } else props.onEscape?.();
+      } else {
+        show(viewOf(today));
+        props.onEscape?.();
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -259,7 +262,10 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       run(text).then(() => props.onConfirm?.(latest.current.result));
     } else if (e.key === "Escape") {
       if (text || result) reset();
-      else props.onEscape?.();
+      else {
+        show(viewOf(today));
+        props.onEscape?.();
+      }
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
       root.current?.querySelector<HTMLElement>('[role="gridcell"] [tabindex="0"], [role=option][tabindex="0"]')?.focus();

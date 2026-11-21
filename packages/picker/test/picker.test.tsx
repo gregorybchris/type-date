@@ -22,6 +22,17 @@ function setup(parse: TypeDatePickerProps["parse"], extra: Partial<TypeDatePicke
 }
 const table = (m: Record<string, string>) => async (t: string) => m[t] ?? "x";
 
+describe("escape", () => {
+  it("returns to today's month when the picker is already empty", () => {
+    const { input } = setup(table({}));
+    fireEvent.click(screen.getByLabelText("Next month"));
+    fireEvent.click(screen.getByLabelText("Next month"));
+    expect(screen.getByRole("grid").getAttribute("aria-label")).toContain("November");
+    fireEvent.keyDown(input, { key: "Escape" });
+    expect(screen.getByRole("grid").getAttribute("aria-label")).toContain("September");
+  });
+});
+
 describe("mode switching", () => {
   it("shows the calendar for d, the time list for t, both for dt", async () => {
     const { type, root } = setup(table({ a: "d 09-21", b: "t 12:00", c: "dt 09-21 10:00" }));
