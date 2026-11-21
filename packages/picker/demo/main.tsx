@@ -26,6 +26,8 @@ const EXAMPLES = [
   "monthly on the 15th",
   "dec 28 to jan 3",
   "every other friday until dec 31",
+  "tuesdays at 1:30 and thursdays at 3",
+  "every first monday and last friday of the month",
   "noon",
   "four score and seven years ago",
   "13th of last month",
