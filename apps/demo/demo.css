@@ -202,8 +202,15 @@ body {
   height: 26px;
   width: auto;
 }
-.demo-github:hover {
+.demo-github:hover,
+.demo-share:hover {
   transform: none;
+}
+.demo-share {
+  right: calc(max(12px, env(safe-area-inset-right)) + 96px);
+}
+.demo-share[data-copied] {
+  color: var(--d-fg);
 }
 .demo-gear:focus-visible,
 .demo-seg button:focus-visible,

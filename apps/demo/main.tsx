@@ -82,11 +82,82 @@ function loadPrefs(): Prefs {
     dateFormat:
       saved.dateFormat === "mdy" || saved.dateFormat === "dmy" || saved.dateFormat === "iso" ? saved.dateFormat : DEFAULTS.dateFormat,
   };
-  // URL parameters win over saved preferences (used by screenshot scripts and shared links)
+  // URL parameters win over saved preferences (shared links and screenshot scripts)
   const urlTheme = findTheme(q.get("theme"));
   if (urlTheme) base.theme = urlTheme.id;
-  if (q.get("ws")) base.weekStart = q.get("ws") === "1" ? 1 : 0;
+  const ws = q.get("ws");
+  if (ws === "0" || ws === "1") base.weekStart = ws === "1" ? 1 : 0;
+  const tf = q.get("tf");
+  if (tf === "12h" || tf === "24h") base.timeFormat = tf;
+  const df = q.get("df");
+  if (df === "mdy" || df === "dmy" || df === "iso") base.dateFormat = df;
   return base;
+}
+
+/**
+ * The page URL for the current text and settings. A value equal to its default is left out,
+ * so the default state is the bare URL. `today` is kept only when the page was opened with it.
+ */
+function shareUrl(text: string, p: Prefs): string {
+  const u = new URLSearchParams();
+  if (text.trim()) u.set("q", text);
+  if (p.theme !== DEFAULTS.theme) u.set("theme", p.theme);
+  if (p.weekStart !== DEFAULTS.weekStart) u.set("ws", String(p.weekStart));
+  if (p.timeFormat !== DEFAULTS.timeFormat) u.set("tf", p.timeFormat);
+  if (p.dateFormat !== DEFAULTS.dateFormat) u.set("df", p.dateFormat);
+  if (q.get("today") === TODAY) u.set("today", TODAY);
+  const s = u.toString().replace(/%20/g, "+");
+  return location.origin + location.pathname + (s ? "?" + s : "") + location.hash;
+}
+
+/** Touch devices get the system share sheet; others copy the link. */
+const prefersShareSheet = () => typeof navigator.share === "function" && matchMedia("(pointer: coarse)").matches;
+
+function ShareButton(props: { url: () => string }) {
+  const [copied, setCopied] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const share = async () => {
+    const url = props.url();
+    if (prefersShareSheet()) {
+      try {
+        await navigator.share({ url });
+        return;
+      } catch (e) {
+        if ((e as Error).name === "AbortError") return; // the user closed the sheet
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setCopied(false), 1600);
+    } catch {
+      window.prompt("Copy this link", url);
+    }
+  };
+  return (
+    <button
+      type="button"
+      className="demo-gear demo-share"
+      aria-label={copied ? "Link copied" : "Share link"}
+      title={copied ? "Link copied" : "Share link"}
+      data-copied={copied || undefined}
+      onClick={share}
+    >
+      {copied ? (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      ) : (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 3v12" />
+          <path d="m7.5 7.5 4.5-4.5 4.5 4.5" />
+          <path d="M8 11H6.5A1.5 1.5 0 0 0 5 12.5v7A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5H16" />
+        </svg>
+      )}
+    </button>
+  );
 }
 
 function savePrefs(p: Prefs) {
@@ -134,7 +205,7 @@ function Wordmark() {
   );
 }
 
-function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset: () => void }) {
+function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset: () => void; url: () => string }) {
   const ref = useRef<HTMLDialogElement>(null);
   const { prefs, set } = props;
   const open = () => ref.current?.showModal();
@@ -142,6 +213,7 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
   return (
     <>
       <Wordmark />
+      <ShareButton url={props.url} />
       <a
         className="demo-gear demo-github"
         href="https://github.com/gregorybchris/type-date"
@@ -254,12 +326,33 @@ function App() {
   const [confirmed, setConfirmed] = useState<string | null>(null);
   const picker = useRef<TypeDatePickerHandle>(null);
   const small = () => matchMedia("(max-width: 520px)").matches;
+  const [text, setText] = useState(q.get("q") ?? "");
+  const url = () => shareUrl(text, prefs);
+  // Keep the address bar in step with the screen, so the bar can be copied too.
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const next = shareUrl(text, prefs);
+      if (next === location.href) return;
+      try {
+        history.replaceState(history.state, "", next);
+      } catch {
+        // Safari rate-limits replaceState; the share button still builds the link
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [text, prefs]);
 
   return (
     <main className="demo" data-theme={theme.mode} style={themeVars(theme) as CSSProperties}>
-      <Settings prefs={prefs} set={set} reset={() => setPrefs(DEFAULTS)} />
+      <Settings prefs={prefs} set={set} reset={() => setPrefs(DEFAULTS)} url={url} />
       <div className="demo-layout">
-        <div className="demo-stage">
+        <div
+          className="demo-stage"
+          onInput={(e) => {
+            const el = e.target as HTMLElement;
+            if (el instanceof HTMLInputElement && el.closest(".td-search")) setText(el.value);
+          }}
+        >
         <TypeDatePicker
           ref={picker}
           theme={theme.mode}
@@ -268,9 +361,12 @@ function App() {
           dateFormat={dateFormat}
           today={TODAY}
           autoFocus={!small()}
-          defaultText={q.get("q") ?? ""}
+          defaultText={text}
           onChange={() => setConfirmed(null)}
-          onClear={() => setConfirmed(null)}
+          onClear={() => {
+            setConfirmed(null);
+            setText("");
+          }}
           onConfirm={(r) => setConfirmed(r ? summarize(r) : null)}
         />
         {confirmed ? (
@@ -290,6 +386,7 @@ function App() {
             {EXAMPLES.map((ex) => (
               <button key={ex} type="button" className="demo-chip" onClick={() => {
                   picker.current?.setText(ex);
+                  setText(ex);
                   if (!small()) picker.current?.focus();
                 }}>
                 {ex}
