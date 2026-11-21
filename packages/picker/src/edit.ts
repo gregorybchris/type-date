@@ -51,6 +51,14 @@ export function toggleListDate(r: Resolved | null, date: string): Resolved {
   return { mode: startTime ? "dt" : "d", kind: "single", start: startTime ? { date, time: startTime } : { date }, ambiguous: false };
 }
 
+/** Shift-click on a list of dates: add every day from `from` to `to` (either order) to the list. */
+export function extendList(r: Resolved, from: string, to: string): Resolved {
+  const [lo, hi] = from <= to ? [from, to] : [to, from];
+  const dates = new Set(r.dates ?? []);
+  for (let d = lo; d <= hi; d = addDays(d, 1)) dates.add(d);
+  return { ...r, dates: [...dates].sort() };
+}
+
 /** The date a shift-click extends from: a single day, or the start of a closed range. Null for anything else. */
 export function rangeAnchor(r: Resolved | null): string | null {
   if (!r || r.open) return null;

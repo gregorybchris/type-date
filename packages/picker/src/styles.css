@@ -236,6 +236,10 @@
 .td-to {
   color: var(--td-fg-2);
 }
+.td-days {
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
 .td-fg:empty {
   display: none;
 }

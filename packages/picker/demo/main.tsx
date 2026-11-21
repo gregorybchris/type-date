@@ -1,4 +1,4 @@
-import h11 from "@type-date/baselines/h11";
+import h12 from "@type-date/baselines/h12";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
@@ -254,7 +254,7 @@ function App() {
   const [run, setRun] = useState(0);
 
   const parse = useCallback(async (t: string) => {
-    const r = await h11.predict(t.trim().toLowerCase().replace(/\s+/g, " "), undefined, { today: TODAY });
+    const r = await h12.predict(t.trim().toLowerCase().replace(/\s+/g, " "), undefined, { today: TODAY });
     return r.dsl;
   }, []);
 

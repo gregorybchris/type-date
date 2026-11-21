@@ -29,6 +29,9 @@ const cases: [string, string][] = [
   // registrar codes
   ["MW 10:50 AM 12:10 PM", "dt R w/1 mo,we 10:50>12:10"],
   ["TR 8 - 9:15 am", "dt R w/1 tu,th 08:00>09:15"],
+  ["mw 10:50 am 12:10 pm", "dt R w/1 mo,we 10:50>12:10"], // the picker lowercases its input
+  ["tr 8 - 9:15 am", "dt R w/1 tu,th 08:00>09:15"],
+  ["mr smith 3pm", "t 15:00"], // "mr" is a title, not a weekday code
   // start and until bounds
   ["every wednesday starting in june", "d R w/1 we sM@06"],
   ["every other wed starting last week", "d R w/2 we sW-1"],

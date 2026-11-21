@@ -5,9 +5,9 @@ import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
 import type { DateFormat, TimeFormat } from "./dates";
-import { describeRecurrence, fmtDate, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
+import { WD_LABEL, describeRecurrence, fmtDate, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
-import { flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
+import { extendList, flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
 import { CalendarIcon, SearchIcon } from "./icons";
 
@@ -309,7 +309,18 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   const edit = (r: Resolved) => {
     commit(r);
   };
+  // The last day clicked. Shift-click on a list of dates extends from it.
+  const lastPicked = useRef<string | null>(null);
   const onPickDate = (d: string, mods = { shift: false, multi: false }) => {
+    const prev = lastPicked.current;
+    lastPicked.current = d;
+    const cur = latest.current.result;
+    if (mods.shift && cur?.kind === "list" && cur.dates?.length) {
+      const from = prev && cur.dates.includes(prev) ? prev : cur.dates[cur.dates.length - 1]!;
+      commit(extendList(cur, from, d), true, false);
+      setAnchor(null);
+      return;
+    }
     // Cmd or ctrl-click builds a list of dates, without moving the visible month.
     if (mods.multi) {
       commit(toggleListDate(latest.current.result, d), true, false);
@@ -328,6 +339,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   };
   // Drag and shift-click set a range without moving the visible month, since both start from days on screen.
   const onRange = (a: string, b: string) => {
+    lastPicked.current = b;
     const [lo, hi] = a <= b ? [a, b] : [b, a];
     const cur = latest.current.result;
     if (cur && cur.kind === (lo === hi ? "single" : "range") && cur.start?.date === lo && (lo === hi || cur.end?.date === hi) && !cur.open) return;

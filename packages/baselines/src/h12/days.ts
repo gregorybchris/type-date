@@ -93,6 +93,26 @@ const CODE_RE = /(?<![A-Za-z])((?:[MTWRFSU][\s,/.-]*){2,7})(?![A-Za-z])/;
 /** Registrar weekday codes: "MW 10:50 AM 12:10 PM", "TR 8 - 9:15 am", "M-W-F 3pm weekly", "8:00am 9:25am [ TR ]". Needs the original case.
  *  A code with no time and no recurrence cue is a list of weekdays ("MTWF", "T, R"). */
 export function registrar(orig: string, p0: P): string | null {
+  return registrarCase(orig, p0) ?? registrarLower(orig, p0);
+}
+
+const LOWER_CODES = new Set(["mw", "tr", "mwf", "mf", "wf", "twr", "mtw", "mtwr", "mtwrf", "wrf", "trf", "mwr", "mtwf", "mtf"]);
+
+/** The picker lowercases its input, so codes arrive as "mw 10:50 am 12:10 pm". Only known registrar patterns, and only with a clock time. */
+function registrarLower(orig: string, p0: P): string | null {
+  if (orig !== orig.toLowerCase()) return null;
+  const m = orig.match(/(?<![a-z\d])([mtwrfsu]{2,5})(?![a-z\d])/);
+  if (!m || !LOWER_CODES.has(m[1]!) || /\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b/.test(orig)) return null;
+  const days = [...m[1]!].map((l) => REG_CODE[l.toUpperCase()]!).sort(byWeekday);
+  const rest = (orig.slice(0, m.index!) + " " + orig.slice(m.index! + m[0].length))
+    .replace(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm))/g, "$1 to $2")
+    .replace(/\s+/g, " ")
+    .trim();
+  const tm = p0(rest).match(/^t (\S+)$/);
+  return tm ? `dt R w/1 ${days.join(",")} ${tm[1]}` : null;
+}
+
+function registrarCase(orig: string, p0: P): string | null {
   // "10 A.M. T": the M of "A.M." is not a code
   const clean = orig.replace(/\b[ap]\.m\./gi, (x) => " ".repeat(x.length));
   const m = clean.match(CODE_RE);

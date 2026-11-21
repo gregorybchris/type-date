@@ -114,6 +114,18 @@ describe("range and multi selection", () => {
     expect(selected()).toEqual(["2026-09-10", "2026-09-12"]);
   });
 
+  it("shift-click after cmd-click adds the days from the last click to the list", async () => {
+    await start();
+    fireEvent.click(day("2026-09-23"), { metaKey: true });
+    fireEvent.click(day("2026-09-28"), { metaKey: true });
+    fireEvent.click(day("2026-09-30"), { shiftKey: true });
+    expect(selected()).toEqual(["2026-09-21", "2026-09-23", "2026-09-28", "2026-09-29", "2026-09-30"]);
+    // The next shift-click extends from Sep 30.
+    fireEvent.click(day("2026-10-02"), { shiftKey: true });
+    expect(selected()).toContain("2026-10-02");
+    expect(selected()).toContain("2026-10-01");
+  });
+
   it("cmd-click builds a list of dates and toggles days in it", async () => {
     await start();
     fireEvent.click(day("2026-09-23"), { metaKey: true });
@@ -584,5 +596,31 @@ describe("recurrence rule", () => {
     type("a");
     await waitFor(() => expect(container.querySelector(".td-root")?.getAttribute("data-kind")).toBe("recurrence"));
     expect(container.querySelector(".td-rrule")).toBeNull();
+  });
+});
+
+describe("a time per weekday", () => {
+  const dsl = "dt R w/1 tu@13:30,th@15:00";
+
+  it("describes each weekday with its time and shows one chip per weekday", async () => {
+    const { type } = setup(table({ a: dsl }));
+    type("a");
+    await waitFor(() => expect(screen.getAllByText("Every week on Tue at 1:30 PM, Thu at 3:00 PM").length).toBeGreaterThan(0));
+    expect(screen.getByRole("button", { name: "Tue 1:30 PM" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Thu 3:00 PM" })).toBeTruthy();
+  });
+
+  it("changes only the chosen weekday when a time is picked", async () => {
+    const onChange = vi.fn();
+    const { type } = setup(table({ a: dsl }), { onChange });
+    type("a");
+    await waitFor(() => screen.getByRole("button", { name: "Thu 3:00 PM" }));
+    fireEvent.click(screen.getByRole("button", { name: "Thu 3:00 PM" }));
+    fireEvent.click(screen.getByRole("option", { name: "4:00 PM" }));
+    const last = onChange.mock.calls.at(-1)![0];
+    expect(last.recurrence.dayTimes).toEqual([
+      { wd: "tu", start: "13:30" },
+      { wd: "th", start: "16:00" },
+    ]);
   });
 });
