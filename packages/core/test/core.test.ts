@@ -1004,3 +1004,37 @@ describe("h11 forms: Easter-relative dates and a weekday inside a relative week"
     expect(parseDsl("d xx@W+1")).toEqual({ mode: "x" });
   });
 });
+
+describe("conjunctions of recurrences (h12)", () => {
+  it("round-trips nth lists with different weekdays and per-weekday times", () => {
+    for (const l of ["d R m/1 mo#2,tu#3", "d R m/1 tu#1,tu#3,fr#-1", "dt R w/1 tu@13:30,th@15:00", "dt R w/1 tu@1:30?,th@3? u12-31", "dt R w/2 mo@09:00>10:00,we@14:00>+30m"]) {
+      expect(serializeDsl(parseDsl(l))).toBe(l);
+    }
+  });
+  it("orders per-weekday times by weekday", () => {
+    expect(serializeDsl(parseDsl("dt R w/1 th@15:00,tu@13:30"))).toBe("dt R w/1 tu@13:30,th@15:00");
+  });
+  it("orders a mixed nth list by weekday then ordinal when resolving", () => {
+    const a = r("d R m/1 tu#3,mo#2").recurrence!;
+    const b = r("d R m/1 mo#2,tu#3").recurrence!;
+    expect(a).toEqual(b);
+    expect(a.nths).toEqual([{ wd: "mo", k: 2 }, { wd: "tu", k: 3 }]);
+    expect(r("d R m/1 fr#-1,fr#1").recurrence!.nths).toEqual([{ wd: "fr", k: 1 }, { wd: "fr", k: -1 }]);
+  });
+  it("resolves per-weekday times", () => {
+    const x = r("dt R w/1 tu@1:30?,th@3?");
+    expect(x.recurrence!.days).toEqual(["tu", "th"]);
+    expect(x.recurrence!.dayTimes).toEqual([{ wd: "tu", start: "13:30" }, { wd: "th", start: "15:00" }]);
+    expect(x.recurrence!.time).toEqual({ start: "13:30" });
+    expect(x.ambiguous).toBe(true);
+    expect(r("dt R w/1 mo@09:00>10:00,we@14:00>+30m").recurrence!.dayTimes).toEqual([
+      { wd: "mo", start: "09:00", end: "10:00" },
+      { wd: "we", start: "14:00", end: "14:30" },
+    ]);
+  });
+  it("rejects invalid per-weekday forms", () => {
+    for (const bad of ["dt R w/1 tu@9:00", "d R w/1 tu@9:00,th@10:00", "dt R w/1 tu@9:00,tu@10:00", "dt R w/1 tu@9:00,th@10:00 11:00", "dt R m/1 tu@9:00,th@10:00", "dt R w/1 tu,th tu@9:00,th@10:00", "dt R w/1 tu@9:00,xx@10:00"]) {
+      expect(parseDsl(bad)).toEqual({ mode: "x" });
+    }
+  });
+});

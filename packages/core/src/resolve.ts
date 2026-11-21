@@ -330,8 +330,10 @@ function toResolvedRec(rec: RecSpec, dtstart: string, today: string): ResolvedRe
   if (rec.days) out.days = rec.days;
   if (rec.monthDays) out.monthDays = rec.monthDays;
   if (rec.nth) {
-    out.nth = rec.nth[0]!;
-    if (rec.nth.length > 1) out.nths = rec.nth;
+    const ord = (n: { wd: Weekday; k: number }) => ["mo", "tu", "we", "th", "fr", "sa", "su"].indexOf(n.wd) * 10 + (n.k < 0 ? 9 : n.k);
+    const nths = [...rec.nth].sort((a, b) => ord(a) - ord(b));
+    out.nth = nths[0]!;
+    if (nths.length > 1) out.nths = nths;
   }
   if (rec.months) out.months = rec.months;
   if (rec.yearDay) out.yearDay = rec.yearDay;
@@ -486,7 +488,21 @@ export function resolveParsed(parsed: Parsed, options: ResolveOptions = {}): Res
       }
       rr.time = e ? { start: s, end: e } : { start: s };
     }
-    const amb = !!(rec.time?.start.amb || rec.time?.end?.amb);
+    let amb = !!(rec.time?.start.amb || rec.time?.end?.amb);
+    if (rec.dayTimes) {
+      rr.dayTimes = rec.dayTimes.map((d) => {
+        const s = resolveStartTime(d.start);
+        let e = d.end ? resolveEndTime(d.end, s) : undefined;
+        if (d.dur) {
+          const mins = d.dur.u === "h" ? d.dur.n * 60 : d.dur.n;
+          const total = (Number(s.slice(0, 2)) * 60 + Number(s.slice(3)) + mins) % 1440;
+          e = hm(Math.floor(total / 60), total % 60);
+        }
+        amb = amb || d.start.amb || !!d.end?.amb;
+        return { wd: d.wd, start: s, ...(e ? { end: e } : {}) };
+      });
+      rr.time = { start: rr.dayTimes[0]!.start, ...(rr.dayTimes[0]!.end ? { end: rr.dayTimes[0]!.end } : {}) };
+    }
     return { mode, kind: "recurrence", recurrence: rr, ambiguous: amb };
   }
 

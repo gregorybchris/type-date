@@ -158,6 +158,15 @@ function parseDays(tok: string, rec: RecSpec): boolean {
   return false;
 }
 
+function parseRecTime(tok: string): { start: TimeSpec; end?: TimeSpec; dur?: Duration } | null {
+  const [a, b, ...rest] = tok.split(">");
+  const ta = a ? parseTime(a) : null;
+  const dur = b ? parseDuration(b) : null;
+  const tb = b && !dur ? parseTime(b) : null;
+  if (!ta || rest.length || (b !== undefined && !tb && !dur)) return null;
+  return dur ? { start: ta, dur } : tb ? { start: ta, end: tb } : { start: ta };
+}
+
 function parseRecurrence(tokens: string[]): RecSpec | null {
   // tokens exclude the leading "R"
   const head = tokens[0]?.match(/^([dwmy])\/(\d+)$/);
@@ -176,6 +185,19 @@ function parseRecurrence(tokens: string[]): RecSpec | null {
       rec.until = until;
     } else if (tok.startsWith("s") && tok.length > 2 && parseDate(tok.slice(1))) {
       rec.start = parseDate(tok.slice(1)) as DateSpec; // "sa" and "su" are weekdays, not starts
+    } else if (/^[a-z]{2}@\d/.test(tok) && !rec.dayTimes) {
+      const dt: NonNullable<RecSpec["dayTimes"]> = [];
+      for (const part of tok.split(",")) {
+        const [wd, t] = part.split("@");
+        const tt = t ? parseRecTime(t) : null;
+        if (!wd || !isWd(wd) || !tt || dt.some((x) => x.wd === wd)) return null;
+        dt.push({ wd, ...tt });
+      }
+      if (dt.length < 2 || rec.days || rec.time) return null;
+      const ord = (w: Weekday) => ["mo", "tu", "we", "th", "fr", "sa", "su"].indexOf(w);
+      dt.sort((x, y) => ord(x.wd) - ord(y.wd));
+      rec.dayTimes = dt;
+      rec.days = dt.map((x) => x.wd);
     } else if (tok.includes(">") || parseTime(tok)) {
       const [a, b, ...rest] = tok.split(">");
       const ta = a ? parseTime(a) : null;
@@ -187,6 +209,7 @@ function parseRecurrence(tokens: string[]): RecSpec | null {
       return null;
     }
   }
+  if (rec.dayTimes && (rec.time || rec.nth || rec.monthDays || rec.freq !== "w")) return null;
   if (rec.nth && rec.nth.length > 1 && rec.freq !== "m") return null;
   return rec;
 }
@@ -217,8 +240,8 @@ export function parseDsl(input: string): Parsed {
   if (rest[0] === "R") {
     const rec = parseRecurrence(rest.slice(1));
     if (!rec) return { mode: "x" };
-    if (mode === "d" && rec.time) return { mode: "x" };
-    if (mode === "dt" && !rec.time) return { mode: "x" };
+    if (mode === "d" && (rec.time || rec.dayTimes)) return { mode: "x" };
+    if (mode === "dt" && !rec.time && !rec.dayTimes) return { mode: "x" };
     if (mode === "t") return { mode: "x" };
     return { mode, kind: "recurrence", rec };
   }
@@ -327,7 +350,10 @@ export function serializeDsl(p: Parsed): string {
   if (p.kind === "duration") return `${p.mode} ${fmtPoint(p.start)}>+${p.duration.n}${p.duration.u}`;
   const r = p.rec;
   const parts = ["R", `${r.freq}/${r.interval}`];
-  if (r.days) parts.push(r.days.join(","));
+  const fmtRt = (t: { start: TimeSpec; end?: TimeSpec; dur?: Duration }) =>
+    t.dur ? `${fmtTime(t.start)}>+${t.dur.n}${t.dur.u}` : t.end ? `${fmtTime(t.start)}>${fmtTime(t.end)}` : fmtTime(t.start);
+  if (r.dayTimes) parts.push(r.dayTimes.map((x) => `${x.wd}@${fmtRt(x)}`).join(","));
+  else if (r.days) parts.push(r.days.join(","));
   if (r.nth) parts.push(r.nth.map((n) => `${n.wd}#${n.k}`).join(","));
   if (r.monthDays) parts.push(r.monthDays.map((d) => `d${d}`).join(","));
   if (r.yearDay) {

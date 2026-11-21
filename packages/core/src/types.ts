@@ -46,6 +46,8 @@ export interface RecSpec {
   count?: number;
   until?: DateSpec;
   time?: { start: TimeSpec; end?: TimeSpec; dur?: Duration };
+  /** Own time per weekday (`tu@13:30,th@15:00`). Replaces `days` and `time`: `days` lists the weekdays. */
+  dayTimes?: { wd: Weekday; start: TimeSpec; end?: TimeSpec; dur?: Duration }[];
   start?: DateSpec;
 }
 
@@ -92,7 +94,10 @@ export interface ResolvedRecurrence {
   dtstart: string;
   /** YYYY-MM-DD, the resolved `s` bound when the line has one. Can be before dtstart and before today. */
   from?: string;
+  /** With `dayTimes`, the time of the first listed weekday. */
   time?: { start: string; end?: string };
+  /** One entry per weekday when each weekday has its own time. Same order as `days`. */
+  dayTimes?: { wd: Weekday; start: string; end?: string }[];
 }
 
 export interface Resolved {

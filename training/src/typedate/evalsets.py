@@ -147,6 +147,10 @@ def tag_from_dsl(dsl: str) -> str:
     mode, _, body = dsl.partition(" ")
     toks = body.split(" ")
     if body.startswith("R "):
+        if any(re.match(r"^(mo|tu|we|th|fr|sa|su)@\d", t) for t in toks[2:]):
+            return "recurrence-day-times"
+        if any(re.match(r"^(mo|tu|we|th|fr|sa|su)#-?\d,", t) for t in toks[2:]):
+            return "recurrence-nth-list"
         if any(t.startswith("M@") for t in toks[2:]):
             return "recurrence-month-filter"
         if any(

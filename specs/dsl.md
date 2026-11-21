@@ -299,3 +299,23 @@ Minority-labelled rows (they disagree with the policy; labels were not edited) a
 - Spoken years and day numbers: "nineteen ninety nine" is `d Y@1999`, "two thousand and five" `d Y@2005`.
 - A correction word ("no", "actually", "i mean", "sorry", "make that") replaces the part it corrects: "uh tuesday no wednesday at ten" is `dt we 10?`.
 - "friday week", "monday fortnight", "a week on friday" are `fr~+1w`, `mo~+2w`.
+
+## Conjunctions of recurrences (added 2026-11-21, h12)
+
+Two forms for a recurrence that joins several parts with "and".
+
+| Form | Example input | Output | Meaning |
+|---|---|---|---|
+| Nth list with different weekdays | "every third tuesday and second monday of each month" | `d R m/1 mo#2,tu#3` | third Tuesday and second Monday of every month |
+| | "first and third tuesday and last friday of the month" | `d R m/1 tu#1,tu#3,fr#-1` | |
+| Own time per weekday | "tuesdays at 1:30 and thursdays at 3" | `dt R w/1 tu@1:30?,th@3?` | Tuesdays 1:30, Thursdays 3:00 |
+| | "mon 9-10am and wed 2-3pm every week" | `dt R w/1 mo@09:00>10:00,we@14:00>15:00` | each weekday has a start and an optional end or duration |
+
+Rules:
+- `WD@TIME` list: at least two distinct weekdays, frequency `w`, no other days token and no separate time token. The time part is any recurrence time (`TIME`, `TIME>TIME`, `TIME>+N(h|m)`). The weekdays in the list are the recurrence days. Canonical order is `mo..su`. Other tokens (`n`, `u`, `s`, interval) follow as before.
+- When every weekday has the same time, write the shared form: "tuesdays at 3 and thursdays at 3" is `dt R w/1 tu,th 3?`.
+- Mode is `dt`. Resolved output has `recurrence.dayTimes` (one entry per weekday, in `days` order) and `recurrence.time` set to the first entry's time.
+- Nth list: weekdays and ordinals in the list can differ. The resolver orders the list by weekday (`mo..su`), then ordinal (`-1` last), so labels that list the same items in another order are equal. Nth lists need frequency `m`. An ordinal without a month cue still means monthly ("every 3rd tuesday and 2nd monday").
+- A conjunction needs a recurrence cue (every, each, a plural weekday, "of the month", monthly). "mon 9am and wed 2pm" with no cue is not a recurrence. The several-dates rule applies (label the first date).
+- Not supported, label `x`: different frequencies in one phrase ("every tuesday and every other friday"), nth weekdays with their own times ("first monday at 9 and third friday at 2").
+
