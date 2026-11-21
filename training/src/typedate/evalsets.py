@@ -144,6 +144,8 @@ def tag_from_dsl(dsl: str) -> str:
     """Primary tag (family) from the label alone. Covers v1 and v2 forms."""
     if dsl == "x":
         return "non-date-noise"
+    if re.search(r" @\S+$", dsl):
+        return "timezone"
     mode, _, body = dsl.partition(" ")
     toks = body.split(" ")
     if body.startswith("R "):

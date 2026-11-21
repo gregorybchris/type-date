@@ -470,6 +470,11 @@ function resolvePoint(
 }
 
 export function resolveParsed(parsed: Parsed, options: ResolveOptions = {}): Resolved {
+  const r = resolveNoZone(parsed, options);
+  return parsed.mode !== "x" && parsed.zone && r.mode !== "x" ? { ...r, zone: parsed.zone } : r;
+}
+
+function resolveNoZone(parsed: Parsed, options: ResolveOptions = {}): Resolved {
   const today = options.today ?? localToday();
   const weekStart = options.weekStart ?? 0;
   if (parsed.mode === "x") return { mode: "x", kind: "none", ambiguous: false };

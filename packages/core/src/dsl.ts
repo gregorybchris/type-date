@@ -233,9 +233,34 @@ function parseList(mode: string, tokens: string[]): Parsed {
   return time ? { mode, kind: "list", dates, time } : { mode: "x" };
 }
 
+/** A zone token: an IANA name, UTC, or a fixed offset. Names are checked with Intl when it is there. */
+export function validZone(z: string): boolean {
+  let m = z.match(/^([+-])(\d{2}):(\d{2})$/);
+  if (m) return +m[2]! <= 14 && +m[3]! < 60;
+  if (z === "UTC") return true;
+  if (!/^[A-Za-z_]+(?:\/[A-Za-z0-9_+-]+)+$/.test(z)) return false;
+  try {
+    new Intl.DateTimeFormat("en", { timeZone: z });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Parse a model output line. Returns `{mode: "x"}` for anything invalid. */
 export function parseDsl(input: string): Parsed {
   const line = input.trim().replace(/\s+/g, " ");
+  // an optional last token `@ZONE` (specs/dsl.md, "Time zones"); only lines with a time may have one
+  const zm = line.match(/^(.*\S) @(\S+)$/);
+  if (zm) {
+    const inner = parseDslNoZone(zm[1]!);
+    if (inner.mode === "x" || inner.mode === "d" || !validZone(zm[2]!)) return { mode: "x" };
+    return { ...inner, zone: zm[2]! };
+  }
+  return parseDslNoZone(line);
+}
+
+function parseDslNoZone(line: string): Parsed {
   if (line === "x" || line === "") return { mode: "x" };
   const tokens = line.split(" ");
   const mode = tokens[0];
@@ -343,6 +368,10 @@ function fmtPoint(p: Point): string {
 /** Serialize to the canonical DSL form. `parseDsl(serialize(p))` equals `p`. */
 export function serializeDsl(p: Parsed): string {
   if (p.mode === "x") return "x";
+  return serializeNoZone(p) + (p.zone ? ` @${p.zone}` : "");
+}
+
+function serializeNoZone(p: Exclude<Parsed, { mode: "x" }>): string {
   if (p.kind === "single") return `${p.mode} ${fmtPoint(p.start)}`;
   if (p.kind === "range") return `${p.mode} ${fmtPoint(p.start)}>${fmtPoint(p.end)}`;
   if (p.kind === "list") {

@@ -1071,3 +1071,35 @@ describe("until before a date or period (b bound)", () => {
     for (const bad of ["d R w/1 mo u12-31 b01-15", "d R w/1 mo b", "d R w/1 mo bxx"]) expect(parseDsl(bad), bad).toEqual({ mode: "x" });
   });
 });
+
+describe("time zones (@ZONE)", () => {
+  it("round-trips a zone on lines with a time", () => {
+    for (const l of [
+      "t 15:00 @America/New_York",
+      "dt +1d 09:00 @America/Los_Angeles",
+      "t 12:00 @UTC",
+      "t 17:00 @+05:30",
+      "t 09:00 @-08:00",
+      "dt 2026-11-30 14:00 @+05:30",
+      "t 09:00>10:00 @Europe/London",
+      "dt R w/1 mo,we 10:00>11:00 @Europe/London",
+      "dt R w/1 tu@13:30,th@15:00 @America/Chicago",
+      "dt 10-02,10-09 15:00 @Asia/Tokyo",
+      "t 3?>4? @UTC",
+    ]) {
+      expect(serializeDsl(parseDsl(l)), l).toBe(l);
+    }
+  });
+  it("passes the zone through without converting times", () => {
+    const r = resolveDsl("dt +1d 09:00 @America/Los_Angeles", opts);
+    expect(r.zone).toBe("America/Los_Angeles");
+    expect(r.start).toEqual({ date: "2026-11-04", time: "09:00" });
+    expect(resolveDsl("dt R w/1 mo 10:00 @UTC", opts).zone).toBe("UTC");
+    expect(resolveDsl("t 12:00", opts).zone).toBeUndefined();
+  });
+  it("rejects a zone on a line with no time, and bad zones", () => {
+    for (const bad of ["d +1d @UTC", "d R w/1 mo @UTC", "x @UTC", "t 12:00 @", "t 12:00 @Nowhere/Land", "t 12:00 @+25:00", "t 12:00 @+05:75", "t 12:00 @Foo", "t 12:00 @UTC @UTC"]) {
+      expect(parseDsl(bad), bad).toEqual({ mode: "x" });
+    }
+  });
+});

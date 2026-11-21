@@ -58,19 +58,22 @@ export interface Duration {
   u: "h" | "m";
 }
 
+/** A zone named in the text: an IANA name, `UTC`, or a fixed offset (`+05:30`). Only on lines with a time. */
+export type Zoned = { zone?: string };
+
 export type Parsed =
   | { mode: "x" }
-  | { mode: Mode; kind: "single"; start: Point }
-  | { mode: Mode; kind: "range"; start: Point; end: Point }
+  | { mode: Mode; kind: "single"; start: Point } & Zoned
+  | { mode: Mode; kind: "range"; start: Point; end: Point } & Zoned
   /** `PT>`: start known, no end. */
-  | { mode: Mode; kind: "open"; open: "end"; start: Point }
+  | { mode: Mode; kind: "open"; open: "end"; start: Point } & Zoned
   /** `>PT`: end known, no start. */
-  | { mode: Mode; kind: "open"; open: "start"; end: Point }
+  | { mode: Mode; kind: "open"; open: "start"; end: Point } & Zoned
   /** `PT>+Nh` or `PT>+Nm`: the start has a time. */
-  | { mode: "t" | "dt"; kind: "duration"; start: Point; duration: Duration }
-  | { mode: Mode; kind: "recurrence"; rec: RecSpec }
+  | { mode: "t" | "dt"; kind: "duration"; start: Point; duration: Duration } & Zoned
+  | { mode: Mode; kind: "recurrence"; rec: RecSpec } & Zoned
   /** 2-31 single days, `dt` with a shared time. */
-  | { mode: "d" | "dt"; kind: "list"; dates: DateSpec[]; time?: TimeSpec };
+  | { mode: "d" | "dt"; kind: "list"; dates: DateSpec[]; time?: TimeSpec } & Zoned;
 
 export interface ResolvedPoint {
   /** YYYY-MM-DD */
@@ -103,6 +106,8 @@ export interface ResolvedRecurrence {
 }
 
 export interface Resolved {
+  /** The zone named in the text (`@America/New_York`, `@UTC`, `@+05:30`). Times are not converted. */
+  zone?: string;
   mode: Mode | "x";
   kind: "none" | "single" | "range" | "recurrence" | "list";
   start?: ResolvedPoint;
