@@ -16,7 +16,7 @@ const walk = (d: string) => {
 };
 walk(join(ROOT, "data/pool"));
 for (const d of ["real", "real-hard", "real-fmt"]) for (const f of readdirSync(join(ROOT, "data", d))) if (/^(dev|train)/.test(f)) poolFiles.push(join(ROOT, "data", d, f));
-const evalFiles = readdirSync(join(ROOT, "evals/e15")).filter((f) => f.endsWith(".jsonl") && !f.startsWith("test_tz_")).map((f) => join(ROOT, "evals/e15", f));
+const evalFiles = readdirSync(join(ROOT, "evals/e16")).filter((f) => f.endsWith(".jsonl") && !f.startsWith("test_tz_")).map((f) => join(ROOT, "evals/e16", f));
 const map: Record<string, { file: string; id: string }> = {};
 await h13.load();
 async function scan(files: string[], tag: string) {

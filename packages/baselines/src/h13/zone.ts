@@ -117,8 +117,9 @@ interface Mention {
   loose: boolean;
 }
 
-const CLOCK_BEFORE = /(?:\d(?:\s*[ap]\.?m\.?)?|noon|midnight|\b[ap]\.?m\.?|\bhou?rs?)[\s,(\[\-:@]*$/;
-const CLOCK_BEFORE_IN = /(?:\d(?:\s*[ap]\.?m\.?)?|noon|midnight)\s+in\s+$/;
+// a clock time can end in am, pm, or a single letter glued to the digits ("9a", "3p")
+const CLOCK_BEFORE = /(?:\d(?:\s*[ap]\.?m\.?|[ap])?|noon|midnight|\b[ap]\.?m\.?|\bhou?rs?)[\s,(\[\-:@]*$/;
+const CLOCK_BEFORE_IN = /(?:\d(?:\s*[ap]\.?m\.?|[ap])?|noon|midnight)\s+in\s+$/;
 const CLOCK_AFTER = /^[\s:,\-)\]@]*(?:\d{1,2}(?::\d{2})?(?!\d)|noon|midnight)/;
 const BLOCKED_AFTER = /^\s+(?:rim|ocean|park|market|team|street|st\b|avenue|ave\b|view|dew|union|city|station|office|europe|village|coast|beach|shore|bridge|square|time zone|zone)/;
 const adjacent = (t: string, m: { start: number; end: number }) => CLOCK_BEFORE.test(t.slice(0, m.start)) || CLOCK_BEFORE_IN.test(t.slice(0, m.start)) || CLOCK_AFTER.test(t.slice(m.end));
@@ -130,7 +131,7 @@ const NAME_RE = new RegExp(`(?<![a-z])(${NAME_KEYS.join("|")})(?:\\s+(?:standard
 const CITY_KEYS = Object.keys(CITIES).sort((a, b) => b.length - a.length);
 const CITY_ALT = CITY_KEYS.map((k) => k.replace(/[.]/g, "\\.")).join("|");
 const CITY_TIME_RE = new RegExp(`(?<![a-z])(${CITY_ALT})\\s+(?:local\\s+)?time(?![a-z])`, "g");
-const IN_CITY_RE = new RegExp(`(?<=(?:\\d(?:\\s*[ap]\\.?m\\.?)?|noon|midnight)\\s+)in\\s+(${CITY_ALT})(?![a-z])`, "g");
+const IN_CITY_RE = new RegExp(`(?<=(?:\\d(?:\\s*[ap]\\.?m\\.?|[ap])?|noon|midnight)\\s+)in\\s+(${CITY_ALT})(?![a-z])`, "g");
 
 /** Spaced or dotted abbreviations ("p.s.t", "e s t") and abbreviations glued to a time ("5pmest"). */
 function tidy(t: string): string {
@@ -223,7 +224,7 @@ function mentions(t: string, ctx: ZoneContext): Mention[] {
   for (const m of t.matchAll(CITY_TIME_RE)) out.push({ start: m.index!, end: m.index! + m[0].length, zone: CITIES[m[1]!]!, loose: true });
   for (const m of t.matchAll(IN_CITY_RE)) out.push({ start: m.index!, end: m.index! + m[0].length, zone: CITIES[m[1]!]!, loose: true });
   // a bare city right after a clock time is a zone when the phrase compares places: "9am sydney = 6pm prev day la", "9am london = what in nyc"
-  const bare = [...t.matchAll(new RegExp(`(?<=(?:\\d(?:\\s*[ap]\\.?m\\.?)?|noon|midnight)\\s+)(${CITY_ALT})(?![a-z])`, "g"))];
+  const bare = [...t.matchAll(new RegExp(`(?<=(?:\\d(?:\\s*[ap]\\.?m\\.?|[ap])?|noon|midnight)\\s+)(${CITY_ALT})(?![a-z])`, "g"))];
   const cmpA = new RegExp(`(?:=|->|/|\\bvs\\.?|\\bwhat\\b)[^.]*\\b(?:in|at)\\s+(?:${CITY_ALT})\\b`);
   const cmpB = new RegExp(`(?:=|->|/|\\bvs\\.?|\\bwhat\\b)\\s*[^.]*\\d(?:\\s*[ap]m)?\\s+(?:prev day |next day )?(?:${CITY_ALT})\\b`);
   const compares = bare.length >= 2 || (bare.length === 1 && (out.length > 0 || cmpA.test(t) || cmpB.test(t)));

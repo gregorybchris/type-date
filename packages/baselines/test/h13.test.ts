@@ -15,6 +15,12 @@ const cases: [string, string][] = [
   ["5pmEST maintenance", "t 17:00 @America/New_York"],
   ["8pm P.S.T. tonight", "dt +0d 20:00 @America/Los_Angeles"],
   ["9am JST", "t 09:00 @Asia/Tokyo"],
+  // single-letter meridiems (quick-add shorthand)
+  ["tmrw 9a pt", "dt +1d 09:00 @America/Los_Angeles"],
+  ["fri 3p est", "dt fr 15:00 @America/New_York"],
+  ["sat 2p aest", "dt sa 14:00 @Australia/Sydney"],
+  ["call 4:30p ist", "t 16:30 @Asia/Kolkata"],
+  ["pst me the deck before 3p", "t >15:00"],
   // offsets and ISO
   ["5pm UTC+5:30", "t 17:00 @+05:30"],
   ["9am GMT-8", "t 09:00 @-08:00"],
@@ -41,6 +47,9 @@ const cases: [string, string][] = [
   ["5pm CST (China)", "t 17:00 @Asia/Shanghai"],
   ["7pm BST (British Summer Time)", "t 19:00 @Europe/London"],
   ["9am IST", "t 09:00 @Asia/Kolkata"],
+  // "pst" as a typo of "past" is not a zone
+  ["half pst 6 in the morning", "t 06:30"],
+  ["wkdays at 6am over the pst 2 wks", "dt R d/1 mo,tu,we,th,fr u+0d 06:00 s-2w"],
   // no zone: speaker-relative words, venues, lookalikes, dates only
   ["ceremony 4pm local time", "t 16:00"],
   ["can we do 11 your time tmrw", "dt +1d 11?"],

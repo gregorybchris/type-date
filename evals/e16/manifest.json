@@ -1,0 +1,118 @@
+{
+  "parent": "e15",
+  "subset_of": null,
+  "reason": "Label-policy change of 2026-11-21 (specs/dsl.md, Time zones): a zone named in the text is the last token @ZONE on a line with a time (before, zones were stripped). Rows of e15 outside the three timezone splits whose text names a zone that h13 reads and whose label had none were relabeled by two independent labelers (97 rows, consensus) or dropped without one (7 rows). All other rows are unchanged. A zero offset is written UTC. Not comparable with e15 on the relabeled rows: all engines are rescored.",
+  "zone_relabel": {
+    "relabeled": 96,
+    "dropped": 7
+  },
+  "version": "e16",
+  "created": "2026-11-21T10:37:33+00:00",
+  "files": {
+    "val": {
+      "n": 2505,
+      "sha256": "8a6ab0abdd2930b3c2896185349dcd338774c43cd15290bb05b0daf078230360"
+    },
+    "test_template": {
+      "n": 4539,
+      "sha256": "d3b68659d1bef9657d30fee0663cbe95ce3cb24f3cf2b1956e8ea928cd76225c"
+    },
+    "test_noise": {
+      "n": 1463,
+      "sha256": "c79981388c0c4dee579542237384c7456b49e2df0964bf23b78e4ee9718ddbc1"
+    },
+    "test_llm": {
+      "n": 1289,
+      "sha256": "8b8d9c266a72a1d343488763ab2b01b7ebbd965e94b01fa21376256b71584c93"
+    },
+    "test_external": {
+      "n": 307,
+      "sha256": "cf013b429478467dfe7f0e5f0f776ad77c7bddf4f31d4878a45cbd1fb5eb85d0"
+    },
+    "test_external_hard": {
+      "n": 769,
+      "sha256": "f7f6a945c10887b4961829e4818458a304b4ce2695faa1adbb77ac8ad31601c9"
+    },
+    "test_public": {
+      "n": 211,
+      "sha256": "865525c77b8e1757e1f460045add9a647a78a596210127e89cf25c0bccf045d6"
+    },
+    "test_public2": {
+      "n": 121,
+      "sha256": "b2c6f1d38818765b329b8a97bd50758cbcccb0f90a6814026542e7039dbb143b"
+    },
+    "test_v2": {
+      "n": 224,
+      "sha256": "b7688d80471b0a0ab47a4b477b2d97a92f21abb787e76082651d7421b6994b21"
+    },
+    "test_tax": {
+      "n": 275,
+      "sha256": "e96db9c17a97924eb139138e9fc7d0a463c6b3fd76911196240f32402b31646e"
+    },
+    "test_web_heldout": {
+      "n": 388,
+      "sha256": "453b369dcda36ee754d9db723b48f290b4e1b97da420497e9370d31d942ccd93"
+    },
+    "test_web_sealed": {
+      "n": 251,
+      "sha256": "5f43f781c68b9aa9e990477ada9248e41a7980796d2d2ceaa35443c572afdc8c"
+    },
+    "test_web2_sealed": {
+      "n": 366,
+      "sha256": "839465d1d81da6494b7b81df999bef5ac58bd5b6b1662e2dd129ccac2decf391"
+    },
+    "test_typo": {
+      "n": 1083,
+      "sha256": "e5ac87758994dad66e6a67d48e1887cda9de744c7fb4a2d0d517a6638a0c5969"
+    },
+    "test_new_forms": {
+      "n": 136,
+      "sha256": "f4175665b1f43e6acff5d5778184b10447255158a9c7777a213f12f63af8479f"
+    },
+    "test_families": {
+      "n": 121,
+      "sha256": "11e2f9e7bfb06260e834352e89720ddecd9114017cb375e087416e20a1b08f78"
+    },
+    "test_number_words": {
+      "n": 25,
+      "sha256": "bd351d39f0e75e39cdf6c8e257cd6de3cfc6d33f1c34b2e0169b9b3e649d63a3"
+    },
+    "test_personas": {
+      "n": 547,
+      "sha256": "3bf66630a567ad123f4c04612cbc50dbd0a0c16c267e0cb568d76b8fc4d512ea"
+    },
+    "test_voice_booking": {
+      "n": 194,
+      "sha256": "49cc84bdbed79a619bc14d0a82ab3277a0ef8b337d6e891783536457c1370db3"
+    },
+    "test_formats_domain": {
+      "n": 260,
+      "sha256": "575a894c79a7150b85d9c7a581c7de950361c8c4702d8be71a5d4c6b24e93874"
+    },
+    "test_conj_writers": {
+      "n": 602,
+      "sha256": "dfc20fc1a7683197b475db804b3172d3b2709f41b2d2e8dab5cf92cd2c8e271d"
+    },
+    "test_conj_web": {
+      "n": 289,
+      "sha256": "8c1d9fe3ad7a74e745b05467e742980a1caff13bd995adf4f3cda0afe1901195"
+    },
+    "test_tz_writers": {
+      "n": 510,
+      "sha256": "a43b602a21b43b9b2dd34c086c7da91846b17b3c70b5866a372511336120dd1a"
+    },
+    "test_tz_web": {
+      "n": 532,
+      "sha256": "8fd222044d18df85ff978c3c3d2ad9ddaf9224282cef3df1e2631f03f9b4764e"
+    },
+    "test_tz_context": {
+      "n": 104,
+      "sha256": "21192003700d43b5068f0396fd80d08e9f740cabfb9483a1aecb49a656775616"
+    }
+  },
+  "known_issues": [
+    "The stale-row list was found by running h13 over the rows (a row was listed when h13 read a zone from its text and its label had none), then relabeled by two labelers who did not see h13's output. Rows with a zone that h13 did not detect were not listed.",
+    "v007 train (a training set, not an eval) still has the old zone-free labels for its zone rows; they are in specs/engines/h13-known-conflicts.json.",
+    "Three rows in e16 outside the timezone splits have a zone-free label but name a zone after a single-letter meridiem ('9:00a PST', '2:30p ET', '2p PT'). h13 read these only after a fix made late in the round, so they were not on the stale-row list. They count as errors for h13 (3 of 17,111 rows)."
+  ]
+}

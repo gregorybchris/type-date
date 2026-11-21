@@ -548,7 +548,6 @@
 {"id": "r-taxt1-0351", "text": "19 days after oct 1", "dsl": "d 10-01~+19d", "primary_tag": "anchored-offset", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0351"}
 {"id": "r-taxt1-0352", "text": "ttH 3:30p", "dsl": "dt tu,th 15:30", "primary_tag": "date-list", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0352"}
 {"id": "r-taxt1-0353", "text": "5 working days from monday", "dsl": "d mo~+5b", "primary_tag": "anchored-offset", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0353"}
-{"id": "r-taxt1-0355", "text": "pst 2 weekends", "dsl": "d sa-1,su-1,sa-2,su-2", "primary_tag": "date-list", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0355"}
 {"id": "r-taxt1-0356", "text": "can you show me weekends since october thx", "dsl": "d R w/1 sa,su u+0d sM@10<", "primary_tag": "recurrence-bounded", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0356"}
 {"id": "r-taxt1-0358", "text": "the 3rd and 17th", "dsl": "d D@03,D@17", "primary_tag": "date-list", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0358"}
 {"id": "r-taxt1-0359", "text": "upcoming 3 saturdays", "dsl": "d sa+1,sa+2,sa+3", "primary_tag": "date-list", "modifier_tags": [], "source": "taxonomy", "split": "train", "parent_id": null, "group": "real-taxt1-0359"}
