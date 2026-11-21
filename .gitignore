@@ -10,3 +10,11 @@ dist/
 .run/
 training/.venv/
 dist-demo/
+
+# Raw demo recordings from apps/demo/scripts/demo-video.mjs (only the final GIFs are tracked)
+docs/media/*.mp4
+docs/media/*.webm
+docs/media/*.trim
+docs/media/vary/
+# Discarded generated sets stay local
+*.discarded
