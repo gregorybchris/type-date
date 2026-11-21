@@ -319,3 +319,24 @@ Rules:
 - A conjunction needs a recurrence cue (every, each, a plural weekday, "of the month", monthly). "mon 9am and wed 2pm" with no cue is not a recurrence. The several-dates rule applies (label the first date).
 - Not supported, label `x`: different frequencies in one phrase ("every tuesday and every other friday"), nth weekdays with their own times ("first monday at 9 and third friday at 2").
 
+
+## Start clauses (decided 2026-11-21, h12)
+
+"starting", "beginning", "starts", "begins", "commencing" plus a date on a recurrence is the `s` bound. No new grammar.
+
+| Input | Output | Note |
+|---|---|---|
+| every wednesday starting in june | `d R w/1 we sM@06` | a month or week as the start means its first day |
+| every other friday starting on march 3 | `d R w/2 fr s03-03` | |
+| monthly on the 15th starting in june | `d R m/1 d15 sM@06` | |
+| every weekday starting monday | `d R d/1 mo,tu,we,th,fr smo` | |
+| mondays starting next week | `d R w/1 mo sW+1` | no end bound: only "next week" would add `uW+1` ("mondays next week") |
+| daily starting tomorrow | `d R d/1 s+1d` | |
+| every 2 weeks starting oct 5 for 6 weeks | `d R w/2 n3 s10-05` | "for 6 weeks" is a count (see the count rule in `specs/engines/h11.md`) |
+
+Rules:
+- A start clause is a start bound, never an end bound, even when its date is a period.
+- A start that is a time is not a start bound: "daily starting at 3pm" is `dt R d/1 15:00`. "meeting starts at 8" is `t 8?`.
+- "starting" without a recurrence cue is not a recurrence: "class starts monday" is `mo`, "start the report friday" is `fr`.
+- The start clause and the other bounds combine: "tuesdays starting in june until august" is `d R w/1 tu uM@08 sM@06`.
+- "every third wednesday" (an ordinal after "every" with no "of the month") keeps the existing policy (`every-nth-weekday` in `policy_flags`): ambiguous, excluded from eval. A start clause is still read when the phrase is parsed.

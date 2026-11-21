@@ -24,3 +24,11 @@ Goal: phrases where one recurrence joins several parts with "and", plus misspell
 - Bounds: until, through, for N weeks or months, starting, "this semester", "through 2027".
 - Register: terse quick-add, voice transcript, formal notice, casual text, non-native English, UK, AU, US, IN.
 - Surrounding words: event names ("piano lessons", "office hours", "standup"), filler ("can we do", "please").
+
+## Added 2026-11-21: start clauses
+
+| Code | Family | Examples |
+|---|---|---|
+| G | A recurrence with a start clause: "starting", "beginning", "starts", "begins", "commencing", "from" plus a month, date, weekday, relative week or month, or "tomorrow" | "every third wednesday starting in june", "every other friday starting on march 3", "mondays starting next week", "monthly on the 15th starting in september", "every weekday starting monday", "daily starting tomorrow" |
+| G+ | Start clause with other parts | "tuesdays at 3 starting in june until august", "every 2 weeks starting oct 5 for 6 weeks", "first monday of each month beginning in january 2027", "tue and thu at 9am starting next week", "tuesdays at 1:30 and thursdays at 3 starting in june" |
+| G- | Contrast and negatives | a start that is a time, not a date ("daily starting at 3pm", "meeting starts at 8"), an event that starts once with no recurrence ("class starts monday"), "start" as a verb ("start the report friday"), misspelled cues ("startin in june", "begining march 3") |
