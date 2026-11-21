@@ -76,9 +76,9 @@ Ambiguous abbreviations rarely come with a hint (a word such as a country, city 
 18. A date or day read inside a zone: "March 7th (Sydney time)", "11pm the day before in LA".
 19. Other-language zone phrases (French, Dutch, Korean, Spanish, Hindi): out of scope (see `specs/research/coverage-taxonomy.md`).
 
-## Decisions needed before labeling
+## Decisions (taken 2026-11-21 as recommended, then implemented in h13; policy text in `specs/dsl.md`, "Time zones")
 
-Each has my recommendation. They change what the DSL and the labels look like.
+Each item is the recommendation as written before labeling. What changed in practice is under "What changed during implementation" below.
 
 1. **Which time is the label when a phrase gives one moment in several zones?** Recommend the first (time, zone) pair, and the rest are conversions that are ignored. This follows the existing rule for several dates in one message. Conversion questions ("5pm IST in EST?") label the first pair.
 2. **How is a zone written in the DSL?** Recommend an optional suffix on the time: an IANA name when the zone is identified (`dt +1d 09:00 @America/Los_Angeles`), a fixed offset when only an offset is given (`@+05:30`). An ambiguous abbreviation is labeled by the stated context (see 8).
@@ -97,3 +97,14 @@ Each has my recommendation. They change what the DSL and the labels look like.
 - Writer sets share the same families in near-equal proportions because the brief gave the shares; they say little about real frequencies. The web columns are closer, but web-12 is mostly machine text and web-14 is skewed toward developer talk (440 rows from one site, all sealed).
 - Two writer sets were duplicates of others in the last two rounds (see `CLAUDE.md`). The pairwise overlap among the five usable writer sets is 0 to 3 rows, except writers 5 and 6 (10 rows), removed from the pool copy before labeling.
 - No real typed phrases from Brazil, the Gulf or New Zealand were found in the web rounds; those regions appear only through the writers.
+
+## What changed during implementation
+
+- **Bare places in comparisons.** Both labelers wrote the zone for a bare city in a comparison ("9am Sydney = 6pm prev day LA", "9am london = what in nyc"), against decision 5. h13 reads a bare city after a clock time as a zone only when the phrase compares places.
+- **A zero offset is UTC.** `@+00:00` and `@-00:00` are written `@UTC` (the two labelers split on this for "UTC+0" and "+0000"). Done in the core parser, so old and new labels agree.
+- **A named zone with its own offset** ("PDT / UTC-7", "UTC +00:00", "PDT -07:00") is the named zone. The same zone twice ("17:00 UTC to 19:00 UTC", "Mountain Daylight Time (MDT) 4 am") is one zone.
+- **Time with seconds, or after an ISO date, is 24-hour** ("2026-11-13 11:14 UTC+0" is `11:14`, not `11?`).
+- **"pst" as a typo of "past"** ("half pst 6", "pst 3 weeks") is not a zone.
+- **Old labels.** The earlier policy stripped zones from labels, so 152 pool rows and 104 eval rows outside the timezone splits had stale labels. They were relabeled by two labelers who did not see h13's output (140 and 96 rows changed, 9 and 7 rows dropped without consensus). e16 is e15 with those rows relabeled. v007 train (a training set) keeps the old labels for 144 rows (`specs/engines/h13-known-conflicts.json`).
+- **Not implemented** (decision 7): page-level statements are `x` only because no time follows; Windows display names, iCalendar lines and JavaScript date dumps are `x`; other languages are dropped before labeling.
+
