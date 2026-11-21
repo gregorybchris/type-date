@@ -45,6 +45,8 @@ Run `make help` for the full list.
 | `make td ARGS="--help"` | Run the `td` CLI |
 | `make rescore-all` | Score every engine on every eval version |
 | `make rescore-baselines EVAL=e10 ENGINES="h8"` | Score engines on one eval version |
+| `cd packages/baselines && pnpm exec tsx scripts/pools.ts h12 --compare h11` | Regression gate: every open pool row, rows the old engine had right and the new one gets wrong (known label conflicts are listed in `specs/engines/<engine>-known-conflicts.json`). Run after every rule change; add `--only conj` for one pool family |
+| `make td ARGS="data drop-seen FILE --out OUT --against 'glob'"` | Drop rows whose text is already in other files (pool, eval, training). Run on every sealed set before cutting an eval |
 | `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
 | `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
@@ -67,3 +69,8 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
 - Dev servers: the user watches ports 5173 (dashboard) and 5199 (picker demo). Never start, stop, or kill servers on those ports except with `make serve*`. Agents that need a server for screenshots use other ports (5300+). Servers started from a tool call die when the session cleans up (exit 143); `scripts/serve.sh` runs them under nohup with a restart loop.
 - Agents running Playwright and training at once slow each other. Check `ps` before blaming the code.
+- Writers for a sealed set can duplicate another writer's rows. Round of 2026-11-21: writer 3 (sealed) shared 231 of 269 rows with writer 1 (pool) with no read in its transcript. Tell writers to read only the brief and the family list, and run `td data drop-seen` plus an overlap count against the pool before labeling.
+- The picker lowercases its input before the engine, but the eval passes the original case. A rule that needs uppercase (registrar codes like "MW") never fires in the product. Give it a lowercase path or test it with lowercased text.
+- Watch the odd-half and sealed numbers, not only the even-half numbers, when tuning. A guard added to stop an old-pool regression cost the varied-bounds pool 3 to 6 points once and the aggregate hid it.
+- Another session may run `git add -A` while your edits are uncommitted and commit them under an unrelated message. Commit your files soon after editing, with explicit paths.
+- `pools.ts` compares exact strings except for `conj` pools, which compare resolved dates (`u05-31` equals `uM@05`). Old pools keep exact comparison so numbers stay comparable with earlier notes.
