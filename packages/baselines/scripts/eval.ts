@@ -27,6 +27,7 @@ const REGISTRY: Record<string, { file: string; perDay: boolean; description: str
   h9: { file: "h9.ts", perDay: false, description: "h8 behind rules for named dates, nth weekday of a relative month, bounded recurrences, weekday exclusions, lone hour words, foreign month names and noise tokens." },
   h10: { file: "h10.ts", perDay: false, description: "h9 behind a rewrite step: an hour with a missing a or p (9m) keeps the hour with an unknown meridiem, so the rest of the phrase is still read." },
   h11: { file: "h11.ts", perDay: false, description: "h10 behind a layer of general readers: a table of named days and moving holidays (with Easter-relative dates), spoken numbers and clock idioms, numeric and machine date formats, weekday-code meeting patterns, deadline words and frequency words." },
+  h12: { file: "h12.ts", perDay: false, description: "h11 behind two rules for conjunctions of recurrences: several nth weekdays joined by and (\"every third tuesday and second monday of each month\") and a separate time per weekday (\"tuesdays at 1:30 and thursdays at 3\")." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
