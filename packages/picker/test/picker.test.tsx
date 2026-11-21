@@ -770,3 +770,69 @@ describe("clear button", () => {
     expect(onClear).toHaveBeenCalled();
   });
 });
+
+describe("recurrence text", () => {
+  it("names weekday, weekend and every-day sets", async () => {
+    const { describeRecurrence } = await import("../src/dates");
+    const base = { freq: "w" as const, interval: 1, dtstart: "2026-09-14", time: { start: "09:00" } };
+    expect(describeRecurrence({ ...base, days: ["mo", "tu", "we", "th", "fr"] })).toBe("Every weekday at 9:00 AM");
+    expect(describeRecurrence({ ...base, days: ["sa", "su"] })).toBe("Every weekend at 9:00 AM");
+    expect(describeRecurrence({ ...base, freq: "d", days: ["su", "mo", "tu", "we", "th", "fr", "sa"] })).toBe("Every day at 9:00 AM");
+    expect(describeRecurrence({ ...base, days: ["mo", "we"] })).toBe("Every week on Mon, Wed at 9:00 AM");
+    expect(describeRecurrence({ ...base, interval: 2, days: ["mo", "tu", "we", "th", "fr"] })).toBe("Every 2 weeks on Mon, Tue, Wed, Thu, Fri at 9:00 AM");
+  });
+});
+
+describe("calendar on phones", () => {
+  it("drops trailing weeks with no day of the month when trimmed", async () => {
+    const { Calendar } = await import("../src/Calendar");
+    const sel = { lo: null, hi: null, occ: new Set<string>() };
+    const props = { dir: 0 as const, sel, today: TODAY, weekStart: 1 as const, onView: () => {}, onPick: () => {}, onRange: () => {} };
+    // September 2026 starts on a Tuesday: 5 weeks hold its days (Mon Aug 31 to Sun Oct 4).
+    const weeks = (trim: boolean) => {
+      const { container, unmount } = render(<Calendar {...props} view={{ y: 2026, m: 9 }} trim={trim} />);
+      const n = container.querySelectorAll(".td-weeks [role=row]").length;
+      unmount();
+      return n;
+    };
+    expect(weeks(false)).toBe(6);
+    expect(weeks(true)).toBe(5);
+  });
+
+  it("changes month on a horizontal touch swipe", async () => {
+    const { Calendar } = await import("../src/Calendar");
+    const onView = vi.fn();
+    const sel = { lo: null, hi: null, occ: new Set<string>() };
+    const { container } = render(
+      <Calendar dir={0} sel={sel} today={TODAY} weekStart={1} view={{ y: 2026, m: 9 }} onView={onView} onPick={() => {}} onRange={() => {}} />,
+    );
+    const weeks = container.querySelector(".td-weeks")!;
+    // jsdom has no PointerEvent; a MouseEvent with the pointer fields is enough for React.
+    if (typeof window.PointerEvent === "undefined") {
+      class PE extends MouseEvent {
+        pointerId: number;
+        pointerType: string;
+        isPrimary: boolean;
+        constructor(type: string, init: PointerEventInit = {}) {
+          super(type, init);
+          this.pointerId = init.pointerId ?? 0;
+          this.pointerType = init.pointerType ?? "";
+          this.isPrimary = init.isPrimary ?? false;
+        }
+      }
+      vi.stubGlobal("PointerEvent", PE);
+    }
+    const swipe = (x0: number, x1: number, y1 = 100) => {
+      fireEvent.pointerDown(weeks, { pointerType: "touch", isPrimary: true, pointerId: 1, clientX: x0, clientY: 100 });
+      fireEvent.pointerUp(weeks, { pointerType: "touch", isPrimary: true, pointerId: 1, clientX: x1, clientY: y1 });
+    };
+    swipe(300, 200);
+    expect(onView).toHaveBeenLastCalledWith({ y: 2026, m: 10 });
+    swipe(100, 200);
+    expect(onView).toHaveBeenLastCalledWith({ y: 2026, m: 8 });
+    onView.mockClear();
+    swipe(100, 120); // too short
+    swipe(100, 160, 220); // mostly vertical
+    expect(onView).not.toHaveBeenCalled();
+  });
+});

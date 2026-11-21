@@ -64,13 +64,34 @@ function Collapse({ open, children }: { open: boolean; children: React.ReactNode
   );
 }
 
-function Field(props: { icon?: boolean; active?: boolean; onClick: () => void; children: React.ReactNode }) {
+function Field(props: { icon?: boolean; time?: boolean; active?: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
-    <button type="button" className="td-field" data-active={props.active || undefined} onClick={props.onClick}>
+    <button
+      type="button"
+      className="td-field"
+      data-active={props.active || undefined}
+      data-time={props.time || undefined}
+      onClick={props.onClick}
+    >
       {props.icon && <CalendarIcon />}
       {props.children}
     </button>
   );
+}
+
+/** Whether a media query matches, kept up to date. False where `matchMedia` is missing (tests, SSR). */
+function useMedia(query: string): boolean {
+  const get = () => typeof window !== "undefined" && typeof window.matchMedia === "function" && window.matchMedia(query).matches;
+  const [on, setOn] = useState(get);
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") return;
+    const mq = window.matchMedia(query);
+    const onChange = () => setOn(mq.matches);
+    onChange();
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, [query]);
+  return on;
 }
 
 /** The browser's IANA zone, or undefined where it is hidden (some privacy modes report none). */
@@ -119,6 +140,11 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   latest.current = { result, onChange: props.onChange, onConfirm: props.onConfirm };
   const root = useRef<HTMLDivElement>(null);
   const card = useRef<HTMLDivElement>(null);
+  const phone = useMedia("(max-width: 520px)");
+  const touch = useMedia("(pointer: coarse)");
+  /** The text input has focus. On a touch phone the calendar folds away while the soft keyboard is up. */
+  const [typing, setTyping] = useState(false);
+  const inputEl = () => root.current?.querySelector<HTMLInputElement>(".td-search input");
 
   // Soft keyboard: size the card to the visual viewport and keep the input in view.
   useEffect(() => {
@@ -316,6 +342,8 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
     if (e.key === "Enter") {
       clearTimeout(timer.current);
       run(text).then(() => props.onConfirm?.(latest.current.result));
+      // The "done" key closes the soft keyboard, which brings the calendar back.
+      if (touch && phone) e.currentTarget.blur();
     } else if (e.key === "Escape") {
       if (text || result) reset();
       else {
@@ -451,14 +479,24 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       data-kind={result?.kind ?? "none"}
       data-pending={pending || undefined}
       data-muted={muted || undefined}
+      data-typing={typing || undefined}
     >
       <div className="td-card" ref={card}>
-      <div className="td-search">
+      <div
+        className="td-search"
+        // A tap anywhere in the row (icon, padding) focuses the input.
+        onPointerDown={(e) => {
+          const t = e.target as HTMLElement;
+          if (t.closest("input, button")) return;
+          e.preventDefault();
+          inputEl()?.focus({ preventScroll: true });
+        }}
+      >
         <SearchIcon />
         <input
           type="text"
           value={text}
-          placeholder={props.placeholder ?? "Try “every other sunday” or “oct 2 to oct 5”"}
+          placeholder={props.placeholder ?? (phone ? "Try “next friday 3pm”" : "Try “every other sunday” or “oct 2 to oct 5”")}
           aria-label="Date and time"
           aria-describedby="td-status"
           autoComplete="off"
@@ -466,7 +504,11 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
           autoFocus={props.autoFocus}
           onChange={(e) => onText(e.target.value)}
           onKeyDown={onInputKey}
-          onFocus={keepVisible}
+          onFocus={() => {
+            setTyping(true);
+            keepVisible();
+          }}
+          onBlur={() => setTyping(false)}
           enterKeyHint="done"
         />
         <span className="td-busy" aria-hidden />
@@ -479,7 +521,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
           onPointerDown={(e) => e.preventDefault()}
           onClick={() => {
             reset();
-            root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
+            inputEl()?.focus({ preventScroll: true });
           }}
         >
           <ClearIcon />
@@ -487,7 +529,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       </div>
 
       <Collapse open={!!result}>
-        <div className="td-fields">
+        <div className="td-fields" data-rows={(showCal && showTime && isRange && !open && !rec && !isList) || undefined}>
           {result?.kind === "recurrence" && rec ? (
             <>
               <Field active onClick={() => jump("start")}>
@@ -508,7 +550,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
               <Field icon active onClick={() => jump("start")}>
                 {result.dates.length} dates
               </Field>
-              {showTime && startTime && <Field active onClick={() => setTarget("start")}>{fmtTime(startTime)}</Field>}
+              {showTime && startTime && <Field time active onClick={() => setTarget("start")}>{fmtTime(startTime)}</Field>}
             </div>
           ) : (
             <>
@@ -519,7 +561,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
                   </Field>
                 )}
                 {showTime && startTime && (
-                  <Field active={tgt === "start"} onClick={() => setTarget("start")}>
+                  <Field time active={tgt === "start"} onClick={() => setTarget("start")}>
                     {fmtTime(startTime)}
                   </Field>
                 )}
@@ -533,7 +575,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
                     </Field>
                   )}
                   {showTime && endTime && (
-                    <Field active={tgt === "end"} onClick={() => setTarget("end")}>
+                    <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
                       {fmtTime(endTime)}
                       {result?.endNextDay ? " (+1 day)" : ""}
                     </Field>
@@ -554,6 +596,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
               sel={sel}
               today={today}
               weekStart={weekStart}
+              trim={phone}
               onView={show}
               onPick={onPickDate}
               onRange={onRange}

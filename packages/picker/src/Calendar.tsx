@@ -22,6 +22,8 @@ interface Props {
   sel: Selection;
   today: string;
   weekStart: 0 | 1;
+  /** Drop trailing weeks that hold no day of the month (phones), so the grid is 4 to 6 rows instead of always 6. */
+  trim?: boolean;
   onView: (v: View) => void;
   /** `shift`: extend a range. `multi`: cmd or ctrl, add to a list of dates. */
   onPick: (date: string, mods: { shift: boolean; multi: boolean }) => void;
@@ -29,8 +31,10 @@ interface Props {
   onRange: (from: string, to: string) => void;
 }
 
-export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onRange }: Props) {
-  const days = gridDays(view, weekStart);
+export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPick, onRange }: Props) {
+  const all = gridDays(view, weekStart);
+  const lastIdx = all.indexOf(ymd(view.y, view.m, 1)) + daysInMonth(view.y, view.m) - 1;
+  const days = trim ? all.slice(0, Math.ceil((lastIdx + 1) / 7) * 7) : all;
   const rootRef = useRef<HTMLDivElement>(null);
   const wantFocus = useRef(false);
   const first = sel.lo ?? [...sel.occ][0];
@@ -64,6 +68,20 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
 
   const nav = (n: number) => onView(fromIndex(viewIndex(view) + n));
 
+  // Swipe left or right on the weeks to change month. Touch only; vertical moves still scroll the page.
+  const swipe = useRef<{ x: number; y: number; id: number } | null>(null);
+  const onSwipeStart = (e: React.PointerEvent) => {
+    swipe.current = e.pointerType === "touch" && e.isPrimary ? { x: e.clientX, y: e.clientY, id: e.pointerId } : null;
+  };
+  const onSwipeEnd = (e: React.PointerEvent) => {
+    const s = swipe.current;
+    swipe.current = null;
+    if (!s || s.id !== e.pointerId) return;
+    const dx = e.clientX - s.x;
+    const dy = e.clientY - s.y;
+    if (Math.abs(dx) >= 48 && Math.abs(dx) > 1.5 * Math.abs(dy)) nav(dx < 0 ? 1 : -1);
+  };
+
   const onKeyDown = (e: React.KeyboardEvent) => {
     const step: Record<string, string> = {
       ArrowLeft: addDays(tabDate, -1),
@@ -86,7 +104,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
   const open = sel.open;
   const lo = open === "start" ? mStart : sel.lo;
   const hi = open === "end" ? mEnd : sel.hi;
-  const rows = Array.from({ length: 6 }, (_, r) => days.slice(r * 7, r * 7 + 7));
+  const rows = Array.from({ length: days.length / 7 }, (_, r) => days.slice(r * 7, r * 7 + 7));
   const viewKey = `${view.y}-${String(view.m).padStart(2, "0")}`;
   const posOf = (d: string): string | undefined => {
     const out = d.slice(0, 7) !== viewKey;
@@ -131,7 +149,14 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
             </span>
           ))}
         </div>
-        <div className="td-weeks" key={`${view.y}-${view.m}`} data-dir={dir}>
+        <div
+          className="td-weeks"
+          key={`${view.y}-${view.m}`}
+          data-dir={dir}
+          onPointerDown={onSwipeStart}
+          onPointerUp={onSwipeEnd}
+          onPointerCancel={() => (swipe.current = null)}
+        >
           {rows.map((row, r) => (
             <div role="row" className="td-row" key={r}>
               {row.map((d, c) => {

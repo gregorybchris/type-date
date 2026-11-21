@@ -327,6 +327,8 @@ function App() {
   const picker = useRef<TypeDatePickerHandle>(null);
   const small = () => matchMedia("(max-width: 520px)").matches;
   const [text, setText] = useState(q.get("q") ?? "");
+  /** Phones show the first 8 examples until "More examples" is tapped. */
+  const [allExamples, setAllExamples] = useState(false);
   const url = () => shareUrl(text, prefs);
   // Keep the address bar in step with the screen, so the bar can be copied too.
   useEffect(() => {
@@ -382,7 +384,7 @@ function App() {
         </div>
         <section className="demo-try" aria-label="Examples">
           <h2 className="demo-try-title">Or try one of these</h2>
-          <div className="demo-chips">
+          <div className="demo-chips" data-all={allExamples || undefined}>
             {EXAMPLES.map((ex) => (
               <button key={ex} type="button" className="demo-chip" onClick={() => {
                   picker.current?.setText(ex);
@@ -392,6 +394,11 @@ function App() {
                 {ex}
               </button>
             ))}
+            {!allExamples && (
+              <button type="button" className="demo-chip demo-more" onClick={() => setAllExamples(true)}>
+                More examples
+              </button>
+            )}
           </div>
         </section>
       </div>

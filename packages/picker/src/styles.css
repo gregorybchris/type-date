@@ -138,14 +138,16 @@
   top: 0;
   z-index: 2;
   background: var(--td-bg);
-  padding: 14px var(--td-px);
+  padding: 0 var(--td-px);
   color: var(--td-fg-3);
   border-bottom: 1px dotted var(--td-dotted);
+  cursor: text;
 }
 .td-search input {
   flex: 1;
+  align-self: stretch;
   min-width: 0;
-  padding: 0;
+  padding: 14px 0;
   border: 0;
   outline: 0;
   background: none;
@@ -181,7 +183,7 @@
   flex: none;
   width: 32px;
   height: 32px;
-  margin: -6px -6px -6px -4px;
+  margin: 0 -6px 0 -4px;
   padding: 0;
   border: 0;
   background: none;
@@ -385,6 +387,8 @@
 }
 .td-weeks {
   overflow: hidden;
+  /* Horizontal swipes change month (Calendar.tsx); the browser keeps vertical scrolling. */
+  touch-action: pan-y;
   animation: td-slide var(--td-dur-slow) var(--td-ease-out) both;
 }
 .td-weeks[data-dir="1"] {
@@ -847,7 +851,7 @@
   .td-clear {
     width: 44px;
     height: 44px;
-    margin: -12px -12px -12px -8px;
+    margin: 0 -12px 0 -8px;
   }
   .td-clear svg {
     padding: 6px;
@@ -880,12 +884,42 @@
     min-height: 32px;
   }
 }
-@media (pointer: coarse) {
+@media (pointer: coarse), (max-width: 520px) {
   .td-foot {
     display: none;
   }
 }
 @media (max-width: 520px) {
+  /* Date-time range: start on one row, end on the next, dates and times in aligned columns. */
+  .td-fields[data-rows] {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+  .td-fields[data-rows] .td-fg {
+    display: contents;
+  }
+  .td-fields[data-rows] .td-to {
+    grid-column: 1;
+    min-width: 14px;
+  }
+  .td-fields[data-rows] .td-field {
+    grid-column: 2;
+    min-width: 0;
+  }
+  .td-fields[data-rows] .td-field[data-time] {
+    grid-column: 3;
+  }
+  /* Assumed AM/PM fills the row. */
+  .td-ampm {
+    flex: 1 1 100%;
+  }
+  .td-ampm span {
+    flex: 1;
+  }
+  .td-ampm button {
+    min-width: 64px;
+  }
   .td-card {
     max-height: var(--td-vvh, 100dvh);
     overflow-y: auto;
@@ -984,5 +1018,15 @@
   }
   .td-body[data-cal="false"] .td-opt[aria-selected="true"] {
     border-color: transparent;
+  }
+}
+
+/* Touch phone with the soft keyboard up: fold the calendar and time list away, so the search field and the
+   result fields stay in the space above the keyboard. They come back when the input loses focus. */
+@media (max-width: 520px) and (pointer: coarse) {
+  .td-root[data-typing] .td-body .td-panel {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    border-top-color: transparent;
   }
 }

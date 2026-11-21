@@ -107,8 +107,12 @@ export const monthNames = (months: number[]) => months.map((m) => MONTH[m - 1]).
 export function describeRecurrence(r: ResolvedRecurrence): string {
   const unit = { d: "day", w: "week", m: "month", y: "year" }[r.freq];
   let s = r.interval > 1 ? `Every ${r.interval} ${unit}s` : `Every ${unit}`;
+  // Named day sets read shorter: "Every weekday" instead of "Every day on Mon, Tue, Wed, Thu, Fri".
+  const set = !r.dayTimes?.length && r.days?.length && r.interval === 1 && (r.freq === "d" || r.freq === "w") ? [...r.days].sort().join() : "";
+  const named = ({ "fr,mo,th,tu,we": "Every weekday", "sa,su": "Every weekend", "fr,mo,sa,su,th,tu,we": "Every day" } as Record<string, string>)[set];
+  if (named) s = named;
   // a time per weekday: "on Tue at 1:30 PM, Thu at 3:00 PM"
-  if (r.dayTimes?.length) {
+  else if (r.dayTimes?.length) {
     s += ` on ${r.dayTimes.map((d) => `${WD_LABEL[d.wd]} at ${d.end ? fmtSpan(d.start, d.end) : fmtTime(d.start)}`).join(", ")}`;
   } else if (r.days?.length) s += ` on ${r.days.map((d) => WD_LABEL[d]).join(", ")}`;
   if (r.monthDays?.length)
