@@ -1,9 +1,11 @@
 import h11 from "@type-date/baselines/h11";
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
 import { TypeDatePicker, summarize } from "../src";
 import "../src/styles.css";
 import "./demo.css";
+import { DEFAULT_THEME, THEMES, findTheme, themeVars } from "./themes";
 
 function localToday(): string {
   const n = new Date();
@@ -38,10 +40,11 @@ const TODAY = /^\d{4}-\d{2}-\d{2}$/.test(q.get("today") ?? "") ? (q.get("today")
 
 const STORE_KEY = "type-date-demo:v2";
 interface Prefs {
-  theme: "light" | "dark";
+  /** A theme id from themes.ts. */
+  theme: string;
   weekStart: 0 | 1;
 }
-const DEFAULTS: Prefs = { theme: "light", weekStart: 0 };
+const DEFAULTS: Prefs = { theme: DEFAULT_THEME, weekStart: 0 };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};
@@ -51,11 +54,12 @@ function loadPrefs(): Prefs {
     // storage blocked or corrupt: use defaults
   }
   const base: Prefs = {
-    theme: saved.theme === "dark" ? "dark" : "light",
+    theme: findTheme(saved.theme)?.id ?? DEFAULT_THEME,
     weekStart: saved.weekStart === 1 ? 1 : 0,
   };
   // URL parameters win over saved preferences (used by screenshot scripts and shared links)
-  if (q.get("theme")) base.theme = q.get("theme") === "dark" ? "dark" : "light";
+  const urlTheme = findTheme(q.get("theme"));
+  if (urlTheme) base.theme = urlTheme.id;
   if (q.get("ws")) base.weekStart = q.get("ws") === "1" ? 1 : 0;
   return base;
 }
@@ -120,15 +124,27 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
         </div>
         <div className="demo-field">
           <span className="demo-label">Theme</span>
-          <Segmented
-            label="Theme"
-            value={prefs.theme}
-            options={[
-              { value: "light", label: "Light" },
-              { value: "dark", label: "Dark" },
-            ]}
-            onChange={(theme) => set({ theme })}
-          />
+          <div className="demo-themes" role="radiogroup" aria-label="Theme">
+            {THEMES.map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                role="radio"
+                aria-checked={t.id === prefs.theme}
+                className="demo-theme"
+                style={themeVars(t) as CSSProperties}
+                onClick={() => set({ theme: t.id })}
+              >
+                <span className="demo-theme-swatch">
+                  <span className="demo-theme-card">
+                    <i />
+                    <b />
+                  </span>
+                </span>
+                {t.name}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="demo-field">
           <span className="demo-label">Week starts on</span>
@@ -155,7 +171,8 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
 
 function App() {
   const [prefs, setPrefs] = useState<Prefs>(loadPrefs);
-  const { theme, weekStart } = prefs;
+  const { weekStart } = prefs;
+  const theme = findTheme(prefs.theme) ?? THEMES[0]!;
   const set = (p: Partial<Prefs>) => setPrefs((cur) => ({ ...cur, ...p }));
   useEffect(() => savePrefs(prefs), [prefs]);
   const [confirmed, setConfirmed] = useState<string | null>(null);
@@ -167,7 +184,7 @@ function App() {
   }, []);
 
   return (
-    <main className="demo" data-theme={theme}>
+    <main className="demo" data-theme={theme.mode} style={themeVars(theme) as CSSProperties}>
       <Settings prefs={prefs} set={set} reset={() => setPrefs(DEFAULTS)} />
       <div className="demo-layout">
         <div className="demo-stage">
@@ -175,7 +192,7 @@ function App() {
         <TypeDatePicker
           key={text}
           parse={parse}
-          theme={theme}
+          theme={theme.mode}
           weekStart={weekStart}
           today={TODAY}
           autoFocus

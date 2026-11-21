@@ -4,32 +4,44 @@ body {
 }
 .demo {
   position: relative;
-  --d-bg: #fff;
-  --d-fg: #171717;
-  --d-fg2: #737373;
-  --d-line: #e5e5e5;
-  --d-hover: #f5f5f4;
-  --d-sel: #171717;
-  --d-on-sel: #fff;
+  /* Theme inputs (--t-*) are set inline from themes.ts. Everything else is derived from them. */
+  --t-page: #f5f4f0;
+  --t-card: #fff;
+  --t-fg: #171717;
+  --t-accent: #4f46e5;
+  --t-on-accent: #fff;
+  --d-bg: var(--t-card);
+  --d-fg: var(--t-fg);
+  --d-fg2: color-mix(in srgb, var(--t-fg) 62%, var(--t-card));
+  --d-line: color-mix(in srgb, var(--t-fg) 16%, var(--t-card));
+  --d-hover: color-mix(in srgb, var(--t-fg) 7%, var(--t-card));
+  --d-sel: var(--t-fg);
+  --d-on-sel: var(--t-card);
   min-height: 100vh;
   padding: 32px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background: #f5f4f0;
-  color: #171717;
+  background: var(--t-page);
+  color: color-mix(in srgb, var(--t-fg) 85%, var(--t-page));
 }
-.demo[data-theme="dark"] {
-  --d-bg: #1c1c1c;
-  --d-fg: #f5f5f5;
-  --d-fg2: #a3a3a3;
-  --d-line: #3a3a3a;
-  --d-hover: #262626;
-  --d-sel: #f5f5f5;
-  --d-on-sel: #171717;
-  background: #141413;
-  color: #d4d4d4;
+/* Picker tokens, derived from the theme. These override the defaults in src/styles.css. */
+.demo .td-root {
+  --td-bg: var(--t-card);
+  --td-bg-2: color-mix(in srgb, var(--t-fg) 3%, var(--t-card));
+  --td-fg: var(--t-fg);
+  --td-fg-2: color-mix(in srgb, var(--t-fg) 62%, var(--t-card));
+  --td-fg-3: color-mix(in srgb, var(--t-fg) 36%, var(--t-card));
+  --td-border: color-mix(in srgb, var(--t-fg) 14%, var(--t-card));
+  --td-dotted: color-mix(in srgb, var(--t-fg) 20%, var(--t-card));
+  --td-hover: color-mix(in srgb, var(--t-fg) 6%, var(--t-card));
+  --td-sel: color-mix(in srgb, var(--t-fg) 12%, var(--t-card));
+  --td-accent: var(--t-accent);
+  --td-on-accent: var(--t-on-accent);
+  --td-range: color-mix(in srgb, var(--t-accent) 15%, transparent);
+  --td-today-ring: var(--t-fg);
+  --td-ring: color-mix(in srgb, var(--t-accent) 22%, transparent);
 }
 .demo-layout {
   width: 100%;
@@ -75,10 +87,7 @@ body {
 }
 .demo-try-head svg {
   flex: none;
-  color: #4f46e5;
-}
-.demo[data-theme="dark"] .demo-try-head svg {
-  color: #c9a45c;
+  color: var(--t-accent);
 }
 .demo-try-head h2 {
   margin: 0;
@@ -296,4 +305,69 @@ body {
   .demo {
     padding-top: 68px;
   }
+}
+
+.demo-themes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.demo-theme {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--d-fg2);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: center;
+}
+.demo-theme-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--d-line);
+  background: var(--t-page);
+}
+.demo-theme-card {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--t-card);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--t-fg) 14%, var(--t-card));
+}
+.demo-theme-card i {
+  display: block;
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--t-fg);
+  opacity: 0.5;
+}
+.demo-theme-card b {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--t-accent);
+}
+.demo-theme[aria-checked="true"] {
+  color: var(--d-fg);
+  font-weight: 500;
+}
+.demo-theme[aria-checked="true"] .demo-theme-swatch {
+  border-color: var(--d-fg);
+  box-shadow: 0 0 0 1px var(--d-fg);
+}
+.demo-theme:focus-visible .demo-theme-swatch {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
 }
