@@ -660,3 +660,34 @@ describe("a time per weekday", () => {
     ]);
   });
 });
+
+describe("time zones", () => {
+  it("shows the zone and the time in the user's zone when they differ", async () => {
+    const { type } = setup(table({ a: "t 15:00 @America/New_York" }), { zone: "America/Los_Angeles" });
+    type("a");
+    await waitFor(() => expect(document.querySelector("[data-zone]")?.textContent).toBe("EDT"));
+    expect(Array.from(document.querySelectorAll("[data-zone]")).map((e) => e.textContent)).toEqual(["EDT", "12:00 PM your time"]);
+  });
+
+  it("shows only the zone name when the zone is the user's", async () => {
+    const { type } = setup(table({ a: "t 15:00 @America/New_York" }), { zone: "America/New_York" });
+    type("a");
+    await waitFor(() => expect(document.querySelector("[data-zone]")).toBeTruthy());
+    expect(document.querySelectorAll("[data-zone]").length).toBe(1);
+  });
+
+  it("names a fixed offset and converts it, marking a change of day", async () => {
+    const { type } = setup(table({ a: "t 17:00 @+05:30", b: "t 23:00 @America/Los_Angeles" }), { zone: "America/New_York" });
+    type("a");
+    await waitFor(() => expect(Array.from(document.querySelectorAll("[data-zone]")).map((e) => e.textContent)).toEqual(["UTC+5:30", "7:30 AM your time"]));
+    type("b");
+    await waitFor(() => expect(Array.from(document.querySelectorAll("[data-zone]")).map((e) => e.textContent).join("|")).toContain("(+1 day) your time"));
+  });
+
+  it("shows no zone chip when the text names none", async () => {
+    const { type } = setup(table({ a: "t 15:00" }), { zone: "America/New_York" });
+    type("a");
+    await waitFor(() => expect(screen.getAllByText("3:00 PM").length).toBeGreaterThan(0));
+    expect(document.querySelector("[data-zone]")).toBeNull();
+  });
+});

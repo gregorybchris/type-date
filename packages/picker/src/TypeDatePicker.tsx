@@ -5,7 +5,7 @@ import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
 import type { DateFormat, TimeFormat } from "./dates";
-import { WD_LABEL, describeRecurrence, fmtDate, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
+import { WD_LABEL, describeRecurrence, fmtDate, inUserZone, zoneLabel, zoneOffsetMin, zonedInstant, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
 import { extendList, flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
@@ -28,6 +28,10 @@ export interface TypeDatePickerProps {
   /** YYYY-MM-DD. Defaults to the local date. */
   today?: string;
   weekStart?: 0 | 1;
+  /** The user's IANA time zone, for example `America/New_York`. Defaults to the browser's. The built-in parser uses it, with `locale`, to pick among ambiguous zone abbreviations (IST, CST, BST), and the picker uses it to show a time typed in another zone in the user's time. */
+  zone?: string;
+  /** The user's locale, for example `en-IN`. Defaults to the browser's. */
+  locale?: string;
   /** "12h" (3:30 PM) or "24h" (15:30). Default "12h". */
   timeFormat?: TimeFormat;
   /** "mdy" (Oct 2, 2027), "dmy" (2 Oct 2027) or "iso" (2027-10-02). Default "mdy". */
@@ -69,6 +73,15 @@ function Field(props: { icon?: boolean; active?: boolean; onClick: () => void; c
   );
 }
 
+/** The browser's IANA zone, or undefined where it is hidden (some privacy modes report none). */
+function browserZone(): string | undefined {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 /** "Mar 1", or "Mar 1, 2027" when the year is not the current one. */
 const fmtBound = (d: string, today: string) => (d.slice(0, 4) === today.slice(0, 4) ? fmtShort(d) : fmtDate(d));
 
@@ -85,7 +98,12 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   setFormats(props.timeFormat ?? "12h", props.dateFormat ?? "mdy");
   const today = useMemo(() => props.today ?? localToday(), [props.today]);
   const customParse = props.parse;
-  const parse = useMemo(() => customParse ?? ((t: string) => builtInParse(t, today)), [customParse, today]);
+  const userZone = props.zone ?? browserZone();
+  const userLocale = props.locale ?? (typeof navigator !== "undefined" ? navigator.language : undefined);
+  const parse = useMemo(
+    () => customParse ?? ((t: string) => builtInParse(t, today, { zone: userZone, locale: userLocale })),
+    [customParse, today, userZone, userLocale],
+  );
   const [text, setText] = useState(props.defaultText ?? "");
   const [result, setResult] = useState<Resolved | null>(value ?? null);
   const [pending, setPending] = useState(false);
@@ -407,6 +425,19 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       : result?.durationMin
         ? `${fmtDuration(result.durationMin)}${result.endNextDay ? ", ends next day" : ""}`
         : null;
+  // a time zone named in the text: its short name, and the time in the user's zone when that differs
+  const zoneChips: string[] = [];
+  if (result?.zone) {
+    const when = result.start?.date ?? rec?.dtstart ?? result.dates?.[0] ?? today;
+    zoneChips.push(zoneLabel(result.zone, when));
+    if (userZone && startTime && result.zone !== userZone) {
+      const inst = zonedInstant(when, startTime, result.zone);
+      const a = inst && zoneOffsetMin(result.zone, inst);
+      const b = inst && zoneOffsetMin(userZone, inst);
+      const c = a !== b ? inUserZone(when, startTime, result.zone, userZone) : null;
+      if (c) zoneChips.push(`${fmtTime(c.time)}${c.date > when ? " (+1 day)" : c.date < when ? " (-1 day)" : ""} your time`);
+    }
+  }
   const bound = rec?.from && rec.until ? `${fmtBound(rec.from, today)} - ${fmtBound(rec.until, today)}` : null;
 
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
@@ -522,11 +553,14 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
         </div>
       </div>
 
-      <Collapse open={(!!rec && (!!props.showRule || !!rec.months || !!bound)) || !!chip || (!!result?.ambiguous && showTime) || muted || !!anchor}>
+      <Collapse open={(!!rec && (!!props.showRule || !!rec.months || !!bound)) || !!chip || zoneChips.length > 0 || (!!result?.ambiguous && showTime) || muted || !!anchor}>
         <div className="td-extras">
           {muted && <span className="td-note">No date found. Showing the last result.</span>}
           {anchor && !muted && <span className="td-note">Tap an end date</span>}
           {chip && <span className="td-chip">{chip}</span>}
+          {zoneChips.map((z) => (
+            <span key={z} className="td-chip" data-zone>{z}</span>
+          ))}
           {rec && (props.showRule || rec.months || bound) && (
             <div className="td-rec">
               {props.showRule && (

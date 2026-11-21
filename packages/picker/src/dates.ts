@@ -123,3 +123,64 @@ export function describeRecurrence(r: ResolvedRecurrence): string {
   if (r.until) s += ` until ${fmtDate(r.until)}`;
   return s;
 }
+
+
+// ---- time zones ----
+
+/** Minutes east of UTC for a zone at an instant, or null for a name the browser does not know. */
+export function zoneOffsetMin(zone: string, at: Date): number | null {
+  const m = zone.match(/^([+-])(\d{2}):(\d{2})$/);
+  if (m) return (m[1] === "-" ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3]));
+  if (zone === "UTC") return 0;
+  try {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: zone, hourCycle: "h23", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric",
+    }).formatToParts(at);
+    const v = (t: string) => Number(parts.find((p) => p.type === t)!.value);
+    return Math.round((Date.UTC(v("year"), v("month") - 1, v("day"), v("hour"), v("minute"), v("second")) - Math.floor(at.getTime() / 1000) * 1000) / 60000);
+  } catch {
+    return null;
+  }
+}
+
+/** The instant of a wall-clock date and time in a zone. */
+export function zonedInstant(date: string, time: string, zone: string): Date | null {
+  const [y, mo, d] = parts(date);
+  const [h, mi] = time.split(":").map(Number);
+  const guess = Date.UTC(y, mo - 1, d, h, mi);
+  const off = zoneOffsetMin(zone, new Date(guess));
+  if (off === null) return null;
+  let inst = guess - off * 60000;
+  const off2 = zoneOffsetMin(zone, new Date(inst));
+  if (off2 !== null && off2 !== off) inst = guess - off2 * 60000; // across a daylight saving change
+  return new Date(inst);
+}
+
+/** A wall-clock date and time in `zone`, shown in `userZone`. Null when either zone is unknown. */
+export function inUserZone(date: string, time: string, zone: string, userZone: string): { date: string; time: string } | null {
+  const inst = zonedInstant(date, time, zone);
+  const off = inst && zoneOffsetMin(userZone, inst);
+  if (!inst || off === null || off === undefined) return null;
+  const local = new Date(inst.getTime() + off * 60000);
+  const p2n = (n: number) => String(n).padStart(2, "0");
+  return {
+    date: `${local.getUTCFullYear()}-${p2n(local.getUTCMonth() + 1)}-${p2n(local.getUTCDate())}`,
+    time: `${p2n(local.getUTCHours())}:${p2n(local.getUTCMinutes())}`,
+  };
+}
+
+/** A short label for a zone: "PST", "UTC", "UTC+5:30", or the city for names without an abbreviation. */
+export function zoneLabel(zone: string, date?: string): string {
+  const m = zone.match(/^([+-])(\d{2}):(\d{2})$/);
+  if (m) return `UTC${m[1]}${Number(m[2])}${m[3] === "00" ? "" : ":" + m[3]}`;
+  if (zone === "UTC") return "UTC";
+  try {
+    const at = date ? new Date(`${date}T12:00:00Z`) : new Date();
+    const name = new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "short" }).formatToParts(at).find((p) => p.type === "timeZoneName")?.value;
+    if (name && !name.startsWith("GMT")) return name;
+    if (name) return name.replace("GMT", "UTC");
+  } catch {
+    /* unknown zone */
+  }
+  return zone.split("/").pop()!.replace(/_/g, " ");
+}
