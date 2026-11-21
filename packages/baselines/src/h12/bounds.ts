@@ -4,7 +4,7 @@
 
 import { canonRec, isStartTok, type P } from "./common";
 
-const START = "starting|starts?|beginning|begins?|commencing|commences?|from";
+const START = "starting|startin|staring|starts?|beginning|begining|beginin|beginnin|begins?|commencing|commences?|from";
 const END = "until|untill|uptil|till|til|through|thru|ending|ends?|up to|to";
 const CUE = new RegExp(`\\b(${START}|${END})\\b`, "g");
 const isStart = (c: string) => new RegExp(`^(?:${START})$`).test(c);
@@ -32,11 +32,11 @@ function operand(text: string, p: P, side: "first" | "last"): string | null {
     const m = d.match(/^d ((?:M|W|Y|Q)[+@-]\S+)$/);
     return m ? m[1]! : null;
   }
-  const d = p(t);
-  let m = d.match(/^d (\S+)$/);
-  if (m && !m[1]!.includes(",") && !m[1]!.startsWith("R")) return m[1]!;
-  m = d.match(/^d (\d{4}-\d\d-\d\d)>(\d{4}-\d\d-\d\d)$/);
+  const d = p(ordinalWords(t));
+  let m = d.match(/^d (\d{4}-\d\d-\d\d)>(\d{4}-\d\d-\d\d)$/);
   if (m) return side === "first" ? m[1]! : m[2]!;
+  m = d.match(/^d (\S+)$/);
+  if (m && !m[1]!.includes(",") && !m[1]!.includes(">") && !m[1]!.startsWith("R")) return m[1]!;
   m = d.match(/^dt (\S+) \S+$/); // "june 3rd at 3pm": the date part
   if (m && /^[\dA-Za-z+@-]/.test(m[1]!) && !m[1]!.includes(":")) return m[1]!;
   return null;
@@ -44,6 +44,9 @@ function operand(text: string, p: P, side: "first" | "last"): string | null {
 
 const MONTHS: Record<string, string> = { jan: "01", january: "01", feb: "02", february: "02", mar: "03", march: "03", apr: "04", april: "04", may: "05", jun: "06", june: "06", jul: "07", july: "07", aug: "08", august: "08", sep: "09", sept: "09", september: "09", oct: "10", october: "10", nov: "11", november: "11", dec: "12", december: "12" };
 const tokens = (dsl: string) => dsl.split(" ");
+const ORDW: Record<string, string> = { first: "1st", second: "2nd", third: "3rd", fourth: "4th", fifth: "5th", sixth: "6th", seventh: "7th", eighth: "8th", ninth: "9th", tenth: "10th", fifteenth: "15th", twentieth: "20th", thirtieth: "30th" };
+/** "the first of june" -> "the 1st of june" */
+const ordinalWords = (t: string) => t.replace(/\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|fifteenth|twentieth|thirtieth)\b(?=\s+of\b)/, (w) => ORDW[w]!);
 
 /** Compare bound tokens by meaning: `M@05` is the first or last day of May, `Y@2027` the first or last day of 2027. */
 function normBound(tok: string, side: "s" | "u"): string {
@@ -74,7 +77,7 @@ export function withBounds(text: string, p: P): string | null {
     const c = clauses[i]!;
     if (c.cue === "to") continue; // handled as the end of "from X to Y"
     // "mon thru fri": a weekday range, not an until bound
-    if (/\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s*$/.test(text.slice(0, c.from)) && /^\s*(?:mon|tue|wed|thu|fri|sat|sun)/.test(c.op) && /^(?:thru|through|till|until|to)$/.test(c.cue)) return null;
+    if (/\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s*$/.test(text.slice(0, c.from)) && /^\s*(?:mon|tue|wed|thu|fri|sat|sun)/.test(c.op) && /^(?:thru|through|till|until|to)$/.test(c.cue) && !(i > 0 && isStart(clauses[i - 1]!.cue))) return null;
     const nxt = clauses[i + 1];
     const range = isStart(c.cue) && nxt?.cue === "to";
     // an operand may end before "at <time>", "every ...", or "on <weekday>" words that belong to the skeleton
@@ -142,4 +145,12 @@ export function withBounds(text: string, p: P): string | null {
     if (same(bu, uTok, "u") && same(bs, startTok, "s")) return base;
   }
   return canonRec(keep.join(" "));
+}
+
+/** "starting in june" alone is the date, not an open range. */
+export function bareStart(text: string, p: P): string | null {
+  const m = text.match(/^(?:starting|startin|staring|beginning|begining|beginin|beginnin|commencing)\s+(.+)$/);
+  if (!m) return null;
+  const tok = operand(m[1]!, p, "first");
+  return tok ? `d ${tok}` : null;
 }

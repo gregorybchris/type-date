@@ -47,6 +47,20 @@ describe("selected-day blocks", () => {
   });
 });
 
+describe("inside corners", () => {
+  it("adds a filler at the inside corner of each block, on the tile opposite the missing one", async () => {
+    // Monday start. Sep 23 has Sep 24 to its right and Sep 30 below, but Oct 1 (faded) diagonal, so it owns the
+    // solid block's inside corner. The faded block has the mirror corner, owned by Oct 8.
+    const { type } = setup(table({ a: "d R d/1 mo,tu,we,th,fr" }), { weekStart: 1 });
+    type("a");
+    await waitFor(() => expect(document.querySelector('[aria-selected="true"]')).toBeTruthy());
+    const found = Array.from(document.querySelectorAll(".td-fillet")).map(
+      (f) => `${f.parentElement!.querySelector("button")!.getAttribute("data-date")} ${f.getAttribute("data-at")}`,
+    );
+    expect(found.sort()).toEqual(["2026-09-23 br", "2026-10-08 tl"]);
+  });
+});
+
 describe("escape", () => {
   it("returns to today's month when the picker is already empty", () => {
     const { input } = setup(table({}));

@@ -51,11 +51,18 @@ export function dayTimes(text: string, p0: P, p: P): string | null {
   const post = text.slice(run.end);
   const plural = run.groups.some((g) => g.plural);
   if (!plural && !RECURRENCE_CUE.test(text) && !BOUND_CUE.test(text)) return null;
-  const times: string[] = [];
+  let times: string[] = [];
   for (const g of run.groups) {
-    const t = p0(`every ${FULL[g.wds[0]!]} at ${g.time}`).match(/^dt R w\/1 \w\w (\S+)$/);
+    // four-digit military times are 24h: "1100-1200"
+    const mil = /\b(?:[01]\d|2[0-3])[0-5]\d\b/.test(g.time);
+    const phrase = g.time.replace(/\b([01]\d|2[0-3])([0-5]\d)\b/g, "$1:$2");
+    const t = p0(`every ${FULL[g.wds[0]!]} at ${phrase}`).match(/^dt R w\/1 \w\w (\S+)$/);
     if (!t) return null;
-    times.push(t[1]!);
+    times.push(mil ? t[1]!.replace(/\?/g, "") : t[1]!);
+  }
+  // one 24h time ("14:00") makes the others 24h ("8:00-9:30" is 08:00>09:30)
+  if (times.some((t) => /(?:^|>)(?:1[3-9]|2[0-3]):/.test(t))) {
+    times = times.map((t) => t.replace(/(\d{1,2})(?::(\d\d))?\?/g, (_, h: string, m?: string) => `${h.padStart(2, "0")}:${m ?? "00"}`));
   }
   const days = [...all].sort(byWeekday);
   const names = days.map((d) => FULL[d]).join(" and ");
@@ -78,14 +85,19 @@ export function dayTimes(text: string, p0: P, p: P): string | null {
 }
 
 const REG_CODE: Record<string, string> = { M: "mo", T: "tu", W: "we", R: "th", F: "fr", S: "sa", U: "su" };
+const CODE_RE = /(?<![A-Za-z])((?:[MTWRFSU][\s,/.-]*){2,7})(?![A-Za-z])/;
 
-/** Registrar weekday codes with a clock time: "MW 10:50 AM 12:10 PM", "TR 8 - 9:15 am", "8:00am 9:25am [ TR ]". Needs the original case. */
+/** Registrar weekday codes: "MW 10:50 AM 12:10 PM", "TR 8 - 9:15 am", "M-W-F 3pm weekly", "8:00am 9:25am [ TR ]". Needs the original case.
+ *  A code with no time and no recurrence cue is a list of weekdays ("MTWF", "T, R"). */
 export function registrar(orig: string, p0: P): string | null {
-  const m = orig.match(/(?<![A-Za-z])([MTWRFSU]{2,7})(?![A-Za-z])/);
+  const m = orig.match(CODE_RE);
   if (!m || /\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b/i.test(orig)) return null;
-  const letters = [...m[1]!];
-  // codes list days in week order (MWF, TR, MTWRF); "TMRW" is a word
-  if (letters.some((l, i) => i && "MTWRFSU".indexOf(l) <= "MTWRFSU".indexOf(letters[i - 1]!))) return null;
+  const letters = [...m[1]!.replace(/[^MTWRFSU]/g, "")];
+  const seps = m[1]!.replace(/[MTWRFSU]/g, "");
+  // codes list days in week order (MWF, TR, MTWRF); "TMRW" is a word. "M-F" is a range, "T R" is too loose.
+  if (letters.length < 2 || letters.some((l, i) => i && "MTWRFSU".indexOf(l) <= "MTWRFSU".indexOf(letters[i - 1]!))) return null;
+  if (/-/.test(seps) && letters.length < 3) return null;
+  if (/^\s+$/.test(seps.replace(/[^\s]/g, "")) && !/[,/.-]/.test(seps) && letters.length < 3) return null;
   const days = letters.map((l) => REG_CODE[l]!).sort(byWeekday);
   let rest = (orig.slice(0, m.index!) + " " + orig.slice(m.index! + m[0].length)).toLowerCase();
   const wk = rest.match(/\bfor (?:the next )?(\d+) (?:weeks?|wks?)\b/);
@@ -94,7 +106,8 @@ export function registrar(orig: string, p0: P): string | null {
   rest = rest.replace(/\s+/g, " ").trim();
   const t = p0(rest);
   const tm = t.match(/^t (\S+)$/) ?? t.match(/^dt R \S+ \w\w(?:,\w\w)* (\S+)$/);
-  if (!tm) return null;
   const nd = days.join(",");
-  return `dt R w/1 ${nd}${wk ? ` n${+wk[1]! * days.length}` : ""} ${tm[1]}`;
+  if (tm) return `dt R w/1 ${nd}${wk ? ` n${+wk[1]! * days.length}` : ""} ${tm[1]}`;
+  if (RECURRENCE_CUE.test(rest)) return `d R w/1 ${nd}`;
+  return days.length > 1 && rest.replace(/[^a-z]/g, "") === "" ? `d ${nd}` : null;
 }

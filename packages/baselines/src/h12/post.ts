@@ -19,8 +19,18 @@ function weekdayRange(t: string): string {
   return t.replace(m[0], list);
 }
 
+const MON: Record<string, number> = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const MON_RE = "(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\\.?";
+const monthList = (src: string) => [...new Set([...src.matchAll(new RegExp(MON_RE, "g"))].map((m) => MON[m[0].slice(0, 3)]!))];
+
 export function rewrite(t: string): string {
-  let s = t.replace(/\bbi[ -]weekly\b/g, "biweekly");
+  let s = t.replace(/\bbi[ -]weekly\b/g, "biweekly").replace(/_/g, "");
+  s = s.replace(/\bwk\s?day(s?)\b/g, "weekday$1").replace(/\bwk\s?end(s?)\b/g, "weekend$1");
+  s = s.replace(new RegExp(`\\bever(?=\\s+${WD_SRC})`, "g"), "every").replace(/\b(each|every|per|a) mo\b\.?/g, "$1 month");
+  // military time after "at": "at 1930" -> "at 19:30"
+  s = s.replace(/\bat\s+([01]\d|2[0-3])([0-5]\d)\b(?!\s*(?:am|pm))/g, "at $1:$2");
+  // "every tuesday and every thursday": one recurrence
+  for (let i = 0; i < 3; i++) s = s.replace(new RegExp(`\\bevery\\s+(${WD_SRC}s?|weekends?)(\\s*(?:,|and|n|&)\\s*)every\\s+(?=${WD_SRC}|weekend)`), "every $1 and ");
   // "twice a week mon and thu": the weekdays say which days
   if (new RegExp(`\\b(?:twice|two times|2x|2 times)\\s+(?:a|per|each)\\s+week\\b.*\\b${WD_SRC}`).test(s)) s = s.replace(/\b(?:twice|two times|2x|2 times)\s+(?:a|per|each)\s+week\b/, "every");
   s = weekdayRange(s);
@@ -45,6 +55,19 @@ export function fixOut(out: string, text: string): string {
     const days = [...new Set(weekdays.map((w) => code(w[1]!)))].sort(byWeekday);
     const t = o.match(/^t (\S+)$/);
     o = t ? `dt R w/1 ${days.join(",")} ${t[1]}` : o === "x" && /\b(?:weekly|each week|every week)\b/.test(text) ? `d R w/1 ${days.join(",")}` : o;
+  }
+  // month filters: "except june, july and august", "(january, march, may)", "every even month"
+  const ex = text.match(new RegExp(`\\bexcept\\s+(?:in\\s+)?((?:${MON_RE}[\\s,&]*(?:and\\s+)?)+)`));
+  const pr = text.match(new RegExp(`\\(((?:${MON_RE}[\\s,]*(?:and\\s+)?){2,})\\)`));
+  const eo = text.match(/\bevery\s+(even|odd)\s+month\b/);
+  let keep: number[] | null = null;
+  if (ex) keep = Array.from({ length: 12 }, (_, i) => i + 1).filter((m) => !monthList(ex[1]!).includes(m));
+  else if (pr) keep = monthList(pr[1]!);
+  else if (eo) keep = Array.from({ length: 12 }, (_, i) => i + 1).filter((m) => (m % 2 === 0) === (eo[1] === "even"));
+  if (keep && keep.length && /^(?:d|dt) R /.test(o) && !/\bM@\d/.test(o)) {
+    const tk = o.split(" ");
+    tk.splice(4, 0, [...keep].sort((a, b) => a - b).map((m) => `M@${String(m).padStart(2, "0")}`).join(","));
+    o = tk.join(" ");
   }
   // "for 6 months" over two nth weekdays is 12 occurrences
   const mo = text.match(/\bfor (?:the next )?(\d+) months?\b/);

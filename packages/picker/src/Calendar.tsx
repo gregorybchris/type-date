@@ -134,6 +134,26 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                   below
                     ? [c > 0 && apart(below, days[i + 6]) ? "l" : "", c < 6 && apart(below, days[i + 8]) ? "r" : ""].join("") || undefined
                     : undefined;
+                // Inside corners. A tile whose right and lower neighbors are both joined, but whose diagonal neighbor is
+                // not, sits at the inside corner of an L. A filler there rounds the corner (see .td-fillet). Only the
+                // tile opposite the missing one qualifies, so each inside corner is drawn once.
+                const fillets = plain(d)
+                  ? ([
+                      ["tl", -1, -1, 0, 0],
+                      ["tr", 1, -1, 0, 6],
+                      ["bl", -1, 1, 0, 0],
+                      ["br", 1, 1, 6, 6],
+                    ] as const)
+                      .filter(([, dx, dy]) => {
+                        const nc = c + dx;
+                        const nr = r + dy;
+                        if (nc < 0 || nc > 6 || nr < 0 || nr > 5) return false;
+                        return (
+                          joined(d, days[i + dx]) && joined(d, days[i + dy * 7]) && !joined(d, days[i + dy * 7 + dx])
+                        );
+                      })
+                      .map(([k]) => k)
+                  : [];
                 return (
                   <div
                     role="gridcell"
@@ -159,6 +179,9 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                     >
                       {Number(d.slice(8))}
                     </button>
+                    {fillets.map((k) => (
+                      <i key={k} className="td-fillet" data-at={k} aria-hidden="true" />
+                    ))}
                   </div>
                 );
               })}

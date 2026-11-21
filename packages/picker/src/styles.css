@@ -468,6 +468,39 @@
 .td-cell[data-gap*="r"] {
   --td-gap-r: 1px;
 }
+/* Inside-corner filler. At the inside corner of an L-shaped block, a 10px square sits in the empty quadrant and is cut by
+   a circle of radius 10px, which leaves a concave curve. 10px = the 8px corner radius of a tile in the next block plus
+   the 2px gutter, so the gutter keeps one width around the corner. */
+.td-fillet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  --td-fc: var(--td-accent);
+}
+.td-cell[data-out] .td-fillet {
+  opacity: 0.45;
+}
+.td-fillet[data-at="br"] {
+  left: calc(100% - 1px);
+  top: calc(100% - 1px);
+  background: radial-gradient(circle at 100% 100%, transparent 10px, var(--td-fc) 10.5px);
+}
+.td-fillet[data-at="bl"] {
+  left: -9px;
+  top: calc(100% - 1px);
+  background: radial-gradient(circle at 0 100%, transparent 10px, var(--td-fc) 10.5px);
+}
+.td-fillet[data-at="tr"] {
+  left: calc(100% - 1px);
+  top: -9px;
+  background: radial-gradient(circle at 100% 0, transparent 10px, var(--td-fc) 10.5px);
+}
+.td-fillet[data-at="tl"] {
+  left: -9px;
+  top: -9px;
+  background: radial-gradient(circle at 0 0, transparent 10px, var(--td-fc) 10.5px);
+}
 /* selected days outside a range: square the corners that touch a selected neighbor, so a run reads as one block */
 .td-cell[data-join*="l"] button {
   border-top-left-radius: 0;
