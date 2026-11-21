@@ -31,6 +31,8 @@ export interface TypeDatePickerProps {
   placeholder?: string;
   defaultText?: string;
   className?: string;
+  /** Focus the text input on mount. Off by default. */
+  autoFocus?: boolean;
 }
 
 /** Sets inert on collapsed panels. React 18 has no inert prop. */
@@ -353,6 +355,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
           aria-describedby="td-status"
           autoComplete="off"
           spellCheck={false}
+          autoFocus={props.autoFocus}
           onChange={(e) => onText(e.target.value)}
           onKeyDown={onInputKey}
           onFocus={keepVisible}

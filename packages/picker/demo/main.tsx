@@ -178,6 +178,7 @@ function App() {
           theme={theme}
           weekStart={weekStart}
           today={TODAY}
+          autoFocus
           defaultText={text}
           onChange={() => setConfirmed(null)}
           onClear={() => setConfirmed(null)}
