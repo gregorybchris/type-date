@@ -200,9 +200,16 @@ _MER = re.compile(
 )
 _WD_START = re.compile(
     r"^\W*(on\s+)?(mon|tue|tues|wed|thu|thur|thurs|fri|sat|sun)[a-z]*\b"
-    r"(?!.*\b(every|each|weekly|daily|until|till|for|x\d)\b)",
+    r"(?!.*\b(every|each|weekly|daily|until|till|thru|through|for|x\d)\b)",
     re.I,
 )
+# A plural weekday is a recurrence cue (specs/dsl.md), so a text with one is not "on <weekday>"
+# alone (2026-11-21).
+_WD_PLURAL = re.compile(
+    r"\b(?:mon|tues?|wednes|thurs?|fri|satur|sun)days\b|\b(?:mons|weds|fris|sats|suns)\b", re.I
+)
+_MILITARY = re.compile(r"(?<![\d:.])(?:[01]\d|2[0-3])[0-5]\d(?![\d:.]|\s*(?:st|nd|rd|th)\b)")
+_DAY_TIMES = re.compile(r"\b(?:mo|tu|we|th|fr|sa|su)@\d")
 
 
 _MON = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?"
@@ -234,18 +241,22 @@ def policy_flags(row: dict, legacy_v2: bool = True) -> list[str]:
     """Label-policy classes where the text does not determine the label (specs/engines/h2.md)."""
     t, d = row["text"].lower(), row["dsl"]
     flags = []
-    if re.search(r"(\d{2}:\d{2}|\d\?)", d):
+    if re.search(r"(\d{2}:\d{2}|\d\?)", d) and not _DAY_TIMES.search(d):
+        # per-weekday times (`tu@1:30?,th@15:00`) mix known and unknown times;
+        # a meridiem word can belong to another clause
         unknown = "?" in d
         stated = bool(_MER.search(t))
         if unknown and stated:
             flags.append("meridiem")
         elif not unknown and not stated:
             m = re.search(r"(?<!\d)(\d{1,2}):(\d{2})", t)
-            if not m or not (
+            if _MILITARY.search(t):
+                pass  # four-digit military time: known
+            elif not m or not (
                 int(m.group(1)) >= 13 or (len(m.group(1)) == 2 and m.group(1)[0] == "0")
             ):
                 flags.append("meridiem")
-    if d.startswith(("d R", "dt R")) and _WD_START.match(t):
+    if d.startswith(("d R", "dt R")) and _WD_START.match(t) and not _WD_PLURAL.search(t):
         flags.append("on-weekday-recurrence")
     if re.search(r"(?<!\d)\d{1,2}\.\d{2}(?!\d)", row["text"]):
         flags.append("dotted-numeric")

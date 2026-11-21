@@ -1,0 +1,517 @@
+{"id": "w11-0001", "text": "daily except on weekends"}
+{"id": "w11-0002", "text": "tuesdays"}
+{"id": "w11-0003", "text": "weekends"}
+{"id": "w11-0004", "text": "every other weekend"}
+{"id": "w11-0005", "text": "every other week on weekend"}
+{"id": "w11-0006", "text": "every 4 weekends"}
+{"id": "w11-0007", "text": "every 4 weekends except in july and sept"}
+{"id": "w11-0008", "text": "every 4 weeks on weekends"}
+{"id": "w11-0009", "text": "every 4th week on weekends"}
+{"id": "w11-0010", "text": "weekdays"}
+{"id": "w11-0011", "text": "every weekday"}
+{"id": "w11-0012", "text": "tuesdays and thursdays"}
+{"id": "w11-0013", "text": "weekly on wednesdays"}
+{"id": "w11-0014", "text": "weekly on wednesdays and fridays"}
+{"id": "w11-0015", "text": "every sunday and saturday"}
+{"id": "w11-0016", "text": "every wed"}
+{"id": "w11-0017", "text": "every wed."}
+{"id": "w11-0018", "text": "every wednsday"}
+{"id": "w11-0019", "text": "every week on tues"}
+{"id": "w11-0020", "text": "once a week on sunday"}
+{"id": "w11-0021", "text": "every other week on mon"}
+{"id": "w11-0022", "text": "every 3 weeks on mon"}
+{"id": "w11-0023", "text": "every other week on mon and fri"}
+{"id": "w11-0024", "text": "every 3 weeks on mon and fri"}
+{"id": "w11-0025", "text": "every 2nd of the month"}
+{"id": "w11-0026", "text": "every 4th of the month"}
+{"id": "w11-0027", "text": "4th of every month"}
+{"id": "w11-0028", "text": "every month on the 4th"}
+{"id": "w11-0029", "text": "every month on the 4th day"}
+{"id": "w11-0030", "text": "the 4th of every other month"}
+{"id": "w11-0031", "text": "the 4th of every 3 months"}
+{"id": "w11-0032", "text": "every other month on the 4th"}
+{"id": "w11-0033", "text": "every 3 months on the 4th"}
+{"id": "w11-0034", "text": "the 4th of every 3rd month"}
+{"id": "w11-0035", "text": "every 3rd month on the 4th"}
+{"id": "w11-0036", "text": "every 4th and 10th of the month"}
+{"id": "w11-0037", "text": "every 4th and 10th of the month up to 7x"}
+{"id": "w11-0038", "text": "every first friday of the month"}
+{"id": "w11-0039", "text": "monthly on fri"}
+{"id": "w11-0040", "text": "monthly on tue and fri"}
+{"id": "w11-0041", "text": "monthly on the first and last instance of tue and fri"}
+{"id": "w11-0042", "text": "every last friday of the month"}
+{"id": "w11-0043", "text": "2nd to the last friday of each month"}
+{"id": "w11-0044", "text": "2nd and last fri of each month"}
+{"id": "w11-0045", "text": "2nd and 2nd to the last fri of each month"}
+{"id": "w11-0046", "text": "2nd and last fridays of each month"}
+{"id": "w11-0047", "text": "first day of each month"}
+{"id": "w11-0048", "text": "beginning of each month"}
+{"id": "w11-0049", "text": "begin of each month"}
+{"id": "w11-0050", "text": "start of each month"}
+{"id": "w11-0051", "text": "every month on the 1st day"}
+{"id": "w11-0052", "text": "every month at the beginning"}
+{"id": "w11-0053", "text": "every month at the begin"}
+{"id": "w11-0054", "text": "every month at the start"}
+{"id": "w11-0055", "text": "first of each month"}
+{"id": "w11-0056", "text": "last of each month"}
+{"id": "w11-0057", "text": "end of each month"}
+{"id": "w11-0058", "text": "2nd to the last of each month"}
+{"id": "w11-0059", "text": "last day of each month"}
+{"id": "w11-0060", "text": "each month at the end"}
+{"id": "w11-0061", "text": "2nd friday of each month"}
+{"id": "w11-0062", "text": "first friday of every month"}
+{"id": "w11-0063", "text": "first friday of each month"}
+{"id": "w11-0064", "text": "first friday of every other month"}
+{"id": "w11-0065", "text": "first friday of every 3 months"}
+{"id": "w11-0066", "text": "first friday of every 3rd month"}
+{"id": "w11-0067", "text": "first and third friday of each month"}
+{"id": "w11-0068", "text": "yearly on the fourth thursday in november"}
+{"id": "w11-0069", "text": "every year on the fourth thursday in november"}
+{"id": "w11-0070", "text": "every fourth thursday in november"}
+{"id": "w11-0071", "text": "every other year on the fourth thursday in november"}
+{"id": "w11-0072", "text": "every 3 years on the fourth thursday in november"}
+{"id": "w11-0073", "text": "every 3rd year on the fourth thursday in november"}
+{"id": "w11-0074", "text": "every 3 years on Fri in week 12"}
+{"id": "w11-0075", "text": "every Fri in week 12"}
+{"id": "w11-0076", "text": "every Fri in week 12 and 14"}
+{"id": "w11-0077", "text": "starting tomorrow on weekends"}
+{"id": "w11-0078", "text": "every wed until november"}
+{"id": "w11-0079", "text": "every wed until november except in march and may"}
+{"id": "w11-0080", "text": "every wed from november until june except in march and may"}
+{"id": "w11-0081", "text": "every wed from november until june except in december and may"}
+{"id": "w11-0082", "text": "every wed from november until june except in december and mar and may"}
+{"id": "w11-0083", "text": "every wed from november until june except in march %d and may %d"}
+{"id": "w11-0084", "text": "every 4th of the month starting next tuesday"}
+{"id": "w11-0085", "text": "4th of each month starting next tuesday"}
+{"id": "w11-0086", "text": "starting next tuesday on the 4th of each month"}
+{"id": "w11-0087", "text": "every 4th of the month starting next tuesday for 3 occurrences"}
+{"id": "w11-0088", "text": "starting next tuesday the 4th of each month for 3 occurrences"}
+{"id": "w11-0089", "text": "4th of each month starting next tuesday for 3 occurrences"}
+{"id": "w11-0090", "text": "mondays and thursdays from jan 1 to march 25th"}
+{"id": "w11-0091", "text": "mondays and thursdays starting jan 1 for 6 times"}
+{"id": "w11-0092", "text": "at 10 am on 15th of every month"}
+{"id": "w11-0093", "text": "every other saturdays through tuesdays"}
+{"id": "w11-0094", "text": "each week on saturday thru tuesday"}
+{"id": "w11-0095", "text": "each week on tuesday-saturday"}
+{"id": "w11-0096", "text": "each week on tuesday-tue"}
+{"id": "w11-0097", "text": "tuesdays-tue"}
+{"id": "w11-0098", "text": "saturdays through tuesdays"}
+{"id": "w11-0099", "text": "every thursday for the next three weeks"}
+{"id": "w11-0100", "text": "every mon and fri for the next month"}
+{"id": "w11-0101", "text": "every sat for 2 months"}
+{"id": "w11-0102", "text": "every sat for up to 2 months"}
+{"id": "w11-0103", "text": "every other sat for up to 14 months"}
+{"id": "w11-0104", "text": "every other fri for the next year"}
+{"id": "w11-0105", "text": "every 5th fri for the next 3 years"}
+{"id": "w11-0106", "text": "this sunday"}
+{"id": "w11-0107", "text": "thursday, february 18th"}
+{"id": "w11-0108", "text": "2nd fri in feb"}
+{"id": "w11-0109", "text": "last fri in feb"}
+{"id": "w11-0110", "text": "2nd to last fri in feb"}
+{"id": "w11-0111", "text": "2nd fri of feb 2010"}
+{"id": "w11-0112", "text": "1st fri in feb 2011"}
+{"id": "w11-0113", "text": "next tuesday"}
+{"id": "w11-0114", "text": "3rd Thu in Apr at 10 o'clock"}
+{"id": "w11-0115", "text": "on weekdays"}
+{"id": "w11-0116", "text": "every fourth of the month from jan 1 2010 to dec 25th 2020"}
+{"id": "w11-0117", "text": "each thurs until next month"}
+{"id": "w11-0118", "text": "once a year on the fourth thursday in november"}
+{"id": "w11-0119", "text": "tuesdays and thursdays at 3:15"}
+{"id": "w11-0120", "text": "wednesdays at 9 o'clock"}
+{"id": "w11-0121", "text": "fridays at 11am"}
+{"id": "w11-0122", "text": "every monday except for the 2nd monday in March"}
+{"id": "w11-0123", "text": "every monday except each 2nd monday in March"}
+{"id": "w11-0124", "text": "fridays twice"}
+{"id": "w11-0125", "text": "fridays 3x"}
+{"id": "w11-0126", "text": "every other friday for 5 times"}
+{"id": "w11-0127", "text": "every 3 fridays from november until february"}
+{"id": "w11-0128", "text": "fridays starting in may for 10 occurrences"}
+{"id": "w11-0129", "text": "tuesdays for the next six weeks"}
+{"id": "w11-0130", "text": "every Mon-Wed for the next 2 months"}
+{"id": "w11-0131", "text": "every Mon thru Wed for the next year"}
+{"id": "w11-0132", "text": "every other Fri for the next three years"}
+{"id": "w11-0133", "text": "monthly on the first and last instance of wed and fri"}
+{"id": "w11-0134", "text": "every Tue and Fri in week 14"}
+{"id": "w11-0135", "text": "sunday at 2"}
+{"id": "w11-0136", "text": "at 9am on the 2nd fri in feb"}
+{"id": "w11-0137", "text": "2nd fri in feb at 9"}
+{"id": "w11-0138", "text": "2nd fri in feb at 9am"}
+{"id": "w11-0139", "text": "2nd fri in feb at 9 o'clock"}
+{"id": "w11-0140", "text": "1st fri in feb 2011 at 2pm"}
+{"id": "w11-0141", "text": "monthly"}
+{"id": "w11-0142", "text": "once a month"}
+{"id": "w11-0143", "text": "2nd and 4th Thu of Aug"}
+{"id": "w11-0144", "text": "2nd and 4th of Aug"}
+{"id": "w11-0145", "text": "2nd and 4th day of 2010"}
+{"id": "w11-0146", "text": "2nd week day of 2010"}
+{"id": "w11-0147", "text": "2nd week of 2010"}
+{"id": "w11-0148", "text": "2nd week"}
+{"id": "w11-0149", "text": "2nd month"}
+{"id": "w11-0150", "text": "2nd month of 2010"}
+{"id": "w11-0151", "text": "3rd day Aug"}
+{"id": "w11-0152", "text": "4th year month Mar week"}
+{"id": "w11-0153", "text": "2nd year month instance"}
+{"id": "w11-0154", "text": "10:00 on the 15th of every month"}
+{"id": "w11-0155", "text": "10am on the 15th of every month"}
+{"id": "w11-0156", "text": "10 am on the 15th of every month"}
+{"id": "w11-0157", "text": "every tuesday and thurs until next month"}
+{"id": "w11-0158", "text": "Please schedule the meeting for every other tuesday at noon"}
+{"id": "w11-0159", "text": "Set an alarm for next tuesday at 11pm"}
+{"id": "w11-0160", "text": "not a date at all"}
+{"id": "w11-0161", "text": "on the 2nd tuesday and 4rd thursday of every other month"}
+{"id": "w11-0162", "text": "mon-sat every week"}
+{"id": "w11-0163", "text": "every other monday"}
+{"id": "w11-0164", "text": "each tues"}
+{"id": "w11-0165", "text": "1st and 3rd every 2 months"}
+{"id": "w11-0166", "text": "on the 3rd tuesday of every month"}
+{"id": "w11-0167", "text": "mumbo jumbo"}
+{"id": "w11-0168", "text": "3rd of every month"}
+{"id": "w11-0169", "text": "biweekly on sat"}
+{"id": "w11-0170", "text": "each wed"}
+{"id": "w11-0171", "text": "every 2nd tuesday"}
+{"id": "w11-0172", "text": "Every other week on Mon and Wed"}
+{"id": "w11-0173", "text": "every week on fri-mon"}
+{"id": "w11-0174", "text": "every week on fri-sun"}
+{"id": "w11-0175", "text": "every week on thursday"}
+{"id": "w11-0176", "text": "mon-sat weekly"}
+{"id": "w11-0177", "text": "on thursdays"}
+{"id": "w11-0178", "text": "on wednesday every 3 weeks"}
+{"id": "w11-0179", "text": "5th tuesday of every month"}
+{"id": "w11-0180", "text": "bi-monthly on the 9th and 1st"}
+{"id": "w11-0181", "text": "every 3rd tues of every other month"}
+{"id": "w11-0182", "text": "every month on 3rd tuesday and 2nd thursday"}
+{"id": "w11-0183", "text": "every month on the 1st and 3rd"}
+{"id": "w11-0184", "text": "every month on the 9th and 1st"}
+{"id": "w11-0185", "text": "on the 2nd and 3rd tuesday of every month"}
+{"id": "w11-0186", "text": "on the 3rd tuesday and 2nd of every month"}
+{"id": "w11-0187", "text": "mon-wed every week"}
+{"id": "w11-0188", "text": "every saturday at noon"}
+{"id": "w11-0189", "text": "every tuesday and monday at 5pm"}
+{"id": "w11-0190", "text": "every wed or Monday at 5pm and 11"}
+{"id": "w11-0191", "text": "every weekday at five"}
+{"id": "w11-0192", "text": "every wed at 5 pm"}
+{"id": "w11-0193", "text": "every monday at midnight"}
+{"id": "w11-0194", "text": "at 4:30 am on the 1st and 15th of each month, plus every Friday."}
+{"id": "w11-0195", "text": "the 2nd Monday of the month and every Tuesday, at 23:00"}
+{"id": "w11-0196", "text": "every other Sunday at 9am"}
+{"id": "w11-0197", "text": "every fourth monday at noon"}
+{"id": "w11-0198", "text": "Every 2 days on the last and 1st Tuesdays and the 2nd Wednesday"}
+{"id": "w11-0199", "text": "every other week on monday and tuesday"}
+{"id": "w11-0200", "text": "Every friday the 13th that falls in October"}
+{"id": "w11-0201", "text": "Repeat a task every 2nd and 4th saturday"}
+{"id": "w11-0202", "text": "Repeat a task every 1st and 3rd saturday"}
+{"id": "w11-0203", "text": "Repeat a task weekly every tuesday, thursday, and sunday."}
+{"id": "w11-0204", "text": "2nd Saturday"}
+{"id": "w11-0205", "text": "every other saturday"}
+{"id": "w11-0206", "text": "every 2nd and 4th Saturday"}
+{"id": "w11-0207", "text": "every Tuesday, Thursday, Sunday"}
+{"id": "w11-0208", "text": "every 2nd Saturday"}
+{"id": "w11-0209", "text": "every 4th Saturday"}
+{"id": "w11-0210", "text": "Repeat: every 2nd Sunday, Monday, Tuesday, Wednesday, Thursday"}
+{"id": "w11-0211", "text": "every 2nd Sunday"}
+{"id": "w11-0212", "text": "the 2nd monday of the month"}
+{"id": "w11-0213", "text": "The 2nd Monday"}
+{"id": "w11-0214", "text": "2nd Monday"}
+{"id": "w11-0215", "text": "every Monday and Thursday"}
+{"id": "w11-0216", "text": "one for every Mon, one for every Thurs"}
+{"id": "w11-0217", "text": "every Mon, Thur"}
+{"id": "w11-0218", "text": "done on Tuesday for the first three weeks of the month"}
+{"id": "w11-0219", "text": "then on Thursday on the last week of the month"}
+{"id": "w11-0220", "text": "repeats on Mondays and Thursday"}
+{"id": "w11-0221", "text": "every Mon,Thur"}
+{"id": "w11-0222", "text": "a task that occurs twice a week (ideally on tues/thurs)"}
+{"id": "w11-0223", "text": "tues/thurs one week and mon/wed another"}
+{"id": "w11-0224", "text": "Recurring tasks forTuesdays and Thursdays"}
+{"id": "w11-0225", "text": "Every Monday and Friday"}
+{"id": "w11-0226", "text": "Every Mon, Tue, Wed, Thu"}
+{"id": "w11-0227", "text": "Every weekday/workday"}
+{"id": "w11-0228", "text": "Every month on last day"}
+{"id": "w11-0229", "text": "Every month on the second Thursday"}
+{"id": "w11-0230", "text": "Every month on the 8th"}
+{"id": "w11-0231", "text": "every second Sunday"}
+{"id": "w11-0232", "text": "Every month on the last workday"}
+{"id": "w11-0233", "text": "first and third Tuesday of the month"}
+{"id": "w11-0234", "text": "Repeating tasks for 2nd Tuesday of month"}
+{"id": "w11-0235", "text": "Recurring Monthly - selecting a particular day"}
+{"id": "w11-0236", "text": "Repeating task - support for day of week in monthly recurring"}
+{"id": "w11-0237", "text": "every 15th of the month"}
+{"id": "w11-0238", "text": "Every Monday, every 3 months"}
+{"id": "w11-0239", "text": "Grocery shopping at Woodman’s Friday at 5pm"}
+{"id": "w11-0240", "text": "Soccer practice Tuesday at 6"}
+{"id": "w11-0241", "text": "Lunch with Josh at Joe’s Sandwich Shop 1:30 Monday"}
+{"id": "w11-0242", "text": "Piano lessons Mondays and Thursdays at 5-6pm from 1/21 to 5/23"}
+{"id": "w11-0243", "text": "coffee w/ Shawn every Tuesday at 7am"}
+{"id": "w11-0244", "text": "Second and Fourth Thursdays of the month"}
+{"id": "w11-0245", "text": "every Sunday"}
+{"id": "w11-0246", "text": "every month on the last"}
+{"id": "w11-0247", "text": "every week on Sunday"}
+{"id": "w11-0248", "text": "every week on Tuesday, Friday"}
+{"id": "w11-0249", "text": "every 3 weeks on Friday"}
+{"id": "w11-0250", "text": "every month on the last Friday"}
+{"id": "w11-0251", "text": "every month on the 2nd last Friday"}
+{"id": "w11-0252", "text": "every 6 months on the 2nd Wednesday"}
+{"id": "w11-0253", "text": "Every month on the 2nd Sunday"}
+{"id": "w11-0254", "text": "task {{every other Sunday}}"}
+{"id": "w11-0255", "text": "task {{monday}} {{every other Tuesday}}"}
+{"id": "w11-0256", "text": "every last friday"}
+{"id": "w11-0257", "text": "every week on Mon, Thu and Fri"}
+{"id": "w11-0258", "text": "every seventh day of the month"}
+{"id": "w11-0259", "text": "every second week on sunday"}
+{"id": "w11-0260", "text": "Mayor Quimby's payoff due every Monday and Wednesday at 11am"}
+{"id": "w11-0261", "text": "every other Tuesday 3pm starting on 11/7/2010"}
+{"id": "w11-0262", "text": "3rd Thursday of every month 4pm"}
+{"id": "w11-0263", "text": "1st day of month 2pm"}
+{"id": "w11-0264", "text": "4th Thursday of every November"}
+{"id": "w11-0265", "text": "day after 4th Thursday of every November"}
+{"id": "w11-0266", "text": "First and third Friday"}
+{"id": "w11-0267", "text": "first and last Friday"}
+{"id": "w11-0268", "text": "every Thursday of November"}
+{"id": "w11-0269", "text": "every 2 tuesdays"}
+{"id": "w11-0270", "text": "every first monday"}
+{"id": "w11-0271", "text": "every last weekday"}
+{"id": "w11-0272", "text": "every first weekday"}
+{"id": "w11-0273", "text": "every 2nd weekday"}
+{"id": "w11-0274", "text": "every third weekday"}
+{"id": "w11-0275", "text": "every 3rd weekday"}
+{"id": "w11-0276", "text": "every 1st weekday"}
+{"id": "w11-0277", "text": "every 4th weekday"}
+{"id": "w11-0278", "text": "every other tuesday"}
+{"id": "w11-0279", "text": "every 2 weeks on tuesday"}
+{"id": "w11-0280", "text": "every 3rd friday"}
+{"id": "w11-0281", "text": "first and third monday"}
+{"id": "w11-0282", "text": "pay rent on the 1st and 15th of every month"}
+{"id": "w11-0283", "text": "on the 1st and 15th of every month"}
+{"id": "w11-0284", "text": "every 1st and 3rd Monday"}
+{"id": "w11-0285", "text": "task repeats every Tuesday"}
+{"id": "w11-0286", "text": "repeat every two weeks on Thursday"}
+{"id": "w11-0287", "text": "The first Wednesday of every 1 month(s)"}
+{"id": "w11-0288", "text": "The third Wednesday of every 1 month(s)"}
+{"id": "w11-0289", "text": "repeats twice a month on the 1st and 3rd Wednesday of every month"}
+{"id": "w11-0290", "text": "Is there any way to create a task that repeats on the last working day of the month?"}
+{"id": "w11-0291", "text": "Recuring task every X months"}
+{"id": "w11-0292", "text": "How I can set Monday-Friday repeting task?"}
+{"id": "w11-0293", "text": "Repeating Task on First Tuesday of Month"}
+{"id": "w11-0294", "text": "How do I set a recurring monthly date to fist Monday of the month"}
+{"id": "w11-0295", "text": "Butler statement for recurring task on first saturday every 4 months?"}
+{"id": "w11-0296", "text": "every tue"}
+{"id": "w11-0297", "text": "25th of every month"}
+{"id": "w11-0298", "text": "every friday at 12"}
+{"id": "w11-0299", "text": "every other week on monday"}
+{"id": "w11-0300", "text": "3rd Thursday"}
+{"id": "w11-0301", "text": "third thursday"}
+{"id": "w11-0302", "text": "3rd Thursday in this month"}
+{"id": "w11-0303", "text": "3rd Thursday this month"}
+{"id": "w11-0304", "text": "3rd Thursday in month"}
+{"id": "w11-0305", "text": "3rd Thursday in June"}
+{"id": "w11-0306", "text": "the second friday of each month"}
+{"id": "w11-0307", "text": "between Friday and Monday"}
+{"id": "w11-0308", "text": "every month on the 3rd Friday"}
+{"id": "w11-0309", "text": "Monthly on a Friday"}
+{"id": "w11-0310", "text": "every month on Mondays and on the last Wednesday"}
+{"id": "w11-0311", "text": "every month on the 2nd Monday and last Wednesday"}
+{"id": "w11-0312", "text": "/remind me \"Go to gym\" every Thursday and Saturday and Sunday"}
+{"id": "w11-0313", "text": "I will remind you \"Go to gym\" at 9:00AM every Thursday And Saturday And Sunday."}
+{"id": "w11-0314", "text": "“every 2nd tuesday”, “every last friday of the month”"}
+{"id": "w11-0315", "text": "at 9am on the 1st of every month"}
+{"id": "w11-0316", "text": "Every Monday, every 2 weeks on Tuesday"}
+{"id": "w11-0317", "text": "Day 15 of every month"}
+{"id": "w11-0318", "text": "Second Tuesday of every month"}
+{"id": "w11-0319", "text": "First Monday of each quarter"}
+{"id": "w11-0320", "text": "every second Tuesday at 2 AM"}
+{"id": "w11-0321", "text": "Event happening every 1st and 3rd Friday of every month"}
+{"id": "w11-0322", "text": "Every 1st and 3rd Tuesday of every month at 2PM EST"}
+{"id": "w11-0323", "text": "an event that happens every 1st and 3rd Saturdays of the month from 7pm to midnight"}
+{"id": "w11-0324", "text": "every 2nd and 4th Wednesday of a month"}
+{"id": "w11-0325", "text": "every 1st and 3rd tuesday a month"}
+{"id": "w11-0326", "text": "Tue. [1,3] = first and third Tuesday a month"}
+{"id": "w11-0327", "text": "Sat. [-1] = last Saturday a month"}
+{"id": "w11-0328", "text": "1st and 3rd monday every month"}
+{"id": "w11-0329", "text": "1st ,2nd, 3rd, 4th and 5th Sunday of every month"}
+{"id": "w11-0330", "text": "2nd Thursday of the month"}
+{"id": "w11-0331", "text": "2nd Saturday (and sometimes 4th Saturday)"}
+{"id": "w11-0332", "text": "not sound on the 2nd and 4th Saturday"}
+{"id": "w11-0333", "text": "i'm always the 2nd and 4th saturday"}
+{"id": "w11-0334", "text": "We have trail two times a month on the 2nd and 4th Saturday."}
+{"id": "w11-0335", "text": "We generally have trail the second and fourth Saturdays of the month starting at 2 pm."}
+{"id": "w11-0336", "text": "usually the 2nd and 4th Saturday of the month"}
+{"id": "w11-0337", "text": "3rd Saturday at 2:00 PM"}
+{"id": "w11-0338", "text": "2nd and 4th Saturday at 2:00 PM"}
+{"id": "w11-0339", "text": "Third Saturday monthly trail."}
+{"id": "w11-0340", "text": "Philly Hash Meets on the 2nd and 4th Saturday of every month!"}
+{"id": "w11-0341", "text": "North days are 2nd and 4th Thursdays"}
+{"id": "w11-0342", "text": "South days are 2nd and 4th Wednesdays"}
+{"id": "w11-0343", "text": "every third Thursday of the month"}
+{"id": "w11-0344", "text": "repeat every third Thursday"}
+{"id": "w11-0345", "text": "repeat every last Friday"}
+{"id": "w11-0346", "text": "every third Thursday"}
+{"id": "w11-0347", "text": "every last Tuesday"}
+{"id": "w11-0348", "text": "3rd Monday of September"}
+{"id": "w11-0349", "text": "Last Friday of every month"}
+{"id": "w11-0350", "text": "1st Tuesday after the 15th"}
+{"id": "w11-0351", "text": "2nd Monday of every month"}
+{"id": "w11-0352", "text": "Last day of every month"}
+{"id": "w11-0353", "text": "Last Sunday of March"}
+{"id": "w11-0354", "text": "every Sunday in March"}
+{"id": "w11-0355", "text": "tennis every Wednesday 7–9pm"}
+{"id": "w11-0356", "text": "squad session every other Thursday 6–8pm"}
+{"id": "w11-0357", "text": "every other Wednesday"}
+{"id": "w11-0358", "text": "schedule a 1:1 with Sarah every Tuesday at 2pm"}
+{"id": "w11-0359", "text": "first Monday of every month"}
+{"id": "w11-0360", "text": "Repeat on the 24th day of every month"}
+{"id": "w11-0361", "text": "Third working day of the month"}
+{"id": "w11-0362", "text": "Nth weekday of the month (e.g. 2nd Tuesday, 4th Saturday)"}
+{"id": "w11-0363", "text": "Last weekday of the month (e.g. last Friday)"}
+{"id": "w11-0364", "text": "Every 2 weeks on Tue, Thu"}
+{"id": "w11-0365", "text": "Last Friday of every month, until Dec 15"}
+{"id": "w11-0366", "text": "15th of every month"}
+{"id": "w11-0367", "text": "2nd to last day of month"}
+{"id": "w11-0368", "text": "First Monday of Q1 months"}
+{"id": "w11-0369", "text": "First Tuesday of every month."}
+{"id": "w11-0370", "text": "The first of every month."}
+{"id": "w11-0371", "text": "Every Wednesday."}
+{"id": "w11-0372", "text": "First and third fridays of every month (with 2 repetitions)."}
+{"id": "w11-0373", "text": "The first and third Friday of the month."}
+{"id": "w11-0374", "text": "The last Monday of the month."}
+{"id": "w11-0375", "text": "First and third Friday every month"}
+{"id": "w11-0376", "text": "first and third Friday of every month at 14:00 UTC"}
+{"id": "w11-0377", "text": "exercise from 6:00pm-7:00pm every tues. and thurs."}
+{"id": "w11-0378", "text": "Timetable until probe 2026-11-24 09:00 every tue until 2027-05-18"}
+{"id": "w11-0379", "text": "Class every tue 09:00 until 2027-05-18"}
+{"id": "w11-0380", "text": "every Tue/Thu"}
+{"id": "w11-0381", "text": "every Tues/Thurs/Sat"}
+{"id": "w11-0382", "text": "9-10pm EST every Tue-Thur-Sat"}
+{"id": "w11-0383", "text": "every  tue and fri"}
+{"id": "w11-0384", "text": "every Thur/Fri"}
+{"id": "w11-0385", "text": "Every Thurs. 11:30am-1:00pm"}
+{"id": "w11-0386", "text": "every Wed in Jan"}
+{"id": "w11-0387", "text": "05:05 on the 20th and every Wed in Jan"}
+{"id": "w11-0388", "text": "every wed 7pm from 2nd Jan to 30th Jan"}
+{"id": "w11-0389", "text": "Every Wed 19:00 (UTC+8)"}
+{"id": "w11-0390", "text": "every Wed and Fri from 10am-2pm"}
+{"id": "w11-0391", "text": "Every Wed and Fri at 8:00 AM CST Starting 30-Aug-2016 till 30-Sep-2016"}
+{"id": "w11-0392", "text": "Meet for an hour every Wed after class"}
+{"id": "w11-0393", "text": "every Wed evening at 6:30 pm IST"}
+{"id": "w11-0394", "text": "every monday 9am"}
+{"id": "w11-0395", "text": "every mon,wed,fri at 9am"}
+{"id": "w11-0396", "text": "weekdays at 9am"}
+{"id": "w11-0397", "text": "every monday at 6:30"}
+{"id": "w11-0398", "text": "every mon,wed,fri at 18:00"}
+{"id": "w11-0399", "text": "last day of the month"}
+{"id": "w11-0400", "text": "Mon/Wed/Fri at 14:20"}
+{"id": "w11-0401", "text": "Tue/Thu/Sat 6am"}
+{"id": "w11-0402", "text": "weekdays 12:30"}
+{"id": "w11-0403", "text": "Every Monday 9–10 for 8 weeks"}
+{"id": "w11-0404", "text": "every Thursday and Friday which repeats in every 2 weeks"}
+{"id": "w11-0405", "text": "every wed and create new cron for next week mon,tues"}
+{"id": "w11-0406", "text": "every Monday and Wednesday, at 14h"}
+{"id": "w11-0407", "text": "muay thai every monday, wednesday, and friday at 18:00 - 19:00"}
+{"id": "w11-0408", "text": "every Monday, Wednesday and Friday"}
+{"id": "w11-0409", "text": "every weekday (Mon–Fri)"}
+{"id": "w11-0410", "text": "Every Monday and Wednesday"}
+{"id": "w11-0411", "text": "the 3rd thursday of the month"}
+{"id": "w11-0412", "text": "The last tuesday of the month"}
+{"id": "w11-0413", "text": "MWF meeting"}
+{"id": "w11-0414", "text": "Mondays, Wednesdays, Thursdays and Fridays at 07:00"}
+{"id": "w11-0415", "text": "Mondays, Wednesdays, and Fridays between 11:50 and 1."}
+{"id": "w11-0416", "text": "every day on Mon, Wed, Fri"}
+{"id": "w11-0417", "text": "Mon/Wed/Fri schedule"}
+{"id": "w11-0418", "text": "tue,thu 18:30"}
+{"id": "w11-0419", "text": "monthly last-workday 10:00"}
+{"id": "w11-0420", "text": "Tuesday / Thursday 9am - 11am"}
+{"id": "w11-0421", "text": "Tuesday/Thursday"}
+{"id": "w11-0422", "text": "twice a week (Tuesdays/Thursdays)"}
+{"id": "w11-0423", "text": "Tue, Thu"}
+{"id": "w11-0424", "text": "Wed, Sat"}
+{"id": "w11-0425", "text": "Every 2nd Tuesday, 5 times"}
+{"id": "w11-0426", "text": "every 2nd Tuesday of the month"}
+{"id": "w11-0427", "text": "3rd Thursday of each month, 19:30"}
+{"id": "w11-0428", "text": "2nd Friday of every month"}
+{"id": "w11-0429", "text": "Every other Tuesday 4:00 PM - 5:00 PM Pacific"}
+{"id": "w11-0430", "text": "Every Other Tuesday - 4pm PT- Stakeholder Meeting"}
+{"id": "w11-0431", "text": "Starting today, every other Tuesday the cleaners come at 10am-1pm."}
+{"id": "w11-0432", "text": "Weekday chores every 2, 3 or 4 weeks (e.g. bins every other Tuesday)"}
+{"id": "w11-0433", "text": "Monday, Wednesday, Friday 10:00–17:00"}
+{"id": "w11-0434", "text": "Bi-weekly 20-minute demo every second Friday."}
+{"id": "w11-0435", "text": "Free food will be provided on the last Friday of every month."}
+{"id": "w11-0436", "text": "last Friday of every month at 6 PM"}
+{"id": "w11-0437", "text": "the last Friday of every month at 2pm"}
+{"id": "w11-0438", "text": "every third Tuesday of the month"}
+{"id": "w11-0439", "text": "Every Wednsday at 5pm (UTC+2)"}
+{"id": "w11-0440", "text": "Every other Wednsday"}
+{"id": "w11-0441", "text": "Every **other** Wednsday"}
+{"id": "w11-0442", "text": "The Last Thrusday of Every month"}
+{"id": "w11-0443", "text": "Due next Wendsday"}
+{"id": "w11-0444", "text": "Oct 16 (Wensday) afternoon"}
+{"id": "w11-0445", "text": "Can you find me 5 tickts to the Rangres this thrusday?"}
+{"id": "w11-0446", "text": "By Wensday 4/29 10:30 AM"}
+{"id": "w11-0447", "text": "Tusday 16th Feb"}
+{"id": "w11-0448", "text": "since last wensday"}
+{"id": "w11-0449", "text": "on the call wendsday"}
+{"id": "w11-0450", "text": "End of wensday"}
+{"id": "w11-0451", "text": "twice exercise pre week - Wensday & weekend"}
+{"id": "w11-0452", "text": "Decemeber 26,2019(Thrusday),10:20-12:10"}
+{"id": "w11-0453", "text": "“wensday”, “thurday”, “saterday”, “febuary”"}
+{"id": "w11-0454", "text": "Setup a task that runs evry week"}
+{"id": "w11-0455", "text": "Both T could refer to Tuesday or Thrusday."}
+{"id": "w11-0456", "text": "Intro to Software Engineering MWF 9am"}
+{"id": "w11-0457", "text": "Monday, Tuesday and Wednesday at 18:00"}
+{"id": "w11-0458", "text": "Once in a while."}
+{"id": "w11-0459", "text": "Every time i hear that i apreciate it."}
+{"id": "w11-0460", "text": "Once every ones in"}
+{"id": "w11-0461", "text": "may this test pass."}
+{"id": "w11-0462", "text": "seconds anyone?"}
+{"id": "w11-0463", "text": "from september to november"}
+{"id": "w11-0464", "text": "except for tomorrow"}
+{"id": "w11-0465", "text": "Mar 99th"}
+{"id": "w11-0466", "text": "Mar 9th at 28pm"}
+{"id": "w11-0467", "text": "Fri 23:00-08:00, Sun 22:00-06:00."}
+{"id": "w11-0468", "text": "We still need to deploy the second and fourth Tuesday of the month"}
+{"id": "w11-0469", "text": "We will deploy the second and fourth Tuesday of the month"}
+{"id": "w11-0470", "text": "Second and Fourth Tuesday - March through June 11"}
+{"id": "w11-0471", "text": "In 2025 we met the first and third Thursday of the month"}
+{"id": "w11-0472", "text": "TAG-Runtime meets every first and third Thursday of the month, at 1500 UTC"}
+{"id": "w11-0473", "text": "Choose the First & Third Thursday"}
+{"id": "w11-0474", "text": "Actually schedule the first and third Thursday"}
+{"id": "w11-0475", "text": "Meetings: first and third Wednesday monthly, 17:00 CET / 8:00 PT. Meetings"}
+{"id": "w11-0476", "text": "Full WG  | First and third Weds of month at 10am PST | TBD | TBD | TBD | TBD"}
+{"id": "w11-0477", "text": "Bi-weekly (first and third Wednesday), public"}
+{"id": "w11-0478", "text": "Join CNF BoF meetings: First and Third Wednesdays at 16:00-17:00 UTC"}
+{"id": "w11-0479", "text": "We're going to meet from 11am - 12noon Pacific on the 1st and 3rd Tuesdays of the month 🚀🌟"}
+{"id": "w11-0480", "text": "Security calls are now 1st and 3rd Tuesday of every month"}
+{"id": "w11-0481", "text": "Date: 3/21/23 (Biweekly, 1st and 3rd Tuesday, 10AM EST)"}
+{"id": "w11-0482", "text": "Tuesday of a month or every 2nd and 4th Wednesday of a month."}
+{"id": "w11-0483", "text": "Establish frequency of emails (1st and 3rd tuesday of month @ 11amCST)"}
+{"id": "w11-0484", "text": "e.g. \"every 1st and 3rd tuesday a month\""}
+{"id": "w11-0485", "text": "We aim to release every 2nd and 4th Wednesday"}
+{"id": "w11-0486", "text": "Release Preparation (1st and 3rd Wednesday)"}
+{"id": "w11-0487", "text": "Release Process (2nd and 4th Wednesday)"}
+{"id": "w11-0488", "text": "Proposed slot:  1st and 3rd Wednesdays 3PM (PST) of each month."}
+{"id": "w11-0489", "text": "We could also perhaps do 2 per month, e.g. the 1st and 3rd wednesdays"}
+{"id": "w11-0490", "text": "In plain English, on the first and third Saturdays of the month at 1201."}
+{"id": "w11-0491", "text": "I propose that works prints should happen first and third Saturdays from 1-5 PM."}
+{"id": "w11-0492", "text": "Mention and/or add calendar link to 2nd and 4th Tuesday meetings."}
+{"id": "w11-0493", "text": "Every 2nd and 4th Tuesday at 14:30 IST / 09:00 UTC"}
+{"id": "w11-0494", "text": "frequency: \"Bi-Monthly - 1st and 3rd Thursday\""}
+{"id": "w11-0495", "text": "The number can be a collection. For example 1st and 3rd monday every month."}
+{"id": "w11-0496", "text": "For example, 1st and 3rd Monday of every month."}
+{"id": "w11-0497", "text": "Creating a meeting that occurs on the 1st and 3rd Monday of a month"}
+{"id": "w11-0498", "text": "• 2nd and 4th Wednesday"}
+{"id": "w11-0499", "text": "Date: 2nd and 4th Wednesday of the month, September - November, including."}
+{"id": "w11-0500", "text": "Add a complex schedule like 1st & 3rd Saturdays to a group"}
+{"id": "w11-0501", "text": "The meeting schedule time is incorrect, we meet at 8 am PT on 2nd and 4th Friday."}
+{"id": "w11-0502", "text": "e.g: street cleaning every 2nd and 4th Friday"}
+{"id": "w11-0503", "text": "Meeting are every 2nd and 4th Friday at 9AM PST | 4PM GMT"}
+{"id": "w11-0504", "text": "run a task every 2nd and 4th friday of every month"}
+{"id": "w11-0505", "text": "Where i live large waste are collected the 2nd and 4th friday of each month."}
+{"id": "w11-0506", "text": "I'm trying to have a job run every 2nd and 4th Sunday of a month.  I've tried both"}
+{"id": "w11-0507", "text": "Expected: \"At 09:00 AM, on the second and fourth Monday of the month\""}
+{"id": "w11-0508", "text": "Expected: \"At 07:45 AM, on the first, third, and fifth Friday of the month\""}
+{"id": "w11-0509", "text": "Normally meets the first and third Friday of every month at 14:00 UTC."}
+{"id": "w11-0510", "text": "Every first and third Tuesday from 5pm to 6:30pm"}
+{"id": "w11-0511", "text": "Nth-of-month: first/second/third/fourth/last [weekday] of the month"}
+{"id": "w11-0512", "text": "Scheduling an event occurence to repeat on the \"First and Third Tuesday of every Month\"."}
+{"id": "w11-0513", "text": "// First and third Sunday of every month"}
+{"id": "w11-0514", "text": "First and Third Sundays St Andrews Pub, starts 7pm. Online signups."}
+{"id": "w11-0515", "text": "which should give me an event every first and last monday every year."}
+{"id": "w11-0516", "text": "a cadence, with month set to any: \"last Friday of the month\", \"first Monday\";"}
+{"id": "w11-0517", "text": "When : First and last Monday every month at 10h UTC"}

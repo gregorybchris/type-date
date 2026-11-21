@@ -1,0 +1,245 @@
+{"id":"cw6-0001","dsl":"d R w/2 fr sM@03","unsure":false}
+{"id":"cw6-0002","dsl":"d R w/1 mo sW+1","unsure":false}
+{"id":"cw6-0003","dsl":"d R d/1 s+1d","unsure":false}
+{"id":"cw6-0004","dsl":"d R d/1 mo,tu,we,th,fr smo","unsure":false}
+{"id":"cw6-0005","dsl":"d R w/3 s10-12","unsure":false}
+{"id":"cw6-0006","dsl":"d R m/1 fr#1 s2027-01-01","unsure":false}
+{"id":"cw6-0007","dsl":"dt R w/1 tu,th 09:00 sM+1","unsure":false}
+{"id":"cw6-0008","dsl":"d R w/1 we swe","unsure":false}
+{"id":"cw6-0009","dsl":"d R d/1 smo+1","unsure":false}
+{"id":"cw6-0010","dsl":"d R w/2 tu s2027-03-04","unsure":false}
+{"id":"cw6-0011","dsl":"dt R w/1 th 16:00","unsure":true}
+{"id":"cw6-0012","dsl":"d R w/1 we swe","unsure":false}
+{"id":"cw6-0013","dsl":"dt R w/1 mo,we,fr 08:00 s01-05","unsure":false}
+{"id":"cw6-0014","dsl":"d R w/2 smo#1@02","unsure":false}
+{"id":"cw6-0015","dsl":"d R m/1 d15 sM@09","unsure":false}
+{"id":"cw6-0016","dsl":"dt R d/1 07:00 s2027-01-01","unsure":false}
+{"id":"cw6-0017","dsl":"d R w/2 sfr+1","unsure":false}
+{"id":"cw6-0018","dsl":"d R w/1 su s12-06","unsure":false}
+{"id":"cw6-0019","dsl":"d R w/2 th sth#4@11~+1d","unsure":true}
+{"id":"cw6-0020","dsl":"dt R w/1 tu@1:30?,th@3? sM@08","unsure":false}
+{"id":"cw6-0021","dsl":"dt R d/1 mo,tu,we,th,fr 9? s12-25~+1d","unsure":false}
+{"id":"cw6-0022","dsl":"d R m/1 th#3 sM@04","unsure":false}
+{"id":"cw6-0023","dsl":"d R d/1 s01-01","unsure":false}
+{"id":"cw6-0024","dsl":"d R w/1 stu+1","unsure":false}
+{"id":"cw6-0025","dsl":"d R w/4 s01-12","unsure":false}
+{"id":"cw6-0026","dsl":"dt R w/1 mo 12:00 s02-01","unsure":false}
+{"id":"cw6-0027","dsl":"dt R w/1 mo,we,fr 06:00 s09-07","unsure":false}
+{"id":"cw6-0028","dsl":"d R w/1 sa ssa","unsure":false}
+{"id":"cw6-0029","dsl":"d R w/2 fr s+1d","unsure":false}
+{"id":"cw6-0030","dsl":"d R d/1","unsure":true}
+{"id":"cw6-0031","dsl":"dt R w/1 mo,we 15:00>16:00 sY@2027","unsure":false}
+{"id":"cw6-0032","dsl":"d R w/1 fr sM+1","unsure":false}
+{"id":"cw6-0033","dsl":"d R m/1 s03-01","unsure":false}
+{"id":"cw6-0034","dsl":"d R w/1 tu sM@06","unsure":false}
+{"id":"cw6-0035","dsl":"d R w/2 mo s2027-04-06","unsure":false}
+{"id":"cw6-0036","dsl":"d R d/1 mo,tu,we,th,fr sW+1","unsure":false}
+{"id":"cw6-0037","dsl":"dt R d/1 06:30 sfr","unsure":false}
+{"id":"cw6-0038","dsl":"d R w/2 th sY+1","unsure":false}
+{"id":"cw6-0039","dsl":"d R m/1 fr#-1 sM@10","unsure":false}
+{"id":"cw6-0040","dsl":"d R w/1 we sW+1","unsure":false}
+{"id":"cw6-0041","dsl":"d R w/1 tu s09-14","unsure":false}
+{"id":"cw6-0042","dsl":"dt R w/1 mo,we,fr 19:00","unsure":true}
+{"id":"cw6-0043","dsl":"d R d/1 mo,tu,we,th,fr s2027-01-04","unsure":false}
+{"id":"cw6-0044","dsl":"d R w/1 su smo#-1@05","unsure":false}
+{"id":"cw6-0045","dsl":"d R w/2 sa sM@04","unsure":false}
+{"id":"cw6-0046","dsl":"d R w/1 mo s05-03","unsure":false}
+{"id":"cw6-0047","dsl":"d R d/1 s07-04","unsure":false}
+{"id":"cw6-0048","dsl":"dt R d/1 10:00 s+1d","unsure":false}
+{"id":"cw6-0049","dsl":"d R m/1 tu#2 sM@03","unsure":false}
+{"id":"cw6-0050","dsl":"d R w/1 th sth","unsure":false}
+{"id":"cw6-0051","dsl":"d R w/6 sM@01","unsure":false}
+{"id":"cw6-0052","dsl":"dt R w/1 mo,th 17:00 sW+1","unsure":false}
+{"id":"cw6-0053","dsl":"dt R d/1 21:00 s+1d","unsure":false}
+{"id":"cw6-0054","dsl":"d R m/1 mo#1 s2027-02-01","unsure":false}
+{"id":"cw6-0055","dsl":"dt R d/1 mo,tu,we,th,fr 8:15? s06-01","unsure":false}
+{"id":"cw6-0056","dsl":"dt R w/1 fr 3:30? sM+1","unsure":false}
+{"id":"cw6-0057","dsl":"d R w/2 tu stu","unsure":false}
+{"id":"cw6-0058","dsl":"dt R w/1 mo@09:00,th@14:00 s10-19","unsure":false}
+{"id":"cw6-0059","dsl":"d R w/1 smo#1@09","unsure":false}
+{"id":"cw6-0060","dsl":"d R w/3 fr s2027-01-01","unsure":true}
+{"id":"cw6-0061","dsl":"d R d/1","unsure":true}
+{"id":"cw6-0062","dsl":"d R d/1 smo","unsure":false}
+{"id":"cw6-0063","dsl":"d R w/1 we sD01@M+2","unsure":false}
+{"id":"cw6-0064","dsl":"dt R d/1 mo,tu,we,th,fr 7:45? s09-02","unsure":false}
+{"id":"cw6-0065","dsl":"d R m/1 d20 sM@12","unsure":false}
+{"id":"cw6-0066","dsl":"d R w/2 we s02-08","unsure":false}
+{"id":"cw6-0067","dsl":"dt R w/1 fr 4? sfr+1","unsure":false}
+{"id":"cw6-0068","dsl":"dt R d/1 17:00 stu","unsure":false}
+{"id":"cw6-0069","dsl":"d R w/1 mo,th s03-01","unsure":false}
+{"id":"cw6-0070","dsl":"d R m/1 mo#1,mo#3 sY@2028","unsure":false}
+{"id":"cw6-0071","dsl":"d R w/1 mo uM@04","unsure":false}
+{"id":"cw6-0072","dsl":"d R d/1 uY@2027","unsure":false}
+{"id":"cw6-0073","dsl":"d R d/1 mo,tu,we,th,fr u12-25","unsure":false}
+{"id":"cw6-0074","dsl":"d R w/1 tu,th u03-15","unsure":false}
+{"id":"cw6-0075","dsl":"d R w/2 fr uY+0","unsure":false}
+{"id":"cw6-0076","dsl":"d R w/1 we uwe","unsure":false}
+{"id":"cw6-0077","dsl":"d R w/1 mo u2027-05-20","unsure":false}
+{"id":"cw6-0078","dsl":"d R w/1 uM+1","unsure":false}
+{"id":"cw6-0079","dsl":"d R d/1 u+1d","unsure":false}
+{"id":"cw6-0080","dsl":"d R w/1 fr uM@05","unsure":false}
+{"id":"cw6-0081","dsl":"d R w/2 u06-30","unsure":false}
+{"id":"cw6-0082","dsl":"dt R w/1 mo,we,fr u02-12 08:00","unsure":false}
+{"id":"cw6-0083","dsl":"d R d/1 mo,tu,we,th,fr u12-18","unsure":false}
+{"id":"cw6-0084","dsl":"d R w/1 su uE+0","unsure":false}
+{"id":"cw6-0085","dsl":"dt R d/1 umo#1@09 07:00","unsure":false}
+{"id":"cw6-0086","dsl":"d R m/1 th#3 uY@2028","unsure":false}
+{"id":"cw6-0087","dsl":"dt R w/1 tu uW+1 16:00","unsure":false}
+{"id":"cw6-0088","dsl":"d R w/1 u07-04","unsure":false}
+{"id":"cw6-0089","dsl":"d R d/1 u2027-01-31","unsure":false}
+{"id":"cw6-0090","dsl":"d R w/1 mo,fr uM@08","unsure":false}
+{"id":"cw6-0091","dsl":"d R w/1 th u11-30","unsure":false}
+{"id":"cw6-0092","dsl":"d R w/2 ufr+1","unsure":false}
+{"id":"cw6-0093","dsl":"d R w/1 sa uY+0","unsure":false}
+{"id":"cw6-0094","dsl":"d R d/1 mo,tu,we,th,fr u12-11","unsure":false}
+{"id":"cw6-0095","dsl":"d R w/1 we uwe+1","unsure":false}
+{"id":"cw6-0096","dsl":"d R w/3 uM@09","unsure":false}
+{"id":"cw6-0097","dsl":"d R m/1 fr#-1 u2027-12-31","unsure":false}
+{"id":"cw6-0098","dsl":"d R d/1 ufr","unsure":false}
+{"id":"cw6-0099","dsl":"d R m/1 d05 u2027-05-31","unsure":false}
+{"id":"cw6-0100","dsl":"dt R w/1 mo uth#4@11 12:00","unsure":false}
+{"id":"cw6-0101","dsl":"d R w/2 tu u03-03","unsure":false}
+{"id":"cw6-0102","dsl":"dt R w/1 we u12-15 10:00","unsure":false}
+{"id":"cw6-0103","dsl":"dt R d/1 u12-31 21:00","unsure":false}
+{"id":"cw6-0104","dsl":"dt R d/1 mo,tu,we,th,fr uM+1 09:00","unsure":false}
+{"id":"cw6-0105","dsl":"d R w/2 mo u06-12","unsure":false}
+{"id":"cw6-0106","dsl":"d R w/1 u12-15","unsure":false}
+{"id":"cw6-0107","dsl":"d R d/1 uY@2028","unsure":false}
+{"id":"cw6-0108","dsl":"dt R d/1 u+1d 06:30","unsure":false}
+{"id":"cw6-0109","dsl":"d R w/1 fr uM+1","unsure":false}
+{"id":"cw6-0110","dsl":"dt R w/1 tu@1:30?,th@3? uM@06","unsure":false}
+{"id":"cw6-0111","dsl":"d R d/1 mo,tu,we,th,fr uW+0","unsure":false}
+{"id":"cw6-0112","dsl":"d R w/1 mo u2027-01-04","unsure":false}
+{"id":"cw6-0113","dsl":"d R w/4 uY+0","unsure":false}
+{"id":"cw6-0114","dsl":"d R m/1 fr#1 uM@06","unsure":false}
+{"id":"cw6-0115","dsl":"dt R w/1 mo uM@10 9?>10?","unsure":false}
+{"id":"cw6-0116","dsl":"d R d/1 uM@05","unsure":false}
+{"id":"cw6-0117","dsl":"d R w/2 th u02-14","unsure":false}
+{"id":"cw6-0118","dsl":"dt R w/1 su usu#2@05 10:00","unsure":false}
+{"id":"cw6-0119","dsl":"d R w/1 tu u08-14","unsure":false}
+{"id":"cw6-0120","dsl":"d R d/1 mo,tu,we,th,fr ufr+1","unsure":false}
+{"id":"cw6-0121","dsl":"d R w/1 we uM@12","unsure":false}
+{"id":"cw6-0122","dsl":"d R m/1 tu#2,tu#4 uY@2027","unsure":false}
+{"id":"cw6-0123","dsl":"dt R w/1 sa uM@03 08:00","unsure":true}
+{"id":"cw6-0124","dsl":"d R d/1 mo,tu,we,th,fr umo#-1@05","unsure":false}
+{"id":"cw6-0125","dsl":"dt R w/1 we u2027-02-28 15:00","unsure":false}
+{"id":"cw6-0126","dsl":"d R w/1 mo u05-01","unsure":false}
+{"id":"cw6-0127","dsl":"d R d/1 u01-01","unsure":false}
+{"id":"cw6-0128","dsl":"d R w/1 th uY+0","unsure":false}
+{"id":"cw6-0129","dsl":"d R w/2 fr uM+1","unsure":false}
+{"id":"cw6-0130","dsl":"dt R d/1 uth 14:00","unsure":false}
+{"id":"cw6-0131","dsl":"dt R w/1 fr u12-17 5?","unsure":false}
+{"id":"cw6-0132","dsl":"d R w/2 mo u2027-10-31","unsure":false}
+{"id":"cw6-0133","dsl":"d R d/1 mo,tu,we,th,fr uM@06","unsure":false}
+{"id":"cw6-0134","dsl":"dt R d/1 u07-31 12:00","unsure":false}
+{"id":"cw6-0135","dsl":"d R w/1 we,sa u05-01","unsure":false}
+{"id":"cw6-0136","dsl":"d R m/1 d01 u2027-12-31","unsure":false}
+{"id":"cw6-0137","dsl":"dt R w/1 tu@9?,th@11? u04-15","unsure":false}
+{"id":"cw6-0138","dsl":"d R d/1 uD@20","unsure":false}
+{"id":"cw6-0139","dsl":"d R w/1 su umo#1@09","unsure":false}
+{"id":"cw6-0140","dsl":"dt R w/1 mo,we uM+1 16:00","unsure":false}
+{"id":"cw6-0141","dsl":"d R w/1 mo uM@12 sM@09","unsure":false}
+{"id":"cw6-0142","dsl":"d R d/1 mo,tu,we,th,fr u12-25 sW+1","unsure":false}
+{"id":"cw6-0143","dsl":"d R w/1 tu,th uM@06 sM@03","unsure":false}
+{"id":"cw6-0144","dsl":"d R w/2 fr uY+0 sM+1","unsure":false}
+{"id":"cw6-0145","dsl":"d R d/1 uM@05 s+1d","unsure":false}
+{"id":"cw6-0146","dsl":"d R w/1 we u12-16 swe","unsure":false}
+{"id":"cw6-0147","dsl":"d R d/1 mo,tu,we,th,fr u2027-06-11 s2027-01-04","unsure":false}
+{"id":"cw6-0148","dsl":"d R w/1 mo u12-13 s09-06","unsure":false}
+{"id":"cw6-0149","dsl":"d R w/1 u05-20 smo+1","unsure":false}
+{"id":"cw6-0150","dsl":"d R w/2 u2027-01-31 s10-05","unsure":false}
+{"id":"cw6-0151","dsl":"d R m/1 fr#1 uY@2028 s2027-03-01","unsure":false}
+{"id":"cw6-0152","dsl":"dt R w/1 mo,we,fr uM@05 08:00 s02-01","unsure":false}
+{"id":"cw6-0153","dsl":"d R w/1 th uth#4@11 sW+1","unsure":false}
+{"id":"cw6-0154","dsl":"dt R d/1 ufr+1 07:00 s+1d","unsure":false}
+{"id":"cw6-0155","dsl":"d R w/1 su umo#1@09 sE+0","unsure":false}
+{"id":"cw6-0156","dsl":"d R d/1 u01-03 s12-20","unsure":false}
+{"id":"cw6-0157","dsl":"dt R w/1 tu,th uM@08 3? sM@06","unsure":false}
+{"id":"cw6-0158","dsl":"d R w/2 mo uY+0 smo","unsure":false}
+{"id":"cw6-0159","dsl":"d R d/1 mo,tu,we,th,fr uM+1 smo","unsure":false}
+{"id":"cw6-0160","dsl":"dt R w/1 fr u03-26 16:00 s01-08","unsure":false}
+{"id":"cw6-0161","dsl":"d R d/1 usu sfr","unsure":false}
+{"id":"cw6-0162","dsl":"d R m/1 d10 u2028-02-29 s2027-03-01","unsure":false}
+{"id":"cw6-0163","dsl":"d R w/1 we u12-09 s10-07","unsure":false}
+{"id":"cw6-0164","dsl":"d R d/1 mo,tu,we,th,fr uD@15 s+1d","unsure":false}
+{"id":"cw6-0165","dsl":"d R m/1 th#3 uY@2027 sM@01","unsure":true}
+{"id":"cw6-0166","dsl":"d R w/1 mo uY+0","unsure":true}
+{"id":"cw6-0167","dsl":"d R w/2 tu uM@05 s02-02","unsure":false}
+{"id":"cw6-0168","dsl":"d R w/1 sa uM@08 sM+1","unsure":false}
+{"id":"cw6-0169","dsl":"d R d/1 mo,tu,we,th,fr u12-18 s09-02","unsure":false}
+{"id":"cw6-0170","dsl":"d R d/1 u02-14 s01-01","unsure":false}
+{"id":"cw6-0171","dsl":"dt R w/1 fr u03-31 10? sW+1","unsure":false}
+{"id":"cw6-0172","dsl":"d R w/2 th uY+0 sth+1","unsure":false}
+{"id":"cw6-0173","dsl":"dt R w/1 mo,tu,we,th u2027-06-03 09:00>15:00 s08-24","unsure":false}
+{"id":"cw6-0174","dsl":"d R w/1 su uth#4@11 ssu","unsure":false}
+{"id":"cw6-0175","dsl":"d R d/1 uM@05 smo+1","unsure":false}
+{"id":"cw6-0176","dsl":"d R w/1 tu uM@04 sM@01","unsure":false}
+{"id":"cw6-0177","dsl":"d R w/2 we u06-30 s03-03","unsure":false}
+{"id":"cw6-0178","dsl":"d R w/1 fr umo#1@09 smo#-1@05","unsure":false}
+{"id":"cw6-0179","dsl":"dt R d/1 mo,tu,we,th,fr u12-11 9? s10-05","unsure":false}
+{"id":"cw6-0180","dsl":"dt R w/1 tu,th u2027-05-06 14:00 s2027-01-12","unsure":false}
+{"id":"cw6-0181","dsl":"d R w/1 mo uY@2027 sM+1","unsure":false}
+{"id":"cw6-0182","dsl":"d R d/1 uY+0 s+1d","unsure":false}
+{"id":"cw6-0183","dsl":"d R w/1 we,fr uE+0 sM@02","unsure":false}
+{"id":"cw6-0184","dsl":"d R m/1 fr#-1 uM@12 sM@01","unsure":false}
+{"id":"cw6-0185","dsl":"dt R w/1 mo@16:00,th@17:00 u12-15 s09-08","unsure":false}
+{"id":"cw6-0186","dsl":"d R d/1 mo,tu,we,th,fr uM+0 s01-03","unsure":false}
+{"id":"cw6-0187","dsl":"d R w/2 uM@05 stu+1","unsure":false}
+{"id":"cw6-0188","dsl":"d R m/1 d01 uY@2029 sY@2027","unsure":false}
+{"id":"cw6-0189","dsl":"d R w/1 mo,we uM+1 sW+1","unsure":false}
+{"id":"cw6-0190","dsl":"d R d/1 mo,tu,we,th,fr u12-20 s09-01","unsure":false}
+{"id":"cw6-0191","dsl":"d R w/1 th u12-24 sth","unsure":false}
+{"id":"cw6-0192","dsl":"d R d/1 uM+0","unsure":true}
+{"id":"cw6-0193","dsl":"d R w/2 fr uY+0 sM@03","unsure":false}
+{"id":"cw6-0194","dsl":"d R w/2 tu u03-01 s10-06","unsure":false}
+{"id":"cw6-0195","dsl":"dt R w/1 su uM@08 9?","unsure":true}
+{"id":"cw6-0196","dsl":"dt R d/1 uY@2028 12:00 sM@04","unsure":false}
+{"id":"cw6-0197","dsl":"dt R w/1 mo u05-24 3? s02-08","unsure":false}
+{"id":"cw6-0198","dsl":"d R d/1 mo,tu,we,th,fr ufr smo+1","unsure":false}
+{"id":"cw6-0199","dsl":"d R w/1 th u2027-06-03 s2027-01-07","unsure":false}
+{"id":"cw6-0200","dsl":"d R d/1 ufr+1 s+1d","unsure":false}
+{"id":"cw6-0201","dsl":"d R m/1 mo#1 u2027-12-31 s2027-01-01","unsure":true}
+{"id":"cw6-0202","dsl":"dt R w/1 tu,th u12-18 08:00 s09-01","unsure":false}
+{"id":"cw6-0203","dsl":"d R d/1 mo,tu,we,th,fr uY+0 s08-31","unsure":false}
+{"id":"cw6-0204","dsl":"dt R w/1 mo@09:00,we@14:00,fr@11:00 uM@05 sW+1","unsure":false}
+{"id":"cw6-0205","dsl":"d R d/1 u08-31 s06-01","unsure":false}
+{"id":"cw6-0206","dsl":"x","unsure":false}
+{"id":"cw6-0207","dsl":"x","unsure":false}
+{"id":"cw6-0208","dsl":"d R w/1 mo","unsure":false}
+{"id":"cw6-0209","dsl":"x","unsure":false}
+{"id":"cw6-0210","dsl":"d R w/1 fr","unsure":false}
+{"id":"cw6-0211","dsl":"x","unsure":false}
+{"id":"cw6-0212","dsl":"x","unsure":false}
+{"id":"cw6-0213","dsl":"d R d/1","unsure":false}
+{"id":"cw6-0214","dsl":"x","unsure":false}
+{"id":"cw6-0215","dsl":"d R w/1 we","unsure":false}
+{"id":"cw6-0216","dsl":"x","unsure":false}
+{"id":"cw6-0217","dsl":"x","unsure":false}
+{"id":"cw6-0218","dsl":"x","unsure":false}
+{"id":"cw6-0219","dsl":"t 5?","unsure":false}
+{"id":"cw6-0220","dsl":"t 3?","unsure":false}
+{"id":"cw6-0221","dsl":"x","unsure":false}
+{"id":"cw6-0222","dsl":"d tu","unsure":false}
+{"id":"cw6-0223","dsl":"d R w/1 fr","unsure":false}
+{"id":"cw6-0224","dsl":"t 12:00","unsure":false}
+{"id":"cw6-0225","dsl":"x","unsure":false}
+{"id":"cw6-0226","dsl":"d R w/1 mo","unsure":false}
+{"id":"cw6-0227","dsl":"d R w/1 mo,fr","unsure":false}
+{"id":"cw6-0228","dsl":"x","unsure":false}
+{"id":"cw6-0229","dsl":"x","unsure":false}
+{"id":"cw6-0230","dsl":"dt >+0d 18:00","unsure":false}
+{"id":"cw6-0231","dsl":"x","unsure":false}
+{"id":"cw6-0232","dsl":"x","unsure":false}
+{"id":"cw6-0233","dsl":"t 08:00","unsure":false}
+{"id":"cw6-0234","dsl":"d R w/1 mo","unsure":false}
+{"id":"cw6-0235","dsl":"x","unsure":false}
+{"id":"cw6-0236","dsl":"x","unsure":false}
+{"id":"cw6-0237","dsl":"x","unsure":false}
+{"id":"cw6-0238","dsl":"d R w/1 tu","unsure":false}
+{"id":"cw6-0239","dsl":"d R w/1 fr","unsure":false}
+{"id":"cw6-0240","dsl":"x","unsure":false}
+{"id":"cw6-0241","dsl":"x","unsure":false}
+{"id":"cw6-0242","dsl":"d R w/1","unsure":false}
+{"id":"cw6-0243","dsl":"x","unsure":false}
+{"id":"cw6-0244","dsl":"d R d/1","unsure":false}
+{"id":"cw6-0245","dsl":"d R w/1 we","unsure":false}

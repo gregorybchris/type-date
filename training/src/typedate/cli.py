@@ -166,6 +166,35 @@ def data_consensus(
     typer.echo(json.dumps(stats))
 
 
+@data_app.command("drop-seen")
+def data_drop_seen(
+    inp: str = typer.Argument(..., help="JSONL to clean"),
+    out: str = typer.Option(..., help="Output JSONL"),
+    against: list[str] | None = typer.Option(
+        None, "--against", help="Glob of JSONL files (repo-relative, repeatable)"
+    ),
+) -> None:
+    """Drop rows whose normalized text appears in any file matched by --against."""
+    import glob
+    import re
+    from pathlib import Path
+
+    repo = Path(__file__).resolve().parents[3]
+    norm = lambda t: re.sub(r"\s+", " ", t.lower().strip())  # noqa: E731
+    seen: set[str] = set()
+    for pat in against or []:
+        for f in glob.glob(str(repo / pat)):
+            if Path(f).resolve() == Path(inp).resolve():
+                continue
+            for line in Path(f).read_text().splitlines():
+                if line.strip():
+                    seen.add(norm(json.loads(line).get("text", "")))
+    rows = [json.loads(x) for x in Path(inp).read_text().splitlines() if x.strip()]
+    kept = [r for r in rows if norm(r["text"]) not in seen]
+    Path(out).write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in kept))
+    typer.echo(json.dumps({"in": len(rows), "dropped": len(rows) - len(kept), "kept": len(kept)}))
+
+
 @data_app.command("mix")
 def data_mix(
     version: str = typer.Argument(..., help="New train-only version, e.g. v005"),
