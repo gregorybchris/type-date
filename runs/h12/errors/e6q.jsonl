@@ -62,7 +62,7 @@
 {"id":"r-taxx0038","text":"weekend warrior","split":"test_tax","primary_tag":"non-date-noise","modifier_tags":[],"expected":"x","predicted":"d sa>su","resolved_match":false}
 {"id":"r-taxx0143","text":"trailing 12 months","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -12m>+0d","predicted":"x","resolved_match":false}
 {"id":"r-taxx0244","text":"every day for the next 3 weeks","split":"test_tax","primary_tag":"recurrence","modifier_tags":[],"expected":"d R d/1 n21","predicted":"d R d/1 u+3w s+0d","resolved_match":false}
-{"id":"r-taxx0216","text":"mwf for 6 weeks","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 mo,we,fr u+6w s+0d","predicted":"dt R w/1 mo,we,fr 6?","resolved_match":false}
+{"id":"r-taxx0216","text":"mwf for 6 weeks","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 mo,we,fr u+6w s+0d","predicted":"d R w/1 mo,we,fr n18","resolved_match":false}
 {"id":"r-taxx0259","text":"prior 12 months","split":"test_tax","primary_tag":"basic-date-range","modifier_tags":[],"expected":"d -12m>+0d","predicted":"x","resolved_match":false}
 {"id":"r-taxx0372","text":"spin class tth 6pm","split":"test_tax","primary_tag":"recurrence","modifier_tags":[],"expected":"dt R w/1 tu,th 18:00","predicted":"t 18:00","resolved_match":false}
 {"id":"r-taxx0287","text":"weekends in the month of july","split":"test_tax","primary_tag":"recurrence-bounded","modifier_tags":[],"expected":"d R w/1 sa,su uM@07 sM@07","predicted":"d R w/1 sa,su","resolved_match":false}
