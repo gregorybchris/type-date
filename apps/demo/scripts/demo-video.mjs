@@ -84,7 +84,7 @@ const PAD = 32;
 // Frame page: only the picker, top-aligned, with the same padding on every side.
 const CSS = `.demo-try, .demo-note, .demo-gear, .demo-confirmed { display: none !important }
 .demo { padding: ${PAD}px !important; justify-content: flex-start !important; align-items: center !important }`;
-const url = (q = "") => `${base}/?theme=light&ws=0&engine=h11${q ? `&q=${encodeURIComponent(q)}` : ""}`;
+const url = (q = "") => `${base}/?theme=light&ws=0${q ? `&q=${encodeURIComponent(q)}` : ""}`;
 
 // Probe: size of the largest card across the phrases, so the frame fits all of them.
 const probe = await browser.newPage({ viewport: { width: 900, height: 1000 } });

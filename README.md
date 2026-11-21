@@ -13,7 +13,7 @@ Just type <code>oct 2 to oct 5</code> or <code>every other sunday</code> and the
 
 Most date pickers make you click through a calendar. Most natural-language date libraries return one date and give up on ranges and repeating schedules. type-date reads free text, decides whether you meant a date, a time, a range or a recurrence, and shows only the matching panels. It updates on every keystroke.
 
-The parser has no model and no server. It is a set of rules that runs in the browser: 22 kB gzipped up front plus 34 kB of rules that load on the first keystroke, with a median of 0.3 ms per phrase.
+The parser has no model and no server. It is a set of rules that runs in the browser: 22 kB gzipped up front plus 40 kB of rules that load on the first keystroke, with a median of 0.3 ms per phrase.
 
 ## What it understands
 
@@ -30,6 +30,7 @@ The parser has no model and no server. It is a set of rules that runs in the bro
 | `13th of last month` | day 13 of the previous month |
 | `four score and seven years ago` | 87 years back |
 | `every thrus` | every Thursday (typos and abbreviations are handled) |
+| `9am tokyo time friday` | Friday 9:00 in Asia/Tokyo, with your time shown |
 | `tuesdays at 1:30 and thursdays at 3` | weekly, Tue 1:30 PM and Thu 3:00 PM (a time per weekday) |
 | `every third tuesday and second monday` | monthly, 2nd Monday and 3rd Tuesday |
 | `every other friday until jan` | every 2 weeks on Friday, ending before Jan 1 |

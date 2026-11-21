@@ -2,7 +2,7 @@
 
 React datetime picker. The user types text such as "oct 2 to oct 5" or "every other sunday". The calendar and time list update as they type.
 
-The parser runs in the browser and is bundled: no model, no network call, no server. It is the heuristic engine `h12` (see `specs/engines/h12.md`). Its rule sets load lazily on the first keystroke, and the entry file is about 14 kB gzipped. React is the only peer dependency.
+The parser runs in the browser and is bundled: no model, no network call, no server. It is the heuristic engine `h13` (see `specs/engines/h13.md`). Its rule sets load lazily on the first keystroke, and the entry file is about 14 kB gzipped. React is the only peer dependency.
 
 ## Install
 
@@ -31,6 +31,8 @@ Other exports: `parse(text, today?)` is the built-in parser (text to a DSL line,
 | `value`, `onChange` | none | `onChange` fires for parsed results and for clicks |
 | `onConfirm`, `onEscape`, `onClear` | none | Enter (after flushing the debounce), Escape on an empty input, and clearing |
 | `today` | local date | `YYYY-MM-DD` |
+| `zone` | browser zone | The user's IANA zone, for example `America/New_York`. Used to pick among ambiguous abbreviations (IST, CST, BST) and to show a time typed in another zone as "your time" |
+| `locale` | `navigator.language` | The user's locale, for example `en-IN`. Its region breaks ties between zone abbreviations |
 | `weekStart` | `0` | 0 Sunday, 1 Monday |
 | `timeFormat` | `"12h"` | `"12h"` or `"24h"` |
 | `dateFormat` | `"mdy"` | `"mdy"` (Oct 2, 2027), `"dmy"` (2 Oct 2027) or `"iso"` (2027-10-02) |
