@@ -1090,6 +1090,11 @@ describe("time zones (@ZONE)", () => {
       expect(serializeDsl(parseDsl(l)), l).toBe(l);
     }
   });
+  it("writes a zero offset as UTC", () => {
+    expect(serializeDsl(parseDsl("t 09:00 @+00:00"))).toBe("t 09:00 @UTC");
+    expect(serializeDsl(parseDsl("t 09:00 @-00:00"))).toBe("t 09:00 @UTC");
+    expect(resolveDsl("t 09:00 @+00:00", opts).zone).toBe("UTC");
+  });
   it("passes the zone through without converting times", () => {
     const r = resolveDsl("dt +1d 09:00 @America/Los_Angeles", opts);
     expect(r.zone).toBe("America/Los_Angeles");

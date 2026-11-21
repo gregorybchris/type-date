@@ -255,7 +255,8 @@ export function parseDsl(input: string): Parsed {
   if (zm) {
     const inner = parseDslNoZone(zm[1]!);
     if (inner.mode === "x" || inner.mode === "d" || !validZone(zm[2]!)) return { mode: "x" };
-    return { ...inner, zone: zm[2]! };
+    // a zero offset is UTC: one spelling for one zone
+    return { ...inner, zone: zm[2] === "+00:00" || zm[2] === "-00:00" ? "UTC" : zm[2]! };
   }
   return parseDslNoZone(line);
 }

@@ -1,6 +1,6 @@
 {"id": "r-fd0000", "text": "Weds 8 Jul", "dsl": "d 07-08", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0000"}
 {"id": "r-fd0002", "text": "Jan 0 2020", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0002"}
-{"id": "r-fd0003", "text": "2022-11-15T18:30:00+02:00", "dsl": "dt 2022-11-15 18:30", "primary_tag": "datetime", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0003"}
+{"id": "r-fd0003", "text": "2022-11-15T18:30:00+02:00", "dsl": "dt 2022-11-15 18:30 @+02:00", "primary_tag": "datetime", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0003", "relabeled": "zone"}
 {"id": "r-fd0004", "text": "Check-in after 3 pm on 20 Aug", "dsl": "dt 08-20 15:00", "primary_tag": "datetime", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0004"}
 {"id": "r-fd0006", "text": "PO box 1234", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0006"}
 {"id": "r-fd0007", "text": "Court date 09-JAN-2017", "dsl": "d 2017-01-09", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0007"}
@@ -86,7 +86,7 @@
 {"id": "r-fd0114", "text": "Tax filing 2024/12/28", "dsl": "d 2024-12-28", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0114"}
 {"id": "r-fd0115", "text": "12:30a", "dsl": "t 00:30", "primary_tag": "time-only", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0115"}
 {"id": "r-fd0116", "text": "Meet in room 12", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0116"}
-{"id": "r-fd0117", "text": "2021-07-04T09:00:00Z", "dsl": "dt 2021-07-04 09:00", "primary_tag": "datetime", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0117"}
+{"id": "r-fd0117", "text": "2021-07-04T09:00:00Z", "dsl": "dt 2021-07-04 09:00 @UTC", "primary_tag": "datetime", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0117", "relabeled": "zone"}
 {"id": "r-fd0119", "text": "Warranty valid until 2027-05-01", "dsl": "d 2027-05-01", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0119"}
 {"id": "r-fd0120", "text": "9 p.m.", "dsl": "t 21:00", "primary_tag": "time-only", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0120"}
 {"id": "r-fd0121", "text": "Streak: 101 days", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats-dev", "split": "dev", "parent_id": null, "group": "real-fd0121"}

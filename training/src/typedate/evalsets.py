@@ -463,3 +463,39 @@ def cut_relabel(version: str, parent: str, reason: str) -> dict:
             "relabeled": {k: dict(v) for k, v in counts.items()},
         },
     )
+
+
+def cut_zone(
+    version: str, parent: str, relabel: dict[str, str], drop: set[str], reason: str
+) -> dict:
+    """New eval version after the zone policy change.
+
+    Rows with a consensus label are relabeled, rows without one are dropped.
+
+    Keys are "split|id". Not comparable with the parent on the relabeled rows.
+    """
+    base = load_eval(parent)
+    out: dict[str, list[dict]] = {}
+    counts = {"relabeled": 0, "dropped": 0}
+    for split, rows in base.items():
+        new_rows = []
+        for r in rows:
+            key = f"{split}|{r['id']}"
+            if key in drop:
+                counts["dropped"] += 1
+                continue
+            if key in relabel and relabel[key] != r["dsl"]:
+                r = {
+                    **r,
+                    "dsl": relabel[key],
+                    "primary_tag": tag_from_dsl(relabel[key]),
+                    "relabeled": "zone",
+                }
+                counts["relabeled"] += 1
+            new_rows.append(r)
+        out[split] = new_rows
+    return _write(
+        version,
+        out,
+        {"parent": parent, "subset_of": None, "reason": reason, "zone_relabel": counts},
+    )

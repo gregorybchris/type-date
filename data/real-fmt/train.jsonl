@@ -338,7 +338,7 @@
 {"id": "r-ft1-0019", "text": "Gate B22", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0019"}
 {"id": "r-ft1-0020", "text": "4 days hence", "dsl": "d +4d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0020"}
 {"id": "r-ft1-0021", "text": "12/28/24", "dsl": "d 2024-12-28", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0021"}
-{"id": "r-ft1-0023", "text": "Log rotated 2023-11-04T02:15:33Z", "dsl": "dt 2023-11-04 02:15", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0023"}
+{"id": "r-ft1-0023", "text": "Log rotated 2023-11-04T02:15:33Z", "dsl": "dt 2023-11-04 02:15 @UTC", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0023", "relabeled": "zone"}
 {"id": "r-ft1-0024", "text": "Please arrive by 7a on Thursday", "dsl": "dt th 07:00", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0024"}
 {"id": "r-ft1-0025", "text": "Visit on 11/31", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0025"}
 {"id": "r-ft1-0026", "text": "29-FEB-2016", "dsl": "d 2016-02-29", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0026"}
@@ -364,7 +364,7 @@
 {"id": "r-ft1-0054", "text": "Posted Jan 5 2021 at 10:02", "dsl": "dt 2021-01-05 10:02?", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0054"}
 {"id": "r-ft1-0055", "text": "See you on Tuesday at 7pm", "dsl": "dt tu 19:00", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0055"}
 {"id": "r-ft1-0056", "text": "Time logged 27:15:00", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0056"}
-{"id": "r-ft1-0057", "text": "Thu, 15 Jun 2023 08:30:00 GMT", "dsl": "dt 2023-06-15 08:30", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0057"}
+{"id": "r-ft1-0057", "text": "Thu, 15 Jun 2023 08:30:00 GMT", "dsl": "dt 2023-06-15 08:30 @UTC", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0057", "relabeled": "zone"}
 {"id": "r-ft1-0058", "text": "Sent: Tuesday, July 19, 2022 4:02 PM", "dsl": "dt 2022-07-19 16:02", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0058"}
 {"id": "r-ft1-0059", "text": "Closing time is 12 midnight", "dsl": "t 00:00", "primary_tag": "time-only", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0059"}
 {"id": "r-ft1-0060", "text": "Trial: 14 days from now", "dsl": "d +14d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0060"}
@@ -376,7 +376,7 @@
 {"id": "r-ft1-0066", "text": "Coupon valid through 2024/12/28", "dsl": "d 2024-12-28", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0066"}
 {"id": "r-ft1-0067", "text": "Section 8.3 covers refunds", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0067"}
 {"id": "r-ft1-0068", "text": "Page 47 of 300", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0068"}
-{"id": "r-ft1-0070", "text": "Created: 2020-06-15T08:00:00Z", "dsl": "dt 2020-06-15 08:00", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0070"}
+{"id": "r-ft1-0070", "text": "Created: 2020-06-15T08:00:00Z", "dsl": "dt 2020-06-15 08:00 @UTC", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0070", "relabeled": "zone"}
 {"id": "r-ft1-0071", "text": "Meeting moved to 3rd Feb 82 at 9:30", "dsl": "dt 1982-02-03 9:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0071"}
 {"id": "r-ft1-0072", "text": "Appointment set for 8/32", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0072"}
 {"id": "r-ft1-0073", "text": "May 2nd, 2010", "dsl": "d 2010-05-02", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0073"}
@@ -472,7 +472,7 @@
 {"id": "r-ft1-0188", "text": "Break at 2:30:15 PM", "dsl": "t 14:30", "primary_tag": "time-only", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0188"}
 {"id": "r-ft1-0189", "text": "Due: 31-Dec-2025", "dsl": "d 2025-12-31", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0189"}
 {"id": "r-ft1-0191", "text": "May 31 2024 2:15 PM", "dsl": "dt 2024-05-31 14:15", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0191"}
-{"id": "r-ft1-0192", "text": "14:30:00Z", "dsl": "t 14:30", "primary_tag": "time-only", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0192"}
+{"id": "r-ft1-0192", "text": "14:30:00Z", "dsl": "t 14:30 @UTC", "primary_tag": "time-only", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0192", "relabeled": "zone"}
 {"id": "r-ft1-0193", "text": "party was at 12 midnight", "dsl": "t 00:00", "primary_tag": "time-only", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0193"}
 {"id": "r-ft1-0194", "text": "Chapter 11 starts here", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0194"}
 {"id": "r-ft1-0196", "text": "Job scheduled +2w", "dsl": "d +2w", "primary_tag": "relative-offset", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0196"}
@@ -482,7 +482,7 @@
 {"id": "r-ft1-0201", "text": "A4 paper", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0201"}
 {"id": "r-ft1-0202", "text": "Last edited Aug 10 2012, 9:30", "dsl": "dt 2012-08-10 9:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0202"}
 {"id": "r-ft1-0204", "text": "Submitted 2022-06-09 by admin", "dsl": "d 2022-06-09", "primary_tag": "basic-date", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0204"}
-{"id": "r-ft1-0205", "text": "Apr 7, 2024 2:30 PM EST invite", "dsl": "dt 2024-04-07 14:30", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0205"}
+{"id": "r-ft1-0205", "text": "Apr 7, 2024 2:30 PM EST invite", "dsl": "dt 2024-04-07 14:30 @America/New_York", "primary_tag": "datetime", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0205", "relabeled": "zone"}
 {"id": "r-ft1-0207", "text": "call 555-1234", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0207"}
 {"id": "r-ft1-0209", "text": "ratio 16:9", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0209"}
 {"id": "r-ft1-0210", "text": "last night", "dsl": "d -1d", "primary_tag": "relative-offset", "modifier_tags": [], "source": "formats", "split": "train", "parent_id": null, "group": "real-ft1-0210"}

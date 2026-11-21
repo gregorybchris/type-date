@@ -535,6 +535,29 @@ def data_relabel_policy(
     typer.echo(json.dumps(total))
 
 
+@eval_app.command("cut-zone")
+def eval_cut_zone(
+    version: str = typer.Argument(..., help="e.g. e16"),
+    parent: str = typer.Option("e15"),
+    changes: str = typer.Option(
+        ..., help='JSON {"relabel": {"split|id": dsl}, "drop": ["split|id"]}'
+    ),
+    reason: str = typer.Option(...),
+) -> None:
+    """Cut a new eval version after the zone policy change: relabel by consensus, drop the rest."""
+    from pathlib import Path
+
+    from .evalsets import cut_zone
+
+    c = json.loads(Path(changes).read_text())
+    m = cut_zone(version, parent, c["relabel"], set(c["drop"]), reason)
+    typer.echo(
+        json.dumps(
+            {"files": sum(v["n"] for v in m["files"].values()), "zone_relabel": m["zone_relabel"]}
+        )
+    )
+
+
 @eval_app.command("cut-clean")
 def eval_cut_clean(
     version: str = typer.Argument(..., help="e.g. e2"),

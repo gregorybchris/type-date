@@ -63,7 +63,7 @@
 {"id": "r-d0085", "text": "can u cover my shift sunday 6am", "dsl": "dt su 06:00", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0085"}
 {"id": "r-d0090", "text": "jan 2nd 2027", "dsl": "d 2027-01-02", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0090"}
 {"id": "r-d0091", "text": "11/3/26", "dsl": "d 2026-11-03", "primary_tag": "basic-date", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0091"}
-{"id": "r-d0092", "text": "can we push the call to 8pm ist", "dsl": "t 20:00", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0092"}
+{"id": "r-d0092", "text": "can we push the call to 8pm ist", "dsl": "t 20:00 @Asia/Kolkata", "primary_tag": "time-only", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0092", "relabeled": "zone"}
 {"id": "r-d0093", "text": "zoom fri 10:30", "dsl": "dt fr 10:30?", "primary_tag": "datetime", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0093"}
 {"id": "r-d0094", "text": "daily at 6am for a week", "dsl": "dt R d/1 n7 06:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0094"}
 {"id": "r-d0095", "text": "ev oth", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "realistic-dev", "split": "dev", "parent_id": null, "group": "real-d0095"}
