@@ -85,5 +85,5 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - Parallel agents share one scratchpad. Labelers and writers overwrote each other's temporary files (timezone round: pool 5 and 6, and web research round 13). Tell parallel agents to use their own subfolder of the scratchpad, and check every label file for id order and parse validity before consensus (`training/gen/tz/consensus_all.py` prints counts only).
 - A label-policy change (for example the zone suffix) makes old labels stale for every engine. Find the affected rows by running the new engine over old data and listing rows where only the new part differs, have two labelers who do not see the engine's output relabel them, and cut a new eval version. Do not relabel by running the engine. Stale rows in a training set (v007) go in `specs/engines/<engine>-known-conflicts.json`.
 - An engine rule found to be wrong after the sealed splits were scored (the single-letter meridiem before a zone, round of 2026-11-21) may be fixed, but report both sealed scores and say the second is post hoc.
-- The demo moved to `apps/demo`; the picker (`packages/picker`) bundles the built-in parser (now h13) and takes `zone` and `locale` props.
+- The demo moved to `apps/demo`; the picker (`packages/picker`) bundles the built-in parser (now h14) and takes `zone` and `locale` props.
 
