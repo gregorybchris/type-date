@@ -31,6 +31,22 @@ describe("formats", () => {
   });
 });
 
+describe("selected-day blocks", () => {
+  it("joins neighbors only when both are in the month or both are outside it", async () => {
+    // Daily: every day of September is solid, and the trailing days of August and October are faded.
+    const { type } = setup(table({ a: "d R d/1" }), { weekStart: 0 });
+    type("a");
+    await waitFor(() => expect(document.querySelector('[aria-selected="true"]')).toBeTruthy());
+    const join = (d: string) => document.querySelector(`[data-date="${d}"]`)!.parentElement!.getAttribute("data-join");
+    // Sep 30 (Wed): solid. Left is solid and joins. Right is Oct 1, faded, so no "r".
+    expect(join("2026-09-30")).toContain("l");
+    expect(join("2026-09-30")).not.toContain("r");
+    // Oct 1 (Thu): faded. Left is Sep 30, solid, so no "l". Right is Oct 2, faded, so "r".
+    expect(join("2026-10-01")).not.toContain("l");
+    expect(join("2026-10-01")).toContain("r");
+  });
+});
+
 describe("escape", () => {
   it("returns to today's month when the picker is already empty", () => {
     const { input } = setup(table({}));

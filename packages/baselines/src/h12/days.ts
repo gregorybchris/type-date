@@ -1,0 +1,100 @@
+// Weekdays with times: a separate time per weekday ("tuesdays at 1:30 and thursdays at 3") and registrar codes ("MW 10:50 AM 12:10 PM").
+import { FULL, PLURAL, RECURRENCE_CUE, WD_SRC, byWeekday, canonRec, code, isStartTok, type P } from "./common";
+
+const MIL = "(?:[01]\\d|2[0-3])[0-5]\\d";
+const ATOM = `(?:noon|midnight|${MIL}(?![\\d:])|\\d{1,2}(?:[:.]\\d{2})?\\s*(?:am|pm|a\\.m\\.|p\\.m\\.|a|p)?\\b)`;
+const DUR = "(?:\\s*(?:for|x)\\s+(?:an?|\\d+(?:\\.\\d+)?|half an)\\s*(?:min|mins|minutes?|hrs?|hours?)\\b)?";
+const TIME = `${ATOM}(?:\\s*(?:-|–|to|until|till)\\s*${ATOM})?${DUR}`;
+const GAP = /^[\s,;&@:+\-–/]*(?:(?:and|at|from|every|each|other|on|n|then|plus|the)\b[\s,;&@:+\-–/]*)*$/;
+const BOUND_CUE = /\b(?:until|till|til|thru|through|starting|beginning|commencing|for \d+ weeks?)\b/;
+
+type Group = { wds: string[]; time: string; plural: boolean };
+
+function scan(text: string): { groups: Group[]; start: number; end: number } | null {
+  const re = new RegExp(`\\b${WD_SRC}(s?)\\b|(${TIME})`, "g");
+  const ms = [...text.matchAll(re)];
+  let best = null as { groups: Group[]; start: number; end: number } | null;
+  for (let s = 0; s < ms.length; s++) {
+    if (ms[s]![1] === undefined) continue; // a run starts at a weekday
+    const groups: Group[] = [];
+    let pending: { wd: string; plural: boolean }[] = [];
+    let end = ms[s]!.index!;
+    let prevEnd = ms[s]!.index!;
+    for (let i = s; i < ms.length; i++) {
+      const m = ms[i]!;
+      if (!GAP.test(text.slice(prevEnd, m.index!))) break;
+      if (m[1] !== undefined) {
+        const plural = m[2] === "s" && PLURAL.test(m[0]);
+        pending.push({ wd: code(m[1]), plural });
+      } else {
+        if (!pending.length) break;
+        groups.push({ wds: pending.map((x) => x.wd), time: m[3]!, plural: pending.some((x) => x.plural) });
+        pending = [];
+        end = m.index! + m[0].length;
+      }
+      prevEnd = m.index! + m[0].length;
+    }
+    if (groups.length >= 2) {
+      best = { groups, start: ms[s]!.index!, end };
+      break;
+    }
+  }
+  return best;
+}
+
+export function dayTimes(text: string, p0: P, p: P): string | null {
+  const run = scan(text);
+  if (!run) return null;
+  const all = run.groups.flatMap((g) => g.wds);
+  if (new Set(all).size !== all.length || all.length < 2) return null;
+  const pre = text.slice(0, run.start).replace(/\b(?:every|each)(?:\s+other)?\s*$/, (m) => (/other/.test(m) ? "every other " : " "));
+  const post = text.slice(run.end);
+  const plural = run.groups.some((g) => g.plural);
+  if (!plural && !RECURRENCE_CUE.test(text) && !BOUND_CUE.test(text)) return null;
+  const times: string[] = [];
+  for (const g of run.groups) {
+    const t = p0(`every ${FULL[g.wds[0]!]} at ${g.time}`).match(/^dt R w\/1 \w\w (\S+)$/);
+    if (!t) return null;
+    times.push(t[1]!);
+  }
+  const days = [...all].sort(byWeekday);
+  const names = days.map((d) => FULL[d]).join(" and ");
+  const alt = /\b(?:bi-?\s?weekly|fortnightly|every other|alternate)\b/.test(pre + " " + post);
+  const lead = /\b(?:every|each)(?:\s+other)?\s*$/.test(pre) ? "" : alt ? "every other " : "every ";
+  const stub = `${pre} ${lead}${names} ${post}`.replace(/\b(?:bi-?\s?weekly|fortnightly)\b/g, " ").replace(/\s+/g, " ").trim();
+  const out = p(stub);
+  const toks = out.split(" ");
+  if (toks[0] !== "d" || toks[1] !== "R" || !/^w\/\d+$/.test(toks[2]!) || toks[3] !== days.join(",")) return null;
+  toks[0] = "dt";
+  const byDay = new Map<string, string>();
+  run.groups.forEach((g, i) => g.wds.forEach((w) => byDay.set(w, times[i]!)));
+  if (new Set(times).size === 1) {
+    const si = toks.findIndex((t, j) => j > 3 && isStartTok(t));
+    toks.splice(si < 0 ? toks.length : si, 0, times[0]!);
+  } else {
+    toks[3] = days.map((d) => `${d}@${byDay.get(d)}`).join(",");
+  }
+  return canonRec(toks.join(" "));
+}
+
+const REG_CODE: Record<string, string> = { M: "mo", T: "tu", W: "we", R: "th", F: "fr", S: "sa", U: "su" };
+
+/** Registrar weekday codes with a clock time: "MW 10:50 AM 12:10 PM", "TR 8 - 9:15 am", "8:00am 9:25am [ TR ]". Needs the original case. */
+export function registrar(orig: string, p0: P): string | null {
+  const m = orig.match(/(?<![A-Za-z])([MTWRFSU]{2,7})(?![A-Za-z])/);
+  if (!m || /\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b/i.test(orig)) return null;
+  const letters = [...m[1]!];
+  // codes list days in week order (MWF, TR, MTWRF); "TMRW" is a word
+  if (letters.some((l, i) => i && "MTWRFSU".indexOf(l) <= "MTWRFSU".indexOf(letters[i - 1]!))) return null;
+  const days = letters.map((l) => REG_CODE[l]!).sort(byWeekday);
+  let rest = (orig.slice(0, m.index!) + " " + orig.slice(m.index! + m[0].length)).toLowerCase();
+  const wk = rest.match(/\bfor (?:the next )?(\d+) weeks?\b/);
+  if (wk) rest = rest.replace(wk[0], " ");
+  rest = rest.replace(/[\[\];()]/g, " ").replace(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm))/g, "$1 to $2");
+  rest = rest.replace(/\s+/g, " ").trim();
+  const t = p0(rest);
+  const tm = t.match(/^t (\S+)$/) ?? t.match(/^dt R \S+ \w\w(?:,\w\w)* (\S+)$/);
+  if (!tm) return null;
+  const nd = days.join(",");
+  return `dt R w/1 ${nd}${wk ? ` n${+wk[1]! * days.length}` : ""} ${tm[1]}`;
+}

@@ -2,9 +2,9 @@
 // The clause is cut out of the text, h11 parses what is left (the skeleton), and each clause operand is parsed alone and
 // written as an `s` or `u` bound. Operands are any single date or period: month, date, year, weekday, relative week, holiday.
 
-type P = (s: string) => string;
+import { canonRec, isStartTok, type P } from "./common";
 
-const START = "starting|starts?|beginning|begins?|commencing|commences?|from|since";
+const START = "starting|starts?|beginning|begins?|commencing|commences?|from";
 const END = "until|untill|uptil|till|til|through|thru|ending|ends?|up to|to";
 const CUE = new RegExp(`\\b(${START}|${END})\\b`, "g");
 const isStart = (c: string) => new RegExp(`^(?:${START})$`).test(c);
@@ -59,10 +59,12 @@ export function withBounds(text: string, p: P): string | null {
   for (let i = 0; i < clauses.length; i++) {
     const c = clauses[i]!;
     if (c.cue === "to") continue; // handled as the end of "from X to Y"
+    // "mon thru fri": a weekday range, not an until bound
+    if (/\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s*$/.test(text.slice(0, c.from)) && /^\s*(?:mon|tue|wed|thu|fri|sat|sun)/.test(c.op) && /^(?:thru|through|till|until|to)$/.test(c.cue)) return null;
     const nxt = clauses[i + 1];
     const range = isStart(c.cue) && nxt?.cue === "to";
     // an operand may end before "at <time>", "every ...", or "on <weekday>" words that belong to the skeleton
-    const op = c.op.replace(/\s+(?:at|every|each)\s+.*$/, "");
+    const op = c.op.replace(/\s+(?:at|@|every|each|for)\s+.*$/, "");
     const tok = operand(op, p, "first");
     if (!tok) {
       if (isStart(c.cue) && c.cue !== "from" && c.cue !== "since") return null;
@@ -73,10 +75,10 @@ export function withBounds(text: string, p: P): string | null {
       sTok = tok;
       cut.push([c.from, c.from + c.cue.length + op.length + 1]);
       if (range) {
-        const t2 = operand(nxt!.op.replace(/\s+(?:at|every|each)\s+.*$/, ""), p, "last");
+        const t2 = operand(nxt!.op.replace(/\s+(?:at|@|every|each|for)\s+.*$/, ""), p, "last");
         if (!t2) return null;
         uTok = t2;
-        cut.push([nxt!.from, nxt!.from + nxt!.cue.length + nxt!.op.replace(/\s+(?:at|every|each)\s+.*$/, "").length + 1]);
+        cut.push([nxt!.from, nxt!.from + nxt!.cue.length + nxt!.op.replace(/\s+(?:at|@|every|each|for)\s+.*$/, "").length + 1]);
         i++;
       }
     } else {
@@ -91,6 +93,8 @@ export function withBounds(text: string, p: P): string | null {
   let rest = text;
   for (const [a, b] of [...cut].sort((x, y) => y[0] - x[0])) rest = rest.slice(0, a) + " " + rest.slice(b);
   rest = rest.replace(/\s+/g, " ").trim();
+  // a recurrence word is needed ("fortnight from today" is a date offset)
+  if (!/\b(?:every|each|daily|weekly|biweekly|fortnightly|monthly|yearly|annually|everyday|weekdays?|weekends?|alternate)\b|\b[a-z]+days\b/.test(rest)) return null;
   let skel = p(rest);
   if (!/^(?:d|dt) R /.test(skel)) {
     const f = FREQ.find(([re]) => re.test(rest));
@@ -100,13 +104,23 @@ export function withBounds(text: string, p: P): string | null {
     skel = tm ? `dt R ${f[1]} ${tm[1]}` : `d R ${f[1]}`;
   }
   const toks = tokens(skel);
+  // "every 8 weeks starting thursday": a weekday start with no weekday list names the day
+  let startTok = sTok;
+  if (toks.length === 3 && sTok && /^(?:mo|tu|we|th|fr|sa|su)$/.test(sTok)) {
+    toks.push(sTok);
+    startTok = null;
+  }
   const keep = toks.filter((t, i) => {
     if (i < 3) return true;
-    if (sTok && /^s(?!a$|u$)\S+/.test(t)) return false;
+    if (startTok && isStartTok(t)) return false;
     if (uTok && /^u\S+/.test(t)) return false;
     return true;
   });
   if (uTok) keep.push(`u${uTok}`);
-  if (sTok) keep.push(`s${sTok}`);
-  return keep.join(" ");
+  if (startTok) keep.push(`s${startTok}`);
+  // h11 already wrote the same kinds of bounds: keep its spelling (`u09-30` rather than `uM@09`)
+  const base = p(text);
+  const bt = tokens(base);
+  if (/^(?:d|dt) R /.test(base) && bt.some((t, i) => i > 2 && /^u\S/.test(t)) === !!uTok && bt.some((t, i) => i > 2 && isStartTok(t)) === !!sTok) return base;
+  return canonRec(keep.join(" "));
 }

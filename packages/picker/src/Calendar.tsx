@@ -79,8 +79,12 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
     if (open && !trueLo && !trueHi && lo === hi) pos = "mid";
     return pos;
   };
-  // Selected days that are not part of a range (recurrences, lists). Neighbors in this set join into one block.
+  // Selected days that are not part of a range (recurrences, lists).
   const plain = (d: string | undefined) => !!d && !posOf(d) && (!!sel.multi?.has(d) || sel.occ.has(d));
+  // Neighbors join into one block only when they look the same: both in this month (solid) or both outside it (faded).
+  // A corner is then rounded exactly when neither of its two sides joins a neighbor, so every block and every
+  // solid/faded boundary gets rounded outer corners without special cases.
+  const joined = (a: string, b: string | undefined) => plain(b) && (a.slice(0, 7) !== viewKey) === (b!.slice(0, 7) !== viewKey);
   const label = monthLabel(view);
 
   return (
@@ -115,7 +119,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                 const selected = !!pos || sel.multi?.has(d) || occ;
                 const i = r * 7 + c;
                 const join = plain(d)
-                  ? [c > 0 && plain(days[i - 1]) ? "l" : "", c < 6 && plain(days[i + 1]) ? "r" : "", r > 0 && plain(days[i - 7]) ? "u" : "", r < 5 && plain(days[i + 7]) ? "d" : ""].join("") || undefined
+                  ? [c > 0 && joined(d, days[i - 1]) ? "l" : "", c < 6 && joined(d, days[i + 1]) ? "r" : "", r > 0 && joined(d, days[i - 7]) ? "u" : "", r < 5 && joined(d, days[i + 7]) ? "d" : ""].join("") || undefined
                   : undefined;
                 return (
                   <div
