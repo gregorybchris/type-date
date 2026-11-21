@@ -265,6 +265,8 @@ function App() {
   useEffect(() => savePrefs(prefs), [prefs]);
   const [confirmed, setConfirmed] = useState<string | null>(null);
   const [text, setText] = useState(q.get("q") ?? "");
+  // Bumped on every example click, so choosing the same example again still resets the picker.
+  const [run, setRun] = useState(0);
 
   const parse = useCallback(async (t: string) => {
     const r = await h11.predict(t.trim().toLowerCase().replace(/\s+/g, " "), undefined, { today: TODAY });
@@ -278,7 +280,7 @@ function App() {
         <div className="demo-stage">
         {/* key remounts the picker when an example is chosen: the picker reads `defaultText` once */}
         <TypeDatePicker
-          key={text}
+          key={`${run}:${text}`}
           parse={parse}
           theme={theme.mode}
           weekStart={weekStart}
@@ -306,7 +308,10 @@ function App() {
           <h2 className="demo-try-title">Or try one of these</h2>
           <div className="demo-chips">
             {EXAMPLES.map((ex) => (
-              <button key={ex} type="button" className="demo-chip" onClick={() => setText(ex)}>
+              <button key={ex} type="button" className="demo-chip" onClick={() => {
+                  setText(ex);
+                  setRun((n) => n + 1);
+                }}>
                 {ex}
               </button>
             ))}
