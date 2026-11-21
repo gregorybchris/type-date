@@ -691,3 +691,21 @@ describe("time zones", () => {
     expect(document.querySelector("[data-zone]")).toBeNull();
   });
 });
+
+describe("clear button", () => {
+  it("is hidden when empty and clears the text and result in one tap", async () => {
+    const onClear = vi.fn();
+    const { input, type, root } = setup(table({ c: "d 09-21" }), { onClear });
+    const btn = root.querySelector<HTMLButtonElement>(".td-clear")!;
+    expect(btn.hidden).toBe(true);
+    type("c");
+    await waitFor(() => expect(root.dataset.kind).not.toBe("none"));
+    expect(btn.hidden).toBe(false);
+    fireEvent.click(btn);
+    expect(input.value).toBe("");
+    expect(root.dataset.kind).toBe("none");
+    expect(btn.hidden).toBe(true);
+    expect(document.activeElement).toBe(input);
+    expect(onClear).toHaveBeenCalled();
+  });
+});

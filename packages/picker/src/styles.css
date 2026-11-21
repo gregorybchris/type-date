@@ -174,6 +174,51 @@
   transition-delay: 160ms;
   animation: td-pulse 900ms ease-in-out infinite;
 }
+/* One-tap clear. A 22px disc inside a larger hit area; negative margins keep the row height unchanged. */
+.td-clear {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  margin: -6px -6px -6px -4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--td-fg-2);
+  font: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.td-clear[hidden] {
+  display: none;
+}
+.td-clear svg {
+  box-sizing: content-box;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--td-hover);
+  transition: background-color 120ms, color 120ms;
+}
+.td-clear:focus-visible {
+  outline: 0;
+}
+.td-clear:focus-visible svg {
+  box-shadow: 0 0 0 2px var(--td-accent);
+}
+.td-clear:active svg {
+  background: var(--td-border);
+  color: var(--td-fg);
+}
+@media (hover: hover) {
+  .td-clear:hover svg {
+    background: var(--td-border);
+    color: var(--td-fg);
+  }
+}
 
 /* collapsible rows */
 .td-collapse {
@@ -787,6 +832,14 @@
   .td-icon-btn {
     width: 44px;
     height: 44px;
+  }
+  .td-clear {
+    width: 44px;
+    height: 44px;
+    margin: -12px -12px -12px -8px;
+  }
+  .td-clear svg {
+    padding: 6px;
   }
   .td-cal-head {
     height: 44px;

@@ -9,7 +9,7 @@ import { WD_LABEL, describeRecurrence, fmtDate, inUserZone, zoneLabel, zoneOffse
 import type { View } from "./dates";
 import { extendList, flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
-import { CalendarIcon, SearchIcon } from "./icons";
+import { CalendarIcon, ClearIcon, SearchIcon } from "./icons";
 import { parse as builtInParse, preload } from "./parse";
 
 export interface TypeDatePickerProps {
@@ -470,6 +470,20 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
           enterKeyHint="done"
         />
         <span className="td-busy" aria-hidden />
+        <button
+          type="button"
+          className="td-clear"
+          aria-label="Clear"
+          hidden={!text}
+          // Keep focus (and the soft keyboard) on the input.
+          onPointerDown={(e) => e.preventDefault()}
+          onClick={() => {
+            reset();
+            root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
+          }}
+        >
+          <ClearIcon />
+        </button>
       </div>
 
       <Collapse open={!!result}>

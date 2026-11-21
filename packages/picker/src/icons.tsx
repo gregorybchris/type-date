@@ -16,6 +16,11 @@ export const SearchIcon = () => (
     <path d="m10.5 10.5 3 3" />
   </svg>
 );
+export const ClearIcon = () => (
+  <svg {...p} width={14} height={14} viewBox="0 0 14 14" strokeWidth={1.6}>
+    <path d="m4 4 6 6M10 4l-6 6" />
+  </svg>
+);
 export const CalendarIcon = () => (
   <svg {...p}>
     <rect x="2.5" y="3.5" width="11" height="10" rx="2" />
