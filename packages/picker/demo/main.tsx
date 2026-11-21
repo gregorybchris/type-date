@@ -313,13 +313,7 @@ function App() {
         ) : null}
         </div>
         <section className="demo-try" aria-label="Examples">
-          <div className="demo-try-head">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" />
-              <path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z" />
-            </svg>
-            <h2>Try an example</h2>
-          </div>
+          <h2 className="demo-try-title">Or try one of these</h2>
           <div className="demo-chips">
             {EXAMPLES.map((ex) => (
               <button key={ex} type="button" className="demo-chip" onClick={() => setText(ex)}>

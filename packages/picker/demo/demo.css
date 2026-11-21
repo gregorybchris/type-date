@@ -7,7 +7,7 @@ body {
   /* Fonts: body and headings, and a mono face for calendar numbers, date and time fields. */
   --f-body: "Plus Jakarta Sans", system-ui, sans-serif;
   --f-display: var(--f-body);
-  --f-num: "IBM Plex Mono", ui-monospace, monospace;
+  --f-num: var(--f-body);
   font-family: var(--f-body);
   /* Theme inputs (--t-*) are set inline from themes.ts. Everything else is derived from them. */
   --t-page: #f5f4f0;
@@ -83,28 +83,11 @@ body {
     margin-top: 14px;
   }
 }
-.demo-try-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
+.demo-try-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 400;
   color: var(--d-fg2);
-}
-.demo-try-head svg {
-  flex: none;
-  color: var(--t-accent);
-}
-.demo-try-head h2 {
-  margin: 0;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.demo-try-head::after {
-  content: "";
-  flex: 1;
-  border-top: 1px dotted var(--d-line);
 }
 .demo-chips {
   display: flex;
