@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
 import { TypeDatePicker, summarize } from "../src";
+import type { DateFormat, TimeFormat } from "../src";
 import "../src/styles.css";
 import "./demo.css";
 import { DEFAULT_THEME, THEMES, findTheme, themeVars } from "./themes";
@@ -43,8 +44,26 @@ interface Prefs {
   /** A theme id from themes.ts. */
   theme: string;
   weekStart: 0 | 1;
+  timeFormat: TimeFormat;
+  dateFormat: DateFormat;
 }
-const DEFAULTS: Prefs = { theme: DEFAULT_THEME, weekStart: 0 };
+
+/** 12h or 24h, and day or month first, as the browser locale writes them. */
+function localeFormats(): { timeFormat: TimeFormat; dateFormat: DateFormat } {
+  try {
+    const lang = navigator.language;
+    const hour12 = new Intl.DateTimeFormat(lang, { hour: "numeric" }).resolvedOptions().hour12;
+    const order = new Intl.DateTimeFormat(lang, { year: "numeric", month: "numeric", day: "numeric" })
+      .formatToParts(new Date(2000, 0, 2))
+      .map((p) => p.type)
+      .filter((t) => t === "year" || t === "month" || t === "day");
+    const dateFormat: DateFormat = order[0] === "year" ? "iso" : order[0] === "day" ? "dmy" : "mdy";
+    return { timeFormat: hour12 ? "12h" : "24h", dateFormat };
+  } catch {
+    return { timeFormat: "12h", dateFormat: "mdy" };
+  }
+}
+const DEFAULTS: Prefs = { theme: DEFAULT_THEME, weekStart: 0, ...localeFormats() };
 
 function loadPrefs(): Prefs {
   let saved: Partial<Prefs> = {};
@@ -56,6 +75,9 @@ function loadPrefs(): Prefs {
   const base: Prefs = {
     theme: findTheme(saved.theme)?.id ?? DEFAULT_THEME,
     weekStart: saved.weekStart === 1 ? 1 : 0,
+    timeFormat: saved.timeFormat === "12h" || saved.timeFormat === "24h" ? saved.timeFormat : DEFAULTS.timeFormat,
+    dateFormat:
+      saved.dateFormat === "mdy" || saved.dateFormat === "dmy" || saved.dateFormat === "iso" ? saved.dateFormat : DEFAULTS.dateFormat,
   };
   // URL parameters win over saved preferences (used by screenshot scripts and shared links)
   const urlTheme = findTheme(q.get("theme"));
@@ -209,6 +231,31 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
             onChange={(weekStart) => set({ weekStart })}
           />
         </div>
+        <div className="demo-field">
+          <span className="demo-label">Time format</span>
+          <Segmented
+            label="Time format"
+            value={prefs.timeFormat}
+            options={[
+              { value: "12h", label: "3:30 PM" },
+              { value: "24h", label: "15:30" },
+            ]}
+            onChange={(timeFormat) => set({ timeFormat })}
+          />
+        </div>
+        <div className="demo-field">
+          <span className="demo-label">Date format</span>
+          <Segmented
+            label="Date format"
+            value={prefs.dateFormat}
+            options={[
+              { value: "mdy", label: "Oct 2, 2027" },
+              { value: "dmy", label: "2 Oct 2027" },
+              { value: "iso", label: "2027-10-02" },
+            ]}
+            onChange={(dateFormat) => set({ dateFormat })}
+          />
+        </div>
         <div className="demo-modal-foot">
           <span>Saved in this browser.</span>
           <button type="button" className="demo-link" onClick={props.reset}>
@@ -222,7 +269,7 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
 
 function App() {
   const [prefs, setPrefs] = useState<Prefs>(loadPrefs);
-  const { weekStart } = prefs;
+  const { weekStart, timeFormat, dateFormat } = prefs;
   const theme = findTheme(prefs.theme) ?? THEMES[0]!;
   const set = (p: Partial<Prefs>) => setPrefs((cur) => ({ ...cur, ...p }));
   useEffect(() => savePrefs(prefs), [prefs]);
@@ -245,6 +292,8 @@ function App() {
           parse={parse}
           theme={theme.mode}
           weekStart={weekStart}
+          timeFormat={timeFormat}
+          dateFormat={dateFormat}
           today={TODAY}
           autoFocus={!matchMedia("(max-width: 520px)").matches}
           defaultText={text}

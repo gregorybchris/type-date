@@ -4,7 +4,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
-import { describeRecurrence, fmtDate, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
+import type { DateFormat, TimeFormat } from "./dates";
+import { describeRecurrence, fmtDate, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
 import { flipMeridiem, pickDate, pickTime, summarize } from "./edit";
 import type { Target } from "./edit";
@@ -26,6 +27,10 @@ export interface TypeDatePickerProps {
   /** YYYY-MM-DD. Defaults to the local date. */
   today?: string;
   weekStart?: 0 | 1;
+  /** "12h" (3:30 PM) or "24h" (15:30). Default "12h". */
+  timeFormat?: TimeFormat;
+  /** "mdy" (Oct 2, 2027), "dmy" (2 Oct 2027) or "iso" (2027-10-02). Default "mdy". */
+  dateFormat?: DateFormat;
   debounceMs?: number;
   theme?: "light" | "dark" | "system";
   placeholder?: string;
@@ -68,6 +73,7 @@ const fmtBound = (d: string, today: string) => (d.slice(0, 4) === today.slice(0,
 
 export function TypeDatePicker(props: TypeDatePickerProps) {
   const { parse, value, theme = "system", weekStart = 0, debounceMs = 120 } = props;
+  setFormats(props.timeFormat ?? "12h", props.dateFormat ?? "mdy");
   const today = useMemo(() => props.today ?? localToday(), [props.today]);
   const [text, setText] = useState(props.defaultText ?? "");
   const [result, setResult] = useState<Resolved | null>(value ?? null);

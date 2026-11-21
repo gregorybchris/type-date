@@ -22,6 +22,15 @@ function setup(parse: TypeDatePickerProps["parse"], extra: Partial<TypeDatePicke
 }
 const table = (m: Record<string, string>) => async (t: string) => m[t] ?? "x";
 
+describe("formats", () => {
+  it("shows 24-hour times and day-first dates when asked", async () => {
+    const { type } = setup(table({ c: "dt 09-21 15:30" }), { timeFormat: "24h", dateFormat: "dmy" });
+    type("c");
+    await waitFor(() => expect(screen.getByRole("option", { name: "15:30" }).getAttribute("aria-selected")).toBe("true"));
+    expect(screen.getAllByText("21 Sep 2026").length).toBeGreaterThan(0);
+  });
+});
+
 describe("escape", () => {
   it("returns to today's month when the picker is already empty", () => {
     const { input } = setup(table({}));

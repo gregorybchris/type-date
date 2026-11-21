@@ -27,18 +27,34 @@ export const viewOf = (date: string): View => {
 export const viewIndex = (v: View) => v.y * 12 + v.m - 1;
 export const fromIndex = (i: number): View => ({ y: Math.floor(i / 12), m: (i % 12) + 1 });
 
+export type TimeFormat = "12h" | "24h";
+/** mdy: Oct 2, 2027. dmy: 2 Oct 2027. iso: 2027-10-02. */
+export type DateFormat = "mdy" | "dmy" | "iso";
+
+// Display formats. The picker sets them on every render, before any child formats text.
+let timeFormat: TimeFormat = "12h";
+let dateFormat: DateFormat = "mdy";
+export function setFormats(time: TimeFormat, date: DateFormat) {
+  timeFormat = time;
+  dateFormat = date;
+}
+
 export const fmtDate = (s: string) => {
   const [y, m, d] = parts(s);
-  return `${MON[m - 1]} ${d}, ${y}`;
+  if (dateFormat === "iso") return s;
+  return dateFormat === "dmy" ? `${d} ${MON[m - 1]} ${y}` : `${MON[m - 1]} ${d}, ${y}`;
 };
+/** Date without the year: Oct 2, 2 Oct, or 10-02. */
 export const fmtShort = (s: string) => {
   const [, m, d] = parts(s);
-  return `${MON[m - 1]} ${d}`;
+  if (dateFormat === "iso") return `${p2(m)}-${p2(d)}`;
+  return dateFormat === "dmy" ? `${d} ${MON[m - 1]}` : `${MON[m - 1]} ${d}`;
 };
 export const monthLabel = (v: View) => `${MONTH[v.m - 1]} ${v.y}`;
 
 export const fmtTime = (t: string) => {
   const [h, m] = t.split(":").map(Number) as [number, number];
+  if (timeFormat === "24h") return `${p2(h)}:${p2(m)}`;
   return `${h % 12 || 12}:${p2(m)} ${h < 12 ? "AM" : "PM"}`;
 };
 
@@ -62,6 +78,7 @@ export function timeOptions(extra: (string | undefined)[]): string[] {
 export const fmtSpan = (a: string, b: string) => {
   const fa = fmtTime(a);
   const fb = fmtTime(b);
+  if (timeFormat === "24h") return `${fa} - ${fb}`;
   return fa.slice(-2) === fb.slice(-2) ? `${fa.slice(0, -3)} - ${fb}` : `${fa} - ${fb}`;
 };
 
@@ -97,7 +114,7 @@ export function describeRecurrence(r: ResolvedRecurrence): string {
     s += `${i ? "," : " on the"} ${n.k < 0 ? "last" : ord(n.k)} ${WD_LABEL[n.wd]}`;
   }
   if (r.months) s += ` in ${monthNames(r.months)}`;
-  if (r.yearDay) s += ` on ${MON[r.yearDay.m - 1]} ${r.yearDay.d}`;
+  if (r.yearDay) s += ` on ${fmtShort(ymd(2000, r.yearDay.m, r.yearDay.d))}`;
   if (r.time) s += ` at ${r.time.end ? fmtSpan(r.time.start, r.time.end) : fmtTime(r.time.start)}`;
   if (r.count) s += `, ${r.count} times`;
   if (r.until) s += ` until ${fmtDate(r.until)}`;
