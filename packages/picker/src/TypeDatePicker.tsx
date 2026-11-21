@@ -1,6 +1,6 @@
 import { localToday, occurrences, resolveDsl, toRRule } from "@type-date/core";
 import type { Resolved } from "@type-date/core";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
 import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
@@ -10,7 +10,7 @@ import type { View } from "./dates";
 import { extendList, flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
 import { CalendarIcon, SearchIcon } from "./icons";
-import { parse as builtInParse } from "./parse";
+import { parse as builtInParse, preload } from "./parse";
 
 export interface TypeDatePickerProps {
   /** Turns typed text into a DSL line. Defaults to the built-in parser. */
@@ -72,7 +72,15 @@ function Field(props: { icon?: boolean; active?: boolean; onClick: () => void; c
 /** "Mar 1", or "Mar 1, 2027" when the year is not the current one. */
 const fmtBound = (d: string, today: string) => (d.slice(0, 4) === today.slice(0, 4) ? fmtShort(d) : fmtDate(d));
 
-export function TypeDatePicker(props: TypeDatePickerProps) {
+/** Methods on the ref of `TypeDatePicker`. */
+export interface TypeDatePickerHandle {
+  /** Replace the text and parse it now. The picker keeps its state and shows the new result like typed text. */
+  setText: (text: string) => void;
+  /** Focus the text input. */
+  focus: () => void;
+}
+
+export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerProps>(function TypeDatePicker(props, ref) {
   const { value, theme = "system", weekStart = 0, debounceMs = 120 } = props;
   setFormats(props.timeFormat ?? "12h", props.dateFormat ?? "mdy");
   const today = useMemo(() => props.today ?? localToday(), [props.today]);
@@ -207,6 +215,23 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     clearTimeout(timer.current);
     timer.current = setTimeout(() => run(t), debounceMs);
   };
+
+  useImperativeHandle(ref, () => ({
+    setText: (t: string) => {
+      clearTimeout(timer.current);
+      setAnchor(null);
+      setDayIdx(0);
+      if (!t.trim()) return reset();
+      setText(t);
+      void run(t);
+    },
+    focus: () => root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true }),
+  }));
+
+  // Warm the built-in parser's lazy rule sets, so the first parse is as fast as the rest.
+  useEffect(() => {
+    if (!customParse) preload();
+  }, [customParse]);
 
   // Escape clears the picker from anywhere inside it, or when nothing has focus (after a click on a day or
   // on empty space). The text input has its own handler below.
@@ -560,4 +585,4 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       </div>
     </div>
   );
-}
+});

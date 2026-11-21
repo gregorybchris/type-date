@@ -1,6 +1,9 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { createRef } from "react";
+import type { Ref } from "react";
 import { TypeDatePicker } from "../src";
+import type { TypeDatePickerHandle } from "../src";
 import type { TypeDatePickerProps } from "../src";
 
 /** The rule is split at semicolons for line breaking, so match on the element's text. */
@@ -14,7 +17,7 @@ afterEach(cleanup);
 const TODAY = "2026-09-14";
 const DB = 5;
 
-function setup(parse: TypeDatePickerProps["parse"], extra: Partial<TypeDatePickerProps> = {}) {
+function setup(parse: TypeDatePickerProps["parse"], extra: Partial<TypeDatePickerProps> & { ref?: Ref<TypeDatePickerHandle> } = {}) {
   const utils = render(<TypeDatePicker parse={parse} today={TODAY} debounceMs={DB} showRule {...extra} />);
   const input = screen.getByLabelText("Date and time") as HTMLInputElement;
   const type = (v: string) => fireEvent.change(input, { target: { value: v } });
@@ -145,6 +148,27 @@ describe("assumed AM/PM", () => {
     expect(document.body.textContent).toContain("Tue at 1:30 PM, Thu at 3:00 PM");
     fireEvent.click(screen.getByRole("button", { name: "AM" }));
     expect(document.body.textContent).toContain("Tue at 1:30 AM, Thu at 3:00 AM");
+  });
+});
+
+describe("ref handle", () => {
+  it("setText replaces the text and parses it without remounting", async () => {
+    const ref = createRef<TypeDatePickerHandle>();
+    const { input, root } = setup(table({ a: "d 09-21", b: "d 09-24" }), { ref });
+    const el = root;
+    act(() => ref.current!.setText("a"));
+    await waitFor(() => expect(input.value).toBe("a"));
+    await waitFor(() => expect(document.querySelectorAll('[aria-selected="true"]').length).toBe(1));
+    act(() => ref.current!.setText("b"));
+    await waitFor(() => expect(document.querySelector('[data-date="2026-09-24"]')!.parentElement!.getAttribute("aria-selected")).toBe("true"));
+    expect(document.querySelector(".td-root")).toBe(el);
+    expect(screen.getByLabelText("Date and time")).toBe(input);
+    // The same text again re-parses, which resets a selection made by clicking.
+    fireEvent.click(document.querySelector('[data-date="2026-09-10"]')!);
+    act(() => ref.current!.setText("b"));
+    await waitFor(() => expect(document.querySelector('[data-date="2026-09-24"]')!.parentElement!.getAttribute("aria-selected")).toBe("true"));
+    act(() => ref.current!.setText(""));
+    await waitFor(() => expect(input.value).toBe(""));
   });
 });
 

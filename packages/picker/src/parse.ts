@@ -8,3 +8,8 @@ export async function parse(text: string, today?: string): Promise<string> {
   const r = await h12.predict(text.trim().toLowerCase().replace(/\s+/g, " "), undefined, { today });
   return r.dsl;
 }
+
+/** Start loading the parser's rule sets. Safe to call many times. */
+export function preload(): void {
+  void h12.load();
+}

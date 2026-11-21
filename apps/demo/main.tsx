@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { createRoot } from "react-dom/client";
 import { TypeDatePicker, summarize } from "@type-date/picker";
-import type { DateFormat, TimeFormat } from "@type-date/picker";
+import type { DateFormat, TimeFormat, TypeDatePickerHandle } from "@type-date/picker";
 import "@type-date/picker/styles.css";
 import "./demo.css";
 import { DEFAULT_THEME, THEMES, findTheme, themeVars } from "./themes";
@@ -250,25 +250,23 @@ function App() {
   const set = (p: Partial<Prefs>) => setPrefs((cur) => ({ ...cur, ...p }));
   useEffect(() => savePrefs(prefs), [prefs]);
   const [confirmed, setConfirmed] = useState<string | null>(null);
-  const [text, setText] = useState(q.get("q") ?? "");
-  // Bumped on every example click, so choosing the same example again still resets the picker.
-  const [run, setRun] = useState(0);
+  const picker = useRef<TypeDatePickerHandle>(null);
+  const small = () => matchMedia("(max-width: 520px)").matches;
 
   return (
     <main className="demo" data-theme={theme.mode} style={themeVars(theme) as CSSProperties}>
       <Settings prefs={prefs} set={set} reset={() => setPrefs(DEFAULTS)} />
       <div className="demo-layout">
         <div className="demo-stage">
-        {/* key remounts the picker when an example is chosen: the picker reads `defaultText` once */}
         <TypeDatePicker
-          key={`${run}:${text}`}
+          ref={picker}
           theme={theme.mode}
           weekStart={weekStart}
           timeFormat={timeFormat}
           dateFormat={dateFormat}
           today={TODAY}
-          autoFocus={!matchMedia("(max-width: 520px)").matches}
-          defaultText={text}
+          autoFocus={!small()}
+          defaultText={q.get("q") ?? ""}
           onChange={() => setConfirmed(null)}
           onClear={() => setConfirmed(null)}
           onConfirm={(r) => setConfirmed(r ? summarize(r) : null)}
@@ -289,8 +287,8 @@ function App() {
           <div className="demo-chips">
             {EXAMPLES.map((ex) => (
               <button key={ex} type="button" className="demo-chip" onClick={() => {
-                  setText(ex);
-                  setRun((n) => n + 1);
+                  picker.current?.setText(ex);
+                  if (!small()) picker.current?.focus();
                 }}>
                 {ex}
               </button>
