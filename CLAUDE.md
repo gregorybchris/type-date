@@ -47,6 +47,7 @@ Run `make help` for the full list.
 | `make rescore-baselines EVAL=e10 ENGINES="h8"` | Score engines on one eval version |
 | `cd packages/baselines && pnpm exec tsx scripts/pools.ts h12 --compare h11` | Regression gate: every open pool row, rows the old engine had right and the new one gets wrong (known label conflicts are listed in `specs/engines/<engine>-known-conflicts.json`). Run after every rule change; add `--only conj` for one pool family |
 | `make td ARGS="data drop-seen FILE --out OUT --against 'glob'"` | Drop rows whose text is already in other files (pool, eval, training). Run on every sealed set before cutting an eval |
+| `pnpm --filter @type-date/picker test:pack` | Build `@type-date/picker`, `npm pack`, install the tarball in a scratch project and load it in a browser. Run before any publish. Never publish without the user asking |
 | `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
 | `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
@@ -68,6 +69,7 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - Background waits: do not use `sleep` in the shell. Start a background command with an until-loop and wait for its notification.
 - Playwright `evaluate`/`waitForFunction` with closures under tsx breaks (tsx injects `__name`). Pass strings.
 - Dev servers: the user watches ports 5173 (dashboard) and 5199 (picker demo). Never start, stop, or kill servers on those ports except with `make serve*`. Agents that need a server for screenshots use other ports (5300+). Servers started from a tool call die when the session cleans up (exit 143); `scripts/serve.sh` runs them under nohup with a restart loop.
+- Packages: `packages/picker` is `@type-date/picker`, the publishable package (parser h12 bundled with tsup; core and baselines are workspace sources, so keep them out of `dependencies`). The demo site is `apps/demo`, a separate Vite app. Vercel Root Directory is `apps/demo`. When a new engine ships, change the import in `packages/picker/src/parse.ts`.
 - Agents running Playwright and training at once slow each other. Check `ps` before blaming the code.
 - Writers for a sealed set can duplicate another writer's rows. Round of 2026-11-21: writer 3 (sealed) shared 231 of 269 rows with writer 1 (pool) with no read in its transcript. Tell writers to read only the brief and the family list, and run `td data drop-seen` plus an overlap count against the pool before labeling.
 - The picker lowercases its input before the engine, but the eval passes the original case. A rule that needs uppercase (registrar codes like "MW") never fires in the product. Give it a lowercase path or test it with lowercased text.
