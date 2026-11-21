@@ -48,6 +48,7 @@ Run `make help` for the full list.
 | `cd packages/baselines && pnpm exec tsx scripts/pools.ts h12 --compare h11` | Regression gate: every open pool row, rows the old engine had right and the new one gets wrong (known label conflicts are listed in `specs/engines/<engine>-known-conflicts.json`). Run after every rule change; add `--only conj` for one pool family |
 | `make td ARGS="data drop-seen FILE --out OUT --against 'glob'"` | Drop rows whose text is already in other files (pool, eval, training). Run on every sealed set before cutting an eval |
 | `pnpm --filter @type-date/picker test:pack` | Build `@type-date/picker`, `npm pack`, install the tarball in a scratch project and load it in a browser. Run before any publish. Never publish without the user asking |
+| `cd packages/baselines && pnpm exec tsx scripts/stale-zone.ts` | Rows (pool and the latest eval) whose text names a zone that h13 reads but whose label has none. After a label-policy change, relabel such rows with two labelers (`training/gen/tz/apply_stale.py`), then `td eval cut-zone` for a new eval version |
 | `make serve` / `make serve-status` / `make serve-stop` | Supervised dev servers: dashboard 5173, picker demo 5199 (auto-restart, logs in `.run/`) |
 | `cd packages/core && pnpm exec tsx scripts/validate-data.ts ../../data/v002` | Check every DSL label parses |
 
@@ -76,3 +77,8 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - Watch the odd-half and sealed numbers, not only the even-half numbers, when tuning. A guard added to stop an old-pool regression cost the varied-bounds pool 3 to 6 points once and the aggregate hid it.
 - Another session may run `git add -A` while your edits are uncommitted and commit them under an unrelated message. Commit your files soon after editing, with explicit paths.
 - `pools.ts` compares exact strings except for `conj` pools, which compare resolved dates (`u05-31` equals `uM@05`). Old pools keep exact comparison so numbers stay comparable with earlier notes.
+- Parallel agents share one scratchpad. Labelers and writers overwrote each other's temporary files (timezone round: pool 5 and 6, and web research round 13). Tell parallel agents to use their own subfolder of the scratchpad, and check every label file for id order and parse validity before consensus (`training/gen/tz/consensus_all.py` prints counts only).
+- A label-policy change (for example the zone suffix) makes old labels stale for every engine. Find the affected rows by running the new engine over old data and listing rows where only the new part differs, have two labelers who do not see the engine's output relabel them, and cut a new eval version. Do not relabel by running the engine. Stale rows in a training set (v007) go in `specs/engines/<engine>-known-conflicts.json`.
+- An engine rule found to be wrong after the sealed splits were scored (the single-letter meridiem before a zone, round of 2026-11-21) may be fixed, but report both sealed scores and say the second is post hoc.
+- The demo moved to `apps/demo`; the picker (`packages/picker`) bundles the built-in parser (now h13) and takes `zone` and `locale` props.
+
