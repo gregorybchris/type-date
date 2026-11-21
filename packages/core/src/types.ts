@@ -45,6 +45,8 @@ export interface RecSpec {
   yearDay?: { m: number; d: number };
   count?: number;
   until?: DateSpec;
+  /** Ends the day before this date or period starts (`bM@01`: "until january"). Not with `until`. */
+  untilBefore?: DateSpec;
   time?: { start: TimeSpec; end?: TimeSpec; dur?: Duration };
   /** Own time per weekday (`tu@13:30,th@15:00`). Replaces `days` and `time`: `days` lists the weekdays. */
   dayTimes?: { wd: Weekday; start: TimeSpec; end?: TimeSpec; dur?: Duration }[];

@@ -1038,3 +1038,36 @@ describe("conjunctions of recurrences (h12)", () => {
     }
   });
 });
+
+describe("until before a date or period (b bound)", () => {
+  const at = (dsl: string, today: string) => resolveDsl(dsl, { today, weekStart: 0 }).recurrence!;
+  it("round-trips and puts b where u goes", () => {
+    for (const l of ["d R w/2 fr bM@01", "dt R w/1 tu,th bY@2027 09:00", "d R w/1 mo b01-15 s03-01", "d R w/1 mo bW+1"]) {
+      expect(serializeDsl(parseDsl(l)), l).toBe(l);
+    }
+    expect(serializeDsl(parseDsl("d R w/1 mo s03-01 bM@06"))).toBe("d R w/1 mo bM@06 s03-01");
+  });
+  it("ends the day before a named month starts", () => {
+    expect(at("d R w/2 fr bM@01", "2026-11-03").until).toBe("2026-12-31"); // until jan
+    expect(at("d R w/2 fr bM@01", "2026-02-10").until).toBe("2026-12-31");
+  });
+  it("uses the next occurrence of a month that has already begun", () => {
+    expect(at("d R w/1 mo bM@01", "2026-01-10").until).toBe("2026-12-31");
+    expect(at("d R w/1 mo bM@11", "2026-11-03").until).toBe("2027-10-31");
+  });
+  it("handles years, relative periods and dates", () => {
+    expect(at("d R w/1 mo bY@2027", "2026-11-03").until).toBe("2026-12-31");
+    expect(at("d R w/1 mo bM+1", "2026-11-03").until).toBe("2026-11-30");
+    expect(at("d R w/1 mo bW+1", "2026-11-03").until).toBe("2026-11-07"); // Sunday-start week: Sat before next Sunday
+    expect(at("d R w/1 mo b12-25", "2026-11-03").until).toBe("2026-12-24");
+  });
+  it("is the same recurrence as an explicit until", () => {
+    const a = at("d R w/2 fr bM@01", "2026-11-03");
+    const b = at("d R w/2 fr u12-31", "2026-11-03");
+    expect(a).toEqual(b);
+    expect(occurrences(a, 10).every((d) => d <= "2026-12-31")).toBe(true);
+  });
+  it("rejects u with b, and a bare b", () => {
+    for (const bad of ["d R w/1 mo u12-31 b01-15", "d R w/1 mo b", "d R w/1 mo bxx"]) expect(parseDsl(bad), bad).toEqual({ mode: "x" });
+  });
+});

@@ -184,6 +184,8 @@ function parseRecurrence(tokens: string[]): RecSpec | null {
       const until = parseDate(tok.slice(1));
       if (!until) return null;
       rec.until = until;
+    } else if (/^b[^#]/.test(tok) && parseDate(tok.slice(1))) {
+      rec.untilBefore = parseDate(tok.slice(1)) as DateSpec; // "before": ends the day before the date or period starts
     } else if (tok.startsWith("s") && tok.length > 2 && parseDate(tok.slice(1))) {
       rec.start = parseDate(tok.slice(1)) as DateSpec; // "sa" and "su" are weekdays, not starts
     } else if (/^[a-z]{2}@\d/.test(tok) && !rec.dayTimes) {
@@ -210,6 +212,7 @@ function parseRecurrence(tokens: string[]): RecSpec | null {
       return null;
     }
   }
+  if (rec.until && rec.untilBefore) return null;
   if (rec.dayTimes && (rec.time || rec.nth || rec.monthDays || rec.freq !== "w")) return null;
   if (rec.nth && rec.nth.length > 1 && rec.freq !== "m") return null;
   return rec;
@@ -367,6 +370,7 @@ export function serializeDsl(p: Parsed): string {
   if (r.months) parts.push(r.months.map((x) => `M@${String(x).padStart(2, "0")}`).join(","));
   if (r.count) parts.push(`n${r.count}`);
   if (r.until) parts.push(`u${fmtDate(r.until)}`);
+  if (r.untilBefore) parts.push(`b${fmtDate(r.untilBefore)}`);
   if (r.time) {
     parts.push(
       r.time.dur

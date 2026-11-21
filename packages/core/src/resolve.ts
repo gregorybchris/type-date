@@ -342,6 +342,12 @@ function toResolvedRec(rec: RecSpec, dtstart: string, today: string): ResolvedRe
     const u = resolveDate(rec.until, today, dtstart);
     if (u) out.until = u.end;
   }
+  if (rec.untilBefore) {
+    // the day before the date or period starts. A named month that has already begun means its next occurrence.
+    let u = resolveDate(rec.untilBefore, today, dtstart);
+    if (u && rec.untilBefore.k === "mon" && u.start <= today) { const next = addDays(u.end, 1); u = resolveDate(rec.untilBefore, next, next) ?? u; }
+    if (u) out.until = addDays(u.start, -1);
+  }
   return out;
 }
 

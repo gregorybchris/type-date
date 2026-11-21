@@ -30,7 +30,7 @@ TIME   := HH:MM                                 24h, known
 REC    := 'R' ' ' F '/' N [' ' DAYS] [' ' LIMIT] [' ' TIMES] [' ' 's' DATE]
 F      := d | w | m | y
 DAYS   := WD(','WD)* | dNN | dNN(','dNN)* | WD '#' K       (dNN: day of month, d-1 is last)
-LIMIT  := n<COUNT> | u<DATE>
+LIMIT  := n<COUNT> | u<DATE> | b<DATE>
 TIMES  := TIME ['>' TIME | '>' '+' N ('h'|'m')]
 WD     := mo | tu | we | th | fr | sa | su
 ```
@@ -162,7 +162,7 @@ Additional v2 rules (from labeling feedback):
 - A recurrence time may end with a duration: `dt R d/1 09:30>+15m` ("standup every day 9:30 for 15 min"). In the grammar, the recurrence `TIMES` token is `TIME ['>' TIME | '>' '+' N ('h'|'m')]`.
 - An open start may carry a date and a time: `dt >+0d 21:00` ("by 9pm tonight").
 
-Canonical order inside a recurrence (serializer output): frequency, days or nth list or month days or year day, month filter, count, until (`u`), time, start (`s`). The parser accepts any order; labels are canonicalized when stored. Examples above use this order (until before start).
+Canonical order inside a recurrence (serializer output): frequency, days or nth list or month days or year day, month filter, count, until (`u` or `b`), time, start (`s`). The parser accepts any order; labels are canonicalized when stored. Examples above use this order (until before start).
 
 ## Resolver notes for v2 (implementation, `packages/core`)
 
@@ -295,7 +295,7 @@ Minority-labelled rows (they disagree with the policy; labels were not edited) a
 - Part of day before an hour: "night 9" is `t 21:00`, "morning 8" `t 08:00`, "afternoon 12" `t 12:00`. A part-of-day bound: "morning before 11 am" is `t >11:00`, "evening before 9" `t >21:00`.
 - Two clock times joined only by "and" ("meet at 4pm and 6pm", "every day at 16:00 and 18:00"): the first time (the existing rule for two times without a cue word).
 - A count of occurrences for "every N weeks ... for M weeks" is M/N (`every 2 weeks on monday for 6 weeks` is `n3`).
-- "through <month>" in a weekly or daily recurrence is the last day of that month (`u06-30`); "until <month>" stays `uM@06`.
+- "through <month>" in a weekly or daily recurrence is the last day of that month (`u06-30`); "until <month>" ends the day before the month starts (`bM@06`, changed 2026-11-21, see "Start clauses").
 - Spoken years and day numbers: "nineteen ninety nine" is `d Y@1999`, "two thousand and five" `d Y@2005`.
 - A correction word ("no", "actually", "i mean", "sorry", "make that") replaces the part it corrects: "uh tuesday no wednesday at ten" is `dt we 10?`.
 - "friday week", "monday fortnight", "a week on friday" are `fr~+1w`, `mo~+2w`.
@@ -338,7 +338,10 @@ Rules:
 - A start clause is a start bound, never an end bound, even when its date is a period.
 - A start that is a time is not a start bound: "daily starting at 3pm" is `dt R d/1 15:00`. "meeting starts at 8" is `t 8?`.
 - "starting" without a recurrence cue is not a recurrence: "class starts monday" is `mo`, "start the report friday" is `fr`.
-- The start clause and the other bounds combine: "tuesdays starting in june until august" is `d R w/1 tu uM@08 sM@06`.
+- The start clause and the other bounds combine: "tuesdays starting in june until august" is `d R w/1 tu bM@08 sM@06` (ends July 31); "through august" is `uM@08`.
 - "every third wednesday" (an ordinal after "every" with no "of the month") keeps the existing policy (`every-nth-weekday` in `policy_flags`): ambiguous, excluded from eval. A start clause is still read when the phrase is parsed.
-- Both bounds take any single date or period the DSL can write: a month ("starting in june", "until april"), a month and day, a date with a year, a year ("until 2027"), a weekday ("starting this wednesday", "until friday"), a relative day, week or month ("starting next week", "until next month"), a named day ("until christmas"), an offset ("for the next 3 months" stays a window). Cue words for the start: starting, beginning, starts, begins, commencing, "from". Cue words for the end: until, till, through, thru, ending, "up to", "by". A period as the start is its first day; a period as the end is its last day ("until april" is `uM@04`, "until 2027" is `uY@2027`).
-
+- Both bounds take any single date or period the DSL can write: a month ("starting in june", "until april"), a month and day, a date with a year, a year ("until 2027"), a weekday ("starting this wednesday", "until friday"), a relative day, week or month ("starting next week", "until next month"), a named day ("until christmas"). Cue words for the start: starting, beginning, commencing, "from". An exact date after a cue is that day.
+- `until`, `till`, `til` with a bare month, week, quarter or year end the day before that period starts (decided 2026-11-21): "every other friday until jan" ends Dec 31, "until 2027" ends Dec 31 2026, "until next week" ends this Saturday (Sunday-start weeks). Written `b<DATE>`: `d R w/2 fr bM@01`. A month that has already begun means its next occurrence (typed in January, "until jan" ends the next Dec 31). `b` also takes a date: `b01-15` ends Jan 14.
+- `through`, `thru`, `ending`, "to" between two bounds ("from september to december"), "up to and including" and "the end of ..." keep the period inclusive, written `u`: "through january" ends Jan 31, "until the end of may" `uM@05`. A period as the start of a range is its first day, as the end of a range its last day.
+- Reason: "until" most often means "up to the point where the period starts" ("open until january"), and half-open ranges are the usual convention. Exact dates are unchanged: "until jan 15" is through Jan 15, as in Todoist and the iCalendar UNTIL rule.
+- Resolved output is the same as `u` with the last day: `recurrence.until` is a date.
