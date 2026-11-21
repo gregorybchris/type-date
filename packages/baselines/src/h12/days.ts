@@ -90,7 +90,9 @@ const CODE_RE = /(?<![A-Za-z])((?:[MTWRFSU][\s,/.-]*){2,7})(?![A-Za-z])/;
 /** Registrar weekday codes: "MW 10:50 AM 12:10 PM", "TR 8 - 9:15 am", "M-W-F 3pm weekly", "8:00am 9:25am [ TR ]". Needs the original case.
  *  A code with no time and no recurrence cue is a list of weekdays ("MTWF", "T, R"). */
 export function registrar(orig: string, p0: P): string | null {
-  const m = orig.match(CODE_RE);
+  // "10 A.M. T": the M of "A.M." is not a code
+  const clean = orig.replace(/\b[ap]\.m\./gi, (x) => " ".repeat(x.length));
+  const m = clean.match(CODE_RE);
   if (!m || /\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b/i.test(orig)) return null;
   const letters = [...m[1]!.replace(/[^MTWRFSU]/g, "")];
   const seps = m[1]!.replace(/[MTWRFSU]/g, "");

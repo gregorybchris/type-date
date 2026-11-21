@@ -46,7 +46,7 @@ const MONTHS: Record<string, string> = { jan: "01", january: "01", feb: "02", fe
 const tokens = (dsl: string) => dsl.split(" ");
 const ORDW: Record<string, string> = { first: "1st", second: "2nd", third: "3rd", fourth: "4th", fifth: "5th", sixth: "6th", seventh: "7th", eighth: "8th", ninth: "9th", tenth: "10th", fifteenth: "15th", twentieth: "20th", thirtieth: "30th" };
 /** "the first of june" -> "the 1st of june" */
-const ordinalWords = (t: string) => t.replace(/\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|fifteenth|twentieth|thirtieth)\b(?=\s+of\b)/, (w) => ORDW[w]!);
+const ordinalWords = (t: string) => t.replace(/\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|fifteenth|twentieth|thirtieth)\b(?=\s+of\b)/, (w, off: number, str: string) => (/(?:twenty|thirty)[ -]$/.test(str.slice(0, off)) ? w : ORDW[w]!));
 
 /** Compare bound tokens by meaning: `M@05` is the first or last day of May, `Y@2027` the first or last day of 2027. */
 function normBound(tok: string, side: "s" | "u"): string {
@@ -152,5 +152,6 @@ export function bareStart(text: string, p: P): string | null {
   const m = text.match(/^(?:starting|startin|staring|beginning|begining|beginin|beginnin|commencing)\s+(.+)$/);
   if (!m) return null;
   const tok = operand(m[1]!, p, "first");
-  return tok ? `d ${tok}` : null;
+  // a period ("starting in june") is the period; an exact date keeps h11's open range ("starting nov 1" is `d 11-01>`)
+  return tok && /^[MWYQ][+@-]/.test(tok) ? `d ${tok}` : null;
 }
