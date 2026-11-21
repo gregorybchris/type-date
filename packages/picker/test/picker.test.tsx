@@ -557,7 +557,7 @@ describe("DSL v2 results", () => {
     const { type } = setup(table({ a: "t 23:00>+2h" }));
     type("a");
     await waitFor(() => expect(screen.getByText("2 h, ends next day")).toBeTruthy());
-    expect(screen.getByText("1:00 AM (+1 day)")).toBeTruthy();
+    expect(Array.from(document.querySelectorAll(".td-field")).some((e) => e.textContent === "1:00 AM+1 day")).toBe(true);
   });
 
   it("duration: moving the start keeps the length", async () => {
@@ -834,5 +834,46 @@ describe("calendar on phones", () => {
     swipe(100, 120); // too short
     swipe(100, 160, 220); // mostly vertical
     expect(onView).not.toHaveBeenCalled();
+  });
+});
+
+describe("soft keyboard scroll", () => {
+  function stubViewport(coarse: boolean) {
+    const vv = Object.assign(new EventTarget(), { width: 400, height: 800 });
+    vi.stubGlobal("visualViewport", vv);
+    vi.stubGlobal("matchMedia", (q: string) => ({
+      matches: q.includes("coarse") ? coarse : q.includes("max-width: 520px"),
+      addEventListener() {},
+      removeEventListener() {},
+    }));
+    const resize = (w: number, h: number) => {
+      vv.width = w;
+      vv.height = h;
+      vv.dispatchEvent(new Event("resize"));
+    };
+    return resize;
+  }
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("scrolls the picker into view when the keyboard opens on a touch phone", () => {
+    const resize = stubViewport(true);
+    const { input, root } = setup(table({}));
+    const spy = vi.fn();
+    root.scrollIntoView = spy;
+    input.focus();
+    resize(400, 450);
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not scroll on a window resize, even below phone width with the input focused", () => {
+    const resize = stubViewport(false);
+    const { input, root } = setup(table({}));
+    const spy = vi.fn();
+    root.scrollIntoView = spy;
+    input.focus();
+    resize(380, 800);
+    resize(380, 600);
+    resize(1200, 800);
+    expect(spy).not.toHaveBeenCalled();
   });
 });

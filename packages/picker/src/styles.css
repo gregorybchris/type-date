@@ -71,6 +71,8 @@
 
 .td-root {
   container-type: inline-size;
+  /* Gap above the card when it is scrolled into view on a phone (keepVisible, soft keyboard). */
+  scroll-margin-top: max(12px, env(safe-area-inset-top, 0px));
   width: 100%;
   max-width: 462px;
   font: 14px/1.4 Inter, system-ui, sans-serif;
@@ -282,6 +284,72 @@
 }
 .td-to {
   color: var(--td-fg-2);
+}
+/* Segmented box: the date and time of one endpoint (or a one-day time range) as one bordered control, split by
+   hairlines. The box takes the focus ring when one of its segments is the edit target; that segment is tinted. */
+.td-seg {
+  display: inline-flex;
+  align-items: stretch;
+  min-width: 0;
+  height: 36px;
+  background: var(--td-bg);
+  border: 1px solid var(--td-border);
+  border-radius: 8px;
+  box-shadow: var(--td-key);
+  overflow: hidden;
+  transition:
+    border-color 120ms,
+    box-shadow 120ms;
+}
+.td-seg:empty {
+  display: none;
+}
+.td-seg:has([data-active]) {
+  border-color: var(--td-accent);
+  box-shadow: 0 0 0 3px var(--td-ring);
+}
+.td-seg .td-field {
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.td-seg .td-field + .td-field {
+  border-left: 1px solid var(--td-border);
+}
+.td-seg .td-field[data-active] {
+  border-color: var(--td-border);
+  box-shadow: none;
+  background: color-mix(in srgb, var(--td-accent) 9%, var(--td-bg));
+}
+.td-seg .td-field small {
+  margin-left: 4px;
+  font-size: 11px;
+  color: var(--td-fg-2);
+}
+/* Multi-day date-time range: the start box above the end box, dates and times in aligned columns. */
+.td-fields[data-stack] {
+  display: grid;
+  justify-content: start;
+}
+.td-fields[data-stack] .td-to {
+  display: none;
+}
+.td-fields[data-stack] .td-seg {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6.5em;
+  width: 100%;
+}
+.td-fields[data-stack] .td-field[data-time] {
+  justify-content: center;
+}
+.td-dash {
+  display: grid;
+  place-items: center;
+  padding: 0 2px;
+  color: var(--td-fg-3);
 }
 .td-days {
   flex-basis: 100%;
@@ -890,26 +958,6 @@
   }
 }
 @media (max-width: 520px) {
-  /* Date-time range: start on one row, end on the next, dates and times in aligned columns. */
-  .td-fields[data-rows] {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-  }
-  .td-fields[data-rows] .td-fg {
-    display: contents;
-  }
-  .td-fields[data-rows] .td-to {
-    grid-column: 1;
-    font-size: 13px;
-  }
-  .td-fields[data-rows] .td-field {
-    grid-column: 2;
-    min-width: 0;
-  }
-  .td-fields[data-rows] .td-field[data-time] {
-    grid-column: 3;
-  }
   /* Assumed AM/PM fills the row. */
   .td-ampm {
     flex: 1 1 100%;
@@ -921,7 +969,7 @@
     min-width: 64px;
   }
   .td-card {
-    max-height: var(--td-vvh, 100dvh);
+    max-height: calc(var(--td-vvh, 100dvh) - 24px);
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior: contain;
@@ -937,6 +985,26 @@
 
 /* one column when the host is narrower than the side-by-side layout */
 @container (max-width: 461px) {
+  .td-fg {
+    flex: 1 1 auto;
+  }
+  .td-seg {
+    flex: 1;
+  }
+  .td-seg .td-field {
+    justify-content: center;
+  }
+  .td-seg .td-field:not([data-time]) {
+    flex: 1;
+    justify-content: flex-start;
+  }
+  .td-fields[data-stack] {
+    justify-content: stretch;
+  }
+  /* time-only box: the times share the width */
+  .td-seg:not(:has(.td-field:not([data-time]))) .td-field {
+    flex: 1;
+  }
   .td-card {
     width: 100%;
   }

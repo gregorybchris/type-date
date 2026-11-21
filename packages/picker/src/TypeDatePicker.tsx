@@ -151,9 +151,14 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
     const vv = typeof window !== "undefined" ? window.visualViewport : null;
     if (!vv) return;
     const fit = () => card.current?.style.setProperty("--td-vvh", `${vv.height}px`);
+    let last = { w: vv.width, h: vv.height };
     const onResize = () => {
       fit();
-      if (root.current?.contains(document.activeElement) && matchMedia("(max-width: 520px)").matches) {
+      // Scroll only when the soft keyboard opens: a touch device whose visible height shrank at the same width.
+      // A window resize on desktop changes the width too and must not scroll the page.
+      const keyboard = vv.width === last.w && vv.height < last.h && matchMedia("(pointer: coarse)").matches;
+      last = { w: vv.width, h: vv.height };
+      if (keyboard && root.current?.contains(document.activeElement) && matchMedia("(max-width: 520px)").matches) {
         root.current.scrollIntoView({ block: "start" });
       }
     };
@@ -468,8 +473,11 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   }
   const bound = rec?.from && rec.until ? `${fmtBound(rec.from, today)} - ${fmtBound(rec.until, today)}` : null;
 
-  /** Phone layout for a date-time range: a "Starts" row and an "Ends" row, each with a date and a time. */
-  const rows = phone && showCal && showTime && isRange && !open && !rec && !isList;
+  // Fields: one segmented box per endpoint ([date | time]). A range within one day, or a time-only range, is a
+  // single box [date | start – end]. A multi-day date-time range is two boxes, which stack on a narrow card.
+  const endDate = isRange && open !== "end" ? dateOf("end") : undefined;
+  const oneDay = isRange && !open && showTime && !!endTime && (!showCal || !endDate || endDate === dateOf("start"));
+  const stack = isRange && !open && !oneDay && showCal && showTime;
 
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
 
@@ -532,7 +540,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       </div>
 
       <Collapse open={!!result}>
-        <div className="td-fields" data-rows={rows || undefined}>
+        <div className="td-fields" data-stack={stack || undefined}>
           {result?.kind === "recurrence" && rec ? (
             <>
               <Field active onClick={() => jump("start")}>
@@ -550,40 +558,54 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
             </>
           ) : isList && result?.dates ? (
             <div className="td-fg">
-              <Field icon active onClick={() => jump("start")}>
-                {result.dates.length} dates
-              </Field>
-              {showTime && startTime && <Field time active onClick={() => setTarget("start")}>{fmtTime(startTime)}</Field>}
+              <div className="td-seg">
+                <Field icon active={!showTime} onClick={() => jump("start")}>
+                  {result.dates.length} dates
+                </Field>
+                {showTime && startTime && <Field time active onClick={() => setTarget("start")}>{fmtTime(startTime)}</Field>}
+              </div>
             </div>
           ) : (
             <>
               <div className="td-fg">
-                {rows && <span className="td-to">Starts</span>}
-                {showCal && dateOf("start") && (
-                  <Field icon active={mode === "d" && !isRange} onClick={() => jump("start")}>
-                    {fmtDate(dateOf("start")!)}
-                  </Field>
-                )}
-                {showTime && startTime && (
-                  <Field time active={tgt === "start"} onClick={() => setTarget("start")}>
-                    {fmtTime(startTime)}
-                  </Field>
-                )}
+                <div className="td-seg">
+                  {showCal && dateOf("start") && (
+                    <Field icon active={mode === "d" && !isRange} onClick={() => jump("start")}>
+                      {fmtDate(dateOf("start")!)}
+                    </Field>
+                  )}
+                  {showTime && startTime && (
+                    <Field time active={tgt === "start"} onClick={() => setTarget("start")}>
+                      {fmtTime(startTime)}
+                    </Field>
+                  )}
+                  {oneDay && (
+                    <>
+                      <span className="td-dash" aria-hidden>–</span>
+                      <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
+                        {fmtTime(endTime!)}
+                        {result?.endNextDay && <small>+1 day</small>}
+                      </Field>
+                    </>
+                  )}
+                </div>
               </div>
-              {isRange && open !== "end" && (
+              {isRange && open !== "end" && !oneDay && (
                 <div className="td-fg">
-                  {!open && <span className="td-to">{rows ? "Ends" : "to"}</span>}
-                  {showCal && dateOf("end") && (rows || mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
-                    <Field icon onClick={() => jump("end")}>
-                      {fmtDate(dateOf("end")!)}
-                    </Field>
-                  )}
-                  {showTime && endTime && (
-                    <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
-                      {fmtTime(endTime)}
-                      {result?.endNextDay ? " (+1 day)" : ""}
-                    </Field>
-                  )}
+                  {!open && <span className="td-to">to</span>}
+                  <div className="td-seg">
+                    {showCal && endDate && (
+                      <Field icon onClick={() => jump("end")}>
+                        {fmtDate(endDate)}
+                      </Field>
+                    )}
+                    {showTime && endTime && (
+                      <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
+                        {fmtTime(endTime)}
+                        {result?.endNextDay && <small>+1 day</small>}
+                      </Field>
+                    )}
+                  </div>
                 </div>
               )}
             </>
