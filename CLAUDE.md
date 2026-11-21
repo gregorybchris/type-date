@@ -87,3 +87,4 @@ Update CLAUDE.md whenever you waste time on something. Add a short note so the n
 - An engine rule found to be wrong after the sealed splits were scored (the single-letter meridiem before a zone, round of 2026-11-21) may be fixed, but report both sealed scores and say the second is post hoc.
 - The demo moved to `apps/demo`; the picker (`packages/picker`) bundles the built-in parser (now h14) and takes `zone` and `locale` props.
 
+- A new engine needs a primary eval before `make rescore-all`: `cd packages/baselines && pnpm exec tsx scripts/eval.ts --engine hN --eval-version e16`, and add it to `ENGINES` in the Makefile. Without it every version fails with "runs/hN/metrics.json missing" (h12 and h13 went unscored on the dashboard until 2026-11-21).
