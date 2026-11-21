@@ -37,3 +37,5 @@ testpaths = ["tests"]
 "src/typedate/zeroshot.py" = ["E501"]
 "src/typedate/runwriter.py" = ["E501"]
 "src/typedate/cli.py" = ["E501", "B008"]
+# one-off collection and analysis scripts for the timezone round
+"gen/tz/*.py" = ["E501", "E701", "E741", "SIM105", "SIM115"]

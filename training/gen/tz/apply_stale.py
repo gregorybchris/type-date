@@ -2,6 +2,7 @@
 
 Pool rows with a consensus label get it; pool rows without one are removed. Eval rows: same, as a change list for `td eval cut-zone`.
 """
+
 import json
 import subprocess
 from pathlib import Path
@@ -13,10 +14,33 @@ smap = json.loads((ext / "tz-stale-map.json").read_text())
 changes = {"relabel": {}, "drop": []}
 for kind, tag in (("pool", "sp"), ("eval", "se")):
     out = repo / "data" / "pool" / "tz" / f"stale_{kind}.jsonl"
-    r = subprocess.run(["uv", "run", "td", "data", "consensus", str(ext / f"tz-stale-{kind}-inputs.jsonl"), str(ext / f"tz-stale-{kind}-label-1.jsonl"),
-                        str(ext / f"tz-stale-{kind}-label-2.jsonl"), "--out", str(out), "--source", "tz-stale", "--split", "dev"], cwd=root, capture_output=True, text=True)
+    r = subprocess.run(
+        [
+            "uv",
+            "run",
+            "td",
+            "data",
+            "consensus",
+            str(ext / f"tz-stale-{kind}-inputs.jsonl"),
+            str(ext / f"tz-stale-{kind}-label-1.jsonl"),
+            str(ext / f"tz-stale-{kind}-label-2.jsonl"),
+            "--out",
+            str(out),
+            "--source",
+            "tz-stale",
+            "--split",
+            "dev",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
     print(kind, (r.stdout.strip().splitlines() or [r.stderr[-300:]])[-1])
-    kept = {json.loads(l)["id"][2:]: json.loads(l)["dsl"] for l in out.read_text().splitlines() if l.strip()}
+    kept = {
+        json.loads(l)["id"][2:]: json.loads(l)["dsl"]
+        for l in out.read_text().splitlines()
+        if l.strip()
+    }
     ids = [k for k, v in smap.items() if k.startswith(tag)]
     if kind == "pool":
         by_file = {}

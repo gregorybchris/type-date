@@ -2,6 +2,7 @@
 
 Usage: python3 prepare.py        (writes training/gen/external/tz-{pool,sealed}-NN-inputs.jsonl and tz-meta.json)
 """
+
 import glob
 import json
 import random
@@ -13,18 +14,26 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 EXT = HERE.parent / "external"
-sys.argv = ["x", "none"]
-exec(open(HERE / "patterns.py").read().replace("\nmain()\n", "\n"))  # noqa: S102  (load, norm)
+sys.path.insert(0, str(HERE))
+from patterns import load, norm  # noqa: E402
 
-OTHER_LANG = re.compile(r"\b(tijd|fuseau|horaire|heure|zona|hora|uur|boek|zouden|welke|ik ben|je suis|het is|doeltijd|kamer|"
-                        r"lunchtijd|jaarlijks|dans le|mi trovo|estoy|zeit)\b", re.I)
+OTHER_LANG = re.compile(
+    r"\b(tijd|fuseau|horaire|heure|zona|hora|uur|boek|zouden|welke|ik ben|je suis|het is|doeltijd|kamer|"
+    r"lunchtijd|jaarlijks|dans le|mi trovo|estoy|zeit)\b",
+    re.I,
+)
 CAP = 30
 rng = random.Random(11)
 
 
 def existing():
     seen = set()
-    for pat in ["data/pool/**/*.jsonl", "evals/e14/*.jsonl", "training/gen/external/web-[0-9].jsonl", "training/gen/external/web-1[01].jsonl"]:
+    for pat in [
+        "data/pool/**/*.jsonl",
+        "evals/e14/*.jsonl",
+        "training/gen/external/web-[0-9].jsonl",
+        "training/gen/external/web-1[01].jsonl",
+    ]:
         for f in glob.glob(str(REPO / pat), recursive=True):
             for l in open(f):
                 try:
@@ -85,7 +94,12 @@ def main():
                 for j, r in enumerate(chunk):
                     rid = f"tz{name[0]}{i + 1}-{j + 1:04d}"
                     f.write(json.dumps({"id": rid, "text": r["text"]}, ensure_ascii=False) + "\n")
-                    meta[rid] = {"origin": r["origin"], "source": r["source"], "family": r.get("family"), "note": r.get("note")}
+                    meta[rid] = {
+                        "origin": r["origin"],
+                        "source": r["source"],
+                        "family": r.get("family"),
+                        "note": r.get("note"),
+                    }
         json.dump(meta, open(EXT / f"tz-{name}-meta.json", "w"), ensure_ascii=False)
         print(name, len(rs), "rows in", n_chunks, "files;", Counter(r["origin"] for r in rs))
     print("dropped:", dict(drop))
