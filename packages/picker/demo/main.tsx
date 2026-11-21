@@ -125,16 +125,24 @@ const WORDMARK_TEXT = "M30.5 0.6Q21.6 0.6 16.7 -4.3Q11.8 -9.2 11.8 -18.2V-43.3H2
 const WORDMARK_D = "M316.8 1.2Q308.9 1.2 302.8 -2.5Q296.6 -6.3 293 -12.7Q289.4 -19.2 289.4 -27.1Q289.4 -35.1 293 -41.5Q296.6 -47.9 302.8 -51.7Q309 -55.4 316.7 -55.4Q323 -55.4 328 -52.9Q332.9 -50.4 335.8 -45.9L333.9 -43.2V-75.7H346.1V0H334.5V-10.8L335.8 -8.4Q333 -3.7 327.9 -1.3Q322.9 1.2 316.8 1.2ZM318 -10.1Q322.6 -10.1 326.2 -12.2Q329.8 -14.5 331.8 -18.3Q333.9 -22.2 333.9 -27.1Q333.9 -32 331.8 -35.9Q329.8 -39.8 326.2 -42Q322.6 -44.2 318 -44.2Q313.5 -44.2 309.8 -41.9Q306.2 -39.7 304.2 -35.9Q302.1 -32.1 302.1 -27.1Q302.1 -22.2 304.2 -18.3Q306.2 -14.5 309.8 -12.2Q313.4 -10.1 318 -10.1Z";
 function Wordmark() {
   return (
-    <svg className="demo-wordmark" viewBox="1 -77 509 101" role="img" aria-label="type-date">
-      <defs>
-        <clipPath id="demo-wm-stem">
-          <rect x="333.8" y="-80" width="12.4" height="84" />
-        </clipPath>
-      </defs>
-      <path fill="currentColor" d={WORDMARK_TEXT} />
-      <path fill="currentColor" d={WORDMARK_D} />
-      <path fill="#f59e0b" d={WORDMARK_D} clipPath="url(#demo-wm-stem)" />
-    </svg>
+    <div className="demo-brand">
+      <svg className="demo-badge" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="var(--t-card)" stroke="var(--t-accent)" strokeWidth="3" />
+        <path d="M1.5 10V9.500a8 8 0 0 1 8-8h13a8 8 0 0 1 8 8V10z" fill="var(--t-accent)" />
+        <rect x="8" y="16" width="11" height="3.500" rx="1.750" fill="var(--t-accent)" opacity="0.45" />
+        <rect x="8" y="22" width="7" height="3.500" rx="1.750" fill="var(--t-accent)" opacity="0.45" />
+      </svg>
+      <svg className="demo-wordmark" viewBox="1 -77 509 101" role="img" aria-label="type-date">
+        <defs>
+          <clipPath id="demo-wm-stem">
+            <rect x="333.8" y="-80" width="12.4" height="84" />
+          </clipPath>
+        </defs>
+        <path fill="currentColor" d={WORDMARK_TEXT} />
+        <path fill="currentColor" d={WORDMARK_D} />
+        <path className="demo-cursor" fill="#f59e0b" d={WORDMARK_D} clipPath="url(#demo-wm-stem)" />
+      </svg>
+    </div>
   );
 }
 

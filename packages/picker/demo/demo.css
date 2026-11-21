@@ -187,16 +187,39 @@ body {
   right: calc(max(12px, env(safe-area-inset-right)) + 48px);
   text-decoration: none;
 }
-.demo-wordmark {
+.demo-brand {
   position: absolute;
   top: max(12px, env(safe-area-inset-top));
   left: max(16px, env(safe-area-inset-left));
   z-index: 5;
   height: 40px;
-  width: auto;
-  padding: 7px 0;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 9px;
   color: var(--d-fg);
+}
+.demo-badge {
+  width: 26px;
+  height: 26px;
+  flex: none;
+}
+.demo-wordmark {
+  height: 26px;
+  width: auto;
+}
+/* The yellow stem of the d blinks like a text cursor. */
+.demo-cursor {
+  animation: demo-blink 1.1s step-end infinite;
+}
+@keyframes demo-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .demo-cursor {
+    animation: none;
+  }
 }
 .demo-github:hover {
   transform: none;
