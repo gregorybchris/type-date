@@ -5,6 +5,7 @@ import type { Ref } from "react";
 import { TypeDatePicker } from "../src";
 import type { TypeDatePickerHandle } from "../src";
 import type { TypeDatePickerProps } from "../src";
+import { blockShape } from "../src/Calendar";
 
 /** The rule is split at semicolons for line breaking, so match on the element's text. */
 function ruleText(rule: string): HTMLElement | null {
@@ -61,6 +62,66 @@ describe("inside corners", () => {
       (f) => `${f.parentElement!.querySelector("button")!.getAttribute("data-date")} ${f.getAttribute("data-at")}`,
     );
     expect(found.sort()).toEqual(["2026-09-23 br", "2026-10-08 tl"]);
+  });
+});
+
+describe("block shape", () => {
+  // Nov 2026, Sunday start: the grid runs Nov 1 to Dec 12. Days are "in" (solid) or "out" (faded) by month.
+  const grid = Array.from({ length: 42 }, (_, i) => {
+    const d = new Date(Date.UTC(2026, 10, 1 + i));
+    return d.toISOString().slice(0, 10);
+  });
+  const shapeOf = (picked: string[]) => {
+    const set = new Set(picked);
+    const plain = (d: string | undefined) => !!d && set.has(d);
+    const same = (a: string, b: string) => (a.slice(0, 7) === "2026-11") === (b.slice(0, 7) === "2026-11");
+    const shapes = blockShape(grid, plain, (a, b) => plain(b) && same(a, b!), (a, b) => plain(b) && !same(a, b!));
+    return (d: string) => shapes[grid.indexOf(d)]!;
+  };
+  // The layout from a user report: Nov 23, 25 to 30 (no 29), Dec 1 to 5, 7, 8.
+  const report = ["11-23", "11-25", "11-26", "11-27", "11-28", "11-30", "12-01", "12-02", "12-03", "12-04", "12-05", "12-07", "12-08"].map(
+    (d) => `2026-${d}`,
+  );
+
+  it("shares a gutter inset down a column of joined tiles", () => {
+    const s = shapeOf(report);
+    // Nov 30 is next to Dec 1 (faded), so it is inset on the right. Nov 23 above it takes the same inset, so the
+    // column has a straight right side and its bridge needs no extra inset.
+    expect(s("2026-11-30").gap).toBe("r");
+    expect(s("2026-11-23").gap).toBe("r");
+    expect(s("2026-11-23").join).toBe("d");
+    expect(s("2026-11-23").bridge).toBeUndefined();
+  });
+
+  it("stops sharing the inset at a tile joined on that side, and the inside-corner filler meets the inset side", () => {
+    const s = shapeOf(report);
+    // Dec 1 is inset on the left (Nov 30 is solid). Dec 8 below it is joined to Dec 7, so it stays full width; the
+    // step is the inside corner owned by Dec 8, whose vertical arm (Dec 1) is inset.
+    expect(s("2026-12-01").gap).toBe("l");
+    expect(s("2026-12-08").gap).toBeUndefined();
+    expect(s("2026-12-08").fillets).toEqual({ tl: true });
+    // Dec 1 owns the corner above Dec 9. Its vertical arm (Dec 8) is not inset on the right.
+    expect(s("2026-12-01").fillets).toEqual({ br: false });
+  });
+
+  it("insets a lone tile below an inset one, so the column stays straight", () => {
+    const s = shapeOf(["2026-11-30", "2026-12-01", "2026-12-08"]);
+    expect(s("2026-12-08").gap).toBe("l");
+    expect(s("2026-12-01").bridge).toBeUndefined();
+  });
+
+  it("insets the bridge when the tile below is inset and this one is joined on that side", () => {
+    // Nov 23 and 24 are joined, so Nov 23 is full width on the right; Nov 30 below is inset next to Dec 1.
+    const s = shapeOf(["2026-11-23", "2026-11-24", "2026-11-30", "2026-12-01"]);
+    expect(s("2026-11-23").gap).toBeUndefined();
+    expect(s("2026-11-23").bridge).toBe("r");
+    expect(s("2026-11-23").fillets).toEqual({ br: true });
+  });
+
+  it("gives unselected days and lone tiles no shape", () => {
+    const s = shapeOf(["2026-11-10", "2026-11-18"]);
+    expect(s("2026-11-11")).toEqual({ fillets: {} });
+    expect(s("2026-11-10")).toEqual({ join: undefined, gap: undefined, bridge: undefined, fillets: {} });
   });
 });
 

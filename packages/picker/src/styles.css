@@ -413,6 +413,8 @@
   position: relative;
   height: 38px;
   padding: 1px 0;
+  /* Selected days outside the month. Opaque, so tiles, bridges and fillers can overlap without darker lines. */
+  --td-fade: color-mix(in srgb, var(--td-accent) 45%, var(--td-bg));
 }
 .td-cell::before {
   content: "";
@@ -471,7 +473,7 @@
 }
 .td-cell button {
   position: relative;
-  width: calc(100% - var(--td-gap-l, 0px) - var(--td-gap-r, 0px));
+  width: calc(100% - var(--td-gap-l, 0px) - var(--td-gap-r, 0px) + var(--td-ext-r, 0px));
   margin-left: var(--td-gap-l, 0px);
   height: 100%;
   padding: 0;
@@ -527,41 +529,48 @@
 .td-cell[data-gap*="r"] {
   --td-gap-r: 1px;
 }
-/* Inside-corner filler. At the inside corner of an L-shaped block, a 10px square sits in the empty quadrant and is cut by
-   a circle of radius 10px, which leaves a concave curve. 10px = the 8px corner radius of a tile in the next block plus
-   the 2px gutter, so the gutter keeps one width around the corner. */
+/* Inside-corner filler. At the inside corner of an L-shaped block, a square sits in the empty quadrant and is cut by a
+   circle of radius 10px, which leaves a concave curve tangent to the two tiles that form the corner: the edge of the
+   horizontal arm (top or bottom of the row) and the side of the vertical arm. --td-fi is the inset of the vertical
+   arm's side (data-inset), so the curve meets that side exactly. When the empty quadrant holds a tile of the other
+   look, the arm is inset and 10px = that tile's 8px corner radius plus the 2px gutter, so the gutter keeps one width
+   around the corner. The square is 11px: 1px overlaps each arm so no seam shows. */
 .td-fillet {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   pointer-events: none;
   --td-fc: var(--td-accent);
+  --td-fi: 0px;
   opacity: 0;
-  transition: opacity 120ms;
+  transition: opacity 120ms, left 120ms;
 }
 .td-fillet[data-on] {
   opacity: 1;
 }
-.td-cell[data-out] .td-fillet[data-on] {
-  opacity: 0.45;
+.td-fillet[data-inset] {
+  --td-fi: 1px;
+}
+.td-cell[data-out] .td-fillet {
+  --td-fc: var(--td-fade);
 }
 .td-fillet[data-at="br"] {
-  left: calc(100% - 1px);
-  top: calc(100% - 1px);
+  left: calc(100% - 1px - var(--td-fi));
+  top: calc(100% - 2px);
   background: radial-gradient(circle at 100% 100%, transparent 10px, var(--td-fc) 10.5px);
 }
 .td-fillet[data-at="bl"] {
-  left: -9px;
-  top: calc(100% - 1px);
+  left: calc(var(--td-fi) - 10px);
+  top: calc(100% - 2px);
   background: radial-gradient(circle at 0 100%, transparent 10px, var(--td-fc) 10.5px);
 }
 .td-fillet[data-at="tr"] {
-  left: calc(100% - 1px);
+  left: calc(100% - 1px - var(--td-fi));
   top: -9px;
   background: radial-gradient(circle at 100% 0, transparent 10px, var(--td-fc) 10.5px);
 }
 .td-fillet[data-at="tl"] {
-  left: -9px;
+  left: calc(var(--td-fi) - 10px);
   top: -9px;
   background: radial-gradient(circle at 0 0, transparent 10px, var(--td-fc) 10.5px);
 }
@@ -569,6 +578,11 @@
 .td-cell[data-join*="l"] button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+/* A tile joined on the right reaches 1px under its neighbor, so antialiased edges at fractional column positions leave
+   no seam. */
+.td-cell[data-join*="r"] {
+  --td-ext-r: 1px;
 }
 .td-cell[data-join*="r"] button {
   border-top-right-radius: 0;
@@ -582,8 +596,9 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* A bridge fills the 2px row gap (plus 1px overlap) between a tile and the joined tile below. It is inset like the
-   tile below, so it never sticks out past a gutter. */
+/* A bridge fills the 2px row gap (plus 1px overlap) between a tile and the joined tile below. It has the width of the
+   tile below, so it never sticks out past a gutter. On a tile joined on the right it reaches 1px past the cell like the
+   tile; that pixel lies under the neighbor's bridge, or under the inside-corner filler when the neighbor has none. */
 .td-cell button::after {
   content: "";
   position: absolute;
@@ -602,7 +617,7 @@
   left: 1px;
 }
 .td-cell[data-bridge*="r"] button::after {
-  right: 1px;
+  right: calc(var(--td-ext-r, 0px) + 1px);
 }
 /* On an accent tile the dot takes the number color. */
 .td-cell[data-range="start"][data-today]::after,
@@ -611,18 +626,14 @@
 .td-cell[aria-selected="true"][data-today]:not([data-range])::after {
   background: var(--td-on-accent);
 }
+/* A selected day outside the month is a faded tile: the accent and its number at 45% over the card, as opaque colors. */
 .td-cell[aria-selected="true"][data-out]:not([data-range="mid"]) button {
-  color: var(--td-on-accent);
-  opacity: 0.45;
+  background-color: var(--td-fade);
+  color: color-mix(in srgb, var(--td-on-accent) 45%, var(--td-bg));
 }
 /* A day inside a range but outside the shown month sits on the light range band, so its number stays dark. */
 .td-cell[data-range="mid"][data-out] button {
   color: var(--td-fg-2);
-}
-/* A faded tile is translucent, so the 3px that bridges the row gap would show as a darker line where it overlaps the
-   tile below. Bridge exactly the 2px gap instead. */
-.td-cell[aria-selected="true"][data-out][data-join*="d"] button::after {
-  height: 2px;
 }
 
 /* time list */

@@ -108,6 +108,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
   // gutter that already separates rows, so a solid block and a faded block always read as two shapes.
   const apart = (a: string, b: string | undefined) => plain(b) && !sameLook(a, b!);
   const label = monthLabel(view);
+  const shape = blockShape(days, plain, joined, apart);
 
   return (
     <div className="td-cal" ref={rootRef}>
@@ -139,39 +140,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
                 const edge = pos === "mid" && open && (open === "end" ? d === mEnd : d === mStart) ? open : undefined;
                 const occ = sel.occ.has(d);
                 const selected = !!pos || sel.multi?.has(d) || occ;
-                const i = r * 7 + c;
-                const join = plain(d)
-                  ? [c > 0 && joined(d, days[i - 1]) ? "l" : "", c < 6 && joined(d, days[i + 1]) ? "r" : "", r > 0 && joined(d, days[i - 7]) ? "u" : "", r < 5 && joined(d, days[i + 7]) ? "d" : ""].join("") || undefined
-                  : undefined;
-                const gap = plain(d)
-                  ? [c > 0 && apart(d, days[i - 1]) ? "l" : "", c < 6 && apart(d, days[i + 1]) ? "r" : ""].join("") || undefined
-                  : undefined;
-                // The tile below may be inset by the gutter rule. The bridge that joins the two tiles is inset the same way.
-                const below = join?.includes("d") ? days[i + 7] : undefined;
-                const bridge =
-                  below
-                    ? [c > 0 && apart(below, days[i + 6]) ? "l" : "", c < 6 && apart(below, days[i + 8]) ? "r" : ""].join("") || undefined
-                    : undefined;
-                // Inside corners. A tile whose right and lower neighbors are both joined, but whose diagonal neighbor is
-                // not, sits at the inside corner of an L. A filler there rounds the corner (see .td-fillet). Only the
-                // tile opposite the missing one qualifies, so each inside corner is drawn once.
-                const fillets = plain(d)
-                  ? ([
-                      ["tl", -1, -1, 0, 0],
-                      ["tr", 1, -1, 0, 6],
-                      ["bl", -1, 1, 0, 0],
-                      ["br", 1, 1, 6, 6],
-                    ] as const)
-                      .filter(([, dx, dy]) => {
-                        const nc = c + dx;
-                        const nr = r + dy;
-                        if (nc < 0 || nc > 6 || nr < 0 || nr > 5) return false;
-                        return (
-                          joined(d, days[i + dx]) && joined(d, days[i + dy * 7]) && !joined(d, days[i + dy * 7 + dx])
-                        );
-                      })
-                      .map(([k]) => k)
-                  : [];
+                const { join, gap, bridge, fillets } = shape[r * 7 + c]!;
                 return (
                   <div
                     role="gridcell"
@@ -204,7 +173,14 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
                       {Number(d.slice(8))}
                     </button>
                     {(["tl", "tr", "bl", "br"] as const).map((k) => (
-                      <i key={k} className="td-fillet" data-at={k} data-on={fillets.includes(k) || undefined} aria-hidden="true" />
+                      <i
+                        key={k}
+                        className="td-fillet"
+                        data-at={k}
+                        data-on={k in fillets || undefined}
+                        data-inset={fillets[k] || undefined}
+                        aria-hidden="true"
+                      />
                     ))}
                   </div>
                 );
@@ -215,4 +191,88 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
       </div>
     </div>
   );
+}
+
+type Corner = "tl" | "tr" | "bl" | "br";
+
+export interface CellShape {
+  /** Sides joined to a neighbor of the same look: any of "l", "r", "u", "d". */
+  join?: string;
+  /** Sides inset by 1px for the gutter between a solid and a faded block: "l", "r". */
+  gap?: string;
+  /** Sides where the bridge to the tile below is inset 1px more than this tile, because the tile below is inset there. */
+  bridge?: string;
+  /** Inside corners this tile draws, each with whether the vertical arm of the corner is inset on that side. */
+  fillets: Partial<Record<Corner, boolean>>;
+}
+
+/**
+ * Shape of every cell in a 7-column grid of selected-day blocks (lists and recurrences, not range fill).
+ *
+ * Rules:
+ * - Join: a side is joined when the neighbor there is selected and has the same look (`joined`).
+ * - Gap: a side is inset 1px when the neighbor there is selected but looks different (`apart`), so a solid block and
+ *   a faded block are split by the same 2px gutter as two rows. The inset is shared down a column: tiles joined
+ *   above or below take the same inset, so a column of joined tiles has straight sides. The sharing stops at a tile
+ *   that is joined on that side (it is full width there, and the step is rounded by an inside-corner filler).
+ * - Bridge: fills the row gap between a tile and the joined tile below, with the width of the tile below.
+ * - Fillets: a tile whose side and vertical neighbors are joined but whose diagonal is not owns that inside corner.
+ */
+export function blockShape(
+  days: string[],
+  plain: (d: string | undefined) => boolean,
+  joined: (a: string, b: string | undefined) => boolean,
+  apart: (a: string, b: string | undefined) => boolean,
+): CellShape[] {
+  const rows = Math.ceil(days.length / 7);
+  const at = (i: number, dx: number, dy: number): number | undefined => {
+    const c = (i % 7) + dx;
+    const r = Math.floor(i / 7) + dy;
+    return c < 0 || c > 6 || r < 0 || r >= rows ? undefined : r * 7 + c;
+  };
+  const nb = (i: number, dx: number, dy: number) => {
+    const k = at(i, dx, dy);
+    return k === undefined ? undefined : days[k];
+  };
+  const isJoined = (i: number, dx: number, dy: number) => plain(days[i]) && joined(days[i]!, nb(i, dx, dy));
+  const isApart = (i: number, dx: number) => plain(days[i]) && apart(days[i]!, nb(i, dx, 0));
+  const insetOf = (i: number, dx: -1 | 1): boolean => {
+    if (!plain(days[i]) || isJoined(i, dx, 0)) return false;
+    if (isApart(i, dx)) return true;
+    for (const dy of [-1, 1]) {
+      let k = i;
+      while (isJoined(k, 0, dy)) {
+        k = at(k, 0, dy)!;
+        if (isJoined(k, dx, 0)) break;
+        if (isApart(k, dx)) return true;
+      }
+    }
+    return false;
+  };
+  const inset = days.map((_, i) => ({ l: insetOf(i, -1), r: insetOf(i, 1) }));
+  const sides = (l: boolean, r: boolean) => (l ? "l" : "") + (r ? "r" : "") || undefined;
+  const corners = [
+    ["tl", -1, -1],
+    ["tr", 1, -1],
+    ["bl", -1, 1],
+    ["br", 1, 1],
+  ] as const;
+  return days.map((d, i) => {
+    if (!plain(d)) return { fillets: {} };
+    const join =
+      [isJoined(i, -1, 0) ? "l" : "", isJoined(i, 1, 0) ? "r" : "", isJoined(i, 0, -1) ? "u" : "", isJoined(i, 0, 1) ? "d" : ""].join(
+        "",
+      ) || undefined;
+    const below = isJoined(i, 0, 1) ? at(i, 0, 1)! : undefined;
+    const bridge =
+      below === undefined ? undefined : sides(inset[below]!.l && !inset[i]!.l, inset[below]!.r && !inset[i]!.r);
+    const fillets: CellShape["fillets"] = {};
+    for (const [k, dx, dy] of corners) {
+      if (isJoined(i, dx, 0) && isJoined(i, 0, dy) && !isJoined(i, dx, dy)) {
+        const arm = inset[at(i, 0, dy)!]!;
+        fillets[k] = dx < 0 ? arm.l : arm.r;
+      }
+    }
+    return { join, gap: sides(inset[i]!.l, inset[i]!.r), bridge, fillets };
+  });
 }
