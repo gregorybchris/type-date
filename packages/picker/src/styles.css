@@ -901,7 +901,7 @@
   }
   .td-fields[data-rows] .td-to {
     grid-column: 1;
-    min-width: 14px;
+    font-size: 13px;
   }
   .td-fields[data-rows] .td-field {
     grid-column: 2;
@@ -1028,5 +1028,8 @@
     grid-template-rows: 0fr;
     opacity: 0;
     border-top-color: transparent;
+  }
+  .td-root[data-typing] .td-body .td-panel-in {
+    padding-block: 0;
   }
 }

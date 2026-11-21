@@ -468,6 +468,9 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   }
   const bound = rec?.from && rec.until ? `${fmtBound(rec.from, today)} - ${fmtBound(rec.until, today)}` : null;
 
+  /** Phone layout for a date-time range: a "Starts" row and an "Ends" row, each with a date and a time. */
+  const rows = phone && showCal && showTime && isRange && !open && !rec && !isList;
+
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
 
   return (
@@ -529,7 +532,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       </div>
 
       <Collapse open={!!result}>
-        <div className="td-fields" data-rows={(showCal && showTime && isRange && !open && !rec && !isList) || undefined}>
+        <div className="td-fields" data-rows={rows || undefined}>
           {result?.kind === "recurrence" && rec ? (
             <>
               <Field active onClick={() => jump("start")}>
@@ -555,6 +558,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
           ) : (
             <>
               <div className="td-fg">
+                {rows && <span className="td-to">Starts</span>}
                 {showCal && dateOf("start") && (
                   <Field icon active={mode === "d" && !isRange} onClick={() => jump("start")}>
                     {fmtDate(dateOf("start")!)}
@@ -568,8 +572,8 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
               </div>
               {isRange && open !== "end" && (
                 <div className="td-fg">
-                  {!open && <span className="td-to">to</span>}
-                  {showCal && dateOf("end") && (mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
+                  {!open && <span className="td-to">{rows ? "Ends" : "to"}</span>}
+                  {showCal && dateOf("end") && (rows || mode === "d" || dateOf("end") !== dateOf("start") || !showTime) && (
                     <Field icon onClick={() => jump("end")}>
                       {fmtDate(dateOf("end")!)}
                     </Field>
