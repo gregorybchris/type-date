@@ -2,6 +2,7 @@
 // noise words), then puts the multi-part form back into h11's DSL line.
 import { normalize } from "../h8/normalize";
 import { parseH11 } from "../h11";
+import { withBounds } from "./bounds";
 
 const WD_SRC = "(sun(?:day)?|mon(?:day)?|tue(?:s(?:day)?)?|wed(?:nesday|s)?|thu(?:r(?:s(?:day)?)?|rs)?|fri(?:day)?|sat(?:urday)?)";
 const WD_ORDER = ["mo", "tu", "we", "th", "fr", "sa", "su"];
@@ -94,7 +95,9 @@ function dayTimes(text: string, p: (s: string) => string): string | null {
 }
 
 export const runH12 = (text: string, today?: string): string => {
-  const p = (s: string) => parseH11(s, today);
+  const p0 = (s: string) => parseH11(s, today);
+  // a bound-aware parse: start and until clauses are cut out, the skeleton is parsed, the bounds are put back
+  const p = (s: string) => withBounds(s, p0) ?? p0(s);
   const nz = normalize(text.toLowerCase().replace(/\s+/g, " ").trim()).toLowerCase();
-  return nthConjunction(nz, p) ?? dayTimes(nz, p) ?? p(text);
+  return nthConjunction(nz, p) ?? dayTimes(nz, p) ?? withBounds(nz, p0) ?? p0(text);
 };

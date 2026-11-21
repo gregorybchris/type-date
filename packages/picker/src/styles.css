@@ -491,6 +491,11 @@
   color: var(--td-on-accent);
   opacity: 0.45;
 }
+/* A faded tile is translucent, so the 3px that bridges the row gap would show as a darker line where it overlaps the
+   tile below. Bridge exactly the 2px gap instead. */
+.td-cell[aria-selected="true"][data-out][data-join*="d"] button {
+  height: calc(100% + 2px);
+}
 
 /* time list */
 .td-list {

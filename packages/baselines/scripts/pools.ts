@@ -1,15 +1,16 @@
 // Score an engine on every open labeled pool (never test splits). Writes predictions as JSONL for validate-data.
-// Usage: tsx scripts/pools.ts <engine id> [--out <dir>] [--extra <jsonl>] [--tags]
+// Usage: tsx scripts/pools.ts <engine id> [--only <name substring>] [--out <dir>] [--extra <jsonl>] [--tags]
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
+import { resolveDsl } from "@type-date/core";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(here, "../../..");
 const { values: a, positionals } = parseArgs({
   allowPositionals: true,
-  options: { out: { type: "string" }, extra: { type: "string", multiple: true }, tags: { type: "boolean" } },
+  options: { only: { type: "string" }, out: { type: "string" }, extra: { type: "string", multiple: true }, tags: { type: "boolean" } },
 });
 const POOLS: Record<string, string> = {
   "web dev": "data/pool/web/dev.jsonl",
@@ -34,9 +35,17 @@ const POOLS: Record<string, string> = {
   "web dev7": "data/pool/web/dev7.jsonl",
   "web dev8": "data/pool/web/dev8.jsonl",
   "web dev9": "data/pool/web/dev9.jsonl",
+  "conj w1": "data/pool/conj/dev_w1.jsonl",
+  "conj w2": "data/pool/conj/dev_w2.jsonl",
+  "conj w4": "data/pool/conj/dev_w4.jsonl",
+  "conj w6": "data/pool/conj/dev_w6.jsonl",
+  "conj w10": "data/pool/conj/dev_w10.jsonl",
 };
 // Pools split by line index: even rows develop, odd rows are an internal validation set (score only, failures hidden).
-const HALVES = new Set(["persona dev", "web dev7", "web dev8", "web dev9"]);
+const HALVES = new Set(["persona dev", "web dev7", "web dev8", "web dev9", "conj w1", "conj w2", "conj w4", "conj w6", "conj w10"]);
+// conj pools compare resolved dates (like the "resolved" metric): `u05-31` and `uM@05` are the same bound.
+const DAYS = ["2026-11-03", "2026-01-31", "2027-02-28", "2028-02-29", "2026-12-31", "2026-03-15", "2026-07-04"];
+const sameResolved = (x: string, y: string) => DAYS.every((d) => JSON.stringify(resolveDsl(x, { today: d, weekStart: 0 })) === JSON.stringify(resolveDsl(y, { today: d, weekStart: 0 })));
 const mod = await import(join(here, "../src", positionals[0] + ".ts"));
 const engine = mod.default;
 const outDir = a.out;
@@ -50,6 +59,7 @@ const line = (n: string, t: number, c: number) => `${n.padEnd(18)} n=${String(t)
 const fails: any[] = [];
 const units: [string, string, number | null][] = [];
 for (const [name, rel] of Object.entries(all)) {
+  if (a.only && !name.includes(a.only)) continue;
   if (HALVES.has(name)) { units.push([name + " [even]", rel, 0], [name + " [odd]", rel, 1]); } else units.push([name, rel, null]);
 }
 for (const [name, rel, half] of units) {
@@ -60,7 +70,7 @@ for (const [name, rel, half] of units) {
   const outRows: string[] = [];
   for (const r of rows) {
     const pred = (await engine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
-    const good = pred === r.dsl;
+    const good = pred === r.dsl || (name.startsWith("conj") && sameResolved(pred, r.dsl));
     c += +good;
     const tag = r.primary_tag ?? "?";
     const st = tags.get(tag) ?? [0, 0]; st[0]++; st[1] += +good; tags.set(tag, st);

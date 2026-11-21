@@ -2,6 +2,7 @@ import type { DateSpec, Duration, OffUnit, Parsed, Point, RecSpec, TimeSpec, Uni
 import { WEEKDAYS } from "./types";
 
 const WD_RE = "(?:su|mo|tu|we|th|fr|sa)";
+const WD_ORDER = ["mo", "tu", "we", "th", "fr", "sa", "su"];
 const isWd = (s: string): s is Weekday => (WEEKDAYS as string[]).includes(s);
 
 function inRange(n: number, lo: number, hi: number): boolean {
@@ -354,7 +355,11 @@ export function serializeDsl(p: Parsed): string {
     t.dur ? `${fmtTime(t.start)}>+${t.dur.n}${t.dur.u}` : t.end ? `${fmtTime(t.start)}>${fmtTime(t.end)}` : fmtTime(t.start);
   if (r.dayTimes) parts.push(r.dayTimes.map((x) => `${x.wd}@${fmtRt(x)}`).join(","));
   else if (r.days) parts.push(r.days.join(","));
-  if (r.nth) parts.push(r.nth.map((n) => `${n.wd}#${n.k}`).join(","));
+  if (r.nth) {
+    // canonical: by weekday (mo..su), then ordinal (last after the others)
+    const ord = (n: { wd: Weekday; k: number }) => WD_ORDER.indexOf(n.wd) * 10 + (n.k < 0 ? 9 : n.k);
+    parts.push([...r.nth].sort((a, b) => ord(a) - ord(b)).map((n) => `${n.wd}#${n.k}`).join(","));
+  }
   if (r.monthDays) parts.push(r.monthDays.map((d) => `d${d}`).join(","));
   if (r.yearDay) {
     parts.push(`${String(r.yearDay.m).padStart(2, "0")}-${String(r.yearDay.d).padStart(2, "0")}`);
