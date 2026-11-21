@@ -340,3 +340,5 @@ Rules:
 - "starting" without a recurrence cue is not a recurrence: "class starts monday" is `mo`, "start the report friday" is `fr`.
 - The start clause and the other bounds combine: "tuesdays starting in june until august" is `d R w/1 tu uM@08 sM@06`.
 - "every third wednesday" (an ordinal after "every" with no "of the month") keeps the existing policy (`every-nth-weekday` in `policy_flags`): ambiguous, excluded from eval. A start clause is still read when the phrase is parsed.
+- Both bounds take any single date or period the DSL can write: a month ("starting in june", "until april"), a month and day, a date with a year, a year ("until 2027"), a weekday ("starting this wednesday", "until friday"), a relative day, week or month ("starting next week", "until next month"), a named day ("until christmas"), an offset ("for the next 3 months" stays a window). Cue words for the start: starting, beginning, starts, begins, commencing, "from". Cue words for the end: until, till, through, thru, ending, "up to", "by". A period as the start is its first day; a period as the end is its last day ("until april" is `uM@04`, "until 2027" is `uY@2027`).
+
