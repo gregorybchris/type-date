@@ -127,6 +127,7 @@ export function flipMeridiem(r: Resolved): Resolved {
     return withDuration({ ...r, ambiguous: false, start: { ...r.start, time: s ? flip12(s) : s } }, r.durationMin);
   }
   const f = (p?: ResolvedPoint) => (p?.time ? { ...p, time: flip12(p.time) } : p);
+  const flip = (t: { start: string; end?: string }) => ({ start: flip12(t.start), ...(t.end ? { end: flip12(t.end) } : {}) });
   const rec = r.recurrence;
   const t = rec?.time;
   return {
@@ -134,7 +135,7 @@ export function flipMeridiem(r: Resolved): Resolved {
     ambiguous: false,
     start: f(r.start),
     end: f(r.end),
-    recurrence: rec && t ? { ...rec, time: { start: flip12(t.start), ...(t.end ? { end: flip12(t.end) } : {}) } } : rec,
+    recurrence: rec && t ? { ...rec, time: flip(t), ...(rec.dayTimes ? { dayTimes: rec.dayTimes.map((d) => ({ ...d, ...flip(d) })) } : {}) } : rec,
   };
 }
 

@@ -136,6 +136,18 @@ describe("range and multi selection", () => {
   });
 });
 
+describe("assumed AM/PM", () => {
+  it("flips every weekday time of a per-weekday recurrence", async () => {
+    // "tuesdays at 1:30 and thursdays at 3": both times were guessed as PM. Choosing AM moves both.
+    const { type } = setup(table({ a: "dt R w/1 tu@1:30?,th@3?" }));
+    type("a");
+    await waitFor(() => expect(screen.getByText("Assumed")).toBeTruthy());
+    expect(document.body.textContent).toContain("Tue at 1:30 PM, Thu at 3:00 PM");
+    fireEvent.click(screen.getByRole("button", { name: "AM" }));
+    expect(document.body.textContent).toContain("Tue at 1:30 AM, Thu at 3:00 AM");
+  });
+});
+
 describe("escape", () => {
   it("returns to today's month when the picker is already empty", () => {
     const { input } = setup(table({}));
