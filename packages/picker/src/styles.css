@@ -566,9 +566,13 @@
 .td-cell[aria-selected="true"][data-today]:not([data-range])::after {
   background: var(--td-on-accent);
 }
-.td-cell[aria-selected="true"][data-out] button {
+.td-cell[aria-selected="true"][data-out]:not([data-range="mid"]) button {
   color: var(--td-on-accent);
   opacity: 0.45;
+}
+/* A day inside a range but outside the shown month sits on the light range band, so its number stays dark. */
+.td-cell[data-range="mid"][data-out] button {
+  color: var(--td-fg-2);
 }
 /* A faded tile is translucent, so the 3px that bridges the row gap would show as a darker line where it overlaps the
    tile below. Bridge exactly the 2px gap instead. */
