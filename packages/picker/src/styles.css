@@ -998,7 +998,21 @@
   .td-opt[aria-selected="true"] {
     border-color: var(--td-accent);
   }
+  /* Closed range in the strip: one band from start to end. Each tile drops its border and fills the 8px gap to
+     its right, so the tiles read as one shape. Rounded on the outside ends only, like the calendar. */
   .td-opt[data-range] {
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: 8px 0 0 var(--td-range);
+  }
+  .td-opt[data-range="start"] {
+    border-radius: 8px 0 0 8px;
+  }
+  .td-opt[data-range="end"] {
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+  }
+  .td-opt[data-range="single"] {
     border-radius: 8px;
     box-shadow: none;
   }
@@ -1018,6 +1032,22 @@
   }
   .td-body[data-cal="false"] .td-opt[aria-selected="true"] {
     border-color: transparent;
+  }
+  /* Vertical list: the band runs down, as on desktop. */
+  .td-body[data-cal="false"] .td-opt[data-range] {
+    border-radius: 0;
+    box-shadow: 0 2px 0 var(--td-range);
+  }
+  .td-body[data-cal="false"] .td-opt[data-range="start"] {
+    border-radius: 8px 8px 0 0;
+  }
+  .td-body[data-cal="false"] .td-opt[data-range="end"] {
+    border-radius: 0 0 8px 8px;
+    box-shadow: none;
+  }
+  .td-body[data-cal="false"] .td-opt[data-range="single"] {
+    border-radius: 8px;
+    box-shadow: none;
   }
 }
 
