@@ -195,6 +195,14 @@ body {
   color: var(--d-fg);
   transform: rotate(30deg);
 }
+.demo-github {
+  right: auto;
+  left: max(12px, env(safe-area-inset-left));
+  text-decoration: none;
+}
+.demo-github:hover {
+  transform: none;
+}
 .demo-gear:focus-visible,
 .demo-seg button:focus-visible,
 .demo-x:focus-visible {
