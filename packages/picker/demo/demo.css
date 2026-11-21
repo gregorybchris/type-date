@@ -188,7 +188,6 @@ body {
 }
 .demo-gear:focus-visible,
 .demo-seg button:focus-visible,
-.demo-engine:focus-visible,
 .demo-x:focus-visible {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
@@ -266,48 +265,6 @@ body {
 .demo-seg button[aria-checked="true"] {
   background: var(--d-sel);
   color: var(--d-on-sel);
-}
-.demo-engines {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.demo-engine {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  padding: 8px 12px;
-  border: 1px solid var(--d-line);
-  border-radius: 8px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-.demo-engine:hover {
-  background: var(--d-hover);
-}
-.demo-engine[aria-checked="true"] {
-  border-color: var(--d-sel);
-  box-shadow: inset 0 0 0 1px var(--d-sel);
-}
-.demo-engine-name {
-  font-size: 13px;
-  font-weight: 500;
-}
-.demo-engine-note {
-  font-size: 12px;
-  color: var(--d-fg2);
-}
-.demo-check {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 14px 0;
-  border-top: 1px dotted var(--d-line);
-  font-size: 13px;
 }
 .demo-modal-foot {
   display: flex;

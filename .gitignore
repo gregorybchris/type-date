@@ -9,3 +9,4 @@ dist/
 *.log
 .run/
 training/.venv/
+dist-demo/

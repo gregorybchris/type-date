@@ -1,0 +1,6 @@
+{
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @type-date/picker build:demo",
+  "outputDirectory": "packages/picker/dist-demo",
+  "framework": null
+}
