@@ -95,6 +95,45 @@ function Segmented<T extends string | number>(props: {
   );
 }
 
+/** "type-date" drawn as rounded strokes, like the favicon. The stem of the d is the yellow cursor. */
+function Wordmark() {
+  return (
+    <svg
+      className="demo-wordmark"
+      viewBox="-2 -2 142 33"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      role="img"
+      aria-label="type-date"
+    >
+      {/* t */}
+      <path d="M4.5 2v13q0 4 4.5 4M0 8h9" />
+      {/* y */}
+      <path d="M16 8l5.5 12M27 8l-6.5 17q-1 2.500-3.500 2.500" />
+      {/* p */}
+      <path d="M32 8v20" />
+      <circle cx="38" cy="14" r="6" />
+      {/* e */}
+      <path d="M49 14h12A6 6 0 1 0 59.240 18.240" />
+      {/* - */}
+      <path d="M66 14h6" />
+      {/* d */}
+      <circle cx="83" cy="14" r="6" />
+      <path d="M89 0v20" stroke="#f59e0b" />
+      {/* a */}
+      <circle cx="100" cy="14" r="6" />
+      <path d="M106 8v12" />
+      {/* t */}
+      <path d="M115.500 2v13q0 4 4.500 4M111 8h9" />
+      {/* e */}
+      <path d="M126 14h12A6 6 0 1 0 136.240 18.240" />
+    </svg>
+  );
+}
+
 function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
   const { prefs, set } = props;
@@ -102,6 +141,7 @@ function Settings(props: { prefs: Prefs; set: (p: Partial<Prefs>) => void; reset
   const close = () => ref.current?.close();
   return (
     <>
+      <Wordmark />
       <a
         className="demo-gear demo-github"
         href="https://github.com/gregorybchris/type-date"
@@ -206,7 +246,7 @@ function App() {
           theme={theme.mode}
           weekStart={weekStart}
           today={TODAY}
-          autoFocus
+          autoFocus={!matchMedia("(max-width: 520px)").matches}
           defaultText={text}
           onChange={() => setConfirmed(null)}
           onClear={() => setConfirmed(null)}

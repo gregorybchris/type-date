@@ -196,9 +196,19 @@ body {
   transform: rotate(30deg);
 }
 .demo-github {
-  right: auto;
-  left: max(12px, env(safe-area-inset-left));
+  right: calc(max(12px, env(safe-area-inset-right)) + 48px);
   text-decoration: none;
+}
+.demo-wordmark {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
+  z-index: 5;
+  height: 40px;
+  width: auto;
+  padding: 9px 0;
+  box-sizing: border-box;
+  color: var(--d-fg);
 }
 .demo-github:hover {
   transform: none;
