@@ -154,7 +154,9 @@ def tag_from_dsl(dsl: str) -> str:
         if any(t.startswith("M@") for t in toks[2:]):
             return "recurrence-month-filter"
         if any(
-            re.match(r"^[su](?!u$)(?:\S)", t) and not re.match(r"^(su)(,|$)", t) for t in toks[2:]
+            (re.match(r"^[su](?!u$)(?:\S)", t) and not re.match(r"^(su)(,|$)", t))
+            or re.match(r"^b[^#]", t)
+            for t in toks[2:]
         ):
             return "recurrence-bounded"
         return "recurrence"
@@ -365,3 +367,97 @@ __all__ = [
     "check_leak",
     "decontaminate",
 ]
+
+
+# until/till/til with a bare period end the day before it starts
+# (specs/dsl.md, "Start clauses", decided 2026-11-21)
+
+_UNTIL_CUE = re.compile(r"\b(until|untill|uptil|till|til|up to)\b", re.I)
+_INCL_CUE = re.compile(
+    r"\b(through|thru|ending|ends?|end of|up to and including|inclusive)\b", re.I
+)
+_PERIOD_U = re.compile(r"(?<= )u(M@\d\d|Y@\d{4}|[MWYQ][+-]\d+|Q@\d)(?= |$)")
+_MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+_MONTH_YEAR_U = re.compile(
+    r"\b(?:until|untill|uptil|till|til)\s+(?:in\s+)?("
+    + "|".join(_MONTHS)
+    + r")[a-z]*\.?,?\s+(\d{4})\b",
+    re.I,
+)
+_BARE_MONTH_TAIL = re.compile(
+    r"\b(until|untill|till|til|ending|starting|beginning|from)\s+(?:on\s+)?("
+    + "|".join(_MONTHS)
+    + r")[a-z]*\.?\s*$",
+    re.I,
+)
+
+
+def relabel_until(row: dict) -> dict | None:
+    """Policy of 2026-11-21: "until jan" ends the day before the period starts (`bM@01`).
+
+    "through jan" and "until the end of jan" stay inclusive (`uM@01`).
+    Returns a relabeled copy, or None when the row is unaffected.
+    """
+    d, t = row["dsl"], row["text"]
+    if " R " not in d or not _UNTIL_CUE.search(t) or _INCL_CUE.search(t):
+        return None
+    m = _MONTH_YEAR_U.search(t)
+    if m:
+        mm = _MONTHS.index(m.group(1).lower()[:3]) + 1
+        y = int(m.group(2))
+        days = [31, 29 if y % 4 == 0 else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        last = days[mm - 1]
+        new = d.replace(f"u{y}-{mm:02d}-{last}", f"b{y}-{mm:02d}-01")
+        return {**row, "dsl": new, "relabeled": "until-before"} if new != d else None
+    new = _PERIOD_U.sub(lambda x: "b" + x.group(1), d)
+    return {**row, "dsl": new, "relabeled": "until-before"} if new != d else None
+
+
+def relabel_bare_month(row: dict) -> dict | None:
+    """Old synthetic rows ("every 2 weeks until jan") whose label ignores a bare-month bound."""
+    d, t = row["dsl"], row["text"]
+    m = _BARE_MONTH_TAIL.search(t)
+    if not m or " R " not in d:
+        return None
+    if any(re.match(r"^[usb][^a#,u]", x) or re.match(r"^s[a-z]{2}", x) for x in d.split(" ")[3:]):
+        return None
+    cue, mm = m.group(1).lower(), _MONTHS.index(m.group(2).lower()[:3]) + 1
+    tok = {"ending": "u", "starting": "s", "beginning": "s", "from": "s"}.get(cue, "b")
+    toks = d.split(" ")
+    time_i = [i for i, x in enumerate(toks) if i > 2 and re.search(r"[:?>]", x)]
+    bound = f"{tok}M@{mm:02d}"
+    if tok == "s":
+        toks.append(bound)
+    else:
+        toks.insert(time_i[0] if time_i else len(toks), bound)
+    return {**row, "dsl": " ".join(toks), "relabeled": "bare-month-bound"}
+
+
+def cut_relabel(version: str, parent: str, reason: str) -> dict:
+    """New eval version after a label-policy change: the parent rows, relabeled where affected.
+
+    Not comparable with the parent on the relabeled rows, so every engine is rescored.
+    """
+    base = load_eval(parent)
+    out: dict[str, list[dict]] = {}
+    counts: dict[str, dict[str, int]] = {}
+    for split, rows in base.items():
+        new_rows = []
+        for r in rows:
+            for fn in (relabel_until, relabel_bare_month):
+                nr = fn(r)
+                if nr:
+                    r = nr
+                    counts.setdefault(split, defaultdict(int))[nr["relabeled"]] += 1
+            new_rows.append(r)
+        out[split] = new_rows
+    return _write(
+        version,
+        out,
+        {
+            "parent": parent,
+            "subset_of": None,
+            "reason": reason,
+            "relabeled": {k: dict(v) for k, v in counts.items()},
+        },
+    )

@@ -20,6 +20,6 @@ export const runH12 = (text: string, today?: string): string => {
   const nz = rewrite(lowered);
   // h11 gets the original text unless a rewrite changed it
   if (unsupported(nz)) return "x";
-  const out = registrar(orig, p0) ?? bareStart(nz, p0) ?? nthConjunction(nz, p) ?? dayTimes(nz, p0, p) ?? withBounds(nz, p0) ?? p0(nz === lowered ? text : nz);
+  const out = registrar(orig, p0, p) ?? bareStart(nz, p0) ?? nthConjunction(nz, p) ?? dayTimes(nz, p0, p) ?? withBounds(nz, p0) ?? p0(nz === lowered ? text : nz);
   return fixOut(out, nz);
 };

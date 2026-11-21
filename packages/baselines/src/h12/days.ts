@@ -92,14 +92,26 @@ const CODE_RE = /(?<![A-Za-z])((?:[MTWRFSU][\s,/.-]*){2,7})(?![A-Za-z])/;
 
 /** Registrar weekday codes: "MW 10:50 AM 12:10 PM", "TR 8 - 9:15 am", "M-W-F 3pm weekly", "8:00am 9:25am [ TR ]". Needs the original case.
  *  A code with no time and no recurrence cue is a list of weekdays ("MTWF", "T, R"). */
-export function registrar(orig: string, p0: P): string | null {
-  return registrarCase(orig, p0) ?? registrarLower(orig, p0);
+export function registrar(orig: string, p0: P, p: P): string | null {
+  return registrarCase(orig, p0, p) ?? registrarLower(orig, p0, p);
+}
+
+/** The code becomes weekday words and the bound-aware parser reads the rest: "mwf 7a until dec 15". */
+function viaWords(before: string, after: string, days: string[], p: P): string | null {
+  const names = days.map((d) => FULL[d]).join(" and ");
+  // two adjacent times with a meridiem each are a range: "10:50 am 12:10 pm"
+  const text = `${before} every ${names} ${after}`
+    .replace(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm))/gi, "$1 to $2")
+    .replace(/\s+/g, " ")
+    .trim();
+  const out = p(text);
+  return /^(?:d|dt) R w\/1 /.test(out) ? out : null;
 }
 
 const LOWER_CODES = new Set(["mw", "tr", "mwf", "mf", "wf", "twr", "mtw", "mtwr", "mtwrf", "wrf", "trf", "mwr", "mtwf", "mtf"]);
 
 /** The picker lowercases its input, so codes arrive as "mw 10:50 am 12:10 pm". Only known registrar patterns, and only with a clock time. */
-function registrarLower(orig: string, p0: P): string | null {
+function registrarLower(orig: string, p0: P, p: P): string | null {
   if (orig !== orig.toLowerCase()) return null;
   const m = orig.match(/(?<![a-z\d])([mtwrfsu]{2,5})(?![a-z\d])/);
   if (!m || !LOWER_CODES.has(m[1]!) || /\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\b/.test(orig)) return null;
@@ -108,11 +120,11 @@ function registrarLower(orig: string, p0: P): string | null {
     .replace(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm))/g, "$1 to $2")
     .replace(/\s+/g, " ")
     .trim();
-  const tm = p0(rest).match(/^t (\S+)$/);
-  return tm ? `dt R w/1 ${days.join(",")} ${tm[1]}` : null;
+  const withTime = /^t (\S+)$/.test(p0(rest)) || /^dt /.test(p0(rest));
+  return withTime ? viaWords(orig.slice(0, m.index!), orig.slice(m.index! + m[0].length), days, p) : null;
 }
 
-function registrarCase(orig: string, p0: P): string | null {
+function registrarCase(orig: string, p0: P, p: P): string | null {
   // "10 A.M. T": the M of "A.M." is not a code
   const clean = orig.replace(/\b[ap]\.m\./gi, (x) => " ".repeat(x.length));
   const m = clean.match(CODE_RE);
@@ -132,7 +144,11 @@ function registrarCase(orig: string, p0: P): string | null {
   const t = p0(rest);
   const tm = t.match(/^t (\S+)$/) ?? t.match(/^dt R \S+ \w\w(?:,\w\w)* (\S+)$/);
   const nd = days.join(",");
-  if (tm) return `dt R w/1 ${nd}${wk ? ` n${+wk[1]! * days.length}` : ""} ${tm[1]}`;
-  if (RECURRENCE_CUE.test(rest)) return `d R w/1 ${nd}`;
+  const adjacent = (x: string) =>
+    x.replace(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm))/gi, "$1 to $2");
+  const words = () =>
+    viaWords(adjacent(orig.slice(0, m.index!)).toLowerCase(), adjacent(orig.slice(m.index! + m[0].length)).toLowerCase().replace(/[\[\];()]/g, " "), days, p);
+  if (tm) return words() ?? `dt R w/1 ${nd}${wk ? ` n${+wk[1]! * days.length}` : ""} ${tm[1]}`;
+  if (RECURRENCE_CUE.test(rest)) return words() ?? `d R w/1 ${nd}`;
   return days.length > 1 && rest.replace(/[^a-z]/g, "") === "" ? `d ${nd}` : null;
 }

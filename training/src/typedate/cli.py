@@ -483,6 +483,58 @@ def eval_extend(
     typer.echo(json.dumps({k: v["n"] for k, v in m["files"].items()}))
 
 
+@eval_app.command("cut-relabel")
+def eval_cut_relabel(
+    version: str = typer.Argument(..., help="e.g. e14"),
+    parent: str = typer.Option("e13"),
+    reason: str = typer.Option(...),
+) -> None:
+    """Cut a new eval version after a label-policy change: relabel affected rows, keep every row."""
+    from .evalsets import cut_relabel
+
+    m = cut_relabel(version, parent, reason)
+    typer.echo(
+        json.dumps(
+            {"files": {k: v["n"] for k, v in m["files"].items()}, "relabeled": m["relabeled"]}
+        )
+    )
+
+
+@data_app.command("relabel-policy")
+def data_relabel_policy(
+    glob_: list[str] = typer.Argument(..., help="JSONL globs, repo-relative"),
+    write: bool = typer.Option(False, help="Rewrite the files (default: count only)"),
+) -> None:
+    """Apply the until-before and bare-month relabels (policy of 2026-11-21) to open data files."""
+    import glob
+    from pathlib import Path
+
+    from .evalsets import relabel_bare_month, relabel_until
+
+    repo = Path(__file__).resolve().parents[3]
+    total: dict[str, int] = {}
+    for pat in glob_:
+        for f in sorted(glob.glob(str(repo / pat))):
+            path = Path(f)
+            rows, changed = [], 0
+            for line in path.read_text().splitlines():
+                if not line.strip():
+                    continue
+                r = json.loads(line)
+                if "dsl" in r and "text" in r:
+                    for fn in (relabel_until, relabel_bare_month):
+                        nr = fn(r)
+                        if nr:
+                            r, changed = nr, changed + 1
+                            total[r["relabeled"]] = total.get(r["relabeled"], 0) + 1
+                rows.append(r)
+            if changed and write:
+                path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+            if changed:
+                typer.echo(f"{path.relative_to(repo)}: {changed}")
+    typer.echo(json.dumps(total))
+
+
 @eval_app.command("cut-clean")
 def eval_cut_clean(
     version: str = typer.Argument(..., help="e.g. e2"),

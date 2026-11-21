@@ -18,11 +18,18 @@ const FREQ: [RegExp, string][] = [
 ];
 
 /** A single date or period token from a bound operand, or null. `which` picks the side of a month-year range. */
+/** Set by `operand`: the last operand was a bare period (a month, week, quarter or year), not a date or an "end of ...". */
+let bare = false;
+
 function operand(text: string, p: P, side: "first" | "last"): string | null {
+  bare = false;
   const t = text.trim().replace(/^(?:on|in|the week of|week of|at|of|from|a)\s+/, "").replace(/(?:\s+(?:and|then)|[\s,;&]+)$/, "").replace(/\s+/g, " ");
   if (!t) return null;
   const mn = t.replace(/\.$/, "").match(/^(?:in |of )?([a-z]+)$/);
-  if (mn && MONTHS[mn[1]!]) return `M@${MONTHS[mn[1]!]}`;
+  if (mn && MONTHS[mn[1]!]) {
+    bare = true;
+    return `M@${MONTHS[mn[1]!]}`;
+  }
   const end = t.match(/^(?:the )?end of (?:the )?(.+)$/);
   if (end) {
     const inner = end[1]!;
@@ -34,9 +41,15 @@ function operand(text: string, p: P, side: "first" | "last"): string | null {
   }
   const d = p(ordinalWords(t));
   let m = d.match(/^d (\d{4}-\d\d-\d\d)>(\d{4}-\d\d-\d\d)$/);
-  if (m) return side === "first" ? m[1]! : m[2]!;
+  if (m) {
+    bare = true; // "january 2027": a month
+    return side === "first" ? m[1]! : m[2]!;
+  }
   m = d.match(/^d (\S+)$/);
-  if (m && !m[1]!.includes(",") && !m[1]!.includes(">") && !m[1]!.startsWith("R")) return m[1]!;
+  if (m && !m[1]!.includes(",") && !m[1]!.includes(">") && !m[1]!.startsWith("R")) {
+    bare = /^(?:M@\d\d|Y@\d{4}|[MWYQ][+-]\d+|Q@\d)$/.test(m[1]!);
+    return m[1]!;
+  }
   m = d.match(/^dt (\S+) \S+$/); // "june 3rd at 3pm": the date part
   if (m && /^[\dA-Za-z+@-]/.test(m[1]!) && !m[1]!.includes(":")) return m[1]!;
   return null;
@@ -94,15 +107,17 @@ export function withBounds(text: string, p: P): string | null {
       if (range) {
         const t2 = operand(nxt!.op.replace(/\s+(?:at|@|every|each|for)\s+.*$/, ""), p, "last");
         if (!t2) return null;
-        uTok = t2;
+        uTok = `u${t2}`;
         cut.push([nxt!.from, nxt!.from + nxt!.cue.length + nxt!.op.replace(/\s+(?:at|@|every|each|for)\s+.*$/, "").length + 1]);
         i++;
       }
     } else {
       if (uTok) return null;
-      const last = operand(op, p, "last");
+      // "until jan" ends the day before the period starts (`b`); "through jan", "ending jan" and "the end of jan" are inclusive (`u`)
+      const excl = /^(?:until|untill|uptil|till|til|up to)$/.test(c.cue);
+      const last = operand(op, p, excl ? "first" : "last");
       if (!last) continue;
-      uTok = last;
+      uTok = `${excl && bare ? "b" : "u"}${last}`;
       cut.push([c.from, c.from + c.cue.length + op.length + 1]);
     }
   }
@@ -130,10 +145,10 @@ export function withBounds(text: string, p: P): string | null {
   const keep = toks.filter((t, i) => {
     if (i < 3) return true;
     if (startTok && isStartTok(t)) return false;
-    if (uTok && /^u\S+/.test(t)) return false;
+    if (uTok && /^(?:u\S|b[^#])/.test(t)) return false;
     return true;
   });
-  if (uTok) keep.push(`u${uTok}`);
+  if (uTok) keep.push(uTok);
   if (startTok) keep.push(`s${startTok}`);
   // h11 already wrote the same bounds: keep its spelling (`u09-30` rather than `uM@09`)
   const base = p(text);
@@ -142,7 +157,7 @@ export function withBounds(text: string, p: P): string | null {
     const bu = bt.find((t, i) => i > 2 && /^u\S/.test(t))?.slice(1);
     const bs = bt.find((t, i) => i > 2 && isStartTok(t))?.slice(1);
     const same = (a: string | undefined, b: string | null, side: "s" | "u") => (b === null ? a === undefined : a !== undefined && normBound(a, side) === normBound(b, side));
-    if (same(bu, uTok, "u") && same(bs, startTok, "s")) return base;
+    if (uTok?.[0] !== "b" && same(bu, uTok?.slice(1) ?? null, "u") && same(bs, startTok, "s")) return base;
   }
   return canonRec(keep.join(" "));
 }
