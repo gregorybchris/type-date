@@ -27,6 +27,8 @@ DATE   := YYYY-MM-DD                            absolute
         | WD@W(+|-)N                            weekday inside the week N weeks from this one (`tu@W+1` is Tuesday of next week) (h11)
 TIME   := HH:MM                                 24h, known
         | H[:MM]'?'                             hour 1-12, am/pm unknown
+ZONE   := '@' (IANA | 'UTC' | OFFSET)             optional, last token of a `t` or `dt` line (h13)
+OFFSET := ('+'|'-') HH ':' MM
 REC    := 'R' ' ' F '/' N [' ' DAYS] [' ' LIMIT] [' ' TIMES] [' ' 's' DATE]
 F      := d | w | m | y
 DAYS   := WD(','WD)* | dNN | dNN(','dNN)* | WD '#' K       (dNN: day of month, d-1 is last)
@@ -345,3 +347,35 @@ Rules:
 - `through`, `thru`, `ending`, "to" between two bounds ("from september to december"), "up to and including" and "the end of ..." keep the period inclusive, written `u`: "through january" ends Jan 31, "until the end of may" `uM@05`. A period as the start of a range is its first day, as the end of a range its last day.
 - Reason: "until" most often means "up to the point where the period starts" ("open until january"), and half-open ranges are the usual convention. Exact dates are unchanged: "until jan 15" is through Jan 15, as in Todoist and the iCalendar UNTIL rule.
 - Resolved output is the same as `u` with the last day: `recurrence.until` is a date.
+
+## Time zones (decided 2026-11-21, h13)
+
+A zone named in the text is an optional last token on any line that has a time (`t`, `dt`, including ranges, lists and recurrences): `dt +1d 09:00 @America/Los_Angeles`, `t 15:00 @UTC`, `dt R w/1 mo,we 10:00>11:00 @Europe/London`, `dt 2026-11-30 14:00 @+05:30`. The zone applies to every time in the line (both ends of a range, every occurrence of a recurrence, in that zone's wall-clock time, so a zone's daylight saving shifts are the zone's own). A line without a time never has a zone (`d` lines drop it: "tomorrow PST" is `d +1d`). The resolver passes the zone through as `zone`; it does not convert times. Tables of abbreviations, zone words and places: `specs/tz-zones.md`.
+
+| Text | Output | Rule |
+|---|---|---|
+| 3pm EST | `t 15:00 @America/New_York` | an abbreviation is the zone it names, by the default in the table |
+| 9am PT tomorrow | `dt +1d 09:00 @America/Los_Angeles` | |
+| noon UTC, 14:00 GMT, 0330Z, 14:00Z | `t 12:00 @UTC` | GMT, UT, Z and Zulu are UTC |
+| 5pm UTC+5:30, 9am GMT-8 | `t 17:00 @+05:30`, `t 09:00 @-08:00` | an offset is a fixed offset |
+| 2026-11-30T14:00:00-08:00 | `dt 2026-11-30 14:00 @-08:00` | an ISO offset; seconds are dropped as before; `Z` is `@UTC` |
+| 2021-11-12T09:07:13+08:00[Australia/Perth] | `dt 2021-11-12 09:07 @Australia/Perth` | a bracketed IANA name wins over the offset |
+| 9am Pacific Time, 10 central, 5:00 pm Eastern | `@America/Los_Angeles`, `@America/Chicago`, `@America/New_York` | a zone word next to a clock time, with or without "time" |
+| noon London time, 9am in Tokyo | `@Europe/London`, `@Asia/Tokyo` | "<place> time" or "in <place>" right after a time, places in the table |
+| america/los_angeles 9am dec 1 | `dt 12-01 09:00 @America/Los_Angeles` | an IANA name |
+| 23:59 AoE | `t 23:59 @-12:00` | anywhere on Earth |
+
+Rules:
+- **Several zones for one moment** ("10:00 PST (18:00 GMT)", "9am PT / 12pm ET", "02:00 UTC = 21:00 EST", "5pm IST in EST?", "9am Sydney = 6pm prev day LA"): the first time with its zone is the label. The rest are conversions and are ignored (the same rule as several dates in one message). A range whose two ends name different zones ("9am PT to 12pm ET") is `x`.
+- **No zone:** "local time", "my time", "your time", "their time", "server time", "venue time", "here", "where you are", "candidate's time", "my tz": the phrase gets no zone (floating, as before). A bare place after a time ("review 4pm Stockholm", "10-7 Beijing") and a venue ("meet in london at 3pm", "lunch at mountain view 12pm") get no zone. Mark such rows unsure when the reading is not clear.
+- **Not a zone:** zone-like words that are not zones ("pacific rim brunch 11am", "central park at 3pm", "mountain view 2pm", "eastern market sat 9am", "western union at noon", "central team standup", "pst me the deck", "cat vet appt 5pm", "my mac is on pacific rim ssid at 3pm"): no zone, label the rest as usual. An abbreviation counts only when it is next to a clock time ("3pm EST", "EST 3pm") or inside the construction above.
+- **Recurrences and bounds:** "every monday 9-10am PT", "weekdays 9 to 5 EST", "daily 11am-11:30am EST until jan 15": one zone for the whole line. A zone on a bound that is a date ("until dec 20 5pm ET") is the line's zone.
+- **Daylight saving wording:** an abbreviation names a zone, not a season. "EST" in July is `@America/New_York`. "EST not EDT", "(standard time)", "(daylight)" and "(CET/CEST)" add nothing. "Eastern Standard Time", "Central European Time" and the like are the zones in the table.
+- **Disambiguation:** an abbreviation with several candidates (IST, CST, BST, AST, EST, PST) is the default zone in the table unless the text says which: a country, city or region next to it ("5pm CST (China)" is `@Asia/Shanghai`, "9am IST India time" is `@Asia/Kolkata`, "7pm BST (British Summer Time)" is `@Europe/London`, "12:00 PET, thats Peru not Pacific" is `@America/Lima`). The browser's zone and locale choose among the candidates only when the engine is given them; eval rows that depend on them are in a separate split with the context stated.
+- **Anywhere on Earth:** `@-12:00`.
+- **Corrections:** "I said New York time, not York time" is `x` (no time). A correction that names the zone ("EST, not EDT") adds nothing.
+- **Out of scope, label `x`:** page-level statements with no time ("Times are shown in the Europe/Dublin time zone.", "All times are listed in EDT."), a zone name alone, Windows display names alone ("(UTC-05:00) Eastern Time (US & Canada)"), zone phrases in other languages, JavaScript `Date.toString` dumps, GNU POSIX `TZ=` strings, iCalendar `DTSTART;TZID=` lines, sub-minute or implausible offsets.
+- **A zone next to a date only** ("tomorrow PST", "Dec 1 UTC"): `d` line, no zone.
+- **Fuzzy times** ("6:15ish pm Pacific Time"): the time is `18:15`, the zone is kept.
+- Resolved output has `zone` (the string after `@`). `weekStart`, `today` and the rest are unchanged.
+

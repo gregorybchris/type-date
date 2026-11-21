@@ -1,0 +1,482 @@
+{
+ "abbr": {
+  "ACDT": [
+   "Australia/Adelaide"
+  ],
+  "ACST": [
+   "Australia/Adelaide"
+  ],
+  "ADT": [
+   "America/Halifax"
+  ],
+  "AEDT": [
+   "Australia/Sydney"
+  ],
+  "AEST": [
+   "Australia/Sydney"
+  ],
+  "AET": [
+   "Australia/Sydney"
+  ],
+  "AKDT": [
+   "America/Anchorage"
+  ],
+  "AKST": [
+   "America/Anchorage"
+  ],
+  "ART": [
+   "America/Argentina/Buenos_Aires"
+  ],
+  "AST": [
+   "America/Halifax",
+   "Asia/Riyadh"
+  ],
+  "AWST": [
+   "Australia/Perth"
+  ],
+  "BRST": [
+   "America/Sao_Paulo"
+  ],
+  "BRT": [
+   "America/Sao_Paulo"
+  ],
+  "BST": [
+   "Europe/London",
+   "Asia/Dhaka"
+  ],
+  "CAT": [
+   "Africa/Maputo"
+  ],
+  "CDT": [
+   "America/Chicago"
+  ],
+  "CEST": [
+   "Europe/Berlin"
+  ],
+  "CET": [
+   "Europe/Berlin"
+  ],
+  "CST": [
+   "America/Chicago",
+   "Asia/Shanghai",
+   "America/Havana"
+  ],
+  "CT": [
+   "America/Chicago"
+  ],
+  "EAT": [
+   "Africa/Nairobi"
+  ],
+  "EDT": [
+   "America/New_York"
+  ],
+  "EEST": [
+   "Europe/Athens"
+  ],
+  "EET": [
+   "Europe/Athens"
+  ],
+  "EST": [
+   "America/New_York",
+   "Australia/Sydney"
+  ],
+  "ET": [
+   "America/New_York"
+  ],
+  "GMT": [
+   "UTC"
+  ],
+  "GST": [
+   "Asia/Dubai"
+  ],
+  "HADT": [
+   "Pacific/Honolulu"
+  ],
+  "HAST": [
+   "Pacific/Honolulu"
+  ],
+  "HDT": [
+   "Pacific/Honolulu"
+  ],
+  "HKT": [
+   "Asia/Hong_Kong"
+  ],
+  "HST": [
+   "Pacific/Honolulu"
+  ],
+  "ICT": [
+   "Asia/Bangkok"
+  ],
+  "IRST": [
+   "Asia/Tehran"
+  ],
+  "IST": [
+   "Asia/Kolkata",
+   "Europe/Dublin",
+   "Asia/Jerusalem"
+  ],
+  "JST": [
+   "Asia/Tokyo"
+  ],
+  "KST": [
+   "Asia/Seoul"
+  ],
+  "MDT": [
+   "America/Denver"
+  ],
+  "MESZ": [
+   "Europe/Berlin"
+  ],
+  "MEZ": [
+   "Europe/Berlin"
+  ],
+  "MSK": [
+   "Europe/Moscow"
+  ],
+  "MST": [
+   "America/Denver"
+  ],
+  "MT": [
+   "America/Denver"
+  ],
+  "MYT": [
+   "Asia/Kuala_Lumpur"
+  ],
+  "NDT": [
+   "America/St_Johns"
+  ],
+  "NPT": [
+   "Asia/Kathmandu"
+  ],
+  "NST": [
+   "America/St_Johns"
+  ],
+  "NZDT": [
+   "Pacific/Auckland"
+  ],
+  "NZST": [
+   "Pacific/Auckland"
+  ],
+  "NZT": [
+   "Pacific/Auckland"
+  ],
+  "PDT": [
+   "America/Los_Angeles"
+  ],
+  "PHST": [
+   "Asia/Manila"
+  ],
+  "PHT": [
+   "Asia/Manila"
+  ],
+  "PKT": [
+   "Asia/Karachi"
+  ],
+  "PST": [
+   "America/Los_Angeles",
+   "Asia/Manila"
+  ],
+  "PT": [
+   "America/Los_Angeles"
+  ],
+  "SAST": [
+   "Africa/Johannesburg"
+  ],
+  "SGT": [
+   "Asia/Singapore"
+  ],
+  "UT": [
+   "UTC"
+  ],
+  "UTC": [
+   "UTC"
+  ],
+  "WAT": [
+   "Africa/Lagos"
+  ],
+  "WEST": [
+   "Europe/Lisbon"
+  ],
+  "WET": [
+   "Europe/Lisbon"
+  ],
+  "WIB": [
+   "Asia/Jakarta"
+  ],
+  "WIT": [
+   "Asia/Jayapura"
+  ],
+  "WITA": [
+   "Asia/Makassar"
+  ],
+  "Z": [
+   "UTC"
+  ],
+  "ZULU": [
+   "UTC"
+  ]
+ },
+ "cities": {
+  "abu dhabi": "Asia/Dubai",
+  "abuja": "Africa/Lagos",
+  "accra": "Africa/Accra",
+  "adelaide": "Australia/Adelaide",
+  "alaska": "America/Anchorage",
+  "albuquerque": "America/Denver",
+  "amsterdam": "Europe/Amsterdam",
+  "anchorage": "America/Anchorage",
+  "arizona": "America/Phoenix",
+  "athens": "Europe/Athens",
+  "atlanta": "America/New_York",
+  "auckland": "Pacific/Auckland",
+  "aus east": "Australia/Sydney",
+  "austin": "America/Chicago",
+  "austria": "Europe/Vienna",
+  "bangalore": "Asia/Kolkata",
+  "bangkok": "Asia/Bangkok",
+  "bangladesh": "Asia/Dhaka",
+  "barcelona": "Europe/Madrid",
+  "bay area": "America/Los_Angeles",
+  "beijing": "Asia/Shanghai",
+  "belgium": "Europe/Brussels",
+  "bengaluru": "Asia/Kolkata",
+  "berlin": "Europe/Berlin",
+  "bogota": "America/Bogota",
+  "boise": "America/Denver",
+  "boston": "America/New_York",
+  "brasilia": "America/Sao_Paulo",
+  "brazil": "America/Sao_Paulo",
+  "brisbane": "Australia/Brisbane",
+  "britain": "Europe/London",
+  "brussels": "Europe/Brussels",
+  "buenos aires": "America/Argentina/Buenos_Aires",
+  "cairo": "Africa/Cairo",
+  "calgary": "America/Edmonton",
+  "canberra": "Australia/Sydney",
+  "cape town": "Africa/Johannesburg",
+  "caracas": "America/Caracas",
+  "casablanca": "Africa/Casablanca",
+  "chennai": "Asia/Kolkata",
+  "chicago": "America/Chicago",
+  "chile": "America/Santiago",
+  "china": "Asia/Shanghai",
+  "colombia": "America/Bogota",
+  "colombo": "Asia/Colombo",
+  "copenhagen": "Europe/Copenhagen",
+  "cuba": "America/Havana",
+  "dallas": "America/Chicago",
+  "dc": "America/New_York",
+  "delhi": "Asia/Kolkata",
+  "denmark": "Europe/Copenhagen",
+  "denver": "America/Denver",
+  "detroit": "America/New_York",
+  "dhaka": "Asia/Dhaka",
+  "doha": "Asia/Qatar",
+  "dubai": "Asia/Dubai",
+  "dublin": "Europe/Dublin",
+  "edmonton": "America/Edmonton",
+  "egypt": "Africa/Cairo",
+  "england": "Europe/London",
+  "finland": "Europe/Helsinki",
+  "france": "Europe/Paris",
+  "frankfurt": "Europe/Berlin",
+  "germany": "Europe/Berlin",
+  "ghana": "Africa/Accra",
+  "greece": "Europe/Athens",
+  "halifax": "America/Halifax",
+  "hamburg": "Europe/Berlin",
+  "hanoi": "Asia/Ho_Chi_Minh",
+  "havana": "America/Havana",
+  "hawaii": "Pacific/Honolulu",
+  "helsinki": "Europe/Helsinki",
+  "ho chi minh": "Asia/Ho_Chi_Minh",
+  "holland": "Europe/Amsterdam",
+  "hong kong": "Asia/Hong_Kong",
+  "honolulu": "Pacific/Honolulu",
+  "houston": "America/Chicago",
+  "hyderabad": "Asia/Kolkata",
+  "india": "Asia/Kolkata",
+  "indonesia": "Asia/Jakarta",
+  "iran": "Asia/Tehran",
+  "ireland": "Europe/Dublin",
+  "islamabad": "Asia/Karachi",
+  "istanbul": "Europe/Istanbul",
+  "italy": "Europe/Rome",
+  "jakarta": "Asia/Jakarta",
+  "japan": "Asia/Tokyo",
+  "johannesburg": "Africa/Johannesburg",
+  "kansas city": "America/Chicago",
+  "karachi": "Asia/Karachi",
+  "kathmandu": "Asia/Kathmandu",
+  "kenya": "Africa/Nairobi",
+  "kiev": "Europe/Kyiv",
+  "kolkata": "Asia/Kolkata",
+  "korea": "Asia/Seoul",
+  "kuala lumpur": "Asia/Kuala_Lumpur",
+  "kyiv": "Europe/Kyiv",
+  "l.a.": "America/Los_Angeles",
+  "la": "America/Los_Angeles",
+  "lagos": "Africa/Lagos",
+  "lahore": "Asia/Karachi",
+  "las vegas": "America/Los_Angeles",
+  "lima": "America/Lima",
+  "lisbon": "Europe/Lisbon",
+  "london": "Europe/London",
+  "los angeles": "America/Los_Angeles",
+  "madrid": "Europe/Madrid",
+  "malaysia": "Asia/Kuala_Lumpur",
+  "manila": "Asia/Manila",
+  "melbourne": "Australia/Sydney",
+  "mexico": "America/Mexico_City",
+  "mexico city": "America/Mexico_City",
+  "miami": "America/New_York",
+  "milan": "Europe/Rome",
+  "minneapolis": "America/Chicago",
+  "montreal": "America/Toronto",
+  "morocco": "Africa/Casablanca",
+  "moscow": "Europe/Moscow",
+  "mumbai": "Asia/Kolkata",
+  "munich": "Europe/Berlin",
+  "nairobi": "Africa/Nairobi",
+  "nashville": "America/Chicago",
+  "nepal": "Asia/Kathmandu",
+  "netherlands": "Europe/Amsterdam",
+  "new delhi": "Asia/Kolkata",
+  "new york": "America/New_York",
+  "new york city": "America/New_York",
+  "new zealand": "Pacific/Auckland",
+  "nigeria": "Africa/Lagos",
+  "norway": "Europe/Oslo",
+  "nyc": "America/New_York",
+  "nz": "Pacific/Auckland",
+  "osaka": "Asia/Tokyo",
+  "oslo": "Europe/Oslo",
+  "ottawa": "America/Toronto",
+  "pakistan": "Asia/Karachi",
+  "paris": "Europe/Paris",
+  "perth": "Australia/Perth",
+  "peru": "America/Lima",
+  "philadelphia": "America/New_York",
+  "philippines": "Asia/Manila",
+  "phoenix": "America/Phoenix",
+  "poland": "Europe/Warsaw",
+  "portland": "America/Los_Angeles",
+  "portugal": "Europe/Lisbon",
+  "prague": "Europe/Prague",
+  "qatar": "Asia/Qatar",
+  "rio": "America/Sao_Paulo",
+  "rio de janeiro": "America/Sao_Paulo",
+  "riyadh": "Asia/Riyadh",
+  "rome": "Europe/Rome",
+  "russia": "Europe/Moscow",
+  "saigon": "Asia/Ho_Chi_Minh",
+  "salt lake city": "America/Denver",
+  "san diego": "America/Los_Angeles",
+  "san francisco": "America/Los_Angeles",
+  "santiago": "America/Santiago",
+  "sao paulo": "America/Sao_Paulo",
+  "saudi arabia": "Asia/Riyadh",
+  "scotland": "Europe/London",
+  "seattle": "America/Los_Angeles",
+  "seoul": "Asia/Seoul",
+  "sf": "America/Los_Angeles",
+  "shanghai": "Asia/Shanghai",
+  "shenzhen": "Asia/Shanghai",
+  "silicon valley": "America/Los_Angeles",
+  "singapore": "Asia/Singapore",
+  "south africa": "Africa/Johannesburg",
+  "south korea": "Asia/Seoul",
+  "spain": "Europe/Madrid",
+  "sri lanka": "Asia/Colombo",
+  "st louis": "America/Chicago",
+  "stockholm": "Europe/Stockholm",
+  "sweden": "Europe/Stockholm",
+  "switzerland": "Europe/Zurich",
+  "sydney": "Australia/Sydney",
+  "taipei": "Asia/Taipei",
+  "taiwan": "Asia/Taipei",
+  "tehran": "Asia/Tehran",
+  "thailand": "Asia/Bangkok",
+  "tokyo": "Asia/Tokyo",
+  "toronto": "America/Toronto",
+  "turkey": "Europe/Istanbul",
+  "u.k.": "Europe/London",
+  "uae": "Asia/Dubai",
+  "uk": "Europe/London",
+  "ukraine": "Europe/Kyiv",
+  "vancouver": "America/Vancouver",
+  "vienna": "Europe/Vienna",
+  "vietnam": "Asia/Ho_Chi_Minh",
+  "warsaw": "Europe/Warsaw",
+  "washington": "America/New_York",
+  "washington dc": "America/New_York",
+  "wellington": "Pacific/Auckland",
+  "winnipeg": "America/Winnipeg",
+  "zurich": "Europe/Zurich"
+ },
+ "country": {
+  "America/Anchorage": "US",
+  "America/Chicago": "US",
+  "America/Denver": "US",
+  "America/Halifax": "CA",
+  "America/Havana": "CU",
+  "America/Los_Angeles": "US",
+  "America/New_York": "US",
+  "America/St_Johns": "CA",
+  "Asia/Dhaka": "BD",
+  "Asia/Jerusalem": "IL",
+  "Asia/Kolkata": "IN",
+  "Asia/Manila": "PH",
+  "Asia/Riyadh": "SA",
+  "Asia/Shanghai": "CN",
+  "Australia/Sydney": "AU",
+  "Europe/Dublin": "IE",
+  "Europe/London": "GB",
+  "Pacific/Honolulu": "US"
+ },
+ "names": {
+  "alaska": "America/Anchorage",
+  "alaskan": "America/Anchorage",
+  "argentina": "America/Argentina/Buenos_Aires",
+  "atlantic": "America/Halifax",
+  "australian central": "Australia/Adelaide",
+  "australian eastern": "Australia/Sydney",
+  "australian western": "Australia/Perth",
+  "brasilia": "America/Sao_Paulo",
+  "british": "Europe/London",
+  "british summer": "Europe/London",
+  "central": "America/Chicago",
+  "central africa": "Africa/Maputo",
+  "central european": "Europe/Berlin",
+  "china standard": "Asia/Shanghai",
+  "coordinated universal": "UTC",
+  "east africa": "Africa/Nairobi",
+  "eastern": "America/New_York",
+  "eastern european": "Europe/Athens",
+  "greenwich": "UTC",
+  "greenwich mean": "UTC",
+  "gulf": "Asia/Dubai",
+  "hawaii": "Pacific/Honolulu",
+  "hawaii-aleutian": "Pacific/Honolulu",
+  "hawaiian": "Pacific/Honolulu",
+  "hong kong": "Asia/Hong_Kong",
+  "india": "Asia/Kolkata",
+  "india standard": "Asia/Kolkata",
+  "indian standard": "Asia/Kolkata",
+  "japan": "Asia/Tokyo",
+  "japan standard": "Asia/Tokyo",
+  "korea standard": "Asia/Seoul",
+  "moscow": "Europe/Moscow",
+  "mountain": "America/Denver",
+  "new zealand": "Pacific/Auckland",
+  "newfoundland": "America/St_Johns",
+  "pacific": "America/Los_Angeles",
+  "pakistan": "Asia/Karachi",
+  "philippine": "Asia/Manila",
+  "singapore": "Asia/Singapore",
+  "south africa": "Africa/Johannesburg",
+  "universal": "UTC",
+  "west africa": "Africa/Lagos",
+  "western european": "Europe/Lisbon"
+ }
+}
