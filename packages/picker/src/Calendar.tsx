@@ -128,6 +128,12 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                 const gap = plain(d)
                   ? [c > 0 && apart(d, days[i - 1]) ? "l" : "", c < 6 && apart(d, days[i + 1]) ? "r" : ""].join("") || undefined
                   : undefined;
+                // The tile below may be inset by the gutter rule. The bridge that joins the two tiles is inset the same way.
+                const below = join?.includes("d") ? days[i + 7] : undefined;
+                const bridge =
+                  below
+                    ? [c > 0 && apart(below, days[i + 6]) ? "l" : "", c < 6 && apart(below, days[i + 8]) ? "r" : ""].join("") || undefined
+                    : undefined;
                 return (
                   <div
                     role="gridcell"
@@ -141,6 +147,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                     data-occ={occ || undefined}
                     data-join={join}
                     data-gap={gap}
+                    data-bridge={bridge}
                   >
                     <button
                       type="button"

@@ -1,5 +1,5 @@
 // Nth weekdays joined by "and": "every third tuesday and second monday of each month", "1st & 3rd saturday monthly".
-import { FULL, PLURAL, WD_SRC, canonRec, code, type P } from "./common";
+import { FULL, PLURAL, WD_ORDER, WD_SRC, canonRec, code, type P } from "./common";
 
 const ORD_SRC = "(first|frist|second|seccond|secound|third|thrid|fourth|forth|fourh|fifth|last|1st|2nd|3rd|4th|5th)";
 const ORD: Record<string, number> = { first: 1, frist: 1, "1st": 1, second: 2, seccond: 2, secound: 2, "2nd": 2, third: 3, thrid: 3, "3rd": 3, fourth: 4, forth: 4, fourh: 4, "4th": 4, fifth: 5, "5th": 5, last: -1 };
@@ -40,6 +40,8 @@ export function nthConjunction(text: string, p: P): string | null {
   const toks = out.split(" ");
   const i = toks.indexOf(tok);
   if (toks[1] !== "R" || toks[2] !== "m/1" || i < 0) return null;
-  toks[i] = items.map((x) => `${x.wd}#${x.k}`).join(",");
+  // canonical order: by weekday, then ordinal (last after the others)
+  const ord = (n: { wd: string; k: number }) => WD_ORDER.indexOf(n.wd) * 10 + (n.k < 0 ? 9 : n.k);
+  toks[i] = [...items].sort((a, b) => ord(a) - ord(b)).map((x) => `${x.wd}#${x.k}`).join(",");
   return canonRec(toks.join(" "));
 }

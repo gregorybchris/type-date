@@ -19,7 +19,7 @@ export const isStartTok = (t: string) => START_TOKEN.test(t) && !/^su#|^sa#/.tes
 export function canonRec(dsl: string): string {
   const t = dsl.split(" ");
   if (t[1] !== "R" || t.length < 4) return dsl;
-  const cls = (x: string) => (isStartTok(x) ? 4 : /^n\d+$/.test(x) ? 1 : /^u\S/.test(x) ? 2 : /[:?>]/.test(x) ? 3 : 0);
+  const cls = (x: string) => (/^(?:mo|tu|we|th|fr|sa|su)@/.test(x) ? 0 : isStartTok(x) ? 4 : /^n\d+$/.test(x) ? 1 : /^u\S/.test(x) ? 2 : /[:?>]/.test(x) ? 3 : 0);
   const head = t.slice(0, 3);
   const rest = t.slice(3).map((x, i) => ({ x, i, c: cls(x) }));
   rest.sort((a, b) => a.c - b.c || a.i - b.i);

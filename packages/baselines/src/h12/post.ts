@@ -24,6 +24,8 @@ export function rewrite(t: string): string {
   // "twice a week mon and thu": the weekdays say which days
   if (new RegExp(`\\b(?:twice|two times|2x|2 times)\\s+(?:a|per|each)\\s+week\\b.*\\b${WD_SRC}`).test(s)) s = s.replace(/\b(?:twice|two times|2x|2 times)\s+(?:a|per|each)\s+week\b/, "every");
   s = weekdayRange(s);
+  // h11 reads "every other monday and friday" as Monday only; "every other week on monday and friday" has both
+  s = s.replace(new RegExp(`\\b(?:every other|every second|every 2nd|alternate)\\s+(${WD_SRC}s?(?:\\s*(?:,|and|&|\\+)\\s*${WD_SRC}s?)+)`), "every other week on $1");
   // "weekly on tuesday and thursday" and "tuesdays and fridays, weekly"
   s = s.replace(new RegExp(`(?<!\\d )\\bweekly\\s+(?:on\\s+)?(?=${WD_SRC})`), "every ");
   return s;

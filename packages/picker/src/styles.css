@@ -484,7 +484,23 @@
 .td-cell[data-join*="d"] button {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: calc(100% + 3px);
+}
+/* A bridge fills the 2px row gap (plus 1px overlap) between a tile and the joined tile below. It is inset like the
+   tile below, so it never sticks out past a gutter. */
+.td-cell[data-join*="d"] button::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: inherit;
+}
+.td-cell[data-bridge*="l"] button::after {
+  left: 1px;
+}
+.td-cell[data-bridge*="r"] button::after {
+  right: 1px;
 }
 /* On an accent tile the ring sits inside the tile, in the number color, so there is no second border. */
 .td-cell[data-range="start"][data-today]::after,
@@ -501,8 +517,8 @@
 }
 /* A faded tile is translucent, so the 3px that bridges the row gap would show as a darker line where it overlaps the
    tile below. Bridge exactly the 2px gap instead. */
-.td-cell[aria-selected="true"][data-out][data-join*="d"] button {
-  height: calc(100% + 2px);
+.td-cell[aria-selected="true"][data-out][data-join*="d"] button::after {
+  height: 2px;
 }
 
 /* time list */

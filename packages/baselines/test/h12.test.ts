@@ -32,7 +32,7 @@ const cases: [string, string][] = [
   // start and until bounds
   ["every wednesday starting in june", "d R w/1 we sM@06"],
   ["every other wed starting last week", "d R w/2 we sW-1"],
-  ["every third wednesday starting in june", "d R w/3 we sM@06"],
+  ["every third wednesday starting in june", "d R m/1 we#3 sM@06"], // h11 reads "every third wednesday" as monthly; the spec marks it ambiguous
   ["every weekday starting monday", "d R d/1 mo,tu,we,th,fr smo"],
   ["monthly on the 15th starting in june", "d R m/1 d15 sM@06"],
   ["mondays starting next week", "d R w/1 mo sW+1"],

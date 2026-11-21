@@ -10,7 +10,10 @@ import { fixOut, rewrite } from "./post";
 export const runH12 = (text: string, today?: string): string => {
   const p0 = (s: string) => parseH11(s, today);
   // a bound-aware parse: start and until clauses are cut out, the skeleton is parsed, the bounds are put back
-  const p = (s: string) => withBounds(s, p0) ?? p0(s);
+  const p = (s: string) => {
+    const r = rewrite(s);
+    return withBounds(r, p0) ?? p0(r);
+  };
   const orig = text.replace(/\s+/g, " ").trim();
   const lowered = normalize(orig.toLowerCase()).toLowerCase();
   const nz = rewrite(lowered);
