@@ -88,7 +88,7 @@ export function registrar(orig: string, p0: P): string | null {
   if (letters.some((l, i) => i && "MTWRFSU".indexOf(l) <= "MTWRFSU".indexOf(letters[i - 1]!))) return null;
   const days = letters.map((l) => REG_CODE[l]!).sort(byWeekday);
   let rest = (orig.slice(0, m.index!) + " " + orig.slice(m.index! + m[0].length)).toLowerCase();
-  const wk = rest.match(/\bfor (?:the next )?(\d+) weeks?\b/);
+  const wk = rest.match(/\bfor (?:the next )?(\d+) (?:weeks?|wks?)\b/);
   if (wk) rest = rest.replace(wk[0], " ");
   rest = rest.replace(/[\[\];()]/g, " ").replace(/(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm))/g, "$1 to $2");
   rest = rest.replace(/\s+/g, " ").trim();

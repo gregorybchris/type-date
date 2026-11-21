@@ -84,7 +84,11 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
   // Neighbors join into one block only when they look the same: both in this month (solid) or both outside it (faded).
   // A corner is then rounded exactly when neither of its two sides joins a neighbor, so every block and every
   // solid/faded boundary gets rounded outer corners without special cases.
-  const joined = (a: string, b: string | undefined) => plain(b) && (a.slice(0, 7) !== viewKey) === (b!.slice(0, 7) !== viewKey);
+  const sameLook = (a: string, b: string) => (a.slice(0, 7) !== viewKey) === (b.slice(0, 7) !== viewKey);
+  const joined = (a: string, b: string | undefined) => plain(b) && sameLook(a, b!);
+  // Side neighbors that are selected but look different (solid next to faded). They are separated by the same 2px
+  // gutter that already separates rows, so a solid block and a faded block always read as two shapes.
+  const apart = (a: string, b: string | undefined) => plain(b) && !sameLook(a, b!);
   const label = monthLabel(view);
 
   return (
@@ -121,6 +125,9 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                 const join = plain(d)
                   ? [c > 0 && joined(d, days[i - 1]) ? "l" : "", c < 6 && joined(d, days[i + 1]) ? "r" : "", r > 0 && joined(d, days[i - 7]) ? "u" : "", r < 5 && joined(d, days[i + 7]) ? "d" : ""].join("") || undefined
                   : undefined;
+                const gap = plain(d)
+                  ? [c > 0 && apart(d, days[i - 1]) ? "l" : "", c < 6 && apart(d, days[i + 1]) ? "r" : ""].join("") || undefined
+                  : undefined;
                 return (
                   <div
                     role="gridcell"
@@ -133,6 +140,7 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                     data-today={d === today || undefined}
                     data-occ={occ || undefined}
                     data-join={join}
+                    data-gap={gap}
                   >
                     <button
                       type="button"

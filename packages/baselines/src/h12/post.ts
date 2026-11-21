@@ -47,7 +47,7 @@ export function fixOut(out: string, text: string): string {
   const nl = o.match(/^(?:d|dt) R m\/1 ((?:mo|tu|we|th|fr|sa|su)#-?\d(?:,(?:mo|tu|we|th|fr|sa|su)#-?\d)+)/);
   if (mo && nl) o = o.replace(new RegExp(`\\bn${mo[1]}\\b`), `n${+mo[1]! * nl[1]!.split(",").length}`);
   // "for 8 weeks" over two weekdays is 16 occurrences
-  const wk = text.match(/\bfor (?:the next )?(\d+) weeks?\b/);
+  const wk = text.match(/\bfor (?:the next )?(\d+) (?:weeks?|wks?)\b/);
   const r = o.match(/^(?:d|dt) R w\/(\d+) (\S+)/);
   if (wk && r) {
     const k = r[2]!.includes("@") ? r[2]!.split(",").length : r[2]!.split(",").length;

@@ -418,7 +418,8 @@
 }
 .td-cell button {
   position: relative;
-  width: 100%;
+  width: calc(100% - var(--td-gap-l, 0px) - var(--td-gap-r, 0px));
+  margin-left: var(--td-gap-l, 0px);
   height: 100%;
   padding: 0;
   background: none;
@@ -459,6 +460,13 @@
   background: var(--td-accent);
   color: var(--td-on-accent);
   font-weight: 600;
+}
+/* a selected neighbor that looks different (solid next to faded): leave a 1px gutter on each side of the boundary */
+.td-cell[data-gap*="l"] {
+  --td-gap-l: 1px;
+}
+.td-cell[data-gap*="r"] {
+  --td-gap-r: 1px;
 }
 /* selected days outside a range: square the corners that touch a selected neighbor, so a run reads as one block */
 .td-cell[data-join*="l"] button {
