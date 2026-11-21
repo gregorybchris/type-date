@@ -203,8 +203,8 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onR
                     >
                       {Number(d.slice(8))}
                     </button>
-                    {fillets.map((k) => (
-                      <i key={k} className="td-fillet" data-at={k} aria-hidden="true" />
+                    {(["tl", "tr", "bl", "br"] as const).map((k) => (
+                      <i key={k} className="td-fillet" data-at={k} data-on={fillets.includes(k) || undefined} aria-hidden="true" />
                     ))}
                   </div>
                 );

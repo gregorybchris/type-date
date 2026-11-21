@@ -433,7 +433,8 @@
   background: none;
   border: 0;
   border-radius: 8px;
-  transition: background-color 120ms, color 120ms;
+  /* Corners, gutters and colors all change at the same rate, so a block reshapes as it fades in. */
+  transition: background-color 120ms, color 120ms, border-radius 120ms, margin-left 120ms, width 120ms;
 }
 @media (hover: hover) {
   .td-cell button:hover {
@@ -490,8 +491,13 @@
   height: 10px;
   pointer-events: none;
   --td-fc: var(--td-accent);
+  opacity: 0;
+  transition: opacity 120ms;
 }
-.td-cell[data-out] .td-fillet {
+.td-fillet[data-on] {
+  opacity: 1;
+}
+.td-cell[data-out] .td-fillet[data-on] {
   opacity: 0.45;
 }
 .td-fillet[data-at="br"] {
@@ -533,7 +539,7 @@
 }
 /* A bridge fills the 2px row gap (plus 1px overlap) between a tile and the joined tile below. It is inset like the
    tile below, so it never sticks out past a gutter. */
-.td-cell[data-join*="d"] button::after {
+.td-cell button::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -541,6 +547,11 @@
   right: 0;
   height: 3px;
   background: inherit;
+  opacity: 0;
+  transition: opacity 120ms, left 120ms, right 120ms;
+}
+.td-cell[data-join*="d"] button::after {
+  opacity: 1;
 }
 .td-cell[data-bridge*="l"] button::after {
   left: 1px;

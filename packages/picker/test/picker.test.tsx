@@ -54,7 +54,7 @@ describe("inside corners", () => {
     const { type } = setup(table({ a: "d R d/1 mo,tu,we,th,fr" }), { weekStart: 1 });
     type("a");
     await waitFor(() => expect(document.querySelector('[aria-selected="true"]')).toBeTruthy());
-    const found = Array.from(document.querySelectorAll(".td-fillet")).map(
+    const found = Array.from(document.querySelectorAll(".td-fillet[data-on]")).map(
       (f) => `${f.parentElement!.querySelector("button")!.getAttribute("data-date")} ${f.getAttribute("data-at")}`,
     );
     expect(found.sort()).toEqual(["2026-09-23 br", "2026-10-08 tl"]);
