@@ -1,0 +1,302 @@
+{"id": "tz1-0001", "text": "standup moved to 9:30 PT tomorrow", "family": "A"}
+{"id": "tz1-0002", "text": "incident bridge 14:00 UTC pls join", "family": "A"}
+{"id": "tz1-0003", "text": "sprint demo thurs 11am ET", "family": "A"}
+{"id": "tz1-0004", "text": "interview w/ priya fri 3pm IST", "family": "A"}
+{"id": "tz1-0005", "text": "on-call handoff 0800 CET monday", "family": "A"}
+{"id": "tz1-0006", "text": "Can we do 10am PT instead?", "family": "A"}
+{"id": "tz1-0007", "text": "EMEA sync 15:00 CET", "family": "A"}
+{"id": "tz1-0008", "text": "retro wed 4pm GMT", "family": "A"}
+{"id": "tz1-0009", "text": "Sprint planning Mon 10:00 IST", "family": "A"}
+{"id": "tz1-0010", "text": "standup 9:15 ET daily", "family": "A"}
+{"id": "tz1-0011", "text": "eng all-hands thu 1pm PST", "family": "A"}
+{"id": "tz1-0012", "text": "handoff at 17:00 IST today", "family": "A"}
+{"id": "tz1-0013", "text": "bridge opens 22:30 UTC", "family": "A"}
+{"id": "tz1-0014", "text": "candidate call tmrw 2pm EST", "family": "A"}
+{"id": "tz1-0015", "text": "design review 11:30 CEST", "family": "A"}
+{"id": "tz1-0016", "text": "postmortem friday 10am PT", "family": "A"}
+{"id": "tz1-0017", "text": "pls join the call at 18:00 IST", "family": "A"}
+{"id": "tz1-0018", "text": "1:1 with Anna 16:00 CET", "family": "A"}
+{"id": "tz1-0019", "text": "release cut 12pm PST thursday", "family": "A"}
+{"id": "tz1-0020", "text": "demo day nov 20 3pm ET", "family": "A"}
+{"id": "tz1-0021", "text": "India standup 10:30am IST", "family": "A"}
+{"id": "tz1-0022", "text": "sync @ 8am PT", "family": "A"}
+{"id": "tz1-0023", "text": "on-call swap sat 06:00 UTC", "family": "A"}
+{"id": "tz1-0024", "text": "backlog grooming tue 2:30pm CET", "family": "A"}
+{"id": "tz1-0025", "text": "Panel interview 1pm EDT wed", "family": "A"}
+{"id": "tz1-0026", "text": "war room 23:00 IST tonight", "family": "A"}
+{"id": "tz1-0027", "text": "quarterly review dec 3 9am PST", "family": "A"}
+{"id": "tz1-0028", "text": "noon ET works for me", "family": "A"}
+{"id": "tz1-0029", "text": "midnight UTC deploy freeze", "family": "A"}
+{"id": "tz1-0030", "text": "kickoff 8:30 BST thursday", "family": "A"}
+{"id": "tz1-0031", "text": "stand-up 09:00 CET (daily)", "family": "A"}
+{"id": "tz1-0032", "text": "Subject: Demo moved to Fri 2pm PT", "family": "A"}
+{"id": "tz1-0033", "text": "Subject: Bridge call 03:00 UTC", "family": "A"}
+{"id": "tz1-0034", "text": "can you do 7pm IST thursday", "family": "A"}
+{"id": "tz1-0035", "text": "TL sync 5 PM CET", "family": "A"}
+{"id": "tz1-0036", "text": "offsite call jan 12 15:00 GMT", "family": "A"}
+{"id": "tz1-0037", "text": "interview loop 10am-1pm PST fri", "family": "A"}
+{"id": "tz1-0038", "text": "they're free 11am EST", "family": "A"}
+{"id": "tz1-0039", "text": "handover mon 7am PST", "family": "A"}
+{"id": "tz1-0040", "text": "lets do 4:30 IST", "family": "A"}
+{"id": "tz1-0041", "text": "oncall rotation changes 00:00 UTC sun", "family": "A"}
+{"id": "tz1-0042", "text": "architecture review 3 pm CET tue", "family": "A"}
+{"id": "tz1-0043", "text": "ship party 5pm PDT friday", "family": "A"}
+{"id": "tz1-0044", "text": "dry run today 13:30 GMT", "family": "A"}
+{"id": "tz1-0045", "text": "backend sync tomorrow 9 IST", "family": "A"}
+{"id": "tz1-0046", "text": "cutover at 02:00 CET sat", "family": "A"}
+{"id": "tz1-0047", "text": "bridge at 14:00 UTC+1", "family": "B"}
+{"id": "tz1-0048", "text": "demo 3pm (UTC-5)", "family": "B"}
+{"id": "tz1-0049", "text": "standup 10:00 UTC+5:30", "family": "B"}
+{"id": "tz1-0050", "text": "interview thurs 9am GMT-8", "family": "B"}
+{"id": "tz1-0051", "text": "maintenance window 22:00 +0000", "family": "B"}
+{"id": "tz1-0052", "text": "sync 16:00 GMT+1 tmrw", "family": "B"}
+{"id": "tz1-0053", "text": "handoff 0600 UTC-8", "family": "B"}
+{"id": "tz1-0054", "text": "review at 11am (GMT+5:30)", "family": "B"}
+{"id": "tz1-0055", "text": "retro fri 15:00 UTC+2", "family": "B"}
+{"id": "tz1-0056", "text": "call @ 9:30 UTC+05:30", "family": "B"}
+{"id": "tz1-0057", "text": "planning mon 10am (UTC-08:00)", "family": "B"}
+{"id": "tz1-0058", "text": "incident call 2026-11-24 18:00 +0530", "family": "B"}
+{"id": "tz1-0059", "text": "bridge 12:00 UTC-5 sharp", "family": "B"}
+{"id": "tz1-0060", "text": "all hands 17:00 GMT+0", "family": "B"}
+{"id": "tz1-0061", "text": "candidate chat 4pm GMT+1", "family": "B"}
+{"id": "tz1-0062", "text": "deploy 03:00 UTC +1", "family": "B"}
+{"id": "tz1-0063", "text": "standup 9:00 (UTC+1) / 13:30 (UTC+5:30)", "family": "B"}
+{"id": "tz1-0064", "text": "demo wed 14:00 -0800", "family": "B"}
+{"id": "tz1-0065", "text": "on-call starts 08:00 UTC-7", "family": "B"}
+{"id": "tz1-0066", "text": "sprint review 11:00 UTC+0100", "family": "B"}
+{"id": "tz1-0067", "text": "sync at 20:00 GMT+5:30 pls", "family": "B"}
+{"id": "tz1-0068", "text": "Subject: Handoff Tue 10:00 UTC-6", "family": "B"}
+{"id": "tz1-0069", "text": "freeze begins 00:00 GMT-4", "family": "B"}
+{"id": "tz1-0070", "text": "jam 1pm UTC+8 thursday", "family": "B"}
+{"id": "tz1-0071", "text": "office hours 18:00 GMT+2", "family": "B"}
+{"id": "tz1-0072", "text": "interview 3:15pm UTC−5", "family": "B", "note": "unicode minus"}
+{"id": "tz1-0073", "text": "bridge 21:00 +05:30", "family": "B"}
+{"id": "tz1-0074", "text": "planning 9am GMT+11 mon", "family": "B"}
+{"id": "tz1-0075", "text": "call 0930 UTC-3", "family": "B"}
+{"id": "tz1-0076", "text": "post-incident review 13:00 UTC+4", "family": "B"}
+{"id": "tz1-0077", "text": "standup 9am Pacific Time", "family": "C"}
+{"id": "tz1-0078", "text": "sprint demo Thursday 2pm Eastern Time", "family": "C"}
+{"id": "tz1-0079", "text": "interview at 10 am Central European Time", "family": "C"}
+{"id": "tz1-0080", "text": "bridge 3pm Eastern Standard Time", "family": "C"}
+{"id": "tz1-0081", "text": "sync 11am Mountain Time", "family": "C"}
+{"id": "tz1-0082", "text": "retro tuesday 4pm Central Time", "family": "C"}
+{"id": "tz1-0083", "text": "let's do 1pm PT", "family": "C"}
+{"id": "tz1-0084", "text": "planning mon 10am CT", "family": "C"}
+{"id": "tz1-0085", "text": "ET or PT, which works for the demo?", "family": "C"}
+{"id": "tz1-0086", "text": "handoff 6pm India Standard Time", "family": "C"}
+{"id": "tz1-0087", "text": "all hands 9am Pacific Standard Time wed", "family": "C"}
+{"id": "tz1-0088", "text": "call 14:00 Central European Summer Time", "family": "C"}
+{"id": "tz1-0089", "text": "kickoff 8am MT", "family": "C"}
+{"id": "tz1-0090", "text": "1pm Greenwich Mean Time thurs", "family": "C"}
+{"id": "tz1-0091", "text": "1:1 4pm Eastern fri", "family": "C"}
+{"id": "tz1-0092", "text": "standup 9:30 Pacific tomorrow", "family": "C"}
+{"id": "tz1-0093", "text": "interview 11am Central tuesday", "family": "C"}
+{"id": "tz1-0094", "text": "retro 3pm Eastern (US)", "family": "C"}
+{"id": "tz1-0095", "text": "demo 10am Pacific Daylight Time", "family": "C"}
+{"id": "tz1-0096", "text": "sync 17:00 British Summer Time", "family": "C"}
+{"id": "tz1-0097", "text": "call 1pm Mountain Standard Time", "family": "C"}
+{"id": "tz1-0098", "text": "bridge 8pm Central Standard Time", "family": "C"}
+{"id": "tz1-0099", "text": "review 9 am Eastern Daylight Time", "family": "C"}
+{"id": "tz1-0100", "text": "Subject: Planning Mon 10am Pacific", "family": "C"}
+{"id": "tz1-0101", "text": "standup 10am London time", "family": "D"}
+{"id": "tz1-0102", "text": "demo 3pm Bangalore time", "family": "D"}
+{"id": "tz1-0103", "text": "interview 9am in Berlin", "family": "D"}
+{"id": "tz1-0104", "text": "bridge noon New York time", "family": "D"}
+{"id": "tz1-0105", "text": "sync 4pm Pune time", "family": "D"}
+{"id": "tz1-0106", "text": "handoff 6pm Dublin time", "family": "D"}
+{"id": "tz1-0107", "text": "retro 2pm SF time", "family": "D"}
+{"id": "tz1-0108", "text": "planning 11am Bay Area time", "family": "D"}
+{"id": "tz1-0109", "text": "call 5pm Hyderabad time", "family": "D"}
+{"id": "tz1-0110", "text": "meeting 9am America/New_York", "family": "D"}
+{"id": "tz1-0111", "text": "bridge 14:00 Europe/Berlin", "family": "D"}
+{"id": "tz1-0112", "text": "interview 10:30 Asia/Kolkata", "family": "D"}
+{"id": "tz1-0113", "text": "oncall 08:00 Europe/London", "family": "D"}
+{"id": "tz1-0114", "text": "demo at 3pm Seattle time", "family": "D"}
+{"id": "tz1-0115", "text": "standup 9:30 Amsterdam time", "family": "D"}
+{"id": "tz1-0116", "text": "1:1 4pm Austin time", "family": "D"}
+{"id": "tz1-0117", "text": "all hands 10am Chicago time", "family": "D"}
+{"id": "tz1-0118", "text": "sync 11am Denver time", "family": "D"}
+{"id": "tz1-0119", "text": "call 7pm Mumbai time", "family": "D"}
+{"id": "tz1-0120", "text": "candidate 1pm in Toronto", "family": "D"}
+{"id": "tz1-0121", "text": "workshop 9am Paris time", "family": "D"}
+{"id": "tz1-0122", "text": "standup 10:00 Warsaw time", "family": "D"}
+{"id": "tz1-0123", "text": "sprint demo 3pm Boston time", "family": "D"}
+{"id": "tz1-0124", "text": "handoff 5pm Chennai time", "family": "D"}
+{"id": "tz1-0125", "text": "bridge 2am Pacific/Auckland", "family": "D", "note": "IANA with time before"}
+{"id": "tz1-0126", "text": "offsite call 10am Lisbon time", "family": "D"}
+{"id": "tz1-0127", "text": "review 4pm Stockholm", "family": "D"}
+{"id": "tz1-0128", "text": "planning 9am Dallas time", "family": "D"}
+{"id": "tz1-0129", "text": "interview 6pm Delhi time", "family": "D"}
+{"id": "tz1-0130", "text": "sync 16:00 Zurich time", "family": "D"}
+{"id": "tz1-0131", "text": "9am your time works", "family": "E"}
+{"id": "tz1-0132", "text": "standup at 10am my time", "family": "E"}
+{"id": "tz1-0133", "text": "what's that in your local time?", "family": "E"}
+{"id": "tz1-0134", "text": "9am here is 2pm there", "family": "E"}
+{"id": "tz1-0135", "text": "same time in Berlin?", "family": "E"}
+{"id": "tz1-0136", "text": "bridge 3pm local", "family": "E"}
+{"id": "tz1-0137", "text": "call at 5pm their time", "family": "E"}
+{"id": "tz1-0138", "text": "can we do 11 your time tmrw", "family": "E"}
+{"id": "tz1-0139", "text": "interview 2pm candidate's time", "family": "E", "note": "possessive noun as zone"}
+{"id": "tz1-0140", "text": "10am my tz", "family": "E"}
+{"id": "tz1-0141", "text": "at 4pm local time for everyone", "family": "E"}
+{"id": "tz1-0142", "text": "standup is 9:30 for me", "family": "E"}
+{"id": "tz1-0143", "text": "demo at 3pm our time", "family": "E"}
+{"id": "tz1-0144", "text": "sync in your morning", "family": "E"}
+{"id": "tz1-0145", "text": "handoff 8am my time = evening for you", "family": "E"}
+{"id": "tz1-0146", "text": "your tz or mine?", "family": "E", "note": "zone as a question"}
+{"id": "tz1-0147", "text": "pls check local time before joining", "family": "E"}
+{"id": "tz1-0148", "text": "5pm here", "family": "E"}
+{"id": "tz1-0149", "text": "ping me at 10 your time", "family": "E"}
+{"id": "tz1-0150", "text": "every team's local 9am", "family": "E"}
+{"id": "tz1-0151", "text": "9am wherever you are", "family": "E", "note": "zone as anywhere"}
+{"id": "tz1-0152", "text": "9am PT / 12pm ET / 5pm UTC / 10:30pm IST", "family": "F"}
+{"id": "tz1-0153", "text": "standup 10am CET (1:30pm IST)", "family": "F"}
+{"id": "tz1-0154", "text": "bridge 14:00 UTC = 7am PT = 3pm CET", "family": "F"}
+{"id": "tz1-0155", "text": "demo 3pm ET, 12pm PT, 8pm GMT", "family": "F"}
+{"id": "tz1-0156", "text": "9am PST (5pm GMT)", "family": "F"}
+{"id": "tz1-0157", "text": "sync 08:00 PT | 11:00 ET | 17:00 CET | 21:30 IST", "family": "F"}
+{"id": "tz1-0158", "text": "handoff 6pm IST = 8:30am ET", "family": "F"}
+{"id": "tz1-0159", "text": "retro Thurs 4pm CET / 10am ET / 7am PT", "family": "F"}
+{"id": "tz1-0160", "text": "interview 10am PST -> 11:30pm IST", "family": "F"}
+{"id": "tz1-0161", "text": "call 15:00 GMT (10am EST, 7am PST)", "family": "F"}
+{"id": "tz1-0162", "text": "1pm ET aka 7pm CET", "family": "F"}
+{"id": "tz1-0163", "text": "PT 9:00 | ET 12:00 | CET 18:00", "family": "F"}
+{"id": "tz1-0164", "text": "planning 9am US-East / 2pm UK / 7:30pm India", "family": "F"}
+{"id": "tz1-0165", "text": "Subject: Bridge 17:00 UTC (9am PT / 12pm ET)", "family": "F"}
+{"id": "tz1-0166", "text": "standup 9:30am IST, 6am CET, 12am ET", "family": "F"}
+{"id": "tz1-0167", "text": "demo 11am PT (2pm ET) tmrw", "family": "F"}
+{"id": "tz1-0168", "text": "all hands: 8am PT, 11am ET, 4pm GMT, 9:30pm IST", "family": "F"}
+{"id": "tz1-0169", "text": "bridge 0200 UTC / 1000 SGT", "family": "F"}
+{"id": "tz1-0170", "text": "sync at 16:00 CET (that's 10am ET)", "family": "F"}
+{"id": "tz1-0171", "text": "cutover 22:00 UTC (6pm ET / 3pm PT)", "family": "F"}
+{"id": "tz1-0172", "text": "10am EST is 3pm GMT", "family": "F"}
+{"id": "tz1-0173", "text": "handoff 7:30pm IST/9am EST/6am PST", "family": "F"}
+{"id": "tz1-0174", "text": "call 12:00 PT (20:00 UTC)", "family": "F"}
+{"id": "tz1-0175", "text": "review 3pm CET 9am CST", "family": "F"}
+{"id": "tz1-0176", "text": "3pm est in ist", "family": "G"}
+{"id": "tz1-0177", "text": "what is 9am PT in IST", "family": "G"}
+{"id": "tz1-0178", "text": "convert 10am CET to PT", "family": "G"}
+{"id": "tz1-0179", "text": "9am london = what in nyc", "family": "G"}
+{"id": "tz1-0180", "text": "5pm IST in EST?", "family": "G"}
+{"id": "tz1-0181", "text": "what time is 14:00 UTC in pacific", "family": "G"}
+{"id": "tz1-0182", "text": "noon ET to CET", "family": "G"}
+{"id": "tz1-0183", "text": "9:30 IST -> PT", "family": "G"}
+{"id": "tz1-0184", "text": "when is 8am pst in india", "family": "G"}
+{"id": "tz1-0185", "text": "9am PT in Berlin time", "family": "G"}
+{"id": "tz1-0186", "text": "11am CET in new york?", "family": "G"}
+{"id": "tz1-0187", "text": "3pm utc to ist pls", "family": "G"}
+{"id": "tz1-0188", "text": "what's 4pm EST in GMT", "family": "G"}
+{"id": "tz1-0189", "text": "10:00 IST in london time", "family": "G"}
+{"id": "tz1-0190", "text": "convert 18:00 UTC to PST", "family": "G"}
+{"id": "tz1-0191", "text": "bridge 2pm PT, whats that in IST", "family": "G"}
+{"id": "tz1-0192", "text": "9 am est > cet", "family": "G", "note": "arrow as conversion"}
+{"id": "tz1-0193", "text": "is 7pm IST too late for PT team", "family": "G"}
+{"id": "tz1-0194", "text": "standup every weekday 9:30am PT", "family": "H"}
+{"id": "tz1-0195", "text": "every monday 9-10am ET", "family": "H"}
+{"id": "tz1-0196", "text": "weekdays 10 to 6 IST", "family": "H"}
+{"id": "tz1-0197", "text": "daily 10am-10:15am CET", "family": "H"}
+{"id": "tz1-0198", "text": "sprint demo every other thursday 2pm PT", "family": "H"}
+{"id": "tz1-0199", "text": "on-call 9am PT mon through 9am PT mon", "family": "H"}
+{"id": "tz1-0200", "text": "starting dec 1 at 8am UTC weekly", "family": "H"}
+{"id": "tz1-0201", "text": "until dec 18 5pm ET", "family": "H"}
+{"id": "tz1-0202", "text": "every 2 weeks tues 11am GMT", "family": "H"}
+{"id": "tz1-0203", "text": "retro every other friday 3pm CET", "family": "H"}
+{"id": "tz1-0204", "text": "first monday of the month 10am PT", "family": "H"}
+{"id": "tz1-0205", "text": "freeze from nov 25 6pm ET to nov 30 9am ET", "family": "H"}
+{"id": "tz1-0206", "text": "daily standup 10:00-10:15 IST mon-fri", "family": "H"}
+{"id": "tz1-0207", "text": "office hours tue/thu 4-5pm CET", "family": "H"}
+{"id": "tz1-0208", "text": "handoff every friday 17:00 UTC", "family": "H"}
+{"id": "tz1-0209", "text": "planning 1st of each month 9am ET", "family": "H"}
+{"id": "tz1-0210", "text": "rotation weekly, switches mon 08:00 UTC", "family": "H"}
+{"id": "tz1-0211", "text": "9-5 PT weekdays", "family": "H"}
+{"id": "tz1-0212", "text": "every day except fri 10am IST", "family": "H"}
+{"id": "tz1-0213", "text": "interviews wed 10am-4pm PST", "family": "H"}
+{"id": "tz1-0214", "text": "bridge for 90 min from 3pm UTC", "family": "H"}
+{"id": "tz1-0215", "text": "sprint ends dec 4 5pm PT", "family": "H"}
+{"id": "tz1-0216", "text": "nov 27 - dec 1 oncall 9am CET to 9am CET", "family": "H"}
+{"id": "tz1-0217", "text": "daily 11am-11:30am EST until jan 15", "family": "H"}
+{"id": "tz1-0218", "text": "every mon wed fri 9:15 IST", "family": "H"}
+{"id": "tz1-0219", "text": "weekly sync thu 14:00 GMT for 45 min", "family": "H"}
+{"id": "tz1-0220", "text": "monthly demo last friday 2pm ET", "family": "H"}
+{"id": "tz1-0221", "text": "standup m-f 0930 PT", "family": "H"}
+{"id": "tz1-0222", "text": "beginning next week, 10am CET daily", "family": "H"}
+{"id": "tz1-0223", "text": "every sunday 20:00 IST", "family": "H"}
+{"id": "tz1-0224", "text": "weekdays between 6am and 2pm PT", "family": "H"}
+{"id": "tz1-0225", "text": "until end of sprint 4pm ET fri", "family": "H"}
+{"id": "tz1-0226", "text": "2 hour bridge 22:00-00:00 UTC", "family": "H"}
+{"id": "tz1-0227", "text": "every 3rd tuesday 11am EST", "family": "H"}
+{"id": "tz1-0228", "text": "from 10am to 11:30am PST today", "family": "H"}
+{"id": "tz1-0229", "text": "mon-thu 8am-4pm CET, fri off", "family": "H"}
+{"id": "tz1-0230", "text": "quarterly review each quarter 1st tue 9am PT", "family": "H"}
+{"id": "tz1-0231", "text": "standup 9am EST (not EDT)", "family": "I"}
+{"id": "tz1-0232", "text": "handoff 9am Eastern (EDT)", "family": "I"}
+{"id": "tz1-0233", "text": "bridge 3pm CST (China)", "family": "I"}
+{"id": "tz1-0234", "text": "call 10am IST (India not Israel)", "family": "I"}
+{"id": "tz1-0235", "text": "retro 2pm BST (British Summer Time)", "family": "I"}
+{"id": "tz1-0236", "text": "demo 11am AEST/AEDT", "family": "I"}
+{"id": "tz1-0237", "text": "after dst change standup is 9am ET still", "family": "I"}
+{"id": "tz1-0238", "text": "interview 4pm standard time", "family": "I"}
+{"id": "tz1-0239", "text": "sync 3pm CDT, i.e. UTC-5", "family": "I"}
+{"id": "tz1-0240", "text": "handoff 8am PDT (daylight time)", "family": "I"}
+{"id": "tz1-0241", "text": "clocks change sun, meeting stays 10am CET", "family": "I"}
+{"id": "tz1-0242", "text": "is that EST or EDT? bridge 7pm", "family": "I"}
+{"id": "tz1-0243", "text": "9am PT (PST after nov 1)", "family": "I"}
+{"id": "tz1-0244", "text": "call 10:00 CST (US central, not china)", "family": "I"}
+{"id": "tz1-0245", "text": "standup 9:30 IST (Indian Standard Time)", "family": "I"}
+{"id": "tz1-0246", "text": "11am ET - EDT til nov 1, EST after", "family": "I"}
+{"id": "tz1-0247", "text": "BST not GMT, 2pm", "family": "I"}
+{"id": "tz1-0248", "text": "sync 1pm CET, 2pm CEST after march", "family": "I"}
+{"id": "tz1-0249", "text": "ET meaning whatever NY is on", "family": "I", "note": "zone defined by city"}
+{"id": "tz1-0250", "text": "all hands 3pm \"Eastern\" (DST applies)", "family": "I"}
+{"id": "tz1-0251", "text": "demo 8pm ACST", "family": "I"}
+{"id": "tz1-0252", "text": "Date: Tue, 24 Nov 2026 14:00:00 -0500", "family": "J"}
+{"id": "tz1-0253", "text": "2026-11-30T14:00:00+05:30", "family": "J"}
+{"id": "tz1-0254", "text": "2026-12-01 09:00:00 UTC", "family": "J"}
+{"id": "tz1-0255", "text": "bridge 2026-11-25T22:00Z", "family": "J"}
+{"id": "tz1-0256", "text": "start=2026-12-03T10:00:00-08:00", "family": "J"}
+{"id": "tz1-0257", "text": "[2026-11-24 14:02:11 +0000] incident opened", "family": "J"}
+{"id": "tz1-0258", "text": "Wed, 25 Nov 2026 09:30:00 GMT", "family": "J"}
+{"id": "tz1-0259", "text": "deploy at 2026-11-26T03:00Z", "family": "J"}
+{"id": "tz1-0260", "text": "20261130T140000Z", "family": "J", "note": "compact ISO basic"}
+{"id": "tz1-0261", "text": "DTSTART;TZID=Europe/Berlin:20261202T100000", "family": "J", "note": "iCalendar property"}
+{"id": "tz1-0262", "text": "2026-11-27 17:00 CET", "family": "J"}
+{"id": "tz1-0263", "text": "sent: Thu, 26 Nov 2026 08:15:00 +0100", "family": "J"}
+{"id": "tz1-0264", "text": "window 2026-12-05T00:00:00Z to 2026-12-05T04:00:00Z", "family": "J"}
+{"id": "tz1-0265", "text": "ts=2026-11-23T18:30:00+05:30 handoff", "family": "J"}
+{"id": "tz1-0266", "text": "14:00Z", "family": "J"}
+{"id": "tz1-0267", "text": "standup 9am p.s.t", "family": "K"}
+{"id": "tz1-0268", "text": "bridge 3pm est.", "family": "K"}
+{"id": "tz1-0269", "text": "demo 5pmEST", "family": "K"}
+{"id": "tz1-0270", "text": "EST 3pm sync", "family": "K"}
+{"id": "tz1-0271", "text": "9am Eastren thursday", "family": "K"}
+{"id": "tz1-0272", "text": "noon pacfic wed", "family": "K"}
+{"id": "tz1-0273", "text": "call 10am gmt+1", "family": "K"}
+{"id": "tz1-0274", "text": "standup 930am pst", "family": "K"}
+{"id": "tz1-0275", "text": "sync 3 p.m. C.E.T.", "family": "K"}
+{"id": "tz1-0276", "text": "interview 2pm  IST  tmrw", "family": "K"}
+{"id": "tz1-0277", "text": "bridge 15:00utc", "family": "K"}
+{"id": "tz1-0278", "text": "Demo @ 4pm - PT", "family": "K"}
+{"id": "tz1-0279", "text": "Retro: 4pm, CET.", "family": "K"}
+{"id": "tz1-0280", "text": "9 am ist", "family": "K"}
+{"id": "tz1-0281", "text": "handoff 8AM Pst", "family": "K"}
+{"id": "tz1-0282", "text": "call 4pm Centrall time", "family": "K"}
+{"id": "tz1-0283", "text": "bridge 3pm (est)", "family": "K"}
+{"id": "tz1-0284", "text": "10am pt!!", "family": "K"}
+{"id": "tz1-0285", "text": "standup in the central park room 3pm", "family": "L"}
+{"id": "tz1-0286", "text": "offsite at eastern market sat 9am", "family": "L"}
+{"id": "tz1-0287", "text": "pst me the deck before 3pm", "family": "L"}
+{"id": "tz1-0288", "text": "lunch at mountain view 12pm", "family": "L"}
+{"id": "tz1-0289", "text": "my mac is on pacific rim ssid at 3pm", "family": "L"}
+{"id": "tz1-0290", "text": "I'm EST so mornings are hard", "family": "L"}
+{"id": "tz1-0291", "text": "interview in london at 3pm", "family": "L"}
+{"id": "tz1-0292", "text": "central team standup 10am", "family": "L"}
+{"id": "tz1-0293", "text": "west coast team retro friday 2pm", "family": "L"}
+{"id": "tz1-0294", "text": "CST report due by 5pm", "family": "L"}
+{"id": "tz1-0295", "text": "IST to be fixed before 5pm", "family": "L"}
+{"id": "tz1-0296", "text": "ET phone home at 6pm", "family": "L", "note": "movie quote with zone-like word"}
+{"id": "tz1-0297", "text": "hold 9-10 PT for Priya (PT only, any day)", "family": "M", "note": "zone with parenthetical scope"}
+{"id": "tz1-0298", "text": "standup 9:30 [PT] / [CET] same slot", "family": "M", "note": "bracketed zones"}
+{"id": "tz1-0299", "text": "Mon 10am PT / Tue 10am IST (their Mon eve)", "family": "M", "note": "different zones on different days"}
+{"id": "tz1-0300", "text": "Bridge: 03:00 (IST) is 22:30 UTC prev day", "family": "M", "note": "zone plus previous-day conversion"}
+{"id": "tz1-0301", "text": "pick any time between 8-10 PT or 17-19 CET", "family": "M", "note": "two zone ranges, either-or"}
+{"id": "tz1-0302", "text": "meet in the UTC+1 overlap hour", "family": "M", "note": "zone as a window name"}
