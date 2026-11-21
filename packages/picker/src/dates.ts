@@ -124,6 +124,8 @@ export function describeRecurrence(r: ResolvedRecurrence): string {
   if (r.yearDay) s += ` on ${fmtShort(ymd(2000, r.yearDay.m, r.yearDay.d))}`;
   if (r.time && !r.dayTimes) s += ` at ${r.time.end ? fmtSpan(r.time.start, r.time.end) : fmtTime(r.time.start)}`;
   if (r.count) s += `, ${r.count} times`;
+  // A start bound ("tomorrow to friday 3-4pm", "starting oct 5"). The year is left out when the end gives it.
+  if (r.from) s += ` from ${r.until && r.until.slice(0, 4) === r.from.slice(0, 4) ? fmtShort(r.from) : fmtDate(r.from)}`;
   if (r.until) s += ` until ${fmtDate(r.until)}`;
   return s;
 }

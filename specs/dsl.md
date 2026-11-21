@@ -379,3 +379,20 @@ Rules:
 - **Fuzzy times** ("6:15ish pm Pacific Time"): the time is `18:15`, the zone is kept.
 - Resolved output has `zone` (the string after `@`). `weekStart`, `today` and the rest are unchanged.
 
+
+## Date range with a shared time (decided 2026-11-21, h14)
+
+A range of two single days with one time or time window that applies to each day is a daily recurrence bounded by the two days. The time may come before or after the dates. A time on each end is one span, as before.
+
+| Text | Label | |
+|---|---|---|
+| tomorrow to friday 3-4pm | `dt R d/1 ufr 15:00>16:00 s+1d` | 3 to 4 PM on each day, tomorrow through Friday |
+| 3-4pm tomorrow to friday | `dt R d/1 ufr 15:00>16:00 s+1d` | |
+| dec 1 to dec 5 at 9am | `dt R d/1 u12-05 09:00 s12-01` | |
+| 3pm tomorrow to 4pm friday | `dt +1d 15:00>fr 16:00` | a time on each end: one span |
+| from noon friday until monday morning | `dt fr 12:00>mo` | a day part on the end counts as its time: one span |
+| monday to friday 3-4pm | `dt R d/1 mo,tu,we,th,fr 15:00>16:00` | two bare weekdays with a time keep the h12 reading (weekdays, every week) |
+
+- `s` and `u` take the two days as written. A weekday in `u` resolves on or after the `s` date, as a range end does, so the recurrence covers the same days as the range `+1d>fr`.
+- Periods are not day ranges: "this week 3-4pm" stays `dt W+0 15:00>16:00`.
+- One open pool row conflicts with this rule: "from the 5th to the 10th at 9am" is labeled `dt D@05 09:00>D@10` (`r-fam0193`, listed in `specs/engines/h14-known-conflicts.json`).

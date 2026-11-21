@@ -782,6 +782,13 @@ describe("recurrence text", () => {
     expect(describeRecurrence({ ...base, days: ["mo", "we"] })).toBe("Every week on Mon, Wed at 9:00 AM");
     expect(describeRecurrence({ ...base, interval: 2, days: ["mo", "tu", "we", "th", "fr"] })).toBe("Every 2 weeks on Mon, Tue, Wed, Thu, Fri at 9:00 AM");
   });
+
+  it("names the start and end bounds", async () => {
+    const { describeRecurrence } = await import("../src/dates");
+    const base = { freq: "d" as const, interval: 1, dtstart: "2026-11-22", time: { start: "15:00", end: "16:00" } };
+    expect(describeRecurrence({ ...base, from: "2026-11-22", until: "2026-11-27" })).toBe("Every day at 3:00 - 4:00 PM from Nov 22 until Nov 27, 2026");
+    expect(describeRecurrence({ ...base, from: "2026-12-28", until: "2027-01-03" })).toBe("Every day at 3:00 - 4:00 PM from Dec 28, 2026 until Jan 3, 2027");
+  });
 });
 
 describe("calendar on phones", () => {
