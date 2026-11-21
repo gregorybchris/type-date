@@ -23,10 +23,13 @@ interface Props {
   today: string;
   weekStart: 0 | 1;
   onView: (v: View) => void;
-  onPick: (date: string) => void;
+  /** `shift`: extend a range. `multi`: cmd or ctrl, add to a list of dates. */
+  onPick: (date: string, mods: { shift: boolean; multi: boolean }) => void;
+  /** Drag from one day to another. Called as the pointer enters each day. */
+  onRange: (from: string, to: string) => void;
 }
 
-export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: Props) {
+export function Calendar({ view, dir, sel, today, weekStart, onView, onPick, onRange }: Props) {
   const days = gridDays(view, weekStart);
   const rootRef = useRef<HTMLDivElement>(null);
   const wantFocus = useRef(false);
@@ -43,6 +46,21 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
     wantFocus.current = false;
     rootRef.current?.querySelector<HTMLElement>(`[data-date="${tabDate}"]`)?.focus();
   });
+
+  // Drag to select: press on a day, move over others. A click that ends on another day does not fire on either
+  // button, so a drag never also picks a single day. Mouse and pen only, so touch scrolling still works.
+  const dragFrom = useRef<string | null>(null);
+  useEffect(() => {
+    const end = () => {
+      dragFrom.current = null;
+    };
+    window.addEventListener("pointerup", end);
+    window.addEventListener("pointercancel", end);
+    return () => {
+      window.removeEventListener("pointerup", end);
+      window.removeEventListener("pointercancel", end);
+    };
+  }, []);
 
   const nav = (n: number) => onView(fromIndex(viewIndex(view) + n));
 
@@ -175,7 +193,13 @@ export function Calendar({ view, dir, sel, today, weekStart, onView, onPick }: P
                       data-date={d}
                       aria-label={fmtDate(d)}
                       onFocus={() => setFocus(d)}
-                      onClick={() => onPick(d)}
+                      onPointerDown={(e) => {
+                        if (!e.button && e.pointerType !== "touch" && !e.shiftKey && !e.metaKey && !e.ctrlKey) dragFrom.current = d;
+                      }}
+                      onPointerEnter={() => {
+                        if (dragFrom.current) onRange(dragFrom.current, d);
+                      }}
+                      onClick={(e) => onPick(d, { shift: e.shiftKey, multi: e.metaKey || e.ctrlKey })}
                     >
                       {Number(d.slice(8))}
                     </button>

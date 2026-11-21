@@ -35,7 +35,54 @@ export function pickDate(r: Resolved | null, date: string, anchor: string | null
   return [{ mode: time ? "dt" : mode === "dt" ? "d" : mode, kind: "single", start, ambiguous: false }, null];
 }
 
-export function pickTime(r: Resolved, time: string, target: Target): Resolved {
+/**
+ * Cmd or ctrl-click: add the day to the selection as a list of dates ("oct 2, oct 9 and oct 16"). A single day becomes
+ * a list of two. A list toggles the day. Any other selection (a range, a recurrence, nothing) starts over with the
+ * clicked day as a single day, ready for more cmd-clicks.
+ */
+export function toggleListDate(r: Resolved | null, date: string): Resolved {
+  if (r?.kind === "list" && r.dates) return pickDate(r, date, null)[0];
+  const startTime = r?.kind === "recurrence" ? r.recurrence?.time?.start : r?.start?.time;
+  const one = (r?.kind === "single" || (r?.kind === "range" && r.start?.date === r.end?.date)) && !r.open ? r.start?.date : undefined;
+  if (one && one !== date) {
+    return { mode: startTime ? "dt" : "d", kind: "list", dates: [one, date].sort(), ...(startTime ? { time: startTime } : {}), ambiguous: false };
+  }
+  if (one) return r!;
+  return { mode: startTime ? "dt" : "d", kind: "single", start: startTime ? { date, time: startTime } : { date }, ambiguous: false };
+}
+
+/** The date a shift-click extends from: a single day, or the start of a closed range. Null for anything else. */
+export function rangeAnchor(r: Resolved | null): string | null {
+  if (!r || r.open) return null;
+  if (r.kind === "single" || (r.kind === "range" && r.start?.date)) return r.start?.date ?? null;
+  return null;
+}
+
+/** A closed range between two days, in either order. The same day gives a single day. Times carry over. */
+export function pickRange(r: Resolved | null, a: string, b: string): Resolved {
+  const [lo, hi] = a <= b ? [a, b] : [b, a];
+  const startTime = r?.kind === "recurrence" ? r.recurrence?.time?.start : r?.kind === "list" ? r.time : r?.start?.time;
+  const endTime = r?.kind === "range" ? (r.end?.time ?? startTime) : startTime;
+  const point = (date: string, time?: string): ResolvedPoint => (time ? { date, time } : { date });
+  if (lo === hi) {
+    return { mode: startTime ? "dt" : "d", kind: "single", start: point(lo, startTime), ambiguous: false };
+  }
+  return {
+    mode: startTime || endTime ? "dt" : "d",
+    kind: "range",
+    start: point(lo, startTime),
+    end: point(hi, endTime),
+    ambiguous: false,
+  };
+}
+
+export function pickTime(r: Resolved, time: string, target: Target, day = 0): Resolved {
+  if (r.kind === "recurrence" && r.recurrence?.dayTimes?.[day]) {
+    // a time per weekday: only the chosen weekday changes
+    const dayTimes = r.recurrence.dayTimes.map((d, i) => (i === day ? { ...d, start: time } : d));
+    const first = dayTimes[0]!;
+    return { ...r, ambiguous: false, recurrence: { ...r.recurrence, dayTimes, time: { start: first.start, ...(first.end ? { end: first.end } : {}) } } };
+  }
   if (r.kind === "recurrence" && r.recurrence) {
     const t = r.recurrence.time;
     return { ...r, ambiguous: false, recurrence: { ...r.recurrence, time: { ...t, start: time } } };

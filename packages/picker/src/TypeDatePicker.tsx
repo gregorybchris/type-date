@@ -7,7 +7,7 @@ import { TimeList } from "./TimeList";
 import type { DateFormat, TimeFormat } from "./dates";
 import { describeRecurrence, fmtDate, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
-import { flipMeridiem, pickDate, pickTime, summarize } from "./edit";
+import { flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
 import { CalendarIcon, SearchIcon } from "./icons";
 
@@ -80,6 +80,8 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   const [pending, setPending] = useState(false);
   const [muted, setMuted] = useState(false);
   const [target, setTarget] = useState<Target>("start");
+  /** With a time per weekday: which weekday the time list edits. */
+  const [dayIdx, setDayIdx] = useState(0);
   const [anchor, setAnchor] = useState<string | null>(null);
   const [view, setView] = useState<View & { dir: -1 | 0 | 1 }>({ ...viewOf(today), dir: 0 });
   const seq = useRef(0);
@@ -118,12 +120,13 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   }, []);
 
   const commit = useCallback(
-    (r: Resolved, notify = true) => {
+    (r: Resolved, notify = true, moveView = true) => {
       latest.current.result = r;
       setResult(r);
       setTarget("start");
+      setDayIdx(0);
       const d = r.recurrence?.dtstart ?? r.dates?.[0] ?? r.start?.date ?? r.end?.date;
-      if (d) show(viewOf(d));
+      if (d && moveView) show(viewOf(d));
       if (notify) latest.current.onChange?.(r);
     },
     [show],
@@ -188,6 +191,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
     setMuted(false);
     setAnchor(null);
     setTarget("start");
+    setDayIdx(0);
     show(viewOf(today));
     props.onClear?.();
   };
@@ -305,14 +309,34 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   const edit = (r: Resolved) => {
     commit(r);
   };
-  const onPickDate = (d: string) => {
+  const onPickDate = (d: string, mods = { shift: false, multi: false }) => {
+    // Cmd or ctrl-click builds a list of dates, without moving the visible month.
+    if (mods.multi) {
+      commit(toggleListDate(latest.current.result, d), true, false);
+      setAnchor(null);
+      return;
+    }
+    // Shift-click extends from the selected day, or from the start of the selected range.
+    const from = mods.shift ? rangeAnchor(result) : null;
+    if (from) {
+      onRange(from, d);
+      return;
+    }
     const [r, a] = pickDate(result, d, anchor);
     edit(r);
     setAnchor(a);
   };
+  // Drag and shift-click set a range without moving the visible month, since both start from days on screen.
+  const onRange = (a: string, b: string) => {
+    const [lo, hi] = a <= b ? [a, b] : [b, a];
+    const cur = latest.current.result;
+    if (cur && cur.kind === (lo === hi ? "single" : "range") && cur.start?.date === lo && (lo === hi || cur.end?.date === hi) && !cur.open) return;
+    commit(pickRange(latest.current.result, a, b), true, false);
+    setAnchor(null);
+  };
   const onPickTime = (t: string) => {
     if (!result) return;
-    const r = pickTime(result, t, target);
+    const r = pickTime(result, t, target, dayIdx);
     latest.current.result = r;
     setResult(r);
     latest.current.onChange?.(r);
@@ -320,8 +344,9 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
   };
 
   const isList = result?.kind === "list";
-  const startTime = rec ? rec.time?.start : isList ? result?.time : result?.start?.time;
-  const endTime = rec ? rec.time?.end : result?.end?.time;
+  const dayTime = rec?.dayTimes?.[dayIdx];
+  const startTime = rec ? (dayTime ?? rec.time)?.start : isList ? result?.time : result?.start?.time;
+  const endTime = rec ? (dayTime ?? rec.time)?.end : result?.end?.time;
   const open = result?.open;
   const tgt: Target = open === "start" ? "end" : open === "end" ? "start" : target;
   const activeTime = result?.kind === "range" && tgt === "end" ? endTime : startTime;
@@ -379,9 +404,20 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
       <Collapse open={!!result}>
         <div className="td-fields">
           {result?.kind === "recurrence" && rec ? (
-            <Field active onClick={() => jump("start")}>
-              {describeRecurrence(rec)}
-            </Field>
+            <>
+              <Field active onClick={() => jump("start")}>
+                {describeRecurrence(rec)}
+              </Field>
+              {rec.dayTimes && showTime && (
+                <div className="td-fg td-days">
+                  {rec.dayTimes.map((d, i) => (
+                    <Field key={d.wd} active={i === dayIdx} onClick={() => { setDayIdx(i); setTarget("start"); }}>
+                      {WD_LABEL[d.wd]} {fmtTime(d.start)}
+                    </Field>
+                  ))}
+                </div>
+              )}
+            </>
           ) : isList && result?.dates ? (
             <div className="td-fg">
               <Field icon active onClick={() => jump("start")}>
@@ -435,6 +471,7 @@ export function TypeDatePicker(props: TypeDatePickerProps) {
               weekStart={weekStart}
               onView={show}
               onPick={onPickDate}
+              onRange={onRange}
             />
           </div>
         </div>

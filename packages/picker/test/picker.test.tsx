@@ -61,6 +61,69 @@ describe("inside corners", () => {
   });
 });
 
+describe("range and multi selection", () => {
+  const day = (d: string) => document.querySelector(`[data-date="${d}"]`) as HTMLElement;
+  const selected = () =>
+    Array.from(document.querySelectorAll('[aria-selected="true"] button')).map((b) => b.getAttribute("data-date"));
+  const start = async () => {
+    const u = setup(table({ a: "d 09-21", t: "dt 09-21 15:00" }));
+    u.type("a");
+    await waitFor(() => expect(selected()).toEqual(["2026-09-21"]));
+    return u;
+  };
+
+  it("shift-click extends from the selected day to a range", async () => {
+    await start();
+    fireEvent.click(day("2026-09-24"), { shiftKey: true });
+    expect(selected()).toEqual(["2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24"]);
+    // Shift-click before the start makes the range run backward from the anchor.
+    fireEvent.click(day("2026-09-19"), { shiftKey: true });
+    expect(selected()).toEqual(["2026-09-19", "2026-09-20", "2026-09-21"]);
+  });
+
+  it("drags from one day to another", async () => {
+    await start();
+    fireEvent.pointerDown(day("2026-09-15"), { button: 0 });
+    fireEvent.pointerEnter(day("2026-09-16"));
+    fireEvent.pointerEnter(day("2026-09-17"));
+    expect(selected()).toEqual(["2026-09-15", "2026-09-16", "2026-09-17"]);
+    // Dragging back to the first day leaves that single day.
+    fireEvent.pointerEnter(day("2026-09-15"));
+    expect(selected()).toEqual(["2026-09-15"]);
+    fireEvent.pointerUp(window);
+    // After release, moving over days changes nothing.
+    fireEvent.pointerEnter(day("2026-09-18"));
+    expect(selected()).toEqual(["2026-09-15"]);
+  });
+
+  it("keeps the time when a range is made", async () => {
+    const { type } = await start();
+    type("t");
+    await waitFor(() => expect(screen.getByRole("option", { name: "3:00 PM" }).getAttribute("aria-selected")).toBe("true"));
+    fireEvent.click(day("2026-09-23"), { shiftKey: true });
+    expect(screen.getAllByRole("option", { name: "3:00 PM" }).length).toBeGreaterThan(0);
+    expect(selected()).toEqual(["2026-09-21", "2026-09-22", "2026-09-23"]);
+  });
+
+  it("cmd-click after a range starts a fresh list from the clicked day", async () => {
+    await start();
+    fireEvent.click(day("2026-09-24"), { shiftKey: true });
+    fireEvent.click(day("2026-09-10"), { metaKey: true });
+    expect(selected()).toEqual(["2026-09-10"]);
+    fireEvent.click(day("2026-09-12"), { metaKey: true });
+    expect(selected()).toEqual(["2026-09-10", "2026-09-12"]);
+  });
+
+  it("cmd-click builds a list of dates and toggles days in it", async () => {
+    await start();
+    fireEvent.click(day("2026-09-23"), { metaKey: true });
+    fireEvent.click(day("2026-09-28"), { ctrlKey: true });
+    expect(selected()).toEqual(["2026-09-21", "2026-09-23", "2026-09-28"]);
+    fireEvent.click(day("2026-09-23"), { metaKey: true });
+    expect(selected()).toEqual(["2026-09-21", "2026-09-28"]);
+  });
+});
+
 describe("escape", () => {
   it("returns to today's month when the picker is already empty", () => {
     const { input } = setup(table({}));

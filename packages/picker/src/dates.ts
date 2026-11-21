@@ -7,7 +7,7 @@ const MONTH = [
   "July", "August", "September", "October", "November", "December",
 ];
 export const DOW = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-const WD_LABEL: Record<Weekday, string> = {
+export const WD_LABEL: Record<Weekday, string> = {
   su: "Sun", mo: "Mon", tu: "Tue", we: "Wed", th: "Thu", fr: "Fri", sa: "Sat",
 };
 
@@ -107,7 +107,10 @@ export const monthNames = (months: number[]) => months.map((m) => MONTH[m - 1]).
 export function describeRecurrence(r: ResolvedRecurrence): string {
   const unit = { d: "day", w: "week", m: "month", y: "year" }[r.freq];
   let s = r.interval > 1 ? `Every ${r.interval} ${unit}s` : `Every ${unit}`;
-  if (r.days?.length) s += ` on ${r.days.map((d) => WD_LABEL[d]).join(", ")}`;
+  // a time per weekday: "on Tue at 1:30 PM, Thu at 3:00 PM"
+  if (r.dayTimes?.length) {
+    s += ` on ${r.dayTimes.map((d) => `${WD_LABEL[d.wd]} at ${d.end ? fmtSpan(d.start, d.end) : fmtTime(d.start)}`).join(", ")}`;
+  } else if (r.days?.length) s += ` on ${r.days.map((d) => WD_LABEL[d]).join(", ")}`;
   if (r.monthDays?.length)
     s += ` on the ${r.monthDays.map((d) => (d < 0 ? "last day" : ord(d))).join(", ")}`;
   for (const [i, n] of (r.nths ?? (r.nth ? [r.nth] : [])).entries()) {
@@ -115,7 +118,7 @@ export function describeRecurrence(r: ResolvedRecurrence): string {
   }
   if (r.months) s += ` in ${monthNames(r.months)}`;
   if (r.yearDay) s += ` on ${fmtShort(ymd(2000, r.yearDay.m, r.yearDay.d))}`;
-  if (r.time) s += ` at ${r.time.end ? fmtSpan(r.time.start, r.time.end) : fmtTime(r.time.start)}`;
+  if (r.time && !r.dayTimes) s += ` at ${r.time.end ? fmtSpan(r.time.start, r.time.end) : fmtTime(r.time.start)}`;
   if (r.count) s += `, ${r.count} times`;
   if (r.until) s += ` until ${fmtDate(r.until)}`;
   return s;

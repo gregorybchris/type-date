@@ -356,6 +356,10 @@
   color: var(--td-fg-2);
   font-weight: 500;
 }
+.td-cal [role="grid"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
 .td-cell {
   position: relative;
   height: 38px;
