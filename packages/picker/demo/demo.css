@@ -207,20 +207,6 @@ body {
   height: 26px;
   width: auto;
 }
-/* The yellow stem of the d blinks like a text cursor. */
-.demo-cursor {
-  animation: demo-blink 1.1s step-end infinite;
-}
-@keyframes demo-blink {
-  50% {
-    opacity: 0;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .demo-cursor {
-    animation: none;
-  }
-}
 .demo-github:hover {
   transform: none;
 }

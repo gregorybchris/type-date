@@ -140,7 +140,7 @@ function Wordmark() {
         </defs>
         <path fill="currentColor" d={WORDMARK_TEXT} />
         <path fill="currentColor" d={WORDMARK_D} />
-        <path className="demo-cursor" fill="#f59e0b" d={WORDMARK_D} clipPath="url(#demo-wm-stem)" />
+        <path fill="#f59e0b" d={WORDMARK_D} clipPath="url(#demo-wm-stem)" />
       </svg>
     </div>
   );
