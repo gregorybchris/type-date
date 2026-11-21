@@ -52,6 +52,7 @@ function etcOffset(raw: string): string | null {
 
 function fmtOffset(sign: string, h: string, m = "00"): string | null {
   if (+h > 14 || +m > 59) return null;
+  if (+h === 0 && +m === 0) return "UTC"; // a zero offset is UTC
   return `${sign}${h.padStart(2, "0")}:${m}`;
 }
 
@@ -116,10 +117,11 @@ interface Mention {
   loose: boolean;
 }
 
-const CLOCK_BEFORE = /(?:\d(?:\s*[ap]\.?m\.?)?|noon|midnight|\b[ap]\.?m\.?)[\s,(\[\-:@]*$/;
+const CLOCK_BEFORE = /(?:\d(?:\s*[ap]\.?m\.?)?|noon|midnight|\b[ap]\.?m\.?|\bhou?rs?)[\s,(\[\-:@]*$/;
+const CLOCK_BEFORE_IN = /(?:\d(?:\s*[ap]\.?m\.?)?|noon|midnight)\s+in\s+$/;
 const CLOCK_AFTER = /^[\s:,\-)\]@]*(?:\d{1,2}(?::\d{2})?(?!\d)|noon|midnight)/;
 const BLOCKED_AFTER = /^\s+(?:rim|ocean|park|market|team|street|st\b|avenue|ave\b|view|dew|union|city|station|office|europe|village|coast|beach|shore|bridge|square|time zone|zone)/;
-const adjacent = (t: string, m: { start: number; end: number }) => CLOCK_BEFORE.test(t.slice(0, m.start)) || CLOCK_AFTER.test(t.slice(m.end));
+const adjacent = (t: string, m: { start: number; end: number }) => CLOCK_BEFORE.test(t.slice(0, m.start)) || CLOCK_BEFORE_IN.test(t.slice(0, m.start)) || CLOCK_AFTER.test(t.slice(m.end));
 
 const ABBR_KEYS = Object.keys(ABBR).filter((k) => k !== "Z" && k !== "ZULU").sort((a, b) => b.length - a.length);
 const ABBR_RE = new RegExp(`(?<![a-z0-9])(${ABBR_KEYS.map((k) => k.toLowerCase()).join("|")})(?![a-z0-9])`, "g");
@@ -132,7 +134,8 @@ const IN_CITY_RE = new RegExp(`(?<=(?:\\d(?:\\s*[ap]\\.?m\\.?)?|noon|midnight)\\
 
 /** Spaced or dotted abbreviations ("p.s.t", "e s t") and abbreviations glued to a time ("5pmest"). */
 function tidy(t: string): string {
-  let s = t.toLowerCase().replace(/[\u2212\u2013\u2014]/g, "-").replace(/\s+/g, " ").trim();
+  // a unicode minus or dash is a minus only inside an offset ("utc\u221206:00"); elsewhere it stays as typed
+  let s = t.toLowerCase().replace(/\u2212/g, "-").replace(/((?:utc|gmt)\s*)[\u2013\u2014]/g, "$1-").replace(/\s+/g, " ").trim();
   s = s.replace(/\b([a-z])\.\s?([a-z])\.\s?([a-z])\.?(?![a-z])/g, (m, a, b, c) => (ABBR[(a + b + c).toUpperCase()] ? a + b + c : m));
   s = s.replace(/\b([a-z]) ([a-z]) ([a-z])(?![a-z])/g, (m, a, b, c) => (ABBR[(a + b + c).toUpperCase()] ? a + b + c : m));
   s = s.replace(/\b([a-z])\.([a-z])\.(?![a-z])/g, (m, a, b) => (ABBR[(a + b).toUpperCase()] ? a + b : m));
@@ -159,12 +162,24 @@ function mentions(t: string, ctx: ZoneContext): Mention[] {
     /(?<=\d:\d{2}:\d{2}(?:[.,]\d+)?)\s?([+-])(\d{1,2})(?::?(\d{2}))?(?![\d:])/g,
     /(?<=\d{4}-\d\d-\d\dt\d{1,2}(?::\d{2})?)([+-])(\d{2})(?::?(\d{2}))?(?![\d:])/g,
     /(?<=\d:\d{2}(?::\d{2})?(?:\s?[ap]m)?) ([+-])(\d{2})(\d{2})(?!\d)/g,
+    /(?<=\d:\d{2}(?::\d{2})?(?:\s?[ap]m)?)\s?(\+)(\d{2}):(\d{2})(?![\d:])/g,
+    /(?<=\d:\d{2}(?::\d{2})?(?:\s?[ap]m)?) (-)(\d{2}):(\d{2})(?![\d:])(?!\s*(?:to|-|until))/g,
   ];
   for (const re of isoOff) {
     for (const m of t.matchAll(re)) {
       const z = fmtOffset(m[1]!, m[2]!, m[3]);
       if (z) out.push({ start: m.index!, end: m.index! + m[0].length, zone: z, loose: false });
     }
+  }
+  // an offset right after a named abbreviation: "pdt -07:00", "est -05:00"
+  for (const m of t.matchAll(new RegExp(`(?<=(?:${ABBR_KEYS.map((k) => k.toLowerCase()).join("|")})\\s)([+-])(\\d{2}):(\\d{2})(?![\\d:])`, "g"))) {
+    const z = fmtOffset(m[1]!, m[2]!, m[3]);
+    if (z) out.push({ start: m.index!, end: m.index! + m[0].length, zone: z, loose: false });
+  }
+  // a basic-format ISO offset: 20161001T1430+0530
+  for (const m of t.matchAll(/(?<=\d{8}t\d{4,6}(?:[.,]\d+)?)([+-])(\d{2})(\d{2})(?!\d)/g)) {
+    const z = fmtOffset(m[1]!, m[2]!, m[3]);
+    if (z) out.push({ start: m.index!, end: m.index! + m[0].length, zone: z, loose: false });
   }
   // a bracketed offset: [+01:00]
   for (const m of t.matchAll(/\[([+-])(\d{2}):(\d{2})\]/g)) out.push({ start: m.index!, end: m.index! + m[0].length, zone: `${m[1]}${m[2]}:${m[3]}`, loose: false });
@@ -177,8 +192,17 @@ function mentions(t: string, ctx: ZoneContext): Mention[] {
     const key = m[1]!.toUpperCase();
     const mm = { start: m.index!, end: m.index! + m[0].length };
     if (BLOCKED_AFTER.test(t.slice(mm.end)) && key !== "UTC" && key !== "GMT") continue;
-    const paired = /^\s*[\/,=]\s*(?:utc|gmt)\s*[+-]\d/.test(t.slice(mm.end)) || /(?:utc|gmt)\s*[+-]\d{1,2}(?::\d{2})?\s*[\/,=]\s*$/.test(t.slice(0, mm.start));
+    const negPair = /^\s*(?:not|or|\/)\s*[a-z]{2,5}[\s,?:]*(?:\d|noon|midnight)/.test(t.slice(mm.end));
+    const paired = negPair || /^\s*[\/,=]\s*(?:utc|gmt)\s*[+-]\d/.test(t.slice(mm.end)) || /(?:utc|gmt)\s*[+-]\d{1,2}(?::\d{2})?\s*[\/,=]\s*$/.test(t.slice(0, mm.start));
     if (!adjacent(t, mm) && !paired) continue;
+    // "pst" is a common typo of "past": "half pst 6", "ten pst 3", "pst 3 weeks", "pst 2 wkends"
+    if (key === "PST") {
+      const before = t.slice(0, mm.start);
+      const after = t.slice(mm.end);
+      if (/\b(?:half|quarter|\d+|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|twenty[- ]five)\s+$/.test(before) && /^\s*\d/.test(after)) continue;
+      if (/^\s*(?:the\s+)?\d+\s*(?:weeks?|wks?|days?|months?|mos?|years?|yrs?|hours?|hrs?|minutes?|mins?|wkends?|wknds?|weekends?)\b/.test(after)) continue;
+      if (/\bthe\s+$/.test(before) && /^\s*\d/.test(after)) continue;
+    }
     // "est not edt": a negated abbreviation is not the zone
     if (/\bnot\s*$/.test(t.slice(0, mm.start))) continue;
     out.push({ ...mm, zone: key === "UT" ? "UTC" : pickAbbr(key, t, ctx), loose: true });
@@ -198,6 +222,12 @@ function mentions(t: string, ctx: ZoneContext): Mention[] {
   // "<place> time" and "in <place>" after a time
   for (const m of t.matchAll(CITY_TIME_RE)) out.push({ start: m.index!, end: m.index! + m[0].length, zone: CITIES[m[1]!]!, loose: true });
   for (const m of t.matchAll(IN_CITY_RE)) out.push({ start: m.index!, end: m.index! + m[0].length, zone: CITIES[m[1]!]!, loose: true });
+  // a bare city right after a clock time is a zone when the phrase compares places: "9am sydney = 6pm prev day la", "9am london = what in nyc"
+  const bare = [...t.matchAll(new RegExp(`(?<=(?:\\d(?:\\s*[ap]\\.?m\\.?)?|noon|midnight)\\s+)(${CITY_ALT})(?![a-z])`, "g"))];
+  const cmpA = new RegExp(`(?:=|->|/|\\bvs\\.?|\\bwhat\\b)[^.]*\\b(?:in|at)\\s+(?:${CITY_ALT})\\b`);
+  const cmpB = new RegExp(`(?:=|->|/|\\bvs\\.?|\\bwhat\\b)\\s*[^.]*\\d(?:\\s*[ap]m)?\\s+(?:prev day |next day )?(?:${CITY_ALT})\\b`);
+  const compares = bare.length >= 2 || (bare.length === 1 && (out.length > 0 || cmpA.test(t) || cmpB.test(t)));
+  if (compares) for (const m of bare) out.push({ start: m.index!, end: m.index! + m[0].length, zone: CITIES[m[1]!]!, loose: true });
   // bare words next to a clock time are noise unless the zone is stated, so drop overlaps (keep the longest)
   out.sort((a, b) => a.start - b.start || b.end - b.start - (a.end - a.start));
   const kept: Mention[] = [];
@@ -213,9 +243,12 @@ const NO_ZONE_PHRASES = new RegExp(
   "g",
 );
 
+/** A 24-hour time for h12: hours 10 to 12 need the "hours" suffix to be known, the others read as 24-hour from HH:MM. */
+const h24 = (h: string, mi: string) => (+h >= 10 && +h <= 12 ? `${h}${mi} hours` : `${h.padStart(2, "0")}:${mi}`);
+
 export type Parse = (text: string) => string;
 
-const RANGE_CONNECTOR = /^\s*(?:to|until|till|thru|through|and|-|\u2013)\s*/;
+const RANGE_CONNECTOR = /^\s*(?:to|until|till|thru|through|and|-(?!>)|\u2013)\s*/;
 const TIME_ONLY = /^[\s:,-]*(?:\d{1,2}(?::\d{2}(?::\d{2})?)?\s*(?:a\.?m\.?|p\.?m\.?)?|noon|midnight)[\s:,-]*$/;
 const TIME_WORDS = /^(?:\s*(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|noon|midnight)\s*(?:a\.?m\.?|p\.?m\.?)?\s*)$/;
 
@@ -228,10 +261,9 @@ export function withZone(text: string, ctx: ZoneContext, parse: Parse): string {
   if (OUT_OF_SCOPE.test(t)) return "x";
   // a bracketed zone after an offset says the same thing; the name is the better label
   t = t.replace(/(?<=\d)(?:[+-]\d{2}(?::?\d{2})?|z)(?=\[)/g, "");
-  // a time with seconds is a 24-hour time
-  t = t.replace(/\b(\d{1,2}):(\d{2}):\d{2}(?:[.,]\d+)?(?!\d)/g, (_m, h: string, mi: string) => `${h.padStart(2, "0")}${mi} hours`);
   const stripped = t.replace(NO_ZONE_PHRASES, " ").replace(/\s+/g, " ").trim();
   const ms = mentions(stripped, ctx);
+  if (typeof process !== "undefined" && process.env.TZDEBUG) console.error(JSON.stringify({ stripped, ms }));
   if (!ms.length) return postFix(parse(stripped === t.replace(/\s+/g, " ").trim() && stripped === text.trim().toLowerCase() ? text : stripped), stripped);
   // collect the mentions that belong to the first moment
   const first = ms[0]!;
@@ -243,6 +275,13 @@ export function withZone(text: string, ctx: ZoneContext, parse: Parse): string {
     const m = ms[i]!;
     const seg = stripped.slice(prev[1], m.start);
     const sameMoment = (TIME_ONLY.test(seg) || TIME_WORDS.test(seg)) && prev === remove[0]; // "Nigeria time: 7pm WAT"
+    // a named zone with its own offset: "PDT / UTC-7", "UTC +00:00", "+0000 UTC": the name is the label
+    const isOffset = (z: string) => /^[+-]\d\d:\d\d$/.test(z);
+    if (/^[\s,/=\-+]*$/.test(seg) && (isOffset(m.zone) !== isOffset(zone))) {
+      if (isOffset(zone)) zone = m.zone;
+      remove.push([m.start, m.end]);
+      continue;
+    }
     if (m.zone === zone && (RANGE_CONNECTOR.test(seg) || sameMoment || /^\s*\(?\s*$/.test(seg) || /^\s*[+\-/]?\s*$/.test(seg))) {
       remove.push([m.start, m.end]); // the same zone again: "17:00 UTC to 19:00 UTC", "UTC +00:00", "(MDT)"
       continue;
@@ -270,18 +309,30 @@ export function withZone(text: string, ctx: ZoneContext, parse: Parse): string {
   let pos = 0;
   for (const [a, b] of remove.sort((x, y) => x[0] - y[0])) {
     if (a >= cut) break;
-    working += stripped.slice(pos, a) + " ";
+    // 1500 utc, 0000z - 2359z: a four-digit time right before a zone is a 24-hour time
+    working += stripped.slice(pos, a).replace(/\b([01]\d|2[0-3])([0-5]\d)\s*$/, (_m, h: string, mi: string) => h24(h, mi) + " ") + " ";
     pos = Math.max(pos, b);
   }
   working += stripped.slice(pos, cut);
   // a parenthesized duplicate of the zone: "Mountain Daylight Time (MDT) 4 am", "pacific time (pdt)"
   working = working.replace(/\(\s*(?:[a-z]{2,5}|(?:utc|gmt)\s*[+-]\d{1,2}(?::\d{2})?)\s*\)/g, " ");
+  // two ISO date-times joined by a slash are a range
+  working = working.replace(/(\d\d:\d\d)[a-z]?\s*\/\s*(\d{4}-\d\d-\d\d)/g, "$1 to $2");
+  // a time with seconds, or one that follows an ISO date, is a 24-hour time
+  working = working.replace(/\b(\d{1,2}):(\d{2}):\d{2}(?:[.,]\d+)?(?!\d)/g, (_m, h: string, mi: string) => h24(h, mi));
+  working = working.replace(/(\d{4}-\d\d-\d\d)t(\d{2})(?![\d:.])/g, (_m, d: string, h: string) => `${d} ${h24(h, "00")}`);
+  working = working.replace(/(\d{4}-\d\d-\d\d)[ t](\d{1,2}):(\d{2})(?![\d:])(?!\s*(?:am|pm|a\.m|p\.m))/g, (_m, d: string, h: string, mi: string) => `${d} ${h24(h, mi)}`);
   // a four-digit time right before the zone: 1500 utc, 0330z
   working = working.replace(/\b([01]\d|2[0-3])([0-5]\d)\s*$/, "$1:$2");
   // "9-5 moscow time": a bare range next to a zone is a time range
   working = working.replace(/(?<![\d/:.-])(\d{1,2})\s*-\s*(\d{1,2})(?![\d/:.])\s*$/, "$1 to $2");
   working = working.replace(/\(\s*\)|\[\s*\]/g, " ").replace(/\s+/g, " ").replace(/[,;(\[\s-]+$/, "").trim();
-  const out = parse(working);
+  let out = parse(working);
+  // never worse than h12: when taking the zone out leaves nothing to parse, use the text as it was
+  if (out === "x") {
+    const alt = parse(stripped);
+    if (alt !== "x") out = alt;
+  }
   if (!/^(?:t|dt) /.test(out)) return out; // a line with no time takes no zone
   return `${postFix(out, stripped)} @${zone}`;
 }

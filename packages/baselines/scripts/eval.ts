@@ -65,6 +65,8 @@ interface Row {
   dsl: string;
   primary_tag: string;
   modifier_tags?: string[];
+  /** Reference context for engines that use it (h13): the user's zone and locale. */
+  context?: { zone?: string; locale?: string };
 }
 
 function loadSplit(name: string): Row[] {
