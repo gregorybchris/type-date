@@ -466,11 +466,18 @@ def cut_relabel(version: str, parent: str, reason: str) -> dict:
 
 
 def cut_zone(
-    version: str, parent: str, relabel: dict[str, str], drop: set[str], reason: str
+    version: str,
+    parent: str,
+    relabel: dict[str, str],
+    drop: set[str],
+    reason: str,
+    extra: dict[str, list[dict]] | None = None,
+    tag: str = "zone",
 ) -> dict:
-    """New eval version after the zone policy change.
+    """New eval version after a label-policy change (zones in h13, relative forms in h15).
 
     Rows with a consensus label are relabeled, rows without one are dropped.
+    `extra` adds new splits.
 
     Keys are "split|id". Not comparable with the parent on the relabeled rows.
     """
@@ -489,13 +496,15 @@ def cut_zone(
                     **r,
                     "dsl": relabel[key],
                     "primary_tag": tag_from_dsl(relabel[key]),
-                    "relabeled": "zone",
+                    "relabeled": tag,
                 }
                 counts["relabeled"] += 1
             new_rows.append(r)
         out[split] = new_rows
-    return _write(
-        version,
-        out,
-        {"parent": parent, "subset_of": None, "reason": reason, "zone_relabel": counts},
-    )
+    meta: dict = {"parent": parent, "subset_of": None, "reason": reason, f"{tag}_relabel": counts}
+    if extra:
+        if set(extra) & set(out):
+            raise SystemExit("extra splits must be new split names")
+        out.update(extra)
+        meta["added_splits"] = sorted(extra)
+    return _write(version, out, meta)

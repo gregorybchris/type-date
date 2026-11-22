@@ -543,17 +543,23 @@ def eval_cut_zone(
         ..., help='JSON {"relabel": {"split|id": dsl}, "drop": ["split|id"]}'
     ),
     reason: str = typer.Option(...),
+    extra: list[str] | None = typer.Option(None, "--extra", help="split=path.jsonl (repeatable)"),
+    tag: str = typer.Option("zone", help="Name of the policy change, stored on relabeled rows"),
 ) -> None:
-    """Cut a new eval version after the zone policy change: relabel by consensus, drop the rest."""
+    """Cut a new eval version after a label-policy change: relabel by consensus, drop the rest, add splits."""
     from pathlib import Path
 
     from .evalsets import cut_zone
 
     c = json.loads(Path(changes).read_text())
-    m = cut_zone(version, parent, c["relabel"], set(c["drop"]), reason)
+    adds = {}
+    for e in extra or []:
+        name, path = e.split("=", 1)
+        adds[name] = [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+    m = cut_zone(version, parent, c["relabel"], set(c["drop"]), reason, adds or None, tag)
     typer.echo(
         json.dumps(
-            {"files": sum(v["n"] for v in m["files"].values()), "zone_relabel": m["zone_relabel"]}
+            {"files": sum(v["n"] for v in m["files"].values()), "relabel": m[f"{tag}_relabel"]}
         )
     )
 

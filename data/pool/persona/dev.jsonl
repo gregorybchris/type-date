@@ -424,7 +424,7 @@
 {"id": "r-pesl0139", "text": "from 5 till 9 december", "dsl": "d 12-05>12-09", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pesl0139"}
 {"id": "r-pcas0209", "text": "4 for 10 bucks", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pcas0209"}
 {"id": "r-peml0123", "text": "every 4th of the month at noon", "dsl": "dt R m/1 d4 12:00", "primary_tag": "recurrence", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-peml0123"}
-{"id": "r-pesl0151", "text": "this weekend", "dsl": "d sa>su", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pesl0151"}
+{"id": "r-pesl0151", "text": "this weekend", "dsl": "d WKND+0", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pesl0151", "relabeled": "rel"}
 {"id": "r-pvoi0183", "text": "before the fifteenth", "dsl": "d >D@15", "primary_tag": "open-range", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pvoi0183"}
 {"id": "r-peml0195", "text": "tonight at 8", "dsl": "dt +0d 20:00", "primary_tag": "datetime", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-peml0195"}
 {"id": "r-preg0245", "text": "every second Sunday at 9", "dsl": "dt R w/2 su 9?", "primary_tag": "recurrence", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-preg0245"}
@@ -482,7 +482,7 @@
 {"id": "r-pter0189", "text": "4th of july", "dsl": "d 07-04", "primary_tag": "basic-date", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pter0189"}
 {"id": "r-pcas0221", "text": "gnight 2nite 11pm", "dsl": "dt +0d 23:00", "primary_tag": "datetime", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pcas0221"}
 {"id": "r-pcas0157", "text": "meet me at the mall thurs aftn", "dsl": "d th", "primary_tag": "basic-date", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pcas0157"}
-{"id": "r-pcas0015", "text": "this wknd", "dsl": "d sa>su", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pcas0015"}
+{"id": "r-pcas0015", "text": "this wknd", "dsl": "d WKND+0", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pcas0015", "relabeled": "rel"}
 {"id": "r-pesl0115", "text": "at 4 and a quarter", "dsl": "t 4:15?", "primary_tag": "time-only", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pesl0115"}
 {"id": "r-peml0223", "text": "independence day", "dsl": "d 07-04", "primary_tag": "basic-date", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-peml0223"}
 {"id": "r-pvoi0231", "text": "remind me to water the plants every sunday", "dsl": "d R w/1 su", "primary_tag": "recurrence", "modifier_tags": [], "source": "persona-pool", "split": "dev", "parent_id": null, "group": "real-pvoi0231"}

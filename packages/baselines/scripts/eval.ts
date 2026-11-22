@@ -30,6 +30,7 @@ const REGISTRY: Record<string, { file: string; perDay: boolean; description: str
   h12: { file: "h12.ts", perDay: false, description: "h11 behind two rules for conjunctions of recurrences: several nth weekdays joined by and (\"every third tuesday and second monday of each month\") and a separate time per weekday (\"tuesdays at 1:30 and thursdays at 3\")." },
   h13: { file: "h13.ts", perDay: false, description: "h12 behind a time zone layer: reads the zone named in the text (abbreviations, offsets, Z, IANA names, zone words, places), keeps only the first moment of a multi-zone phrase, lets h12 parse the rest, and writes the zone as a last token. Ambiguous abbreviations (IST, CST, BST) use a hint word in the text, then the user zone and locale, then a default." },
   h14: { file: "h14.ts", perDay: false, description: "h13 plus a date range with one shared time window (\"tomorrow to friday 3-4pm\", \"3-4pm dec 1 to dec 5\"): splits the text into a date range and a time, and writes a daily recurrence bounded by the two dates. A time on each end stays one span." },
+  h15: { file: "h15.ts", perDay: false, description: "h14 plus offsets from now (\"in 2 hours\", \"for the next 30 min\", \"this time tomorrow\"), relative weekends (\"next weekend\", \"the weekend after next\") and parts of a month (\"the last weekend of october\", \"the first week of january\", \"the last day of the month\", a year on an nth weekday)." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
@@ -86,7 +87,7 @@ function key(dsl: string, day: string): string {
   const k = `${day}|${dsl}`;
   let v = cache.get(k);
   if (v === undefined) {
-    v = JSON.stringify(resolveDsl(dsl, { today: day, weekStart: 0 }));
+    v = JSON.stringify(resolveDsl(dsl, { today: day, now: `${day}T12:00`, weekStart: 0 }));
     cache.set(k, v);
   }
   return v;
