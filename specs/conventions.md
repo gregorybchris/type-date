@@ -23,13 +23,22 @@ Turn actions we do often into CLI commands (`td ...`) or Makefile targets. Put t
 
 - pnpm workspaces. Vitest for tests. Strict TypeScript.
 
+## Testing and CI
+
+- CI (`.github/workflows/ci.yml`) runs on every push to main: picker build, typecheck, Vitest, Playwright, ruff, ty, pytest. `make ci` runs the same steps locally. Run it before pushing.
+- CI must finish in under 2 minutes, wall clock. Everything here is local and deterministic, so a slow suite means badly written tests. Fix the tests instead of raising the limit.
+- Fast browser tests: run with reduced motion (the picker drops its transitions) instead of fixed waits; one page load per input with all checks on it; serve a production build, not the dev server.
+- Browser tests (`apps/demo/e2e`) cover what jsdom cannot: layout, media and container queries, viewport and keyboard behavior, touch gestures. Functional specs assert geometry (no horizontal scroll, 44px tap targets, field boxes on one line) at 360, 390, 768 and 1024 px.
+- Screenshot tests (`visual.spec.ts`) run on macOS only, where the baselines were made; Linux renders fonts differently. After an intended visual change, run `make e2e-update`, look at every changed image, then commit.
+- A bug that a user finds gets a test that fails without the fix.
+
 ## Prose
 
 - Concise and concrete. Simple sentences. No metaphor or flowery language. See CLAUDE.md.
 
 ## Git
 
-- Commit often with informative messages. No pushes. No remote.
+- Commit often with informative messages. Push to main only when the user asks. No PRs.
 - CLAUDE.md edits go in their own commit, separate from code.
 
 ## Recording preferences
