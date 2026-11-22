@@ -22,13 +22,14 @@ const NAMES: [string, string][] = [
   ["holi/-1", "holika dahan(?: night)?|ch?h?oti holi"],
   ["eidadha/-1", "(?:the )?day of arafa[ht]?|arafa[ht]? day"],
   ["purim/1", "shushan purim"],
+  ["ramadan/0", "(?:the )?first (?:roza|rozah|roja|fast of ramadan|day of fasting)"],
   ["lny/14", "lantern festival|yuan ?xiao(?: jie)?|chap goh mei"],
   ["lny", "(?:chinese|lunar) ?new ?y(?:ea)?rs?|lunarnewyear|lny|cny|c\\.n\\.y\\.?|spring festival|chun jie|chunjie|tet nguyen dan|tết nguyên đán|tết|tet|seollal|sollal|春节|chu xi|chuxi|除夕"],
   ["midautumn", "mid ?autu?mn?(?: festiv[ae]l| fest| day)?|moon ?festival|mooncake festival|chuseok|trung thu|hangawi|zhong ?qiu(?: jie)?|中秋节?|(?:the )?15th (?:day )?of (?:the )?(?:8th|eighth) (?:lunar )?(?:moon|month)"],
   ["dragonboat", "drag[oe]n ?boat(?: festiv[ae]l| fest| day)?|duanwu(?: jie| festival)?|tuen ng|端午节?|double fifth(?: festival)?|dumpling festival"],
-  ["diwali", "diwa?l+[iy]|dewali|divali|deepa?vali|deepawali|dipa?wali|dipavali|diwli|deepawli"],
-  ["holi", "holi|holli|phagwah|dhulandi|dhuleti|dol jatra|rangwali holi"],
-  ["eidfitr", "e[ie]d ?(?:al|ul|el|e|ul ?|al ?)? ?fit(?:e)?r[ie]?|idul fitri?|hari raya(?: aidil ?fitri| puasa)?|lebaran|ch?h?oti eid|meethi eid|mithi eid|small eid|عيد الفطر|(?:1|one|first)(?:st)? (?:of )?shawwal"],
+  ["diwali", "(?:diwa?l+[iy]|dewali|divali|deepa?vali|deepawali|dipa?wali|dipavali|diwli|deepawli)(?: festival)?(?: of lights)?"],
+  ["holi", "(?:holi|holli)(?: festival)?(?: of colou?rs)?|phagwah|dhulandi|dhuleti|dol jatra|rangwali holi"],
+  ["eidfitr", "e[ie]d ?(?:al|ul|el|e|ul ?|al ?)? ?fit(?:e)?r[ie]?|idul fitri?|hari raya(?: aidil ?fitri| puasa|(?! (?:haji|korban|aidiladha)))|lebaran|ch?h?oti eid|meethi eid|mithi eid|small eid|عيد الفطر|(?:1|one|first)(?:st)? (?:of )?shawwal"],
   ["eidadha", "e[ie]d ?(?:al|ul|el|e)? ?ad(?:h)?ah?|e[ie]d ?(?:al|ul|el|e)? ?azha|idul adha|bakr[ia]? ?eid|bakrid|bakri eid|bari eid|badi eid|big eid|hari raya (?:haji|korban|aidiladha)|raya haji|(?:k|q)urban bayrami?|tabaski|عيد الأضحى|10(?:th)? (?:of )?dhul? ?hijj?ah?"],
   ["ramadan", "ramm?[ae]?dh?[ae][nm]|ramadam|ramzaa?n|ramazan|puasa month|bulan puasa|رمضان"],
   ["roshhashanah", "rosh ?ha ?sh?[ao]nn?ah?|rosh hoshana|rush hashanah?|rosh hashona|yom teruah|ראש השנה"],
@@ -72,7 +73,8 @@ function yearOf(s: string): number | null {
   if (/^\d{4}$/.test(s)) return +s;
   if (/^'\d\d$/.test(s)) return 2000 + +s.slice(1);
   if (/^2k\d\d$/.test(s)) return 2000 + +s.slice(2);
-  const m = s.match(/(twenty|thirty)(?: (\w+))?$/);
+  // "two thousand [and] twenty seven", "twenty twenty seven", "twenty thirty": the words after the century
+  const m = s.match(/^(?:two thousand(?: and)?|twenty) (twenty|thirty)(?: (\w+))?$/);
   return m ? 2000 + NUM_WORDS[m[1]!]! + (m[2] ? NUM_WORDS[m[2]] ?? 0 : 0) : null;
 }
 
@@ -139,6 +141,14 @@ function findAll(t: string, fuzzy: [number, number][]): Found[] | "x" {
     let mm: RegExpMatchArray | null;
     if (fixed !== undefined) {
       n = +fixed; isDay = true;
+    } else if ((mm = before.match(/\b(?:all|the|all the|for the|for all) (?:\d|five|seven|eight) (?:days|nights) of (?:the )?$/))) {
+      // "all 8 days of hanukkah": the period; a festival that is a single day here: x
+      if (!PERIOD_CODES.has(code)) return "x";
+      start -= mm[0].length;
+    } else if ((mm = before.match(/\b(?:the )?first (\d|two|three|four|five|six|seven) days (?:of )?(?:the )?$/))) {
+      const k = NUM_WORDS[mm[1]!] ?? +mm[1]!;
+      out.push({ start: start - mm[0].length, end, token: tok(code, 0), pair: [tok(code, 0), tok(code, k - 1)] });
+      continue;
     } else if ((mm = after.match(/^(?:s)? ?(?:eve|night eve|eve dinner|eve night)\b/))) {
       n = -1; isDay = true; end += mm[0].length;
     } else if ((mm = before.match(/(?:\b(?:erev|eve of|(?:the )?night before|(?:the )?evening before|(?:the )?eve before)(?: the)? )$/))) {

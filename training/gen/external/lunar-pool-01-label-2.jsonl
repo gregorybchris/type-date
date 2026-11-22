@@ -1,0 +1,536 @@
+{"id":"lw1-0001","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0002","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0003","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0004","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0005","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0006","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0007","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0008","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0009","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0010","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0011","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0012","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw1-0013","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0014","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw1-0015","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw1-0016","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0017","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0018","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0019","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0020","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0021","dsl":"d L:purim+0","unsure":false}
+{"id":"lw1-0022","dsl":"d L:purim+0","unsure":false}
+{"id":"lw1-0023","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0024","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0025","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0026","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0027","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0028","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0029","dsl":"d L:diwali+0","unsure":true}
+{"id":"lw1-0030","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0031","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0032","dsl":"x","unsure":false}
+{"id":"lw1-0033","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw1-0034","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0035","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0036","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw1-0037","dsl":"x","unsure":false}
+{"id":"lw1-0038","dsl":"d L:yomkippur+0","unsure":true}
+{"id":"lw1-0039","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0040","dsl":"d L:passover+0>L:passover+7","unsure":true}
+{"id":"lw1-0041","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0042","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0043","dsl":"d L:purim+0","unsure":false}
+{"id":"lw1-0044","dsl":"x","unsure":false}
+{"id":"lw1-0045","dsl":"d 2028-01-26","unsure":false}
+{"id":"lw1-0046","dsl":"d 2027-02-06","unsure":false}
+{"id":"lw1-0047","dsl":"d 2027-02-06","unsure":true}
+{"id":"lw1-0048","dsl":"d 2027-09-15","unsure":false}
+{"id":"lw1-0049","dsl":"d 2029-09-22","unsure":false}
+{"id":"lw1-0050","dsl":"d 2027-06-09","unsure":false}
+{"id":"lw1-0051","dsl":"d 2028-05-28","unsure":false}
+{"id":"lw1-0052","dsl":"d 2028-10-17","unsure":false}
+{"id":"lw1-0053","dsl":"d 2027-03-22","unsure":false}
+{"id":"lw1-0054","dsl":"d 2029-03-01","unsure":false}
+{"id":"lw1-0055","dsl":"d 2027-03-09","unsure":false}
+{"id":"lw1-0056","dsl":"d 2028-05-05","unsure":false}
+{"id":"lw1-0057","dsl":"d 2027-02-08>2027-03-08","unsure":false}
+{"id":"lw1-0058","dsl":"d 2027-02-08>2027-03-08","unsure":true}
+{"id":"lw1-0059","dsl":"d 2027-10-02","unsure":false}
+{"id":"lw1-0060","dsl":"d 2027-10-02","unsure":true}
+{"id":"lw1-0061","dsl":"d 2028-09-30","unsure":false}
+{"id":"lw1-0062","dsl":"d 2027-04-22>2027-04-29","unsure":false}
+{"id":"lw1-0063","dsl":"d 2027-04-22>2027-04-29","unsure":false}
+{"id":"lw1-0064","dsl":"d 2026-12-05>2026-12-12","unsure":false}
+{"id":"lw1-0065","dsl":"d 2027-12-25>2028-01-01","unsure":false}
+{"id":"lw1-0066","dsl":"d 2027-03-23","unsure":false}
+{"id":"lw1-0067","dsl":"dt L:lny+0 19:00","unsure":false}
+{"id":"lw1-0068","dsl":"dt L:lny+0 12:30?","unsure":false}
+{"id":"lw1-0069","dsl":"dt L:midautumn+0 20:00","unsure":false}
+{"id":"lw1-0070","dsl":"dt L:midautumn+0 21:00","unsure":false}
+{"id":"lw1-0071","dsl":"dt L:dragonboat+0 09:00","unsure":false}
+{"id":"lw1-0072","dsl":"dt L:diwali+0 18:45","unsure":false}
+{"id":"lw1-0073","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0074","dsl":"dt L:holi+0 10:00","unsure":false}
+{"id":"lw1-0075","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0076","dsl":"dt L:eidfitr+0 07:30","unsure":false}
+{"id":"lw1-0077","dsl":"dt L:eidadha+0 08:00","unsure":false}
+{"id":"lw1-0078","dsl":"dt L:ramadan+0 19:10","unsure":false}
+{"id":"lw1-0079","dsl":"dt L:roshhashanah+0 7:30?","unsure":false}
+{"id":"lw1-0080","dsl":"dt L:roshhashanah+0 10:00","unsure":false}
+{"id":"lw1-0081","dsl":"dt L:yomkippur+0 17:00","unsure":false}
+{"id":"lw1-0082","dsl":"dt L:yomkippur+0 12:00","unsure":false}
+{"id":"lw1-0083","dsl":"dt L:passover-1 19:00","unsure":true}
+{"id":"lw1-0084","dsl":"dt L:passover+0 1?","unsure":false}
+{"id":"lw1-0085","dsl":"dt L:hanukkah+0 5:30?","unsure":false}
+{"id":"lw1-0086","dsl":"dt L:hanukkah+0 16:00>19:00","unsure":false}
+{"id":"lw1-0087","dsl":"dt L:purim+0 18:00","unsure":false}
+{"id":"lw1-0088","dsl":"dt L:purim+0 08:00","unsure":false}
+{"id":"lw1-0089","dsl":"d L:lny-1","unsure":false}
+{"id":"lw1-0090","dsl":"d L:lny+0~+1d","unsure":false}
+{"id":"lw1-0091","dsl":"d L:lny+1","unsure":false}
+{"id":"lw1-0092","dsl":"d L:lny+14","unsure":false}
+{"id":"lw1-0093","dsl":"d L:midautumn-1","unsure":false}
+{"id":"lw1-0094","dsl":"d L:midautumn+0~+1d","unsure":false}
+{"id":"lw1-0095","dsl":"d L:dragonboat-1","unsure":false}
+{"id":"lw1-0096","dsl":"d L:dragonboat+0~+2d","unsure":false}
+{"id":"lw1-0097","dsl":"d L:diwali-1","unsure":false}
+{"id":"lw1-0098","dsl":"d L:diwali+0~-1d","unsure":false}
+{"id":"lw1-0099","dsl":"x","unsure":false}
+{"id":"lw1-0100","dsl":"d L:holi-1","unsure":false}
+{"id":"lw1-0101","dsl":"d L:holi+0~+1d","unsure":false}
+{"id":"lw1-0102","dsl":"d L:eidfitr-1","unsure":false}
+{"id":"lw1-0103","dsl":"d L:eidfitr+1","unsure":false}
+{"id":"lw1-0104","dsl":"d L:eidadha+2","unsure":false}
+{"id":"lw1-0105","dsl":"d L:eidadha+0~-1d","unsure":false}
+{"id":"lw1-0106","dsl":"d L:ramadan+0","unsure":false}
+{"id":"lw1-0107","dsl":"d L:ramadan+20>L:eidfitr-1","unsure":true}
+{"id":"lw1-0108","dsl":"d L:ramadan+26","unsure":false}
+{"id":"lw1-0109","dsl":"d L:ramadan+0~-1w","unsure":true}
+{"id":"lw1-0110","dsl":"d L:roshhashanah-1","unsure":false}
+{"id":"lw1-0111","dsl":"d L:roshhashanah-1","unsure":false}
+{"id":"lw1-0112","dsl":"d L:yomkippur+0~+1d","unsure":false}
+{"id":"lw1-0113","dsl":"d L:yomkippur-1","unsure":false}
+{"id":"lw1-0114","dsl":"d L:passover-1","unsure":false}
+{"id":"lw1-0115","dsl":"d L:passover+0","unsure":false}
+{"id":"lw1-0116","dsl":"d L:passover+7","unsure":false}
+{"id":"lw1-0117","dsl":"d L:passover+0~-2w","unsure":false}
+{"id":"lw1-0118","dsl":"d L:hanukkah+1","unsure":false}
+{"id":"lw1-0119","dsl":"d L:hanukkah+6","unsure":false}
+{"id":"lw1-0120","dsl":"d L:hanukkah+6","unsure":false}
+{"id":"lw1-0121","dsl":"d L:purim-1","unsure":false}
+{"id":"lw1-0122","dsl":"d L:purim+0~+1d","unsure":false}
+{"id":"lw1-0123","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0124","dsl":"x","unsure":false}
+{"id":"lw1-0125","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0126","dsl":"x","unsure":false}
+{"id":"lw1-0127","dsl":"x","unsure":false}
+{"id":"lw1-0128","dsl":"x","unsure":false}
+{"id":"lw1-0129","dsl":"x","unsure":false}
+{"id":"lw1-0130","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0131","dsl":"x","unsure":false}
+{"id":"lw1-0132","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0133","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0134","dsl":"d L:ramadan+0>L:ramadan+6","unsure":true}
+{"id":"lw1-0135","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw1-0136","dsl":"x","unsure":false}
+{"id":"lw1-0137","dsl":"d L:roshhashanah+0>L:yomkippur+0","unsure":true}
+{"id":"lw1-0138","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0139","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0140","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0141","dsl":"d L:passover+0>L:passover+7","unsure":true}
+{"id":"lw1-0142","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0143","dsl":"x","unsure":false}
+{"id":"lw1-0144","dsl":"x","unsure":false}
+{"id":"lw1-0145","dsl":"d L:lny+0>L:lny+14","unsure":true}
+{"id":"lw1-0146","dsl":"d >L:lny+0","unsure":false}
+{"id":"lw1-0147","dsl":"d L:lny+0>su","unsure":false}
+{"id":"lw1-0148","dsl":"d >L:midautumn+0","unsure":false}
+{"id":"lw1-0149","dsl":"d L:midautumn+0>10-01","unsure":true}
+{"id":"lw1-0150","dsl":"d L:dragonboat+0>","unsure":false}
+{"id":"lw1-0151","dsl":"d L:dragonboat+0>M@06","unsure":false}
+{"id":"lw1-0152","dsl":"d L:diwali+0>L:diwali+2","unsure":true}
+{"id":"lw1-0153","dsl":"x","unsure":true}
+{"id":"lw1-0154","dsl":"d L:diwali+0>01-01","unsure":false}
+{"id":"lw1-0155","dsl":"d L:holi+0>","unsure":false}
+{"id":"lw1-0156","dsl":"d L:holi+0>E+0","unsure":false}
+{"id":"lw1-0157","dsl":"d >L:holi+0","unsure":false}
+{"id":"lw1-0158","dsl":"d L:eidfitr+0>","unsure":false}
+{"id":"lw1-0159","dsl":"x","unsure":true}
+{"id":"lw1-0160","dsl":"d >L:eidadha+0","unsure":false}
+{"id":"lw1-0161","dsl":"d L:eidadha+0>mo","unsure":false}
+{"id":"lw1-0162","dsl":"d L:ramadan+0>L:eid+0","unsure":false}
+{"id":"lw1-0163","dsl":"d L:ramadan+0>L:eidfitr+0","unsure":false}
+{"id":"lw1-0164","dsl":"d >L:ramadan+0","unsure":false}
+{"id":"lw1-0165","dsl":"d L:ramadan+0>","unsure":true}
+{"id":"lw1-0166","dsl":"d L:roshhashanah+0>L:yomkippur+0","unsure":false}
+{"id":"lw1-0167","dsl":"d L:roshhashanah+0>","unsure":false}
+{"id":"lw1-0168","dsl":"d >L:yomkippur+0","unsure":false}
+{"id":"lw1-0169","dsl":"x","unsure":true}
+{"id":"lw1-0170","dsl":"x","unsure":true}
+{"id":"lw1-0171","dsl":"d L:purim+0>L:passover+0","unsure":false}
+{"id":"lw1-0172","dsl":"d L:passover+0>","unsure":false}
+{"id":"lw1-0173","dsl":"d >L:hanukkah+0","unsure":false}
+{"id":"lw1-0174","dsl":"d L:hanukkah+0>12-25","unsure":false}
+{"id":"lw1-0175","dsl":"d th#4@11>L:hanukkah+0","unsure":false}
+{"id":"lw1-0176","dsl":"d L:purim+0>","unsure":false}
+{"id":"lw1-0177","dsl":"d >L:purim+0","unsure":false}
+{"id":"lw1-0178","dsl":"d L:purim+0>M@03","unsure":false}
+{"id":"lw1-0179","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0180","dsl":"d sa","unsure":false}
+{"id":"lw1-0181","dsl":"d L:lny+0>","unsure":false}
+{"id":"lw1-0182","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0183","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0184","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0185","dsl":"d R w/1 sa uL:dragonboat+0","unsure":false}
+{"id":"lw1-0186","dsl":"d >L:diwali+0","unsure":false}
+{"id":"lw1-0187","dsl":"dt L:diwali+0 8?","unsure":false}
+{"id":"lw1-0188","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0189","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0190","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0191","dsl":"d L:eidadha+0~-1d","unsure":false}
+{"id":"lw1-0192","dsl":"d >L:eidadha+0","unsure":false}
+{"id":"lw1-0193","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0194","dsl":"dt R d/1 uL:eidfitr-1 4:45? sL:ramadan+0","unsure":true}
+{"id":"lw1-0195","dsl":"x","unsure":true}
+{"id":"lw1-0196","dsl":"dt L:roshhashanah+0 09:00","unsure":false}
+{"id":"lw1-0197","dsl":"d L:roshhashanah+0","unsure":true}
+{"id":"lw1-0198","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0199","dsl":"d L:yomkippur+0>","unsure":false}
+{"id":"lw1-0200","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0201","dsl":"d L:passover-1","unsure":false}
+{"id":"lw1-0202","dsl":"d L:passover+0>L:passover+1","unsure":false}
+{"id":"lw1-0203","dsl":"d L:hanukkah+1","unsure":false}
+{"id":"lw1-0204","dsl":"d sa&D05","unsure":false}
+{"id":"lw1-0205","dsl":"d su","unsure":false}
+{"id":"lw1-0206","dsl":"d L:purim+0","unsure":false}
+{"id":"lw1-0207","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0208","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0209","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0210","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0211","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0212","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0213","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0214","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0215","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0216","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0217","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0218","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0219","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0220","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0221","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0222","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw1-0223","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw1-0224","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0225","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0226","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw1-0227","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0228","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0229","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0230","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0231","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0232","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0233","dsl":"d L:lny+0","unsure":false}
+{"id":"lw1-0234","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw1-0235","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw1-0236","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0237","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw1-0238","dsl":"d L:holi+0","unsure":false}
+{"id":"lw1-0239","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0240","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw1-0241","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw1-0242","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0243","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw1-0244","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw1-0245","dsl":"d 2027-10-02","unsure":false}
+{"id":"lw1-0246","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw1-0247","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0248","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw1-0249","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0250","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw1-0251","dsl":"d L:purim+0","unsure":false}
+{"id":"lw1-0252","dsl":"x","unsure":false}
+{"id":"lw1-0253","dsl":"x","unsure":false}
+{"id":"lw1-0254","dsl":"x","unsure":false}
+{"id":"lw1-0255","dsl":"x","unsure":false}
+{"id":"lw1-0256","dsl":"x","unsure":false}
+{"id":"lw1-0257","dsl":"x","unsure":false}
+{"id":"lw1-0258","dsl":"x","unsure":false}
+{"id":"lw1-0259","dsl":"x","unsure":false}
+{"id":"lw1-0260","dsl":"x","unsure":false}
+{"id":"lw1-0261","dsl":"x","unsure":false}
+{"id":"lw1-0262","dsl":"x","unsure":false}
+{"id":"lw1-0263","dsl":"x","unsure":false}
+{"id":"lw1-0264","dsl":"x","unsure":false}
+{"id":"lw1-0265","dsl":"x","unsure":false}
+{"id":"lw1-0266","dsl":"x","unsure":false}
+{"id":"lw1-0267","dsl":"x","unsure":false}
+{"id":"lw1-0268","dsl":"x","unsure":false}
+{"id":"lw1-0269","dsl":"x","unsure":false}
+{"id":"lw1-0270","dsl":"x","unsure":false}
+{"id":"lw1-0271","dsl":"x","unsure":false}
+{"id":"lw1-0272","dsl":"x","unsure":false}
+{"id":"lw1-0273","dsl":"x","unsure":false}
+{"id":"lw1-0274","dsl":"d L:eidfitr-1","unsure":false}
+{"id":"lw1-0275","dsl":"x","unsure":true}
+{"id":"lw1-0276","dsl":"d L:eidfitr+0","unsure":true}
+{"id":"lw1-0277","dsl":"d L:eidadha+0","unsure":true}
+{"id":"lw1-0278","dsl":"d L:passover+0","unsure":true}
+{"id":"lw1-0279","dsl":"d L:hanukkah+0","unsure":true}
+{"id":"lw1-0280","dsl":"d L:purim+1","unsure":true}
+{"id":"lw1-0281","dsl":"d L:lny+14","unsure":true}
+{"id":"lw2-0001","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw2-0002","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw2-0003","dsl":"d L:holi+0","unsure":false}
+{"id":"lw2-0004","dsl":"d L:holi+0","unsure":false}
+{"id":"lw2-0005","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw2-0006","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0008","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0009","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0010","dsl":"d L:passover+0>L:passover+7","unsure":true}
+{"id":"lw2-0011","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw2-0014","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0016","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0017","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0018","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw2-0019","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0020","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0021","dsl":"d L:holi+0","unsure":false}
+{"id":"lw2-0022","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw2-0023","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw2-0024","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw2-0025","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0026","dsl":"x","unsure":false}
+{"id":"lw2-0027","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":true}
+{"id":"lw2-0028","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw2-0029","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw2-0030","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0031","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw2-0032","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0033","dsl":"x","unsure":false}
+{"id":"lw2-0034","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0035","dsl":"x","unsure":false}
+{"id":"lw2-0036","dsl":"x","unsure":true}
+{"id":"lw2-0037","dsl":"x","unsure":true}
+{"id":"lw2-0038","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw2-0039","dsl":"d L:holi+0","unsure":true}
+{"id":"lw2-0040","dsl":"x","unsure":false}
+{"id":"lw2-0041","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0042","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0043","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0044","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0045","dsl":"x","unsure":false}
+{"id":"lw2-0046","dsl":"d 2027-10-29","unsure":false}
+{"id":"lw2-0047","dsl":"d 2028-02-26","unsure":false}
+{"id":"lw2-0048","dsl":"d 2029-02-13","unsure":false}
+{"id":"lw2-0049","dsl":"d 2027-03-22","unsure":false}
+{"id":"lw2-0050","dsl":"d 2028-01-28>2028-02-25","unsure":false}
+{"id":"lw2-0051","dsl":"d 2030-04-18>2030-04-25","unsure":false}
+{"id":"lw2-0052","dsl":"d 2027-12-25>2028-01-01","unsure":false}
+{"id":"lw2-0053","dsl":"d 2028-03-12","unsure":false}
+{"id":"lw2-0055","dsl":"d 2029-06-16","unsure":false}
+{"id":"lw2-0058","dsl":"d L:eidadha+0","unsure":true}
+{"id":"lw2-0059","dsl":"x","unsure":true}
+{"id":"lw2-0060","dsl":"d 2027-02-06","unsure":false}
+{"id":"lw2-0061","dsl":"x","unsure":true}
+{"id":"lw2-0062","dsl":"d 2028-01-26","unsure":false}
+{"id":"lw2-0064","dsl":"d 2030-04-18>2030-04-25","unsure":false}
+{"id":"lw2-0065","dsl":"d 2029-12-02>2029-12-09","unsure":false}
+{"id":"lw2-0066","dsl":"d 2029-03-01","unsure":false}
+{"id":"lw2-0067","dsl":"d 2027-03-22","unsure":false}
+{"id":"lw2-0068","dsl":"d 2028-05-28","unsure":false}
+{"id":"lw2-0069","dsl":"d 2029-09-19","unsure":false}
+{"id":"lw2-0070","dsl":"dt L:diwali+0 19:00","unsure":false}
+{"id":"lw2-0071","dsl":"dt L:eidfitr+0 07:30","unsure":false}
+{"id":"lw2-0072","dsl":"dt L:holi+0 15:00","unsure":false}
+{"id":"lw2-0073","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":true}
+{"id":"lw2-0074","dsl":"dt L:passover-1 20:00","unsure":true}
+{"id":"lw2-0075","dsl":"dt L:hanukkah+0 17:30","unsure":false}
+{"id":"lw2-0076","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0077","dsl":"dt L:lny-1 7?","unsure":true}
+{"id":"lw2-0078","dsl":"dt L:midautumn+0 20:00","unsure":false}
+{"id":"lw2-0079","dsl":"dt L:dragonboat+0 09:00","unsure":false}
+{"id":"lw2-0080","dsl":"dt L:roshhashanah+0 13:00","unsure":false}
+{"id":"lw2-0081","dsl":"dt L:yomkippur+0 7:15?","unsure":false}
+{"id":"lw2-0082","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0083","dsl":"dt L:diwali+0 18:45","unsure":false}
+{"id":"lw2-0084","dsl":"dt L:ramadan+0 04:00","unsure":false}
+{"id":"lw2-0085","dsl":"dt L:lny+0 12:00","unsure":false}
+{"id":"lw2-0086","dsl":"dt L:midautumn+0 18:00","unsure":false}
+{"id":"lw2-0087","dsl":"dt L:purim+0 19:30","unsure":false}
+{"id":"lw2-0088","dsl":"dt L:roshhashanah+0 20:00","unsure":false}
+{"id":"lw2-0089","dsl":"dt L:eidadha+0 08:00","unsure":false}
+{"id":"lw2-0090","dsl":"dt L:hanukkah+0 18:00","unsure":false}
+{"id":"lw2-0091","dsl":"dt L:passover+0 12:30?","unsure":false}
+{"id":"lw2-0092","dsl":"dt L:yomkippur+0 16:30","unsure":false}
+{"id":"lw2-0093","dsl":"d L:roshhashanah-1","unsure":false}
+{"id":"lw2-0094","dsl":"d L:yomkippur-1","unsure":false}
+{"id":"lw2-0095","dsl":"d L:yomkippur-1","unsure":false}
+{"id":"lw2-0097","dsl":"d L:passover+0","unsure":false}
+{"id":"lw2-0098","dsl":"d L:passover+7","unsure":false}
+{"id":"lw2-0099","dsl":"d L:passover+0~-1d","unsure":false}
+{"id":"lw2-0100","dsl":"d L:hanukkah+1","unsure":false}
+{"id":"lw2-0101","dsl":"d L:hanukkah+6","unsure":false}
+{"id":"lw2-0102","dsl":"d L:hanukkah+6","unsure":true}
+{"id":"lw2-0103","dsl":"d L:diwali-1","unsure":false}
+{"id":"lw2-0104","dsl":"d L:diwali-1","unsure":false}
+{"id":"lw2-0105","dsl":"d L:diwali+0~-2d","unsure":false}
+{"id":"lw2-0106","dsl":"x","unsure":false}
+{"id":"lw2-0108","dsl":"d L:holi-1","unsure":false}
+{"id":"lw2-0109","dsl":"d L:eidfitr-1","unsure":false}
+{"id":"lw2-0110","dsl":"d L:ramadan+20>L:eidfitr-1","unsure":true}
+{"id":"lw2-0111","dsl":"d L:ramadan+0","unsure":false}
+{"id":"lw2-0112","dsl":"d L:eidfitr-1","unsure":false}
+{"id":"lw2-0113","dsl":"d L:ramadan+25","unsure":true}
+{"id":"lw2-0114","dsl":"d L:eidfitr+1","unsure":false}
+{"id":"lw2-0115","dsl":"d L:eidadha+2","unsure":false}
+{"id":"lw2-0116","dsl":"d L:eidadha+0~-1d","unsure":false}
+{"id":"lw2-0117","dsl":"d L:eidadha-1","unsure":false}
+{"id":"lw2-0118","dsl":"d L:lny-1","unsure":false}
+{"id":"lw2-0119","dsl":"d L:lny+2","unsure":false}
+{"id":"lw2-0120","dsl":"d L:lny-1","unsure":false}
+{"id":"lw2-0121","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0122","dsl":"d L:lny+14","unsure":false}
+{"id":"lw2-0123","dsl":"d L:midautumn+0~+1d","unsure":false}
+{"id":"lw2-0124","dsl":"d L:midautumn-1","unsure":false}
+{"id":"lw2-0125","dsl":"d L:dragonboat+0~-1d","unsure":false}
+{"id":"lw2-0126","dsl":"d L:dragonboat+0~+1d","unsure":false}
+{"id":"lw2-0127","dsl":"d L:purim-1","unsure":false}
+{"id":"lw2-0129","dsl":"d L:purim-1","unsure":true}
+{"id":"lw2-0130","dsl":"d L:roshhashanah+0~-1w","unsure":false}
+{"id":"lw2-0131","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0132","dsl":"d L:eidadha-1","unsure":false}
+{"id":"lw2-0133","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw2-0134","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw2-0135","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw2-0136","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw2-0137","dsl":"d L:passover+0>L:passover+7","unsure":true}
+{"id":"lw2-0138","dsl":"x","unsure":false}
+{"id":"lw2-0139","dsl":"x","unsure":false}
+{"id":"lw2-0140","dsl":"x","unsure":false}
+{"id":"lw2-0141","dsl":"x","unsure":false}
+{"id":"lw2-0142","dsl":"x","unsure":false}
+{"id":"lw2-0143","dsl":"x","unsure":false}
+{"id":"lw2-0144","dsl":"x","unsure":false}
+{"id":"lw2-0145","dsl":"d L:holi+0","unsure":false}
+{"id":"lw2-0146","dsl":"x","unsure":false}
+{"id":"lw2-0148","dsl":"d L:roshhashanah+0>L:yomkippur+0","unsure":true}
+{"id":"lw2-0149","dsl":"x","unsure":true}
+{"id":"lw2-0150","dsl":"x","unsure":false}
+{"id":"lw2-0151","dsl":"x","unsure":false}
+{"id":"lw2-0152","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0153","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0154","dsl":"d L:roshhashanah+0>L:roshhashanah+1","unsure":false}
+{"id":"lw2-0155","dsl":"d L:diwali+0>L:diwali+2","unsure":true}
+{"id":"lw2-0156","dsl":"x","unsure":true}
+{"id":"lw2-0157","dsl":"d >L:eidfitr+0","unsure":false}
+{"id":"lw2-0158","dsl":"d >L:eidfitr+0","unsure":false}
+{"id":"lw2-0159","dsl":"d L:ramadan+0>L:eid+0","unsure":false}
+{"id":"lw2-0160","dsl":"d L:eidfitr+0>L:eidadha+0","unsure":false}
+{"id":"lw2-0161","dsl":"d L:eidadha+0>","unsure":false}
+{"id":"lw2-0162","dsl":"d >L:eidadha+0","unsure":false}
+{"id":"lw2-0164","dsl":"x","unsure":true}
+{"id":"lw2-0165","dsl":"d L:passover+0>","unsure":false}
+{"id":"lw2-0166","dsl":"d >L:passover+0","unsure":false}
+{"id":"lw2-0167","dsl":"d L:roshhashanah+0>","unsure":true}
+{"id":"lw2-0169","dsl":"x","unsure":true}
+{"id":"lw2-0170","dsl":"d L:hanukkah+0>01-01","unsure":false}
+{"id":"lw2-0171","dsl":"d >L:hanukkah+0","unsure":false}
+{"id":"lw2-0172","dsl":"d L:hanukkah+0>12-25","unsure":false}
+{"id":"lw2-0173","dsl":"d L:holi+0>M@03","unsure":false}
+{"id":"lw2-0174","dsl":"d L:holi+0>04-15","unsure":false}
+{"id":"lw2-0176","dsl":"d >L:lny+0","unsure":false}
+{"id":"lw2-0177","dsl":"d L:lny+0>L:lny+14","unsure":true}
+{"id":"lw2-0178","dsl":"d L:lny+0>02-15","unsure":false}
+{"id":"lw2-0179","dsl":"d L:midautumn+0>","unsure":false}
+{"id":"lw2-0181","dsl":"d >L:dragonboat+0","unsure":false}
+{"id":"lw2-0182","dsl":"d L:dragonboat+0>M@06","unsure":false}
+{"id":"lw2-0183","dsl":"x","unsure":false}
+{"id":"lw2-0184","dsl":"d L:purim+0>mo","unsure":false}
+{"id":"lw2-0185","dsl":"d L:eidfitr+0>fr","unsure":false}
+{"id":"lw2-0186","dsl":"d L:ramadan+0>L:ramadan+14","unsure":false}
+{"id":"lw2-0187","dsl":"d L:eidadha+0>L:eidadha+6","unsure":true}
+{"id":"lw2-0188","dsl":"d L:yomkippur+0>M@10","unsure":false}
+{"id":"lw2-0189","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw2-0190","dsl":"d L:holi+0","unsure":false}
+{"id":"lw2-0191","dsl":"d L:eidfitr+0,L:eidfitr+0~+1d","unsure":false}
+{"id":"lw2-0192","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0193","dsl":"d L:eidfitr-1","unsure":false}
+{"id":"lw2-0194","dsl":"d L:eidfitr-1>","unsure":true}
+{"id":"lw2-0195","dsl":"x","unsure":true}
+{"id":"lw2-0196","dsl":"d >L:passover+0","unsure":false}
+{"id":"lw2-0197","dsl":"d L:roshhashanah+0>L:roshhashanah+1","unsure":false}
+{"id":"lw2-0198","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0199","dsl":"d L:hanukkah+1","unsure":false}
+{"id":"lw2-0200","dsl":"d sa","unsure":false}
+{"id":"lw2-0201","dsl":"d mo","unsure":false}
+{"id":"lw2-0202","dsl":"x","unsure":true}
+{"id":"lw2-0203","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0204","dsl":"d >L:midautumn+0","unsure":false}
+{"id":"lw2-0205","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0206","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0207","dsl":"x","unsure":true}
+{"id":"lw2-0208","dsl":"d L:diwali+0>","unsure":false}
+{"id":"lw2-0209","dsl":"d >L:eidadha+0","unsure":false}
+{"id":"lw2-0210","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0211","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0212","dsl":"dt L:passover-1 19:00","unsure":false}
+{"id":"lw2-0213","dsl":"d L:purim+0,L:purim+0~+1d","unsure":false}
+{"id":"lw2-0214","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0215","dsl":"x","unsure":true}
+{"id":"lw2-0216","dsl":"dt L:holi+0 10:00","unsure":false}
+{"id":"lw2-0218","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw2-0220","dsl":"d L:holi-1","unsure":true}
+{"id":"lw2-0221","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw2-0224","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0225","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0226","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0227","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0229","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw2-0230","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0231","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0232","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0234","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw2-0235","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw2-0236","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0238","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0239","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw2-0241","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw2-0242","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0243","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0244","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw2-0246","dsl":"d L:diwali+0","unsure":false}
+{"id":"lw2-0247","dsl":"d L:holi+0","unsure":true}
+{"id":"lw2-0248","dsl":"d L:eidfitr+0","unsure":false}
+{"id":"lw2-0249","dsl":"d L:eidadha+0","unsure":false}
+{"id":"lw2-0252","dsl":"d L:ramadan+0>L:eidfitr-1","unsure":false}
+{"id":"lw2-0253","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0254","dsl":"d L:roshhashanah+0","unsure":false}
+{"id":"lw2-0255","dsl":"d L:yomkippur+0","unsure":false}
+{"id":"lw2-0256","dsl":"d L:yomkippur+0","unsure":true}
+{"id":"lw2-0258","dsl":"d L:passover+0>L:passover+7","unsure":false}
+{"id":"lw2-0259","dsl":"d L:hanukkah+0>L:hanukkah+7","unsure":false}
+{"id":"lw2-0260","dsl":"d L:purim+0","unsure":false}
+{"id":"lw2-0261","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0262","dsl":"d L:lny+0","unsure":false}
+{"id":"lw2-0263","dsl":"d L:midautumn+0","unsure":false}
+{"id":"lw2-0264","dsl":"d L:dragonboat+0","unsure":false}
+{"id":"lw2-0265","dsl":"x","unsure":false}
+{"id":"lw2-0266","dsl":"x","unsure":false}
+{"id":"lw2-0267","dsl":"x","unsure":false}
+{"id":"lw2-0268","dsl":"x","unsure":false}
+{"id":"lw2-0269","dsl":"x","unsure":false}
+{"id":"lw2-0270","dsl":"x","unsure":false}
+{"id":"lw2-0273","dsl":"x","unsure":false}
+{"id":"lw2-0275","dsl":"x","unsure":false}
+{"id":"lw2-0276","dsl":"x","unsure":false}
+{"id":"lw2-0279","dsl":"x","unsure":false}
+{"id":"lw2-0280","dsl":"x","unsure":false}
+{"id":"lw2-0281","dsl":"x","unsure":false}
+{"id":"lw2-0282","dsl":"x","unsure":false}
+{"id":"lw2-0283","dsl":"x","unsure":false}
+{"id":"lw2-0285","dsl":"d 01-01","unsure":true}
+{"id":"lw2-0286","dsl":"x","unsure":false}
+{"id":"lw2-0288","dsl":"d L:eidfitr+0","unsure":true}
+{"id":"lw2-0291","dsl":"d L:midautumn+0","unsure":true}
+{"id":"lw2-0292","dsl":"x","unsure":true}
