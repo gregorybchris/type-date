@@ -1157,7 +1157,7 @@ describe("offsets from now, relative weekends, parts of a month (h15)", () => {
     for (const [i, d] of days.entries()) {
       expect(span("d WKND+0", d), d).toBe("2026-11-28>2026-11-29");
       expect(span("d WKND-1", d), d).toBe("2026-11-21>2026-11-22");
-      expect(at("d WKND+1", d).start?.date.slice(5), d).toBe(next[i]);
+      expect(at("d WKND+1", d).start?.date?.slice(5), d).toBe(next[i]);
     }
     expect(span("d WKND+2", "2026-11-25")).toBe("2026-12-05>2026-12-06");
     expect(span("d WKND+2", "2026-11-26")).toBe("2026-12-12>2026-12-13");
