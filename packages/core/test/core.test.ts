@@ -1195,7 +1195,7 @@ describe("lunar holidays (L:CODE±N, h16)", () => {
   const o = { today: "2026-11-21", weekStart: 0 as const };
   const day = (dsl: string) => {
     const x = resolveDsl(dsl, o);
-    return x.kind === "single" ? x.start.date : x.kind === "range" ? `${x.start?.date}>${x.end?.date}` : x.kind;
+    return x.kind === "single" ? x.start?.date : x.kind === "range" ? `${x.start?.date}>${x.end?.date}` : x.kind;
   };
   it("round-trips and rejects unknown codes or large offsets", () => {
     for (const l of ["d L:diwali+0", "d L:yomkippur-1", "d L:eid+0~+1d", "d L:ramadan+0>L:eidfitr-1", "d L:diwali@2027+0", "dt L:eidadha+0 09:00", "d >L:eid+0"])
