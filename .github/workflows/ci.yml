@@ -27,6 +27,32 @@ jobs:
       - run: pnpm -r --if-present typecheck
       - run: pnpm -r --if-present test
 
+  e2e:
+    name: Browser tests (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+      # Headless shell only: smaller than full Chromium and all the tests need.
+      - run: pnpm --filter @type-date/demo exec playwright install --with-deps --only-shell chromium
+      - run: pnpm --filter @type-date/demo e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-results
+          path: apps/demo/test-results
+          retention-days: 7
+
   python:
     name: Python (ruff, ty, pytest)
     runs-on: ubuntu-latest

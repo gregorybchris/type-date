@@ -1,7 +1,7 @@
 # Common actions. Agents: prefer these over retyping long commands.
 # Add a target here whenever you run the same command a third time.
 
-.PHONY: help setup py-check py-test py-fix td js-test js-typecheck js-build ci dashboard picker-demo  serve serve-stop serve-status demo-video rescore-baselines rescore-all eval-coverage results robustness
+.PHONY: help setup py-check py-test py-fix td js-test js-typecheck js-build ci e2e e2e-update dashboard picker-demo  serve serve-stop serve-status demo-video rescore-baselines rescore-all eval-coverage results robustness
 
 help:  ## List targets
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-18s %s\n", $$1, $$2}'
@@ -30,8 +30,14 @@ js-typecheck:  ## tsc across workspaces
 js-build:  ## Build @type-date/picker (the dashboard typechecks against its dist)
 	pnpm --filter @type-date/picker build
 
-ci:  ## Run what CI runs: picker build, typecheck, unit tests, Python checks and tests
-	$(MAKE) js-build js-typecheck js-test py-check py-test
+ci:  ## Run what CI runs: picker build, typecheck, unit tests, browser tests, Python checks and tests
+	$(MAKE) js-build js-typecheck js-test e2e py-check py-test
+
+e2e:  ## Playwright browser tests against the demo (functional at 4 viewports; screenshots on macOS)
+	pnpm --filter @type-date/demo e2e
+
+e2e-update:  ## Re-record the screenshot baselines after an intended visual change (look at them before committing)
+	pnpm --filter @type-date/demo e2e:update
 
 dashboard:  ## Dev server for the engine dashboard (apps/dashboard)
 	pnpm --filter @type-date/dashboard dev

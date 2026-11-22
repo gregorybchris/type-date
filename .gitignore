@@ -18,3 +18,8 @@ docs/media/*.trim
 docs/media/vary/
 # Discarded generated sets stay local
 *.discarded
+
+# Playwright (apps/demo)
+apps/demo/.e2e-dist/
+apps/demo/test-results/
+apps/demo/playwright-report/
