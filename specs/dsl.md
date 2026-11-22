@@ -497,6 +497,7 @@ New form `L:CODE±N`: the holiday CODE plus N days (N is -60 to 60). It is a sin
 | "second day of rosh hashanah", "third night of hanukkah" | `d L:roshhashanah+1`, `d L:hanukkah+1` | |
 | "last day of ramadan", "end of ramadan" | `d L:eidfitr-1` | 2027-03-08 |
 | "chinese new year's eve", "choti diwali", "holika dahan" | `d L:lny-1`, `d L:diwali-1`, `d L:holi-1` | |
+| "kol nidre", "chand raat", "day of arafah", "second seder", "shushan purim", "lantern festival" | `d L:yomkippur-1`, `d L:eidfitr-1`, `d L:eidadha-1`, `d L:passover+0`, `d L:purim+1`, `d L:lny+14` | |
 | "the day after eid", "3 days before diwali" | `d L:eid+0~+1d`, `d L:diwali+0~-3d` | |
 | "diwali 2027", "ramadan 2028" | the engine writes the dates: `d 2027-10-29`, `d 2028-01-28>2028-02-25`. `L:diwali@2027+0` is the same day and is accepted | |
 | "until eid", "after passover" | `d >L:eid+0`, `d L:passover+0>` | |

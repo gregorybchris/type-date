@@ -16,8 +16,9 @@ import h12 from "./h12";
 import h13 from "./h13";
 import h14 from "./h14";
 import h15 from "./h15";
+import h16 from "./h16";
 
-export { chronoEngine, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15 };
+export { chronoEngine, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16 };
 export { chronoToDsl } from "./chrono";
 export { parseH1 } from "./h1";
 export { parseH2 } from "./h2";
@@ -34,6 +35,7 @@ export { parseH12, parseH12Async, loadH12 } from "./h12";
 export { parseH13, parseH13Async, loadH13 } from "./h13";
 export { parseH14, parseH14Async, loadH14 } from "./h14";
 export { parseH15, parseH15Async, loadH15 } from "./h15";
+export { parseH16, parseH16Async, loadH16 } from "./h16";
 
-/** Engines by id: `chrono` (third-party comparison) and `h1`..`h15` (heuristic parser generations). */
-export const baselines: Record<string, Engine> = { chrono: chronoEngine, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15 };
+/** Engines by id: `chrono` (third-party comparison) and `h1`..`h16` (heuristic parser generations). */
+export const baselines: Record<string, Engine> = { chrono: chronoEngine, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16 };

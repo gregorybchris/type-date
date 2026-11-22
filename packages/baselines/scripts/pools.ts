@@ -47,6 +47,9 @@ if (existsSync(TZ_DIR)) for (const f of readdirSync(TZ_DIR).filter((x) => x.star
 // Relative weekend / offset from now / month part pools (h15), picked up the same way.
 const REL_DIR = join(ROOT, "data/pool/rel");
 if (existsSync(REL_DIR)) for (const f of readdirSync(REL_DIR).filter((x) => x.startsWith("dev_")).sort()) POOLS["rel " + f.slice(4, -6)] = `data/pool/rel/${f}`;
+// Lunar holiday pools (h16), picked up the same way.
+const LUNAR_DIR = join(ROOT, "data/pool/lunar");
+if (existsSync(LUNAR_DIR)) for (const f of readdirSync(LUNAR_DIR).filter((x) => x.startsWith("dev_")).sort()) POOLS["lunar " + f.slice(4, -6)] = `data/pool/lunar/${f}`;
 // Pools split by line index: even rows develop, odd rows are an internal validation set (score only, failures hidden).
 const HALVES = new Set(["persona dev", "web dev7", "web dev8", "web dev9", "conj w1", "conj w2", "conj w4", "conj w6", "conj w10"]);
 // conj pools compare resolved dates (like the "resolved" metric): `u05-31` and `uM@05` are the same bound.
@@ -71,7 +74,7 @@ const fails: any[] = [];
 const units: [string, string, number | null][] = [];
 for (const [name, rel] of Object.entries(all)) {
   if (a.only && !name.includes(a.only)) continue;
-  if (HALVES.has(name) || name.startsWith("tz ") || name.startsWith("rel ")) { units.push([name + " [even]", rel, 0], [name + " [odd]", rel, 1]); } else units.push([name, rel, null]);
+  if (HALVES.has(name) || name.startsWith("tz ") || name.startsWith("rel ") || name.startsWith("lunar ")) { units.push([name + " [even]", rel, 0], [name + " [odd]", rel, 1]); } else units.push([name, rel, null]);
 }
 for (const [name, rel, half] of units) {
   const p = rel.startsWith("/") ? rel : join(ROOT, rel);
@@ -81,11 +84,11 @@ for (const [name, rel, half] of units) {
   const outRows: string[] = [];
   for (const r of rows) {
     const pred = (await engine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
-    const good = pred === r.dsl || ((name.startsWith("conj") || name.startsWith("tz ") || name.startsWith("rel ")) && sameResolved(pred, r.dsl));
+    const good = pred === r.dsl || ((name.startsWith("conj") || name.startsWith("tz ") || name.startsWith("rel ") || name.startsWith("lunar ")) && sameResolved(pred, r.dsl));
     c += +good;
     if (oldEngine) {
       const old = (await oldEngine.predict(r.text, undefined, { today: "2026-11-03" })).dsl;
-      const oldGood = old === r.dsl || ((name.startsWith("conj") || name.startsWith("tz ") || name.startsWith("rel ")) && sameResolved(old, r.dsl));
+      const oldGood = old === r.dsl || ((name.startsWith("conj") || name.startsWith("tz ") || name.startsWith("rel ") || name.startsWith("lunar ")) && sameResolved(old, r.dsl));
       if (oldGood && !good) { if (KNOWN.has(r.id)) nKnown++; else { nReg++; if (half !== 1) regs.push({ pool: name, text: r.text, exp: r.dsl, got: pred }); } }
       if (!oldGood && good) nGain++;
     }
