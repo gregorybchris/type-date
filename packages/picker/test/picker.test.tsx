@@ -841,8 +841,10 @@ describe("soft keyboard scroll", () => {
   function stubViewport(coarse: boolean) {
     const vv = Object.assign(new EventTarget(), { width: 400, height: 800 });
     vi.stubGlobal("visualViewport", vv);
+    // The picker is narrow by its own width (useNarrow), not the window's: give it a phone-sized layout box.
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue({ width: 360, height: 600 } as DOMRect);
     vi.stubGlobal("matchMedia", (q: string) => ({
-      matches: q.includes("coarse") ? coarse : q.includes("max-width: 520px"),
+      matches: q.includes("coarse") ? coarse : false,
       addEventListener() {},
       removeEventListener() {},
     }));
@@ -853,7 +855,10 @@ describe("soft keyboard scroll", () => {
     };
     return resize;
   }
-  afterEach(() => vi.unstubAllGlobals());
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
+  });
 
   it("scrolls the picker into view when the keyboard opens on a touch phone", () => {
     const resize = stubViewport(true);

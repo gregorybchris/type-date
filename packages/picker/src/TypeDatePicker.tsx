@@ -5,12 +5,16 @@ import { Calendar } from "./Calendar";
 import type { Selection } from "./Calendar";
 import { TimeList } from "./TimeList";
 import type { DateFormat, TimeFormat } from "./dates";
-import { WD_LABEL, describeRecurrence, fmtDate, inUserZone, zoneLabel, zoneOffsetMin, zonedInstant, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
+import { fmtDate, inUserZone, zoneLabel, zoneOffsetMin, zonedInstant, setFormats, fmtDuration, fmtShort, fmtTime, monthNames, viewIndex, viewOf } from "./dates";
 import type { View } from "./dates";
 import { extendList, flipMeridiem, pickDate, pickRange, pickTime, rangeAnchor, summarize, toggleListDate } from "./edit";
 import type { Target } from "./edit";
-import { CalendarIcon, ClearIcon, SearchIcon } from "./icons";
+import { derive, fieldModel } from "./fields";
+import type { FieldAction } from "./fields";
+import { FOCUS_TARGET, useGlobalKeys, useMedia, useNarrow, useSoftKeyboard } from "./hooks";
+import { ClearIcon, SearchIcon } from "./icons";
 import { parse as builtInParse, preload } from "./parse";
+import { Collapse, Fields, inertRef } from "./ui";
 
 export interface TypeDatePickerProps {
   /** Turns typed text into a DSL line. Defaults to the built-in parser. */
@@ -45,54 +49,6 @@ export interface TypeDatePickerProps {
   autoFocus?: boolean;
 }
 
-/** Sets inert on collapsed panels. React 18 has no inert prop. */
-const inertRef = (open: boolean) => (el: HTMLElement | null) => {
-  if (!el) return;
-  if (open) el.removeAttribute("inert");
-  else el.setAttribute("inert", "");
-};
-
-function Collapse({ open, children }: { open: boolean; children: React.ReactNode }) {
-  const last = useRef(children);
-  if (open) last.current = children;
-  return (
-    <div className="td-collapse" data-open={open} aria-hidden={!open}>
-      <div className="td-collapse-in" ref={inertRef(open)}>
-        {last.current}
-      </div>
-    </div>
-  );
-}
-
-function Field(props: { icon?: boolean; time?: boolean; active?: boolean; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button
-      type="button"
-      className="td-field"
-      data-active={props.active || undefined}
-      data-time={props.time || undefined}
-      onClick={props.onClick}
-    >
-      {props.icon && <CalendarIcon />}
-      {props.children}
-    </button>
-  );
-}
-
-/** Whether a media query matches, kept up to date. False where `matchMedia` is missing (tests, SSR). */
-function useMedia(query: string): boolean {
-  const get = () => typeof window !== "undefined" && typeof window.matchMedia === "function" && window.matchMedia(query).matches;
-  const [on, setOn] = useState(get);
-  useEffect(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") return;
-    const mq = window.matchMedia(query);
-    const onChange = () => setOn(mq.matches);
-    onChange();
-    mq.addEventListener?.("change", onChange);
-    return () => mq.removeEventListener?.("change", onChange);
-  }, [query]);
-  return on;
-}
 
 /** The browser's IANA zone, or undefined where it is hidden (some privacy modes report none). */
 function browserZone(): string | undefined {
@@ -140,37 +96,14 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   latest.current = { result, onChange: props.onChange, onConfirm: props.onConfirm };
   const root = useRef<HTMLDivElement>(null);
   const card = useRef<HTMLDivElement>(null);
-  const phone = useMedia("(max-width: 520px)");
+  /** The picker's own width is at most NARROW_MAX: one column, phone layout. Same test as the CSS container query. */
+  const narrow = useNarrow(root);
   const touch = useMedia("(pointer: coarse)");
   /** The text input has focus. On a touch phone the calendar folds away while the soft keyboard is up. */
   const [typing, setTyping] = useState(false);
   const inputEl = () => root.current?.querySelector<HTMLInputElement>(".td-search input");
 
-  // Soft keyboard: size the card to the visual viewport and keep the input in view.
-  useEffect(() => {
-    const vv = typeof window !== "undefined" ? window.visualViewport : null;
-    if (!vv) return;
-    const fit = () => card.current?.style.setProperty("--td-vvh", `${vv.height}px`);
-    let last = { w: vv.width, h: vv.height };
-    const onResize = () => {
-      fit();
-      // Scroll only when the soft keyboard opens: a touch device whose visible height shrank at the same width.
-      // A window resize on desktop changes the width too and must not scroll the page.
-      const keyboard = vv.width === last.w && vv.height < last.h && matchMedia("(pointer: coarse)").matches;
-      last = { w: vv.width, h: vv.height };
-      if (keyboard && root.current?.contains(document.activeElement) && matchMedia("(max-width: 520px)").matches) {
-        root.current.scrollIntoView({ block: "start" });
-      }
-    };
-    fit();
-    vv.addEventListener("resize", onResize);
-    return () => vv.removeEventListener("resize", onResize);
-  }, []);
-  const keepVisible = () => {
-    if (typeof matchMedia === "function" && matchMedia("(max-width: 520px)").matches) {
-      setTimeout(() => root.current?.scrollIntoView?.({ block: "start", behavior: "smooth" }), 250);
-    }
-  };
+  const keepVisible = useSoftKeyboard(root, card, narrow);
 
   const show = useCallback((v: View) => {
     setView((old) => {
@@ -239,7 +172,6 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
     [],
   );
 
-  const resetRef = useRef<() => void>(() => {});
   /** Clear text, selected dates and times, the assumed AM/PM, any anchor, and go back to today's month. */
   const reset = () => {
     clearTimeout(timer.current);
@@ -256,7 +188,6 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
     props.onClear?.();
   };
 
-  resetRef.current = reset;
 
   const onText = (t: string) => {
     if (!t.trim()) return reset();
@@ -282,73 +213,25 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
     if (!customParse) preload();
   }, [customParse]);
 
-  // Escape clears the picker from anywhere inside it, or when nothing has focus (after a click on a day or
-  // on empty space). The text input has its own handler below.
-  const textRef = useRef(text);
-  textRef.current = text;
-  const resultRef = useRef(result);
-  resultRef.current = result;
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape" || e.defaultPrevented) return;
-      const el = document.activeElement;
-      const target = e.target as Element | null;
-      if (target?.closest("dialog, input, textarea, select, [contenteditable]") && !root.current?.contains(target)) return;
-      if (target instanceof HTMLInputElement && root.current?.contains(target)) return;
-      if (el && el !== document.body && !root.current?.contains(el)) return;
-      if (textRef.current || resultRef.current) {
-        resetRef.current();
-        root.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
-      } else {
-        show(viewOf(today));
-        props.onEscape?.();
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  });
-
-  // Arrow keys and Page Up/Down move through the calendar or the time list after you have clicked or focused the
-  // picker, even when the browser left the focus on the page (Safari does not focus a button on click). Without this
-  // the keys scroll the page. Clicking outside the picker turns this off.
-  const engaged = useRef(false);
-  useEffect(() => {
-    const onDown = (e: Event) => {
-      engaged.current = !!root.current?.contains(e.target as Node);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (!engaged.current || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-      const el = document.activeElement;
-      const idle = !el || el === document.body || el === document.documentElement || el === root.current || el === card.current;
-      if (e.key === "Enter" && idle && latest.current.result) {
-        e.preventDefault();
-        latest.current.onConfirm?.(latest.current.result);
-        return;
-      }
-      if (!["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(e.key)) return;
-      if (!idle) return;
-      const target = root.current?.querySelector<HTMLElement>('[role="gridcell"] [tabindex="0"], [role=option][tabindex="0"]');
-      if (!target) return;
-      e.preventDefault();
-      target.focus({ preventScroll: true });
-      target.dispatchEvent(new KeyboardEvent("keydown", { key: e.key, bubbles: true, cancelable: true }));
-    };
-    document.addEventListener("pointerdown", onDown, true);
-    document.addEventListener("focusin", onDown, true);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("pointerdown", onDown, true);
-      document.removeEventListener("focusin", onDown, true);
-      window.removeEventListener("keydown", onKey);
-    };
-  }, []);
+  // Escape, arrows and Enter at window level (see useGlobalKeys). Read at event time through this ref.
+  const keys = useRef({ empty: true, clear: () => {}, onEscapeEmpty: () => {}, confirm: null as (() => void) | null });
+  keys.current = {
+    empty: !text && !result,
+    clear: reset,
+    onEscapeEmpty: () => {
+      show(viewOf(today));
+      props.onEscape?.();
+    },
+    confirm: result ? () => latest.current.onConfirm?.(latest.current.result) : null,
+  };
+  useGlobalKeys(root, card, keys);
 
   const onInputKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       clearTimeout(timer.current);
       run(text).then(() => props.onConfirm?.(latest.current.result));
       // The "done" key closes the soft keyboard, which brings the calendar back.
-      if (touch && phone) e.currentTarget.blur();
+      if (touch && narrow) e.currentTarget.blur();
     } else if (e.key === "Escape") {
       if (text || result) reset();
       else {
@@ -357,13 +240,11 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       }
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
-      root.current?.querySelector<HTMLElement>('[role="gridcell"] [tabindex="0"], [role=option][tabindex="0"]')?.focus();
+      root.current?.querySelector<HTMLElement>(FOCUS_TARGET)?.focus();
     }
   };
 
-  const mode = result && result.mode !== "x" ? result.mode : "d";
-  const showCal = mode !== "t";
-  const showTime = mode !== "d";
+  const { mode, showCal, showTime, isList, startTime, endTime, tgt } = derive(result, target, dayIdx);
   const rec = result?.recurrence;
 
   const sel: Selection = useMemo(() => {
@@ -434,21 +315,21 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
     if (result.kind === "range" && !result.open && !result.durationMin && target === "start") setTarget("end");
   };
 
-  const isList = result?.kind === "list";
-  const dayTime = rec?.dayTimes?.[dayIdx];
-  const startTime = rec ? (dayTime ?? rec.time)?.start : isList ? result?.time : result?.start?.time;
-  const endTime = rec ? (dayTime ?? rec.time)?.end : result?.end?.time;
   const open = result?.open;
-  const tgt: Target = open === "start" ? "end" : open === "end" ? "start" : target;
   const activeTime = result?.kind === "range" && tgt === "end" ? endTime : startTime;
   const meridiem = startTime ? (Number(startTime.slice(0, 2)) < 12 ? "AM" : "PM") : undefined;
   const summary = muted ? `No date found. Showing last result: ${summarize(result)}` : summarize(result);
-  const dateOf = (k: Target) => (k === "start" ? (result?.start?.date ?? result?.dates?.[0]) : result?.end?.date);
-  const isRange = result?.kind === "range";
-  const jump = (k: Target) => {
-    setTarget(k);
-    const d = dateOf(k);
-    if (d) show(viewOf(d));
+  const onField = (a: FieldAction) => {
+    if (a.type === "day") {
+      setDayIdx(a.idx);
+      setTarget("start");
+      return;
+    }
+    setTarget(a.target);
+    if (a.type === "jump") {
+      const d = a.target === "start" ? (result?.start?.date ?? result?.dates?.[0]) : result?.end?.date;
+      if (d) show(viewOf(d));
+    }
   };
 
   const chip = open
@@ -473,13 +354,6 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   }
   const bound = rec?.from && rec.until ? `${fmtBound(rec.from, today)} - ${fmtBound(rec.until, today)}` : null;
 
-  // Fields: one segmented box per endpoint ([date | time]). A range within one day, or a time-only range, is a
-  // single box [date | start – end]. A multi-day date-time range is two boxes, which stack on a narrow card.
-  const endDate = isRange && open !== "end" ? dateOf("end") : undefined;
-  const oneDay = isRange && !open && showTime && !!endTime && (!showCal || !endDate || endDate === dateOf("start"));
-  const stack = isRange && !open && !oneDay && showCal && showTime;
-  /** The end time is on the next day: flagged by the resolver, or a time-only range that ends before it starts. */
-  const nextDay = !!result?.endNextDay || (isRange && !showCal && !!startTime && !!endTime && endTime < startTime);
 
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
 
@@ -509,7 +383,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
         <input
           type="text"
           value={text}
-          placeholder={props.placeholder ?? (phone ? "Try “next friday 3pm”" : "Try “every other sunday” or “oct 2 to oct 5”")}
+          placeholder={props.placeholder ?? (narrow ? "Try “next friday 3pm”" : "Try “every other sunday” or “oct 2 to oct 5”")}
           aria-label="Date and time"
           aria-describedby="td-status"
           autoComplete="off"
@@ -542,77 +416,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
       </div>
 
       <Collapse open={!!result}>
-        <div className="td-fields" data-stack={stack || undefined}>
-          {result?.kind === "recurrence" && rec ? (
-            <>
-              <Field active onClick={() => jump("start")}>
-                {describeRecurrence(rec)}
-              </Field>
-              {rec.dayTimes && showTime && (
-                <div className="td-fg td-days">
-                  {rec.dayTimes.map((d, i) => (
-                    <Field key={d.wd} active={i === dayIdx} onClick={() => { setDayIdx(i); setTarget("start"); }}>
-                      {WD_LABEL[d.wd]} {fmtTime(d.start)}
-                    </Field>
-                  ))}
-                </div>
-              )}
-            </>
-          ) : isList && result?.dates ? (
-            <div className="td-fg">
-              <div className="td-seg">
-                <Field icon active={!showTime} onClick={() => jump("start")}>
-                  {result.dates.length} dates
-                </Field>
-                {showTime && startTime && <Field time active onClick={() => setTarget("start")}>{fmtTime(startTime)}</Field>}
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="td-fg">
-                <div className="td-seg">
-                  {showCal && dateOf("start") && (
-                    <Field icon active={mode === "d" && !isRange} onClick={() => jump("start")}>
-                      {fmtDate(dateOf("start")!)}
-                    </Field>
-                  )}
-                  {showTime && startTime && (
-                    <Field time active={tgt === "start"} onClick={() => setTarget("start")}>
-                      {fmtTime(startTime)}
-                    </Field>
-                  )}
-                  {oneDay && (
-                    <>
-                      <span className="td-dash" aria-hidden>–</span>
-                      <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
-                        {fmtTime(endTime!)}
-                        {nextDay && <small>+1 day</small>}
-                      </Field>
-                    </>
-                  )}
-                </div>
-              </div>
-              {isRange && open !== "end" && !oneDay && (
-                <div className="td-fg">
-                  {!open && <span className="td-to">to</span>}
-                  <div className="td-seg">
-                    {showCal && endDate && (
-                      <Field icon onClick={() => jump("end")}>
-                        {fmtDate(endDate)}
-                      </Field>
-                    )}
-                    {showTime && endTime && (
-                      <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
-                        {fmtTime(endTime)}
-                        {nextDay && <small>+1 day</small>}
-                      </Field>
-                    )}
-                  </div>
-                </div>
-              )}
-            </>
-          )}
-        </div>
+        <Fields model={fieldModel(result, target, dayIdx)} onAction={onField} />
       </Collapse>
 
       <div className="td-body" data-cal={showCal} data-time={showTime}>
@@ -624,7 +428,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
               sel={sel}
               today={today}
               weekStart={weekStart}
-              trim={phone}
+              trim={narrow}
               onView={show}
               onPick={onPickDate}
               onRange={onRange}
