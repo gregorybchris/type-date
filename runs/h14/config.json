@@ -2,6 +2,6 @@
   "id": "h14",
   "title": "h14",
   "description": "h13 plus a date range with one shared time window (\"tomorrow to friday 3-4pm\", \"3-4pm dec 1 to dec 5\"): splits the text into a date range and a time, and writes a daily recurrence bounded by the two dates. A time on each end stays one span.",
-  "created": "2026-11-21T23:47:27Z",
+  "created": "2026-11-22T01:18:06Z",
   "format": "dsl-v1"
 }

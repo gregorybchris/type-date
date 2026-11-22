@@ -1,0 +1,7 @@
+{
+  "id": "h15",
+  "title": "h15",
+  "description": "h14 plus offsets from now (\"in 2 hours\", \"for the next 30 min\", \"this time tomorrow\"), relative weekends (\"next weekend\", \"the weekend after next\") and parts of a month (\"the last weekend of october\", \"the first week of january\", \"the last day of the month\", a year on an nth weekday).",
+  "created": "2026-11-22T01:21:03Z",
+  "format": "dsl-v1"
+}
