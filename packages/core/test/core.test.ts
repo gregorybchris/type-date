@@ -1190,3 +1190,45 @@ describe("offsets from now, relative weekends, parts of a month (h15)", () => {
     expect(at("d fr#-1@2025-10", "2026-11-21").start?.date).toBe("2025-10-31");
   });
 });
+
+describe("lunar holidays (L:CODE±N, h16)", () => {
+  const o = { today: "2026-11-21", weekStart: 0 as const };
+  const day = (dsl: string) => {
+    const x = resolveDsl(dsl, o);
+    return x.kind === "single" ? x.start.date : x.kind === "range" ? `${x.start?.date}>${x.end?.date}` : x.kind;
+  };
+  it("round-trips and rejects unknown codes or large offsets", () => {
+    for (const l of ["d L:diwali+0", "d L:yomkippur-1", "d L:eid+0~+1d", "d L:ramadan+0>L:eidfitr-1", "d L:diwali@2027+0", "dt L:eidadha+0 09:00", "d >L:eid+0"])
+      expect(serializeDsl(parseDsl(l))).toBe(l);
+    expect(parseDsl("d L:sukkot+0").mode).toBe("x");
+    expect(parseDsl("d L:diwali+61").mode).toBe("x");
+    expect(parseDsl("d L:diwali").mode).toBe("x");
+  });
+  it("resolves the spec examples", () => {
+    expect(day("d L:diwali+0")).toBe("2027-10-29");
+    expect(day("d L:lny+0")).toBe("2027-02-06");
+    expect(day("d L:eid+0")).toBe("2027-03-09");
+    expect(day("d L:eidadha+0")).toBe("2027-05-16");
+    expect(day("d L:ramadan+0>L:eidfitr-1")).toBe("2027-02-08>2027-03-08");
+    expect(day("d L:hanukkah+0>L:hanukkah+7")).toBe("2026-12-05>2026-12-12");
+    expect(day("d L:passover+0>L:passover+7")).toBe("2027-04-22>2027-04-29");
+    expect(day("d L:yomkippur-1")).toBe("2027-10-10");
+    expect(day("d L:hanukkah-1")).toBe("2026-12-04");
+    expect(day("d L:ramadan@2028+0>L:eidfitr@2028-1")).toBe("2028-01-28>2028-02-25");
+    expect(day("d L:roshhashanah+0>L:yomkippur+0")).toBe("2027-10-02>2027-10-11");
+  });
+  it("takes the nearest date on or after today, after an offset", () => {
+    // Hanukkah 2026 starts 12-05: on 12-05 it is today, on 12-06 next year's
+    expect(resolveDsl("d L:hanukkah+0", { today: "2026-12-05" }).kind === "single" && resolveDsl("d L:hanukkah+0", { today: "2026-12-05" })).toMatchObject({ start: { date: "2026-12-05" } });
+    expect(resolveDsl("d L:hanukkah+0", { today: "2026-12-06" })).toMatchObject({ start: { date: "2027-12-25" } });
+    expect(resolveDsl("d L:hanukkah+7", { today: "2026-12-06" })).toMatchObject({ start: { date: "2026-12-12" } });
+  });
+  it("is empty outside the table", () => {
+    expect(day("d L:diwali@2040+0")).toBe("none");
+    expect(resolveDsl("d L:diwali+0", { today: "2036-01-01" }).kind).toBe("none");
+  });
+  it("Islamic holidays can fall twice in a Gregorian year", () => {
+    expect(resolveDsl("d L:ramadan+0", { today: "2030-02-01" })).toMatchObject({ start: { date: "2030-12-26" } });
+    expect(day("d L:ramadan@2030+0")).toBe("2030-01-05");
+  });
+});

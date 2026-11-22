@@ -1,5 +1,6 @@
 import type { DateSpec, Duration, OffUnit, Parsed, Point, RecSpec, TimeSpec, Unit, Weekday } from "./types";
 import { WEEKDAYS } from "./types";
+import { isLunarCode } from "./lunar";
 
 const WD_RE = "(?:su|mo|tu|we|th|fr|sa)";
 const WD_ORDER = ["mo", "tu", "we", "th", "fr", "sa", "su"];
@@ -37,7 +38,7 @@ function fmtMonthTarget(d: { month: number; rel?: number; y?: number }): string 
 
 /** Forms that name one day. Lists and anchors accept only these. */
 function isSingleDay(d: DateSpec): boolean {
-  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc" || d.k === "east" || d.k === "wdw" || d.k === "wdwk";
+  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc" || d.k === "east" || d.k === "lun" || d.k === "wdw" || d.k === "wdwk";
 }
 
 export function parseDate(s: string): DateSpec | null {
@@ -95,6 +96,10 @@ export function parseDate(s: string): DateSpec | null {
   if ((m = s.match(/^E(?:@(\d{4}))?([+-]\d+)$/))) {
     const n = +m[2]!;
     return inRange(n, -70, 70) ? { k: "east", n, ...(m[1] ? { y: +m[1] } : {}) } : null;
+  }
+  if ((m = s.match(/^L:([a-z]+)(?:@(\d{4}))?([+-]\d+)$/))) {
+    const n = +m[3]!;
+    return isLunarCode(m[1]!) && inRange(n, -60, 60) ? { k: "lun", code: m[1]!, n, ...(m[2] ? { y: +m[2] } : {}) } : null;
   }
   if ((m = s.match(new RegExp(`^(${WD_RE})@W([+-]\\d+)$`)))) return { k: "wdw", wd: m[1] as Weekday, n: +m[2]! };
   if ((m = s.match(/^([WMYQ])([+-]\d+)$/))) {
@@ -397,6 +402,8 @@ function fmtDate(d: DateSpec): string {
       return `D@${p2(d.d)}`;
     case "east":
       return `E${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}`;
+    case "lun":
+      return `L:${d.code}${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}`;
     case "wdw":
       return `${d.wd}@W${d.n >= 0 ? "+" : ""}${d.n}`;
     case "pdom":

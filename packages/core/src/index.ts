@@ -14,3 +14,4 @@ export {
   localToday,
   localNow,
 } from "./resolve";
+export { LUNAR_CODES, lunarDays } from "./lunar";

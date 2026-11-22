@@ -14,6 +14,7 @@ import type {
   Weekday,
 } from "./types";
 import { WEEKDAYS } from "./types";
+import { lunarDays } from "./lunar";
 
 // ---- calendar helpers (floating dates, UTC math) ----
 
@@ -307,6 +308,16 @@ export function resolveDate(
         if (toDays(cand) >= toDays(ref)) return single(cand);
       }
       return null;
+    }
+    case "lun": {
+      const days = lunarDays(spec.code);
+      if (spec.y !== undefined) {
+        const first = days.find((d) => fromDays(d).startsWith(`${spec.y}-`));
+        return first === undefined ? null : single(fromDays(first + spec.n));
+      }
+      const r = toDays(ref);
+      const hit = days.find((d) => d + spec.n >= r);
+      return hit === undefined ? null : single(fromDays(hit + spec.n));
     }
     case "wdw": {
       const w = weekRange(today, spec.n, weekStart);
