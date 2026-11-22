@@ -27,12 +27,12 @@
 {"id": "r-lw1-0028", "text": "this coming diwali", "dsl": "d L:diwali+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0028"}
 {"id": "r-lw1-0030", "text": "next holi", "dsl": "d L:holi+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0030"}
 {"id": "r-lw1-0031", "text": "holi this year", "dsl": "d L:holi+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0031"}
-{"id": "r-lw1-0032", "text": "last eid al fitr", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0032"}
+{"id": "r-lw1-0032", "text": "last eid al fitr", "dsl": "d L:eidfitr+0<", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0032"}
 {"id": "r-lw1-0033", "text": "next eid al adha", "dsl": "d L:eidadha+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0033"}
 {"id": "r-lw1-0034", "text": "next ramadan", "dsl": "d L:ramadan+0>L:eidfitr-1", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0034"}
 {"id": "r-lw1-0035", "text": "ramadan this yr", "dsl": "d L:ramadan+0>L:eidfitr-1", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0035"}
 {"id": "r-lw1-0036", "text": "the upcoming rosh hashanah", "dsl": "d L:roshhashanah+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0036"}
-{"id": "r-lw1-0037", "text": "last yom kippur", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0037"}
+{"id": "r-lw1-0037", "text": "last yom kippur", "dsl": "d L:yomkippur+0<", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0037"}
 {"id": "r-lw1-0039", "text": "this passover", "dsl": "d L:passover+0>L:passover+7", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0039"}
 {"id": "r-lw1-0041", "text": "this hanukkah", "dsl": "d L:hanukkah+0>L:hanukkah+7", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0041"}
 {"id": "r-lw1-0042", "text": "next hanukkah", "dsl": "d L:hanukkah+0>L:hanukkah+7", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw1-0042"}
@@ -267,9 +267,9 @@
 {"id": "r-lw2-0030", "text": "remind me next purim", "dsl": "d L:purim+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0030"}
 {"id": "r-lw2-0031", "text": "coming mid autumn", "dsl": "d L:midautumn+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0031"}
 {"id": "r-lw2-0032", "text": "this dragon boat festival", "dsl": "d L:dragonboat+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0032"}
-{"id": "r-lw2-0033", "text": "previous rosh hashanah", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0033"}
+{"id": "r-lw2-0033", "text": "previous rosh hashanah", "dsl": "d L:roshhashanah+0<", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0033"}
 {"id": "r-lw2-0034", "text": "next yom kippur", "dsl": "d L:yomkippur+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0034"}
-{"id": "r-lw2-0035", "text": "last eid al adha", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0035"}
+{"id": "r-lw2-0035", "text": "last eid al adha", "dsl": "d L:eidadha+0<", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0035"}
 {"id": "r-lw2-0038", "text": "this years moon festival", "dsl": "d L:midautumn+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0038"}
 {"id": "r-lw2-0040", "text": "previous year's hanukkah", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0040"}
 {"id": "r-lw2-0041", "text": "this purim coming", "dsl": "d L:purim+0", "primary_tag": "basic-date", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0041"}
@@ -377,7 +377,7 @@
 {"id": "r-lw2-0179", "text": "after mid autumn festival", "dsl": "d L:midautumn+0>", "primary_tag": "open-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0179"}
 {"id": "r-lw2-0181", "text": "until dragon boat festival", "dsl": "d >L:dragonboat+0", "primary_tag": "open-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0181"}
 {"id": "r-lw2-0182", "text": "from duanwu to end of june", "dsl": "d L:dragonboat+0>M@06", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0182"}
-{"id": "r-lw2-0183", "text": "since last purim", "dsl": "x", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0183"}
+{"id": "r-lw2-0183", "text": "since last purim", "dsl": "d L:purim+0<>", "primary_tag": "non-date-noise", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0183"}
 {"id": "r-lw2-0184", "text": "from purim to the next monday", "dsl": "d L:purim+0>mo", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0184"}
 {"id": "r-lw2-0185", "text": "after eid fitr till next friday", "dsl": "d L:eidfitr+0>fr", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0185"}
 {"id": "r-lw2-0186", "text": "ramadan first day to fifteenth", "dsl": "d L:ramadan+0>L:ramadan+14", "primary_tag": "basic-date-range", "modifier_tags": [], "source": "lunar-pool", "split": "dev", "parent_id": null, "group": "real-lw2-0186"}

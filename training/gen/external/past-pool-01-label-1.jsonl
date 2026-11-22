@@ -1,0 +1,156 @@
+{"id": "pw1-0001", "dsl": "d 10-31<", "unsure": false}
+{"id": "pw1-0002", "dsl": "d 12-26<", "unsure": false}
+{"id": "pw1-0003", "dsl": "d 04-25<", "unsure": false}
+{"id": "pw1-0004", "dsl": "d 11-05<", "unsure": false}
+{"id": "pw1-0005", "dsl": "d mo#1@09<", "unsure": false}
+{"id": "pw1-0006", "dsl": "d su#2@05<", "unsure": false}
+{"id": "pw1-0007", "dsl": "x", "unsure": false}
+{"id": "pw1-0008", "dsl": "d E-2<", "unsure": false}
+{"id": "pw1-0009", "dsl": "d E-46<", "unsure": false}
+{"id": "pw1-0010", "dsl": "d L:passover+0<>L:passover+7", "unsure": false}
+{"id": "pw1-0011", "dsl": "d L:roshhashanah+0<", "unsure": false}
+{"id": "pw1-0013", "dsl": "d L:eidfitr+0<", "unsure": true}
+{"id": "pw1-0014", "dsl": "d L:diwali+0<", "unsure": false}
+{"id": "pw1-0015", "dsl": "d L:holi+0<", "unsure": false}
+{"id": "pw1-0016", "dsl": "d th#4@11<", "unsure": false}
+{"id": "pw1-0017", "dsl": "d 07-01<", "unsure": false}
+{"id": "pw1-0018", "dsl": "d L:eid+0<", "unsure": false}
+{"id": "pw1-0019", "dsl": "x", "unsure": false}
+{"id": "pw1-0020", "dsl": "d E+1<", "unsure": false}
+{"id": "pw1-0021", "dsl": "d E-3<", "unsure": false}
+{"id": "pw1-0022", "dsl": "d L:yomkippur+0<", "unsure": false}
+{"id": "pw1-0023", "dsl": "x", "unsure": false}
+{"id": "pw1-0024", "dsl": "x", "unsure": false}
+{"id": "pw1-0025", "dsl": "d L:diwali+0<", "unsure": false}
+{"id": "pw1-0026", "dsl": "d E+0<", "unsure": false}
+{"id": "pw1-0027", "dsl": "d L:hanukkah+0<>L:hanukkah+7", "unsure": false}
+{"id": "pw1-0028", "dsl": "d L:purim+0<", "unsure": false}
+{"id": "pw1-0029", "dsl": "d th#4@11<", "unsure": false}
+{"id": "pw1-0030", "dsl": "d L:lny+0<", "unsure": false}
+{"id": "pw1-0031", "dsl": "d 12-25<", "unsure": false}
+{"id": "pw1-0032", "dsl": "d L:eidadha+0<", "unsure": false}
+{"id": "pw1-0033", "dsl": "d L:eidadha+0<", "unsure": false}
+{"id": "pw1-0034", "dsl": "d mo#1@09<", "unsure": false}
+{"id": "pw1-0035", "dsl": "d E-21<", "unsure": false}
+{"id": "pw1-0036", "dsl": "x", "unsure": false}
+{"id": "pw1-0037", "dsl": "d 12-31<", "unsure": false}
+{"id": "pw1-0038", "dsl": "d th#4@11<~+1d", "unsure": false}
+{"id": "pw1-0039", "dsl": "x", "unsure": false}
+{"id": "pw1-0040", "dsl": "d L:passover+0<>L:passover+7", "unsure": false}
+{"id": "pw1-0041", "dsl": "d su#3@06<", "unsure": false}
+{"id": "pw1-0042", "dsl": "d E+49<", "unsure": false}
+{"id": "pw1-0043", "dsl": "d L:yomkippur+0<", "unsure": false}
+{"id": "pw1-0044", "dsl": "dt 12-24< 23:00", "unsure": false}
+{"id": "pw1-0045", "dsl": "dt 12-31< 00:00", "unsure": true}
+{"id": "pw1-0046", "dsl": "dt L:diwali+0< 20:00", "unsure": false}
+{"id": "pw1-0047", "dsl": "d E+0<", "unsure": false}
+{"id": "pw1-0048", "dsl": "dt th#4@11< 3?", "unsure": false}
+{"id": "pw1-0049", "dsl": "d L:eid+0<", "unsure": false}
+{"id": "pw1-0050", "dsl": "x", "unsure": false}
+{"id": "pw1-0051", "dsl": "dt 07-04< 21:30", "unsure": false}
+{"id": "pw1-0052", "dsl": "d E-2<", "unsure": false}
+{"id": "pw1-0053", "dsl": "x", "unsure": false}
+{"id": "pw1-0054", "dsl": "dt mo#-1@05< 12:00", "unsure": false}
+{"id": "pw1-0055", "dsl": "dt L:roshhashanah+0< 18:15", "unsure": false}
+{"id": "pw1-0056", "dsl": "dt 12-26< 10:00", "unsure": false}
+{"id": "pw1-0057", "dsl": "d L:diwali+0<>", "unsure": false}
+{"id": "pw1-0058", "dsl": "d th#4@11<>", "unsure": false}
+{"id": "pw1-0059", "dsl": "d E-2<>+0d", "unsure": false}
+{"id": "pw1-0060", "dsl": "d L:ramadan+0<>+0d", "unsure": false}
+{"id": "pw1-0061", "dsl": "x", "unsure": false}
+{"id": "pw1-0062", "dsl": "d >12-25<", "unsure": true}
+{"id": "pw1-0063", "dsl": "d 01-01<>01-01<~+1y", "unsure": true}
+{"id": "pw1-0064", "dsl": "d L:hanukkah+0<>", "unsure": false}
+{"id": "pw1-0065", "dsl": "d E-47<>", "unsure": false}
+{"id": "pw1-0066", "dsl": "d 10-31<>th#4@11", "unsure": false}
+{"id": "pw1-0067", "dsl": "d L:eid+0<>L:diwali+0<", "unsure": false}
+{"id": "pw1-0068", "dsl": "d 04-25<>", "unsure": false}
+{"id": "pw1-0069", "dsl": "d >mo#1@09<", "unsure": false}
+{"id": "pw1-0070", "dsl": "d L:passover+0<>+0d", "unsure": false}
+{"id": "pw1-0071", "dsl": "d L:lny+0<>+0d", "unsure": false}
+{"id": "pw1-0072", "dsl": "d 03-17<>", "unsure": false}
+{"id": "pw1-0073", "dsl": "d L:diwali+0<", "unsure": false}
+{"id": "pw1-0074", "dsl": "d 12-25<", "unsure": false}
+{"id": "pw1-0075", "dsl": "d th#4@11<", "unsure": false}
+{"id": "pw1-0076", "dsl": "d E-2<", "unsure": false}
+{"id": "pw1-0077", "dsl": "d L:passover+0<>", "unsure": true}
+{"id": "pw1-0078", "dsl": "d L:eidfitr+0<", "unsure": true}
+{"id": "pw1-0079", "dsl": "d th#4@11<~+1d", "unsure": false}
+{"id": "pw1-0080", "dsl": "d E+0<", "unsure": false}
+{"id": "pw1-0081", "dsl": "d 12-25<", "unsure": false}
+{"id": "pw1-0082", "dsl": "x", "unsure": false}
+{"id": "pw1-0083", "dsl": "d L:yomkippur-1<", "unsure": false}
+{"id": "pw1-0084", "dsl": "d 12-26<", "unsure": false}
+{"id": "pw1-0085", "dsl": "d L:eid+0<", "unsure": false}
+{"id": "pw1-0086", "dsl": "d 01-26<", "unsure": false}
+{"id": "pw1-0087", "dsl": "d 11-05<", "unsure": false}
+{"id": "pw1-0088", "dsl": "d L:midautumn+0<", "unsure": false}
+{"id": "pw1-0089", "dsl": "d mo#1@09<~-3d", "unsure": false}
+{"id": "pw1-0090", "dsl": "d E-7<", "unsure": false}
+{"id": "pw1-0091", "dsl": "x", "unsure": false}
+{"id": "pw1-0092", "dsl": "d L:diwali+0", "unsure": false}
+{"id": "pw1-0093", "dsl": "d th#4@11", "unsure": false}
+{"id": "pw1-0094", "dsl": "d E+0", "unsure": false}
+{"id": "pw1-0095", "dsl": "d L:eidfitr+0", "unsure": true}
+{"id": "pw1-0096", "dsl": "d L:roshhashanah+0", "unsure": false}
+{"id": "pw1-0097", "dsl": "d th#4@11~+1d", "unsure": false}
+{"id": "pw1-0098", "dsl": "d 10-31", "unsure": false}
+{"id": "pw1-0099", "dsl": "d 12-24", "unsure": false}
+{"id": "pw1-0100", "dsl": "d L:ramadan+0>L:eidfitr-1", "unsure": false}
+{"id": "pw1-0101", "dsl": "d E-2", "unsure": false}
+{"id": "pw1-0102", "dsl": "x", "unsure": false}
+{"id": "pw1-0103", "dsl": "d L:hanukkah+0>L:hanukkah+7", "unsure": false}
+{"id": "pw1-0104", "dsl": "d L:midautumn+0", "unsure": false}
+{"id": "pw1-0105", "dsl": "d 07-01", "unsure": false}
+{"id": "pw1-0106", "dsl": "d su#2@05", "unsure": false}
+{"id": "pw1-0107", "dsl": "x", "unsure": false}
+{"id": "pw1-0108", "dsl": "x", "unsure": false}
+{"id": "pw1-0109", "dsl": "d L:diwali+0<2", "unsure": false}
+{"id": "pw1-0110", "dsl": "d L:holi+0<2", "unsure": false}
+{"id": "pw1-0111", "dsl": "d 12-25<3", "unsure": false}
+{"id": "pw1-0112", "dsl": "x", "unsure": false}
+{"id": "pw1-0113", "dsl": "x", "unsure": false}
+{"id": "pw1-0114", "dsl": "x", "unsure": false}
+{"id": "pw1-0115", "dsl": "d 10-31<2", "unsure": false}
+{"id": "pw1-0116", "dsl": "x", "unsure": false}
+{"id": "pw1-0117", "dsl": "x", "unsure": false}
+{"id": "pw1-0118", "dsl": "x", "unsure": false}
+{"id": "pw1-0119", "dsl": "x", "unsure": false}
+{"id": "pw1-0120", "dsl": "d E-2^2", "unsure": false}
+{"id": "pw1-0121", "dsl": "x", "unsure": false}
+{"id": "pw1-0122", "dsl": "x", "unsure": false}
+{"id": "pw1-0123", "dsl": "x", "unsure": false}
+{"id": "pw1-0124", "dsl": "x", "unsure": false}
+{"id": "pw1-0125", "dsl": "d L:eidfitr-1", "unsure": false}
+{"id": "pw1-0126", "dsl": "x", "unsure": false}
+{"id": "pw1-0127", "dsl": "x", "unsure": true}
+{"id": "pw1-0128", "dsl": "x", "unsure": false}
+{"id": "pw1-0130", "dsl": "x", "unsure": false}
+{"id": "pw1-0132", "dsl": "x", "unsure": false}
+{"id": "pw1-0133", "dsl": "x", "unsure": false}
+{"id": "pw1-0134", "dsl": "x", "unsure": false}
+{"id": "pw1-0135", "dsl": "x", "unsure": false}
+{"id": "pw1-0137", "dsl": "x", "unsure": false}
+{"id": "pw1-0138", "dsl": "x", "unsure": false}
+{"id": "pw1-0139", "dsl": "d 12-31", "unsure": false}
+{"id": "pw1-0140", "dsl": "x", "unsure": false}
+{"id": "pw1-0141", "dsl": "x", "unsure": false}
+{"id": "pw1-0142", "dsl": "x", "unsure": false}
+{"id": "pw1-0143", "dsl": "d th#4@11<", "unsure": false}
+{"id": "pw1-0144", "dsl": "d 12-25<", "unsure": false}
+{"id": "pw1-0145", "dsl": "d L:diwali+0<", "unsure": false}
+{"id": "pw1-0146", "dsl": "d L:hanukkah+0<>L:hanukkah+7", "unsure": false}
+{"id": "pw1-0147", "dsl": "d E+0<", "unsure": false}
+{"id": "pw1-0148", "dsl": "d 10-31<", "unsure": false}
+{"id": "pw1-0149", "dsl": "d E-47<", "unsure": false}
+{"id": "pw1-0150", "dsl": "d L:eid+0<", "unsure": false}
+{"id": "pw1-0151", "dsl": "d L:roshhashanah+0<", "unsure": false}
+{"id": "pw1-0152", "dsl": "d mo#-1@05<", "unsure": false}
+{"id": "pw1-0153", "dsl": "d 02-14<", "unsure": false}
+{"id": "pw1-0154", "dsl": "d E-46<", "unsure": false}
+{"id": "pw1-0155", "dsl": "d L:diwali+0<", "unsure": false}
+{"id": "pw1-0156", "dsl": "x", "unsure": false}
+{"id": "pw1-0157", "dsl": "d 12-25<", "unsure": false}
+{"id": "pw1-0158", "dsl": "x", "unsure": false}
+{"id": "pw1-0159", "dsl": "x", "unsure": false}
+{"id": "pw1-0160", "dsl": "x", "unsure": false}

@@ -1,0 +1,9 @@
+{
+ "relabel": {
+  "test_lunar_web|r-lw4-0003": "d L:lny+0<",
+  "test_lunar_web|r-lw4-0004": "d L:lny+0<",
+  "test_lunar_web|r-lw4-0005": "d L:lny+0<",
+  "test_lunar_writers|r-lw3-0032": "dt L:yomkippur+0< 19:42"
+ },
+ "drop": []
+}
