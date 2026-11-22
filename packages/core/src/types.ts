@@ -10,7 +10,11 @@ export type DateSpec =
   | { k: "abs"; y: number | null; m: number; d: number; past?: true } // past: on or before today
   | { k: "off"; n: number; u: OffUnit }
   | { k: "wd"; wd: Weekday; n: number; past?: true } // n = 0 means bare weekday
-  | { k: "nth"; wd: Weekday | "b"; nth: number; month: number; rel?: number } // rel: month n months from this one (`fr#-1@M+0`), month is 0. wd "b": business day
+  | { k: "nth"; wd: Weekday | "b"; nth: number; month: number; rel?: number; y?: number } // rel: month n months from this one (`fr#-1@M+0`), month is 0. y: fixed year (`mo#1@2027-10`). wd "b": business day
+  | { k: "wknd"; n: number } // WKND+0 this weekend, WKND+1 next weekend, WKND-1 last weekend (a Saturday-Sunday range)
+  | { k: "wdwk"; wd: "sa" | "su"; n: number } // one day of a relative weekend (`su@WKND+1`: Sunday of next weekend)
+  | { k: "wknth"; nth: number; month: number; rel?: number; y?: number } // Kth weekend of a month, by its Saturday (`WKND#-1@10`)
+  | { k: "wom"; nth: number; month: number; rel?: number; y?: number } // Kth week of a month: days 1-7, 8-14, 15-21, 22-28; -1 the last 7 days (`W#1@01`)
   | { k: "wdom"; wd: Weekday; d: number } // weekday that is also day d of the month (`fr&D13`)
   | { k: "per"; u: "w" | "m" | "y" | "q"; n: number }
   | { k: "mon"; month: number; past?: true }
@@ -29,9 +33,17 @@ export interface TimeSpec {
   amb: boolean;
 }
 
+/** A moment relative to the current time: `now+2h`, `now-90m`, `now` (right now), `now+1d` (this time tomorrow). */
+export interface NowSpec {
+  n: number;
+  u: "h" | "m" | "d" | "w";
+}
+
 export interface Point {
   date?: DateSpec;
   time?: TimeSpec;
+  /** Relative to the current time. A point with `now` has no `date` or `time`; it resolves to both. */
+  now?: NowSpec;
 }
 
 export interface RecSpec {
@@ -132,4 +144,6 @@ export interface ResolveOptions {
   today?: string;
   /** 0 = Sunday, 1 = Monday. */
   weekStart?: 0 | 1;
+  /** The current local time as YYYY-MM-DDTHH:MM. Defaults to the clock. Sets `today` when `today` is absent. */
+  now?: string;
 }

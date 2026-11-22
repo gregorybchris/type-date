@@ -82,6 +82,12 @@ export function localToday(): string {
   return ymd(n.getFullYear(), n.getMonth() + 1, n.getDate());
 }
 
+/** The current local time as YYYY-MM-DDTHH:MM. */
+export function localNow(): string {
+  const n = new Date();
+  return `${ymd(n.getFullYear(), n.getMonth() + 1, n.getDate())}T${hm(n.getHours(), n.getMinutes())}`;
+}
+
 /** First date on or after `from` with the given weekday. */
 function nextWeekday(from: string, wd: Weekday): string {
   const diff = (wdIndex(wd) - weekdayOf(from) + 7) % 7;
@@ -199,7 +205,48 @@ export function resolveDate(
       }
       return null;
     }
+    case "wknd":
+    case "wdwk": {
+      // Weekends are counted in Monday-start weeks, whatever the week start. "this" (n = 0) and "last" (n < 0) turn over
+      // on Monday; "next" (n >= 1) is this week's weekend from Monday to Wednesday and the following one from Thursday.
+      const dow = (weekdayOf(today) + 6) % 7; // Mon 0 .. Sun 6
+      const sat0 = addDays(today, 5 - dow);
+      const n = spec.n;
+      const sat = n <= 0 ? addDays(sat0, 7 * n) : addDays(sat0, (dow <= 2 ? 0 : 7) + 7 * (n - 1));
+      if (spec.k === "wdwk") return single(spec.wd === "sa" ? sat : addDays(sat, 1));
+      return { start: sat, end: addDays(sat, 1) };
+    }
+    case "wknth":
+    case "wom": {
+      // Kth weekend (by its Saturday, plus the Sunday after) or Kth week (days 1-7, ..., the last 7) of a month
+      const inMonth = (y: number, m: number): DateRange | null => {
+        if (spec.k === "wknth") {
+          const sat = nthWeekdayOfMonth(y, m, "sa", spec.nth);
+          return sat ? { start: sat, end: addDays(sat, 1) } : null;
+        }
+        const dim = daysInMonth(y, m);
+        const first = spec.nth > 0 ? (spec.nth - 1) * 7 + 1 : dim - 6;
+        return { start: ymd(y, m, first), end: ymd(y, m, first + 6) };
+      };
+      if (spec.y !== undefined) return inMonth(spec.y, spec.month);
+      if (spec.rel !== undefined) {
+        const [ty, tm] = parts(today);
+        const idx = ty * 12 + (tm - 1) + spec.rel;
+        return inMonth(Math.floor(idx / 12), (idx % 12) + 1);
+      }
+      // a named month: the nearest one whose part has not ended before ref
+      const [ry] = parts(ref);
+      for (let y = ry - 1; y <= ry + 2; y++) {
+        const r = inMonth(y, spec.month);
+        if (r && toDays(r.end) >= toDays(ref)) return r;
+      }
+      return null;
+    }
     case "nth": {
+      if (spec.y !== undefined) {
+        const cand = nthWeekdayOfMonth(spec.y, spec.month, spec.wd, spec.nth);
+        return cand ? single(cand) : null;
+      }
       if (spec.rel !== undefined) {
         const [ty, tm] = parts(today);
         const idx = ty * 12 + (tm - 1) + spec.rel;
@@ -447,10 +494,18 @@ function resolvePoint(
   today: string,
   ref: string,
   weekStart: 0 | 1,
-  opts: { startTime?: string; inheritDate?: string; isEnd?: boolean },
+  opts: { startTime?: string; inheritDate?: string; isEnd?: boolean; now?: string },
 ): { point: ResolvedPoint; range?: DateRange; amb: boolean } | null {
   const out: ResolvedPoint = {};
   let range: DateRange | undefined;
+  if (p.now) {
+    const base = opts.now ?? localNow();
+    const unit = { m: 1, h: 60, d: 1440, w: 10080 }[p.now.u];
+    const total = toDays(base.slice(0, 10)) * 1440 + Number(base.slice(11, 13)) * 60 + Number(base.slice(14, 16)) + p.now.n * unit;
+    const day = Math.floor(total / 1440);
+    const mins = total - day * 1440;
+    return { point: { date: fromDays(day), time: hm(Math.floor(mins / 60), mins % 60) }, amb: false };
+  }
   if (p.date) {
     const r = resolveDate(p.date, today, ref, weekStart);
     if (!r) return null;
@@ -475,7 +530,8 @@ export function resolveParsed(parsed: Parsed, options: ResolveOptions = {}): Res
 }
 
 function resolveNoZone(parsed: Parsed, options: ResolveOptions = {}): Resolved {
-  const today = options.today ?? localToday();
+  const now = options.now ?? (options.today ? `${options.today}T${localNow().slice(11)}` : localNow());
+  const today = options.today ?? now.slice(0, 10);
   const weekStart = options.weekStart ?? 0;
   if (parsed.mode === "x") return { mode: "x", kind: "none", ambiguous: false };
   const mode = parsed.mode;
@@ -519,19 +575,19 @@ function resolveNoZone(parsed: Parsed, options: ResolveOptions = {}): Resolved {
 
   if (parsed.kind === "open") {
     if (parsed.open === "end") {
-      const s = resolvePoint(parsed.start, today, today, weekStart, {});
+      const s = resolvePoint(parsed.start, today, today, weekStart, { now });
       if (!s) return { mode: "x", kind: "none", ambiguous: false };
       const start = s.range ? { ...s.point, date: s.range.start } : s.point;
       return { mode, kind: "range", open: "end", start, ambiguous: s.amb };
     }
-    const e = resolvePoint(parsed.end, today, today, weekStart, { isEnd: true });
+    const e = resolvePoint(parsed.end, today, today, weekStart, { isEnd: true, now });
     if (!e) return { mode: "x", kind: "none", ambiguous: false };
     const end = e.range ? { ...e.point, date: e.range.end } : e.point;
     return { mode, kind: "range", open: "start", end, ambiguous: e.amb };
   }
 
   if (parsed.kind === "duration") {
-    const s = resolvePoint(parsed.start, today, today, weekStart, {});
+    const s = resolvePoint(parsed.start, today, today, weekStart, { now });
     if (!s || !s.point.time) return { mode: "x", kind: "none", ambiguous: false };
     const start = s.range ? { ...s.point, date: s.range.start } : s.point;
     const mins = parsed.duration.u === "h" ? parsed.duration.n * 60 : parsed.duration.n;
@@ -562,14 +618,15 @@ function resolveNoZone(parsed: Parsed, options: ResolveOptions = {}): Resolved {
     return { mode, kind: "list", dates, time: resolveStartTime(parsed.time), ambiguous: parsed.time.amb };
   }
 
-  const start = resolvePoint(parsed.start, today, today, weekStart, {});
+  const start = resolvePoint(parsed.start, today, today, weekStart, { now });
   if (!start) return { mode: "x", kind: "none", ambiguous: false };
   if (parsed.kind === "single") {
     if (start.range) {
       return {
         mode,
         kind: "range",
-        start: { date: start.range.start },
+        // a period with a time ("next weekend at 3pm") keeps the time on its first day
+        start: start.point.time ? { date: start.range.start, time: start.point.time } : { date: start.range.start },
         end: { date: start.range.end },
         ambiguous: start.amb,
       };
@@ -580,10 +637,15 @@ function resolveNoZone(parsed: Parsed, options: ResolveOptions = {}): Resolved {
     startTime: start.point.time,
     inheritDate: start.point.date,
     isEnd: true,
+    now,
   });
   if (!end) return { mode: "x", kind: "none", ambiguous: false };
   const startPoint = start.range ? { ...start.point, date: start.range.start } : start.point;
-  const endPoint = end.range ? { ...end.point, date: end.range.end } : end.point;
+  let endPoint = end.range ? { ...end.point, date: end.range.end } : end.point;
+  // "now until midnight", "from now till 9am": an end time without a date that is not after now is on the next day
+  if (parsed.start.now && !parsed.end.date && !parsed.end.now && endPoint.time && startPoint.time && endPoint.date && endPoint.time <= startPoint.time) {
+    endPoint = { ...endPoint, date: addDays(endPoint.date, 1) };
+  }
   return {
     mode,
     kind: "range",

@@ -12,4 +12,5 @@ export {
   daysInMonth,
   weekdayOf,
   localToday,
+  localNow,
 } from "./resolve";

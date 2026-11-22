@@ -1108,3 +1108,85 @@ describe("time zones (@ZONE)", () => {
     }
   });
 });
+
+describe("offsets from now, relative weekends, parts of a month (h15)", () => {
+  const at = (dsl: string, today: string, now?: string) => resolveDsl(dsl, { today, now, weekStart: 0 });
+  const span = (dsl: string, today: string) => {
+    const x = at(dsl, today);
+    return `${x.start?.date}>${x.end?.date}`;
+  };
+  it("round-trips the new forms", () => {
+    for (const l of [
+      "dt now", "dt now+2h", "dt now-45m", "dt now+90m", "dt now+1d", "dt now+1w", "dt now>17:00", "dt now>+2h", "dt >now+2h",
+      "dt now+2h>+30m", "dt now-2h>now", "d WKND+0", "d WKND+1", "d WKND-1", "d WKND+2", "dt WKND+1 15:00", "d su@WKND+1",
+      "d WKND#-1@10", "d WKND#1@M+1", "d WKND#2@2027-03", "d W#1@01", "d W#-1@M+0", "d W#3@2027-06", "d mo#1@2027-10",
+      "d b#-1@2027-02", "d R w/1 sa,su uWKND#-1@12", "d WKND+0>mo",
+    ]) {
+      expect(serializeDsl(parseDsl(l)), l).toBe(l);
+    }
+  });
+  it("writes whole hours in hours and zero as now", () => {
+    expect(serializeDsl(parseDsl("dt now+120m"))).toBe("dt now+2h");
+    expect(serializeDsl(parseDsl("dt now+0m"))).toBe("dt now");
+    expect(serializeDsl(parseDsl("dt now-0h"))).toBe("dt now");
+  });
+  it("rejects bad forms", () => {
+    for (const bad of [
+      "d now+2h", "t now", "dt now+2h @UTC", "dt now>17:00 @UTC", "dt now+721h", "dt now+2s", "d WKND#0@10", "d WKND#6@10",
+      "d W#5@10", "d W#0@10", "d W#1@13", "d mo#1@2027-13", "d WKND+53", "d mo@WKND+1", "d WKND+1,WKND+2",
+    ]) {
+      expect(parseDsl(bad), bad).toEqual({ mode: "x" });
+    }
+  });
+  it("resolves offsets from now", () => {
+    const now = "2026-11-21T16:40";
+    expect(at("dt now+2h", "2026-11-21", now).start).toEqual({ date: "2026-11-21", time: "18:40" });
+    expect(at("dt now+9h", "2026-11-21", now).start).toEqual({ date: "2026-11-22", time: "01:40" });
+    expect(at("dt now-45m", "2026-11-21", now).start).toEqual({ date: "2026-11-21", time: "15:55" });
+    expect(at("dt now+1d", "2026-11-21", now).start).toEqual({ date: "2026-11-22", time: "16:40" });
+    expect(at("dt now+1w", "2026-11-21", now).start).toEqual({ date: "2026-11-28", time: "16:40" });
+    expect(at("dt now>+2h", "2026-11-21", now).end).toEqual({ date: "2026-11-21", time: "18:40" });
+    expect(at("dt now>17:00", "2026-11-21", now).end).toEqual({ date: "2026-11-21", time: "17:00" });
+    expect(at("dt now>00:00", "2026-11-21", now).end).toEqual({ date: "2026-11-22", time: "00:00" });
+    expect(at("dt >now+2h", "2026-11-21", now)).toMatchObject({ open: "start", end: { date: "2026-11-21", time: "18:40" } });
+  });
+  it("this and last weekend turn over on Monday, next weekend on Thursday", () => {
+    // Mon 2026-11-23 .. Sun 2026-11-29
+    const days = ["2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26", "2026-11-27", "2026-11-28", "2026-11-29"];
+    const next = ["11-28", "11-28", "11-28", "12-05", "12-05", "12-05", "12-05"];
+    for (const [i, d] of days.entries()) {
+      expect(span("d WKND+0", d), d).toBe("2026-11-28>2026-11-29");
+      expect(span("d WKND-1", d), d).toBe("2026-11-21>2026-11-22");
+      expect(at("d WKND+1", d).start?.date.slice(5), d).toBe(next[i]);
+    }
+    expect(span("d WKND+2", "2026-11-25")).toBe("2026-12-05>2026-12-06");
+    expect(span("d WKND+2", "2026-11-26")).toBe("2026-12-12>2026-12-13");
+    expect(span("d WKND-2", "2026-11-23")).toBe("2026-11-14>2026-11-15");
+    expect(at("d su@WKND+1", "2026-11-26").start?.date).toBe("2026-12-06");
+    // the week start setting does not move weekends
+    expect(resolveDsl("d WKND+0", { today: "2026-11-29", weekStart: 1 }).start?.date).toBe("2026-11-28");
+  });
+  it("counts weekends of a month by their Saturday", () => {
+    expect(span("d WKND#-1@10", "2026-10-01")).toBe("2026-10-31>2026-11-01");
+    expect(span("d WKND#1@12", "2026-11-21")).toBe("2026-12-05>2026-12-06");
+    expect(span("d WKND#1@M+1", "2026-11-21")).toBe("2026-12-05>2026-12-06");
+    expect(span("d WKND#-1@M+0", "2026-11-21")).toBe("2026-11-28>2026-11-29");
+    expect(span("d WKND#-1@2027-10", "2026-11-21")).toBe("2027-10-30>2027-10-31");
+    // a named month whose weekend has passed is next year's
+    expect(span("d WKND#1@11", "2026-11-21")).toBe("2027-11-06>2027-11-07");
+    expect(at("d WKND#5@11", "2026-11-03").mode).toBe("x"); // November 2026 has four Saturdays
+  });
+  it("weeks of a month are days 1-7, 8-14, 15-21, 22-28 and the last 7 days", () => {
+    expect(span("d W#1@01", "2026-11-21")).toBe("2027-01-01>2027-01-07");
+    expect(span("d W#2@06", "2026-11-21")).toBe("2027-06-08>2027-06-14");
+    expect(span("d W#4@06", "2026-11-21")).toBe("2027-06-22>2027-06-28");
+    expect(span("d W#-1@10", "2026-11-21")).toBe("2027-10-25>2027-10-31");
+    expect(span("d W#-1@2028-02", "2026-11-21")).toBe("2028-02-23>2028-02-29");
+    expect(span("d W#-1@M+1", "2026-11-21")).toBe("2026-12-25>2026-12-31");
+    expect(span("d W#-1@11", "2026-11-25")).toBe("2026-11-24>2026-11-30"); // the current week of the month counts
+  });
+  it("takes a year on an nth weekday", () => {
+    expect(at("d mo#1@2027-10", "2026-11-21").start?.date).toBe("2027-10-04");
+    expect(at("d fr#-1@2025-10", "2026-11-21").start?.date).toBe("2025-10-31");
+  });
+});

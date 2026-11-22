@@ -20,9 +20,24 @@ function validNth(wd: string, nth: number): boolean {
   return wd === "b" ? nth === -1 || inRange(nth, 1, 23) : inRange(nth, -1, 5);
 }
 
+/** The month after `@` in `fr#-1@10`, `fr#-1@M+1`, `fr#-1@2027-10`. */
+function parseMonthTarget(s: string): { month: number; rel?: number; y?: number } | null {
+  let m: RegExpMatchArray | null;
+  if ((m = s.match(/^(\d{2})$/))) return inRange(+m[1]!, 1, 12) ? { month: +m[1]! } : null;
+  if ((m = s.match(/^M([+-]\d+)$/))) return { month: 0, rel: +m[1]! };
+  if ((m = s.match(/^(\d{4})-(\d{2})$/))) return inRange(+m[2]!, 1, 12) ? { month: +m[2]!, y: +m[1]! } : null;
+  return null;
+}
+
+function fmtMonthTarget(d: { month: number; rel?: number; y?: number }): string {
+  const p2 = (n: number) => String(n).padStart(2, "0");
+  if (d.rel !== undefined) return `M${d.rel >= 0 ? "+" : ""}${d.rel}`;
+  return d.y !== undefined ? `${d.y}-${p2(d.month)}` : p2(d.month);
+}
+
 /** Forms that name one day. Lists and anchors accept only these. */
 function isSingleDay(d: DateSpec): boolean {
-  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc" || d.k === "east" || d.k === "wdw";
+  return d.k === "abs" || d.k === "off" || d.k === "wd" || d.k === "nth" || d.k === "wdom" || d.k === "dom" || d.k === "pdom" || d.k === "anc" || d.k === "east" || d.k === "wdw" || d.k === "wdwk";
 }
 
 export function parseDate(s: string): DateSpec | null {
@@ -59,15 +74,19 @@ export function parseDate(s: string): DateSpec | null {
     const n = +m[2]!;
     return n === 0 ? null : { k: "wd", wd: m[1] as Weekday, n };
   }
-  if ((m = s.match(new RegExp(`^(${WD_RE}|b)#(-?\\d+)@(\\d{2})$`)))) {
-    const [nth, month] = [+m[2]!, +m[3]!];
-    if (!inRange(month, 1, 12) || !validNth(m[1]!, nth)) return null;
-    return { k: "nth", wd: m[1] as Weekday | "b", nth, month };
+  if ((m = s.match(new RegExp(`^(${WD_RE}|b|WKND|W)#(-?\\d+)@(.+)$`)))) {
+    // Kth weekday, business day, weekend or week of a month: `@MM`, `@M±N` or `@YYYY-MM`
+    const [what, nth] = [m[1]!, +m[2]!];
+    const tgt = parseMonthTarget(m[3]!);
+    if (!tgt) return null;
+    if (what === "WKND") return inRange(nth, -1, 5) && nth !== 0 ? { k: "wknth", nth, ...tgt } : null;
+    if (what === "W") return inRange(nth, -1, 4) && nth !== 0 ? { k: "wom", nth, ...tgt } : null;
+    if (!validNth(what, nth)) return null;
+    return { k: "nth", wd: what as Weekday | "b", nth, ...tgt };
   }
-  if ((m = s.match(new RegExp(`^(${WD_RE}|b)#(-?\\d+)@M([+-]\\d+)$`)))) {
-    const [nth, rel] = [+m[2]!, +m[3]!];
-    if (!validNth(m[1]!, nth)) return null;
-    return { k: "nth", wd: m[1] as Weekday | "b", nth, month: 0, rel };
+  if ((m = s.match(/^WKND([+-]\d+)$/))) return inRange(Math.abs(+m[1]!), 0, 52) ? { k: "wknd", n: +m[1]! } : null;
+  if ((m = s.match(/^(sa|su)@WKND([+-]\d+)$/))) {
+    return inRange(Math.abs(+m[2]!), 0, 52) ? { k: "wdwk", wd: m[1] as "sa" | "su", n: +m[2]! } : null;
   }
   if ((m = s.match(new RegExp(`^(${WD_RE})&D(\\d{2})$`)))) {
     const d = +m[2]!;
@@ -105,6 +124,17 @@ export function parseTime(s: string): TimeSpec | null {
 
 function parsePointTokens(tokens: string[]): Point | null {
   if (tokens.length === 0 || tokens.length > 2) return null;
+  if (tokens.length === 1 && tokens[0] === "now") return { now: { n: 0, u: "m" } };
+  const nm = tokens.length === 1 ? tokens[0]!.match(/^now([+-])(\d+)([hmdw])$/) : null;
+  if (nm) {
+    let n = +nm[2]!;
+    let u = nm[3] as "h" | "m" | "d" | "w";
+    if (!inRange(n, 0, { h: 720, m: 43200, d: 366, w: 52 }[u])) return null;
+    // canonical: whole hours are written in hours, zero is `now`
+    if (u === "m" && n % 60 === 0) [n, u] = [n / 60, "h"];
+    if (n === 0) return { now: { n: 0, u: "m" } };
+    return { now: { n: nm[1] === "-" ? -n : n, u } };
+  }
   const p: Point = {};
   for (const t of tokens) {
     const time = parseTime(t);
@@ -255,6 +285,9 @@ export function parseDsl(input: string): Parsed {
   if (zm) {
     const inner = parseDslNoZone(zm[1]!);
     if (inner.mode === "x" || inner.mode === "d" || !validZone(zm[2]!)) return { mode: "x" };
+    // a time relative to now is the user's own clock: it has no zone (specs/dsl.md, "Offsets from now")
+    if ("start" in inner && inner.start.now) return { mode: "x" };
+    if ("end" in inner && inner.end.now) return { mode: "x" };
     // a zero offset is UTC: one spelling for one zone
     return { ...inner, zone: zm[2] === "+00:00" || zm[2] === "-00:00" ? "UTC" : zm[2]! };
   }
@@ -317,6 +350,7 @@ function parseDuration(s: string): Duration | null {
 }
 
 function modeMatches(mode: "d" | "t" | "dt", p: Point): boolean {
+  if (p.now) return mode === "dt";
   if (mode === "d") return !!p.date && !p.time;
   if (mode === "t") return !p.date && !!p.time;
   return !!p.time && !!p.date; // dt: start point needs a date and a time
@@ -338,7 +372,15 @@ function fmtDate(d: DateSpec): string {
     case "wd":
       return d.n === 0 ? `${d.wd}${d.past ? "<" : ""}` : `${d.wd}${d.n > 0 ? "+" : ""}${d.n}`;
     case "nth":
-      return `${d.wd}#${d.nth}@${d.rel !== undefined ? `M${d.rel >= 0 ? "+" : ""}${d.rel}` : p2(d.month)}`;
+      return `${d.wd}#${d.nth}@${fmtMonthTarget(d)}`;
+    case "wknth":
+      return `WKND#${d.nth}@${fmtMonthTarget(d)}`;
+    case "wom":
+      return `W#${d.nth}@${fmtMonthTarget(d)}`;
+    case "wknd":
+      return `WKND${d.n >= 0 ? "+" : ""}${d.n}`;
+    case "wdwk":
+      return `${d.wd}@WKND${d.n >= 0 ? "+" : ""}${d.n}`;
     case "wdom":
       return `${d.wd}&D${p2(d.d)}`;
     case "per":
@@ -363,6 +405,7 @@ function fmtDate(d: DateSpec): string {
 }
 
 function fmtPoint(p: Point): string {
+  if (p.now) return p.now.n === 0 ? "now" : `now${p.now.n > 0 ? "+" : "-"}${Math.abs(p.now.n)}${p.now.u}`;
   return [p.date ? fmtDate(p.date) : "", p.time ? fmtTime(p.time) : ""].filter(Boolean).join(" ");
 }
 

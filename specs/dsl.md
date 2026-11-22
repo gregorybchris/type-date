@@ -157,7 +157,7 @@ Rules:
 - Anchored offsets apply the offset to the resolved anchor date. The anchor is any DATE form that resolves to one day.
 - `b` offsets skip Saturdays and Sundays. Resolver option `businessDays` may later support holidays.
 
-Not supported (label `x`): frequency without days ("twice a week"), fuzzy spans ("summer", "christmas week"), minute or hour offsets from now, last business day of a month, halves of a month, nth week of a month.
+Not supported (label `x`): frequency without days ("twice a week"), fuzzy spans ("summer", "christmas week"), halves of a month. Offsets from now and the nth week of a month were added later (h15, "Offsets from now, relative weekends, parts of a month").
 
 Additional v2 rules (from labeling feedback):
 - `D@DD` is always two digits (`D@04`, `D@15`).
@@ -292,7 +292,7 @@ Minority-labelled rows (they disagree with the policy; labels were not edited) a
 ## Other label decisions made by h11 (2026-11-04)
 
 - Weekday codes written as letters ("MWF 10-10:50", "t/th 2pm", "tu+th 7:15am", "mon wed fri at 7am", "ttH 9am this quarter") are weekly recurrences (`R w/1 tu,th`) when something follows them (time, month, bound). A bare code list ("tu th sa", "T/Th") stays a date list. `T` is Tuesday, `R` is Thursday only in a joined code of three or more letters.
-- A bare duration or offset ("2 hours", "10 mins", "thirty minutes early") is `x`: the DSL has no hour or minute offsets.
+- A bare duration or offset ("2 hours", "10 mins", "thirty minutes early") is `x`. Offsets from now ("in 2 hours") are `now+2h` since h15.
 - Frequency words without days: "daily", "everyday", "nightly", "twice daily" are `d R d/1`; "weekly" `d R w/1`; "monthly" `d R m/1`; "yearly", "annually" `d R y/1`; "afternoons", "night" alone are `x`.
 - Part of day before an hour: "night 9" is `t 21:00`, "morning 8" `t 08:00`, "afternoon 12" `t 12:00`. A part-of-day bound: "morning before 11 am" is `t >11:00`, "evening before 9" `t >21:00`.
 - Two clock times joined only by "and" ("meet at 4pm and 6pm", "every day at 16:00 and 18:00"): the first time (the existing rule for two times without a cue word).
@@ -396,3 +396,66 @@ A range of two single days with one time or time window that applies to each day
 - `s` and `u` take the two days as written. A weekday in `u` resolves on or after the `s` date, as a range end does, so the recurrence covers the same days as the range `+1d>fr`.
 - Periods are not day ranges: "this week 3-4pm" stays `dt W+0 15:00>16:00`.
 - One open pool row conflicts with this rule: "from the 5th to the 10th at 9am" is labeled `dt D@05 09:00>D@10` (`r-fam0193`, listed in `specs/engines/h14-known-conflicts.json`).
+
+## Offsets from now, relative weekends, parts of a month (decided 2026-11-21, h15)
+
+New forms. A `now` point resolves to a date and a time from the current clock (resolver option `now`, default the device clock). Everything else is a date form, valid wherever a date is (single, range ends, `s` and `u` bounds); only `sa@WKND±N` is a single day and may go in lists and anchors.
+
+| Form | Input | Output | Resolves (now Sat 2026-11-21 16:40) |
+|---|---|---|---|
+| `now`, `now±Nh`, `now±Nm` | "2 hours from now", "in 2 hours", "in 2h" | `dt now+2h` | 2026-11-21 18:40 |
+| | "in an hour and a half", "in 1h30", "90 mins from now" | `dt now+90m` | 18:10 |
+| | "45 minutes ago" | `dt now-45m` | 15:55 |
+| | "now", "right now" | `dt now` | 16:40 |
+| | "24 hours from now", "in 2 days and 3 hours" | `dt now+24h`, `dt now+51h` | |
+| `now+Nd`, `now+Nw` | "this time tomorrow", "same time next week" | `dt now+1d`, `dt now+1w` | 2026-11-22 16:40, 2026-11-28 16:40 |
+| spans with now | "for the next 2 hours", "the next 30 minutes", "within the next hour" | `dt now>+2h`, `dt now>+30m`, `dt now>+1h` | 16:40 to 18:40 |
+| | "now until 5pm", "from now till midnight" | `dt now>17:00`, `dt now>00:00` | an end time not after now is the next day |
+| | "until 3 hours from now" | `dt >now+3h` | |
+| | "in 2 hours for 30 min" | `dt now+2h>+30m` | |
+| | "for the past 2 hours", "since 2 hours ago" | `dt now-2h>now`, `dt now-2h>` | |
+| `WKND±N` | "this weekend", "the weekend", "over the weekend" | `d WKND+0` | |
+| | "next weekend" | `d WKND+1` | |
+| | "last weekend", "the weekend just gone", "the past weekend" | `d WKND-1` | |
+| | "the weekend after next", "the weekend before last", "2 weekends ago" | `d WKND+2`, `d WKND-2`, `d WKND-2` | |
+| | "next weekend at 3pm" | `dt WKND+1 15:00` | |
+| `sa@WKND±N`, `su@WKND±N` | "sunday of next weekend", "next weekend saturday" | `d su@WKND+1`, `d sa@WKND+1` | |
+| `WKND#K@MM`, `@M±N`, `@YYYY-MM` | "the last weekend of october" | `d WKND#-1@10` | 2027-10-30 to 2027-10-31 |
+| | "first weekend of next month", "last weekend of the month" | `d WKND#1@M+1`, `d WKND#-1@M+0` | 2026-12-05 to 12-06, 2026-11-28 to 11-29 |
+| | "the 3rd weekend in june 2027" | `d WKND#3@2027-06` | 2027-06-19 to 06-20 |
+| `W#K@MM`, `@M±N`, `@YYYY-MM` | "the first week of january", "second week of june" | `d W#1@01`, `d W#2@06` | 2027-01-01 to 01-07, 2027-06-08 to 06-14 |
+| | "the last week of october", "last week of next month" | `d W#-1@10`, `d W#-1@M+1` | 2027-10-25 to 10-31, 2026-12-25 to 12-31 |
+| `WD#K@YYYY-MM`, `b#K@YYYY-MM` | "the first monday of october 2027" | `d mo#1@2027-10` | 2027-10-04 |
+
+### Weekend rules
+
+- A weekend is a Saturday and the Sunday after it, as a two-day range. Weeks for weekends start on Monday whatever the week start setting.
+- `WKND+0` ("this weekend") and `WKND-N` ("last weekend", N weeks back) turn over on Monday: on a Sunday "this weekend" is yesterday and today, on a Monday it is the coming Saturday and Sunday, and "last weekend" is the one just past.
+- `WKND+1` ("next weekend") turns over on Thursday: from Monday to Wednesday it is this week's weekend (the same days as `WKND+0`), from Thursday to Sunday the one after. `WKND+N` is N-1 weeks after `WKND+1`.
+- "this coming weekend", "the upcoming weekend", "the coming weekend" keep `sa>su` (the first Saturday on or after today and the Sunday after it): on a Sunday that is the next Saturday.
+- "in 2 weekends", "3 weekends from now" are `sa+N>su` (the Nth Saturday after today). Plurals and counts are unchanged: "next 2 weekends" is `d sa+1,su+1,sa+2,su+2`, "weekends in march" a recurrence.
+- "this weekend through monday" is `d WKND+0>mo`; "friday through the weekend" is `d fr>WKND+0`.
+- A day of a relative weekend: "saturday this weekend" is `sa@WKND+0`, "sunday of next weekend" `su@WKND+1`. "this saturday" alone stays `sa`.
+- The Kth weekend of a month is counted by its Saturday: the weekend whose Saturday is the Kth Saturday of the month (the Sunday may be in the next month). K is 1 to 5 or -1 (last). "the last weekend of october" in 2026 is Oct 31 to Nov 1. A month without a fifth Saturday gives `x` for K = 5.
+- A named month resolves to the nearest one whose weekend or week ends on or after today (or the range start).
+- Label `x`: "the weekend after this one", "the last full weekend", "the weekend of oct 10", recurrences of a month's weekend or week ("the last weekend of every month"), "first weekend of next year".
+
+### Offset rules
+
+- `now` lines are `dt` and have no zone: the offset is from the user's own clock ("in 1 hour GMT" is `dt now+1h`). A zone on a line with `now` is invalid.
+- Units: `h` (up to 720), `m` (up to 43200), and `d` or `w` only for the same clock time on another day ("this time tomorrow", "same time next week", "this time next week"). "in 3 days", "a week from now" stay date offsets (`d +3d`, `d +1w`).
+- Canonical form: whole hours are written in hours (`now+2h`, not `now+120m`), fractions in minutes (`now+90m`, `now+150m`), zero is `now`. Days and hours together are hours ("in 2 days and 3 hours" is `now+51h`, "a day and a half from now" `now+36h`).
+- "a couple of hours" is 2 hours. "a few minutes", "a bit", "shortly", "soon", "in a sec", seconds ("in 30 seconds") and "within the hour" are `x`.
+- A span from now uses the duration end `now>+Nh` up to 48 hours and `now>now+Nh` beyond. "starting in 20 minutes" without a recurrence is the point `dt now+20m`. "by 2 hours from now" is an open start, as for other deadlines.
+- Not covered, label `x`: a bare duration ("2 hours"), offsets from another time or event ("2 hours after 3pm", "30 min before the meeting"), "2 hours later", "hours from now".
+
+### Parts of a month
+
+- The Kth week of a month is days 1-7 (K = 1), 8-14, 15-21, 22-28, and the last 7 days of the month (K = -1, "last", "final"). K = 5 and "full week" are `x`. "last week" alone is still `W-1`; "the week of oct 5" is `x`.
+- "the first week of the year" is `W#1@01`, "the last week of the year" `W#-1@12`.
+- First and last days use existing forms: "the last day of october" `10-31`, "the last day of february" `03-01~-1d`, "the last day of the month" `D01@M+1~-1d`, "last day of next month" `D01@M+2~-1d`, "the first day of next month" `D01@M+1`. With a year the engine writes the date ("last day of feb 2028" is `2028-02-29`), as the pools already do.
+- An nth weekday, weekend or week with a year uses `@YYYY-MM`: "the first monday of october 2027" is `mo#1@2027-10`, "last weekend of october 2027" `WKND#-1@2027-10`.
+
+### Label changes
+
+"this weekend", "the weekend" and "over the weekend" were `sa>su`; they are now `WKND+0`. The two differ only on Sundays. Rows with the old label are relabeled (see `specs/engines/h15.md`). The earlier lines "Not supported: minute or hour offsets from now ... nth week of a month" and "the DSL has no hour or minute offsets" are replaced by this section; a bare duration ("2 hours") is still `x`.
