@@ -20,7 +20,8 @@ execFileSync("pnpm", ["build"], { cwd: root, stdio: "inherit" });
 const packed = JSON.parse(run("npm", ["pack", "--ignore-scripts", "--json", "--pack-destination", work], root))[0];
 const files = packed.files.map((f) => f.path);
 console.log(`packed ${packed.filename}: ${files.length} files, ${(packed.size / 1024).toFixed(1)} kB (${(packed.unpackedSize / 1024).toFixed(1)} kB unpacked)`);
-const stray = files.filter((f) => !/^(dist\/|README\.md$|package\.json$)/.test(f));
+const stray = files.filter((f) => !/^(dist\/|README\.md$|LICENSE$|package\.json$)/.test(f));
+if (!files.includes("LICENSE")) fail("LICENSE is missing from the tarball");
 if (stray.length) fail(`unexpected files in the tarball: ${stray.join(", ")}`);
 if (!files.includes("dist/index.js") || !files.includes("dist/index.d.ts") || !files.includes("dist/styles.css")) fail("dist/index.js, index.d.ts or styles.css is missing");
 

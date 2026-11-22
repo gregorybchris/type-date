@@ -77,3 +77,7 @@ The demo app is `apps/demo`. Screenshot scripts (`shots`, `shots:mobile`) live t
 
 - `playwright` `goto` waits for `load`, which hangs on the Google Fonts link in the demo. Use `waitUntil: "domcontentloaded"`.
 - `@type-date/core` and `@type-date/baselines` are workspace sources, not published. `tsup` bundles them into `dist/`. Keep them out of `dependencies`, or the tarball will point at packages that do not exist on npm.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

@@ -142,3 +142,7 @@ Works well on common phrases and many unusual ones. Known gaps:
 - bounded recurrences, the weakest kind in the table;
 - some typo'd clock idioms;
 - a time given with a date range ("oct 2 to oct 5 at 9am") shows the dates only.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
