@@ -18,6 +18,7 @@ const EXAMPLES = [
   "every other sunday",
   "last friday",
   "4 to 4:30",
+  "4pm for 70min",
   "tomorrow at 3pm",
   "next monday 9am to 5pm",
   "every weekday at 9",
