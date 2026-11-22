@@ -1,0 +1,546 @@
+{"id": "lw3-0001", "text": "Our shop will be closed on Diwali.", "family": "A", "holiday": "diwali"}
+{"id": "lw3-0002", "text": "The clinic is closed for Eid al-Fitr.", "family": "A", "holiday": "eidfitr"}
+{"id": "lw3-0003", "text": "Services for Rosh Hashanah", "family": "A", "holiday": "roshhashanah"}
+{"id": "lw3-0004", "text": "Reduced hours on Chinese New Year.", "family": "A", "holiday": "lny"}
+{"id": "lw3-0005", "text": "Annual leave: Eid al-Adha", "family": "A", "holiday": "eidadha"}
+{"id": "lw3-0006", "text": "Lantern walk on Mid-Autumn Festival", "family": "A", "holiday": "midautumn"}
+{"id": "lw3-0007", "text": "Holi celebration at the community centre", "family": "A", "holiday": "holi"}
+{"id": "lw3-0008", "text": "Megillah reading on Purim", "family": "A", "holiday": "purim"}
+{"id": "lw3-0009", "text": "Out of office: Yom Kippur", "family": "A", "holiday": "yomkippur"}
+{"id": "lw3-0010", "text": "Regatta on Dragon Boat Festival", "family": "A", "holiday": "dragonboat"}
+{"id": "lw3-0011", "text": "Family dinner for Hanukkah", "family": "A", "holiday": "hanukkah"}
+{"id": "lw3-0012", "text": "Taraweeh prayers in Ramadan", "family": "A", "holiday": "ramadan"}
+{"id": "lw3-0013", "text": "Seder for Passover at the Cohens'", "family": "A", "holiday": "passover"}
+{"id": "lw3-0014", "text": "Please note: no deliveries on Eid.", "family": "A", "holiday": "eidfitr", "note": "bare Eid, which one unstated"}
+{"id": "lw3-0015", "text": "Dragon Boat Festival – public holiday", "family": "A", "holiday": "dragonboat"}
+{"id": "lw3-0016", "text": "Diwali puja at the temple", "family": "A", "holiday": "diwali"}
+{"id": "lw3-0018", "text": "Mid-Autumn Festival family gathering", "family": "A", "holiday": "midautumn"}
+{"id": "lw3-0019", "text": "School closed for Holi.", "family": "A", "holiday": "holi"}
+{"id": "lw3-0020", "text": "Hanukkah candle lighting at the JCC", "family": "A", "holiday": "hanukkah"}
+{"id": "lw3-0022", "text": "Eid al-Adha prayers at the Grand Mosque", "family": "A", "holiday": "eidadha"}
+{"id": "lw3-0023", "text": "We look forward to seeing you again next Diwali.", "family": "B", "holiday": "diwali"}
+{"id": "lw3-0024", "text": "This Ramadan, the store will open at 10 a.m. daily.", "family": "B", "holiday": "ramadan"}
+{"id": "lw3-0025", "text": "Last Hanukkah we hosted 40 guests; this year we expect more.", "family": "B", "holiday": "hanukkah"}
+{"id": "lw3-0026", "text": "Please submit leave requests for the upcoming Eid al-Adha by Friday.", "family": "B", "holiday": "eidadha"}
+{"id": "lw3-0027", "text": "This year's Rosh Hashanah services will be held in the main sanctuary.", "family": "B", "holiday": "roshhashanah"}
+{"id": "lw3-0028", "text": "Next Chinese New Year the office will close for a full week.", "family": "B", "holiday": "lny"}
+{"id": "lw3-0029", "text": "Our Purim party this year is fancy dress.", "family": "B", "holiday": "purim", "note": "relative year after the name"}
+{"id": "lw3-0030", "text": "The coming Mid-Autumn Festival falls on a weekday.", "family": "B", "holiday": "midautumn"}
+{"id": "lw3-0031", "text": "Bookings are now open for next year's Passover retreat.", "family": "B", "holiday": "passover"}
+{"id": "lw3-0032", "text": "Last Yom Kippur the fast ended at 7:42 p.m.", "family": "B", "holiday": "yomkippur"}
+{"id": "lw3-0033", "text": "Holi this year falls on a Saturday, so there is no school closure.", "family": "B", "holiday": "holi"}
+{"id": "lw3-0034", "text": "Registration for next year's Dragon Boat Festival race opens in May.", "family": "B", "holiday": "dragonboat"}
+{"id": "lw3-0035", "text": "Our next Eid al-Fitr bazaar will be twice the size.", "family": "B", "holiday": "eidfitr"}
+{"id": "lw3-0036", "text": "Orders shipped late last time, so please order early this Diwali.", "family": "B", "holiday": "diwali"}
+{"id": "lw3-0037", "text": "Notice regarding the upcoming Lunar New Year holiday", "family": "B", "holiday": "lny"}
+{"id": "lw3-0038", "text": "This coming Yom Kippur, the office will close at 2 p.m.", "family": "B", "holiday": "yomkippur"}
+{"id": "lw3-0039", "text": "Last Ramadan's iftar drive served 3,000 meals.", "family": "B", "holiday": "ramadan"}
+{"id": "lw3-0040", "text": "This Hanukkah, join us for latkes on the lawn.", "family": "B", "holiday": "hanukkah"}
+{"id": "lw3-0041", "text": "Next Purim falls on a Thursday, so mark your diaries.", "family": "B", "holiday": "purim"}
+{"id": "lw3-0042", "text": "Please note the forthcoming Passover closure of our kitchen.", "family": "B", "holiday": "passover"}
+{"id": "lw3-0043", "text": "Next Mid-Autumn we will hold the lantern parade at Victoria Park.", "family": "B", "holiday": "midautumn", "note": "Mid-Autumn without Festival"}
+{"id": "lw3-0044", "text": "This year's Eid al-Adha Qurbani orders close on the 1st.", "family": "B", "holiday": "eidadha"}
+{"id": "lw3-0045", "text": "Our crew trains every weekend ahead of this Dragon Boat Festival.", "family": "B", "holiday": "dragonboat"}
+{"id": "lw3-0046", "text": "See you again next Rosh Hashanah. Shana tova!", "family": "B", "holiday": "roshhashanah"}
+{"id": "lw3-0047", "text": "Last Rosh Hashanah's services were streamed online.", "family": "B", "holiday": "roshhashanah"}
+{"id": "lw3-0048", "text": "Diwali 2027 holiday calendar for staff", "family": "C", "holiday": "diwali"}
+{"id": "lw3-0049", "text": "The Ramadan 2028 timetable is now available at the mosque office.", "family": "C", "holiday": "ramadan"}
+{"id": "lw3-0050", "text": "Chinese New Year 2029: office closed for three days.", "family": "C", "holiday": "lny"}
+{"id": "lw3-0051", "text": "Passover 2027 Seder reservations – please RSVP.", "family": "C", "holiday": "passover"}
+{"id": "lw3-0052", "text": "Mid-Autumn Festival 2028 Lantern Carnival, Chinatown, Singapore", "family": "C", "holiday": "midautumn"}
+{"id": "lw3-0053", "text": "Eid al-Fitr 1448 holiday announcement", "family": "C", "holiday": "eidfitr", "note": "hijri year"}
+{"id": "lw3-0054", "text": "Rosh Hashanah 5788 begins at sundown.", "family": "C", "holiday": "roshhashanah", "note": "Hebrew year"}
+{"id": "lw3-0055", "text": "Holi 2027 at the Hindu Temple of Greater Chicago", "family": "C", "holiday": "holi"}
+{"id": "lw3-0056", "text": "Hanukkah 2028: menorah lighting every night at 5 p.m.", "family": "C", "holiday": "hanukkah"}
+{"id": "lw3-0057", "text": "Yom Kippur 2027 – services schedule attached", "family": "C", "holiday": "yomkippur"}
+{"id": "lw3-0058", "text": "Dragon Boat Festival 2027 holiday arrangements (Hong Kong)", "family": "C", "holiday": "dragonboat"}
+{"id": "lw3-0059", "text": "Purim 2028 Megillah reading times", "family": "C", "holiday": "purim"}
+{"id": "lw3-0060", "text": "Eid al-Adha 2027 public holiday notice – UAE", "family": "C", "holiday": "eidadha"}
+{"id": "lw3-0061", "text": "Lunar New Year 2027 (Year of the Goat) office closure", "family": "C", "holiday": "lny", "note": "zodiac year in brackets"}
+{"id": "lw3-0062", "text": "Ramadan 1449 AH: taraweeh schedule to be announced.", "family": "C", "holiday": "ramadan", "note": "hijri year with AH"}
+{"id": "lw3-0063", "text": "Deepavali 2028 open house", "family": "C", "holiday": "diwali"}
+{"id": "lw3-0064", "text": "Passover in 2029 starts on a Friday night.", "family": "C", "holiday": "passover"}
+{"id": "lw3-0065", "text": "Our Diwali 2026 hamper deliveries begin the week before.", "family": "C", "holiday": "diwali"}
+{"id": "lw3-0066", "text": "Yom Kippur 5789 Kol Nidre tickets", "family": "C", "holiday": "yomkippur", "note": "Hebrew year"}
+{"id": "lw3-0067", "text": "Mid-Autumn 2027 mooncake orders close 1 September.", "family": "C", "holiday": "midautumn"}
+{"id": "lw3-0068", "text": "Hanukkah 2027–28 begins on a Friday evening.", "family": "C", "holiday": "hanukkah", "note": "year span with en dash"}
+{"id": "lw3-0069", "text": "For Eid al-Fitr 2028, staff will receive two days' leave.", "family": "C", "holiday": "eidfitr"}
+{"id": "lw3-0070", "text": "Holi '28 colour run in Leicester", "family": "C", "holiday": "holi", "note": "apostrophe year"}
+{"id": "lw3-0071", "text": "Purim of 2027: costume contest", "family": "C", "holiday": "purim"}
+{"id": "lw3-0072", "text": "Eid ul-Adha 2028 Qurbani orders", "family": "C", "holiday": "eidadha"}
+{"id": "lw3-0073", "text": "Dragon Boat Festival in 2028 – race entries now open", "family": "C", "holiday": "dragonboat"}
+{"id": "lw3-0074", "text": "Diwali dinner at 7:30 p.m., please arrive on time.", "family": "D", "holiday": "diwali"}
+{"id": "lw3-0075", "text": "Eid al-Fitr prayer at 7:15 a.m. at the Islamic Centre", "family": "D", "holiday": "eidfitr"}
+{"id": "lw3-0076", "text": "Yom Kippur morning service begins at 9:00.", "family": "D", "holiday": "yomkippur"}
+{"id": "lw3-0077", "text": "Chinese New Year reunion dinner, 6:30 pm", "family": "D", "holiday": "lny"}
+{"id": "lw3-0078", "text": "Rosh Hashanah afternoon: Tashlich at 4 p.m. by the river", "family": "D", "holiday": "roshhashanah"}
+{"id": "lw3-0079", "text": "Holi morning colour play from 10am to 1pm", "family": "D", "holiday": "holi"}
+{"id": "lw3-0080", "text": "Hanukkah evening candle lighting at 5:15 p.m.", "family": "D", "holiday": "hanukkah"}
+{"id": "lw3-0081", "text": "Purim morning Megillah reading, 7:00 a.m.", "family": "D", "holiday": "purim"}
+{"id": "lw3-0082", "text": "Eid al-Adha morning: prayers at 6:45, breakfast to follow.", "family": "D", "holiday": "eidadha"}
+{"id": "lw3-0083", "text": "Mid-Autumn Festival evening, lantern walk at 8pm", "family": "D", "holiday": "midautumn"}
+{"id": "lw3-0084", "text": "Dragon Boat Festival races start at 9 a.m. at Stanley Main Beach.", "family": "D", "holiday": "dragonboat"}
+{"id": "lw3-0085", "text": "Passover afternoon: the shop closes at 1 p.m.", "family": "D", "holiday": "passover"}
+{"id": "lw3-0086", "text": "Ramadan hours: 9 a.m. to 3 p.m., Monday to Thursday", "family": "D", "holiday": "ramadan", "note": "hours that apply during the holiday period"}
+{"id": "lw3-0087", "text": "Community Ramadan iftar, 7:05pm, all welcome", "family": "D", "holiday": "ramadan"}
+{"id": "lw3-0088", "text": "Diwali afternoon open house, 2–6 pm", "family": "D", "holiday": "diwali"}
+{"id": "lw3-0089", "text": "Lunar New Year lion dance at noon in the lobby", "family": "D", "holiday": "lny"}
+{"id": "lw3-0090", "text": "Eid night dinner at 8", "family": "D", "holiday": "eidfitr", "note": "bare Eid"}
+{"id": "lw3-0091", "text": "Yom Kippur, Neilah 6:30 p.m.", "family": "D", "holiday": "yomkippur"}
+{"id": "lw3-0092", "text": "Passover Seder at 7pm sharp", "family": "D", "holiday": "passover"}
+{"id": "lw3-0093", "text": "Hanukkah party, 4–7 p.m., Community Hall", "family": "D", "holiday": "hanukkah"}
+{"id": "lw3-0094", "text": "Purim afternoon seudah at 3:30", "family": "D", "holiday": "purim"}
+{"id": "lw3-0095", "text": "Mid-Autumn Festival moon viewing from 9 p.m.", "family": "D", "holiday": "midautumn"}
+{"id": "lw3-0096", "text": "Eid al-Adha lunch at 1 pm at Nani's", "family": "D", "holiday": "eidadha"}
+{"id": "lw3-0097", "text": "Erev Rosh Hashanah: office closes at noon.", "family": "E", "holiday": "roshhashanah"}
+{"id": "lw3-0098", "text": "Candle lighting on the first night of Hanukkah, 4:28 p.m.", "family": "E", "holiday": "hanukkah"}
+{"id": "lw3-0099", "text": "The day after Eid al-Fitr is also a holiday for staff.", "family": "E", "holiday": "eidfitr"}
+{"id": "lw3-0100", "text": "Chinese New Year's Eve reunion dinner at Grandma's", "family": "E", "holiday": "lny"}
+{"id": "lw3-0101", "text": "Second day of Rosh Hashanah: services start at 9 a.m.", "family": "E", "holiday": "roshhashanah"}
+{"id": "lw3-0102", "text": "Please pay Zakat al-Fitr before the last day of Ramadan.", "family": "E", "holiday": "ramadan"}
+{"id": "lw3-0103", "text": "Choti Diwali, the day before Diwali, is a half day.", "family": "E", "holiday": "diwali", "note": "eve named by its own name"}
+{"id": "lw3-0104", "text": "Kol Nidre on the eve of Yom Kippur at 6:15 p.m.", "family": "E", "holiday": "yomkippur"}
+{"id": "lw3-0105", "text": "Holika Dahan bonfire on the night before Holi", "family": "E", "holiday": "holi"}
+{"id": "lw3-0106", "text": "Fast of Esther, the day before Purim", "family": "E", "holiday": "purim", "note": "eve named by its own name"}
+{"id": "lw3-0107", "text": "First Seder on the first night of Passover", "family": "E", "holiday": "passover"}
+{"id": "lw3-0108", "text": "Second Seder: second night of Pesach", "family": "E", "holiday": "passover"}
+{"id": "lw3-0109", "text": "Day of Arafah, the day before Eid al-Adha – fasting recommended", "family": "E", "holiday": "eidadha"}
+{"id": "lw3-0110", "text": "Chaand Raat mehndi party (the night before Eid)", "family": "E", "holiday": "eidfitr", "note": "eve named in Urdu"}
+{"id": "lw3-0111", "text": "Mid-Autumn Festival eve dinner", "family": "E", "holiday": "midautumn"}
+{"id": "lw3-0112", "text": "The eighth night of Hanukkah – final candle lighting", "family": "E", "holiday": "hanukkah"}
+{"id": "lw3-0113", "text": "The second day of Chinese New Year: visit to the in-laws", "family": "E", "holiday": "lny"}
+{"id": "lw3-0114", "text": "Day 3 of Diwali: Lakshmi Puja at 6 p.m.", "family": "E", "holiday": "diwali", "note": "day of a five-day festival"}
+{"id": "lw3-0115", "text": "Two days after Eid al-Adha, the office reopens.", "family": "E", "holiday": "eidadha"}
+{"id": "lw3-0116", "text": "Seventh day of Passover: Yizkor at 10 a.m.", "family": "E", "holiday": "passover"}
+{"id": "lw3-0117", "text": "The day after Yom Kippur, please return all prayer books.", "family": "E", "holiday": "yomkippur"}
+{"id": "lw3-0118", "text": "Morning after Holi: clean-up volunteers needed.", "family": "E", "holiday": "holi"}
+{"id": "lw3-0119", "text": "The first day of Ramadan will be confirmed by moon sighting.", "family": "E", "holiday": "ramadan"}
+{"id": "lw3-0120", "text": "Last 10 nights of Ramadan: i'tikaf registration open", "family": "E", "holiday": "ramadan", "note": "last ten nights"}
+{"id": "lw3-0121", "text": "The day before Chinese New Year, shops close early.", "family": "E", "holiday": "lny"}
+{"id": "lw3-0122", "text": "Dhanteras, two days before Diwali – jewellery offers", "family": "E", "holiday": "diwali"}
+{"id": "lw3-0123", "text": "Erev Pesach: the kitchen closes at 10 a.m.", "family": "E", "holiday": "passover"}
+{"id": "lw3-0124", "text": "Fifth night of Chanukah party at the Levys'", "family": "E", "holiday": "hanukkah"}
+{"id": "lw3-0125", "text": "Chap Goh Meh, the 15th day of Chinese New Year", "family": "E", "holiday": "lny", "note": "named last day, Malaysia"}
+{"id": "lw3-0126", "text": "The day after the Dragon Boat Festival is a normal working day.", "family": "E", "holiday": "dragonboat"}
+{"id": "lw3-0127", "text": "Two days before the Dragon Boat Festival: final crew practice", "family": "E", "holiday": "dragonboat"}
+{"id": "lw3-0128", "text": "The night of the Mid-Autumn Festival – lantern riddles at 8pm", "family": "E", "holiday": "midautumn"}
+{"id": "lw3-0129", "text": "Second day of Eid al-Fitr: open house 11am–4pm", "family": "E", "holiday": "eidfitr"}
+{"id": "lw3-0130", "text": "Third day of Eid al-Adha: office remains closed.", "family": "E", "holiday": "eidadha"}
+{"id": "lw3-0131", "text": "The evening before Purim, Megillah reading at 7 p.m.", "family": "E", "holiday": "purim"}
+{"id": "lw3-0132", "text": "Selichot, the Saturday night before Rosh Hashanah", "family": "E", "holiday": "roshhashanah", "note": "weekday before a holiday"}
+{"id": "lw3-0133", "text": "At the end of Yom Kippur, break-fast at 7:40 p.m.", "family": "E", "holiday": "yomkippur"}
+{"id": "lw3-0134", "text": "Term ends one week before the end of Ramadan.", "family": "E", "holiday": "ramadan"}
+{"id": "lw3-0135", "text": "The first weekday after Holi, classes resume.", "family": "E", "holiday": "holi"}
+{"id": "lw3-0136", "text": "Shushan Purim, the day after Purim, in Jerusalem", "family": "E", "holiday": "purim", "note": "day after named by its own name"}
+{"id": "lw3-0137", "text": "During Ramadan, office hours are 8 a.m. to 2 p.m.", "family": "F", "holiday": "ramadan"}
+{"id": "lw3-0138", "text": "The café will remain open throughout Passover with a kosher-for-Pesach menu.", "family": "F", "holiday": "passover"}
+{"id": "lw3-0139", "text": "We are closed over Hanukkah.", "family": "F", "holiday": "hanukkah"}
+{"id": "lw3-0140", "text": "Throughout the Diwali holidays, the warehouse will be closed.", "family": "F", "holiday": "diwali"}
+{"id": "lw3-0141", "text": "Over Chinese New Year, deliveries are suspended.", "family": "F", "holiday": "lny"}
+{"id": "lw3-0142", "text": "All eight days of Hanukkah: menorah lit nightly in the lobby", "family": "F", "holiday": "hanukkah"}
+{"id": "lw3-0143", "text": "During the Eid al-Adha holidays, the bank will be closed.", "family": "F", "holiday": "eidadha"}
+{"id": "lw3-0144", "text": "Lanterns on display throughout the Mid-Autumn Festival weekend", "family": "F", "holiday": "midautumn"}
+{"id": "lw3-0145", "text": "The rabbi is unavailable for appointments during the Days of Awe.", "family": "F", "holiday": "several", "note": "named period between two holidays"}
+{"id": "lw3-0146", "text": "Over the Holi break, the hostel mess is shut.", "family": "F", "holiday": "holi"}
+{"id": "lw3-0147", "text": "During the Dragon Boat Festival holiday, ferry timetables change.", "family": "F", "holiday": "dragonboat"}
+{"id": "lw3-0148", "text": "Throughout Purim, the gemach is closed.", "family": "F", "holiday": "purim"}
+{"id": "lw3-0149", "text": "During Yom Kippur, the office will be closed and phones off.", "family": "F", "holiday": "yomkippur"}
+{"id": "lw3-0150", "text": "Parking restrictions near the mosque for the whole of Ramadan", "family": "F", "holiday": "ramadan"}
+{"id": "lw3-0151", "text": "Throughout the Eid al-Fitr break, customer service runs reduced hours.", "family": "F", "holiday": "eidfitr"}
+{"id": "lw3-0152", "text": "Over the Rosh Hashanah long weekend, the pool is closed.", "family": "F", "holiday": "roshhashanah"}
+{"id": "lw3-0153", "text": "For the entire Diwali week, our branch timings are 10–4.", "family": "F", "holiday": "diwali"}
+{"id": "lw3-0154", "text": "Courier pickups pause during the Lunar New Year holiday period.", "family": "F", "holiday": "lny"}
+{"id": "lw3-0155", "text": "During Chol Hamoed Pesach the office is open half days.", "family": "F", "holiday": "passover", "note": "intermediate days of the festival"}
+{"id": "lw3-0156", "text": "Across all three days of Eid al-Adha, meat distribution runs daily.", "family": "F", "holiday": "eidadha"}
+{"id": "lw3-0157", "text": "During the Mid-Autumn holidays, the Taipei office is closed.", "family": "F", "holiday": "midautumn"}
+{"id": "lw3-0158", "text": "Holi weekend: colour play on both days", "family": "F", "holiday": "holi"}
+{"id": "lw3-0159", "text": "Purim week: costumes are allowed in class.", "family": "F", "holiday": "purim"}
+{"id": "lw3-0160", "text": "Closed from Eid al-Fitr until the following Monday.", "family": "G", "holiday": "eidfitr"}
+{"id": "lw3-0161", "text": "Leave requested from Diwali to 15 November.", "family": "G", "holiday": "diwali"}
+{"id": "lw3-0162", "text": "No meetings between Rosh Hashanah and Yom Kippur, please.", "family": "G", "holiday": "several"}
+{"id": "lw3-0163", "text": "Office closed after Passover until 2 May.", "family": "G", "holiday": "passover"}
+{"id": "lw3-0164", "text": "Starting Ramadan, prayer times will be posted weekly.", "family": "G", "holiday": "ramadan"}
+{"id": "lw3-0165", "text": "From Chinese New Year's Eve to the fourth day, the factory stops.", "family": "G", "holiday": "lny"}
+{"id": "lw3-0166", "text": "Construction resumes after Eid al-Adha.", "family": "G", "holiday": "eidadha"}
+{"id": "lw3-0167", "text": "Before Holi, please return the borrowed dhol drums.", "family": "G", "holiday": "holi"}
+{"id": "lw3-0168", "text": "Until Hanukkah, the gift shop also opens on Sundays.", "family": "G", "holiday": "hanukkah"}
+{"id": "lw3-0169", "text": "Mooncake pre-orders close one week before the Mid-Autumn Festival.", "family": "G", "holiday": "midautumn"}
+{"id": "lw3-0170", "text": "Between Purim and Passover, matzah orders are taken at the office.", "family": "G", "holiday": "several"}
+{"id": "lw3-0171", "text": "After the Dragon Boat Festival, the summer timetable begins.", "family": "G", "holiday": "dragonboat"}
+{"id": "lw3-0172", "text": "From Yom Kippur through the end of Sukkot, the sukkah is open.", "family": "G", "holiday": "yomkippur", "note": "bound is an out-of-scope holiday"}
+{"id": "lw3-0173", "text": "Annual leave from the first night of Hanukkah to New Year's Day", "family": "G", "holiday": "hanukkah"}
+{"id": "lw3-0174", "text": "Please complete the staff survey by Diwali.", "family": "G", "holiday": "diwali"}
+{"id": "lw3-0175", "text": "Applications open after Rosh Hashanah and close before Hanukkah.", "family": "G", "holiday": "several"}
+{"id": "lw3-0176", "text": "From the start of Ramadan to Eid, iftar is served daily.", "family": "G", "holiday": "several"}
+{"id": "lw3-0177", "text": "Hajj group bookings are accepted between Eid al-Fitr and Eid al-Adha.", "family": "G", "holiday": "several"}
+{"id": "lw3-0178", "text": "Trial period: Lunar New Year to the end of March", "family": "G", "holiday": "lny"}
+{"id": "lw3-0179", "text": "Back in the office the Tuesday after Eid al-Adha.", "family": "G", "holiday": "eidadha"}
+{"id": "lw3-0180", "text": "Exams start the Monday after Holi.", "family": "G", "holiday": "holi"}
+{"id": "lw3-0181", "text": "Renovation runs from Passover through Shavuot.", "family": "G", "holiday": "passover", "note": "bound is an out-of-scope holiday"}
+{"id": "lw3-0182", "text": "Classes run until the Mid-Autumn Festival, then a 3-day break.", "family": "G", "holiday": "midautumn"}
+{"id": "lw3-0183", "text": "Fundraising drive: Purim through the end of March", "family": "G", "holiday": "purim"}
+{"id": "lw3-0184", "text": "Payroll will be processed ahead of Chinese New Year.", "family": "G", "holiday": "lny"}
+{"id": "lw3-0185", "text": "By Yom Kippur, all High Holiday tickets must be collected.", "family": "G", "holiday": "yomkippur"}
+{"id": "lw3-0186", "text": "Choir rehearsals every Thursday from Rosh Hashanah onward", "family": "G", "holiday": "roshhashanah"}
+{"id": "lw3-0187", "text": "Sunday after the Dragon Boat Festival – team lunch", "family": "G", "holiday": "dragonboat"}
+{"id": "lw3-0188", "text": "No new requests between Diwali and Bhai Dooj.", "family": "G", "holiday": "diwali", "note": "bound is a related Hindu day"}
+{"id": "lw3-0189", "text": "Payment is due no later than 30 days after Ramadan ends.", "family": "G", "holiday": "ramadan"}
+{"id": "lw3-0190", "text": "From the eve of Rosh Hashanah to the end of Yom Kippur", "family": "G", "holiday": "several"}
+{"id": "lw3-0191", "text": "The library closes the Friday before Purim.", "family": "G", "holiday": "purim"}
+{"id": "lw3-0192", "text": "Ferry service suspended from Dragon Boat Festival to the following Sunday.", "family": "G", "holiday": "dragonboat"}
+{"id": "lw3-0193", "text": "Delivery window: Eid al-Fitr ±3 days", "family": "G", "holiday": "eidfitr", "note": "plus-minus offset"}
+{"id": "lw3-0194", "text": "Kindly avoid scheduling interviews in the fortnight before Eid al-Adha.", "family": "G", "holiday": "eidadha"}
+{"id": "lw3-0195", "text": "We will reopen 2 weeks after Chinese New Year.", "family": "G", "holiday": "lny"}
+{"id": "lw3-0196", "text": "Dear parents, school will be closed for Eid al-Adha and will reopen the day after.", "family": "H", "holiday": "eidadha"}
+{"id": "lw3-0197", "text": "Hi Sarah, could we push our call to after Yom Kippur? I'm offline until then.", "family": "H", "holiday": "yomkippur"}
+{"id": "lw3-0198", "text": "I'm flying back to Kuala Lumpur for Hari Raya and will reply when I return.", "family": "H", "holiday": "eidfitr"}
+{"id": "lw3-0199", "text": "Kindly grant me leave for Diwali as I will be travelling to my hometown, Jaipur.", "family": "H", "holiday": "diwali"}
+{"id": "lw3-0200", "text": "Your flight to Seoul departs two days before Chuseok. Check-in opens 3 hours prior.", "family": "H", "holiday": "midautumn"}
+{"id": "lw3-0201", "text": "Please be advised that our Singapore office will be closed for Chinese New Year.", "family": "H", "holiday": "lny"}
+{"id": "lw3-0202", "text": "We're hosting a small Hanukkah gathering on the third night. Would love to see you!", "family": "H", "holiday": "hanukkah"}
+{"id": "lw3-0203", "text": "The Taiwan team is off for the Dragon Boat Festival, so expect slower replies.", "family": "H", "holiday": "dragonboat"}
+{"id": "lw3-0204", "text": "Reminder: the JCC closes early on Purim for the carnival setup.", "family": "H", "holiday": "purim"}
+{"id": "lw3-0205", "text": "Due to Passover, our Tel Aviv branch will operate on a reduced schedule.", "family": "H", "holiday": "passover"}
+{"id": "lw3-0206", "text": "I'll be fasting for Ramadan, so could we move lunch meetings to after iftar?", "family": "H", "holiday": "ramadan"}
+{"id": "lw3-0207", "text": "Shana tova! Our office reopens the Wednesday after Rosh Hashanah.", "family": "H", "holiday": "roshhashanah"}
+{"id": "lw3-0208", "text": "Mum asked if you're coming home for Holi this year or next.", "family": "H", "holiday": "holi"}
+{"id": "lw3-0209", "text": "Kindly note that the vendor portal will be unavailable during the Mid-Autumn Festival.", "family": "H", "holiday": "midautumn"}
+{"id": "lw3-0210", "text": "Thank you for applying. Interviews are paused until after Eid al-Fitr.", "family": "H", "holiday": "eidfitr"}
+{"id": "lw3-0211", "text": "Our Dhaka office will be closed for Eid-ul-Adha from Sunday to Thursday.", "family": "H", "holiday": "eidadha"}
+{"id": "lw3-0212", "text": "Hope you can join us for Seder on the first night of Pesach at 7 p.m.", "family": "H", "holiday": "passover"}
+{"id": "lw3-0213", "text": "Could you send the invoice before Chinese New Year? Our finance team is away after.", "family": "H", "holiday": "lny"}
+{"id": "lw3-0214", "text": "The Jakarta site shuts for Lebaran, so ship anything urgent before then.", "family": "H", "holiday": "eidfitr", "note": "Lebaran, Indonesian name"}
+{"id": "lw3-0215", "text": "Yizkor will be held on Yom Kippur at 11:30 a.m.; please arrive early.", "family": "H", "holiday": "yomkippur"}
+{"id": "lw3-0216", "text": "Please leave for the airport early: Dubai traffic is heavy at the end of Ramadan.", "family": "H", "holiday": "ramadan"}
+{"id": "lw3-0217", "text": "The races were moved to the Saturday after Tuen Ng due to the typhoon signal.", "family": "H", "holiday": "dragonboat"}
+{"id": "lw3-0218", "text": "The PTA would love volunteers for the Purim carnival next Sunday.", "family": "H", "holiday": "purim", "note": "holiday names the event, weekday gives the date"}
+{"id": "lw3-0219", "text": "Dear team, I am on leave over Deepavali and will be back on Tuesday.", "family": "H", "holiday": "diwali"}
+{"id": "lw3-0220", "text": "Your package may be delayed by up to 5 working days due to the Tet holiday.", "family": "H", "holiday": "lny"}
+{"id": "lw3-0221", "text": "Please RSVP for the Rosh Hashanah lunch, held after services on the first day.", "family": "H", "holiday": "roshhashanah"}
+{"id": "lw3-0222", "text": "Grandpa wants everyone over for Mid-Autumn; bring lanterns for the kids.", "family": "H", "holiday": "midautumn"}
+{"id": "lw3-0223", "text": "Holiday hours: closed for Holi on Wednesday, open as usual on Thursday.", "family": "H", "holiday": "holi"}
+{"id": "lw3-0224", "text": "Sorry for the late reply. I was away for Hanukkah with family in Toronto.", "family": "H", "holiday": "hanukkah"}
+{"id": "lw3-0225", "text": "The Abu Dhabi branch will close at 1 p.m. on Arafat Day ahead of Eid al-Adha.", "family": "H", "holiday": "eidadha", "note": "eve named by its own name"}
+{"id": "lw3-0226", "text": "We can sign the lease once Ramadan is over; the landlord is away until then.", "family": "H", "holiday": "ramadan"}
+{"id": "lw3-0227", "text": "Travel tip: KTX tickets for Seollal sell out fast, so book the holiday weekend early.", "family": "H", "holiday": "lny"}
+{"id": "lw3-0228", "text": "Deepavali open house, 3 p.m. onwards", "family": "I", "holiday": "diwali"}
+{"id": "lw3-0229", "text": "Chanukah menorah lighting in the town square", "family": "I", "holiday": "hanukkah"}
+{"id": "lw3-0230", "text": "Pesach programme 2027 – sold out", "family": "I", "holiday": "passover"}
+{"id": "lw3-0231", "text": "Ramzan timings for the canteen", "family": "I", "holiday": "ramadan"}
+{"id": "lw3-0232", "text": "Bakrid holiday for all branches", "family": "I", "holiday": "eidadha"}
+{"id": "lw3-0233", "text": "Hari Raya Aidilfitri open house", "family": "I", "holiday": "eidfitr"}
+{"id": "lw3-0234", "text": "Hari Raya Haji: office closed", "family": "I", "holiday": "eidadha"}
+{"id": "lw3-0235", "text": "Tết Nguyên Đán holiday schedule", "family": "I", "holiday": "lny", "note": "Vietnamese with diacritics"}
+{"id": "lw3-0236", "text": "Seollal family visit to Busan", "family": "I", "holiday": "lny"}
+{"id": "lw3-0237", "text": "Chuseok holiday: the clinic is closed.", "family": "I", "holiday": "midautumn"}
+{"id": "lw3-0238", "text": "Spring Festival travel rush: book your train tickets early.", "family": "I", "holiday": "lny"}
+{"id": "lw3-0239", "text": "Duanwu holiday notice", "family": "I", "holiday": "dragonboat"}
+{"id": "lw3-0240", "text": "Tuen Ng Festival: special bus services to Stanley", "family": "I", "holiday": "dragonboat"}
+{"id": "lw3-0241", "text": "Eid ul Fitr prayers at the Badshahi Mosque", "family": "I", "holiday": "eidfitr"}
+{"id": "lw3-0242", "text": "Rosh Hashana dinner at our place", "family": "I", "holiday": "roshhashanah"}
+{"id": "lw3-0243", "text": "Yom HaKippurim services in the main hall", "family": "I", "holiday": "yomkippur", "note": "full Hebrew name"}
+{"id": "lw3-0244", "text": "Eid-ul-Azha holiday notice", "family": "I", "holiday": "eidadha", "note": "Azha spelling, Pakistan"}
+{"id": "lw3-0245", "text": "Phagwah celebration at the mandir", "family": "I", "holiday": "holi", "note": "Caribbean name for Holi"}
+{"id": "lw3-0246", "text": "Chag Purim celebration in the courtyard", "family": "I", "holiday": "purim"}
+{"id": "lw3-0247", "text": "Zhongqiu Jie family dinner", "family": "I", "holiday": "midautumn", "note": "pinyin name"}
+{"id": "lw3-0248", "text": "Trung Thu lantern night for the children", "family": "I", "holiday": "midautumn", "note": "Vietnamese name"}
+{"id": "lw3-0249", "text": "Hari Raya Puasa: half day on the eve", "family": "I", "holiday": "eidfitr", "note": "Singapore name"}
+{"id": "lw3-0250", "text": "Pesah break: no classes", "family": "I", "holiday": "passover"}
+{"id": "lw3-0251", "text": "Idul Adha holiday: the Jakarta office is closed.", "family": "I", "holiday": "eidadha", "note": "Indonesian spelling"}
+{"id": "lw3-0252", "text": "Idul Fitri collective leave (cuti bersama) for all staff", "family": "I", "holiday": "eidfitr", "note": "Indonesian spelling and leave term"}
+{"id": "lw3-0253", "text": "Rosh Hashonoh services", "family": "I", "holiday": "roshhashanah", "note": "Ashkenazi spelling"}
+{"id": "lw3-0254", "text": "Bazaar Ramadan opens daily from 4pm.", "family": "I", "holiday": "ramadan", "note": "Malay word order"}
+{"id": "lw3-0255", "text": "Dol Jatra holiday in West Bengal", "family": "I", "holiday": "holi", "note": "Bengali name for Holi"}
+{"id": "lw3-0256", "text": "Chanuka party on Sunday", "family": "I", "holiday": "hanukkah"}
+{"id": "lw3-0257", "text": "Yom Kippour closure (Montréal office)", "family": "I", "holiday": "yomkippur", "note": "French spelling, Canada"}
+{"id": "lw3-0258", "text": "Diwaly dinner at our place on Saturday", "family": "J", "holiday": "diwali"}
+{"id": "lw3-0259", "text": "Hannukah party in the staff room", "family": "J", "holiday": "hanukkah"}
+{"id": "lw3-0260", "text": "Out of office for Yom Kipur", "family": "J", "holiday": "yomkippur"}
+{"id": "lw3-0261", "text": "Eid-ul-Adha  holiday from Monday.", "family": "J", "holiday": "eidadha", "note": "double space"}
+{"id": "lw3-0262", "text": "CNY closure: 9–14 Feb", "family": "J", "holiday": "lny"}
+{"id": "lw3-0263", "text": "Rosh Hashana nite dinner at 8", "family": "J", "holiday": "roshhashanah"}
+{"id": "lw3-0264", "text": "Ramadhan timetable attached.", "family": "J", "holiday": "ramadan"}
+{"id": "lw3-0265", "text": "Passaver seder RSVP pls", "family": "J", "holiday": "passover"}
+{"id": "lw3-0266", "text": "Pur im costume parade", "family": "J", "holiday": "purim", "note": "word split by a space"}
+{"id": "lw3-0267", "text": "Mid Autumn Fest lantern night", "family": "J", "holiday": "midautumn"}
+{"id": "lw3-0268", "text": "Dragonboat festival holiday", "family": "J", "holiday": "dragonboat"}
+{"id": "lw3-0269", "text": "Holi- colour run 10am", "family": "J", "holiday": "holi", "note": "stray hyphen"}
+{"id": "lw3-0270", "text": "Eid al Fitr open house", "family": "J", "holiday": "eidfitr"}
+{"id": "lw3-0271", "text": "Yom kippur break fast 7:45pm", "family": "J", "holiday": "yomkippur"}
+{"id": "lw3-0272", "text": "Chinese New Yr dinner", "family": "J", "holiday": "lny"}
+{"id": "lw3-0273", "text": "R.H. services – main hall", "family": "J", "holiday": "roshhashanah", "note": "abbreviation with dots"}
+{"id": "lw3-0274", "text": "Deepawali holiday notice", "family": "J", "holiday": "diwali"}
+{"id": "lw3-0275", "text": "Chanukkah candle lighting", "family": "J", "holiday": "hanukkah"}
+{"id": "lw3-0276", "text": "Purrim carnival tickets", "family": "J", "holiday": "purim"}
+{"id": "lw3-0277", "text": "Ramdan office hours 9–3", "family": "J", "holiday": "ramadan"}
+{"id": "lw3-0278", "text": "Eid Mubarak from all of us at the store!", "family": "K", "holiday": "none"}
+{"id": "lw3-0279", "text": "Diwali Sale: up to 50% off sarees", "family": "K", "holiday": "none"}
+{"id": "lw3-0280", "text": "Holi colours available at the counter", "family": "K", "holiday": "none"}
+{"id": "lw3-0281", "text": "Passover recipes from our community cookbook", "family": "K", "holiday": "none"}
+{"id": "lw3-0282", "text": "We celebrate Diwali every year with a potluck.", "family": "K", "holiday": "diwali", "note": "recurring, no single date"}
+{"id": "lw3-0283", "text": "Ramadan Kareem – wishing you a blessed month", "family": "K", "holiday": "none"}
+{"id": "lw3-0284", "text": "The holidays are a busy time, so please order early.", "family": "K", "holiday": "none"}
+{"id": "lw3-0285", "text": "Chinese New Year hampers now in stock", "family": "K", "holiday": "none"}
+{"id": "lw3-0286", "text": "Purim Katan this year falls in Adar I.", "family": "K", "holiday": "purim", "note": "different day with a similar name"}
+{"id": "lw3-0287", "text": "Hanukkah gelt, $4.99 a bag", "family": "K", "holiday": "none"}
+{"id": "lw3-0288", "text": "Every Rosh Hashanah, we send honey to our clients.", "family": "K", "holiday": "roshhashanah", "note": "recurring, no single date"}
+{"id": "lw3-0289", "text": "Our Mid-Autumn Festival mooncake collection, from $38", "family": "K", "holiday": "none"}
+{"id": "lw3-0290", "text": "Shavuot is seven weeks after Passover.", "family": "K", "holiday": "passover", "note": "names a different holiday by offset"}
+{"id": "lw3-0291", "text": "Ramadan bazaar menu: murtabak and kuih", "family": "K", "holiday": "none"}
+{"id": "lw3-0292", "text": "The Dragon Boat team is recruiting paddlers.", "family": "K", "holiday": "none"}
+{"id": "lw3-0293", "text": "Yom Kippur War memorial lecture", "family": "K", "holiday": "none", "note": "war name"}
+{"id": "lw3-0294", "text": "Lag BaOmer bonfire on the beach", "family": "K", "holiday": "none", "note": "out-of-scope holiday"}
+{"id": "lw3-0295", "text": "Chuseok gift sets for clients, order by email", "family": "K", "holiday": "none"}
+{"id": "lw3-0296", "text": "Seder plate, ceramic, hand-painted", "family": "K", "holiday": "none"}
+{"id": "lw3-0297", "text": "Tet greeting cards printed in bulk", "family": "K", "holiday": "none"}
+{"id": "lw3-0298", "text": "Eid al-Adha sheep prices rise again this year", "family": "K", "holiday": "none"}
+{"id": "lw3-0299", "text": "Holiday closure notice", "family": "K", "holiday": "none"}
+{"id": "lw3-0300", "text": "Office closed on 1 Shawwal 1448.", "family": "L", "holiday": "eidfitr", "note": "hijri date written out"}
+{"id": "lw3-0301", "text": "First Seder: 15 Nisan, after nightfall", "family": "L", "holiday": "passover", "note": "Hebrew date"}
+{"id": "lw3-0302", "text": "Family dinner on the 15th day of the 8th lunar month", "family": "L", "holiday": "midautumn", "note": "lunar date spelled out"}
+{"id": "lw3-0303", "text": "Qurbani on 10 Dhul Hijjah after Eid prayers", "family": "L", "holiday": "eidadha", "note": "hijri date"}
+{"id": "lw3-0304", "text": "Lakshmi Puja on Kartik Amavasya", "family": "L", "holiday": "diwali", "note": "Hindu calendar date"}
+{"id": "lw3-0305", "text": "Menorah lighting begins 25 Kislev 5788.", "family": "L", "holiday": "hanukkah", "note": "Hebrew date with year"}
+{"id": "lw3-0306", "text": "Once the Shawwal moon is sighted, the office will close for three days.", "family": "L", "holiday": "eidfitr", "note": "date set by moon sighting"}
+{"id": "lw3-0307", "text": "Colour festival on Phalgun Purnima", "family": "L", "holiday": "holi", "note": "Hindu calendar date"}
+{"id": "lw3-0308", "text": "Services on 1 Tishrei, doors open at 8:30.", "family": "L", "holiday": "roshhashanah", "note": "Hebrew date"}
+{"id": "lw4-0001", "text": "chinese new year", "family": "A", "holiday": "lny", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0002", "text": "chinese lunar new year's day", "family": "A", "holiday": "lny", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0003", "text": "last chinese new year", "family": "B", "holiday": "lny", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0004", "text": "last chinese lunar new year's day", "family": "B", "holiday": "lny", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0005", "text": "last chinese new years", "family": "B", "holiday": "lny", "note": "plural 'new years'", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0006", "text": "chinese new year's day 2018", "family": "C", "holiday": "lny", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0007", "text": "diwali 2019", "family": "C", "holiday": "diwali", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0008", "text": "Deepavali in 2019", "family": "C", "holiday": "diwali", "note": "regional name, 'in' before year", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0009", "text": "choti diwali two thousand nineteen", "family": "E", "holiday": "diwali", "note": "choti diwali is the day before diwali; year in words", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0010", "text": "holi 2019", "family": "C", "holiday": "holi", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0011", "text": "chhoti holi 2019", "family": "E", "holiday": "holi", "note": "chhoti holi is the eve of holi", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0012", "text": "Eid al-Fitr 1950", "family": "C", "holiday": "eidfitr", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0013", "text": "Eid al-Fitr 2046", "family": "C", "holiday": "eidfitr", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0014", "text": "Eid al-Adha 1974", "family": "C", "holiday": "eidadha", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0015", "text": "id ul-adha 2018", "family": "J", "holiday": "eidadha", "note": "'id' spelling without e", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0016", "text": "Bakr Id 1980", "family": "I", "holiday": "eidadha", "note": "bakrid split in two words", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0017", "text": "Ramadan 2034", "family": "C", "holiday": "ramadan", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0018", "text": "Ramadan 1977", "family": "C", "holiday": "ramadan", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0019", "text": "rosh hashanah 2018", "family": "C", "holiday": "roshhashanah", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0020", "text": "rosh hashanna 2018", "family": "J", "holiday": "roshhashanah", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0021", "text": "yom kippur 2018", "family": "C", "holiday": "yomkippur", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0022", "text": "passover 2018", "family": "C", "holiday": "passover", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0023", "text": "Chanukah 2018", "family": "I", "holiday": "hanukkah", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0024", "text": "hanukah 2018", "family": "J", "holiday": "hanukkah", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0025", "text": "hannukkah 2018", "family": "J", "holiday": "hanukkah", "source": "duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "lw4-0028", "text": "meet on eid al fitr", "family": "A", "holiday": "eidfitr", "source": "recognizers-text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "lw4-0029", "text": "Eid al-Adha (or Eid al-Azha and Eidul Azha)", "family": "I", "holiday": "eidadha", "note": "three spellings in one span", "source": "recognizers-text", "url": "https://github.com/microsoft/Recognizers-Text/tree/master/Specs/DateTime/English"}
+{"id": "lw4-0030", "text": "Ramadan, also spelled Ramazan, Ramzan, Ramadhan or Ramathan", "family": "I", "holiday": "ramadan", "note": "spelling list", "source": "recognizers-text", "url": "https://github.com/microsoft/Recognizers-Text/tree/master/Specs/DateTime/English"}
+{"id": "lw4-0031", "text": "September 20, 2026 | Yom Kippur (Kol Nidre)", "family": "E", "holiday": "yomkippur", "note": "eve named as kol nidre; calendar listing date | holiday", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0032", "text": "September 25, 2026 | Mid-Autumn Festival", "family": "A", "holiday": "midautumn", "note": "calendar listing date | holiday", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0033", "text": "February 7, 2027 | 1st Night of Ramadan", "family": "E", "holiday": "ramadan", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0034", "text": "February 8, 2027 | 1st Day of Ramadan", "family": "E", "holiday": "ramadan", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0035", "text": "March 9, 2027 | Eid ul-Fitr", "family": "I", "holiday": "eidfitr", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0036", "text": "March 22, 2027 | Holi", "family": "A", "holiday": "holi", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0037", "text": "April 21, 2027 | 1st Night of Passover", "family": "E", "holiday": "passover", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0038", "text": "April 23, 2027 | 2nd full day of Passover", "family": "E", "holiday": "passover", "note": "'full day' ordinal", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0039", "text": "April 28-29, 2027 | Last Days of Passover", "family": "E", "holiday": "passover", "note": "plural last days", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0040", "text": "June 9, 2027 | Dragon Boat Festival/Dano", "family": "I", "holiday": "dragonboat", "note": "korean name dano joined by slash", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0041", "text": "December 4, 2026 | Hanukkah", "family": "A", "holiday": "hanukkah", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0042", "text": "May 16, 2027 | Eid al-Adha", "family": "A", "holiday": "eidadha", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0043", "text": "February 6, 2027 | Lunar New Year", "family": "A", "holiday": "lny", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0044", "text": "November 8, 2026 | Diwali", "family": "A", "holiday": "diwali", "source": "hcpss", "url": "https://www.hcpss.org/calendar/26-27-cultural-religious-observances/"}
+{"id": "lw4-0045", "text": "Rosh Hashanah: Friday, September 11 (sundown), Saturday, September 12", "family": "H", "holiday": "roshhashanah", "note": "start at sundown in parens", "source": "parentsleague", "url": "https://www.parentsleague.org/schools/nyc-school-vacation-dates-2026-27"}
+{"id": "lw4-0046", "text": "Yom Kippur: Monday, September 21 (some schools closed)", "family": "H", "holiday": "yomkippur", "source": "parentsleague", "url": "https://www.parentsleague.org/schools/nyc-school-vacation-dates-2026-27"}
+{"id": "lw4-0047", "text": "Diwali: Sunday, November 8 (likely DOE takes off Friday Nov. 6)", "family": "H", "holiday": "diwali", "source": "parentsleague", "url": "https://www.parentsleague.org/schools/nyc-school-vacation-dates-2026-27"}
+{"id": "lw4-0048", "text": "Lunar New Year: Saturday, February 6 (likely DOE takes off)", "family": "H", "holiday": "lny", "source": "parentsleague", "url": "https://www.parentsleague.org/schools/nyc-school-vacation-dates-2026-27"}
+{"id": "lw4-0049", "text": "Eid al-Fitr: Wednesday, March 10 (Starts at sundown on Tuesday 3/9 – some schools closed)", "family": "H", "holiday": "eidfitr", "note": "start at sundown the day before", "source": "parentsleague", "url": "https://www.parentsleague.org/schools/nyc-school-vacation-dates-2026-27"}
+{"id": "lw4-0050", "text": "Eid al-Adha: Tuesday, May 18 (starts at sundown on Monday 5/17 – some schools closed)", "family": "H", "holiday": "eidadha", "note": "start at sundown the day before", "source": "parentsleague", "url": "https://www.parentsleague.org/schools/nyc-school-vacation-dates-2026-27"}
+{"id": "lw4-0051", "text": "EXPATS SERVICE CENTRE OPERATING HOURS FOR CHINESE NEW YEAR AND RAMADAN 2026", "family": "H", "holiday": "several", "note": "all caps; two holidays share one year", "source": "mdec", "url": "https://www.mdec.my/expats/announcement/expats-service-centre-operating-hours-for-chinese-new-year-and-ramadan-2026"}
+{"id": "lw4-0052", "text": "In conjunction with the month of Ramadan,", "family": "F", "holiday": "ramadan", "note": "'in conjunction with' as a time joiner", "source": "mdec", "url": "https://www.mdec.my/expats/announcement/expats-service-centre-operating-hours-for-chinese-new-year-and-ramadan-2026"}
+{"id": "lw4-0053", "text": "throughout the Ramadan period.", "family": "F", "holiday": "ramadan", "source": "mdec", "url": "https://www.mdec.my/expats/announcement/expats-service-centre-operating-hours-for-chinese-new-year-and-ramadan-2026"}
+{"id": "lw4-0054", "text": "Hari Raya Aidilfitri will be announced at a later date.", "family": "I", "holiday": "eidfitr", "source": "mdec", "url": "https://www.mdec.my/expats/announcement/expats-service-centre-operating-hours-for-chinese-new-year-and-ramadan-2026"}
+{"id": "lw4-0055", "text": "Notice: Office Hours on Lunar New Year Eve", "family": "E", "holiday": "lny", "source": "hksi", "url": "https://www.hksi.org/notice-office-hours-on-lunar-new-year-eve/"}
+{"id": "lw4-0056", "text": "Our offices will also be closed for the Lunar New Year holiday as follows:", "family": "H", "holiday": "lny", "source": "hksi", "url": "https://www.hksi.org/notice-office-hours-on-lunar-new-year-eve/"}
+{"id": "lw4-0057", "text": "Early closure of the Academy Secretariat Office on Chinese New Year’s Eve", "family": "E", "holiday": "lny", "source": "hkam", "url": "https://hkam.org.hk/en/news/early-closure-academy-secretariat-office-chinese-new-years-eve-and-temporary-closure-canteen-1"}
+{"id": "lw4-0058", "text": "16 February 2026, the Chinese New Year’s Eve.", "family": "E", "holiday": "lny", "note": "explicit date then the eve as an appositive", "source": "hkam", "url": "https://hkam.org.hk/en/news/early-closure-academy-secretariat-office-chinese-new-years-eve-and-temporary-closure-canteen-1"}
+{"id": "lw4-0059", "text": "during the Chinese New Year period as follows:", "family": "F", "holiday": "lny", "source": "hkam", "url": "https://hkam.org.hk/en/news/early-closure-academy-secretariat-office-chinese-new-years-eve-and-temporary-closure-canteen-1"}
+{"id": "lw4-0060", "text": "Chuseok 2026 falls on Friday, September 25.", "family": "C", "holiday": "midautumn", "source": "korvia", "url": "https://www.korvia.com/magazine/chuseok-2026-korea-holiday-guide"}
+{"id": "lw4-0061", "text": "Chuseok Eve", "family": "E", "holiday": "midautumn", "source": "korvia", "url": "https://www.korvia.com/magazine/chuseok-2026-korea-holiday-guide"}
+{"id": "lw4-0062", "text": "Chuseok Day is Friday, September 25, 2026.", "family": "I", "holiday": "midautumn", "note": "'Chuseok Day' = the main day of a 3-day holiday", "source": "korvia", "url": "https://www.korvia.com/magazine/chuseok-2026-korea-holiday-guide"}
+{"id": "lw4-0063", "text": "Are banks, hospitals and transport open during Chuseok 2026?", "family": "F", "holiday": "midautumn", "source": "korvia", "url": "https://www.korvia.com/magazine/chuseok-2026-korea-holiday-guide"}
+{"id": "lw4-0064", "text": "so on Chuseok night it looks slightly thin on its left side.", "family": "D", "holiday": "midautumn", "source": "korvia", "url": "https://www.korvia.com/magazine/chuseok-2026-korea-holiday-guide"}
+{"id": "lw4-0065", "text": "When is Chuseok in 2026?", "family": "C", "holiday": "midautumn", "source": "korvia", "url": "https://www.korvia.com/magazine/chuseok-2026-korea-holiday-guide"}
+{"id": "lw4-0066", "text": "Community-Wide Purim Carnival", "family": "K", "holiday": "purim", "note": "event name", "source": "bnaijehudah", "url": "https://bnaijehudah.org/events/categories/purim"}
+{"id": "lw4-0068", "text": "Shushan After Dark: The Real Purim Story", "family": "K", "holiday": "purim", "note": "event title", "source": "bnaijehudah", "url": "https://bnaijehudah.org/events/categories/purim"}
+{"id": "lw4-0069", "text": "Due to the Dragon Boat Festival holiday, the Weight Training Room will be closed", "family": "H", "holiday": "dragonboat", "source": "ntnu", "url": "https://www.phr.ntnu.edu.tw/en/news/Due-to-the-Dragon-Boat-Festival-holiday-the-Weight-Training-Room-will-be-closed-on-Friday-June-19-We-apologize-for-any-inconvenience-caused-%C2%A0-50716193"}
+{"id": "lw4-0070", "text": "Closure of the Singapore Consulate-General in Chengdu for Dragon Boat Festival 2026", "family": "C", "holiday": "dragonboat", "source": "mfa-sg", "url": "https://chengdu.mfa.gov.sg/mission-updates/dragon-boat-festival-2026/"}
+{"id": "lw4-0071", "text": "In observance of the Dragon Boat Festival, the Consulate-General of the", "family": "H", "holiday": "dragonboat", "source": "mfa-sg", "url": "https://chengdu.mfa.gov.sg/mission-updates/dragon-boat-festival-2026/"}
+{"id": "lw4-0072", "text": "China’s National Dragon Boat Holiday", "family": "A", "holiday": "dragonboat", "note": "'dragon boat holiday' without 'festival'", "source": "china-briefing", "url": "https://www.china-briefing.com/news/chinas-national-dragon-boat-holiday/"}
+{"id": "lw4-0073", "text": "week from Monday-Wednesday due to the Dragon Boat Festival taking place.", "family": "H", "holiday": "dragonboat", "source": "china-briefing", "url": "https://www.china-briefing.com/news/chinas-national-dragon-boat-holiday/"}
+{"id": "lw4-0074", "text": "The Dragon Boat Festival, also known as Duanwu ,", "family": "I", "holiday": "dragonboat", "note": "space before comma kept", "source": "china-briefing", "url": "https://www.china-briefing.com/news/chinas-national-dragon-boat-holiday/"}
+{"id": "lw4-0075", "text": "The Dragon Boat Festival on the weekend of Friday, June 19", "family": "L", "holiday": "dragonboat", "note": "festival anchored to 'the weekend of' a date", "source": "apc-pli", "url": "https://www.apc-pli.com/service-alerts/the-dragon-boat-festival"}
+{"id": "lw4-0076", "text": "Dragon Boat Festival observed across Asia", "family": "H", "holiday": "dragonboat", "source": "apc-pli", "url": "https://www.apc-pli.com/service-alerts/the-dragon-boat-festival"}
+{"id": "lw4-0077", "text": "EMBASSY TO CLOSE ON 25-29 SEPTEMBER 2015 FOR CHUSEOK", "family": "H", "holiday": "midautumn", "note": "all caps", "source": "philembassy-seoul", "url": "https://philembassy-seoul.com/announcements-advisories/embassy-to-close-on-25-29-september-2015-for-chuseok"}
+{"id": "lw4-0078", "text": "in the observance of the Chuseok (Midautumn Festival)", "family": "I", "holiday": "midautumn", "note": "'Midautumn' as one word in parens", "source": "philembassy-seoul", "url": "https://philembassy-seoul.com/announcements-advisories/embassy-to-close-on-25-29-september-2015-for-chuseok"}
+{"id": "lw4-0079", "text": "Embassy Holiday Notice - Chuseok (Sept. 28, 29)", "family": "H", "holiday": "midautumn", "source": "mzv-cz", "url": "https://mzv.gov.cz/seoul/en/about_the_embassy/news/embassy_holiday_notice_chuseok_sept_28.html"}
+{"id": "lw4-0080", "text": "28th and 29th on the occasion of Chuseok (Korean Thanksgiving) holidays.", "family": "H", "holiday": "midautumn", "note": "'Korean Thanksgiving' gloss", "source": "mzv-cz", "url": "https://mzv.gov.cz/seoul/en/about_the_embassy/news/embassy_holiday_notice_chuseok_sept_28.html"}
+{"id": "lw4-0081", "text": "Bank Holiday Today, Nov 9: Banks Closed in 8 States for Diwali", "family": "H", "holiday": "diwali", "source": "kotakneo", "url": "https://www.kotakneo.com/news/personal-finance/bank-holiday-today-november-9-2026-state-wise-list/"}
+{"id": "lw4-0082", "text": "Diwali bank holidays continue through November 11, with closures varying across cities.", "family": "G", "holiday": "diwali", "source": "kotakneo", "url": "https://www.kotakneo.com/news/personal-finance/bank-holiday-today-november-9-2026-state-wise-list/"}
+{"id": "lw4-0083", "text": "The Diwali holiday schedule will continue in several states over the next two days.", "family": "H", "holiday": "diwali", "source": "kotakneo", "url": "https://www.kotakneo.com/news/personal-finance/bank-holiday-today-november-9-2026-state-wise-list/"}
+{"id": "lw4-0084", "text": "bank closures during the Diwali period vary by location.", "family": "F", "holiday": "diwali", "source": "kotakneo", "url": "https://www.kotakneo.com/news/personal-finance/bank-holiday-today-november-9-2026-state-wise-list/"}
+{"id": "lw4-0085", "text": "Bhai Dooj To Diwali", "family": "L", "holiday": "diwali", "note": "range from a diwali sub-day to diwali, order reversed", "source": "goodreturns", "url": "https://www.goodreturns.in/news/bank-holiday-today-november-11-2026-why-sbi-hdfc-icici-other-banks-closed-today-bhai-dooj-diwali-1546307.html"}
+{"id": "lw4-0086", "text": "last day of Diwali.", "family": "E", "holiday": "diwali", "source": "goodreturns", "url": "https://www.goodreturns.in/news/bank-holiday-today-november-11-2026-why-sbi-hdfc-icici-other-banks-closed-today-bhai-dooj-diwali-1546307.html"}
+{"id": "lw4-0087", "text": "In case of Diwali, Bhai Dooj marks the last day of the festival.", "family": "E", "holiday": "diwali", "note": "diwali sub-day named (bhai dooj)", "source": "goodreturns", "url": "https://www.goodreturns.in/news/bank-holiday-today-november-11-2026-why-sbi-hdfc-icici-other-banks-closed-today-bhai-dooj-diwali-1546307.html"}
+{"id": "lw4-0088", "text": "Planning A Bank Visit During Diwali?", "family": "F", "holiday": "diwali", "source": "outlookmoney", "url": "https://www.outlookmoney.com/banking/planning-a-bank-visit-during-diwali-check-bank-holidays-from-november-8-to-11-and-other-dates-in-november"}
+{"id": "lw4-0089", "text": "Branch closures span Diwali period from November 8 through November 11.", "family": "F", "holiday": "diwali", "source": "outlookmoney", "url": "https://www.outlookmoney.com/banking/planning-a-bank-visit-during-diwali-check-bank-holidays-from-november-8-to-11-and-other-dates-in-november"}
+{"id": "lw4-0090", "text": "Diwali falls on Sunday, November 8, this year.", "family": "H", "holiday": "diwali", "source": "outlookmoney", "url": "https://www.outlookmoney.com/banking/planning-a-bank-visit-during-diwali-check-bank-holidays-from-november-8-to-11-and-other-dates-in-november"}
+{"id": "lw4-0091", "text": "closed for Diwali (Bali Pratipada)", "family": "L", "holiday": "diwali", "note": "diwali sub-day in parens", "source": "outlookmoney", "url": "https://www.outlookmoney.com/banking/planning-a-bank-visit-during-diwali-check-bank-holidays-from-november-8-to-11-and-other-dates-in-november"}
+{"id": "lw4-0092", "text": "on account of Diwali, Laxmi Puja, Govardhan Pooja", "family": "L", "holiday": "diwali", "note": "diwali listed with its sub-days", "source": "outlookmoney", "url": "https://www.outlookmoney.com/banking/planning-a-bank-visit-during-diwali-check-bank-holidays-from-november-8-to-11-and-other-dates-in-november"}
+{"id": "lw4-0093", "text": "Celebrate the first night of Hanukkah with Chabad of Capitol Hill", "family": "E", "holiday": "hanukkah", "source": "parentmap", "url": "https://www.parentmap.com/things-to-do/hanukkah-events-kids-families-seattle-eastside/"}
+{"id": "lw4-0094", "text": "enjoy treats on the sixth night of Hanukkah.", "family": "E", "holiday": "hanukkah", "note": "nth night", "source": "parentmap", "url": "https://www.parentmap.com/things-to-do/hanukkah-events-kids-families-seattle-eastside/"}
+{"id": "lw4-0095", "text": "Hanukkah begins this year on the evening of Sunday", "family": "E", "holiday": "hanukkah", "source": "parentmap", "url": "https://www.parentmap.com/things-to-do/hanukkah-events-kids-families-seattle-eastside/"}
+{"id": "lw4-0096", "text": "Happy Hanukkah to all!", "family": "K", "holiday": "hanukkah", "note": "greeting", "source": "parentmap", "url": "https://www.parentmap.com/things-to-do/hanukkah-events-kids-families-seattle-eastside/"}
+{"id": "lw4-0097", "text": "Hanukkah Treats From Trophy Cupcakes", "family": "K", "holiday": "hanukkah", "source": "parentmap", "url": "https://www.parentmap.com/things-to-do/hanukkah-events-kids-families-seattle-eastside/"}
+{"id": "lw4-0098", "text": "Skate into Hanukkah merriment", "family": "K", "holiday": "hanukkah", "source": "parentmap", "url": "https://www.parentmap.com/things-to-do/hanukkah-events-kids-families-seattle-eastside/"}
+{"id": "lw4-0099", "text": "Vietnam picks 7-day Tet break for 2027 over 10-day option", "family": "C", "holiday": "lny", "source": "vnexpress", "url": "https://e.vnexpress.net/news/news/vietnam-picks-7-day-tet-break-for-2027-over-10-day-option-5127825.html"}
+{"id": "lw4-0100", "text": "Vietnam had a nine-day Tet break for 2026.", "family": "C", "holiday": "lny", "source": "vnexpress", "url": "https://e.vnexpress.net/news/news/vietnam-picks-7-day-tet-break-for-2027-over-10-day-option-5127825.html"}
+{"id": "lw4-0101", "text": "Lunar New Year's Day, known as Tet", "family": "I", "holiday": "lny", "source": "vnexpress", "url": "https://e.vnexpress.net/news/news/vietnam-picks-7-day-tet-break-for-2027-over-10-day-option-5127825.html"}
+{"id": "lw4-0102", "text": "Quang Ba flower market in Hanoi bustles in the days leading up to the Lunar New Year.", "family": "E", "holiday": "lny", "note": "'the days leading up to'", "source": "vnexpress", "url": "https://e.vnexpress.net/news/news/vietnam-picks-7-day-tet-break-for-2027-over-10-day-option-5127825.html"}
+{"id": "lw4-0103", "text": "Ministry of Home Affairs gives firms three options for 2027 Lunar New Year break", "family": "C", "holiday": "lny", "note": "year before the name", "source": "vietnamnews", "url": "https://vietnamnews.vn/society/1802371/ministry-of-home-affairs-gives-firms-three-options-for-2027-lunar-new-year-break.html"}
+{"id": "lw4-0104", "text": "For the 2027 Lunar New Year, civil servants and public employees will", "family": "C", "holiday": "lny", "source": "vietnamnews", "url": "https://vietnamnews.vn/society/1802371/ministry-of-home-affairs-gives-firms-three-options-for-2027-lunar-new-year-break.html"}
+{"id": "lw4-0105", "text": "after public holidays and the Lunar New Year.", "family": "G", "holiday": "lny", "source": "vietnamnews", "url": "https://vietnamnews.vn/society/1802371/ministry-of-home-affairs-gives-firms-three-options-for-2027-lunar-new-year-break.html"}
+{"id": "lw4-0106", "text": "seven-day break during the 2027 Lunar New Year", "family": "F", "holiday": "lny", "source": "vietnamnews", "url": "https://vietnamnews.vn/society/1802371/ministry-of-home-affairs-gives-firms-three-options-for-2027-lunar-new-year-break.html"}
+{"id": "lw4-0107", "text": "Surian Tower and Penang to close for Hari Raya Aidilfitri on 23 March 2026", "family": "H", "holiday": "eidfitr", "source": "humanresourcesonline", "url": "https://www.humanresourcesonline.net/myxpats-centres-in-surian-tower-and-penang-to-close-for-hari-raya-aidilfitri-on-23-march-2026"}
+{"id": "lw4-0108", "text": "Kelantan declares 19 March 2026 a public holiday ahead of Hari Raya Aidilfitri", "family": "G", "holiday": "eidfitr", "note": "'ahead of'", "source": "humanresourcesonline", "url": "https://www.humanresourcesonline.net/myxpats-centres-in-surian-tower-and-penang-to-close-for-hari-raya-aidilfitri-on-23-march-2026"}
+{"id": "lw4-0109", "text": "Monday, July 28, in observance of Hari Raya Puasa.", "family": "I", "holiday": "eidfitr", "source": "bal", "url": "https://www.bal.com/immigration-news/offices-to-close-for-muslim-holiday-2/"}
+{"id": "lw4-0110", "text": "Singapore will observe the end of Ramadan on July 28.", "family": "E", "holiday": "ramadan", "note": "'end of ramadan' used for eid", "source": "bal", "url": "https://www.bal.com/immigration-news/offices-to-close-for-muslim-holiday-2/"}
+{"id": "lw4-0111", "text": "remain closed on May 27 and 28 due to Bakrid 2026 celebrations.", "family": "I", "holiday": "eidadha", "source": "freepressjournal", "url": "https://www.freepressjournal.in/business/banks-to-remain-closed-for-bakrid-2026-in-several-cities-check-may-27-28-holiday-details-inside"}
+{"id": "lw4-0112", "text": "remain shut on May 27 and May 28 for Bakrid, also known as Eid al-Adha or Bakri Eid.", "family": "I", "holiday": "eidadha", "source": "freepressjournal", "url": "https://www.freepressjournal.in/business/banks-to-remain-closed-for-bakrid-2026-in-several-cities-check-may-27-28-holiday-details-inside"}
+{"id": "lw4-0113", "text": "Poor Arrangements For Goats Ahead Of Bakri Eid", "family": "G", "holiday": "eidadha", "source": "freepressjournal", "url": "https://www.freepressjournal.in/business/banks-to-remain-closed-for-bakrid-2026-in-several-cities-check-may-27-28-holiday-details-inside"}
+{"id": "lw4-0114", "text": "Bakri Eid 2026: West Bengal Govt Declares May 28 A Public Holiday, Cancels May 26-27 Leave", "family": "C", "holiday": "eidadha", "source": "freepressjournal", "url": "https://www.freepressjournal.in/business/banks-to-remain-closed-for-bakrid-2026-in-several-cities-check-may-27-28-holiday-details-inside"}
+{"id": "lw4-0115", "text": "During Bakrid, many families perform Qurbani", "family": "F", "holiday": "eidadha", "source": "freepressjournal", "url": "https://www.freepressjournal.in/business/banks-to-remain-closed-for-bakrid-2026-in-several-cities-check-may-27-28-holiday-details-inside"}
+{"id": "lw4-0116", "text": "The second day of Lunar New Year", "family": "E", "holiday": "lny", "source": "gov.hk", "url": "https://www.gov.hk/en/about/abouthk/holiday/2026.htm"}
+{"id": "lw4-0117", "text": "The third day of Lunar New Year", "family": "E", "holiday": "lny", "source": "gov.hk", "url": "https://www.gov.hk/en/about/abouthk/holiday/2026.htm"}
+{"id": "lw4-0118", "text": "Tuen Ng Festival", "family": "I", "holiday": "dragonboat", "source": "gov.hk", "url": "https://www.gov.hk/en/about/abouthk/holiday/2026.htm"}
+{"id": "lw4-0119", "text": "The day following the Chinese Mid-Autumn Festival", "family": "E", "holiday": "midautumn", "note": "'the day following'", "source": "gov.hk", "url": "https://www.gov.hk/en/about/abouthk/holiday/2026.htm"}
+{"id": "lw4-0120", "text": "September 24 (Thursday) – the eve of the Mid-Autumn Festival", "family": "E", "holiday": "midautumn", "source": "hko", "url": "https://www.hko.gov.hk/en/Press-Releases/110730/Moon-watching-tips-for-Mid-Autumn-Festival-2026"}
+{"id": "lw4-0121", "text": "late at night of the day following the Mid-Autumn Festival", "family": "D", "holiday": "midautumn", "note": "part of day on the day after", "source": "hko", "url": "https://www.hko.gov.hk/en/Press-Releases/110730/Moon-watching-tips-for-Mid-Autumn-Festival-2026"}
+{"id": "lw4-0122", "text": "full moon during the Mid-Autumn Festival period", "family": "F", "holiday": "midautumn", "source": "hko", "url": "https://www.hko.gov.hk/en/Press-Releases/110730/Moon-watching-tips-for-Mid-Autumn-Festival-2026"}
+{"id": "lw4-0123", "text": "Moon-watching tips for Mid-Autumn Festival 2026", "family": "C", "holiday": "midautumn", "source": "hko", "url": "https://www.hko.gov.hk/en/Press-Releases/110730/Moon-watching-tips-for-Mid-Autumn-Festival-2026"}
+{"id": "lw4-0124", "text": "The Holi celebration begins the evening of March 22.", "family": "D", "holiday": "holi", "source": "rochester", "url": "https://www.rochester.edu/registrar/religious-observances-and-academic-considerations.html"}
+{"id": "lw4-0125", "text": "Passover / Pesach (First Two Days)", "family": "E", "holiday": "passover", "source": "rochester", "url": "https://www.rochester.edu/registrar/religious-observances-and-academic-considerations.html"}
+{"id": "lw4-0126", "text": "Passover / Pesach (Final Two Days)", "family": "E", "holiday": "passover", "source": "rochester", "url": "https://www.rochester.edu/registrar/religious-observances-and-academic-considerations.html"}
+{"id": "lw4-0127", "text": "Students observing Eid may be unable to participate in exams", "family": "H", "holiday": "several", "note": "eid without fitr or adha", "source": "rochester", "url": "https://www.rochester.edu/registrar/religious-observances-and-academic-considerations.html"}
+{"id": "lw4-0128", "text": "Yom Kippur (Day of Atonement)", "family": "A", "holiday": "yomkippur", "source": "rochester", "url": "https://www.rochester.edu/registrar/religious-observances-and-academic-considerations.html"}
+{"id": "lw4-0129", "text": "return of HoliFest, the area’s biggest Holi celebration and largest color throw!", "family": "K", "holiday": "holi", "note": "event name 'HoliFest'", "source": "greenwichfreepress", "url": "https://greenwichfreepress.com/around-town/get-ready-for-the-areas-biggest-holi-celebration-color-culture-and-community-come-alive-at-holifest-246826/"}
+{"id": "lw4-0130", "text": "Looking for last-minute Holi plans in Pune?", "family": "H", "holiday": "holi", "source": "outlookindia", "url": "https://www.outlookindia.com/brand-studio/top-holi-parties-in-pune-2026-pool-parties-tickets-venues"}
+{"id": "lw4-0131", "text": "Top Holi Parties In Pune 2026: Pool Parties, Tickets & Venues", "family": "K", "holiday": "holi", "source": "outlookindia", "url": "https://www.outlookindia.com/brand-studio/top-holi-parties-in-pune-2026-pool-parties-tickets-venues"}
+{"id": "lw4-0132", "text": "Lai Bhari Holi 4.0 – Biggest Holi Party in Pune", "family": "K", "holiday": "holi", "note": "event name with version number", "source": "outlookindia", "url": "https://www.outlookindia.com/brand-studio/top-holi-parties-in-pune-2026-pool-parties-tickets-venues"}
+{"id": "lw4-0133", "text": "Q: Are there any Holi pool parties in Pune for 2026?", "family": "C", "holiday": "holi", "source": "outlookindia", "url": "https://www.outlookindia.com/brand-studio/top-holi-parties-in-pune-2026-pool-parties-tickets-venues"}
+{"id": "lw4-0134", "text": "Jews celebrate Purim on the 14th day of Adar in most cities,", "family": "L", "holiday": "purim", "note": "hebrew calendar date", "source": "dpjcc", "url": "https://www.dpjcc.org/cultural-arts/purim/"}
+{"id": "lw4-0135", "text": "read twice on Purim (ideally communally), once at night", "family": "D", "holiday": "purim", "source": "dpjcc", "url": "https://www.dpjcc.org/cultural-arts/purim/"}
+{"id": "lw4-0136", "text": "on the day of Purim itself", "family": "E", "holiday": "purim", "note": "day as opposed to the eve", "source": "dpjcc", "url": "https://www.dpjcc.org/cultural-arts/purim/"}
+{"id": "lw4-0137", "text": "Shabbat Zachor, the “Shabbat of Remembrance;” immediately precedes Purim.", "family": "L", "holiday": "purim", "note": "the sabbath before purim", "source": "dpjcc", "url": "https://www.dpjcc.org/cultural-arts/purim/"}
+{"id": "lw4-0138", "text": "Purim Extravaganza", "family": "K", "holiday": "purim", "note": "event name", "source": "tbegreatneck", "url": "https://www.tbegreatneck.org/events/purim-celebration/"}
+{"id": "lw4-0139", "text": "Purim Carnival 2026", "family": "C", "holiday": "purim", "note": "event name with year", "source": "nevehshalom", "url": "https://nevehshalom.org/purim-happenings-5786/"}
+{"id": "lw4-0140", "text": "Passover 5781", "family": "C", "holiday": "passover", "note": "hebrew year", "source": "nevehshalom", "url": "https://nevehshalom.org/purim-happenings-5786/"}
+{"id": "lw4-0141", "text": "Chanukah 5787", "family": "C", "holiday": "hanukkah", "note": "hebrew year", "source": "nevehshalom", "url": "https://nevehshalom.org/purim-happenings-5786/"}
+{"id": "lw4-0142", "text": "Rosh Hashanah 2020", "family": "C", "holiday": "roshhashanah", "source": "nevehshalom", "url": "https://nevehshalom.org/purim-happenings-5786/"}
+{"id": "lw4-0143", "text": "Teen Purim Murder Mystery Party", "family": "K", "holiday": "purim", "source": "nevehshalom", "url": "https://nevehshalom.org/purim-happenings-5786/"}
+{"id": "lw4-0144", "text": "Havdallah after Pesach", "family": "G", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/142243"}
+{"id": "lw4-0145", "text": "Supermarket chains that you can / cannot buy Chometz in right after Pesach", "family": "G", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/6982"}
+{"id": "lw4-0146", "text": "travels west for Pesach", "family": "H", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/141913"}
+{"id": "lw4-0147", "text": "Collecting water before pesach", "family": "G", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/110282"}
+{"id": "lw4-0148", "text": "Prepping produce before Pesach", "family": "G", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/142002"}
+{"id": "lw4-0149", "text": "Tefillin on erev pesach after chatzos", "family": "E", "holiday": "passover", "note": "erev plus halachic hour (chatzos = midday)", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/113479"}
+{"id": "lw4-0150", "text": "Israeli making pizza on last day of Pesach in the Diaspora", "family": "E", "holiday": "passover", "note": "last day differs by location", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/37033"}
+{"id": "lw4-0151", "text": "Can a person move during Chol HaMoed Pesach?", "family": "L", "holiday": "passover", "note": "chol hamoed = intermediate days", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/71506"}
+{"id": "lw4-0152", "text": "Mikvah erev Yom kippur", "family": "E", "holiday": "yomkippur", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/1183"}
+{"id": "lw4-0153", "text": "Wine on Erev Yom Kippur", "family": "E", "holiday": "yomkippur", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/137088"}
+{"id": "lw4-0154", "text": "Eating 2 meals Erev Yom Kippur", "family": "E", "holiday": "yomkippur", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/2924"}
+{"id": "lw4-0155", "text": "When does fasting Erev Rosh Hashanah officially begin and end?", "family": "E", "holiday": "roshhashanah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/45742"}
+{"id": "lw4-0156", "text": "When does Yom Kippur begin and End?", "family": "H", "holiday": "yomkippur", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/149267"}
+{"id": "lw4-0157", "text": "Gambling on Chanukah", "family": "I", "holiday": "hanukkah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/118820"}
+{"id": "lw4-0158", "text": "Fasting on Chanukah", "family": "I", "holiday": "hanukkah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/4122"}
+{"id": "lw4-0159", "text": "Switching residences at night during Chanukah", "family": "D", "holiday": "hanukkah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/110507"}
+{"id": "lw4-0160", "text": "Wicks of Menorah after Chanukah", "family": "G", "holiday": "hanukkah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/110632"}
+{"id": "lw4-0161", "text": "Havdalah Candle on Motzei Shabbos Chanukah", "family": "L", "holiday": "hanukkah", "note": "saturday night that falls inside chanukah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/154054"}
+{"id": "lw4-0162", "text": "Doing melacha on Purim?", "family": "A", "holiday": "purim", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/138893"}
+{"id": "lw4-0163", "text": "Smoking on purim", "family": "A", "holiday": "purim", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/69689"}
+{"id": "lw4-0164", "text": "Two days, one day, and zero days of Purim?", "family": "L", "holiday": "purim", "note": "count of purim days by place", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/55864"}
+{"id": "lw4-0165", "text": "Timing of Purim Seudah", "family": "D", "holiday": "purim", "note": "seudah = the purim meal, afternoon", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/133485"}
+{"id": "lw4-0166", "text": "Rosh hashana: is it really two days?", "family": "I", "holiday": "roshhashanah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/40391"}
+{"id": "lw4-0167", "text": "Preparing for Rosh Hashana during Elul", "family": "L", "holiday": "roshhashanah", "note": "hebrew month before the holiday", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/30451"}
+{"id": "lw4-0168", "text": "How do you prepare a ram's head for Rosh Hashana night", "family": "D", "holiday": "roshhashanah", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/45696"}
+{"id": "lw4-0169", "text": "Can pregnant women eat after midnight on Passover?", "family": "D", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/148823"}
+{"id": "lw4-0170", "text": "Selling Hametz on Amazon FBA during Passover", "family": "F", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/36661"}
+{"id": "lw4-0171", "text": "Cleaning clothes before Passover?", "family": "G", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/138681"}
+{"id": "lw4-0172", "text": "Saying Hallel Before Nightfall on the First Night of Pesach", "family": "E", "holiday": "passover", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/70742"}
+{"id": "lw4-0173", "text": "Mincha before lunch on the 8th day of Pesach (Chabad)", "family": "E", "holiday": "passover", "note": "8th day exists only outside Israel", "source": "mi-yodeya", "url": "https://judaism.stackexchange.com/questions/7041"}
+{"id": "lw4-0174", "text": "How many days are celebrated as Eid?", "family": "F", "holiday": "several", "note": "eid unspecified; length question", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/1559"}
+{"id": "lw4-0175", "text": "Food manufacturing during Ramadan", "family": "F", "holiday": "ramadan", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/32936"}
+{"id": "lw4-0176", "text": "Voluntary fasts just after Ramadan", "family": "G", "holiday": "ramadan", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/33261"}
+{"id": "lw4-0177", "text": "Different day of Eid around the world?", "family": "A", "holiday": "several", "note": "eid unspecified", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/35372"}
+{"id": "lw4-0178", "text": "Is it allowed to fast the day following the day of Eid el fitr?", "family": "E", "holiday": "eidfitr", "note": "'eid el fitr' spelling", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/41008"}
+{"id": "lw4-0179", "text": "Traveling During Ramadan: Should I Still Fast?", "family": "F", "holiday": "ramadan", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/48208"}
+{"id": "lw4-0180", "text": "Acceptable to wish someone \"happy Eid\" before the end of Ramadan?", "family": "G", "holiday": "ramadan", "note": "greeting inside a time phrase", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/48553"}
+{"id": "lw4-0181", "text": "Missing Eid prayer", "family": "K", "holiday": "several", "note": "event of eid morning, not a date request", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/48692"}
+{"id": "lw4-0182", "text": "How did the Prophet(s) & Sahaba confirm Ramadan / Eid start date?", "family": "E", "holiday": "several", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/48742"}
+{"id": "lw4-0183", "text": "Thought today was Eid and had no intent to fast - what now", "family": "L", "holiday": "several", "note": "'today was eid'", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/60627"}
+{"id": "lw4-0184", "text": "Ruling on Cutting your Hair and Nails before Eid ul Adha?", "family": "G", "holiday": "eidadha", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/76191"}
+{"id": "lw4-0185", "text": "Starting of Eid-Ul-Adha", "family": "E", "holiday": "eidadha", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/79596"}
+{"id": "lw4-0186", "text": "Is the shaytan released right before Eid or after?", "family": "G", "holiday": "several", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/9104"}
+{"id": "lw4-0187", "text": "Tablet during Ramadan", "family": "F", "holiday": "ramadan", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/91123"}
+{"id": "lw4-0188", "text": "Is it allowed to sacrifice one day after Eid-ul-Adha?", "family": "E", "holiday": "eidadha", "source": "islam-se", "url": "https://islam.stackexchange.com/questions/9778"}
+{"id": "lw4-0189", "text": "Backpacking through Indonesia during Ramadan (Bali and Gili)", "family": "F", "holiday": "ramadan", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/111036"}
+{"id": "lw4-0190", "text": "Boracay over Chinese New Year", "family": "F", "holiday": "lny", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/3537"}
+{"id": "lw4-0191", "text": "Buying Holi accessories after the event has ended", "family": "G", "holiday": "holi", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/6078"}
+{"id": "lw4-0192", "text": "Can you easily buy bus tickets in China during Chinese New Year?", "family": "F", "holiday": "lny", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/85866"}
+{"id": "lw4-0193", "text": "How hectic is traffic on days near Hari Raya Puasa in Malaysia?", "family": "L", "holiday": "eidfitr", "note": "'days near' a holiday", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/36578"}
+{"id": "lw4-0194", "text": "How to calculate when Ramadan finishes?", "family": "E", "holiday": "ramadan", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/46148"}
+{"id": "lw4-0195", "text": "Singapore events and attractions open at Chinese New Year", "family": "H", "holiday": "lny", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/22988"}
+{"id": "lw4-0196", "text": "Small Diwali gifts, from an overseas visitor in India during the festive period?", "family": "K", "holiday": "diwali", "note": "'the festive period' refers back to diwali", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/81504"}
+{"id": "lw4-0197", "text": "Travelling during Diwali in India, good idea to book ahead?", "family": "F", "holiday": "diwali", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/184053"}
+{"id": "lw4-0198", "text": "Travelling in Taiwan during Chinese New Year? Good or no good?", "family": "F", "holiday": "lny", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/43360"}
+{"id": "lw4-0199", "text": "What is Kaohsiung and Taipei like 1 week after Chinese New Year", "family": "E", "holiday": "lny", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/72332"}
+{"id": "lw4-0200", "text": "When is the peak travel time during Chinese New Year?", "family": "F", "holiday": "lny", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/39717"}
+{"id": "lw4-0201", "text": "How big is the Holi festival in India?", "family": "K", "holiday": "holi", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/17830"}
+{"id": "lw4-0202", "text": "Safety of travelling to Muslim countries/Israel during Ramadan", "family": "F", "holiday": "ramadan", "source": "travel-se", "url": "https://travel.stackexchange.com/questions/99462"}
+{"id": "lw4-0203", "text": "Wasn't that due to the Chinese New Year last year?", "family": "B", "holiday": "lny", "note": "'last year' after the name", "source": "hn", "url": "https://news.ycombinator.com/item?id=9926221"}
+{"id": "lw4-0204", "text": "Oh, and it is February - you planned for Chinese New Year, right?", "family": "H", "holiday": "lny", "source": "hn", "url": "https://news.ycombinator.com/item?id=9185426"}
+{"id": "lw4-0205", "text": "I'll check out Koba when I'm there over Chinese New Year.", "family": "F", "holiday": "lny", "source": "hn", "url": "https://news.ycombinator.com/item?id=8424439"}
+{"id": "lw4-0206", "text": "Just don't make any orders around Chinese new year.", "family": "L", "holiday": "lny", "note": "'around' a holiday", "source": "hn", "url": "https://news.ycombinator.com/item?id=7553353"}
+{"id": "lw4-0207", "text": "Or taking trips to Boracay during Chinese new years.", "family": "J", "holiday": "lny", "note": "plural 'new years'", "source": "hn", "url": "https://news.ycombinator.com/item?id=8842763"}
+{"id": "lw4-0208", "text": "Come Chinese new year", "family": "L", "holiday": "lny", "note": "'come' + holiday", "source": "hn", "url": "https://news.ycombinator.com/item?id=5273871"}
+{"id": "lw4-0209", "text": "Congratulations on your invention, and a happy Chinese New Year!", "family": "K", "holiday": "lny", "note": "greeting", "source": "hn", "url": "https://news.ycombinator.com/item?id=5154589"}
+{"id": "lw4-0210", "text": "And since it’s Diwali weekend, I hope you get to play it", "family": "L", "holiday": "diwali", "note": "'diwali weekend'", "source": "hn", "url": "https://news.ycombinator.com/item?id=50388806"}
+{"id": "lw4-0211", "text": "And Also would like to wish you all a Very Happy Diwali..", "family": "K", "holiday": "diwali", "note": "greeting", "source": "hn", "url": "https://news.ycombinator.com/item?id=4777010"}
+{"id": "lw4-0212", "text": "to take time off for Eid/Rosh Hashanah/Diwali/Festivus/whatever?", "family": "H", "holiday": "several", "note": "slash list of holidays", "source": "hn", "url": "https://news.ycombinator.com/item?id=5127195"}
+{"id": "lw4-0213", "text": "query finishes sometime after the next Hanukkah.", "family": "B", "holiday": "hanukkah", "source": "hn", "url": "https://news.ycombinator.com/item?id=19853661"}
+{"id": "lw4-0214", "text": "hundred candles over the 8 nights of Hanukkah.", "family": "F", "holiday": "hanukkah", "source": "hn", "url": "https://news.ycombinator.com/item?id=27640611"}
+{"id": "lw4-0215", "text": "I was hired to help baking doughnuts for Hanuka.", "family": "J", "holiday": "hanukkah", "note": "spelling 'Hanuka'", "source": "hn", "url": "https://news.ycombinator.com/item?id=43421954"}
+{"id": "lw4-0216", "text": "running the experiment 3 weeks after Hannukah", "family": "E", "holiday": "hanukkah", "note": "spelling 'Hannukah'", "source": "hn", "url": "https://news.ycombinator.com/item?id=2047854"}
+{"id": "lw4-0217", "text": "It was for Rosh ha'Shanah and Yom Kippur.", "family": "J", "holiday": "several", "note": "spelling 'Rosh ha'Shanah'", "source": "hn", "url": "https://news.ycombinator.com/item?id=7006723"}
+{"id": "lw4-0218", "text": "9 days until 17 days until Ramadan ends.", "family": "L", "holiday": "ramadan", "note": "countdown to the end", "source": "hn", "url": "https://news.ycombinator.com/item?id=9754452"}
+{"id": "lw4-0219", "text": "Appropriate article for the first day of Ramadan.", "family": "E", "holiday": "ramadan", "source": "hn", "url": "https://news.ycombinator.com/item?id=9741409"}
+{"id": "lw4-0220", "text": "this month of Ramzan (or Ramadan)", "family": "I", "holiday": "ramadan", "note": "'this month of' plus two spellings", "source": "hn", "url": "https://news.ycombinator.com/item?id=9839641"}
+{"id": "lw4-0221", "text": "I loose systematically 2 to 3 kg each Ramadan.", "family": "K", "holiday": "ramadan", "note": "'each ramadan' recurring, no single date", "source": "hn", "url": "https://news.ycombinator.com/item?id=8834258"}
+{"id": "lw4-0222", "text": "Call me back after Ramadan is over in PK.", "family": "G", "holiday": "ramadan", "source": "hn", "url": "https://news.ycombinator.com/item?id=23082801"}
+{"id": "lw4-0223", "text": "before last ramadan (June)", "family": "B", "holiday": "ramadan", "note": "month in parens", "source": "hn", "url": "https://news.ycombinator.com/item?id=18204337"}
+{"id": "lw4-0224", "text": "Happy Mid-Autumn Festival y'all!", "family": "K", "holiday": "midautumn", "note": "greeting", "source": "hn", "url": "https://news.ycombinator.com/item?id=49826659"}
+{"id": "lw4-0225", "text": "how the mooncakes were at last night's mid-Autumn festival", "family": "D", "holiday": "midautumn", "note": "'last night's' + holiday", "source": "hn", "url": "https://news.ycombinator.com/item?id=15406601"}
+{"id": "lw4-0226", "text": "Vietnamese schools haven't reopened since Tet, end of January.", "family": "G", "holiday": "lny", "note": "'since Tet'", "source": "hn", "url": "https://news.ycombinator.com/item?id=23003554"}
+{"id": "lw4-0227", "text": "This year, it was legit hot before Holi.", "family": "G", "holiday": "holi", "source": "hn", "url": "https://news.ycombinator.com/item?id=31476624"}
+{"id": "lw4-0228", "text": "buy it right after Passover and stock up", "family": "G", "holiday": "passover", "source": "hn", "url": "https://news.ycombinator.com/item?id=40079021"}
+{"id": "lw4-0229", "text": "delayed till after Passover and the end to precede Yom Kippur", "family": "G", "holiday": "several", "note": "two bounds on two holidays", "source": "hn", "url": "https://news.ycombinator.com/item?id=14275049"}
+{"id": "lw4-0230", "text": "My aunt helped me sell edibles during the Indian festival of Holi.", "family": "F", "holiday": "holi", "source": "hn", "url": "https://news.ycombinator.com/item?id=30751908"}
+{"id": "lw4-0231", "text": "There were two or three weeks after Lunar New Year where deliveries were delayed", "family": "E", "holiday": "lny", "note": "vague count 'two or three weeks after'", "source": "hn", "url": "https://news.ycombinator.com/item?id=22962414"}
+{"id": "lw4-0232", "text": "taken outside Quy Nhon right after Lunar New Year.", "family": "G", "holiday": "lny", "source": "hn", "url": "https://news.ycombinator.com/item?id=6085266"}
+{"id": "lw4-0233", "text": "Changes after Chinese New Year Feb. 5, 2019", "family": "G", "holiday": "lny", "note": "holiday followed by its date", "source": "github", "url": "https://github.com/mattrebor/emsiweb/issues/390"}
+{"id": "lw4-0234", "text": "Onboarding After Tet", "family": "G", "holiday": "lny", "source": "github", "url": "https://github.com/awesome-jobs/vietnam/issues/4543"}
+{"id": "lw4-0235", "text": "Onboarding after Tet holiday", "family": "G", "holiday": "lny", "source": "github", "url": "https://github.com/awesome-jobs/vietnam/issues/4548"}
+{"id": "lw4-0236", "text": "Record the trading hours of IDX during Ramadan 2027", "family": "C", "holiday": "ramadan", "source": "github", "url": "https://github.com/radenadam/portolab/issues/31"}
+{"id": "lw4-0237", "text": "Iftar Time in Dubai During Ramadan in Dubai 2026", "family": "D", "holiday": "ramadan", "note": "iftar time = sunset each day", "source": "github", "url": "https://github.com/jcops/travel/issues/148"}
+{"id": "lw4-0238", "text": "Lanterns for Mid Autumn Festival near Bell Tower Hutong", "family": "H", "holiday": "midautumn", "source": "github", "url": "https://github.com/JoseManuelDavilaMancilla/living-museum/issues/4"}
+{"id": "lw4-0239", "text": "Ramadan mode: suhoor and iftar countdown, Taraweeh time", "family": "K", "holiday": "ramadan", "note": "feature name", "source": "github", "url": "https://github.com/NotYousha/masjid-board/issues/21"}
+{"id": "lw4-0240", "text": "things from other calendars: Mid-Autumn Festival, Ramadan", "family": "K", "holiday": "several", "source": "github", "url": "https://github.com/opening-hours/opening_hours.js/issues/408"}
+{"id": "lw4-0241", "text": "add  a new page for the mid-autumn festival event", "family": "K", "holiday": "midautumn", "note": "double space kept", "source": "github", "url": "https://github.com/njhpca/njhpca.github.io/issues/2"}
+{"id": "lw4-0242", "text": "Add Jewish holidays celebrated in the US", "family": "K", "holiday": "none", "source": "github", "url": "https://github.com/zachnology/holidate/issues/1"}
+{"id": "lw4-0243", "text": "Port JewishCalendar.isMukafChoma and isPurim() from KosherJava", "family": "K", "holiday": "purim", "note": "code identifier", "source": "github", "url": "https://github.com/yakir8/kosher_dart/issues/79"}
