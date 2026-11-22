@@ -121,7 +121,7 @@ function periodPair(code: string, y?: number): [string, string] | null {
 const tok = (code: string, n: number) => `L:${code}${n >= 0 ? "+" : ""}${n}`;
 
 /** Find holiday phrases. "x" when a phrase is one the policy leaves out. */
-function findAll(t: string): Found[] | "x" {
+function findAll(t: string, fuzzy: [number, number][]): Found[] | "x" {
   const out: Found[] = [];
   const re = new RegExp(`(?<![\\p{L}\\d])(?:${NAME_RE})(?![\\p{L}\\d])`, "gu");
   for (const m of t.matchAll(re)) {
@@ -190,7 +190,10 @@ function findAll(t: string): Found[] | "x" {
       if (yy !== null) { y = yy; end += mm[0].length; rest = t.slice(end); }
     }
     if ((mm = rest.match(/^ (?:of )?(?:the )?year of (?:the )?\w+/))) { end += mm[0].length; rest = t.slice(end); }
-    if (new RegExp(`^ ${FUZZY_AFTER}\\b`).test(rest)) return "x";
+    if ((mm = rest.match(new RegExp(`^ ${FUZZY_AFTER}\\b`)))) {
+      fuzzy.push([start, end + mm[0].length]);
+      continue;
+    }
     // the period, or a day of it
     const period = PERIOD_CODES.has(code) && !isDay;
     if (y !== undefined) {
@@ -217,9 +220,19 @@ const JOIN = /\b(?:to|until|till|til|untill|thru|through|and|from|between|before
 /** The h16 layer. `full` is h15's answer for the whole text; `parse` is h15. */
 export function withLunar(text: string, full: string, parse: Parse): string {
   const t = normalize(text);
-  const found = findAll(t);
+  const fuzzy: [number, number][] = [];
+  const found = findAll(t, fuzzy);
   if (found === "x") return "x";
-  if (!found.length) return full;
+  if (!found.length) {
+    if (!fuzzy.length) return full;
+    // a fuzzy period ("diwali week") is no date; another date in the text still is ("diwali weekend nov 7-9")
+    let o = "";
+    let q = 0;
+    for (const [a, b] of fuzzy) { o += t.slice(q, a) + " "; q = b; }
+    o = (o + t.slice(q)).replace(/\s+/g, " ").trim();
+    const p = o ? parse(o) : "x";
+    return /^(?:d|dt) /.test(p) ? p : "x";
+  }
   if (found.length > SENTINELS.length) return "x";
   let rest = "";
   let other = "";
