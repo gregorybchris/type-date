@@ -1,0 +1,53 @@
+/* Touch screens: 44px tap targets. Layout (one column, phone fields) is the container query below, by the picker's
+   own width; this block is only about the pointer. */
+@media (pointer: coarse) {
+  .td-root {
+    --td-px: max(16px, env(safe-area-inset-left, 0px));
+  }
+  .td-search input {
+    font-size: 16px;
+  }
+  .td-icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .td-clear {
+    width: 44px;
+    height: 44px;
+    margin: 0 -12px 0 -8px;
+  }
+  .td-clear svg {
+    padding: 6px;
+  }
+  .td-cal-head {
+    height: 44px;
+    margin-bottom: 4px;
+  }
+  .td-cell {
+    height: 46px;
+  }
+  .td-field {
+    height: 44px;
+    padding: 0 12px;
+  }
+  /* 44px segments inside the 1px border */
+  .td-seg {
+    height: 46px;
+  }
+  .td-opt {
+    height: 44px;
+  }
+  .td-ampm {
+    height: 52px;
+    padding: 0 4px 0 12px;
+  }
+  .td-ampm button {
+    height: 44px;
+    min-width: 44px;
+  }
+  .td-rrule,
+  .td-chip,
+  .td-note {
+    min-height: 32px;
+  }
+}

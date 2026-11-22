@@ -23,3 +23,29 @@ test("the card is never taller than the viewport on a phone", async ({ page }) =
   const [card] = await boxes(page, ".td-card");
   expect(card!.h).toBeLessThanOrEqual(page.viewportSize()!.height);
 });
+
+test("JS and CSS agree on the layout at every width, including just around the breakpoint", async ({ page }, info) => {
+  test.skip(isTouch(info), "desktop windows only");
+  await open(page, "3-4pm tomorrow");
+  for (const w of [380, 440, 470, 490, 500, 520, 560, 800]) {
+    await page.setViewportSize({ width: w, height: 900 });
+    await expect
+      .poll(async () => {
+        const s = await page.evaluate(`(() => {
+          const root = document.querySelector(".td-root");
+          const cal = document.querySelector(".td-panel-cal").getBoundingClientRect();
+          const time = document.querySelector(".td-panel-time").getBoundingClientRect();
+          return {
+            narrowByWidth: root.getBoundingClientRect().width <= 461,
+            // CSS: one column puts the time list under the calendar.
+            cssNarrow: time.top >= cal.bottom - 1,
+            // JS: the short placeholder and the trimmed grid (Nov 2026 needs 5 weeks).
+            jsNarrow: document.querySelector(".td-search input").placeholder.length < 30,
+            jsTrim: document.querySelectorAll(".td-weeks [role=row]").length === 5,
+          };
+        })()`);
+        return JSON.stringify(s);
+      }, { message: `at ${w}px` })
+      .toMatch(/^\{"narrowByWidth":(true|false),"cssNarrow":\1,"jsNarrow":\1,"jsTrim":\1\}$/);
+  }
+});

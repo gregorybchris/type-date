@@ -1,0 +1,343 @@
+/* Body panels and the month grid: range fill, selected-day blocks, today. */
+/* body: calendar and time panels */
+.td-body {
+  display: grid;
+  grid-template-columns: var(--cw) var(--tw);
+  --cw: 0px;
+  --tw: 0px;
+  transition: grid-template-columns var(--td-dur-slow) var(--td-ease-io), opacity var(--td-dur);
+}
+.td-body[data-cal="true"] {
+  --cw: 312px;
+}
+.td-body[data-cal="true"][data-time="false"] {
+  --cw: 338px;
+}
+.td-body[data-time="true"] {
+  --tw: 148px;
+}
+.td-panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 140ms;
+}
+.td-body[data-cal="true"] .td-panel-cal,
+.td-body[data-time="true"] .td-panel-time {
+  opacity: 1;
+  transition-delay: 70ms;
+}
+.td-panel-cal .td-panel-in {
+  width: 100%;
+  min-width: min(312px, 100cqw);
+  padding: 12px 16px 16px;
+}
+.td-body[data-cal="false"] {
+  --tw: 338px;
+}
+.td-body[data-cal="false"] .td-panel-time {
+  border-color: transparent;
+}
+.td-panel-time {
+  border-left: 1px dotted var(--td-dotted);
+}
+.td-panel-time .td-panel-in {
+  position: absolute;
+  inset: 0;
+  transform: translateX(8px);
+  transition: transform var(--td-dur) var(--td-ease-out);
+}
+.td-body[data-time="true"] .td-panel-time .td-panel-in {
+  transform: none;
+}
+.td-root[data-muted] .td-body,
+.td-root[data-muted] .td-fields {
+  opacity: 0.5;
+}
+
+/* calendar */
+.td-cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  margin-bottom: 10px;
+}
+.td-month {
+  font-weight: 500;
+  animation: td-fade 140ms var(--td-ease-out) both;
+}
+.td-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: var(--td-bg);
+  border: 1px solid var(--td-border);
+  border-radius: 8px;
+  box-shadow: var(--td-key);
+  color: var(--td-fg-2);
+  transition: background-color 120ms, color 120ms;
+}
+@media (hover: hover) {
+  .td-icon-btn:hover {
+    background: var(--td-hover);
+    color: var(--td-fg);
+  }
+}
+.td-weeks {
+  overflow: hidden;
+  /* Horizontal swipes change month (Calendar.tsx); the browser keeps vertical scrolling. */
+  touch-action: pan-y;
+  animation: td-slide var(--td-dur-slow) var(--td-ease-out) both;
+}
+.td-weeks[data-dir="1"] {
+  --td-from: 18px;
+}
+.td-weeks[data-dir="-1"] {
+  --td-from: -18px;
+}
+.td-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.td-dow {
+  height: 28px;
+  margin-bottom: 4px;
+  align-items: center;
+  text-align: center;
+  color: var(--td-fg-2);
+  font-weight: 500;
+}
+.td-cal [role="grid"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.td-cell {
+  position: relative;
+  height: 38px;
+  padding: 1px 0;
+  /* Selected days outside the month. Opaque, so tiles, bridges and fillers can overlap without darker lines. */
+  --td-fade: color-mix(in srgb, var(--td-accent) 45%, var(--td-bg));
+}
+.td-cell::before {
+  content: "";
+  position: absolute;
+  inset: 1px 0;
+  background: var(--td-range);
+  opacity: 0;
+  transform: scaleX(0.7);
+  transition:
+    opacity 140ms,
+    transform var(--td-dur) var(--td-ease-spring),
+    background-color 140ms;
+}
+.td-cell[data-range]::before,
+.td-cell[aria-selected="true"]::before {
+  opacity: 1;
+  transform: none;
+}
+.td-cell[data-range="single"]::before,
+.td-cell[data-range="start"]::before,
+.td-cell[data-range="end"]::before,
+.td-cell[data-range="mid"]::before {
+  background: var(--td-range);
+}
+.td-cell[data-range="single"]::before,
+.td-cell:not([data-range])::before {
+  background: transparent;
+  border-radius: 8px;
+  inset: 1px 1px;
+}
+.td-cell[data-edge="end"]::before {
+  -webkit-mask-image: linear-gradient(90deg, #000 30%, transparent);
+  mask-image: linear-gradient(90deg, #000 30%, transparent);
+}
+.td-cell[data-edge="start"]::before {
+  -webkit-mask-image: linear-gradient(270deg, #000 30%, transparent);
+  mask-image: linear-gradient(270deg, #000 30%, transparent);
+}
+.td-cell[data-range="start"]::before {
+  border-radius: 8px 0 0 8px;
+  transform-origin: right;
+}
+.td-cell[data-range="end"]::before {
+  border-radius: 0 8px 8px 0;
+  transform-origin: left;
+}
+.td-row .td-cell:first-child[data-range="mid"]::before,
+.td-row .td-cell:first-child[data-range="end"]::before {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.td-row .td-cell:last-child[data-range="mid"]::before,
+.td-row .td-cell:last-child[data-range="start"]::before {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.td-cell button {
+  position: relative;
+  width: calc(100% - var(--td-gap-l, 0px) - var(--td-gap-r, 0px) + var(--td-ext-r, 0px));
+  margin-left: var(--td-gap-l, 0px);
+  height: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  /* Corners, gutters and colors all change at the same rate, so a block reshapes as it fades in. */
+  transition: background-color 120ms, color 120ms, border-radius 120ms, margin-left 120ms, width 120ms;
+}
+@media (hover: hover) {
+  .td-cell button:hover {
+    background: var(--td-hover);
+  }
+}
+@media (hover: hover) {
+  .td-cell[data-range="mid"] button:hover {
+    background: transparent;
+  }
+}
+/* Today: the number is bold in the accent color, with a small dot under it. */
+.td-cell[data-today] button {
+  font-weight: 600;
+  color: var(--td-accent);
+}
+.td-cell[data-today]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  z-index: 2;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--td-accent);
+  pointer-events: none;
+}
+.td-cell[data-out] button {
+  color: var(--td-fg-3);
+}
+.td-cell[data-range="start"] button,
+.td-cell[data-range="end"] button,
+.td-cell[data-range="single"] button,
+.td-cell[aria-selected="true"]:not([data-range]) button {
+  background: var(--td-accent);
+  color: var(--td-on-accent);
+  font-weight: 600;
+}
+/* a selected neighbor that looks different (solid next to faded): leave a 1px gutter on each side of the boundary */
+.td-cell[data-gap*="l"] {
+  --td-gap-l: 1px;
+}
+.td-cell[data-gap*="r"] {
+  --td-gap-r: 1px;
+}
+/* Inside-corner filler. At the inside corner of an L-shaped block, a square sits in the empty quadrant and is cut by a
+   circle of radius 10px, which leaves a concave curve tangent to the two tiles that form the corner: the edge of the
+   horizontal arm (top or bottom of the row) and the side of the vertical arm. --td-fi is the inset of the vertical
+   arm's side (data-inset), so the curve meets that side exactly. When the empty quadrant holds a tile of the other
+   look, the arm is inset and 10px = that tile's 8px corner radius plus the 2px gutter, so the gutter keeps one width
+   around the corner. The square is 11px: 1px overlaps each arm so no seam shows. */
+.td-fillet {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  pointer-events: none;
+  --td-fc: var(--td-accent);
+  --td-fi: 0px;
+  opacity: 0;
+  transition: opacity 120ms, left 120ms;
+}
+.td-fillet[data-on] {
+  opacity: 1;
+}
+.td-fillet[data-inset] {
+  --td-fi: 1px;
+}
+.td-cell[data-out] .td-fillet {
+  --td-fc: var(--td-fade);
+}
+.td-fillet[data-at="br"] {
+  left: calc(100% - 1px - var(--td-fi));
+  top: calc(100% - 2px);
+  background: radial-gradient(circle at 100% 100%, transparent 10px, var(--td-fc) 10.5px);
+}
+.td-fillet[data-at="bl"] {
+  left: calc(var(--td-fi) - 10px);
+  top: calc(100% - 2px);
+  background: radial-gradient(circle at 0 100%, transparent 10px, var(--td-fc) 10.5px);
+}
+.td-fillet[data-at="tr"] {
+  left: calc(100% - 1px - var(--td-fi));
+  top: -9px;
+  background: radial-gradient(circle at 100% 0, transparent 10px, var(--td-fc) 10.5px);
+}
+.td-fillet[data-at="tl"] {
+  left: calc(var(--td-fi) - 10px);
+  top: -9px;
+  background: radial-gradient(circle at 0 0, transparent 10px, var(--td-fc) 10.5px);
+}
+/* selected days outside a range: square the corners that touch a selected neighbor, so a run reads as one block */
+.td-cell[data-join*="l"] button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* A tile joined on the right reaches 1px under its neighbor, so antialiased edges at fractional column positions leave
+   no seam. */
+.td-cell[data-join*="r"] {
+  --td-ext-r: 1px;
+}
+.td-cell[data-join*="r"] button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.td-cell[data-join*="u"] button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.td-cell[data-join*="d"] button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* A bridge fills the 2px row gap (plus 1px overlap) between a tile and the joined tile below. It has the width of the
+   tile below, so it never sticks out past a gutter. On a tile joined on the right it reaches 1px past the cell like the
+   tile; that pixel lies under the neighbor's bridge, or under the inside-corner filler when the neighbor has none. */
+.td-cell button::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: inherit;
+  opacity: 0;
+  transition: opacity 120ms, left 120ms, right 120ms;
+}
+.td-cell[data-join*="d"] button::after {
+  opacity: 1;
+}
+.td-cell[data-bridge*="l"] button::after {
+  left: 1px;
+}
+.td-cell[data-bridge*="r"] button::after {
+  right: calc(var(--td-ext-r, 0px) + 1px);
+}
+/* On an accent tile the dot takes the number color. */
+.td-cell[data-range="start"][data-today]::after,
+.td-cell[data-range="end"][data-today]::after,
+.td-cell[data-range="single"][data-today]::after,
+.td-cell[aria-selected="true"][data-today]:not([data-range])::after {
+  background: var(--td-on-accent);
+}
+/* A selected day outside the month is a faded tile: the accent and its number at 45% over the card, as opaque colors. */
+.td-cell[aria-selected="true"][data-out]:not([data-range="mid"]) button {
+  background-color: var(--td-fade);
+  color: color-mix(in srgb, var(--td-on-accent) 45%, var(--td-bg));
+}
+/* A day inside a range but outside the shown month sits on the light range band, so its number stays dark. */
+.td-cell[data-range="mid"][data-out] button {
+  color: var(--td-fg-2);
+}

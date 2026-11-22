@@ -1,0 +1,63 @@
+/* Time list: vertical beside the calendar, a horizontal strip on a narrow picker (narrow.css). */
+/* time list */
+.td-list {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding: 12px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--td-border) transparent;
+  -webkit-mask-image: linear-gradient(transparent, #000 28px, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(transparent, #000 28px, #000 calc(100% - 28px), transparent);
+}
+.td-opt {
+  position: relative;
+  height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  border-radius: 8px;
+  color: var(--td-fg-2);
+  cursor: pointer;
+  transition: background-color 120ms, color 120ms;
+}
+@media (hover: hover) {
+  .td-opt:hover {
+    background: var(--td-hover);
+  }
+}
+.td-opt[data-in] {
+  background: var(--td-range);
+  color: var(--td-fg);
+}
+.td-opt[aria-selected="true"] {
+  background: var(--td-sel);
+  color: var(--td-fg);
+  font-weight: 500;
+}
+/* closed time range: one connected block, accent ends like the calendar */
+.td-opt[data-range] {
+  background: var(--td-range);
+  color: var(--td-fg);
+  border-radius: 0;
+  box-shadow: 0 2px 0 var(--td-range);
+}
+.td-opt[data-range="start"],
+.td-opt[data-range="end"],
+.td-opt[data-range="single"] {
+  background: var(--td-accent);
+  color: var(--td-on-accent);
+  font-weight: 500;
+}
+.td-opt[data-range="start"] {
+  border-radius: 8px 8px 0 0;
+}
+.td-opt[data-range="end"] {
+  border-radius: 0 0 8px 8px;
+  box-shadow: none;
+}
+.td-opt[data-range="single"] {
+  border-radius: 8px;
+  box-shadow: none;
+}

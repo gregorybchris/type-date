@@ -1,0 +1,12 @@
+/* Reduced motion: transitions and animations off. */
+@media (prefers-reduced-motion: reduce) {
+  .td-root,
+  .td-root *,
+  .td-root *::before,
+  .td-root *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

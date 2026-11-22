@@ -422,8 +422,9 @@ describe("mobile structure", () => {
   });
 
   it("keeps the picker input and ships touch and safe-area CSS", async () => {
-    const { readFileSync } = await import("node:fs");
-    const css = readFileSync(`${process.cwd()}/src/styles.css`, "utf8");
+    const { readFileSync, readdirSync } = await import("node:fs");
+    const dir = `${process.cwd()}/src/styles`;
+    const css = readdirSync(dir).map((f) => readFileSync(`${dir}/${f}`, "utf8")).join("\n");
     expect(css).toContain("env(safe-area-inset-bottom)");
     expect(css).toContain("100dvh");
     expect(css).toContain("touch-action: manipulation");

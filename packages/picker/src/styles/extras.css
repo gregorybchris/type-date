@@ -1,0 +1,121 @@
+/* Extras row (chips, rule, AM/PM) and the keyboard-hint footer. */
+/* extras */
+.td-extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 4px var(--td-px) 12px;
+  color: var(--td-fg-2);
+}
+.td-rec {
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.td-rrule,
+.td-chip,
+.td-ampm,
+.td-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--td-border);
+  border-radius: 6px;
+  background: var(--td-bg);
+  font-size: 12px;
+}
+.td-rrule {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  height: auto;
+  padding-block: 4px;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--td-accent);
+}
+.td-note {
+  border-style: dashed;
+}
+.td-ampm {
+  padding: 0 3px 0 8px;
+}
+.td-ampm button {
+  height: 20px;
+  padding: 0 7px;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--td-fg-2);
+  transition: background-color 120ms, color 120ms;
+}
+.td-ampm button[aria-pressed="true"] {
+  background: var(--td-sel);
+  color: var(--td-fg);
+  font-weight: 500;
+}
+
+/* footer hints */
+.td-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 10px var(--td-px) max(10px, env(safe-area-inset-bottom));
+  border-top: 1px dotted var(--td-dotted);
+  color: var(--td-fg-2);
+  font-size: 13px;
+}
+.td-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.td-hint kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  margin-right: 0;
+  font: 500 12px/1 Inter, system-ui, sans-serif;
+  background: var(--td-bg);
+  border: 1px solid var(--td-border);
+  border-radius: 6px;
+  box-shadow: var(--td-key);
+}
+.td-hint kbd:last-of-type {
+  margin-right: 2px;
+}
+
+@keyframes td-slide {
+  from {
+    opacity: 0;
+    transform: translateX(var(--td-from, 0px));
+  }
+}
+@keyframes td-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes td-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+@keyframes td-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}

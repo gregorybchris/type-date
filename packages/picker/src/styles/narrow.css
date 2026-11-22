@@ -1,0 +1,159 @@
+/* Keyboard hints are for keyboards: hidden on touch screens and on a narrow picker. */
+@media (pointer: coarse) {
+  .td-foot {
+    display: none;
+  }
+}
+
+/* Narrow picker: one column and the phone layout. 461px is NARROW_MAX in hooks.ts (useNarrow), so JS and CSS agree
+   on which layout is showing. Keep the two in sync. */
+@container (max-width: 461px) {
+  .td-foot {
+    display: none;
+  }
+  /* The card fits the visible viewport (above the soft keyboard) and scrolls inside. */
+  .td-card {
+    max-height: calc(var(--td-vvh, 100dvh) - 24px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+  }
+  .td-field {
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  .td-field svg {
+    display: none;
+  }
+  /* Assumed AM/PM fills the row. */
+  .td-ampm {
+    flex: 1 1 100%;
+  }
+  .td-ampm span {
+    flex: 1;
+  }
+  .td-ampm button {
+    min-width: 64px;
+  }
+  .td-fg {
+    flex: 1 1 auto;
+  }
+  .td-seg {
+    flex: 1;
+  }
+  .td-seg .td-field {
+    justify-content: center;
+  }
+  .td-seg .td-field:not([data-time]) {
+    flex: 1;
+    justify-content: flex-start;
+  }
+  .td-fields[data-stack] {
+    justify-content: stretch;
+  }
+  /* time-only box: the times share the width */
+  .td-seg:not(:has(.td-field:not([data-time]))) .td-field {
+    flex: 1;
+  }
+  .td-card {
+    width: 100%;
+  }
+  .td-body {
+    display: block;
+  }
+  .td-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows var(--td-dur) var(--td-ease-io),
+      opacity 140ms;
+  }
+  .td-body[data-cal="true"] .td-panel-cal,
+  .td-body[data-time="true"] .td-panel-time {
+    grid-template-rows: 1fr;
+  }
+  .td-panel-in,
+  .td-panel-time .td-panel-in {
+    position: static;
+    min-height: 0;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    transform: none;
+  }
+  .td-panel-cal .td-panel-in {
+    min-width: 0;
+  }
+  .td-panel-time {
+    border-left: 0;
+    border-top: 1px dotted var(--td-dotted);
+  }
+  .td-body[data-cal="false"] .td-panel-time {
+    border-top-color: transparent;
+  }
+  /* With the calendar: the time list is a horizontal strip under it. Without (time only), the list stays vertical
+     as in time.css and only needs a fixed height, since its panel is no longer beside the calendar. */
+  .td-body[data-cal="false"] .td-list {
+    height: 288px;
+  }
+  .td-opt {
+    padding: 0 14px;
+    border: 1px solid transparent;
+  }
+  .td-body[data-cal="true"] .td-list {
+    display: flex;
+    gap: 8px;
+    height: auto;
+    padding: 10px var(--td-px);
+    overflow: auto hidden;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  }
+  .td-body[data-cal="true"] .td-opt {
+    flex: none;
+    margin: 0;
+    border-color: var(--td-border);
+    scroll-snap-align: center;
+    white-space: nowrap;
+  }
+  .td-body[data-cal="true"] .td-opt[aria-selected="true"] {
+    border-color: var(--td-accent);
+  }
+  /* Closed range in the strip: one band from start to end. Each tile drops its border and fills the 8px gap to
+     its right, so the tiles read as one shape. Rounded on the outside ends only, like the calendar. */
+  .td-body[data-cal="true"] .td-opt[data-range] {
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: 8px 0 0 var(--td-range);
+  }
+  .td-body[data-cal="true"] .td-opt[data-range="start"] {
+    border-radius: 8px 0 0 8px;
+  }
+  .td-body[data-cal="true"] .td-opt[data-range="end"] {
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+  }
+  .td-body[data-cal="true"] .td-opt[data-range="single"] {
+    border-radius: 8px;
+    box-shadow: none;
+  }
+}
+
+/* Narrow picker on a touch screen with the soft keyboard up: fold the calendar and time list away, so the search
+   field and the result fields stay in the space above the keyboard. They come back when the input loses focus. */
+@container (max-width: 461px) {
+  @media (pointer: coarse) {
+    .td-root[data-typing] .td-body .td-panel {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      border-top-color: transparent;
+    }
+    .td-root[data-typing] .td-body .td-panel-in {
+      padding-block: 0;
+    }
+  }
+}
