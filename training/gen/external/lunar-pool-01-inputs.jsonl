@@ -1,0 +1,536 @@
+{"id": "lw1-0001", "text": "lunar new year"}
+{"id": "lw1-0002", "text": "on chinese new year"}
+{"id": "lw1-0003", "text": "for lunar new year"}
+{"id": "lw1-0004", "text": "mid autumn festival"}
+{"id": "lw1-0005", "text": "moon festival"}
+{"id": "lw1-0006", "text": "dragon boat festival"}
+{"id": "lw1-0007", "text": "for dragon boat"}
+{"id": "lw1-0008", "text": "on diwali"}
+{"id": "lw1-0009", "text": "holi"}
+{"id": "lw1-0010", "text": "on holi"}
+{"id": "lw1-0011", "text": "eid al fitr"}
+{"id": "lw1-0012", "text": "for eid al-adha"}
+{"id": "lw1-0013", "text": "ramadan"}
+{"id": "lw1-0014", "text": "rosh hashanah"}
+{"id": "lw1-0015", "text": "for rosh hashanah"}
+{"id": "lw1-0016", "text": "on yom kippur"}
+{"id": "lw1-0017", "text": "passover"}
+{"id": "lw1-0018", "text": "at passover"}
+{"id": "lw1-0019", "text": "hanukkah"}
+{"id": "lw1-0020", "text": "for hanukkah"}
+{"id": "lw1-0021", "text": "purim"}
+{"id": "lw1-0022", "text": "on purim"}
+{"id": "lw1-0023", "text": "next lunar new year"}
+{"id": "lw1-0024", "text": "this chinese new year"}
+{"id": "lw1-0025", "text": "next mid autumn"}
+{"id": "lw1-0026", "text": "this yr's moon festival"}
+{"id": "lw1-0027", "text": "next dragon boat festival"}
+{"id": "lw1-0028", "text": "this coming diwali"}
+{"id": "lw1-0029", "text": "diwali next year"}
+{"id": "lw1-0030", "text": "next holi"}
+{"id": "lw1-0031", "text": "holi this year"}
+{"id": "lw1-0032", "text": "last eid al fitr"}
+{"id": "lw1-0033", "text": "next eid al adha"}
+{"id": "lw1-0034", "text": "next ramadan"}
+{"id": "lw1-0035", "text": "ramadan this yr"}
+{"id": "lw1-0036", "text": "the upcoming rosh hashanah"}
+{"id": "lw1-0037", "text": "last yom kippur"}
+{"id": "lw1-0038", "text": "yom kippur next yr"}
+{"id": "lw1-0039", "text": "this passover"}
+{"id": "lw1-0040", "text": "passover next year"}
+{"id": "lw1-0041", "text": "this hanukkah"}
+{"id": "lw1-0042", "text": "next hanukkah"}
+{"id": "lw1-0043", "text": "this purim"}
+{"id": "lw1-0044", "text": "purim last year"}
+{"id": "lw1-0045", "text": "lunar new year 2028"}
+{"id": "lw1-0046", "text": "chinese new year '27"}
+{"id": "lw1-0047", "text": "lny year of the goat"}
+{"id": "lw1-0048", "text": "mid autumn 2027"}
+{"id": "lw1-0049", "text": "moon festival 2029"}
+{"id": "lw1-0050", "text": "dragon boat 2027"}
+{"id": "lw1-0051", "text": "dragon boat festival in 2028"}
+{"id": "lw1-0052", "text": "diwali '28"}
+{"id": "lw1-0053", "text": "holi 2027"}
+{"id": "lw1-0054", "text": "holi of 2029"}
+{"id": "lw1-0055", "text": "eid al fitr 2027"}
+{"id": "lw1-0056", "text": "eid al adha 2028"}
+{"id": "lw1-0057", "text": "ramadan 2027"}
+{"id": "lw1-0058", "text": "ramadan 1448"}
+{"id": "lw1-0059", "text": "rosh hashanah 2027"}
+{"id": "lw1-0060", "text": "rosh hashanah 5788"}
+{"id": "lw1-0061", "text": "yom kippur 2028"}
+{"id": "lw1-0062", "text": "passover 2027"}
+{"id": "lw1-0063", "text": "passover 27"}
+{"id": "lw1-0064", "text": "hanukkah 2026"}
+{"id": "lw1-0065", "text": "hanukkah '27"}
+{"id": "lw1-0066", "text": "purim 2027"}
+{"id": "lw1-0067", "text": "lny dinner 7pm"}
+{"id": "lw1-0068", "text": "chinese new year lunch 12:30"}
+{"id": "lw1-0069", "text": "mid autumn 8pm lantern walk"}
+{"id": "lw1-0070", "text": "moon festival night 9pm"}
+{"id": "lw1-0071", "text": "dragon boat race 9am"}
+{"id": "lw1-0072", "text": "diwali puja 6:45pm"}
+{"id": "lw1-0073", "text": "diwali evening"}
+{"id": "lw1-0074", "text": "holi morning 10am"}
+{"id": "lw1-0075", "text": "holi afternoon"}
+{"id": "lw1-0076", "text": "eid al fitr prayers 7.30am"}
+{"id": "lw1-0077", "text": "eid al adha morning 8"}
+{"id": "lw1-0078", "text": "ramadan iftar at 7:10pm"}
+{"id": "lw1-0079", "text": "rosh hashanah dinner 7:30"}
+{"id": "lw1-0080", "text": "rosh hashanah services 10am"}
+{"id": "lw1-0081", "text": "yom kippur 5pm break fast"}
+{"id": "lw1-0082", "text": "yom kippur noon"}
+{"id": "lw1-0083", "text": "passover seder 7pm"}
+{"id": "lw1-0084", "text": "passover lunch at 1"}
+{"id": "lw1-0085", "text": "hanukkah candle lighting 5:30"}
+{"id": "lw1-0086", "text": "hanukkah party 4-7pm"}
+{"id": "lw1-0087", "text": "purim 6pm"}
+{"id": "lw1-0088", "text": "purim morning megillah 8am"}
+{"id": "lw1-0089", "text": "lunar new year's eve"}
+{"id": "lw1-0090", "text": "day after chinese new year"}
+{"id": "lw1-0091", "text": "second day of lunar new year"}
+{"id": "lw1-0092", "text": "15th day of chinese new year"}
+{"id": "lw1-0093", "text": "night before mid autumn"}
+{"id": "lw1-0094", "text": "day after moon festival"}
+{"id": "lw1-0095", "text": "eve of dragon boat festival"}
+{"id": "lw1-0096", "text": "2 days after dragon boat"}
+{"id": "lw1-0097", "text": "diwali eve"}
+{"id": "lw1-0098", "text": "day before diwali"}
+{"id": "lw1-0099", "text": "5th day of diwali"}
+{"id": "lw1-0100", "text": "night before holi"}
+{"id": "lw1-0101", "text": "day after holi"}
+{"id": "lw1-0102", "text": "eid al fitr eve"}
+{"id": "lw1-0103", "text": "2nd day of eid al fitr"}
+{"id": "lw1-0104", "text": "3rd day eid al adha"}
+{"id": "lw1-0105", "text": "day before eid al adha"}
+{"id": "lw1-0106", "text": "first day of ramadan"}
+{"id": "lw1-0107", "text": "last 10 nights of ramadan"}
+{"id": "lw1-0108", "text": "27th of ramadan"}
+{"id": "lw1-0109", "text": "week before ramadan"}
+{"id": "lw1-0110", "text": "erev rosh hashanah"}
+{"id": "lw1-0111", "text": "night before rosh hashanah"}
+{"id": "lw1-0112", "text": "day after yom kippur"}
+{"id": "lw1-0113", "text": "yom kippur eve"}
+{"id": "lw1-0114", "text": "first seder"}
+{"id": "lw1-0115", "text": "second night of passover"}
+{"id": "lw1-0116", "text": "last day of passover"}
+{"id": "lw1-0117", "text": "2 weeks before passover"}
+{"id": "lw1-0118", "text": "3rd night of hanukkah"}
+{"id": "lw1-0119", "text": "last night of hanukkah"}
+{"id": "lw1-0120", "text": "8th night hanukkah"}
+{"id": "lw1-0121", "text": "erev purim"}
+{"id": "lw1-0122", "text": "day after purim"}
+{"id": "lw1-0123", "text": "during chinese new year"}
+{"id": "lw1-0124", "text": "whole of lunar new year week"}
+{"id": "lw1-0125", "text": "over mid autumn"}
+{"id": "lw1-0126", "text": "dragon boat long weekend"}
+{"id": "lw1-0127", "text": "diwali week"}
+{"id": "lw1-0128", "text": "all 5 days of diwali"}
+{"id": "lw1-0129", "text": "holi weekend"}
+{"id": "lw1-0130", "text": "over eid al fitr"}
+{"id": "lw1-0131", "text": "eid al adha holidays"}
+{"id": "lw1-0132", "text": "the month of ramadan"}
+{"id": "lw1-0133", "text": "for all of ramadan"}
+{"id": "lw1-0134", "text": "first week of ramadan"}
+{"id": "lw1-0135", "text": "over rosh hashanah"}
+{"id": "lw1-0136", "text": "the high holidays"}
+{"id": "lw1-0137", "text": "days of awe"}
+{"id": "lw1-0138", "text": "yom kippur, all day"}
+{"id": "lw1-0139", "text": "during yom kippur"}
+{"id": "lw1-0140", "text": "during passover"}
+{"id": "lw1-0141", "text": "passover week"}
+{"id": "lw1-0142", "text": "all 8 nights of hanukkah"}
+{"id": "lw1-0143", "text": "over the hanukkah break"}
+{"id": "lw1-0144", "text": "purim weekend"}
+{"id": "lw1-0145", "text": "from chinese new year to lantern festival"}
+{"id": "lw1-0146", "text": "until lunar new year"}
+{"id": "lw1-0147", "text": "lny thru the following sunday"}
+{"id": "lw1-0148", "text": "before mid autumn"}
+{"id": "lw1-0149", "text": "mid autumn to national day"}
+{"id": "lw1-0150", "text": "after dragon boat"}
+{"id": "lw1-0151", "text": "dragon boat to end of june"}
+{"id": "lw1-0152", "text": "diwali to bhai dooj"}
+{"id": "lw1-0153", "text": "from dussehra to diwali"}
+{"id": "lw1-0154", "text": "diwali through new year's"}
+{"id": "lw1-0155", "text": "after holi"}
+{"id": "lw1-0156", "text": "holi to easter"}
+{"id": "lw1-0157", "text": "by holi"}
+{"id": "lw1-0158", "text": "after eid al fitr"}
+{"id": "lw1-0159", "text": "eid al fitr to the weekend after"}
+{"id": "lw1-0160", "text": "until eid al adha"}
+{"id": "lw1-0161", "text": "eid al adha till monday"}
+{"id": "lw1-0162", "text": "ramadan till eid"}
+{"id": "lw1-0163", "text": "from start of ramadan to eid al fitr"}
+{"id": "lw1-0164", "text": "before ramadan starts"}
+{"id": "lw1-0165", "text": "since ramadan began"}
+{"id": "lw1-0166", "text": "rosh hashanah through yom kippur"}
+{"id": "lw1-0167", "text": "after rosh hashanah"}
+{"id": "lw1-0168", "text": "before yom kippur"}
+{"id": "lw1-0169", "text": "yom kippur to sukkot"}
+{"id": "lw1-0170", "text": "passover to shavuot"}
+{"id": "lw1-0171", "text": "from purim to passover"}
+{"id": "lw1-0172", "text": "post passover"}
+{"id": "lw1-0173", "text": "until hanukkah"}
+{"id": "lw1-0174", "text": "hanukkah to christmas"}
+{"id": "lw1-0175", "text": "thanksgiving thru hanukkah"}
+{"id": "lw1-0176", "text": "after purim"}
+{"id": "lw1-0177", "text": "before purim"}
+{"id": "lw1-0178", "text": "purim to end of march"}
+{"id": "lw1-0179", "text": "going to my aunts for cny"}
+{"id": "lw1-0180", "text": "cant do sat, its lunar new year"}
+{"id": "lw1-0181", "text": "back in office after cny"}
+{"id": "lw1-0182", "text": "mooncakes at grandma's on mid autumn"}
+{"id": "lw1-0183", "text": "mid autumn bbq at the beach"}
+{"id": "lw1-0184", "text": "ooo dragon boat festival"}
+{"id": "lw1-0185", "text": "dragon boat practice every sat until the festival"}
+{"id": "lw1-0186", "text": "remind me to buy diyas before diwali"}
+{"id": "lw1-0187", "text": "diwali party at ours, 8ish"}
+{"id": "lw1-0188", "text": "holi at the park bring white clothes"}
+{"id": "lw1-0189", "text": "no class on holi"}
+{"id": "lw1-0190", "text": "eid al fitr at nani's"}
+{"id": "lw1-0191", "text": "flight to lahore day before eid al adha"}
+{"id": "lw1-0192", "text": "remind me to book the qurbani before eid al adha"}
+{"id": "lw1-0193", "text": "gym closes early during ramadan"}
+{"id": "lw1-0194", "text": "suhoor 4:45 every day in ramadan"}
+{"id": "lw1-0195", "text": "iftar at ours friday in ramadan"}
+{"id": "lw1-0196", "text": "shul rosh hashanah 9am"}
+{"id": "lw1-0197", "text": "rosh hashanah at mum's, both nights"}
+{"id": "lw1-0198", "text": "fasting yom kippur so no lunch mtg"}
+{"id": "lw1-0199", "text": "move standup to after yom kippur"}
+{"id": "lw1-0200", "text": "yom kippur, wfh"}
+{"id": "lw1-0201", "text": "seder at bubbe's first night"}
+{"id": "lw1-0202", "text": "out first 2 days of passover"}
+{"id": "lw1-0203", "text": "latkes at ours 3rd night of hanukkah"}
+{"id": "lw1-0204", "text": "hanukkah party sat the 5th"}
+{"id": "lw1-0205", "text": "purim carnival sunday"}
+{"id": "lw1-0206", "text": "kids need costumes for purim, school parade"}
+{"id": "lw1-0207", "text": "spring festival"}
+{"id": "lw1-0208", "text": "tết"}
+{"id": "lw1-0209", "text": "chun jie"}
+{"id": "lw1-0210", "text": "chung chau"}
+{"id": "lw1-0211", "text": "trung thu"}
+{"id": "lw1-0212", "text": "duanwu jie"}
+{"id": "lw1-0213", "text": "dumpling festival"}
+{"id": "lw1-0214", "text": "端午"}
+{"id": "lw1-0215", "text": "dipawali"}
+{"id": "lw1-0216", "text": "divali"}
+{"id": "lw1-0217", "text": "phagwah"}
+{"id": "lw1-0218", "text": "dhulandi"}
+{"id": "lw1-0219", "text": "hari raya aidilfitri"}
+{"id": "lw1-0220", "text": "hari raya puasa"}
+{"id": "lw1-0221", "text": "choti eid"}
+{"id": "lw1-0222", "text": "raya haji"}
+{"id": "lw1-0223", "text": "bakra eid"}
+{"id": "lw1-0224", "text": "ramazan"}
+{"id": "lw1-0225", "text": "puasa month"}
+{"id": "lw1-0226", "text": "rosh ha-shanah"}
+{"id": "lw1-0227", "text": "yom hakippurim"}
+{"id": "lw1-0228", "text": "kippur"}
+{"id": "lw1-0229", "text": "pesah"}
+{"id": "lw1-0230", "text": "chanukkah"}
+{"id": "lw1-0231", "text": "hanuka"}
+{"id": "lw1-0232", "text": "c.n.y."}
+{"id": "lw1-0233", "text": "chinese newyear"}
+{"id": "lw1-0234", "text": "mid autum"}
+{"id": "lw1-0235", "text": "dragonboat fest"}
+{"id": "lw1-0236", "text": "diwalli"}
+{"id": "lw1-0237", "text": "dewali"}
+{"id": "lw1-0238", "text": "holli"}
+{"id": "lw1-0239", "text": "eidul fitr"}
+{"id": "lw1-0240", "text": "eid al fiter"}
+{"id": "lw1-0241", "text": "eid ul adah"}
+{"id": "lw1-0242", "text": "ramdan"}
+{"id": "lw1-0243", "text": "rammadan"}
+{"id": "lw1-0244", "text": "rosh hashanna"}
+{"id": "lw1-0245", "text": "rosh hashanah twenty twenty seven"}
+{"id": "lw1-0246", "text": "yom kippor"}
+{"id": "lw1-0247", "text": "passsover"}
+{"id": "lw1-0248", "text": "pass over"}
+{"id": "lw1-0249", "text": "hanukah"}
+{"id": "lw1-0250", "text": "channukah"}
+{"id": "lw1-0251", "text": "purrim"}
+{"id": "lw1-0252", "text": "gong xi fa cai"}
+{"id": "lw1-0253", "text": "cny goodie bags"}
+{"id": "lw1-0254", "text": "mooncake recipe"}
+{"id": "lw1-0255", "text": "moon festival lantern diy"}
+{"id": "lw1-0256", "text": "dragon boat team signup"}
+{"id": "lw1-0257", "text": "diwali gift ideas"}
+{"id": "lw1-0258", "text": "happy diwali"}
+{"id": "lw1-0259", "text": "holi powder"}
+{"id": "lw1-0260", "text": "holi festival of colours tickets"}
+{"id": "lw1-0261", "text": "eid al adha sacrifice rules"}
+{"id": "lw1-0262", "text": "ramadan timetable"}
+{"id": "lw1-0263", "text": "ramadan mubarak"}
+{"id": "lw1-0264", "text": "shana tova"}
+{"id": "lw1-0265", "text": "yom kippur war documentary"}
+{"id": "lw1-0266", "text": "passover haggadah pdf"}
+{"id": "lw1-0267", "text": "each passover"}
+{"id": "lw1-0268", "text": "chag sameach"}
+{"id": "lw1-0269", "text": "hanukkah gelt"}
+{"id": "lw1-0270", "text": "purim spiel script"}
+{"id": "lw1-0271", "text": "purim katan"}
+{"id": "lw1-0272", "text": "the festive season"}
+{"id": "lw1-0273", "text": "lunar eclipse"}
+{"id": "lw1-0274", "text": "chaand raat"}
+{"id": "lw1-0275", "text": "whenever the moon is sighted for eid"}
+{"id": "lw1-0276", "text": "1 shawwal"}
+{"id": "lw1-0277", "text": "10 dhul hijjah"}
+{"id": "lw1-0278", "text": "15 nisan"}
+{"id": "lw1-0279", "text": "25 kislev"}
+{"id": "lw1-0280", "text": "shushan purim"}
+{"id": "lw1-0281", "text": "lantern festival"}
+{"id": "lw2-0001", "text": "um diwali"}
+{"id": "lw2-0002", "text": "on diwali day"}
+{"id": "lw2-0003", "text": "for holi"}
+{"id": "lw2-0004", "text": "holi day"}
+{"id": "lw2-0005", "text": "in eid al fitr"}
+{"id": "lw2-0006", "text": "at eid ul adha"}
+{"id": "lw2-0008", "text": "remind me rosh hashanah"}
+{"id": "lw2-0009", "text": "yom kippur day"}
+{"id": "lw2-0010", "text": "on the passover"}
+{"id": "lw2-0011", "text": "for the hanukkah"}
+{"id": "lw2-0014", "text": "at lunar new year"}
+{"id": "lw2-0016", "text": "on dragon boat festival"}
+{"id": "lw2-0017", "text": "remind me on purim"}
+{"id": "lw2-0018", "text": "in mid-autumn"}
+{"id": "lw2-0019", "text": "on dragon boat day"}
+{"id": "lw2-0020", "text": "for eid al adha"}
+{"id": "lw2-0021", "text": "on the holi festival"}
+{"id": "lw2-0022", "text": "in the ramadan"}
+{"id": "lw2-0023", "text": "next coming diwali"}
+{"id": "lw2-0024", "text": "this coming eid ul fitr"}
+{"id": "lw2-0025", "text": "upcoming chinese new year"}
+{"id": "lw2-0026", "text": "last year holi"}
+{"id": "lw2-0027", "text": "next year ramadan"}
+{"id": "lw2-0028", "text": "the next passover"}
+{"id": "lw2-0029", "text": "this year hanukah"}
+{"id": "lw2-0030", "text": "remind me next purim"}
+{"id": "lw2-0031", "text": "coming mid autumn"}
+{"id": "lw2-0032", "text": "this dragon boat festival"}
+{"id": "lw2-0033", "text": "previous rosh hashanah"}
+{"id": "lw2-0034", "text": "next yom kippur"}
+{"id": "lw2-0035", "text": "last eid al adha"}
+{"id": "lw2-0036", "text": "the ramadan after next"}
+{"id": "lw2-0037", "text": "next to next chinese new year"}
+{"id": "lw2-0038", "text": "this years moon festival"}
+{"id": "lw2-0039", "text": "the holi of next year"}
+{"id": "lw2-0040", "text": "previous year's hanukkah"}
+{"id": "lw2-0041", "text": "this purim coming"}
+{"id": "lw2-0042", "text": "the upcoming bakrid"}
+{"id": "lw2-0043", "text": "the coming duanwu"}
+{"id": "lw2-0044", "text": "next rosh hashana"}
+{"id": "lw2-0045", "text": "last year yom kippur"}
+{"id": "lw2-0046", "text": "diwali two thousand twenty seven"}
+{"id": "lw2-0047", "text": "eid al fitr twenty twenty eight"}
+{"id": "lw2-0048", "text": "chinese new year 2029"}
+{"id": "lw2-0049", "text": "holi of 2027"}
+{"id": "lw2-0050", "text": "ramadan year 2028"}
+{"id": "lw2-0051", "text": "passover in 2030"}
+{"id": "lw2-0052", "text": "hanukkah twenty twenty seven"}
+{"id": "lw2-0053", "text": "purim 2028 date"}
+{"id": "lw2-0055", "text": "dragon boat festival year 2029"}
+{"id": "lw2-0058", "text": "eid al adha 1448"}
+{"id": "lw2-0059", "text": "ramadan 1449 hijri"}
+{"id": "lw2-0060", "text": "cny 2027 year of the goat"}
+{"id": "lw2-0061", "text": "lunar new year year of horse"}
+{"id": "lw2-0062", "text": "tet 2028"}
+{"id": "lw2-0064", "text": "passover twenty thirty"}
+{"id": "lw2-0065", "text": "hanukkah in year 2029"}
+{"id": "lw2-0066", "text": "purim two thousand twenty nine"}
+{"id": "lw2-0067", "text": "holi 2k27"}
+{"id": "lw2-0068", "text": "duanwu 2028"}
+{"id": "lw2-0069", "text": "yom kippur of twenty twenty nine"}
+{"id": "lw2-0070", "text": "diwali seven pm"}
+{"id": "lw2-0071", "text": "eid ul fitr morning prayer 7.30"}
+{"id": "lw2-0072", "text": "holi afternoon 3 oclock"}
+{"id": "lw2-0073", "text": "ramadan iftar time"}
+{"id": "lw2-0074", "text": "passover seder eight pm"}
+{"id": "lw2-0075", "text": "hanukkah five thirty in the evening"}
+{"id": "lw2-0076", "text": "purim morning megillah reading"}
+{"id": "lw2-0077", "text": "chinese new year reunion dinner at 7"}
+{"id": "lw2-0078", "text": "mid autumn night 8pm"}
+{"id": "lw2-0079", "text": "dragon boat festival 9 in the morning"}
+{"id": "lw2-0080", "text": "rosh hashanah lunch one pm"}
+{"id": "lw2-0081", "text": "yom kippur break fast 7:15"}
+{"id": "lw2-0082", "text": "eid al adha morning after namaz"}
+{"id": "lw2-0083", "text": "diwali puja 6:45 pm"}
+{"id": "lw2-0084", "text": "ramzan sehri 4am"}
+{"id": "lw2-0085", "text": "lny noon"}
+{"id": "lw2-0086", "text": "mid autumn evening at six"}
+{"id": "lw2-0087", "text": "purim at seven thirty pm"}
+{"id": "lw2-0088", "text": "rosh hashanah night 8"}
+{"id": "lw2-0089", "text": "bakrid 8 o clock morning"}
+{"id": "lw2-0090", "text": "hanukkah 6pm candle lighting"}
+{"id": "lw2-0091", "text": "passover lunch 12.30"}
+{"id": "lw2-0092", "text": "yom kippur afternoon 4:30"}
+{"id": "lw2-0093", "text": "erev rosh hashana dinner"}
+{"id": "lw2-0094", "text": "the night before yom kippur"}
+{"id": "lw2-0095", "text": "kol nidre night"}
+{"id": "lw2-0097", "text": "second seder night"}
+{"id": "lw2-0098", "text": "last day of pesach"}
+{"id": "lw2-0099", "text": "day before passover"}
+{"id": "lw2-0100", "text": "third night hanukkah"}
+{"id": "lw2-0101", "text": "eighth night of chanukah"}
+{"id": "lw2-0102", "text": "last candle of hanukkah"}
+{"id": "lw2-0103", "text": "night before diwali"}
+{"id": "lw2-0104", "text": "choti diwali"}
+{"id": "lw2-0105", "text": "two days before diwali"}
+{"id": "lw2-0106", "text": "dhanteras"}
+{"id": "lw2-0108", "text": "holika dahan night"}
+{"id": "lw2-0109", "text": "chand raat"}
+{"id": "lw2-0110", "text": "last ashra of ramadan"}
+{"id": "lw2-0111", "text": "first roza"}
+{"id": "lw2-0112", "text": "last iftar of ramadan"}
+{"id": "lw2-0113", "text": "twenty seventh night of ramadan"}
+{"id": "lw2-0114", "text": "second day of eid ul fitr"}
+{"id": "lw2-0115", "text": "third day eid al adha"}
+{"id": "lw2-0116", "text": "day before bakrid"}
+{"id": "lw2-0117", "text": "arafah day"}
+{"id": "lw2-0118", "text": "chinese new year eve dinner"}
+{"id": "lw2-0119", "text": "day three of cny"}
+{"id": "lw2-0120", "text": "chu xi night"}
+{"id": "lw2-0121", "text": "first day lunar new year"}
+{"id": "lw2-0122", "text": "fifteenth day of chinese new year"}
+{"id": "lw2-0123", "text": "the day after mid autumn"}
+{"id": "lw2-0124", "text": "mid autumn eve"}
+{"id": "lw2-0125", "text": "day before dragon boat festival"}
+{"id": "lw2-0126", "text": "one day after duanwu"}
+{"id": "lw2-0127", "text": "purim eve"}
+{"id": "lw2-0129", "text": "taanit esther"}
+{"id": "lw2-0130", "text": "one week before rosh hashanah"}
+{"id": "lw2-0131", "text": "end of yom kippur"}
+{"id": "lw2-0132", "text": "eve of eid ul adha"}
+{"id": "lw2-0133", "text": "whole ramadan"}
+{"id": "lw2-0134", "text": "in ramadan month"}
+{"id": "lw2-0135", "text": "for the eight days of chanukah"}
+{"id": "lw2-0136", "text": "full week of passover"}
+{"id": "lw2-0137", "text": "during pesach week"}
+{"id": "lw2-0138", "text": "all chinese new year holiday"}
+{"id": "lw2-0139", "text": "the cny week"}
+{"id": "lw2-0140", "text": "spring festival golden week"}
+{"id": "lw2-0141", "text": "whole diwali week"}
+{"id": "lw2-0142", "text": "five days of diwali"}
+{"id": "lw2-0143", "text": "over the eid ul adha holidays"}
+{"id": "lw2-0144", "text": "eid fitr holidays"}
+{"id": "lw2-0145", "text": "during holi"}
+{"id": "lw2-0146", "text": "the holi weekend"}
+{"id": "lw2-0148", "text": "ten days of awe"}
+{"id": "lw2-0149", "text": "during mid autumn holiday"}
+{"id": "lw2-0150", "text": "chuseok long weekend"}
+{"id": "lw2-0151", "text": "dragon boat holiday three days"}
+{"id": "lw2-0152", "text": "during purim"}
+{"id": "lw2-0153", "text": "the yom kippur fast"}
+{"id": "lw2-0154", "text": "throughout rosh hashana two days"}
+{"id": "lw2-0155", "text": "from diwali till bhai dooj"}
+{"id": "lw2-0156", "text": "diwali to chhath puja"}
+{"id": "lw2-0157", "text": "till eid ul fitr"}
+{"id": "lw2-0158", "text": "until hari raya"}
+{"id": "lw2-0159", "text": "from first of ramadan until eid"}
+{"id": "lw2-0160", "text": "between eid al fitr and eid al adha"}
+{"id": "lw2-0161", "text": "after bakrid"}
+{"id": "lw2-0162", "text": "before eid ul adha"}
+{"id": "lw2-0164", "text": "between pesach and shavuot"}
+{"id": "lw2-0165", "text": "after pesach"}
+{"id": "lw2-0166", "text": "before passover start"}
+{"id": "lw2-0167", "text": "since rosh hashanah"}
+{"id": "lw2-0169", "text": "after yom kippur until sukkot"}
+{"id": "lw2-0170", "text": "from hanukkah to new years"}
+{"id": "lw2-0171", "text": "before chanukah"}
+{"id": "lw2-0172", "text": "hanukkah until christmas"}
+{"id": "lw2-0173", "text": "holi till end of march"}
+{"id": "lw2-0174", "text": "from holi to april fifteen"}
+{"id": "lw2-0176", "text": "before chinese new year"}
+{"id": "lw2-0177", "text": "chinese new year to lantern festival"}
+{"id": "lw2-0178", "text": "from cny until 15 feb"}
+{"id": "lw2-0179", "text": "after mid autumn festival"}
+{"id": "lw2-0181", "text": "until dragon boat festival"}
+{"id": "lw2-0182", "text": "from duanwu to end of june"}
+{"id": "lw2-0183", "text": "since last purim"}
+{"id": "lw2-0184", "text": "from purim to the next monday"}
+{"id": "lw2-0185", "text": "after eid fitr till next friday"}
+{"id": "lw2-0186", "text": "ramadan first day to fifteenth"}
+{"id": "lw2-0187", "text": "one week starting eid ul adha"}
+{"id": "lw2-0188", "text": "yom kippur to end of october"}
+{"id": "lw2-0189", "text": "remind me to call amma on diwali morning"}
+{"id": "lw2-0190", "text": "um set a reminder for holi party at riya place"}
+{"id": "lw2-0191", "text": "boss i take leave on eid ul fitr and the day after"}
+{"id": "lw2-0192", "text": "kindly note office close on hari raya haji"}
+{"id": "lw2-0193", "text": "shop closing early for chand raat bro"}
+{"id": "lw2-0194", "text": "can we shift the meeting after ramadan finish"}
+{"id": "lw2-0195", "text": "please no meeting in ramadan after 4pm"}
+{"id": "lw2-0196", "text": "remind me buy matzah before pesach"}
+{"id": "lw2-0197", "text": "school close for rosh hashanah both day"}
+{"id": "lw2-0198", "text": "i am fasting on yom kippur so cannot come"}
+{"id": "lw2-0199", "text": "hanukkah party at shira house third night"}
+{"id": "lw2-0200", "text": "we doing purim costume party on the saturday"}
+{"id": "lw2-0201", "text": "my flight back home for chinese new year is on monday"}
+{"id": "lw2-0202", "text": "we go back hometown for tet two week"}
+{"id": "lw2-0203", "text": "plan family trip to korea at seollal"}
+{"id": "lw2-0204", "text": "bring mooncake to office before mid autumn"}
+{"id": "lw2-0205", "text": "lets eat zongzi together on duanwu"}
+{"id": "lw2-0206", "text": "remind me to book train ticket for spring festival"}
+{"id": "lw2-0207", "text": "dad come visit during chuseok holiday"}
+{"id": "lw2-0208", "text": "deadline is after deepavali la"}
+{"id": "lw2-0209", "text": "please submit the report before eid al adha holiday start"}
+{"id": "lw2-0210", "text": "um remind me send greeting card for rosh hashana"}
+{"id": "lw2-0211", "text": "no class on yom kippur day tell the student"}
+{"id": "lw2-0212", "text": "seder at my aunt place first night passover seven pm"}
+{"id": "lw2-0213", "text": "kids no school purim and the day after"}
+{"id": "lw2-0214", "text": "watch dragon boat race with family on tuen ng"}
+{"id": "lw2-0215", "text": "jom buka puasa together last friday of ramadan"}
+{"id": "lw2-0216", "text": "holi khelne chalo holi morning 10 baje"}
+{"id": "lw2-0218", "text": "deepawali"}
+{"id": "lw2-0220", "text": "dol jatra"}
+{"id": "lw2-0221", "text": "lebaran"}
+{"id": "lw2-0224", "text": "bari eid"}
+{"id": "lw2-0225", "text": "hari raya korban"}
+{"id": "lw2-0226", "text": "idul adha"}
+{"id": "lw2-0227", "text": "eid ul azha"}
+{"id": "lw2-0229", "text": "bulan puasa"}
+{"id": "lw2-0230", "text": "rosh ha-shana"}
+{"id": "lw2-0231", "text": "yom teruah"}
+{"id": "lw2-0232", "text": "yom ha kippurim"}
+{"id": "lw2-0234", "text": "chag ha matzot"}
+{"id": "lw2-0235", "text": "chanuka"}
+{"id": "lw2-0236", "text": "פורים"}
+{"id": "lw2-0238", "text": "tết nguyên đán"}
+{"id": "lw2-0239", "text": "hangawi"}
+{"id": "lw2-0241", "text": "中秋节"}
+{"id": "lw2-0242", "text": "端午节"}
+{"id": "lw2-0243", "text": "double fifth festival"}
+{"id": "lw2-0244", "text": "عيد الفطر"}
+{"id": "lw2-0246", "text": "dewali nite"}
+{"id": "lw2-0247", "text": "holy festival"}
+{"id": "lw2-0248", "text": "eid ul fiter"}
+{"id": "lw2-0249", "text": "eid al-adah"}
+{"id": "lw2-0252", "text": "ramadam"}
+{"id": "lw2-0253", "text": "rosh hoshana"}
+{"id": "lw2-0254", "text": "rush hashanah"}
+{"id": "lw2-0255", "text": "yom kipper"}
+{"id": "lw2-0256", "text": "young kipper"}
+{"id": "lw2-0258", "text": "pesack"}
+{"id": "lw2-0259", "text": "hannuka"}
+{"id": "lw2-0260", "text": "poorim"}
+{"id": "lw2-0261", "text": "chinese new yr"}
+{"id": "lw2-0262", "text": "lunarnewyear"}
+{"id": "lw2-0263", "text": "mid-autum festivel"}
+{"id": "lw2-0264", "text": "dragen boat festival"}
+{"id": "lw2-0265", "text": "shubh deepavali"}
+{"id": "lw2-0266", "text": "diwali bonus"}
+{"id": "lw2-0267", "text": "holi powder buy"}
+{"id": "lw2-0268", "text": "selamat hari raya"}
+{"id": "lw2-0269", "text": "qurbani share price"}
+{"id": "lw2-0270", "text": "ramadan timetable pdf"}
+{"id": "lw2-0273", "text": "g'mar chatima tova"}
+{"id": "lw2-0275", "text": "passover haggadah"}
+{"id": "lw2-0276", "text": "hanukkah menorah"}
+{"id": "lw2-0279", "text": "chinese new year red packet design"}
+{"id": "lw2-0280", "text": "mooncake order"}
+{"id": "lw2-0281", "text": "zongzi recipe"}
+{"id": "lw2-0282", "text": "dragon boat team practice"}
+{"id": "lw2-0283", "text": "each eid we go to village"}
+{"id": "lw2-0285", "text": "new year"}
+{"id": "lw2-0286", "text": "the yom kippur war"}
+{"id": "lw2-0288", "text": "one shawwal"}
+{"id": "lw2-0291", "text": "15th of eighth moon"}
+{"id": "lw2-0292", "text": "chaand dikhne pe eid"}

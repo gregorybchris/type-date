@@ -1,0 +1,292 @@
+{"id": "lw2-0001", "text": "um diwali", "family": "A", "holiday": "diwali"}
+{"id": "lw2-0002", "text": "on diwali day", "family": "A", "holiday": "diwali"}
+{"id": "lw2-0003", "text": "for holi", "family": "A", "holiday": "holi"}
+{"id": "lw2-0004", "text": "holi day", "family": "A", "holiday": "holi", "note": "spaced holi day, reads like holiday"}
+{"id": "lw2-0005", "text": "in eid al fitr", "family": "A", "holiday": "eidfitr", "note": "in before a single day"}
+{"id": "lw2-0006", "text": "at eid ul adha", "family": "A", "holiday": "eidadha"}
+{"id": "lw2-0007", "text": "ramadan", "family": "A", "holiday": "ramadan"}
+{"id": "lw2-0008", "text": "remind me rosh hashanah", "family": "A", "holiday": "roshhashanah"}
+{"id": "lw2-0009", "text": "yom kippur day", "family": "A", "holiday": "yomkippur"}
+{"id": "lw2-0010", "text": "on the passover", "family": "A", "holiday": "passover"}
+{"id": "lw2-0011", "text": "for the hanukkah", "family": "A", "holiday": "hanukkah"}
+{"id": "lw2-0012", "text": "purim", "family": "A", "holiday": "purim"}
+{"id": "lw2-0013", "text": "on chinese new year", "family": "A", "holiday": "lny"}
+{"id": "lw2-0014", "text": "at lunar new year", "family": "A", "holiday": "lny"}
+{"id": "lw2-0015", "text": "mid autumn festival", "family": "A", "holiday": "midautumn"}
+{"id": "lw2-0016", "text": "on dragon boat festival", "family": "A", "holiday": "dragonboat"}
+{"id": "lw2-0017", "text": "remind me on purim", "family": "A", "holiday": "purim"}
+{"id": "lw2-0018", "text": "in mid-autumn", "family": "A", "holiday": "midautumn"}
+{"id": "lw2-0019", "text": "on dragon boat day", "family": "A", "holiday": "dragonboat"}
+{"id": "lw2-0020", "text": "for eid al adha", "family": "A", "holiday": "eidadha"}
+{"id": "lw2-0021", "text": "on the holi festival", "family": "A", "holiday": "holi"}
+{"id": "lw2-0022", "text": "in the ramadan", "family": "A", "holiday": "ramadan"}
+{"id": "lw2-0023", "text": "next coming diwali", "family": "B", "holiday": "diwali", "note": "two relative words stacked"}
+{"id": "lw2-0024", "text": "this coming eid ul fitr", "family": "B", "holiday": "eidfitr"}
+{"id": "lw2-0025", "text": "upcoming chinese new year", "family": "B", "holiday": "lny"}
+{"id": "lw2-0026", "text": "last year holi", "family": "B", "holiday": "holi", "note": "no possessive on year"}
+{"id": "lw2-0027", "text": "next year ramadan", "family": "B", "holiday": "ramadan"}
+{"id": "lw2-0028", "text": "the next passover", "family": "B", "holiday": "passover"}
+{"id": "lw2-0029", "text": "this year hanukah", "family": "B", "holiday": "hanukkah"}
+{"id": "lw2-0030", "text": "remind me next purim", "family": "B", "holiday": "purim"}
+{"id": "lw2-0031", "text": "coming mid autumn", "family": "B", "holiday": "midautumn"}
+{"id": "lw2-0032", "text": "this dragon boat festival", "family": "B", "holiday": "dragonboat"}
+{"id": "lw2-0033", "text": "previous rosh hashanah", "family": "B", "holiday": "roshhashanah"}
+{"id": "lw2-0034", "text": "next yom kippur", "family": "B", "holiday": "yomkippur"}
+{"id": "lw2-0035", "text": "last eid al adha", "family": "B", "holiday": "eidadha"}
+{"id": "lw2-0036", "text": "the ramadan after next", "family": "B", "holiday": "ramadan"}
+{"id": "lw2-0037", "text": "next to next chinese new year", "family": "B", "holiday": "lny", "note": "Indian English next to next means after next"}
+{"id": "lw2-0038", "text": "this years moon festival", "family": "B", "holiday": "midautumn"}
+{"id": "lw2-0039", "text": "the holi of next year", "family": "B", "holiday": "holi"}
+{"id": "lw2-0040", "text": "previous year's hanukkah", "family": "B", "holiday": "hanukkah"}
+{"id": "lw2-0041", "text": "this purim coming", "family": "B", "holiday": "purim", "note": "modifier split around the name"}
+{"id": "lw2-0042", "text": "the upcoming bakrid", "family": "B", "holiday": "eidadha"}
+{"id": "lw2-0043", "text": "the coming duanwu", "family": "B", "holiday": "dragonboat"}
+{"id": "lw2-0044", "text": "next rosh hashana", "family": "B", "holiday": "roshhashanah"}
+{"id": "lw2-0045", "text": "last year yom kippur", "family": "B", "holiday": "yomkippur"}
+{"id": "lw2-0046", "text": "diwali two thousand twenty seven", "family": "C", "holiday": "diwali", "note": "year as words"}
+{"id": "lw2-0047", "text": "eid al fitr twenty twenty eight", "family": "C", "holiday": "eidfitr", "note": "year as words"}
+{"id": "lw2-0048", "text": "chinese new year 2029", "family": "C", "holiday": "lny"}
+{"id": "lw2-0049", "text": "holi of 2027", "family": "C", "holiday": "holi"}
+{"id": "lw2-0050", "text": "ramadan year 2028", "family": "C", "holiday": "ramadan"}
+{"id": "lw2-0051", "text": "passover in 2030", "family": "C", "holiday": "passover"}
+{"id": "lw2-0052", "text": "hanukkah twenty twenty seven", "family": "C", "holiday": "hanukkah"}
+{"id": "lw2-0053", "text": "purim 2028 date", "family": "C", "holiday": "purim"}
+{"id": "lw2-0054", "text": "mid autumn 2027", "family": "C", "holiday": "midautumn"}
+{"id": "lw2-0055", "text": "dragon boat festival year 2029", "family": "C", "holiday": "dragonboat"}
+{"id": "lw2-0056", "text": "rosh hashanah 5788", "family": "C", "holiday": "roshhashanah", "note": "Hebrew year number"}
+{"id": "lw2-0057", "text": "yom kippur 2028", "family": "C", "holiday": "yomkippur"}
+{"id": "lw2-0058", "text": "eid al adha 1448", "family": "C", "holiday": "eidadha", "note": "hijri year number"}
+{"id": "lw2-0059", "text": "ramadan 1449 hijri", "family": "C", "holiday": "ramadan", "note": "hijri year with word hijri"}
+{"id": "lw2-0060", "text": "cny 2027 year of the goat", "family": "C", "holiday": "lny", "note": "zodiac name next to the year"}
+{"id": "lw2-0061", "text": "lunar new year year of horse", "family": "C", "holiday": "lny", "note": "year named only by zodiac animal"}
+{"id": "lw2-0062", "text": "tet 2028", "family": "C", "holiday": "lny"}
+{"id": "lw2-0063", "text": "diwali '28", "family": "C", "holiday": "diwali", "note": "two digit year with apostrophe"}
+{"id": "lw2-0064", "text": "passover twenty thirty", "family": "C", "holiday": "passover"}
+{"id": "lw2-0065", "text": "hanukkah in year 2029", "family": "C", "holiday": "hanukkah"}
+{"id": "lw2-0066", "text": "purim two thousand twenty nine", "family": "C", "holiday": "purim"}
+{"id": "lw2-0067", "text": "holi 2k27", "family": "C", "holiday": "holi", "note": "2k year"}
+{"id": "lw2-0068", "text": "duanwu 2028", "family": "C", "holiday": "dragonboat"}
+{"id": "lw2-0069", "text": "yom kippur of twenty twenty nine", "family": "C", "holiday": "yomkippur"}
+{"id": "lw2-0070", "text": "diwali seven pm", "family": "D", "holiday": "diwali"}
+{"id": "lw2-0071", "text": "eid ul fitr morning prayer 7.30", "family": "D", "holiday": "eidfitr"}
+{"id": "lw2-0072", "text": "holi afternoon 3 oclock", "family": "D", "holiday": "holi"}
+{"id": "lw2-0073", "text": "ramadan iftar time", "family": "D", "holiday": "ramadan", "note": "meal name as time of day"}
+{"id": "lw2-0074", "text": "passover seder eight pm", "family": "D", "holiday": "passover"}
+{"id": "lw2-0075", "text": "hanukkah five thirty in the evening", "family": "D", "holiday": "hanukkah"}
+{"id": "lw2-0076", "text": "purim morning megillah reading", "family": "D", "holiday": "purim"}
+{"id": "lw2-0077", "text": "chinese new year reunion dinner at 7", "family": "D", "holiday": "lny"}
+{"id": "lw2-0078", "text": "mid autumn night 8pm", "family": "D", "holiday": "midautumn"}
+{"id": "lw2-0079", "text": "dragon boat festival 9 in the morning", "family": "D", "holiday": "dragonboat"}
+{"id": "lw2-0080", "text": "rosh hashanah lunch one pm", "family": "D", "holiday": "roshhashanah"}
+{"id": "lw2-0081", "text": "yom kippur break fast 7:15", "family": "D", "holiday": "yomkippur", "note": "break fast meal with a time"}
+{"id": "lw2-0082", "text": "eid al adha morning after namaz", "family": "D", "holiday": "eidadha", "note": "time given by prayer"}
+{"id": "lw2-0083", "text": "diwali puja 6:45 pm", "family": "D", "holiday": "diwali"}
+{"id": "lw2-0084", "text": "ramzan sehri 4am", "family": "D", "holiday": "ramadan", "note": "suhoor meal with time"}
+{"id": "lw2-0085", "text": "lny noon", "family": "D", "holiday": "lny"}
+{"id": "lw2-0086", "text": "mid autumn evening at six", "family": "D", "holiday": "midautumn"}
+{"id": "lw2-0087", "text": "purim at seven thirty pm", "family": "D", "holiday": "purim"}
+{"id": "lw2-0088", "text": "rosh hashanah night 8", "family": "D", "holiday": "roshhashanah"}
+{"id": "lw2-0089", "text": "bakrid 8 o clock morning", "family": "D", "holiday": "eidadha"}
+{"id": "lw2-0090", "text": "hanukkah 6pm candle lighting", "family": "D", "holiday": "hanukkah"}
+{"id": "lw2-0091", "text": "passover lunch 12.30", "family": "D", "holiday": "passover"}
+{"id": "lw2-0092", "text": "yom kippur afternoon 4:30", "family": "D", "holiday": "yomkippur"}
+{"id": "lw2-0093", "text": "erev rosh hashana dinner", "family": "E", "holiday": "roshhashanah"}
+{"id": "lw2-0094", "text": "the night before yom kippur", "family": "E", "holiday": "yomkippur"}
+{"id": "lw2-0095", "text": "kol nidre night", "family": "E", "holiday": "yomkippur", "note": "eve named by its service"}
+{"id": "lw2-0096", "text": "first seder", "family": "E", "holiday": "passover", "note": "first night named by the meal"}
+{"id": "lw2-0097", "text": "second seder night", "family": "E", "holiday": "passover"}
+{"id": "lw2-0098", "text": "last day of pesach", "family": "E", "holiday": "passover"}
+{"id": "lw2-0099", "text": "day before passover", "family": "E", "holiday": "passover"}
+{"id": "lw2-0100", "text": "third night hanukkah", "family": "E", "holiday": "hanukkah"}
+{"id": "lw2-0101", "text": "eighth night of chanukah", "family": "E", "holiday": "hanukkah"}
+{"id": "lw2-0102", "text": "last candle of hanukkah", "family": "E", "holiday": "hanukkah", "note": "last night named by candle"}
+{"id": "lw2-0103", "text": "night before diwali", "family": "E", "holiday": "diwali"}
+{"id": "lw2-0104", "text": "choti diwali", "family": "E", "holiday": "diwali", "note": "day before diwali by its own name"}
+{"id": "lw2-0105", "text": "two days before diwali", "family": "E", "holiday": "diwali"}
+{"id": "lw2-0106", "text": "dhanteras", "family": "E", "holiday": "diwali", "note": "named day two days before diwali"}
+{"id": "lw2-0107", "text": "day after holi", "family": "E", "holiday": "holi"}
+{"id": "lw2-0108", "text": "holika dahan night", "family": "E", "holiday": "holi", "note": "eve named by its ritual"}
+{"id": "lw2-0109", "text": "chand raat", "family": "E", "holiday": "eidfitr", "note": "eve of eid named by the moon"}
+{"id": "lw2-0110", "text": "last ashra of ramadan", "family": "E", "holiday": "ramadan", "note": "last ten days of ramadan"}
+{"id": "lw2-0111", "text": "first roza", "family": "E", "holiday": "ramadan", "note": "first fast day"}
+{"id": "lw2-0112", "text": "last iftar of ramadan", "family": "E", "holiday": "ramadan"}
+{"id": "lw2-0113", "text": "twenty seventh night of ramadan", "family": "E", "holiday": "ramadan"}
+{"id": "lw2-0114", "text": "second day of eid ul fitr", "family": "E", "holiday": "eidfitr"}
+{"id": "lw2-0115", "text": "third day eid al adha", "family": "E", "holiday": "eidadha"}
+{"id": "lw2-0116", "text": "day before bakrid", "family": "E", "holiday": "eidadha"}
+{"id": "lw2-0117", "text": "arafah day", "family": "E", "holiday": "eidadha", "note": "day before eid al adha by its own name"}
+{"id": "lw2-0118", "text": "chinese new year eve dinner", "family": "E", "holiday": "lny"}
+{"id": "lw2-0119", "text": "day three of cny", "family": "E", "holiday": "lny"}
+{"id": "lw2-0120", "text": "chu xi night", "family": "E", "holiday": "lny", "note": "pinyin name of new year's eve"}
+{"id": "lw2-0121", "text": "first day lunar new year", "family": "E", "holiday": "lny"}
+{"id": "lw2-0122", "text": "fifteenth day of chinese new year", "family": "E", "holiday": "lny", "note": "lantern festival as a day offset"}
+{"id": "lw2-0123", "text": "the day after mid autumn", "family": "E", "holiday": "midautumn"}
+{"id": "lw2-0124", "text": "mid autumn eve", "family": "E", "holiday": "midautumn"}
+{"id": "lw2-0125", "text": "day before dragon boat festival", "family": "E", "holiday": "dragonboat"}
+{"id": "lw2-0126", "text": "one day after duanwu", "family": "E", "holiday": "dragonboat"}
+{"id": "lw2-0127", "text": "purim eve", "family": "E", "holiday": "purim"}
+{"id": "lw2-0128", "text": "day after purim", "family": "E", "holiday": "purim"}
+{"id": "lw2-0129", "text": "taanit esther", "family": "E", "holiday": "purim", "note": "fast day before purim by its own name"}
+{"id": "lw2-0130", "text": "one week before rosh hashanah", "family": "E", "holiday": "roshhashanah"}
+{"id": "lw2-0131", "text": "end of yom kippur", "family": "E", "holiday": "yomkippur"}
+{"id": "lw2-0132", "text": "eve of eid ul adha", "family": "E", "holiday": "eidadha"}
+{"id": "lw2-0133", "text": "whole ramadan", "family": "F", "holiday": "ramadan"}
+{"id": "lw2-0134", "text": "in ramadan month", "family": "F", "holiday": "ramadan"}
+{"id": "lw2-0135", "text": "for the eight days of chanukah", "family": "F", "holiday": "hanukkah"}
+{"id": "lw2-0136", "text": "full week of passover", "family": "F", "holiday": "passover"}
+{"id": "lw2-0137", "text": "during pesach week", "family": "F", "holiday": "passover"}
+{"id": "lw2-0138", "text": "all chinese new year holiday", "family": "F", "holiday": "lny"}
+{"id": "lw2-0139", "text": "the cny week", "family": "F", "holiday": "lny"}
+{"id": "lw2-0140", "text": "spring festival golden week", "family": "F", "holiday": "lny", "note": "public holiday week name"}
+{"id": "lw2-0141", "text": "whole diwali week", "family": "F", "holiday": "diwali"}
+{"id": "lw2-0142", "text": "five days of diwali", "family": "F", "holiday": "diwali"}
+{"id": "lw2-0143", "text": "over the eid ul adha holidays", "family": "F", "holiday": "eidadha"}
+{"id": "lw2-0144", "text": "eid fitr holidays", "family": "F", "holiday": "eidfitr"}
+{"id": "lw2-0145", "text": "during holi", "family": "F", "holiday": "holi"}
+{"id": "lw2-0146", "text": "the holi weekend", "family": "F", "holiday": "holi"}
+{"id": "lw2-0147", "text": "the high holidays", "family": "F", "holiday": "several", "note": "span from rosh hashanah to yom kippur"}
+{"id": "lw2-0148", "text": "ten days of awe", "family": "F", "holiday": "several", "note": "days of awe span"}
+{"id": "lw2-0149", "text": "during mid autumn holiday", "family": "F", "holiday": "midautumn"}
+{"id": "lw2-0150", "text": "chuseok long weekend", "family": "F", "holiday": "midautumn"}
+{"id": "lw2-0151", "text": "dragon boat holiday three days", "family": "F", "holiday": "dragonboat"}
+{"id": "lw2-0152", "text": "during purim", "family": "F", "holiday": "purim"}
+{"id": "lw2-0153", "text": "the yom kippur fast", "family": "F", "holiday": "yomkippur", "note": "fast as a period, sunset to nightfall"}
+{"id": "lw2-0154", "text": "throughout rosh hashana two days", "family": "F", "holiday": "roshhashanah"}
+{"id": "lw2-0155", "text": "from diwali till bhai dooj", "family": "G", "holiday": "diwali", "note": "end named by a later hindu day"}
+{"id": "lw2-0156", "text": "diwali to chhath puja", "family": "G", "holiday": "diwali", "note": "end at another hindu festival"}
+{"id": "lw2-0157", "text": "till eid ul fitr", "family": "G", "holiday": "eidfitr"}
+{"id": "lw2-0158", "text": "until hari raya", "family": "G", "holiday": "eidfitr"}
+{"id": "lw2-0159", "text": "from first of ramadan until eid", "family": "G", "holiday": "several"}
+{"id": "lw2-0160", "text": "between eid al fitr and eid al adha", "family": "G", "holiday": "several"}
+{"id": "lw2-0161", "text": "after bakrid", "family": "G", "holiday": "eidadha"}
+{"id": "lw2-0162", "text": "before eid ul adha", "family": "G", "holiday": "eidadha"}
+{"id": "lw2-0163", "text": "from purim to passover", "family": "G", "holiday": "several"}
+{"id": "lw2-0164", "text": "between pesach and shavuot", "family": "G", "holiday": "passover", "note": "end at an out-of-scope holiday"}
+{"id": "lw2-0165", "text": "after pesach", "family": "G", "holiday": "passover"}
+{"id": "lw2-0166", "text": "before passover start", "family": "G", "holiday": "passover"}
+{"id": "lw2-0167", "text": "since rosh hashanah", "family": "G", "holiday": "roshhashanah"}
+{"id": "lw2-0168", "text": "rosh hashanah through yom kippur", "family": "G", "holiday": "several"}
+{"id": "lw2-0169", "text": "after yom kippur until sukkot", "family": "G", "holiday": "yomkippur"}
+{"id": "lw2-0170", "text": "from hanukkah to new years", "family": "G", "holiday": "hanukkah"}
+{"id": "lw2-0171", "text": "before chanukah", "family": "G", "holiday": "hanukkah"}
+{"id": "lw2-0172", "text": "hanukkah until christmas", "family": "G", "holiday": "hanukkah"}
+{"id": "lw2-0173", "text": "holi till end of march", "family": "G", "holiday": "holi"}
+{"id": "lw2-0174", "text": "from holi to april fifteen", "family": "G", "holiday": "holi"}
+{"id": "lw2-0175", "text": "after holi", "family": "G", "holiday": "holi"}
+{"id": "lw2-0176", "text": "before chinese new year", "family": "G", "holiday": "lny"}
+{"id": "lw2-0177", "text": "chinese new year to lantern festival", "family": "G", "holiday": "lny"}
+{"id": "lw2-0178", "text": "from cny until 15 feb", "family": "G", "holiday": "lny"}
+{"id": "lw2-0179", "text": "after mid autumn festival", "family": "G", "holiday": "midautumn"}
+{"id": "lw2-0180", "text": "mid autumn to national day", "family": "G", "holiday": "midautumn", "note": "end at China national day, oct 1"}
+{"id": "lw2-0181", "text": "until dragon boat festival", "family": "G", "holiday": "dragonboat"}
+{"id": "lw2-0182", "text": "from duanwu to end of june", "family": "G", "holiday": "dragonboat"}
+{"id": "lw2-0183", "text": "since last purim", "family": "G", "holiday": "purim"}
+{"id": "lw2-0184", "text": "from purim to the next monday", "family": "G", "holiday": "purim"}
+{"id": "lw2-0185", "text": "after eid fitr till next friday", "family": "G", "holiday": "eidfitr"}
+{"id": "lw2-0186", "text": "ramadan first day to fifteenth", "family": "G", "holiday": "ramadan", "note": "range of days inside the month"}
+{"id": "lw2-0187", "text": "one week starting eid ul adha", "family": "G", "holiday": "eidadha"}
+{"id": "lw2-0188", "text": "yom kippur to end of october", "family": "G", "holiday": "yomkippur"}
+{"id": "lw2-0189", "text": "remind me to call amma on diwali morning", "family": "H", "holiday": "diwali"}
+{"id": "lw2-0190", "text": "um set a reminder for holi party at riya place", "family": "H", "holiday": "holi"}
+{"id": "lw2-0191", "text": "boss i take leave on eid ul fitr and the day after", "family": "H", "holiday": "eidfitr"}
+{"id": "lw2-0192", "text": "kindly note office close on hari raya haji", "family": "H", "holiday": "eidadha"}
+{"id": "lw2-0193", "text": "shop closing early for chand raat bro", "family": "H", "holiday": "eidfitr"}
+{"id": "lw2-0194", "text": "can we shift the meeting after ramadan finish", "family": "H", "holiday": "ramadan"}
+{"id": "lw2-0195", "text": "please no meeting in ramadan after 4pm", "family": "H", "holiday": "ramadan", "note": "time bound across a whole month"}
+{"id": "lw2-0196", "text": "remind me buy matzah before pesach", "family": "H", "holiday": "passover"}
+{"id": "lw2-0197", "text": "school close for rosh hashanah both day", "family": "H", "holiday": "roshhashanah"}
+{"id": "lw2-0198", "text": "i am fasting on yom kippur so cannot come", "family": "H", "holiday": "yomkippur"}
+{"id": "lw2-0199", "text": "hanukkah party at shira house third night", "family": "H", "holiday": "hanukkah"}
+{"id": "lw2-0200", "text": "we doing purim costume party on the saturday", "family": "H", "holiday": "purim", "note": "weekday near the holiday"}
+{"id": "lw2-0201", "text": "my flight back home for chinese new year is on monday", "family": "H", "holiday": "lny"}
+{"id": "lw2-0202", "text": "we go back hometown for tet two week", "family": "H", "holiday": "lny"}
+{"id": "lw2-0203", "text": "plan family trip to korea at seollal", "family": "H", "holiday": "lny"}
+{"id": "lw2-0204", "text": "bring mooncake to office before mid autumn", "family": "H", "holiday": "midautumn"}
+{"id": "lw2-0205", "text": "lets eat zongzi together on duanwu", "family": "H", "holiday": "dragonboat"}
+{"id": "lw2-0206", "text": "remind me to book train ticket for spring festival", "family": "H", "holiday": "lny"}
+{"id": "lw2-0207", "text": "dad come visit during chuseok holiday", "family": "H", "holiday": "midautumn"}
+{"id": "lw2-0208", "text": "deadline is after deepavali la", "family": "H", "holiday": "diwali", "note": "Malaysian la particle at the end"}
+{"id": "lw2-0209", "text": "please submit the report before eid al adha holiday start", "family": "H", "holiday": "eidadha"}
+{"id": "lw2-0210", "text": "um remind me send greeting card for rosh hashana", "family": "H", "holiday": "roshhashanah"}
+{"id": "lw2-0211", "text": "no class on yom kippur day tell the student", "family": "H", "holiday": "yomkippur"}
+{"id": "lw2-0212", "text": "seder at my aunt place first night passover seven pm", "family": "H", "holiday": "passover"}
+{"id": "lw2-0213", "text": "kids no school purim and the day after", "family": "H", "holiday": "purim"}
+{"id": "lw2-0214", "text": "watch dragon boat race with family on tuen ng", "family": "H", "holiday": "dragonboat"}
+{"id": "lw2-0215", "text": "jom buka puasa together last friday of ramadan", "family": "H", "holiday": "ramadan", "note": "Malay phrase, weekday inside the month"}
+{"id": "lw2-0216", "text": "holi khelne chalo holi morning 10 baje", "family": "H", "holiday": "holi", "note": "Hinglish with hindi baje for o'clock"}
+{"id": "lw2-0217", "text": "dipawali", "family": "I", "holiday": "diwali"}
+{"id": "lw2-0218", "text": "deepawali", "family": "I", "holiday": "diwali"}
+{"id": "lw2-0219", "text": "phagwah", "family": "I", "holiday": "holi", "note": "Caribbean name for holi"}
+{"id": "lw2-0220", "text": "dol jatra", "family": "I", "holiday": "holi", "note": "Bengali name for holi"}
+{"id": "lw2-0221", "text": "lebaran", "family": "I", "holiday": "eidfitr", "note": "Indonesian name"}
+{"id": "lw2-0222", "text": "hari raya aidilfitri", "family": "I", "holiday": "eidfitr"}
+{"id": "lw2-0223", "text": "choti eid", "family": "I", "holiday": "eidfitr", "note": "small eid means eid al fitr"}
+{"id": "lw2-0224", "text": "bari eid", "family": "I", "holiday": "eidadha", "note": "big eid means eid al adha"}
+{"id": "lw2-0225", "text": "hari raya korban", "family": "I", "holiday": "eidadha"}
+{"id": "lw2-0226", "text": "idul adha", "family": "I", "holiday": "eidadha"}
+{"id": "lw2-0227", "text": "eid ul azha", "family": "I", "holiday": "eidadha"}
+{"id": "lw2-0228", "text": "ramazan", "family": "I", "holiday": "ramadan"}
+{"id": "lw2-0229", "text": "bulan puasa", "family": "I", "holiday": "ramadan", "note": "Malay for fasting month"}
+{"id": "lw2-0230", "text": "rosh ha-shana", "family": "I", "holiday": "roshhashanah"}
+{"id": "lw2-0231", "text": "yom teruah", "family": "I", "holiday": "roshhashanah", "note": "biblical name"}
+{"id": "lw2-0232", "text": "yom ha kippurim", "family": "I", "holiday": "yomkippur"}
+{"id": "lw2-0233", "text": "pesah", "family": "I", "holiday": "passover"}
+{"id": "lw2-0234", "text": "chag ha matzot", "family": "I", "holiday": "passover"}
+{"id": "lw2-0235", "text": "chanuka", "family": "I", "holiday": "hanukkah"}
+{"id": "lw2-0236", "text": "פורים", "family": "I", "holiday": "purim", "note": "Hebrew script"}
+{"id": "lw2-0237", "text": "chun jie", "family": "I", "holiday": "lny"}
+{"id": "lw2-0238", "text": "tết nguyên đán", "family": "I", "holiday": "lny", "note": "Vietnamese with diacritics"}
+{"id": "lw2-0239", "text": "hangawi", "family": "I", "holiday": "midautumn", "note": "Korean alternate name"}
+{"id": "lw2-0240", "text": "trung thu", "family": "I", "holiday": "midautumn", "note": "Vietnamese name"}
+{"id": "lw2-0241", "text": "中秋节", "family": "I", "holiday": "midautumn", "note": "Chinese script"}
+{"id": "lw2-0242", "text": "端午节", "family": "I", "holiday": "dragonboat", "note": "Chinese script"}
+{"id": "lw2-0243", "text": "double fifth festival", "family": "I", "holiday": "dragonboat", "note": "English name from the date"}
+{"id": "lw2-0244", "text": "عيد الفطر", "family": "I", "holiday": "eidfitr", "note": "Arabic script"}
+{"id": "lw2-0245", "text": "diwalli", "family": "J", "holiday": "diwali"}
+{"id": "lw2-0246", "text": "dewali nite", "family": "J", "holiday": "diwali"}
+{"id": "lw2-0247", "text": "holy festival", "family": "J", "holiday": "holi", "note": "autocorrect holi to holy"}
+{"id": "lw2-0248", "text": "eid ul fiter", "family": "J", "holiday": "eidfitr"}
+{"id": "lw2-0249", "text": "eid al-adah", "family": "J", "holiday": "eidadha"}
+{"id": "lw2-0250", "text": "bakra eid", "family": "J", "holiday": "eidadha"}
+{"id": "lw2-0251", "text": "ramdan", "family": "J", "holiday": "ramadan"}
+{"id": "lw2-0252", "text": "ramadam", "family": "J", "holiday": "ramadan", "note": "autocorrect"}
+{"id": "lw2-0253", "text": "rosh hoshana", "family": "J", "holiday": "roshhashanah"}
+{"id": "lw2-0254", "text": "rush hashanah", "family": "J", "holiday": "roshhashanah", "note": "autocorrect rosh to rush"}
+{"id": "lw2-0255", "text": "yom kipper", "family": "J", "holiday": "yomkippur"}
+{"id": "lw2-0256", "text": "young kipper", "family": "J", "holiday": "yomkippur", "note": "voice mishearing"}
+{"id": "lw2-0257", "text": "pass over", "family": "J", "holiday": "passover", "note": "split by voice"}
+{"id": "lw2-0258", "text": "pesack", "family": "J", "holiday": "passover"}
+{"id": "lw2-0259", "text": "hannuka", "family": "J", "holiday": "hanukkah"}
+{"id": "lw2-0260", "text": "poorim", "family": "J", "holiday": "purim"}
+{"id": "lw2-0261", "text": "chinese new yr", "family": "J", "holiday": "lny"}
+{"id": "lw2-0262", "text": "lunarnewyear", "family": "J", "holiday": "lny", "note": "no spaces"}
+{"id": "lw2-0263", "text": "mid-autum festivel", "family": "J", "holiday": "midautumn"}
+{"id": "lw2-0264", "text": "dragen boat festival", "family": "J", "holiday": "dragonboat"}
+{"id": "lw2-0265", "text": "shubh deepavali", "family": "K", "holiday": "diwali", "note": "greeting only"}
+{"id": "lw2-0266", "text": "diwali bonus", "family": "K", "holiday": "diwali"}
+{"id": "lw2-0267", "text": "holi powder buy", "family": "K", "holiday": "holi"}
+{"id": "lw2-0268", "text": "selamat hari raya", "family": "K", "holiday": "eidfitr", "note": "greeting only"}
+{"id": "lw2-0269", "text": "qurbani share price", "family": "K", "holiday": "eidadha"}
+{"id": "lw2-0270", "text": "ramadan timetable pdf", "family": "K", "holiday": "ramadan"}
+{"id": "lw2-0271", "text": "ramadan mubarak", "family": "K", "holiday": "ramadan", "note": "greeting only"}
+{"id": "lw2-0272", "text": "shana tova", "family": "K", "holiday": "roshhashanah", "note": "greeting only"}
+{"id": "lw2-0273", "text": "g'mar chatima tova", "family": "K", "holiday": "yomkippur", "note": "greeting only"}
+{"id": "lw2-0274", "text": "chag sameach", "family": "K", "holiday": "none", "note": "greeting for any jewish holiday"}
+{"id": "lw2-0275", "text": "passover haggadah", "family": "K", "holiday": "passover"}
+{"id": "lw2-0276", "text": "hanukkah menorah", "family": "K", "holiday": "hanukkah"}
+{"id": "lw2-0277", "text": "purim spiel script", "family": "K", "holiday": "purim"}
+{"id": "lw2-0278", "text": "gong xi fa cai", "family": "K", "holiday": "lny", "note": "greeting only"}
+{"id": "lw2-0279", "text": "chinese new year red packet design", "family": "K", "holiday": "lny"}
+{"id": "lw2-0280", "text": "mooncake order", "family": "K", "holiday": "midautumn"}
+{"id": "lw2-0281", "text": "zongzi recipe", "family": "K", "holiday": "dragonboat"}
+{"id": "lw2-0282", "text": "dragon boat team practice", "family": "K", "holiday": "dragonboat", "note": "the sport, not the festival"}
+{"id": "lw2-0283", "text": "each eid we go to village", "family": "K", "holiday": "eidfitr", "note": "recurring, no single date"}
+{"id": "lw2-0284", "text": "purim katan", "family": "K", "holiday": "purim", "note": "different day, Adar I in leap years"}
+{"id": "lw2-0285", "text": "new year", "family": "K", "holiday": "none", "note": "gregorian, not lunar"}
+{"id": "lw2-0286", "text": "the yom kippur war", "family": "K", "holiday": "yomkippur", "note": "historical event"}
+{"id": "lw2-0287", "text": "10 dhul hijjah", "family": "L", "holiday": "eidadha", "note": "hijri date written out"}
+{"id": "lw2-0288", "text": "one shawwal", "family": "L", "holiday": "eidfitr", "note": "hijri date with number as word"}
+{"id": "lw2-0289", "text": "15 nisan", "family": "L", "holiday": "passover", "note": "Hebrew date"}
+{"id": "lw2-0290", "text": "25 kislev", "family": "L", "holiday": "hanukkah", "note": "Hebrew date"}
+{"id": "lw2-0291", "text": "15th of eighth moon", "family": "L", "holiday": "midautumn", "note": "Chinese lunar date"}
+{"id": "lw2-0292", "text": "chaand dikhne pe eid", "family": "L", "holiday": "eidfitr", "note": "eid on moon sighting, Hindi"}
