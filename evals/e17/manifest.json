@@ -1,0 +1,132 @@
+{
+ "parent": "e16",
+ "subset_of": null,
+ "reason": "h15 round (2026-11-21, specs/dsl.md 'Offsets from now, relative weekends, parts of a month'): two new sealed splits, test_rel_writers (240 rows, writer set rel-w3: messages and notices by region) and test_rel_web (138 rows, rel-w4: phrases from public pages, mostly parser test suites), both deduped against all data and evals. Label-policy change: 'this weekend' is WKND+0 (was sa>su), offsets from now are now+Nh (were x), a year on an nth weekday is @YYYY-MM. 13 e16 rows that h15 reads with a new token were relabeled by two labelers who did not see h15's output: 12 relabeled, 1 dropped (unsure).",
+ "rel_relabel": {
+  "relabeled": 12,
+  "dropped": 1
+ },
+ "added_splits": [
+  "test_rel_web",
+  "test_rel_writers"
+ ],
+ "version": "e17",
+ "created": "2026-11-22T01:17:29+00:00",
+ "files": {
+  "val": {
+   "n": 2505,
+   "sha256": "de4bf024453659fadec5e7b72efad3cb89581375af14cf0b457bb8dfc96e2b8c"
+  },
+  "test_template": {
+   "n": 4539,
+   "sha256": "d3b68659d1bef9657d30fee0663cbe95ce3cb24f3cf2b1956e8ea928cd76225c"
+  },
+  "test_noise": {
+   "n": 1463,
+   "sha256": "d398e943b2ca2da7b0005d09dd4d0a4d7e4c868cf695dd056ec7e0b5ce156093"
+  },
+  "test_llm": {
+   "n": 1289,
+   "sha256": "8b8d9c266a72a1d343488763ab2b01b7ebbd965e94b01fa21376256b71584c93"
+  },
+  "test_external": {
+   "n": 307,
+   "sha256": "267f03f8358793f573677922318fd1a966048bc6c615765b5e572450a510baf3"
+  },
+  "test_external_hard": {
+   "n": 769,
+   "sha256": "c6126b7862969ee7bc33b9280a70a845774a8764b47a3598ad934f0ce381a31a"
+  },
+  "test_public": {
+   "n": 211,
+   "sha256": "865525c77b8e1757e1f460045add9a647a78a596210127e89cf25c0bccf045d6"
+  },
+  "test_public2": {
+   "n": 121,
+   "sha256": "b2c6f1d38818765b329b8a97bd50758cbcccb0f90a6814026542e7039dbb143b"
+  },
+  "test_v2": {
+   "n": 224,
+   "sha256": "b7688d80471b0a0ab47a4b477b2d97a92f21abb787e76082651d7421b6994b21"
+  },
+  "test_tax": {
+   "n": 275,
+   "sha256": "e96db9c17a97924eb139138e9fc7d0a463c6b3fd76911196240f32402b31646e"
+  },
+  "test_web_heldout": {
+   "n": 388,
+   "sha256": "453b369dcda36ee754d9db723b48f290b4e1b97da420497e9370d31d942ccd93"
+  },
+  "test_web_sealed": {
+   "n": 250,
+   "sha256": "0120ac0768afe1c0eaee489ed88f426c870adeaa272b6cd920c89218f2cd0aef"
+  },
+  "test_web2_sealed": {
+   "n": 366,
+   "sha256": "839465d1d81da6494b7b81df999bef5ac58bd5b6b1662e2dd129ccac2decf391"
+  },
+  "test_typo": {
+   "n": 1083,
+   "sha256": "e5ac87758994dad66e6a67d48e1887cda9de744c7fb4a2d0d517a6638a0c5969"
+  },
+  "test_new_forms": {
+   "n": 136,
+   "sha256": "f4175665b1f43e6acff5d5778184b10447255158a9c7777a213f12f63af8479f"
+  },
+  "test_families": {
+   "n": 121,
+   "sha256": "11e2f9e7bfb06260e834352e89720ddecd9114017cb375e087416e20a1b08f78"
+  },
+  "test_number_words": {
+   "n": 25,
+   "sha256": "bd351d39f0e75e39cdf6c8e257cd6de3cfc6d33f1c34b2e0169b9b3e649d63a3"
+  },
+  "test_personas": {
+   "n": 547,
+   "sha256": "3bf66630a567ad123f4c04612cbc50dbd0a0c16c267e0cb568d76b8fc4d512ea"
+  },
+  "test_voice_booking": {
+   "n": 194,
+   "sha256": "49cc84bdbed79a619bc14d0a82ab3277a0ef8b337d6e891783536457c1370db3"
+  },
+  "test_formats_domain": {
+   "n": 260,
+   "sha256": "575a894c79a7150b85d9c7a581c7de950361c8c4702d8be71a5d4c6b24e93874"
+  },
+  "test_conj_writers": {
+   "n": 602,
+   "sha256": "68cb707278a5f5717fa53ce1ae99ff17e87c30c6278d9e3c5cff37ef32ea6690"
+  },
+  "test_conj_web": {
+   "n": 289,
+   "sha256": "8c1d9fe3ad7a74e745b05467e742980a1caff13bd995adf4f3cda0afe1901195"
+  },
+  "test_tz_writers": {
+   "n": 510,
+   "sha256": "a43b602a21b43b9b2dd34c086c7da91846b17b3c70b5866a372511336120dd1a"
+  },
+  "test_tz_web": {
+   "n": 532,
+   "sha256": "8fd222044d18df85ff978c3c3d2ad9ddaf9224282cef3df1e2631f03f9b4764e"
+  },
+  "test_tz_context": {
+   "n": 104,
+   "sha256": "21192003700d43b5068f0396fd80d08e9f740cabfb9483a1aecb49a656775616"
+  },
+  "test_rel_writers": {
+   "n": 240,
+   "sha256": "f83150694093e60175b904b04419c4b974c31641e982c6d4f9da11ff7bf24658"
+  },
+  "test_rel_web": {
+   "n": 138,
+   "sha256": "03369620c4dabcc466a7d7d1edcbf312f8ff3e827d7f41580e93339f3c8cb51b"
+  }
+ },
+ "known_issues": [
+  "The stale-row list was found by running h15 over the e16 rows (a row was listed when h15 answered with a new token, WKND, now, W#K or a @YYYY-MM month, and the label resolved differently on some reference day), then relabeled by two labelers who did not see h15's output. Stale rows that h15 does not read were not listed.",
+  "test_rel_web: about 80% of its phrases come from public parser test suites (duckling, dateparser, Recognizers-Text, chronic); few are from event or forum pages, because most such pages could not be fetched.",
+  "v007 train (a training set, not an eval) keeps labels that conflict with the h15 policy: 'last day of the month' as a monthly recurrence and 'this weekend' as sa>su. They are in specs/engines/h15-known-conflicts.json.",
+  "The h15 engine author read the texts of the open pool writer sets (rel-w1, rel-w2) while writing the rule, including the odd-half rows. No row of test_rel_writers or test_rel_web was read before scoring.",
+  "Post hoc: h15 was scored once on the committed engine (test_rel_writers 0.500, test_rel_web 0.732, exact). The family aggregates showed offsets from now failing on test_rel_writers (families C to F at 0.00 to 0.10), because the rule read an offset only when it was the whole text. The engine author then added a search for the offset inside a sentence and scored again (0.742, 0.739). No sealed row was read, but the fix used a failure category from the sealed split, so the second numbers are not independent and test_rel_writers is burned for further offset tuning."
+ ]
+}

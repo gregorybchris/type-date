@@ -167,16 +167,45 @@ function stripFiller(t: string): string {
   return t.replace(/[?!.,]+$/g, "").replace(FILLER_HEAD, "").replace(FILLER_TAIL, "").replace(/[?!.,]+$/g, "").trim();
 }
 
-/** The whole text as an offset from now, a span from now, or the same clock time on another day. null if it is none. */
+/** Words that make an offset vague or tie it to something else ("in an hour or two", "2 hours after the meeting"). */
+const VAGUE = /\b(?:or|few|several|some|bit|while|less than|more than|at least|at most|before the|after the|later)\b/;
+const vague = (t: string) => VAGUE.test(t.replace(/ or so\b/, ""));
+
+/**
+ * An offset from now, a span from now, or the same clock time on another day. The whole text is tried first, then
+ * word windows inside it ("I'll ring you back in half an hour"), longest first. A window must hold a duration, a
+ * same-time phrase or "now until ...", so a bare "now" in a sentence ("now departing at 5:55") is not read. When the
+ * words outside the window hold a date of their own, the text is left to h14. null if there is none.
+ */
 export function fromNow(text: string, parse: Parse): string | null {
   const raw = normalize(text);
   if (/\b(?:every|each|daily|hourly)\b/.test(raw)) return null;
-  if (/\b(?:or|few|several|some|bit|while|less than|more than|at least|at most|before the|after the|later)\b/.test(raw.replace(/ or so\b/, ""))) return null;
   // a zone after an offset from now adds nothing: the offset is from the user's clock
   let t = normDur(raw).replace(/\s+(?:gmt|utc|ist|est|pst|cst|cet|bst|edt|pdt|et|pt|ct)$/, "");
   t = stripFiller(t);
   // "to call mum", "for the meeting": trailing purpose clauses after a point
   t = t.replace(/\s+to (?:call|ring|text|email|check|send|leave|go|take|pick|start|join|book|pay)\b.*$/, "").trim();
+  if (!vague(raw)) {
+    const r = fromNowPhrase(t, parse);
+    if (r) return r;
+  }
+  const words = normDur(raw).replace(/[,;:!?()"]/g, " ").replace(/\.(?=\s|$)/g, " ").split(/\s+/).filter(Boolean);
+  const CUE = /\d+(?:\.\d+)? (?:days|hours|minutes)\b|\b(?:this|same) time\b|^(?:from |right )?now (?:until|till|til|to|thru)\b/;
+  for (let len = Math.min(words.length - 1, 10); len >= 2; len--) {
+    for (let i = 0; i + len <= words.length; i++) {
+      const w = words.slice(i, i + len).join(" ");
+      if (!CUE.test(w) || vague(w)) continue;
+      const r = fromNowPhrase(w, parse);
+      if (!r || r === "x" || !valid(r)) continue;
+      const rest = [...words.slice(0, i), ...words.slice(i + len)].join(" ");
+      return parse(rest) === "x" ? r : null;
+    }
+  }
+  return null;
+}
+
+/** `t` (normalized, durations in normal form) as a whole: an offset from now, a span from now, or the same clock time. */
+function fromNowPhrase(t: string, parse: Parse): string | null {
   let m: RegExpMatchArray | null;
 
   // same clock time on another day; a month or a weekday has no form
