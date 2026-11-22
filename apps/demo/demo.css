@@ -124,21 +124,6 @@ body {
     min-height: 40px;
   }
 }
-/* Phones: the first 8 examples, then a "More examples" chip. */
-.demo-more {
-  display: none;
-  border-style: dashed;
-  color: var(--d-fg2);
-}
-@media (max-width: 520px) {
-  .demo-chips:not([data-all]) .demo-chip:nth-child(n + 9):not(.demo-more) {
-    display: none;
-  }
-  .demo-more {
-    display: inline-block;
-  }
-}
-
 .demo-confirmed {
   display: flex;
   align-items: center;

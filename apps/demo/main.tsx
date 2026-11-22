@@ -13,31 +13,32 @@ function localToday(): string {
   return `${n.getFullYear()}-${p(n.getMonth() + 1)}-${p(n.getDate())}`;
 }
 
+// Ordered so the chips fill their rows at 320 px (wide screens), 343 to 358 px (phones) and 462 px.
 const EXAMPLES = [
   "oct 2 to oct 5",
-  "every other sunday",
-  "last friday",
+  "dec 28 to jan 3",
   "4 to 4:30",
   "4pm for 70min",
-  "tomorrow at 3pm",
-  "next monday 9am to 5pm",
-  "every weekday at 9",
-  "first monday of march",
-  "monthly on the 15th",
-  "dec 28 to jan 3",
+  "every other sunday",
+  "last friday",
   "every other friday until dec 31",
+  "tomorrow at 3pm",
+  "first monday of march",
+  "every weekday at 9",
+  "monthly on the 15th",
   "tuesdays at 1:30 and thursdays at 3",
+  "noon",
   "MWTh @ noon",
-  "every first monday and last friday of the month",
+  "next monday 9am to 5pm",
   "tomorrow 3pm est",
   "9am tokyo time friday",
-  "noon",
-  "four score and seven years ago",
-  "13th of last month",
-  "may the fourth be with you",
   "pi day",
-  "next leap day",
+  "four score and seven years ago",
+  "every first monday and last friday of the month",
+  "13th of last month",
   "next friday the 13th",
+  "may the fourth be with you",
+  "next leap day",
 ];
 
 const q = new URLSearchParams(location.search);
@@ -329,8 +330,6 @@ function App() {
   const picker = useRef<TypeDatePickerHandle>(null);
   const small = () => matchMedia("(max-width: 520px)").matches;
   const [text, setText] = useState(q.get("q") ?? "");
-  /** Phones show the first 8 examples until "More examples" is tapped. */
-  const [allExamples, setAllExamples] = useState(false);
   const url = () => shareUrl(text, prefs);
   // Keep the address bar in step with the screen, so the bar can be copied too.
   useEffect(() => {
@@ -386,7 +385,7 @@ function App() {
         </div>
         <section className="demo-try" aria-label="Examples">
           <h2 className="demo-try-title">Or try one of these</h2>
-          <div className="demo-chips" data-all={allExamples || undefined}>
+          <div className="demo-chips">
             {EXAMPLES.map((ex) => (
               <button key={ex} type="button" className="demo-chip" onClick={() => {
                   picker.current?.setText(ex);
@@ -396,11 +395,6 @@ function App() {
                 {ex}
               </button>
             ))}
-            {!allExamples && (
-              <button type="button" className="demo-chip demo-more" onClick={() => setAllExamples(true)}>
-                More examples
-              </button>
-            )}
           </div>
         </section>
       </div>
