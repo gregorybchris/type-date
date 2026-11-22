@@ -1,0 +1,518 @@
+{"id": "rel-w1-0001", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0003", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w1-0004", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w1-0005", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w1-0006", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w1-0007", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w1-0008", "dsl": "d sa+3>su", "unsure": false}
+{"id": "rel-w1-0009", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w1-0010", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0011", "dsl": "d WKND+1", "unsure": true}
+{"id": "rel-w1-0012", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0013", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w1-0014", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w1-0015", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0016", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w1-0017", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w1-0018", "dsl": "d sa+2>su", "unsure": false}
+{"id": "rel-w1-0019", "dsl": "d sa+2>su", "unsure": false}
+{"id": "rel-w1-0020", "dsl": "d WKND+1", "unsure": true}
+{"id": "rel-w1-0021", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w1-0022", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w1-0024", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w1-0025", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w1-0026", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0027", "dsl": "d sa+1>su", "unsure": false}
+{"id": "rel-w1-0028", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w1-0029", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w1-0030", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w1-0031", "dsl": "d sa+2>su", "unsure": false}
+{"id": "rel-w1-0032", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w1-0033", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w1-0034", "dsl": "d WKND-3", "unsure": false}
+{"id": "rel-w1-0035", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w1-0036", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w1-0037", "dsl": "dt sa@WKND+1 10:00", "unsure": false}
+{"id": "rel-w1-0038", "dsl": "d sa@WKND+0", "unsure": false}
+{"id": "rel-w1-0039", "dsl": "d su@WKND+1", "unsure": false}
+{"id": "rel-w1-0040", "dsl": "dt WKND-1 20:00", "unsure": false}
+{"id": "rel-w1-0041", "dsl": "d sa@WKND+1~-1d>su@WKND+1", "unsure": true}
+{"id": "rel-w1-0042", "dsl": "dt sa@WKND+0 19:00", "unsure": false}
+{"id": "rel-w1-0043", "dsl": "d su@WKND+0", "unsure": false}
+{"id": "rel-w1-0044", "dsl": "dt sa@WKND+1 14:00>16:00", "unsure": false}
+{"id": "rel-w1-0045", "dsl": "dt su@WKND+2 11?", "unsure": false}
+{"id": "rel-w1-0046", "dsl": "d sa@WKND+0", "unsure": false}
+{"id": "rel-w1-0047", "dsl": "d sa@WKND+1~-1d", "unsure": true}
+{"id": "rel-w1-0048", "dsl": "dt su@WKND+0 09:00>12:00", "unsure": false}
+{"id": "rel-w1-0049", "dsl": "d sa@WKND-1", "unsure": false}
+{"id": "rel-w1-0050", "dsl": "d sa@WKND+1", "unsure": false}
+{"id": "rel-w1-0051", "dsl": "dt sa@WKND+0~-1d 18:00>su@WKND+0 18:00", "unsure": true}
+{"id": "rel-w1-0052", "dsl": "d su", "unsure": true}
+{"id": "rel-w1-0053", "dsl": "dt sa+2 13:00", "unsure": false}
+{"id": "rel-w1-0054", "dsl": "d WKND+1>mo", "unsure": true}
+{"id": "rel-w1-0055", "dsl": "d sa@WKND+0", "unsure": false}
+{"id": "rel-w1-0056", "dsl": "dt su@WKND+1 4?", "unsure": false}
+{"id": "rel-w1-0057", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0058", "dsl": "dt now+45m", "unsure": false}
+{"id": "rel-w1-0059", "dsl": "dt now+1h", "unsure": false}
+{"id": "rel-w1-0060", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w1-0061", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0062", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0063", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0064", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0065", "dsl": "dt now+15m", "unsure": false}
+{"id": "rel-w1-0066", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0067", "dsl": "dt now+20m", "unsure": false}
+{"id": "rel-w1-0068", "dsl": "dt now+10m", "unsure": false}
+{"id": "rel-w1-0069", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0070", "dsl": "dt now+3h", "unsure": false}
+{"id": "rel-w1-0071", "dsl": "dt now+75m", "unsure": false}
+{"id": "rel-w1-0072", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w1-0073", "dsl": "dt now+150m", "unsure": false}
+{"id": "rel-w1-0074", "dsl": "dt now+75m", "unsure": false}
+{"id": "rel-w1-0075", "dsl": "dt now+1h", "unsure": false}
+{"id": "rel-w1-0076", "dsl": "dt now+5m", "unsure": false}
+{"id": "rel-w1-0077", "dsl": "dt now+40m", "unsure": false}
+{"id": "rel-w1-0078", "dsl": "dt now+15m", "unsure": true}
+{"id": "rel-w1-0079", "dsl": "dt now+45m", "unsure": false}
+{"id": "rel-w1-0080", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0081", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0082", "dsl": "dt now+1h", "unsure": false}
+{"id": "rel-w1-0083", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0084", "dsl": "dt now+25m", "unsure": false}
+{"id": "rel-w1-0085", "dsl": "dt now+1h", "unsure": false}
+{"id": "rel-w1-0086", "dsl": "dt now+4h", "unsure": false}
+{"id": "rel-w1-0087", "dsl": "dt now+10m", "unsure": false}
+{"id": "rel-w1-0088", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0089", "dsl": "dt now+1h", "unsure": true}
+{"id": "rel-w1-0090", "dsl": "dt now+150m", "unsure": false}
+{"id": "rel-w1-0091", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w1-0092", "dsl": "dt now-2h", "unsure": false}
+{"id": "rel-w1-0093", "dsl": "dt now-30m", "unsure": false}
+{"id": "rel-w1-0094", "dsl": "dt now-1h", "unsure": false}
+{"id": "rel-w1-0095", "dsl": "dt now", "unsure": false}
+{"id": "rel-w1-0096", "dsl": "dt now", "unsure": false}
+{"id": "rel-w1-0097", "dsl": "dt now", "unsure": false}
+{"id": "rel-w1-0098", "dsl": "dt now-45m", "unsure": false}
+{"id": "rel-w1-0099", "dsl": "dt now", "unsure": false}
+{"id": "rel-w1-0100", "dsl": "dt now", "unsure": true}
+{"id": "rel-w1-0101", "dsl": "dt now-1h", "unsure": false}
+{"id": "rel-w1-0102", "dsl": "dt now-1h", "unsure": false}
+{"id": "rel-w1-0103", "dsl": "dt now-10m", "unsure": false}
+{"id": "rel-w1-0104", "dsl": "dt now-30m", "unsure": false}
+{"id": "rel-w1-0105", "dsl": "dt now-135m", "unsure": false}
+{"id": "rel-w1-0106", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w1-0107", "dsl": "dt now>+30m", "unsure": false}
+{"id": "rel-w1-0108", "dsl": "dt now>17:00", "unsure": false}
+{"id": "rel-w1-0109", "dsl": "dt now>00:00", "unsure": false}
+{"id": "rel-w1-0110", "dsl": "dt >now+3h", "unsure": false}
+{"id": "rel-w1-0111", "dsl": "dt now+2h>+30m", "unsure": false}
+{"id": "rel-w1-0112", "dsl": "dt now>+1h", "unsure": false}
+{"id": "rel-w1-0113", "dsl": "dt now+20m", "unsure": false}
+{"id": "rel-w1-0114", "dsl": "dt now>6?", "unsure": false}
+{"id": "rel-w1-0115", "dsl": "dt now>+1h", "unsure": false}
+{"id": "rel-w1-0116", "dsl": "dt now>+0d", "unsure": false}
+{"id": "rel-w1-0117", "dsl": "dt now>+45m", "unsure": false}
+{"id": "rel-w1-0118", "dsl": "dt now>15:00", "unsure": false}
+{"id": "rel-w1-0119", "dsl": "dt now>+90m", "unsure": false}
+{"id": "rel-w1-0120", "dsl": "dt now>mo", "unsure": false}
+{"id": "rel-w1-0121", "dsl": "dt now+1h>+2h", "unsure": false}
+{"id": "rel-w1-0122", "dsl": "dt now+1h>4?", "unsure": false}
+{"id": "rel-w1-0123", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w1-0124", "dsl": "dt now>+0d", "unsure": true}
+{"id": "rel-w1-0125", "dsl": "dt now>5?", "unsure": false}
+{"id": "rel-w1-0126", "dsl": "dt now+30m>+1h", "unsure": false}
+{"id": "rel-w1-0127", "dsl": "dt now>+15m", "unsure": false}
+{"id": "rel-w1-0128", "dsl": "dt now+1d", "unsure": false}
+{"id": "rel-w1-0129", "dsl": "dt now+1w", "unsure": false}
+{"id": "rel-w1-0130", "dsl": "dt now+24h", "unsure": false}
+{"id": "rel-w1-0131", "dsl": "dt now+48h", "unsure": false}
+{"id": "rel-w1-0132", "dsl": "dt now+51h", "unsure": false}
+{"id": "rel-w1-0133", "dsl": "dt now+36h", "unsure": false}
+{"id": "rel-w1-0134", "dsl": "dt now+1d", "unsure": false}
+{"id": "rel-w1-0135", "dsl": "dt now+1w", "unsure": false}
+{"id": "rel-w1-0136", "dsl": "x", "unsure": true}
+{"id": "rel-w1-0137", "dsl": "x", "unsure": true}
+{"id": "rel-w1-0138", "dsl": "dt now+28h", "unsure": false}
+{"id": "rel-w1-0139", "dsl": "dt now+72h", "unsure": false}
+{"id": "rel-w1-0140", "dsl": "dt now+1w", "unsure": false}
+{"id": "rel-w1-0141", "dsl": "dt now+36h", "unsure": false}
+{"id": "rel-w1-0142", "dsl": "dt now+74h", "unsure": false}
+{"id": "rel-w1-0143", "dsl": "dt now-1d", "unsure": false}
+{"id": "rel-w1-0144", "dsl": "dt now+2w", "unsure": false}
+{"id": "rel-w1-0145", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w1-0146", "dsl": "d WKND#1@05", "unsure": false}
+{"id": "rel-w1-0147", "dsl": "d WKND#2@03", "unsure": false}
+{"id": "rel-w1-0148", "dsl": "d WKND#-1@M+0", "unsure": false}
+{"id": "rel-w1-0149", "dsl": "d WKND#1@M+1", "unsure": false}
+{"id": "rel-w1-0150", "dsl": "d WKND#3@2027-06", "unsure": false}
+{"id": "rel-w1-0151", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w1-0152", "dsl": "d WKND#-1@M+0", "unsure": false}
+{"id": "rel-w1-0153", "dsl": "d WKND#1@12", "unsure": false}
+{"id": "rel-w1-0154", "dsl": "d WKND#2@M+1", "unsure": false}
+{"id": "rel-w1-0155", "dsl": "d WKND#-1@11", "unsure": false}
+{"id": "rel-w1-0156", "dsl": "d WKND#1@2028-01", "unsure": false}
+{"id": "rel-w1-0157", "dsl": "d WKND#4@08", "unsure": false}
+{"id": "rel-w1-0158", "dsl": "d WKND#3@09", "unsure": false}
+{"id": "rel-w1-0159", "dsl": "d WKND#-1@02", "unsure": false}
+{"id": "rel-w1-0160", "dsl": "d WKND#1@M+0", "unsure": false}
+{"id": "rel-w1-0161", "dsl": "d WKND#-1@M+1", "unsure": false}
+{"id": "rel-w1-0162", "dsl": "d WKND#2@04", "unsure": false}
+{"id": "rel-w1-0163", "dsl": "d WKND#-1@07", "unsure": false}
+{"id": "rel-w1-0164", "dsl": "d WKND#1@10", "unsure": false}
+{"id": "rel-w1-0165", "dsl": "d WKND#-1@12", "unsure": false}
+{"id": "rel-w1-0166", "dsl": "d WKND#3@11", "unsure": false}
+{"id": "rel-w1-0167", "dsl": "d WKND#1@03", "unsure": false}
+{"id": "rel-w1-0168", "dsl": "x", "unsure": true}
+{"id": "rel-w1-0169", "dsl": "d WKND#-1@09", "unsure": false}
+{"id": "rel-w1-0170", "dsl": "d WKND#2@12", "unsure": false}
+{"id": "rel-w1-0171", "dsl": "d WKND#1@M+1", "unsure": false}
+{"id": "rel-w1-0172", "dsl": "d WKND#-1@2027-01", "unsure": false}
+{"id": "rel-w1-0173", "dsl": "d WKND#2@M+0", "unsure": false}
+{"id": "rel-w1-0174", "dsl": "d WKND#2@10", "unsure": false}
+{"id": "rel-w1-0175", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0176", "dsl": "d WKND#5@03", "unsure": false}
+{"id": "rel-w1-0177", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w1-0178", "dsl": "d WKND#1@M+0", "unsure": true}
+{"id": "rel-w1-0179", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0180", "dsl": "d WKND#-1@08", "unsure": false}
+{"id": "rel-w1-0181", "dsl": "d W#1@01", "unsure": false}
+{"id": "rel-w1-0182", "dsl": "d W#-1@10", "unsure": false}
+{"id": "rel-w1-0183", "dsl": "d W#2@06", "unsure": false}
+{"id": "rel-w1-0184", "dsl": "d W#-1@M+1", "unsure": false}
+{"id": "rel-w1-0185", "dsl": "d W#1@M+0", "unsure": false}
+{"id": "rel-w1-0186", "dsl": "d W#-1@2027-03", "unsure": false}
+{"id": "rel-w1-0187", "dsl": "d W#-1@M+0", "unsure": false}
+{"id": "rel-w1-0188", "dsl": "d W#3@11", "unsure": false}
+{"id": "rel-w1-0189", "dsl": "d W#1@04", "unsure": false}
+{"id": "rel-w1-0190", "dsl": "d W#2@12", "unsure": false}
+{"id": "rel-w1-0191", "dsl": "d W#-1@12", "unsure": false}
+{"id": "rel-w1-0192", "dsl": "d W#1@M+1", "unsure": false}
+{"id": "rel-w1-0193", "dsl": "d W#2@02", "unsure": false}
+{"id": "rel-w1-0194", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0195", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0196", "dsl": "d W#4@06", "unsure": false}
+{"id": "rel-w1-0197", "dsl": "d W#-1@M+0", "unsure": false}
+{"id": "rel-w1-0198", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0199", "dsl": "d W#1@2027-08", "unsure": false}
+{"id": "rel-w1-0200", "dsl": "d W#2@M+1", "unsure": false}
+{"id": "rel-w1-0201", "dsl": "d W#-1@01", "unsure": false}
+{"id": "rel-w1-0202", "dsl": "d W#1@01", "unsure": true}
+{"id": "rel-w1-0203", "dsl": "d W#3@10", "unsure": false}
+{"id": "rel-w1-0204", "dsl": "d W#3@11", "unsure": false}
+{"id": "rel-w1-0205", "dsl": "d W#-1@09", "unsure": false}
+{"id": "rel-w1-0206", "dsl": "d W#2@M+0", "unsure": false}
+{"id": "rel-w1-0207", "dsl": "d 10-31", "unsure": false}
+{"id": "rel-w1-0209", "dsl": "d D01@M+1", "unsure": false}
+{"id": "rel-w1-0210", "dsl": "d 03-01~-1d", "unsure": false}
+{"id": "rel-w1-0211", "dsl": "d D01@M+1~-1d", "unsure": false}
+{"id": "rel-w1-0212", "dsl": "d 12-01", "unsure": false}
+{"id": "rel-w1-0213", "dsl": "d D01@M+2~-1d", "unsure": false}
+{"id": "rel-w1-0214", "dsl": "d D01@M+0", "unsure": true}
+{"id": "rel-w1-0215", "dsl": "d D01@M+1~-1d", "unsure": false}
+{"id": "rel-w1-0217", "dsl": "d 03-31", "unsure": false}
+{"id": "rel-w1-0218", "dsl": "dt D01@M+1~-1d 17:00", "unsure": false}
+{"id": "rel-w1-0219", "dsl": "d 2027-01-01", "unsure": false}
+{"id": "rel-w1-0220", "dsl": "d 12-31", "unsure": false}
+{"id": "rel-w1-0221", "dsl": "d mo#1@2027-10", "unsure": false}
+{"id": "rel-w1-0222", "dsl": "d fr#-1@2027-03", "unsure": false}
+{"id": "rel-w1-0223", "dsl": "d tu#2@2028-01", "unsure": false}
+{"id": "rel-w1-0224", "dsl": "d th#3@2027-11", "unsure": false}
+{"id": "rel-w1-0225", "dsl": "d sa#1@2027-06", "unsure": false}
+{"id": "rel-w1-0226", "dsl": "d mo#-1@2028-05", "unsure": false}
+{"id": "rel-w1-0227", "dsl": "d we#2@2027-02", "unsure": false}
+{"id": "rel-w1-0228", "dsl": "d fr#1@2027-12", "unsure": false}
+{"id": "rel-w1-0229", "dsl": "d su#-1@2027-10", "unsure": false}
+{"id": "rel-w1-0230", "dsl": "d tu#4@2028-08", "unsure": false}
+{"id": "rel-w1-0231", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0232", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0233", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0234", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w1-0235", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w1-0236", "dsl": "d W#1@01", "unsure": false}
+{"id": "rel-w1-0237", "dsl": "dt sa@WKND+1 10?", "unsure": false}
+{"id": "rel-w1-0238", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0239", "dsl": "dt now+15m", "unsure": false}
+{"id": "rel-w1-0240", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w1-0241", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w1-0242", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0244", "dsl": "dt now+20m", "unsure": false}
+{"id": "rel-w1-0245", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w1-0246", "dsl": "d WKND#2@09", "unsure": false}
+{"id": "rel-w1-0247", "dsl": "dt now+3h", "unsure": false}
+{"id": "rel-w1-0248", "dsl": "dt now+1h", "unsure": false}
+{"id": "rel-w1-0249", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w1-0250", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w1-0251", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w1-0252", "dsl": "d 10-31", "unsure": false}
+{"id": "rel-w1-0253", "dsl": "d W#1@01", "unsure": false}
+{"id": "rel-w1-0255", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0256", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0259", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0260", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0261", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0262", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0263", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0265", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0266", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0270", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0271", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0272", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0273", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0275", "dsl": "x", "unsure": true}
+{"id": "rel-w1-0276", "dsl": "d sa~+1w", "unsure": false}
+{"id": "rel-w1-0277", "dsl": "x", "unsure": false}
+{"id": "rel-w1-0278", "dsl": "d sa+2", "unsure": false}
+{"id": "rel-w1-0279", "dsl": "d su@WKND+1", "unsure": true}
+{"id": "rel-w1-0280", "dsl": "d >WKND+2", "unsure": false}
+{"id": "rel-w1-0281", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0001", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0002", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0003", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w2-0004", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w2-0005", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w2-0006", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w2-0007", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0008", "dsl": "d WKND-2", "unsure": true}
+{"id": "rel-w2-0009", "dsl": "d sa+2>su", "unsure": true}
+{"id": "rel-w2-0010", "dsl": "d sa+3>su", "unsure": false}
+{"id": "rel-w2-0012", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0013", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w2-0014", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w2-0016", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0017", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0018", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w2-0019", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w2-0020", "dsl": "d sa+2>su", "unsure": false}
+{"id": "rel-w2-0021", "dsl": "d WKND-1", "unsure": false}
+{"id": "rel-w2-0022", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w2-0023", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0024", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0025", "dsl": "d sa+1>su", "unsure": false}
+{"id": "rel-w2-0026", "dsl": "d sa+4>su", "unsure": false}
+{"id": "rel-w2-0027", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0028", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0029", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w2-0030", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0031", "dsl": "d sa>su", "unsure": false}
+{"id": "rel-w2-0032", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0034", "dsl": "d sa>su", "unsure": true}
+{"id": "rel-w2-0035", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w2-0036", "dsl": "d WKND-2", "unsure": false}
+{"id": "rel-w2-0037", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0038", "dsl": "dt WKND+1 10:00", "unsure": false}
+{"id": "rel-w2-0039", "dsl": "d sa@WKND+0", "unsure": false}
+{"id": "rel-w2-0040", "dsl": "d su@WKND+1", "unsure": false}
+{"id": "rel-w2-0041", "dsl": "dt WKND-1 20:00", "unsure": false}
+{"id": "rel-w2-0042", "dsl": "d sa@WKND+1~-1d>su@WKND+1", "unsure": true}
+{"id": "rel-w2-0043", "dsl": "dt sa@WKND+0 10:00", "unsure": false}
+{"id": "rel-w2-0044", "dsl": "dt sa@WKND+1 15:00", "unsure": false}
+{"id": "rel-w2-0045", "dsl": "dt su 18:00", "unsure": true}
+{"id": "rel-w2-0046", "dsl": "dt su@WKND+1 12:00", "unsure": false}
+{"id": "rel-w2-0047", "dsl": "dt sa@WKND+2 11:00", "unsure": false}
+{"id": "rel-w2-0048", "dsl": "dt sa@WKND+0~-1d 18:00>su@WKND+0", "unsure": true}
+{"id": "rel-w2-0049", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0050", "dsl": "d sa@WKND-1", "unsure": false}
+{"id": "rel-w2-0051", "dsl": "dt sa@WKND+1 14:00", "unsure": false}
+{"id": "rel-w2-0052", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0053", "dsl": "dt su@WKND+0 09:00", "unsure": false}
+{"id": "rel-w2-0054", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0055", "dsl": "dt WKND+1 10?>12?", "unsure": false}
+{"id": "rel-w2-0056", "dsl": "d sa@WKND+0", "unsure": false}
+{"id": "rel-w2-0057", "dsl": "d WKND+1>mo", "unsure": true}
+{"id": "rel-w2-0058", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w2-0059", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w2-0060", "dsl": "dt now+45m", "unsure": false}
+{"id": "rel-w2-0061", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w2-0062", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w2-0063", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w2-0064", "dsl": "dt now+2h", "unsure": true}
+{"id": "rel-w2-0065", "dsl": "dt now+30m", "unsure": true}
+{"id": "rel-w2-0066", "dsl": "dt now+15m", "unsure": false}
+{"id": "rel-w2-0067", "dsl": "dt now>+3h", "unsure": false}
+{"id": "rel-w2-0068", "dsl": "dt now+20m", "unsure": false}
+{"id": "rel-w2-0069", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w2-0070", "dsl": "dt now+2h", "unsure": true}
+{"id": "rel-w2-0071", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0072", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w2-0073", "dsl": "dt now+15m", "unsure": false}
+{"id": "rel-w2-0074", "dsl": "dt now+3h", "unsure": false}
+{"id": "rel-w2-0075", "dsl": "dt now+10m", "unsure": false}
+{"id": "rel-w2-0076", "dsl": "dt now+150m", "unsure": false}
+{"id": "rel-w2-0077", "dsl": "dt now+1h", "unsure": true}
+{"id": "rel-w2-0078", "dsl": "dt now+80m", "unsure": false}
+{"id": "rel-w2-0079", "dsl": "dt now+5m", "unsure": false}
+{"id": "rel-w2-0080", "dsl": "dt now+10m", "unsure": true}
+{"id": "rel-w2-0081", "dsl": "dt now+25m", "unsure": false}
+{"id": "rel-w2-0082", "dsl": "dt now+75m", "unsure": false}
+{"id": "rel-w2-0083", "dsl": "dt now+90m", "unsure": true}
+{"id": "rel-w2-0084", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w2-0085", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w2-0086", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w2-0087", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w2-0088", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w2-0089", "dsl": "dt now+4h", "unsure": false}
+{"id": "rel-w2-0090", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w2-0091", "dsl": "dt now+6h", "unsure": false}
+{"id": "rel-w2-0092", "dsl": "dt now>+1h", "unsure": true}
+{"id": "rel-w2-0094", "dsl": "dt now-2h", "unsure": false}
+{"id": "rel-w2-0095", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0096", "dsl": "dt now-1h", "unsure": false}
+{"id": "rel-w2-0098", "dsl": "dt now", "unsure": false}
+{"id": "rel-w2-0100", "dsl": "dt now-2h>now", "unsure": true}
+{"id": "rel-w2-0102", "dsl": "dt now-10m", "unsure": false}
+{"id": "rel-w2-0103", "dsl": "dt now-45m", "unsure": false}
+{"id": "rel-w2-0104", "dsl": "dt now-2h", "unsure": false}
+{"id": "rel-w2-0105", "dsl": "dt now", "unsure": false}
+{"id": "rel-w2-0106", "dsl": "dt now-1h", "unsure": false}
+{"id": "rel-w2-0107", "dsl": "dt now-3h>now", "unsure": false}
+{"id": "rel-w2-0108", "dsl": "dt now", "unsure": false}
+{"id": "rel-w2-0109", "dsl": "dt now-30m", "unsure": false}
+{"id": "rel-w2-0110", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w2-0111", "dsl": "dt now>+30m", "unsure": false}
+{"id": "rel-w2-0114", "dsl": "dt >now+3h", "unsure": false}
+{"id": "rel-w2-0115", "dsl": "dt now+2h>+30m", "unsure": false}
+{"id": "rel-w2-0116", "dsl": "dt now>+1h", "unsure": false}
+{"id": "rel-w2-0117", "dsl": "dt now+20m>+1h", "unsure": false}
+{"id": "rel-w2-0118", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w2-0119", "dsl": "dt now>+4h", "unsure": false}
+{"id": "rel-w2-0120", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w2-0121", "dsl": "dt now>+3h", "unsure": false}
+{"id": "rel-w2-0122", "dsl": "dt now>+1d", "unsure": false}
+{"id": "rel-w2-0123", "dsl": "dt now>+0d", "unsure": false}
+{"id": "rel-w2-0124", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w2-0125", "dsl": "dt now>18:00", "unsure": false}
+{"id": "rel-w2-0126", "dsl": "dt now>+30m", "unsure": false}
+{"id": "rel-w2-0127", "dsl": "dt now+1h>now+3h", "unsure": true}
+{"id": "rel-w2-0128", "dsl": "dt now+10m>now+40m", "unsure": false}
+{"id": "rel-w2-0129", "dsl": "dt now>+2h", "unsure": false}
+{"id": "rel-w2-0130", "dsl": "dt now>+1h", "unsure": false}
+{"id": "rel-w2-0131", "dsl": "dt now>+1h", "unsure": false}
+{"id": "rel-w2-0132", "dsl": "dt now+15m>+90m", "unsure": false}
+{"id": "rel-w2-0133", "dsl": "dt now>+5h", "unsure": false}
+{"id": "rel-w2-0134", "dsl": "dt now+1d", "unsure": false}
+{"id": "rel-w2-0135", "dsl": "dt now+1w", "unsure": false}
+{"id": "rel-w2-0136", "dsl": "dt now+24h", "unsure": false}
+{"id": "rel-w2-0138", "dsl": "dt now+51h", "unsure": false}
+{"id": "rel-w2-0140", "dsl": "dt now+2d", "unsure": false}
+{"id": "rel-w2-0141", "dsl": "x", "unsure": true}
+{"id": "rel-w2-0142", "dsl": "dt now+1w", "unsure": false}
+{"id": "rel-w2-0143", "dsl": "dt now+1d", "unsure": false}
+{"id": "rel-w2-0144", "dsl": "dt now+30h", "unsure": false}
+{"id": "rel-w2-0145", "dsl": "dt now+74h", "unsure": true}
+{"id": "rel-w2-0147", "dsl": "dt now-1w", "unsure": false}
+{"id": "rel-w2-0148", "dsl": "dt now+36h", "unsure": false}
+{"id": "rel-w2-0149", "dsl": "dt now+60h", "unsure": false}
+{"id": "rel-w2-0150", "dsl": "x", "unsure": true}
+{"id": "rel-w2-0151", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w2-0152", "dsl": "d WKND#1@05", "unsure": false}
+{"id": "rel-w2-0153", "dsl": "d WKND#2@03", "unsure": false}
+{"id": "rel-w2-0156", "dsl": "d WKND#3@2027-06", "unsure": false}
+{"id": "rel-w2-0157", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w2-0158", "dsl": "d WKND#-1@11", "unsure": false}
+{"id": "rel-w2-0160", "dsl": "d WKND#2@01", "unsure": false}
+{"id": "rel-w2-0161", "dsl": "d WKND#3@08", "unsure": false}
+{"id": "rel-w2-0162", "dsl": "d WKND#-1@M+0", "unsure": false}
+{"id": "rel-w2-0163", "dsl": "d WKND#-1@09", "unsure": false}
+{"id": "rel-w2-0164", "dsl": "d WKND#2@05", "unsure": false}
+{"id": "rel-w2-0165", "dsl": "d WKND#1@03", "unsure": false}
+{"id": "rel-w2-0166", "dsl": "d WKND#1@04", "unsure": false}
+{"id": "rel-w2-0167", "dsl": "d WKND#4@2027-10", "unsure": false}
+{"id": "rel-w2-0168", "dsl": "x", "unsure": true}
+{"id": "rel-w2-0169", "dsl": "d WKND#-1@M+0", "unsure": true}
+{"id": "rel-w2-0170", "dsl": "d WKND#1@M+1", "unsure": true}
+{"id": "rel-w2-0171", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0172", "dsl": "d WKND#1@M+1", "unsure": false}
+{"id": "rel-w2-0173", "dsl": "d WKND#-1@12", "unsure": false}
+{"id": "rel-w2-0174", "dsl": "d WKND#1@M+1", "unsure": false}
+{"id": "rel-w2-0175", "dsl": "d WKND#2@09", "unsure": false}
+{"id": "rel-w2-0176", "dsl": "d WKND#1@07", "unsure": false}
+{"id": "rel-w2-0177", "dsl": "d WKND#-1@08", "unsure": false}
+{"id": "rel-w2-0178", "dsl": "d WKND#-1@03", "unsure": false}
+{"id": "rel-w2-0179", "dsl": "d WKND#-1@07", "unsure": false}
+{"id": "rel-w2-0180", "dsl": "d WKND#2@03", "unsure": false}
+{"id": "rel-w2-0181", "dsl": "d WKND#3@M+0", "unsure": false}
+{"id": "rel-w2-0182", "dsl": "d WKND#-1@M-1", "unsure": false}
+{"id": "rel-w2-0183", "dsl": "d WKND#-1@M+0", "unsure": true}
+{"id": "rel-w2-0184", "dsl": "d WKND#1@M+2", "unsure": false}
+{"id": "rel-w2-0185", "dsl": "d WKND#1@M+0", "unsure": true}
+{"id": "rel-w2-0186", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0187", "dsl": "d WKND#5@M+0", "unsure": false}
+{"id": "rel-w2-0188", "dsl": "d WKND#-1@10", "unsure": false}
+{"id": "rel-w2-0189", "dsl": "d W#1@01", "unsure": false}
+{"id": "rel-w2-0190", "dsl": "d W#-1@10", "unsure": false}
+{"id": "rel-w2-0191", "dsl": "d W#2@06", "unsure": false}
+{"id": "rel-w2-0192", "dsl": "d W#-1@M+1", "unsure": false}
+{"id": "rel-w2-0194", "dsl": "d W#-1@2027-03", "unsure": false}
+{"id": "rel-w2-0195", "dsl": "d W#1@02", "unsure": false}
+{"id": "rel-w2-0196", "dsl": "d W#3@08", "unsure": false}
+{"id": "rel-w2-0197", "dsl": "d W#-1@M+0", "unsure": false}
+{"id": "rel-w2-0198", "dsl": "d W#1@09", "unsure": false}
+{"id": "rel-w2-0199", "dsl": "d W#2@05", "unsure": false}
+{"id": "rel-w2-0200", "dsl": "d W#4@M+0", "unsure": false}
+{"id": "rel-w2-0201", "dsl": "d W#-1@M+0", "unsure": true}
+{"id": "rel-w2-0202", "dsl": "d W#-1@12", "unsure": false}
+{"id": "rel-w2-0203", "dsl": "d W#2@10", "unsure": false}
+{"id": "rel-w2-0204", "dsl": "d W#1@01", "unsure": false}
+{"id": "rel-w2-0205", "dsl": "dt W#2@M+1 10:00", "unsure": false}
+{"id": "rel-w2-0206", "dsl": "d W#-1@11", "unsure": false}
+{"id": "rel-w2-0207", "dsl": "d W#1@M+1", "unsure": false}
+{"id": "rel-w2-0208", "dsl": "d W#-1@M+0", "unsure": false}
+{"id": "rel-w2-0209", "dsl": "d W#3@04", "unsure": false}
+{"id": "rel-w2-0210", "dsl": "x", "unsure": true}
+{"id": "rel-w2-0211", "dsl": "d W#1@2028-01", "unsure": false}
+{"id": "rel-w2-0212", "dsl": "d W#-1@M-1", "unsure": false}
+{"id": "rel-w2-0213", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0214", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0215", "dsl": "d 10-31", "unsure": false}
+{"id": "rel-w2-0218", "dsl": "d 03-01~-1d", "unsure": false}
+{"id": "rel-w2-0221", "dsl": "d D01@M+1~-1d", "unsure": false}
+{"id": "rel-w2-0222", "dsl": "d 09-30", "unsure": false}
+{"id": "rel-w2-0223", "dsl": "d D01@M+1", "unsure": false}
+{"id": "rel-w2-0224", "dsl": "d D01@M+1~-1d", "unsure": false}
+{"id": "rel-w2-0226", "dsl": "d 12-31", "unsure": false}
+{"id": "rel-w2-0227", "dsl": "dt D01@M+1 09:00", "unsure": false}
+{"id": "rel-w2-0228", "dsl": "d D01@M+1~-1d", "unsure": true}
+{"id": "rel-w2-0229", "dsl": "d mo#1@2027-10", "unsure": false}
+{"id": "rel-w2-0230", "dsl": "d fr#-1@2027-03", "unsure": false}
+{"id": "rel-w2-0231", "dsl": "d tu#2@2028-01", "unsure": false}
+{"id": "rel-w2-0232", "dsl": "d th#3@2027-11", "unsure": false}
+{"id": "rel-w2-0233", "dsl": "d su#1@2027-06", "unsure": false}
+{"id": "rel-w2-0234", "dsl": "d sa#-1@2027-10", "unsure": false}
+{"id": "rel-w2-0235", "dsl": "d we#4@2028-05", "unsure": false}
+{"id": "rel-w2-0236", "dsl": "d fr#1@2027-08", "unsure": false}
+{"id": "rel-w2-0237", "dsl": "d mo#-1@2027-05", "unsure": false}
+{"id": "rel-w2-0238", "dsl": "d sa#2@2026-12", "unsure": false}
+{"id": "rel-w2-0239", "dsl": "d mo#1@2028-04", "unsure": false}
+{"id": "rel-w2-0241", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0248", "dsl": "d sa@WKND+1", "unsure": false}
+{"id": "rel-w2-0249", "dsl": "dt now+20m", "unsure": false}
+{"id": "rel-w2-0250", "dsl": "dt now+90m", "unsure": false}
+{"id": "rel-w2-0251", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w2-0252", "dsl": "d WKND#1@M+1", "unsure": false}
+{"id": "rel-w2-0253", "dsl": "dt now+30m", "unsure": false}
+{"id": "rel-w2-0254", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w2-0255", "dsl": "d WKND+0", "unsure": false}
+{"id": "rel-w2-0256", "dsl": "d W#-1@12", "unsure": false}
+{"id": "rel-w2-0257", "dsl": "dt now+45m", "unsure": false}
+{"id": "rel-w2-0258", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0259", "dsl": "d WKND+2", "unsure": false}
+{"id": "rel-w2-0260", "dsl": "dt now+1h", "unsure": false}
+{"id": "rel-w2-0262", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0263", "dsl": "dt now+2h", "unsure": false}
+{"id": "rel-w2-0275", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0277", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0278", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0279", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0280", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0281", "dsl": "d WKND+0", "unsure": true}
+{"id": "rel-w2-0282", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0283", "dsl": "d WKND-1", "unsure": true}
+{"id": "rel-w2-0284", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0285", "dsl": "x", "unsure": true}
+{"id": "rel-w2-0286", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0287", "dsl": "d WKND+3", "unsure": true}
+{"id": "rel-w2-0288", "dsl": "x", "unsure": false}
+{"id": "rel-w2-0289", "dsl": "dt now+2h", "unsure": true}
+{"id": "rel-w2-0290", "dsl": "d WKND+1", "unsure": false}
+{"id": "rel-w2-0291", "dsl": "x", "unsure": false}

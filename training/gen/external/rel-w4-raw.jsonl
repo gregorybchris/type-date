@@ -1,0 +1,207 @@
+{"id": "rel-w4-0001", "text": "this week-end", "family": "A", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0002", "text": "this past weekend", "family": "A", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0003", "text": "I'll be out on this weekend", "family": "A", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0004", "text": "I'll be out the weekend after the next", "family": "A", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0005", "text": "I'll be out on weekend", "family": "A", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0006", "text": "this coming weekend", "family": "A", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0007", "text": "What are you doing next weekend?", "family": "A", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0008", "text": "What did you do this weekend?", "family": "A", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0009", "text": "plans for \"This Weekend\"", "family": "A", "source": "substack", "url": "https://thingsilikeanddontlike.substack.com/p/dont-like-when-next-weekend-is"}
+{"id": "rel-w4-0010", "text": "asked you what are your plans next weekend on a Monday", "family": "A", "source": "substack", "url": "https://thingsilikeanddontlike.substack.com/p/dont-like-when-next-weekend-is"}
+{"id": "rel-w4-0011", "text": "this coming weekend, and for the next 2 weekends after that", "family": "A", "source": "etsy community", "url": "https://community.etsy.com/t5/Bellas-BNS/Weekend-Bash-Schedule/td-p/45853751"}
+{"id": "rel-w4-0012", "text": "the weekend after that", "family": "A", "source": "eveonline forums", "url": "https://forums-archive.eveonline.com/topic/272580/13/"}
+{"id": "rel-w4-0013", "text": "my weekend", "family": "A", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0014", "text": "next weekend", "family": "A", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0015", "text": "this weekend", "family": "A", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0016", "text": "I'll leave over the weekend", "family": "A", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodExtractor.json"}
+{"id": "rel-w4-0017", "text": "last weekend of October", "family": "G", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0018", "text": "last week-end in October", "family": "G", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0019", "text": "last week end of October", "family": "G", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0020", "text": "last wkend of July", "family": "G", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0021", "text": "last weekend of October 2017", "family": "G", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0022", "text": "festivals kicking off the first weekend in May", "family": "G", "source": "onlyinark", "url": "https://onlyinark.com/featured/spring-fling-celebrating-may-events-in-arkansas/"}
+{"id": "rel-w4-0023", "text": "Iris Festival is the first full weekend in May", "family": "G", "source": "onlyinark", "url": "https://onlyinark.com/featured/spring-fling-celebrating-may-events-in-arkansas/"}
+{"id": "rel-w4-0024", "text": "two-day event on the last weekend of October", "family": "G", "source": "gocalaveras", "url": "https://www.gocalaveras.com/events/all-hallows-eve-faire/"}
+{"id": "rel-w4-0025", "text": "from the last weekend of May until the first week of October", "family": "G", "source": "tourismmoosejaw", "url": "https://www.tourismmoosejaw.com/events-calendar/2022/9/17/wakamow-farmers-market"}
+{"id": "rel-w4-0026", "text": "The first weekend of May will be filled with family fun", "family": "G", "source": "shipshewana mayfest", "url": "https://uk.style.yahoo.com/shipshewana-mayfest-kicks-off-may-151900375.html"}
+{"id": "rel-w4-0027", "text": "first week of october 2014", "family": "H", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0028", "text": "last week of september 2014", "family": "H", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0029", "text": "third last week of 2018", "family": "H", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0030", "text": "the 3rd last week of 2018", "family": "H", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0031", "text": "2nd last week of October 2018", "family": "H", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0032", "text": "the second last week of October 2018", "family": "H", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0033", "text": "I'll be out the third week of this month", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodExtractor.json"}
+{"id": "rel-w4-0034", "text": "I'll be out the last week of july", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodExtractor.json"}
+{"id": "rel-w4-0035", "text": "I'll be out the third week of 2027", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodExtractor.json"}
+{"id": "rel-w4-0036", "text": "first week of 2015", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0037", "text": "second week of 2015", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0038", "text": "last week of 2015", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0039", "text": "the first week of Oct", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0040", "text": "We had a meeting first week of this year", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0041", "text": "I'll be out the first week of two thousand and twenty seven", "family": "H", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0042", "text": "last day of october 2015", "family": "I", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0043", "text": "last day in october 2015", "family": "I", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0044", "text": "fifth last day of May", "family": "I", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0045", "text": "the 5th last day of May", "family": "I", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0046", "text": "the 1st of last month", "family": "I", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0047", "text": "the 1st of this month", "family": "I", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0048", "text": "30th of next month at 5pm", "family": "I", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0049", "text": "the 31st of this month", "family": "I", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0050", "text": "the 1st of the month", "family": "I", "source": "rememberthemilk forums", "url": "http://www.rememberthemilk.com/forums/help/13880/"}
+{"id": "rel-w4-0051", "text": "3rd wednesday in november", "family": "J", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0052", "text": "3rd thursday this september", "family": "J", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0053", "text": "3rd friday jan", "family": "J", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0054", "text": "ending on the first Sunday in October", "family": "J", "source": "wikipedia", "url": "https://en.wikipedia.org/wiki/Oktoberfest"}
+{"id": "rel-w4-0055", "text": "the first Saturday of every month", "family": "J", "source": "rememberthemilk forums", "url": "http://www.rememberthemilk.com/forums/help/13880/"}
+{"id": "rel-w4-0056", "text": "code last monday of the month", "family": "J", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0057", "text": "in 2.5 hours", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0058", "text": "in 2 and an half hours", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0059", "text": "in 24 hours", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0060", "text": "in a couple of hours", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0061", "text": "in a few hours", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0062", "text": "in 60 minutes", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0063", "text": "in 15 minutes", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0064", "text": "in 2 minutes", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0065", "text": "in a minute", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0066", "text": "in three minutes", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0067", "text": "in half an hour", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0068", "text": "in about half an hour", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0069", "text": "in a quarter of an hour", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0070", "text": "in three-quarters of an hour", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0071", "text": "in 1/4 hour", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0072", "text": "in 3/4 hour", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0073", "text": "2 minutes from now", "family": "C", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0074", "text": "an hour from now", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0075", "text": "in an hour", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0076", "text": "in about an hour", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0077", "text": "in 2 hours", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0078", "text": "in about 23 hours", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0079", "text": "in twenty minutes", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0080", "text": "in 0,5 hours", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0081", "text": "in 1.5 days", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0082", "text": "in 10.75 minutes", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0083", "text": "in 1 hour and 30 minutes", "family": "C", "source": "github:client9/nowandlater", "url": "https://pkg.go.dev/github.com/client9/nowandlater"}
+{"id": "rel-w4-0084", "text": "in 3 hours", "family": "C", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0085", "text": "in 1.5 hours", "family": "C", "source": "hex:chronix", "url": "https://hex.pm/packages/chronix/0.2.0/files"}
+{"id": "rel-w4-0086", "text": "ninety nine seconds from now", "family": "C", "source": "hex:chronix", "url": "https://hex.pm/packages/chronix/0.2.0/files"}
+{"id": "rel-w4-0087", "text": "beer in 4 hours", "family": "C", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0088", "text": "beer in 3 days 4pm", "family": "C", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0089", "text": "in 10 mins and 30 seconds", "family": "C", "source": "github:muelphil/smartclip", "url": "https://muelphil.github.io/smartclip/docs/plugins/remindme.html"}
+{"id": "rel-w4-0090", "text": "I'll be back in 5 minutes", "family": "C", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0091", "text": "It will happen 2 hours in the future", "family": "C", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0092", "text": "in 15 hr", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0093", "text": "in 2 min", "family": "C", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0094", "text": "2 hours ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0095", "text": "5 minutes ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0096", "text": "an hour ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0097", "text": "about an hour ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0098", "text": "about 23 hours ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0099", "text": "nine hours ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0100", "text": "fifteen minutes ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0101", "text": "ninety minutes ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0102", "text": "twenty min ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0103", "text": "just now", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0104", "text": "2.5 hours ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0105", "text": "1.5 hours ago", "family": "D", "source": "github:client9/nowandlater", "url": "https://pkg.go.dev/github.com/client9/nowandlater"}
+{"id": "rel-w4-0106", "text": "7 hours ago", "family": "D", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0107", "text": "0,5 hours ago", "family": "D", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0108", "text": "I'll go back now", "family": "D", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0109", "text": "1d ago", "family": "D", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0110", "text": "next 3 hours", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0111", "text": "next three hours", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0112", "text": "next 3 minutes", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0113", "text": "last 2 minutes", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0114", "text": "I'll go back next 5 hrs", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0115", "text": "I'll go back next hour", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0116", "text": "I'll go back last 3 minute", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0117", "text": "I'll go back last few minutes", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0118", "text": "The meeting will last for 2 hours from 2pm", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/TimePeriodExtractor.json"}
+{"id": "rel-w4-0119", "text": "The meeting is start from 2pm for 2 hours", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/TimePeriodExtractor.json"}
+{"id": "rel-w4-0120", "text": "from 4pm for thirty minutes", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0121", "text": "Within 2 weeks", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0122", "text": "until 2:00pm", "family": "E", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0123", "text": "Book meeting room on 14th Feb from 9:30am for 7 hours", "family": "E", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0124", "text": "2h 30m", "family": "E", "source": "github:nilbuild/timelang", "url": "https://github.com/nilbuild/timelang"}
+{"id": "rel-w4-0125", "text": "a day from now", "family": "F", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0126", "text": "a day from right now", "family": "F", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0127", "text": "at this time", "family": "F", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0128", "text": "beer in 3 days 4pm every week", "family": "F", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0129", "text": "in 3 days at 8am", "family": "F", "source": "hex:chronix", "url": "https://hex.pm/packages/chronix/0.2.0/files"}
+{"id": "rel-w4-0130", "text": "1 day ago at 2 PM", "family": "F", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0131", "text": "7 days hence", "family": "F", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0132", "text": "a fortnight hence", "family": "F", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0133", "text": "in few hours", "family": "K", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0134", "text": "in a pair of minutes", "family": "K", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0135", "text": "15 hrs", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0136", "text": "2 mins", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0137", "text": "3 sec", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0138", "text": "1mon ago", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0139", "text": "2y ago", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0140", "text": "tommorning", "family": "K", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0141", "text": "tom evening", "family": "K", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0142", "text": "fix the issue tmrw 2", "family": "K", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0143", "text": "tomo", "family": "K", "source": "github:muelphil/smartclip", "url": "https://muelphil.github.io/smartclip/docs/plugins/remindme.html"}
+{"id": "rel-w4-0144", "text": "late tonite", "family": "K", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0145", "text": "tonight 815", "family": "K", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0146", "text": "three week ago", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0147", "text": "forty-five seconds ago", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0148", "text": "in 3 sec", "family": "K", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0149", "text": "2.5 hours", "family": "L", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0150", "text": "10.75 minutes", "family": "L", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0151", "text": "1.5 days", "family": "L", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0152", "text": "15 hr", "family": "L", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0153", "text": "2 min", "family": "L", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0154", "text": "I'll leave for 3 minutes", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0155", "text": "I'll leave for a few minutes", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0156", "text": "I'll leave for few hours", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0157", "text": "I was not there that weekend.", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0158", "text": "Cortana, please book 2 hours next month", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0159", "text": "Cortana, please check my work 2 hours last week", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0160", "text": "Don't call me in the business hours", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/TimePeriodExtractor.json"}
+{"id": "rel-w4-0161", "text": "I'll go back last minute", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0162", "text": "I'll go back next night", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
+{"id": "rel-w4-0163", "text": "the week of september.15th", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0164", "text": "We do have a few dates available the week of April 10th.", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodParser.json"}
+{"id": "rel-w4-0165", "text": "What do I have the week of November 30th", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0166", "text": "I'll be out 20 minutes to three to eight in the evening", "family": "L", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimeModel.json"}
+{"id": "rel-w4-0167", "text": "in a few minutes", "family": "L", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0168", "text": "the week of october 6th", "family": "L", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0169", "text": "last week", "family": "L", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0170", "text": "next week", "family": "L", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0171", "text": "this morning", "family": "L", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0172", "text": "this second", "family": "L", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0173", "text": "later this week", "family": "L", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0174", "text": "code next week 4pm", "family": "L", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0175", "text": "beer every thursday 4", "family": "L", "source": "github:acreom/quickadd", "url": "https://github.com/acreom/quickadd"}
+{"id": "rel-w4-0176", "text": "every month on the 1st Saturday", "family": "L", "source": "rememberthemilk forums", "url": "http://www.rememberthemilk.com/forums/help/13880/"}
+{"id": "rel-w4-0177", "text": "15 minutes past 3pm", "family": "L", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0178", "text": "20 minutes to 2pm tomorrow", "family": "L", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0179", "text": "3 fridays from now", "family": "M", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0180", "text": "two sundays from now", "family": "M", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0181", "text": "thanksgiving 9 months from now", "family": "M", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0182", "text": "now + 2 hours", "family": "M", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0183", "text": "now - 30 minutes", "family": "M", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0184", "text": "now - 1hour", "family": "M", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0185", "text": "1 week 2 hours ago", "family": "M", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0186", "text": "a fortnight from now", "family": "M", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0187", "text": "1 year, 1 month, 1 week, 1 day, 1 hour and 1 minute ago", "family": "M", "source": "github:scrapinghub/dateparser", "url": "https://github.com/scrapinghub/dateparser/blob/master/tests/test_freshness_date_parser.py"}
+{"id": "rel-w4-0188", "text": "end of 1 week from now", "family": "M", "source": "hex:chronix", "url": "https://hex.pm/packages/chronix/0.2.0/files"}
+{"id": "rel-w4-0189", "text": "beginning of 2 days from now", "family": "M", "source": "hex:chronix", "url": "https://hex.pm/packages/chronix/0.2.0/files"}
+{"id": "rel-w4-0190", "text": "7 hours before tomorrow at noon", "family": "M", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0191", "text": "1 year ago tomorrow", "family": "M", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0192", "text": "3 months ago saturday at 5:00 pm", "family": "M", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0193", "text": "5 months before now", "family": "M", "source": "github:mojombo/chronic", "url": "https://github.com/mojombo/chronic"}
+{"id": "rel-w4-0194", "text": "by the end of next month", "family": "M", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0195", "text": "end of the following week", "family": "M", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0196", "text": "tonight at 8 o'clock", "family": "M", "source": "github:facebook/duckling", "url": "https://github.com/facebook/duckling/blob/main/Duckling/Time/EN/Corpus.hs"}
+{"id": "rel-w4-0197", "text": "28 days after 21 July", "family": "M", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0198", "text": "6 weeks before 21 Jul", "family": "M", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0199", "text": "50 days before new year's eve", "family": "M", "source": "todoist", "url": "https://todoist.com/help/articles/205325931-Due-dates-times"}
+{"id": "rel-w4-0200", "text": "Next weekend — not this coming weekend but the following one.", "family": "M", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0201", "text": "the weekend beginning in 7 or 8 days", "family": "M", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0202", "text": "Next weekend would be seven days from now", "family": "M", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0203", "text": "\"next weekend\" refers to the weekend in next week", "family": "M", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0204", "text": "\"Next Weekend\" officially means the one in 10", "family": "M", "source": "substack", "url": "https://thingsilikeanddontlike.substack.com/p/dont-like-when-next-weekend-is"}
+{"id": "rel-w4-0205", "text": "“this week’s end,” and “next week’s end.”", "family": "M", "source": "straightdope", "url": "https://boards.straightdope.com/t/when-is-next-not-next/672134"}
+{"id": "rel-w4-0206", "text": "Cortana, can you please set something up for the week of the 18th.", "family": "M", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DatePeriodExtractor.json"}
+{"id": "rel-w4-0207", "text": "Set out of office response for a day starting this Friday at 5 pm", "family": "M", "source": "github:microsoft/Recognizers-Text", "url": "https://github.com/microsoft/Recognizers-Text/blob/master/Specs/DateTime/English/DateTimePeriodExtractor.json"}
