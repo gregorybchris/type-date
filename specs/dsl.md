@@ -446,6 +446,8 @@ New forms. A `now` point resolves to a date and a time from the current clock (r
 - Units: `h` (up to 720), `m` (up to 43200), and `d` or `w` only for the same clock time on another day ("this time tomorrow", "same time next week", "this time next week"). "in 3 days", "a week from now" stay date offsets (`d +3d`, `d +1w`).
 - Canonical form: whole hours are written in hours (`now+2h`, not `now+120m`), fractions in minutes (`now+90m`, `now+150m`), zero is `now`. Days and hours together are hours ("in 2 days and 3 hours" is `now+51h`, "a day and a half from now" `now+36h`).
 - "a couple of hours" is 2 hours. "a few minutes", "a bit", "shortly", "soon", "in a sec", seconds ("in 30 seconds") and "within the hour" are `x`.
+- An offset inside a sentence is read like the phrase alone ("I'll ring you back in half an hour" is `dt now+30m`), unless the rest of the sentence names its own date or time.
+- "now until <a date without a time>" is a date range from today, as the older pools label it: "from now until christmas" is `d +0d>12-25`. With a time it is a span from now: "now until 5pm" is `dt now>17:00`.
 - A span from now uses the duration end `now>+Nh` up to 48 hours and `now>now+Nh` beyond. "starting in 20 minutes" without a recurrence is the point `dt now+20m`. "by 2 hours from now" is an open start, as for other deadlines.
 - Not covered, label `x`: a bare duration ("2 hours"), offsets from another time or event ("2 hours after 3pm", "30 min before the meeting"), "2 hours later", "hours from now".
 
