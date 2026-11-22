@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import type { Page } from "@playwright/test";
 import { boxes, isTouch, open, swipe } from "./helpers";
 
-// Touch-phone behavior: clear button, folding the calendar while typing, swipe between months, drag for a range,
+// Touch-phone behavior: clear button, the calendar while typing, swipe between months, drag for a range,
 // compact grid.
 
 test.beforeEach(async ({}, info) => {
@@ -26,18 +26,18 @@ test("a tap on the search icon focuses the input", async ({ page }) => {
   await expect(page.locator(".td-search input")).toBeFocused();
 });
 
-test("the calendar folds while typing and comes back after Enter", async ({ page }) => {
+test("the calendar stays visible while typing", async ({ page }) => {
   await open(page, "next monday 9am to 5pm");
   const cal = page.locator(".td-panel-cal");
-  expect((await cal.boundingBox())!.height).toBeGreaterThan(200);
+  const before = (await cal.boundingBox())!.height;
+  expect(before).toBeGreaterThan(200);
   await page.locator(".td-search input").focus();
-  await expect(page.locator(".td-root")).toHaveAttribute("data-typing", "true");
-  await expect.poll(async () => (await cal.boundingBox())!.height).toBeLessThan(2);
-  // The fields stay visible above the (folded) calendar.
+  await page.waitForTimeout(400);
+  expect((await cal.boundingBox())!.height).toBe(before);
   await expect(page.locator(".td-fields .td-seg").first()).toBeVisible();
   await page.locator(".td-search input").press("Enter");
   await expect(page.locator(".td-search input")).not.toBeFocused();
-  await expect.poll(async () => (await cal.boundingBox())!.height).toBeGreaterThan(200);
+  expect((await cal.boundingBox())!.height).toBe(before);
 });
 
 test("a horizontal swipe on the month name changes month; a short one does not", async ({ page }) => {
@@ -90,9 +90,9 @@ test("after the clear button, a tap on an example selects it", async ({ page }) 
   await page.locator(".td-search input").focus();
   await page.locator(".td-clear").tap();
   await expect(page.locator(".td-search input")).toBeFocused();
-  await expect(page.locator(".td-root")).toHaveAttribute("data-typing", "true");
   // Wait until the example stops moving, so it is measured where it will be tapped: the fields close, and focusing the
-  // input starts a smooth scroll of the picker into view after 250ms (useSoftKeyboard).
+  // input starts a smooth scroll of the picker into view after 250ms (useSoftKeyboard). A finger stays down about
+  // 100ms; Playwright's tap() releases at once.
   const chipLoc = page.locator(".demo-chip", { hasText: "every other sunday" });
   await page.waitForTimeout(300);
   await page.waitForFunction(`new Promise((done) => {
@@ -101,10 +101,6 @@ test("after the clear button, a tap on an example selects it", async ({ page }) 
     const a = y();
     setTimeout(() => done(y() === a), 300);
   })`);
-  // iOS Safari drops the click of a tap whose mousedown changes the layout. Chromium does not, so the test checks
-  // the condition itself: the calendar is still folded (the layout unchanged) when the click arrives.
-  await page.evaluate(`addEventListener("click", () => { window.__typingAtClick = document.querySelector(".td-root").hasAttribute("data-typing"); }, { capture: true, once: true })`);
-  // A finger stays down about 100ms; Playwright's tap() releases at once.
   const chip = (await chipLoc.boundingBox())!;
   const pt = { x: chip.x + chip.width / 2, y: chip.y + chip.height / 2 };
   const cdp = await page.context().newCDPSession(page);
@@ -112,10 +108,7 @@ test("after the clear button, a tap on an example selects it", async ({ page }) 
   await page.waitForTimeout(150);
   await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
   await expect(page.locator(".td-search input")).toHaveValue("every other sunday");
-  expect(await page.evaluate("window.__typingAtClick")).toBe(true);
   await expect(page.locator(".td-root")).toHaveAttribute("data-kind", "recurrence");
-  // After the click the calendar comes back.
-  await expect(page.locator(".td-root")).not.toHaveAttribute("data-typing", /.*/);
 });
 
 test("the grid shows only the weeks the month needs", async ({ page }) => {

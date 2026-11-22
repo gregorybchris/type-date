@@ -142,18 +142,3 @@
     box-shadow: none;
   }
 }
-
-/* Narrow picker on a touch screen with the soft keyboard up: fold the calendar and time list away, so the search
-   field and the result fields stay in the space above the keyboard. They come back when the input loses focus. */
-@container (max-width: 461px) {
-  @media (pointer: coarse) {
-    .td-root[data-typing] .td-body .td-panel {
-      grid-template-rows: 0fr;
-      opacity: 0;
-      border-top-color: transparent;
-    }
-    .td-root[data-typing] .td-body .td-panel-in {
-      padding-block: 0;
-    }
-  }
-}
