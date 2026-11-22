@@ -1,0 +1,160 @@
+{"id": "pw1-0001", "text": "last halloween", "family": "A", "group": "fixed"}
+{"id": "pw1-0002", "text": "last boxing day", "family": "A", "group": "fixed"}
+{"id": "pw1-0003", "text": "last anzac day", "family": "A", "group": "fixed"}
+{"id": "pw1-0004", "text": "last guy fawkes", "family": "A", "group": "fixed"}
+{"id": "pw1-0005", "text": "last labour day", "family": "A", "group": "weekday"}
+{"id": "pw1-0006", "text": "last mothers day", "family": "A", "group": "weekday"}
+{"id": "pw1-0007", "text": "last memorial day weekend", "family": "A", "group": "weekday"}
+{"id": "pw1-0008", "text": "last good friday", "family": "A", "group": "easter"}
+{"id": "pw1-0009", "text": "last ash wednesday", "family": "A", "group": "easter"}
+{"id": "pw1-0010", "text": "last pesach", "family": "A", "group": "lunar"}
+{"id": "pw1-0011", "text": "last rosh hashana", "family": "A", "group": "lunar"}
+{"id": "pw1-0012", "text": "last chinese new year", "family": "A", "group": "lunar"}
+{"id": "pw1-0013", "text": "last hari raya", "family": "A", "group": "lunar"}
+{"id": "pw1-0014", "text": "last deepavali", "family": "A", "group": "lunar"}
+{"id": "pw1-0015", "text": "last holi", "family": "A", "group": "lunar"}
+{"id": "pw1-0016", "text": "Last Thanksgiving", "family": "A", "group": "weekday"}
+{"id": "pw1-0017", "text": "last canada day", "family": "A", "group": "fixed"}
+{"id": "pw1-0018", "text": "last eid", "family": "A", "group": "lunar"}
+{"id": "pw1-0019", "text": "last sukkot", "family": "A", "group": "lunar"}
+{"id": "pw1-0020", "text": "last easter monday", "family": "A", "group": "easter"}
+{"id": "pw1-0021", "text": "last maundy thursday", "family": "A", "group": "easter"}
+{"id": "pw1-0022", "text": "Last Yom Kippur", "family": "A", "group": "lunar"}
+{"id": "pw1-0023", "text": "last st paddys", "family": "A", "group": "fixed"}
+{"id": "pw1-0024", "text": "last raksha bandhan", "family": "A", "group": "lunar"}
+{"id": "pw1-0025", "text": "previous diwali", "family": "B", "group": "lunar"}
+{"id": "pw1-0026", "text": "this past easter", "family": "B", "group": "easter"}
+{"id": "pw1-0027", "text": "the most recent hanukkah", "family": "B", "group": "lunar"}
+{"id": "pw1-0028", "text": "the past purim", "family": "B", "group": "lunar"}
+{"id": "pw1-0029", "text": "this last thanksgiving", "family": "B", "group": "weekday", "note": "\"this last\" meaning most recent"}
+{"id": "pw1-0030", "text": "the latest chinese new year", "family": "B", "group": "lunar", "note": "\"latest\" as past word"}
+{"id": "pw1-0031", "text": "just gone christmas", "family": "B", "group": "fixed", "note": "UK \"just gone\" before holiday"}
+{"id": "pw1-0032", "text": "the one just passed, hari raya haji", "family": "B", "group": "lunar", "note": "holiday after appositive"}
+{"id": "pw1-0033", "text": "the recent eid ul adha", "family": "B", "group": "lunar"}
+{"id": "pw1-0034", "text": "prior labor day", "family": "B", "group": "weekday"}
+{"id": "pw1-0035", "text": "the previous mothering sunday", "family": "B", "group": "easter", "note": "UK Lent-based day"}
+{"id": "pw1-0036", "text": "most recent bank hol", "family": "B", "group": "weekday"}
+{"id": "pw1-0037", "text": "the preceding new years eve", "family": "B", "group": "fixed"}
+{"id": "pw1-0038", "text": "the black friday that just went by", "family": "B", "group": "weekday", "note": "past marked by relative clause"}
+{"id": "pw1-0039", "text": "this past canada day long weekend", "family": "B", "group": "fixed"}
+{"id": "pw1-0040", "text": "passover that just ended", "family": "B", "group": "lunar", "note": "past marked by \"just ended\""}
+{"id": "pw1-0041", "text": "the previous father's day", "family": "B", "group": "weekday"}
+{"id": "pw1-0042", "text": "recent pentecost", "family": "B", "group": "easter"}
+{"id": "pw1-0043", "text": "the immediately preceding yom kippur", "family": "B", "group": "lunar"}
+{"id": "pw1-0044", "text": "last xmas eve 11pm", "family": "C", "group": "fixed"}
+{"id": "pw1-0045", "text": "last nye at midnight", "family": "C", "group": "fixed"}
+{"id": "pw1-0046", "text": "last diwali night 8 pm", "family": "C", "group": "lunar"}
+{"id": "pw1-0047", "text": "last easter sunday morning", "family": "C", "group": "easter"}
+{"id": "pw1-0048", "text": "last thanksgiving around 3", "family": "C", "group": "weekday"}
+{"id": "pw1-0049", "text": "last eid morning after prayers", "family": "C", "group": "lunar", "note": "time given by an event"}
+{"id": "pw1-0050", "text": "previous seder night", "family": "C", "group": "lunar", "note": "holiday named by its meal"}
+{"id": "pw1-0051", "text": "last july 4th at 9:30pm", "family": "C", "group": "fixed"}
+{"id": "pw1-0052", "text": "last good friday arvo", "family": "C", "group": "easter", "note": "AU \"arvo\" for afternoon"}
+{"id": "pw1-0053", "text": "last cny eve dinner 7pm", "family": "C", "group": "lunar"}
+{"id": "pw1-0054", "text": "last memorial day noon", "family": "C", "group": "weekday"}
+{"id": "pw1-0055", "text": "last rosh hashanah 6:15 pm", "family": "C", "group": "lunar"}
+{"id": "pw1-0056", "text": "last boxing day 10am sale", "family": "C", "group": "fixed"}
+{"id": "pw1-0057", "text": "since last diwali", "family": "D", "group": "lunar"}
+{"id": "pw1-0058", "text": "since last thanksgiving", "family": "D", "group": "weekday"}
+{"id": "pw1-0059", "text": "from last good friday till today", "family": "D", "group": "easter"}
+{"id": "pw1-0060", "text": "between last ramadan and now", "family": "D", "group": "lunar"}
+{"id": "pw1-0061", "text": "after last bank holiday", "family": "D", "group": "weekday"}
+{"id": "pw1-0062", "text": "before last christmas", "family": "D", "group": "fixed", "note": "could also mean \"christmas before last\""}
+{"id": "pw1-0063", "text": "last new years to this new years", "family": "D", "group": "fixed", "note": "range between two occurrences"}
+{"id": "pw1-0064", "text": "everything since last hanukah", "family": "D", "group": "lunar"}
+{"id": "pw1-0065", "text": "from last mardi gras", "family": "D", "group": "easter", "note": "open range, no end"}
+{"id": "pw1-0066", "text": "last halloween thru thanksgiving", "family": "D", "group": "several", "note": "range across two holidays"}
+{"id": "pw1-0067", "text": "between last eid and last diwali", "family": "D", "group": "lunar"}
+{"id": "pw1-0068", "text": "ever since last anzac day", "family": "D", "group": "fixed"}
+{"id": "pw1-0069", "text": "up to last labor day", "family": "D", "group": "weekday"}
+{"id": "pw1-0070", "text": "last pesach - today", "family": "D", "group": "lunar"}
+{"id": "pw1-0071", "text": "from last cny until now", "family": "D", "group": "lunar"}
+{"id": "pw1-0072", "text": "since last st patricks day", "family": "D", "group": "fixed"}
+{"id": "pw1-0073", "text": "can u send the pics from last diwali", "family": "E", "group": "lunar"}
+{"id": "pw1-0074", "text": "remind me to return the dish mum lent me last christmas", "family": "E", "group": "fixed"}
+{"id": "pw1-0075", "text": "expense report for last thanksgiving trip", "family": "E", "group": "weekday"}
+{"id": "pw1-0076", "text": "was out of office last good friday, check the logs", "family": "E", "group": "easter"}
+{"id": "pw1-0077", "text": "the deadline was right after last passover", "family": "E", "group": "lunar"}
+{"id": "pw1-0078", "text": "we went to penang last hari raya", "family": "E", "group": "lunar"}
+{"id": "pw1-0079", "text": "did you keep the receipt from last black friday", "family": "E", "group": "weekday"}
+{"id": "pw1-0080", "text": "uh what did we cook last easter sunday", "family": "E", "group": "easter"}
+{"id": "pw1-0081", "text": "the tree we got last xmas is still in the garage", "family": "E", "group": "fixed"}
+{"id": "pw1-0082", "text": "my car broke down last memorial day weekend remember", "family": "E", "group": "weekday"}
+{"id": "pw1-0083", "text": "her flight landed the night before last yom kippur", "family": "E", "group": "lunar", "note": "day relative to a past holiday"}
+{"id": "pw1-0084", "text": "invoice dated last boxing day", "family": "E", "group": "fixed"}
+{"id": "pw1-0085", "text": "grandma's lamb recipe from last eid", "family": "E", "group": "lunar"}
+{"id": "pw1-0086", "text": "we had the bbq last australia day", "family": "E", "group": "fixed"}
+{"id": "pw1-0087", "text": "fireworks video from last guy fawkes night", "family": "E", "group": "fixed"}
+{"id": "pw1-0088", "text": "the kids were sick all last mid autumn", "family": "E", "group": "lunar"}
+{"id": "pw1-0089", "text": "find the email I sent the friday before last labour day", "family": "E", "group": "weekday", "note": "weekday relative to a past holiday"}
+{"id": "pw1-0090", "text": "okay so last palm sunday we drove up to haifa", "family": "E", "group": "easter"}
+{"id": "pw1-0091", "text": "same restaurant as last valentines pls", "family": "E", "group": "fixed"}
+{"id": "pw1-0092", "text": "next diwali", "family": "F", "group": "lunar"}
+{"id": "pw1-0093", "text": "this coming thanksgiving", "family": "F", "group": "weekday"}
+{"id": "pw1-0094", "text": "this easter", "family": "F", "group": "easter"}
+{"id": "pw1-0095", "text": "upcoming hari raya", "family": "F", "group": "lunar"}
+{"id": "pw1-0096", "text": "next rosh hashana", "family": "F", "group": "lunar"}
+{"id": "pw1-0097", "text": "this yr's black friday", "family": "F", "group": "weekday"}
+{"id": "pw1-0098", "text": "the next halloween", "family": "F", "group": "fixed"}
+{"id": "pw1-0099", "text": "next xmas eve", "family": "F", "group": "fixed"}
+{"id": "pw1-0100", "text": "this ramadan", "family": "F", "group": "lunar"}
+{"id": "pw1-0101", "text": "the following good friday", "family": "F", "group": "easter", "note": "\"following\" with no anchor"}
+{"id": "pw1-0102", "text": "next bank holiday", "family": "F", "group": "weekday"}
+{"id": "pw1-0103", "text": "this hanukkah", "family": "F", "group": "lunar"}
+{"id": "pw1-0104", "text": "the coming mid-autumn festival", "family": "F", "group": "lunar"}
+{"id": "pw1-0105", "text": "next canada day", "family": "F", "group": "fixed"}
+{"id": "pw1-0106", "text": "this mothers day", "family": "F", "group": "weekday"}
+{"id": "pw1-0107", "text": "next shavuot", "family": "F", "group": "lunar"}
+{"id": "pw1-0108", "text": "easter two years ago", "family": "G", "group": "easter"}
+{"id": "pw1-0109", "text": "diwali before last", "family": "G", "group": "lunar"}
+{"id": "pw1-0110", "text": "last to last holi", "family": "G", "group": "lunar", "note": "Indian English \"last to last\""}
+{"id": "pw1-0111", "text": "three christmases ago", "family": "G", "group": "fixed"}
+{"id": "pw1-0112", "text": "thanksgiving the year before last", "family": "G", "group": "weekday"}
+{"id": "pw1-0113", "text": "the year before's passover", "family": "G", "group": "lunar"}
+{"id": "pw1-0114", "text": "eid next year", "family": "G", "group": "lunar"}
+{"id": "pw1-0115", "text": "2 halloweens back", "family": "G", "group": "fixed"}
+{"id": "pw1-0116", "text": "last yr's easter weekend", "family": "G", "group": "easter"}
+{"id": "pw1-0117", "text": "christmas 2 yrs ago", "family": "G", "group": "fixed"}
+{"id": "pw1-0118", "text": "the hanukkah before that", "family": "G", "group": "lunar", "note": "anaphoric, needs context"}
+{"id": "pw1-0119", "text": "next year's chinese new year", "family": "G", "group": "lunar"}
+{"id": "pw1-0120", "text": "the good friday after next", "family": "G", "group": "easter"}
+{"id": "pw1-0121", "text": "mother's day last year", "family": "G", "group": "weekday"}
+{"id": "pw1-0122", "text": "rosh hashana two years back", "family": "G", "group": "lunar"}
+{"id": "pw1-0123", "text": "the ramadan three years ago", "family": "G", "group": "lunar"}
+{"id": "pw1-0124", "text": "last night of diwali", "family": "H", "group": "lunar", "note": "final night of the festival"}
+{"id": "pw1-0125", "text": "last day of ramadan", "family": "H", "group": "lunar"}
+{"id": "pw1-0126", "text": "last minute halloween costume ideas", "family": "H", "group": "fixed"}
+{"id": "pw1-0127", "text": "last christmas i gave you my heart", "family": "H", "group": "fixed", "note": "song lyric"}
+{"id": "pw1-0128", "text": "play last christmas by wham", "family": "H", "group": "fixed", "note": "song title"}
+{"id": "pw1-0129", "text": "last sunday", "family": "H", "group": "none"}
+{"id": "pw1-0130", "text": "last weekend of easter break", "family": "H", "group": "easter", "note": "final weekend of school break"}
+{"id": "pw1-0131", "text": "last thursday of november", "family": "H", "group": "none", "note": "date rule, no holiday named"}
+{"id": "pw1-0132", "text": "the last seder", "family": "H", "group": "lunar", "note": "second seder or the past one"}
+{"id": "pw1-0133", "text": "last few days of hanukkah", "family": "H", "group": "lunar"}
+{"id": "pw1-0134", "text": "last bank holiday of the year", "family": "H", "group": "weekday", "note": "final in the year, not past"}
+{"id": "pw1-0135", "text": "the last easter egg", "family": "H", "group": "easter", "note": "food item"}
+{"id": "pw1-0136", "text": "last monday", "family": "H", "group": "none"}
+{"id": "pw1-0137", "text": "last minute mothers day gifts", "family": "H", "group": "weekday"}
+{"id": "pw1-0138", "text": "last of the christmas leftovers", "family": "H", "group": "fixed"}
+{"id": "pw1-0139", "text": "last train on new years eve", "family": "H", "group": "fixed", "note": "\"last\" refers to the train"}
+{"id": "pw1-0140", "text": "last 10 nights of ramadan", "family": "H", "group": "lunar"}
+{"id": "pw1-0141", "text": "last holiday", "family": "H", "group": "none", "note": "generic holiday"}
+{"id": "pw1-0142", "text": "last long weekend", "family": "H", "group": "none"}
+{"id": "pw1-0143", "text": "lst thnksgiving", "family": "I", "group": "weekday"}
+{"id": "pw1-0144", "text": "prev xmas", "family": "I", "group": "fixed"}
+{"id": "pw1-0145", "text": "last diwaali", "family": "I", "group": "lunar"}
+{"id": "pw1-0146", "text": "last hanukka", "family": "I", "group": "lunar"}
+{"id": "pw1-0147", "text": "las easter", "family": "I", "group": "easter"}
+{"id": "pw1-0148", "text": "last  halloween", "family": "I", "group": "fixed", "note": "double space"}
+{"id": "pw1-0149", "text": "lsat pancake day", "family": "I", "group": "easter", "note": "UK name for Shrove Tuesday"}
+{"id": "pw1-0150", "text": "lasr eid", "family": "I", "group": "lunar"}
+{"id": "pw1-0151", "text": "last rosh hashonah", "family": "I", "group": "lunar"}
+{"id": "pw1-0152", "text": "last memorail day", "family": "I", "group": "weekday"}
+{"id": "pw1-0153", "text": "last valentines dya", "family": "I", "group": "fixed"}
+{"id": "pw1-0154", "text": "last ash wed", "family": "I", "group": "easter"}
+{"id": "pw1-0155", "text": "last deepavalli", "family": "I", "group": "lunar"}
+{"id": "pw1-0156", "text": "the hanukkah we spent in tel aviv", "family": "J", "group": "lunar", "note": "occurrence picked by an event"}
+{"id": "pw1-0157", "text": "christmas just gone", "family": "J", "group": "fixed", "note": "\"just gone\" after the holiday"}
+{"id": "pw1-0158", "text": "the eid before covid", "family": "J", "group": "lunar", "note": "occurrence picked by an era"}
+{"id": "pw1-0159", "text": "the thanksgiving after we got married", "family": "J", "group": "weekday", "note": "occurrence picked by an event"}
+{"id": "pw1-0160", "text": "the easter we got snowed in", "family": "J", "group": "easter", "note": "occurrence picked by an event"}
