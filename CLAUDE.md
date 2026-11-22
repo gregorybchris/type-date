@@ -38,6 +38,8 @@ Run `make help` for the full list.
 
 | Command | What it does |
 |---|---|
+| `make ci` | Everything CI runs (picker build, typecheck, Vitest, Playwright, Python checks). Run before every push; CI must stay under 2 minutes (`specs/conventions.md`) |
+| `make e2e` / `make e2e-update` | Browser tests against the demo / re-record screenshot baselines (macOS) after an intended visual change |
 | `make setup` | Install Python deps with uv |
 | `make py-check` | ruff, ruff format check, ty |
 | `make py-fix` | ruff autofix and format |
@@ -63,6 +65,9 @@ Agents are encouraged to update CLAUDE.md as they work. Put CLAUDE.md changes in
 Update CLAUDE.md whenever you waste time on something. Add a short note so the next agent avoids it. Good notes name the symptom, the cause, and the fix.
 
 ## Pitfalls
+
+- jsdom has no layout, media queries or visual viewport, so picker unit tests cannot catch layout bugs. Layout, viewport, keyboard and touch behavior go in Playwright specs (`apps/demo/e2e`).
+- The picker's layout (narrow or wide) is decided by its own width in one place: `useNarrow` (NARROW_MAX = 461 in `packages/picker/src/hooks.ts`) and `@container (max-width: 461px)` in `src/styles/narrow.css`. Do not add window-width (`max-width: 520px`) checks; a 462px picker in a 500px window once drew the wide layout with phone-only fields.
 
 - A typer app with one command collapses it into the root command. Add an `@app.callback()` or a second command.
 - Gate commits on checks: `uv run ruff check src && uv run ty check src && git commit`. Piping ruff through `tail` hides its exit code, and a broken file got committed once (editing a file by slicing between two `def` lines also deleted the functions between them).
