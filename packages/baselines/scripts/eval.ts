@@ -32,6 +32,7 @@ const REGISTRY: Record<string, { file: string; perDay: boolean; description: str
   h14: { file: "h14.ts", perDay: false, description: "h13 plus a date range with one shared time window (\"tomorrow to friday 3-4pm\", \"3-4pm dec 1 to dec 5\"): splits the text into a date range and a time, and writes a daily recurrence bounded by the two dates. A time on each end stays one span." },
   h15: { file: "h15.ts", perDay: false, description: "h14 plus offsets from now (\"in 2 hours\", \"for the next 30 min\", \"this time tomorrow\"), relative weekends (\"next weekend\", \"the weekend after next\") and parts of a month (\"the last weekend of october\", \"the first week of january\", \"the last day of the month\", a year on an nth weekday)." },
   h16: { file: "h16.ts", perDay: false, description: "h15 plus lunar and lunisolar holidays (Lunar New Year, Mid-Autumn, Dragon Boat, Diwali, Holi, Ramadan, both Eids, Rosh Hashanah, Yom Kippur, Passover, Hanukkah, Purim) as table dates: names and spellings, eves, nights and days of a festival, Ramadan, Hanukkah and Passover as periods, Gregorian, Hijri and Hebrew years." },
+  h17: { file: "h17.ts", perDay: false, description: "h16 plus past holidays: \"last\", \"previous\", \"this past\" or \"most recent\" before a holiday (fixed, nth weekday, Easter or lunar) gives the most recent one on or before today, with the past marker (\"last purim\" is L:purim+0<)." },
 };
 
 // Same reference days as packages/core/scripts/score-resolved.ts. Keep in sync.
