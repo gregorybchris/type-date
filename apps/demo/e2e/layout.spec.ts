@@ -55,3 +55,15 @@ test("keyboard hints show on desktop and hide on touch or narrow screens", async
   const narrow = page.viewportSize()!.width <= 520;
   await expect(page.locator(".td-foot")).toBeVisible({ visible: !isTouch(info) && !narrow });
 });
+
+test("a range of two neighbor days is one block", async ({ page }) => {
+  await open(page, "next week thursday and friday");
+  const start = page.locator('.td-cell[data-range="start"] button');
+  const end = page.locator('.td-cell[data-range="end"] button');
+  const radius = (l: typeof start) => l.evaluate((e) => { const c = getComputedStyle(e); return [c.borderTopLeftRadius, c.borderTopRightRadius, c.borderBottomRightRadius, c.borderBottomLeftRadius]; });
+  expect(await radius(start)).toEqual(["8px", "0px", "0px", "8px"]);
+  expect(await radius(end)).toEqual(["0px", "8px", "8px", "0px"]);
+  // No gap between the two tiles.
+  const [a, b] = [(await start.boundingBox())!, (await end.boundingBox())!];
+  expect(b.x - (a.x + a.width)).toBeLessThanOrEqual(0);
+});

@@ -101,6 +101,32 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   const touch = useMedia("(pointer: coarse)");
   /** The text input has focus. On a touch phone the calendar folds away while the soft keyboard is up. */
   const [typing, setTyping] = useState(false);
+  // A tap outside the input blurs it (on the tap's mousedown), which unfolds the calendar and moves everything below the
+  // picker, such as the demo's examples. iOS Safari drops the click of a tap whose mousedown changes the layout, so
+  // the tapped button never fires. After a blur that comes from a tap, the calendar unfolds once the tap's click has
+  // run (or after 500ms if no click comes).
+  const lastPress = useRef(-1e9);
+  useEffect(() => {
+    const down = () => {
+      lastPress.current = performance.now();
+    };
+    window.addEventListener("pointerdown", down, true);
+    return () => window.removeEventListener("pointerdown", down, true);
+  }, []);
+  const unfoldAfterTap = () => {
+    let done = false;
+    const go = () => {
+      if (done) return;
+      done = true;
+      window.removeEventListener("click", go, true);
+      clearTimeout(fallback);
+      setTimeout(() => {
+        if (document.activeElement !== inputEl()) setTyping(false);
+      }, 0);
+    };
+    window.addEventListener("click", go, true);
+    const fallback = setTimeout(go, 500);
+  };
   const inputEl = () => root.current?.querySelector<HTMLInputElement>(".td-search input");
 
   const keepVisible = useSoftKeyboard(root, card, narrow);
@@ -395,7 +421,10 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
             setTyping(true);
             keepVisible();
           }}
-          onBlur={() => setTyping(false)}
+          onBlur={() => {
+            if (performance.now() - lastPress.current < 1000) unfoldAfterTap();
+            else setTyping(false);
+          }}
           enterKeyHint="done"
         />
         <span className="td-busy" aria-hidden />

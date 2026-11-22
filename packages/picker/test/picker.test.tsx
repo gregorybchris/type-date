@@ -807,14 +807,15 @@ describe("calendar on phones", () => {
     expect(weeks(true)).toBe(5);
   });
 
-  it("changes month on a horizontal touch swipe", async () => {
+  it("changes month on a horizontal touch swipe over the month name", async () => {
     const { Calendar } = await import("../src/Calendar");
     const onView = vi.fn();
     const sel = { lo: null, hi: null, occ: new Set<string>() };
     const { container } = render(
       <Calendar dir={0} sel={sel} today={TODAY} weekStart={1} view={{ y: 2026, m: 9 }} onView={onView} onPick={() => {}} onRange={() => {}} />,
     );
-    const weeks = container.querySelector(".td-weeks")!;
+    // The swipe is on the month name; the days take drags for ranges.
+    const weeks = container.querySelector(".td-month")!;
     // jsdom has no PointerEvent; a MouseEvent with the pointer fields is enough for React.
     if (typeof window.PointerEvent === "undefined") {
       class PE extends MouseEvent {

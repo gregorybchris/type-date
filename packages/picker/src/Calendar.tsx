@@ -51,12 +51,35 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
     rootRef.current?.querySelector<HTMLElement>(`[data-date="${tabDate}"]`)?.focus();
   });
 
-  // Drag to select: press on a day, move over others. A click that ends on another day does not fire on either
-  // button, so a drag never also picks a single day. Mouse and pen only, so touch scrolling still works.
+  // Drag to select: press on a day, move over others. With a mouse or pen each day gets pointerenter, and a click that
+  // ends on another day does not fire on either button. A touch pointer stays captured by the day it pressed, so the
+  // grid finds the day under the finger (onTouchDrag) and drops the click that may follow a drag, so a drag never also
+  // picks a single day. Day buttons have touch-action: none (calendar.css): a drag on the days does not scroll.
   const dragFrom = useRef<string | null>(null);
+  const dragTo = useRef<string | null>(null);
+  const dropClick = useRef(false);
+  // Where the grid was when the drag started. Picking the first day opens the result fields above the calendar on a
+  // phone, which moves the grid down under the finger; each lookup adds the grid's move since the start.
+  const dragOrigin = useRef<{ x: number; y: number } | null>(null);
+  const weeksRef = useRef<HTMLDivElement>(null);
+  const onTouchDrag = (e: React.PointerEvent) => {
+    if (e.pointerType !== "touch" || !dragFrom.current) return;
+    const r = weeksRef.current?.getBoundingClientRect();
+    if (r && !dragOrigin.current) dragOrigin.current = { x: r.left, y: r.top };
+    const o = dragOrigin.current;
+    const [dx, dy] = r && o ? [r.left - o.x, r.top - o.y] : [0, 0];
+    const el = document.elementFromPoint(e.clientX + dx, e.clientY + dy)?.closest<HTMLElement>("[data-date]");
+    const d = el && rootRef.current?.contains(el) ? el.dataset.date : undefined;
+    if (!d || d === dragTo.current) return;
+    dragTo.current = d;
+    if (d !== dragFrom.current) dropClick.current = true;
+    onRange(dragFrom.current, d);
+  };
   useEffect(() => {
     const end = () => {
       dragFrom.current = null;
+      dragTo.current = null;
+      dragOrigin.current = null;
     };
     window.addEventListener("pointerup", end);
     window.addEventListener("pointercancel", end);
@@ -68,7 +91,7 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
 
   const nav = (n: number) => onView(fromIndex(viewIndex(view) + n));
 
-  // Swipe left or right on the weeks to change month. Touch only; vertical moves still scroll the page.
+  // Swipe left or right on the month name to change month. Touch only. The days take drags for ranges instead.
   const swipe = useRef<{ x: number; y: number; id: number } | null>(null);
   const onSwipeStart = (e: React.PointerEvent) => {
     swipe.current = e.pointerType === "touch" && e.isPrimary ? { x: e.clientX, y: e.clientY, id: e.pointerId } : null;
@@ -127,6 +150,15 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
   const apart = (a: string, b: string | undefined) => plain(b) && !sameLook(a, b!);
   const label = monthLabel(view);
   const shape = blockShape(days, plain, joined, apart);
+  // A range whose start and end are next to each other in one row ("thursday and friday") is one block: the two ends
+  // join like list tiles, when they look the same (both in this month or both outside it).
+  const rangeJoin = (d: string, c: number, pos: string | undefined): string | undefined => {
+    const next = addDays(d, 1);
+    const prev = addDays(d, -1);
+    if (pos === "start" && c < 6 && posOf(next) === "end" && sameLook(d, next)) return "r";
+    if (pos === "end" && c > 0 && posOf(prev) === "start" && sameLook(d, prev)) return "l";
+    return undefined;
+  };
 
   return (
     <div className="td-cal" ref={rootRef}>
@@ -134,7 +166,13 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
         <button type="button" className="td-icon-btn" aria-label="Previous month" onClick={() => nav(-1)}>
           <ChevronIcon dir="left" />
         </button>
-        <span className="td-month" key={label}>
+        <span
+          className="td-month"
+          key={label}
+          onPointerDown={onSwipeStart}
+          onPointerUp={onSwipeEnd}
+          onPointerCancel={() => (swipe.current = null)}
+        >
           {label}
         </span>
         <button type="button" className="td-icon-btn" aria-label="Next month" onClick={() => nav(1)}>
@@ -151,11 +189,10 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
         </div>
         <div
           className="td-weeks"
+          ref={weeksRef}
           key={`${view.y}-${view.m}`}
           data-dir={dir}
-          onPointerDown={onSwipeStart}
-          onPointerUp={onSwipeEnd}
-          onPointerCancel={() => (swipe.current = null)}
+          onPointerMove={onTouchDrag}
         >
           {rows.map((row, r) => (
             <div role="row" className="td-row" key={r}>
@@ -177,7 +214,7 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
                     data-out={out || undefined}
                     data-today={d === today || undefined}
                     data-occ={occ || undefined}
-                    data-join={join}
+                    data-join={join ?? rangeJoin(d, c, pos)}
                     data-gap={gap}
                     data-bridge={bridge}
                   >
@@ -188,12 +225,24 @@ export function Calendar({ view, dir, sel, today, weekStart, trim, onView, onPic
                       aria-label={fmtDate(d)}
                       onFocus={() => setFocus(d)}
                       onPointerDown={(e) => {
-                        if (!e.button && e.pointerType !== "touch" && !e.shiftKey && !e.metaKey && !e.ctrlKey) dragFrom.current = d;
+                        dropClick.current = false;
+                        if (!e.button && e.isPrimary !== false && !e.shiftKey && !e.metaKey && !e.ctrlKey) {
+                          dragFrom.current = d;
+                          dragTo.current = d;
+                          const r = weeksRef.current?.getBoundingClientRect();
+                          dragOrigin.current = r ? { x: r.left, y: r.top } : null;
+                        }
                       }}
-                      onPointerEnter={() => {
-                        if (dragFrom.current) onRange(dragFrom.current, d);
+                      onPointerEnter={(e) => {
+                        if (dragFrom.current && e.pointerType !== "touch") onRange(dragFrom.current, d);
                       }}
-                      onClick={(e) => onPick(d, { shift: e.shiftKey, multi: e.metaKey || e.ctrlKey })}
+                      onClick={(e) => {
+                        if (dropClick.current) {
+                          dropClick.current = false;
+                          return;
+                        }
+                        onPick(d, { shift: e.shiftKey, multi: e.metaKey || e.ctrlKey });
+                      }}
                     >
                       {Number(d.slice(8))}
                     </button>

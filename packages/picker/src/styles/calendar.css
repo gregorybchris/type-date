@@ -64,8 +64,16 @@
   height: 32px;
   margin-bottom: 10px;
 }
+/* The month name fills the space between the chevrons: a horizontal swipe on it changes month (Calendar.tsx). */
 .td-month {
+  flex: 1;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
   font-weight: 500;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
   animation: td-fade 140ms var(--td-ease-out) both;
 }
 .td-icon-btn {
@@ -89,8 +97,6 @@
 }
 .td-weeks {
   overflow: hidden;
-  /* Horizontal swipes change month (Calendar.tsx); the browser keeps vertical scrolling. */
-  touch-action: pan-y;
   animation: td-slide var(--td-dur-slow) var(--td-ease-out) both;
 }
 .td-weeks[data-dir="1"] {
@@ -179,6 +185,11 @@
 }
 .td-cell button {
   position: relative;
+  /* A drag on the days selects a range (Calendar.tsx), so the browser must not take it as a scroll. */
+  touch-action: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
   width: calc(100% - var(--td-gap-l, 0px) - var(--td-gap-r, 0px) + var(--td-ext-r, 0px));
   margin-left: var(--td-gap-l, 0px);
   height: 100%;
