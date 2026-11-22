@@ -70,7 +70,8 @@ print("test_past", len(sealed))
 changes: dict = {"relabel": {}, "drop": []}
 for kind in ("pool", "e18"):
     smap = json.loads((ext / f"past-stale-{kind}-map.json").read_text())
-    got = {r["id"].removeprefix("r-"): r["dsl"] for r in consensus(f"stale-{kind}", scratch / f"stale-{kind}.jsonl", "past-stale", "x")}
+    kept = consensus(f"stale-{kind}", scratch / f"stale-{kind}.jsonl", "past-stale", "x")
+    got = {r["id"].removeprefix("r-"): r["dsl"] for r in kept}
     if kind == "pool":
         by_file: dict[str, dict[str, str | None]] = {}
         for sid, ref in smap.items():
