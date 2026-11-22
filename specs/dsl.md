@@ -133,7 +133,7 @@ Added after the coverage review in `specs/research/coverage-taxonomy.md`. Supers
 | | | "oct 2 and 9 at 3pm" | `dt 10-02,10-09 15:00` | two dates, same time |
 | | | "last 3 fridays" | `d fr-1,fr-2,fr-3` | three past Fridays |
 | | | "the 1st and 15th" | `d D@1,D@15` | next 1st and next 15th |
-| Past marker | suffix `<` on `MM-DD`, bare `WD`, `M@MM`; since h17 also `WD#K@MM`, `E±N`, `L:CODE±N` | "since october" (bound) | `M@10<` | the most recent occurrence on or before today |
+| Past marker | suffix `<` on `MM-DD`, bare `WD`, `M@MM`; since h17 also `WD#K@MM`, `E±N`, `L:CODE±N`, and counts `<N`, `^N` (see "Past holidays") | "since october" (bound) | `M@10<` | the most recent occurrence on or before today |
 | Period bounds | `s` and `u` accept a period token. `s` uses its first day, `u` its last day | "tuesdays in march" | `d R w/1 tu uM@03 sM@03` | |
 | | | "weekends since october" | `d R w/1 sa,su u+0d sM@10<` | |
 | | | "fridays this month" | `d R w/1 fr uM+0 sM+0` | |
@@ -514,7 +514,7 @@ Rules:
 
 ## Past holidays (decided 2026-11-21, h17)
 
-A holiday takes "last" like an exact date does ("last dec 25" is `12-25<`). The past marker `<` is now valid on three more forms: an nth weekday of a named month (`th#4@11<`), Easter (`E±N<`) and a lunar holiday (`L:CODE±N<`). It is not valid with a relative month (`@M±N`), a fixed year (`@YYYY`), or business days. As before, `<` resolves to the most recent such date on or before today (today counts), and uses today, not the range start, as its reference. An anchored offset takes the marker on its base (`th#4@11<~+1d`).
+A holiday takes "last" like an exact date does ("last dec 25" is `12-25<`), and can be counted ("two chanukahs ago"). The past marker `<` is now valid on three more forms: an nth weekday of a named month (`th#4@11<`), Easter (`E±N<`) and a lunar holiday (`L:CODE±N<`). It is not valid with a relative month (`@M±N`), a fixed year (`@YYYY`), or business days. As before, `<` resolves to the most recent such date on or before today (today counts), and uses today, not the range start, as its reference. An anchored offset takes the marker on its base (`th#4@11<~+1d`).
 
 | Input | Output | Resolves (today 2026-11-21) |
 |---|---|---|
@@ -527,10 +527,15 @@ A holiday takes "last" like an exact date does ("last dec 25" is `12-25<`). The 
 | "last ramadan" | `d L:ramadan+0<>L:eidfitr-1` | 2026-02-18 to 2026-03-19 |
 | "last diwali at 7pm" | `dt L:diwali+0< 19:00` | 2026-11-08 19:00 |
 | "since last eid" | `d L:eid+0<>` | |
+| "the christmas before last", "2 christmases ago" | `d 12-25<2` | 2024-12-25 |
+| "two chanukahs ago" | `d L:hanukkah+0<2>L:hanukkah+7` | 2024-12-26 to 2025-01-02 |
+| "3 easters ago" | `d E+0<3` | 2024-03-31 |
+| "christmas after next", "the thanksgiving after next" | `d 12-25^2`, `d th#4@11^2` | 2027-12-25, 2027-11-25 |
 
 Rules:
 - The modifiers are "last", "previous", "prev", "this past", "most recent", "the last", "the previous", "the most recent". "next", "this" and "coming" stay the nearest one on or after today (no marker).
-- Not covered (unchanged): a holiday with a relative year ("purim last year", "christmas next year", "last year's diwali"), "the X before last", and "last" on a named day of a festival ("last erev yom kippur"). Exact dates have the same gap ("dec 25 last year").
+- Occurrence counts: `<N` is the Nth most recent on or before today (`<` alone is the first), `^N` the Nth on or after today (the form alone is the first). N is 2 to 10. They go on the same forms as `<` (and `MM-DD`). "the X before last" and "N Xs ago" are `<N` with N = 2 and N; "the X after next" is `^2`. "next X" stays the form alone.
+- Not covered (unchanged): a holiday with a relative year ("purim last year", "christmas next year", "last year's diwali") and "last" on a named day of a festival ("last erev yom kippur"). Exact dates have the same gap ("dec 25 last year"). A relative year counts calendar years, not occurrences, so it is not `<N`.
 
 ### Label changes
 

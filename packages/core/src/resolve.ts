@@ -155,6 +155,26 @@ export function resolveDate(
   weekStart: 0 | 1 = 0,
 ): DateRange | null {
   const single = (s: string): DateRange => ({ start: s, end: s });
+  if ((spec.k === "abs" || spec.k === "nth" || spec.k === "east" || spec.k === "lun") && spec.occ) {
+    // Nth occurrence: candidates in the years around today (or the whole table), counted back from today or forward
+    // from the reference day
+    const [ty] = parts(spec.past ? today : ref);
+    let cands: string[] = [];
+    if (spec.k === "lun") cands = lunarDays(spec.code).map((d) => fromDays(d + spec.n));
+    else
+      for (let y = ty - spec.occ * 4 - 4; y <= ty + spec.occ * 4 + 4; y++) {
+        if (spec.k === "abs") {
+          if (spec.d <= daysInMonth(y, spec.m)) cands.push(ymd(y, spec.m, spec.d));
+        } else if (spec.k === "nth") {
+          const c = nthWeekdayOfMonth(y, spec.month, spec.wd as Weekday, spec.nth);
+          if (c) cands.push(c);
+        } else cands.push(addDays(easterSunday(y), spec.n));
+      }
+    const hit = spec.past
+      ? cands.filter((c) => toDays(c) <= toDays(today)).reverse()[spec.occ - 1]
+      : cands.filter((c) => toDays(c) >= toDays(ref))[spec.occ - 1];
+    return hit ? single(hit) : null;
+  }
   switch (spec.k) {
     case "abs": {
       if (spec.y !== null) return single(ymd(spec.y, spec.m, spec.d));

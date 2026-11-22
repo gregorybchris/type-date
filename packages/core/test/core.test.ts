@@ -1258,3 +1258,25 @@ describe("past marker on holiday forms (h17)", () => {
     expect(at("d L:lny+0<", "2000-01-15")).toBe("none"); // before the table
   });
 });
+
+describe("occurrence counts on holiday forms (h17)", () => {
+  const at = (dsl: string, today = "2026-11-21") => {
+    const x = resolveDsl(dsl, { today, weekStart: 0 });
+    return x.kind === "single" ? x.start?.date : x.kind === "range" ? `${x.start?.date}>${x.end?.date}` : x.kind;
+  };
+  it("round-trips and rejects", () => {
+    for (const l of ["d 12-25<2", "d 12-25^2", "d th#4@11<2", "d th#4@11^3", "d E+0<3", "d L:hanukkah+0<2>L:hanukkah+7", "d th#4@11<2~+1d"])
+      expect(serializeDsl(parseDsl(l))).toBe(l);
+    for (const l of ["d 12-25<1", "d 12-25^1", "d 12-25<11", "d 2026-12-25<2", "d fr<2", "d mo#1@M+1<2", "d E@2027+0^2", "d W+0^2"]) expect(parseDsl(l).mode).toBe("x");
+  });
+  it("counts back from today and forward from it", () => {
+    expect(at("d 12-25<2")).toBe("2024-12-25");
+    expect(at("d 12-25^2")).toBe("2027-12-25");
+    expect(at("d 12-25^2", "2026-12-25")).toBe("2027-12-25"); // today is the first
+    expect(at("d th#4@11<2")).toBe("2024-11-28");
+    expect(at("d E+0<3")).toBe("2024-03-31");
+    expect(at("d L:hanukkah+0<2>L:hanukkah+7")).toBe("2024-12-26>2025-01-02");
+    expect(at("d L:diwali+0^2")).toBe("2028-10-17");
+    expect(at("d 02-29<2")).toBe("2020-02-29");
+  });
+});

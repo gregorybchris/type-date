@@ -5,7 +5,7 @@ Read `specs/dsl.md` in full. The most important section is "Past holidays (decid
 Input: JSONL files of {"id", "text"}. Output: for each input file, a JSONL file with one line per input id, in the same order: {"id": "...", "dsl": "...", "unsure": false}.
 
 Rules:
-- Label what the person most plausibly means, using the policies in `specs/dsl.md`. Use the canonical forms in the h17 and h16 sections (`L:purim+0<` for "last purim"; `12-25<` for "last christmas"; `th#4@11<` for "last thanksgiving"; `L:diwali+0` for "next diwali").
+- Label what the person most plausibly means, using the policies in `specs/dsl.md`. Use the canonical forms in the h17 and h16 sections (`L:purim+0<` for "last purim"; `12-25<` for "last christmas"; `th#4@11<` for "last thanksgiving"; `L:diwali+0` for "next diwali"; `12-25<2` for "the christmas before last"; `12-25^2` for "christmas after next").
 - The text has no date context, so labels are relative (`L:diwali+0`, `+1d`, `mo`), not absolute dates, unless the text gives an absolute date or year.
 - A holiday with a stated year is written as absolute dates ("diwali 2027" is `d 2027-10-29`). Get them by resolving the `L:CODE@YYYY±N` line: `cd packages/core && pnpm exec tsx -e "import {resolveDsl} from './src'; console.log(JSON.stringify(resolveDsl(process.argv[1], {today: '2026-11-21'})))" "d L:diwali@2027+0"`. A year the table does not cover resolves to `x`; label that row `x`.
 - A phrase with words around it ("flying home for cny", "office closed on eid al adha") is labeled by its date or time part. A phrase with no date or time, or with only forms the spec labels `x`, is `x`.

@@ -30,6 +30,9 @@ function parseMonthTarget(s: string): { month: number; rel?: number; y?: number 
   return null;
 }
 
+/** Past marker and occurrence count: `<`, `<2`, `^2`. */
+const occ = (d: { past?: true; occ?: number }) => (d.past ? `<${d.occ ?? ""}` : d.occ ? `^${d.occ}` : "");
+
 function fmtMonthTarget(d: { month: number; rel?: number; y?: number }): string {
   const p2 = (n: number) => String(n).padStart(2, "0");
   if (d.rel !== undefined) return `M${d.rel >= 0 ? "+" : ""}${d.rel}`;
@@ -47,6 +50,17 @@ export function parseDate(s: string): DateSpec | null {
     if (!(m = s.match(/^([^~]+)~([+-]\d+)([dwmyb])$/))) return null;
     const base = parseDate(m[1]!);
     return base && base.k !== "anc" && isSingleDay(base) ? { k: "anc", base, n: +m[2]!, u: m[3] as OffUnit } : null;
+  }
+  if ((m = s.match(/^((?:L:|E[+-]|[a-z]{2}#|\d{2}-\d{2})[^<^]*)([<^])(\d{1,2})$/))) {
+    // Nth occurrence (h17): `<N` the Nth most recent on or before today, `^N` the Nth on or after today. N is 2 to 10
+    const n = +m[3]!;
+    const d = parseDate(m[2] === "<" ? `${m[1]}<` : m[1]!);
+    if (!d || n < 2 || n > 10) return null;
+    if (d.k === "abs" && d.y !== null) return null;
+    if (d.k === "nth" && (d.wd === "b" || d.rel !== undefined || d.y !== undefined)) return null;
+    if ((d.k === "east" || d.k === "lun") && d.y !== undefined) return null;
+    if (d.k !== "abs" && d.k !== "nth" && d.k !== "east" && d.k !== "lun") return null;
+    return { ...d, occ: n };
   }
   if (/^(?:L:|E[+-]|[a-z]{2}#)[^<]*<$/.test(s)) {
     // past marker on a holiday form: an nth weekday of a named month, Easter, a lunar holiday (h17)
@@ -379,13 +393,13 @@ function fmtDate(d: DateSpec): string {
   const p2 = (n: number) => String(n).padStart(2, "0");
   switch (d.k) {
     case "abs":
-      return d.y === null ? `${p2(d.m)}-${p2(d.d)}${d.past ? "<" : ""}` : `${d.y}-${p2(d.m)}-${p2(d.d)}`;
+      return d.y === null ? `${p2(d.m)}-${p2(d.d)}${occ(d)}` : `${d.y}-${p2(d.m)}-${p2(d.d)}`;
     case "off":
       return `${d.n >= 0 ? "+" : ""}${d.n}${d.u}`;
     case "wd":
       return d.n === 0 ? `${d.wd}${d.past ? "<" : ""}` : `${d.wd}${d.n > 0 ? "+" : ""}${d.n}`;
     case "nth":
-      return `${d.wd}#${d.nth}@${fmtMonthTarget(d)}${d.past ? "<" : ""}`;
+      return `${d.wd}#${d.nth}@${fmtMonthTarget(d)}${occ(d)}`;
     case "wknth":
       return `WKND#${d.nth}@${fmtMonthTarget(d)}`;
     case "wom":
@@ -409,9 +423,9 @@ function fmtDate(d: DateSpec): string {
     case "dom":
       return `D@${p2(d.d)}`;
     case "east":
-      return `E${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}${d.past ? "<" : ""}`;
+      return `E${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}${occ(d)}`;
     case "lun":
-      return `L:${d.code}${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}${d.past ? "<" : ""}`;
+      return `L:${d.code}${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}${occ(d)}`;
     case "wdw":
       return `${d.wd}@W${d.n >= 0 ? "+" : ""}${d.n}`;
     case "pdom":
