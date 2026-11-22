@@ -18,6 +18,7 @@ const phrases = [
   "MWTh @ noon",
   "tmrw 1-2",
   "every wkday at 9",
+  "2026 dec 16, 17, 22, 24, 30, 31",
   "tomorrow 3pm est",
   "four score and seven years ago",
   "next pi day",
@@ -25,7 +26,7 @@ const phrases = [
 ];
 
 // Each phrase gets the next demo theme, alternating light and dark.
-const LOOKS = ["paper", "dracula", "latte", "nord", "solarized-light", "mocha", "github-light", "tokyo-night", "rose-dawn", "gruvbox-dark", "everforest-light", "rose-pine"];
+const LOOKS = ["paper", "dracula", "latte", "nord", "solarized-light", "mocha", "github-light", "tokyo-night", "rose-dawn", "gruvbox-dark", "everforest-light", "rose-pine", "nord-snow"];
 // The demo derives every page and picker color from the --t-* inputs, so registering and fading those fades everything.
 const FADE = "0.7s";
 const INPUTS = ["page", "card", "fg", "accent", "on-accent"];

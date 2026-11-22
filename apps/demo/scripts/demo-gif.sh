@@ -1,7 +1,7 @@
 #!/bin/sh
 # Converts the demo recording to a GIF. Usage: demo-gif.sh in.ffconcat out.gif
 # The input is the PNG frame list from demo-video.mjs (2x device pixels). Needs ffmpeg and gifsicle.
-# Defaults (800 px, 12 fps, global palette, no dither, no lossy): 6.8 MB for 62 s. Dither added noise to flat UI colors.
+# Defaults (800 px, 12 fps, global palette, no dither, no lossy): 7.2 MB for 68 s. Dither added noise to flat UI colors.
 # Env: GIF_FPS, GIF_WIDTH (README shows it at half this width, so it stays sharp on 2x screens), GIF_COLORS, GIF_LOSSY.
 # GIF_PALETTE=single builds one palette per frame (keeps changing highlight colors; larger file).
 set -e
