@@ -935,6 +935,10 @@
     height: 44px;
     padding: 0 12px;
   }
+  /* 44px segments inside the 1px border */
+  .td-seg {
+    height: 46px;
+  }
   .td-opt {
     height: 44px;
   }

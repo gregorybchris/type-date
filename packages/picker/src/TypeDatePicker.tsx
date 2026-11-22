@@ -478,6 +478,8 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
   const endDate = isRange && open !== "end" ? dateOf("end") : undefined;
   const oneDay = isRange && !open && showTime && !!endTime && (!showCal || !endDate || endDate === dateOf("start"));
   const stack = isRange && !open && !oneDay && showCal && showTime;
+  /** The end time is on the next day: flagged by the resolver, or a time-only range that ends before it starts. */
+  const nextDay = !!result?.endNextDay || (isRange && !showCal && !!startTime && !!endTime && endTime < startTime);
 
   const dark = theme === "dark" ? "dark" : theme === "light" ? "light" : undefined;
 
@@ -584,7 +586,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
                       <span className="td-dash" aria-hidden>–</span>
                       <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
                         {fmtTime(endTime!)}
-                        {result?.endNextDay && <small>+1 day</small>}
+                        {nextDay && <small>+1 day</small>}
                       </Field>
                     </>
                   )}
@@ -602,7 +604,7 @@ export const TypeDatePicker = forwardRef<TypeDatePickerHandle, TypeDatePickerPro
                     {showTime && endTime && (
                       <Field time active={tgt === "end"} onClick={() => setTarget("end")}>
                         {fmtTime(endTime)}
-                        {result?.endNextDay && <small>+1 day</small>}
+                        {nextDay && <small>+1 day</small>}
                       </Field>
                     )}
                   </div>
