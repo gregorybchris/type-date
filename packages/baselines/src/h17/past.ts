@@ -10,7 +10,9 @@ const valid = (dsl: string) => parseDsl(dsl).mode !== "x";
 const canon = (dsl: string) => serializeDsl(parseDsl(dsl) as never);
 
 // the past word, not followed by a word that makes it something else ("last year's", "last day of", "last night")
-const PAST = /\b(?:the )?(?:last|previous|prev|this past|(?:the )?most recent)\s+(?!(?:years?|yrs?|week|weeks|month|months|day|days|night|nights|time|minute|one|few|couple|\d)\b)/;
+const PAST = /\b(?:the )?(?:last|lst|lsat|lasr|previous|prev|this past|the past|this last|(?:the )?most recent|the latest|the recent|recent|prior|the prior|(?:the )?(?:immediately )?preceding)\s+(?!(?:years?|yrs?|week|weeks|month|months|day|days|night|nights|time|minute|minutes|one|few|couple|of|to|\d)\b)/;
+// a past word after the holiday: "christmas just gone", "passover that just ended"
+const PAST_AFTER = /\s+(?:just gone|(?:that|which) (?:just )?(?:went by|ended|passed|finished)|just passed|just ended)\b/;
 
 // holiday-shaped date tokens: a fixed month-day, an nth weekday of a named month, Easter, a lunar holiday
 const HOLIDAY_TOKEN = /(?<![\w:@#<>+-])((?:\d{2}-\d{2}|(?:su|mo|tu|we|th|fr|sa)#-?\d@\d{2}|E[+-]\d+|L:[a-z]+[+-]\d+))(?=(?:~[+-]\d+[dwmyb])?(?:$|[ >,]))/;
@@ -61,7 +63,7 @@ function withCount(t: string, parse: Parse): string | null {
   const tries: [RegExp, (m: RegExpMatchArray) => string][] = [
     [/ (?:before|b4) (?:the )?last\b/, () => "<2"],
     [/ after (?:the )?next\b/, () => "^2"],
-    [/ ago\b/, () => ""],
+    [/ (?:ago|back)\b/, () => ""],
   ];
   for (const [re, suf] of tries) {
     const m = t.match(re);
@@ -87,11 +89,41 @@ function withCount(t: string, parse: Parse): string | null {
   return null;
 }
 
+/** The first 1 to 4 words name a holiday or a month-day, and the first word is part of the name ("christmas eve", not
+ * "train on new years"). */
+function namesHoliday(after: string, parse: Parse): boolean {
+  const words = after.split(" ");
+  for (let k = 1; k <= Math.min(4, words.length); k++) {
+    const head = words.slice(0, k).join(" ").replace(/[,.;:!?)]+$/, "");
+    const out = parse(head);
+    const hm = out.match(HOLIDAY_TOKEN);
+    if (!hm) continue;
+    const without = parse(words.slice(1, k).join(" ").replace(/[,.;:!?)]+$/, ""));
+    if ((without.match(HOLIDAY_TOKEN)?.[1] ?? "") !== hm[1]) return true;
+  }
+  return false;
+}
+
 /** The h17 layer. `full` is h16's answer for the whole text; `parse` is h16. */
 export function withPast(text: string, full: string, parse: Parse): string {
   const t = normalize(text);
   const counted = withCount(t, parse);
   if (counted) return counted;
+  const ltl = t.match(/\b(?:the )?(?:last to last|last but one) /);
+  if (ltl && namesHoliday(t.slice(ltl.index! + ltl[0].length), parse)) {
+    const rest = (t.slice(0, ltl.index!) + t.slice(ltl.index! + ltl[0].length)).trim();
+    const r = mark(parse(rest), "<2");
+    if (r) return r;
+  }
+  const pa = t.match(PAST_AFTER);
+  if (pa) {
+    const rest = (t.slice(0, pa.index!) + t.slice(pa.index! + pa[0].length)).trim();
+    const out = parse(rest);
+    if (out !== "x" && HOLIDAY_TOKEN.test(out) && !/[<^]/.test(out)) {
+      const r = mark(out, "<");
+      if (r) return r;
+    }
+  }
   const m = t.match(PAST);
   if (!m) return full;
   const rest = (t.slice(0, m.index!) + t.slice(m.index! + m[0].length)).replace(/\s+/g, " ").trim();
@@ -100,16 +132,14 @@ export function withPast(text: string, full: string, parse: Parse): string {
   if (out === "x") return full;
   // h16 read the past word itself ("last friday", "last dec 25", "the last day of hanukkah"); but when its answer has
   // no holiday it read a word inside the holiday name ("last good friday" as `fr-1`)
-  if (full !== "x" && full !== out && HOLIDAY_ANY.test(full)) return full;
+  // h16 ignored the past word: no reading, the same reading, no holiday in it ("last good friday" as `fr-1`), or the
+  // same holiday without a marker ("before last christmas" as `12-25`)
+  const tokenOf = (d: string) => d.match(HOLIDAY_TOKEN)?.[1];
+  const ignored = full === "x" || full === out || !HOLIDAY_ANY.test(full) || (!/[<^]/.test(full) && tokenOf(full) === tokenOf(out));
+  if (!ignored) return full;
   // the holiday must follow the past word: the text after it parses to a holiday token
   // the words right after it (one to four, no digits) name a holiday on their own ("last call ... dec 2" is not one)
-  const words = t.slice(m.index! + m[0].length).split(" ");
-  let named = false;
-  for (let k = 1; k <= Math.min(4, words.length) && !named; k++) {
-    const head = words.slice(0, k).join(" ").replace(/[,.;:!?)]+$/, "");
-    if (/\d/.test(head)) break;
-    named = HOLIDAY_TOKEN.test(parse(head));
-  }
+  const named = namesHoliday(t.slice(m.index! + m[0].length), parse);
   if (!named) return full;
   return mark(out, "<") ?? full;
 }
