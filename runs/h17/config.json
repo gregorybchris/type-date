@@ -1,0 +1,7 @@
+{
+  "id": "h17",
+  "title": "h17",
+  "description": "h16 plus past holidays: \"last\", \"previous\", \"this past\" or \"most recent\" before a holiday (fixed, nth weekday, Easter or lunar) gives the most recent one on or before today, with the past marker (\"last purim\" is L:purim+0<).",
+  "created": "2026-11-22T04:26:30Z",
+  "format": "dsl-v1"
+}

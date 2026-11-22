@@ -5330,6 +5330,344 @@
         }
       },
       "version": "e18"
+    },
+    "e19": {
+      "exact": 0.7900194067091766,
+      "resolved": 0.7929581369559191,
+      "n": 18035,
+      "by_split": {
+        "val": {
+          "n": 2505,
+          "exact": 0.9712574850299401,
+          "resolved": 0.9716566866267465
+        },
+        "test_template": {
+          "n": 4539,
+          "exact": 0.9314827054417273,
+          "resolved": 0.9314827054417273
+        },
+        "test_noise": {
+          "n": 1463,
+          "exact": 0.9268626110731374,
+          "resolved": 0.9268626110731374
+        },
+        "test_llm": {
+          "n": 1289,
+          "exact": 0.9526764934057409,
+          "resolved": 0.9557796741660202
+        },
+        "test_external": {
+          "n": 307,
+          "exact": 0.9576547231270358,
+          "resolved": 0.9576547231270358
+        },
+        "test_external_hard": {
+          "n": 769,
+          "exact": 0.7984395318595578,
+          "resolved": 0.7997399219765929
+        },
+        "test_public": {
+          "n": 211,
+          "exact": 0.943127962085308,
+          "resolved": 0.9478672985781991
+        },
+        "test_public2": {
+          "n": 121,
+          "exact": 0.8760330578512396,
+          "resolved": 0.8760330578512396
+        },
+        "test_v2": {
+          "n": 224,
+          "exact": 0.9196428571428571,
+          "resolved": 0.9196428571428571
+        },
+        "test_tax": {
+          "n": 275,
+          "exact": 0.84,
+          "resolved": 0.8581818181818182
+        },
+        "test_web_heldout": {
+          "n": 388,
+          "exact": 0.8015463917525774,
+          "resolved": 0.8041237113402062
+        },
+        "test_web_sealed": {
+          "n": 250,
+          "exact": 0.864,
+          "resolved": 0.864
+        },
+        "test_web2_sealed": {
+          "n": 366,
+          "exact": 0.9016393442622951,
+          "resolved": 0.9043715846994536
+        },
+        "test_typo": {
+          "n": 1083,
+          "exact": 0.7285318559556787,
+          "resolved": 0.7349953831948292
+        },
+        "test_new_forms": {
+          "n": 136,
+          "exact": 0.014705882352941176,
+          "resolved": 0.029411764705882353
+        },
+        "test_families": {
+          "n": 121,
+          "exact": 0.5206611570247934,
+          "resolved": 0.5454545454545454
+        },
+        "test_number_words": {
+          "n": 25,
+          "exact": 0.4,
+          "resolved": 0.4
+        },
+        "test_personas": {
+          "n": 547,
+          "exact": 0.8537477148080439,
+          "resolved": 0.8574040219378428
+        },
+        "test_voice_booking": {
+          "n": 194,
+          "exact": 0.8092783505154639,
+          "resolved": 0.8092783505154639
+        },
+        "test_formats_domain": {
+          "n": 260,
+          "exact": 0.8,
+          "resolved": 0.8
+        },
+        "test_conj_writers": {
+          "n": 602,
+          "exact": 0.4019933554817276,
+          "resolved": 0.4152823920265781
+        },
+        "test_conj_web": {
+          "n": 289,
+          "exact": 0.4671280276816609,
+          "resolved": 0.5224913494809689
+        },
+        "test_tz_writers": {
+          "n": 510,
+          "exact": 0.12549019607843137,
+          "resolved": 0.12549019607843137
+        },
+        "test_tz_web": {
+          "n": 532,
+          "exact": 0.34398496240601506,
+          "resolved": 0.34398496240601506
+        },
+        "test_tz_context": {
+          "n": 104,
+          "exact": 0,
+          "resolved": 0
+        },
+        "test_rel_writers": {
+          "n": 240,
+          "exact": 0.09166666666666666,
+          "resolved": 0.09583333333333334
+        },
+        "test_rel_web": {
+          "n": 138,
+          "exact": 0.2753623188405797,
+          "resolved": 0.2753623188405797
+        },
+        "test_lunar_writers": {
+          "n": 238,
+          "exact": 0.14705882352941177,
+          "resolved": 0.14705882352941177
+        },
+        "test_lunar_web": {
+          "n": 181,
+          "exact": 0.3314917127071823,
+          "resolved": 0.3314917127071823
+        },
+        "test_past": {
+          "n": 128,
+          "exact": 0.1640625,
+          "resolved": 0.1640625
+        }
+      },
+      "by_tag": {
+        "anchored-offset": {
+          "n": 132,
+          "exact": 0.6060606060606061
+        },
+        "basic-date": {
+          "n": 1941,
+          "exact": 0.7362184441009789
+        },
+        "basic-date-range": {
+          "n": 1880,
+          "exact": 0.902127659574468
+        },
+        "basic-date-year": {
+          "n": 221,
+          "exact": 0.9864253393665159
+        },
+        "business-day": {
+          "n": 12,
+          "exact": 0.75
+        },
+        "date-list": {
+          "n": 108,
+          "exact": 0.8425925925925926
+        },
+        "date-range-shared-month": {
+          "n": 174,
+          "exact": 0.9655172413793104
+        },
+        "datetime": {
+          "n": 1932,
+          "exact": 0.8473084886128365
+        },
+        "datetime-range": {
+          "n": 735,
+          "exact": 0.9197278911564626
+        },
+        "day-of-month": {
+          "n": 86,
+          "exact": 0.7674418604651163
+        },
+        "duration": {
+          "n": 139,
+          "exact": 0.7050359712230215
+        },
+        "fuzzy-period": {
+          "n": 24,
+          "exact": 0.875
+        },
+        "month-or-year-only": {
+          "n": 117,
+          "exact": 0.9743589743589743
+        },
+        "named-holiday": {
+          "n": 110,
+          "exact": 0.8636363636363636
+        },
+        "non-date-noise": {
+          "n": 728,
+          "exact": 0.8475274725274725
+        },
+        "nth-weekday-of-month": {
+          "n": 359,
+          "exact": 0.7019498607242339
+        },
+        "open-range": {
+          "n": 250,
+          "exact": 0.728
+        },
+        "period-relative": {
+          "n": 190,
+          "exact": 0.8052631578947368
+        },
+        "quarter": {
+          "n": 14,
+          "exact": 0.7142857142857143
+        },
+        "recurrence": {
+          "n": 769,
+          "exact": 0.7282184655396619
+        },
+        "recurrence-bounded": {
+          "n": 599,
+          "exact": 0.44073455759599334
+        },
+        "recurrence-daily": {
+          "n": 131,
+          "exact": 0.9770992366412213
+        },
+        "recurrence-day-times": {
+          "n": 90,
+          "exact": 0
+        },
+        "recurrence-interval": {
+          "n": 233,
+          "exact": 0.9399141630901288
+        },
+        "recurrence-month-filter": {
+          "n": 60,
+          "exact": 0.48333333333333334
+        },
+        "recurrence-monthly-yearly": {
+          "n": 298,
+          "exact": 0.9362416107382551
+        },
+        "recurrence-nth-list": {
+          "n": 97,
+          "exact": 0.10309278350515463
+        },
+        "recurrence-weekly": {
+          "n": 2741,
+          "exact": 0.9233856256840569
+        },
+        "relative-date": {
+          "n": 435,
+          "exact": 0.9080459770114943
+        },
+        "relative-offset": {
+          "n": 500,
+          "exact": 0.81
+        },
+        "time-only": {
+          "n": 763,
+          "exact": 0.908256880733945
+        },
+        "time-range": {
+          "n": 737,
+          "exact": 0.9416553595658074
+        },
+        "timezone": {
+          "n": 974,
+          "exact": 0
+        },
+        "weekday-bare": {
+          "n": 58,
+          "exact": 0.9482758620689655
+        },
+        "weekday-relative": {
+          "n": 398,
+          "exact": 0.9396984924623115
+        }
+      },
+      "by_modifier": {
+        "abbreviation": {
+          "n": 3608,
+          "exact": 0.9235033259423503
+        },
+        "ampm-ambiguous": {
+          "n": 922,
+          "exact": 0.9587852494577006
+        },
+        "casing": {
+          "n": 1239,
+          "exact": 0.9693301049233253
+        },
+        "context": {
+          "n": 104,
+          "exact": 0
+        },
+        "partial-prefix": {
+          "n": 1229,
+          "exact": 0.8633034987794955
+        },
+        "spacing": {
+          "n": 2343,
+          "exact": 0.9300042680324371
+        },
+        "typo": {
+          "n": 2088,
+          "exact": 0.7840038314176245
+        },
+        "typo-keyboard": {
+          "n": 341,
+          "exact": 0.8328445747800587
+        },
+        "word-numbers": {
+          "n": 900,
+          "exact": 0.94
+        }
+      },
+      "version": "e19"
     }
   }
 }
