@@ -133,7 +133,7 @@ Added after the coverage review in `specs/research/coverage-taxonomy.md`. Supers
 | | | "oct 2 and 9 at 3pm" | `dt 10-02,10-09 15:00` | two dates, same time |
 | | | "last 3 fridays" | `d fr-1,fr-2,fr-3` | three past Fridays |
 | | | "the 1st and 15th" | `d D@1,D@15` | next 1st and next 15th |
-| Past marker | suffix `<` on `MM-DD`, bare `WD`, `M@MM` | "since october" (bound) | `M@10<` | the most recent occurrence on or before today |
+| Past marker | suffix `<` on `MM-DD`, bare `WD`, `M@MM`; since h17 also `WD#K@MM`, `E±N`, `L:CODE±N` | "since october" (bound) | `M@10<` | the most recent occurrence on or before today |
 | Period bounds | `s` and `u` accept a period token. `s` uses its first day, `u` its last day | "tuesdays in march" | `d R w/1 tu uM@03 sM@03` | |
 | | | "weekends since october" | `d R w/1 sa,su u+0d sM@10<` | |
 | | | "fridays this month" | `d R w/1 fr uM+0 sM+0` | |
@@ -507,7 +507,31 @@ Rules:
 - A holiday name alone is its (first) day. Three are periods: "ramadan", "hanukkah" and "passover" alone, or with "during", "over", "for", "throughout", "all of", are the whole festival as a range. Ramadan ends the day before Eid al-Fitr; Hanukkah and Passover are 8 days (Passover in Israel is 7; the label uses 8). A range bound ("until passover", "after ramadan") or a time uses the first day.
 - Hebrew and Islamic days begin at sundown. The label is the civil date of the first full day, as calendars list it. "Erev X", "X eve", "the night before X", "first night of X" and "first seder" are `L:X-1`. "Nth night of hanukkah" is `L:hanukkah+(N-2)`; "Nth day of X" is `L:X+(N-1)` (also "the 15th of ramadan").
 - Named days of the festival use `L:CODE±N`; a counted offset ("2 days after eid") uses the anchor form `L:CODE+0~±Nd`, as for Easter.
-- "next", "this", "the coming", "this year's" are the nearest one (`+0`). "last diwali" and other past occurrences are `x` (no past form), as "last christmas" is.
+- "next", "this", "the coming", "this year's" are the nearest one (`+0`). "last diwali" is `L:diwali+0<` since h17 (it was `x`); see "Past holidays".
 - Vietnamese (Tet) and Korean (Seollal, Chuseok) dates use the Chinese table; in a few years they differ by a day. Islamic dates are Umm al-Qura; the observed day can differ by a day by country. Diwali and Holi follow India's calendar. These differences are not modeled.
 - `x`: recurrences ("every diwali", "each ramadan"), fuzzy periods ("eid holidays", "diwali week", "cny break", "ramadan season"), greetings and things named after the holiday ("eid mubarak", "diwali sale", "passover recipes"), the other days of the five-day Diwali festival except "choti diwali", and holidays not in the table (Sukkot, Navratri, Vesak and others).
 - A holiday next to another date is a label, as in h11: "diwali, nov 8" is `d 11-08`.
+
+## Past holidays (decided 2026-11-21, h17)
+
+A holiday takes "last" like an exact date does ("last dec 25" is `12-25<`). The past marker `<` is now valid on three more forms: an nth weekday of a named month (`th#4@11<`), Easter (`E±N<`) and a lunar holiday (`L:CODE±N<`). It is not valid with a relative month (`@M±N`), a fixed year (`@YYYY`), or business days. As before, `<` resolves to the most recent such date on or before today (today counts), and uses today, not the range start, as its reference. An anchored offset takes the marker on its base (`th#4@11<~+1d`).
+
+| Input | Output | Resolves (today 2026-11-21) |
+|---|---|---|
+| "last purim", "previous purim", "this past purim", "the most recent purim" | `d L:purim+0<` | 2026-03-03 |
+| "last christmas" | `d 12-25<` | 2025-12-25 |
+| "last easter", "last good friday" | `d E+0<`, `d E-2<` | 2026-04-05, 2026-04-03 |
+| "last thanksgiving" | `d th#4@11<` | 2025-11-27 |
+| "last black friday" | `d th#4@11<~+1d` | 2025-11-28 |
+| "last hanukkah" | `d L:hanukkah+0<>L:hanukkah+7` | 2025-12-15 to 2025-12-22 |
+| "last ramadan" | `d L:ramadan+0<>L:eidfitr-1` | 2026-02-18 to 2026-03-19 |
+| "last diwali at 7pm" | `dt L:diwali+0< 19:00` | 2026-11-08 19:00 |
+| "since last eid" | `d L:eid+0<>` | |
+
+Rules:
+- The modifiers are "last", "previous", "prev", "this past", "most recent", "the last", "the previous", "the most recent". "next", "this" and "coming" stay the nearest one on or after today (no marker).
+- Not covered (unchanged): a holiday with a relative year ("purim last year", "christmas next year", "last year's diwali"), "the X before last", and "last" on a named day of a festival ("last erev yom kippur"). Exact dates have the same gap ("dec 25 last year").
+
+### Label changes
+
+"last <holiday>" was `x` (or, for a few holidays, the future date). Rows with the old label are relabeled (see `specs/engines/h17.md`).

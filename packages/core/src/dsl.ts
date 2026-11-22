@@ -48,6 +48,14 @@ export function parseDate(s: string): DateSpec | null {
     const base = parseDate(m[1]!);
     return base && base.k !== "anc" && isSingleDay(base) ? { k: "anc", base, n: +m[2]!, u: m[3] as OffUnit } : null;
   }
+  if (/^(?:L:|E[+-]|[a-z]{2}#)[^<]*<$/.test(s)) {
+    // past marker on a holiday form: an nth weekday of a named month, Easter, a lunar holiday (h17)
+    const d = parseDate(s.slice(0, -1));
+    if (!d) return null;
+    if (d.k === "nth" && d.wd !== "b" && d.rel === undefined && d.y === undefined) return { ...d, past: true };
+    if ((d.k === "east" || d.k === "lun") && d.y === undefined) return { ...d, past: true };
+    return null;
+  }
   if ((m = s.match(/^(\d{2})-(\d{2})<$/))) {
     const [mo, d] = [+m[1]!, +m[2]!];
     return validMonthDay(mo, d) ? { k: "abs", y: null, m: mo, d, past: true } : null;
@@ -377,7 +385,7 @@ function fmtDate(d: DateSpec): string {
     case "wd":
       return d.n === 0 ? `${d.wd}${d.past ? "<" : ""}` : `${d.wd}${d.n > 0 ? "+" : ""}${d.n}`;
     case "nth":
-      return `${d.wd}#${d.nth}@${fmtMonthTarget(d)}`;
+      return `${d.wd}#${d.nth}@${fmtMonthTarget(d)}${d.past ? "<" : ""}`;
     case "wknth":
       return `WKND#${d.nth}@${fmtMonthTarget(d)}`;
     case "wom":
@@ -401,9 +409,9 @@ function fmtDate(d: DateSpec): string {
     case "dom":
       return `D@${p2(d.d)}`;
     case "east":
-      return `E${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}`;
+      return `E${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}${d.past ? "<" : ""}`;
     case "lun":
-      return `L:${d.code}${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}`;
+      return `L:${d.code}${d.y !== undefined ? `@${d.y}` : ""}${d.n >= 0 ? "+" : ""}${d.n}${d.past ? "<" : ""}`;
     case "wdw":
       return `${d.wd}@W${d.n >= 0 ? "+" : ""}${d.n}`;
     case "pdom":

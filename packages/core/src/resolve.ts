@@ -255,6 +255,15 @@ export function resolveDate(
         const cand = nthWeekdayOfMonth(y, (idx % 12) + 1, spec.wd, spec.nth);
         return cand ? single(cand) : null;
       }
+      if (spec.past) {
+        // most recent on or before today (`<` uses today, not the range start)
+        const [ty] = parts(today);
+        for (let y = ty; y >= ty - 2; y--) {
+          const cand = nthWeekdayOfMonth(y, spec.month, spec.wd, spec.nth);
+          if (cand && toDays(cand) <= toDays(today)) return single(cand);
+        }
+        return null;
+      }
       const [ry] = parts(ref);
       for (let y = ry; y <= ry + 2; y++) {
         const cand = nthWeekdayOfMonth(y, spec.month, spec.wd, spec.nth);
@@ -302,6 +311,14 @@ export function resolveDate(
       return { start: ymd(spec.year, 1, 1), end: ymd(spec.year, 12, 31) };
     case "east": {
       if (spec.y !== undefined) return single(addDays(easterSunday(spec.y), spec.n));
+      if (spec.past) {
+        const [ty] = parts(today);
+        for (let y = ty; y >= ty - 1; y--) {
+          const cand = addDays(easterSunday(y), spec.n);
+          if (toDays(cand) <= toDays(today)) return single(cand);
+        }
+        return null;
+      }
       const [ry] = parts(ref);
       for (let y = ry; y <= ry + 1; y++) {
         const cand = addDays(easterSunday(y), spec.n);
@@ -314,6 +331,13 @@ export function resolveDate(
       if (spec.y !== undefined) {
         const first = days.find((d) => fromDays(d).startsWith(`${spec.y}-`));
         return first === undefined ? null : single(fromDays(first + spec.n));
+      }
+      if (spec.past) {
+        const t = toDays(today);
+        const before = days.filter((d) => d + spec.n <= t);
+        const last = before[before.length - 1];
+        // the table starts in 2000: a past date before its first entry is not known
+        return last === undefined ? null : single(fromDays(last + spec.n));
       }
       const r = toDays(ref);
       const hit = days.find((d) => d + spec.n >= r);

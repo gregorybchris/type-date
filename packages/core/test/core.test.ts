@@ -557,7 +557,8 @@ describe("past marker", () => {
     expect(date("d 02-29<", "2028-02-28")).toBe("2024-02-29");
   });
   it("is invalid on other forms", () => {
-    for (const bad of ["d 2026-10-05<", "d fr+1<", "d fr-1<", "d +1d<", "d W+0<", "d Y@2026<", "d 13-01<", "d 02-30<", "d D@15<", "d fr#1@03<", "d <10-05", "d 10-05<<", "d M@13<", "t 10:00<"]) {
+    // `fr#1@03<` (an nth weekday of a named month) became valid in h17: "last thanksgiving" is `th#4@11<`
+    for (const bad of ["d 2026-10-05<", "d fr+1<", "d fr-1<", "d +1d<", "d W+0<", "d Y@2026<", "d 13-01<", "d 02-30<", "d D@15<", "d <10-05", "d 10-05<<", "d M@13<", "t 10:00<"]) {
       expect(parseDsl(bad), bad).toEqual({ mode: "x" });
     }
   });
@@ -1230,5 +1231,30 @@ describe("lunar holidays (L:CODE±N, h16)", () => {
   it("Islamic holidays can fall twice in a Gregorian year", () => {
     expect(resolveDsl("d L:ramadan+0", { today: "2030-02-01" })).toMatchObject({ start: { date: "2030-12-26" } });
     expect(day("d L:ramadan@2030+0")).toBe("2030-01-05");
+  });
+});
+
+describe("past marker on holiday forms (h17)", () => {
+  const at = (dsl: string, today: string) => {
+    const x = resolveDsl(dsl, { today, weekStart: 0 });
+    return x.kind === "single" ? x.start?.date : x.kind === "range" ? `${x.start?.date}>${x.end?.date}` : x.kind;
+  };
+  it("round-trips the allowed forms and rejects the others", () => {
+    for (const l of ["d L:purim+0<", "d E+0<", "d E-2<", "d th#4@11<", "d th#4@11<~+1d", "d L:ramadan+0<>L:eidfitr-1", "dt L:diwali+0< 19:00"])
+      expect(serializeDsl(parseDsl(l))).toBe(l);
+    for (const l of ["d mo#1@M+1<", "d mo#1@2027-10<", "d E@2027+0<", "d L:diwali@2027+0<", "d b#1@01<", "d L:purim+0<<"]) expect(parseDsl(l).mode).toBe("x");
+  });
+  it("resolves the most recent date on or before today", () => {
+    expect(at("d L:purim+0<", "2026-11-21")).toBe("2026-03-03");
+    expect(at("d L:purim+0<", "2026-03-03")).toBe("2026-03-03"); // today counts
+    expect(at("d L:purim+0<", "2026-03-02")).toBe("2025-03-14");
+    expect(at("d E+0<", "2026-11-21")).toBe("2026-04-05");
+    expect(at("d E+0<", "2026-03-01")).toBe("2025-04-20");
+    expect(at("d th#4@11<", "2026-11-21")).toBe("2025-11-27");
+    expect(at("d th#4@11<", "2026-11-26")).toBe("2026-11-26");
+    expect(at("d th#4@11<~+1d", "2026-11-21")).toBe("2025-11-28");
+    expect(at("d L:hanukkah+0<>L:hanukkah+7", "2026-11-21")).toBe("2025-12-15>2025-12-22");
+    expect(at("d L:ramadan+0<>L:eidfitr-1", "2026-11-21")).toBe("2026-02-18>2026-03-19");
+    expect(at("d L:lny+0<", "2000-01-15")).toBe("none"); // before the table
   });
 });
