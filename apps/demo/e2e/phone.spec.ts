@@ -80,7 +80,9 @@ test("a touch drag across days selects a range and does not change month", async
   await touchDrag(page, "2026-11-16", "2026-11-20");
   await expect.poll(() => selectedDays(page)).toEqual(["2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20"]);
   await expect(page.locator(".td-month")).toHaveText("November 2026");
-  // A tap still picks one day.
+  // A tap still picks one day. Wait first: on Linux CI, Chromium dropped the click of a tap sent about 50ms after the
+  // drag's touchEnd (a finger cannot lift and tap again that fast).
+  await page.waitForTimeout(300);
   await page.locator('[data-date="2026-11-25"]').tap();
   await expect.poll(() => selectedDays(page)).toEqual(["2026-11-25"]);
 });
