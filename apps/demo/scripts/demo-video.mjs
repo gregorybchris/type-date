@@ -12,19 +12,20 @@ await mkdir(out, { recursive: true });
 const phrases = [
   "oct 2 to oct 5",
   "next mon 9am to 5pm",
+  "9am tokyo time fri",
   "half past nine the day after tomorrow",
   "last fri of the month",
+  "MWTh @ noon",
   "tmrw 1-2",
-  "february 12 to march 2",
   "every wkday at 9",
+  "tomorrow 3pm est",
   "four score and seven years ago",
   "next pi day",
   "may the fourth be with you",
 ];
 
-// VARY=1: each phrase gets the next demo theme, alternating light and dark.
-const VARY = !!process.env.VARY;
-const LOOKS = ["paper", "dracula", "latte", "nord", "solarized-light", "mocha", "github-light", "tokyo-night", "rose-dawn", "gruvbox-dark"];
+// Each phrase gets the next demo theme, alternating light and dark.
+const LOOKS = ["paper", "dracula", "latte", "nord", "solarized-light", "mocha", "github-light", "tokyo-night", "rose-dawn", "gruvbox-dark", "everforest-light", "rose-pine"];
 // The demo derives every page and picker color from the --t-* inputs, so registering and fading those fades everything.
 const FADE = "0.7s";
 const INPUTS = ["page", "card", "fg", "accent", "on-accent"];
@@ -94,7 +95,7 @@ const ctx = await browser.newContext({ viewport: size, deviceScaleFactor: 2 });
 const page = await ctx.newPage();
 await page.goto(url(), { waitUntil: "networkidle" });
 await page.addStyleTag({ content: CSS });
-if (VARY) await page.addStyleTag({ content: FADE_CSS });
+await page.addStyleTag({ content: FADE_CSS });
 await page.evaluate("document.fonts.ready.then(() => 0)");
 await page.getByRole("textbox", { name: "Date and time" }).click();
 await page.evaluate("window.scrollTo(0, 0)");
@@ -120,15 +121,15 @@ const capture = (async () => {
     writes.push(writeFile(`${framesDir}/${file}`, Buffer.from(data, "base64")));
   }
 })();
-if (VARY) await applyLook(page, 0);
+await applyLook(page, 0);
 for (const [i, p] of phrases.entries()) {
   await type(page, p);
   await sleep(1800);
   console.log("scrollY", await page.evaluate("window.scrollY"), p);
   // Reset and the next look change together, so the clear and the 0.7 s fade overlap.
   await page.keyboard.press("Escape");
-  if (VARY && i + 1 < phrases.length) await applyLook(page, i + 1);
-  await sleep(VARY ? 750 : 500);
+  if (i + 1 < phrases.length) await applyLook(page, i + 1);
+  await sleep(750);
 }
 await sleep(500);
 capturing = false;

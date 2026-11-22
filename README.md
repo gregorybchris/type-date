@@ -6,7 +6,7 @@ Just type <code>oct 2 to oct 5</code> or <code>every other sunday</code> and the
 </p>
 
 <p align="center">
-  <img src="docs/media/demo-themes.gif" alt="Typing ten phrases into the picker, from oct 2 to oct 5 to may the fourth be with you, with the color theme changing between light and dark each time" width="400">
+  <img src="docs/media/demo-themes.gif" alt="Typing twelve phrases into the picker, from oct 2 to oct 5 to may the fourth be with you, with the color theme changing between light and dark each time" width="400">
 </p>
 
 ## The idea

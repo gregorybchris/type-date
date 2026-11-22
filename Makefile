@@ -77,13 +77,13 @@ results:  ## Results table for an eval version: make results EVAL=e10
 robustness:  ## Meaning-preserving edit flip rates on dev data: make robustness ENGINE=h8
 	cd packages/baselines && pnpm exec tsx scripts/robustness.ts --engine $(or $(ENGINE),h8)
 
-# OUT: output folder. VARY=1: alternate light and dark and change the highlight color for each phrase.
-OUT ?= docs/media
-demo-video:  ## Record the demo into docs/media (PNG frames, mp4, gif) and open the mp4 and gif in Chrome: make demo-video [VARY=1 OUT=docs/media/vary]
+# Each phrase gets the next demo theme. The GIF is the one the README shows; the mp4, frames and frame list are gitignored.
+MEDIA = docs/media
+demo-video:  ## Record the demo (cycling themes) into docs/media: demo-themes.gif for the README and demo.mp4; opens both in Chrome
 	@cd apps/demo && { curl -s -o /dev/null localhost:5301 && started= || { (nohup pnpm exec vite --port 5301 --strictPort > ../../.run/demo-video-vite.log 2>&1 & echo $$! > ../../.run/demo-video-vite.pid); started=1; until curl -s -o /dev/null localhost:5301; do :; done; }; \
-	  mkdir -p ../../$(OUT); node scripts/demo-video.mjs ../../$(OUT); rc=$$?; \
+	  node scripts/demo-video.mjs ../../$(MEDIA); rc=$$?; \
 	  [ -z "$$started" ] || kill $$(lsof -ti :5301) 2>/dev/null; exit $$rc; }
-	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH apps/demo/scripts/demo-gif.sh $(OUT)/demo.ffconcat $(OUT)/demo.gif
-	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH ffmpeg -loglevel error -y -f concat -safe 0 -i $(OUT)/demo.ffconcat -vf fps=30 -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -movflags +faststart $(OUT)/demo.mp4
-	@ls -la $(OUT) | awk 'NR>3 {print $$5, $$9}'
-	@open -a "Google Chrome" $(OUT)/demo.mp4 $(OUT)/demo.gif
+	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH apps/demo/scripts/demo-gif.sh $(MEDIA)/demo.ffconcat $(MEDIA)/demo-themes.gif
+	@PATH=/opt/homebrew/opt/ffmpeg@4/bin:$$PATH ffmpeg -loglevel error -y -f concat -safe 0 -i $(MEDIA)/demo.ffconcat -vf fps=30 -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -movflags +faststart $(MEDIA)/demo.mp4
+	@ls -la $(MEDIA) | awk 'NR>3 {print $$5, $$9}'
+	@open -a "Google Chrome" $(MEDIA)/demo.mp4 $(MEDIA)/demo-themes.gif
