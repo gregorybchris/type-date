@@ -1,7 +1,8 @@
-// Records the demo while typing five phrases. Usage: node scripts/demo-video.mjs <outDir> [baseUrl]
+// Records the demo while typing the phrases. Usage: node scripts/demo-video.mjs <outDir> [baseUrl]
 // Start the demo on a spare port first: pnpm exec vite --port 5301
 import { chromium } from "playwright";
-import { mkdir, rename, writeFile } from "node:fs/promises";
+import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
+import { findTheme, themeVars } from "../themes.ts";
 
 const out = process.argv[2] ?? "video";
 const base = process.argv[3] ?? "http://localhost:5301";
@@ -21,39 +22,23 @@ const phrases = [
   "may the fourth be with you",
 ];
 
-// VARY=1: each phrase gets the other theme and a new highlight color.
+// VARY=1: each phrase gets the next demo theme, alternating light and dark.
 const VARY = !!process.env.VARY;
-const LOOKS = [
-  ["light", "#4f46e5"],
-  ["dark", "#fb7185"],
-  ["light", "#059669"],
-  ["dark", "#38bdf8"],
-  ["light", "#e11d48"],
-  ["dark", "#a3e635"],
-  ["light", "#7c3aed"],
-  ["dark", "#fb923c"],
-  ["light", "#0d9488"],
-  ["dark", "#e879f9"],
-];
-// Registered color properties animate, so every var(--td-*) user fades together.
+const LOOKS = ["paper", "dracula", "latte", "nord", "solarized-light", "mocha", "github-light", "tokyo-night", "rose-dawn", "gruvbox-dark"];
+// The demo derives every page and picker color from the --t-* inputs, so registering and fading those fades everything.
 const FADE = "0.7s";
-const TOKENS = ["bg", "bg-2", "fg", "fg-2", "fg-3", "border", "dotted", "hover", "sel", "accent", "on-accent", "range", "today-ring", "ring"];
-const FADE_CSS = `${TOKENS.map((t) => `@property --td-${t} { syntax: "<color>"; inherits: true; initial-value: #888 }`).join("\n")}
-.td-root { transition: ${TOKENS.map((t) => `--td-${t} ${FADE} ease`).join(", ")} !important }
-.demo { transition: background-color ${FADE} ease, color ${FADE} ease !important }`;
+const INPUTS = ["page", "card", "fg", "accent", "on-accent"];
+const FADE_CSS = `${INPUTS.map((t) => `@property --t-${t} { syntax: "<color>"; inherits: true; initial-value: #888 }`).join("\n")}
+.demo { transition: ${INPUTS.map((t) => `--t-${t} ${FADE} ease`).join(", ")} !important }`;
 
 async function applyLook(page, i) {
-  const [theme, accent] = LOOKS[i % LOOKS.length];
-  const dark = theme === "dark";
+  const t = findTheme(LOOKS[i % LOOKS.length]);
+  const vars = themeVars(t);
   await page.evaluate(`(() => {
-    const dark = ${dark};
-    document.querySelector("main.demo")?.setAttribute("data-theme", ${JSON.stringify(theme)});
-    const root = document.querySelector(".td-root");
-    root.setAttribute("data-theme", ${JSON.stringify(theme)});
-    root.style.setProperty("--td-accent", ${JSON.stringify(accent)});
-    root.style.setProperty("--td-on-accent", dark ? "#1c1c1c" : "#fff");
-    root.style.setProperty("--td-range", "color-mix(in srgb, ${accent} " + (dark ? 18 : 12) + "%, transparent)");
-    root.style.setProperty("--td-ring", "color-mix(in srgb, ${accent} 22%, transparent)");
+    const main = document.querySelector("main.demo");
+    main.setAttribute("data-theme", ${JSON.stringify(t.mode)});
+    document.querySelector(".td-root").setAttribute("data-theme", ${JSON.stringify(t.mode)});
+    for (const [k, v] of Object.entries(${JSON.stringify(vars)})) main.style.setProperty(k, v);
     return 0;
   })()`);
 }
@@ -82,7 +67,7 @@ async function type(page, text) {
 const browser = await chromium.launch();
 const PAD = 32;
 // Frame page: only the picker, top-aligned, with the same padding on every side.
-const CSS = `.demo-try, .demo-note, .demo-gear, .demo-confirmed { display: none !important }
+const CSS = `.demo-try, .demo-note, .demo-gear, .demo-brand, .demo-confirmed { display: none !important }
 .demo { padding: ${PAD}px !important; justify-content: flex-start !important; align-items: center !important }`;
 const url = (q = "") => `${base}/?theme=light&ws=0${q ? `&q=${encodeURIComponent(q)}` : ""}`;
 
@@ -102,15 +87,10 @@ await probe.close();
 const size = { width: Math.round(w + 2 * PAD), height: Math.round(h + 2 * PAD) };
 console.log("frame", size);
 
-const ctx = await browser.newContext({
-  viewport: size,
-  deviceScaleFactor: 2,
-  recordVideo: { dir: out, size },
-});
-// The recording starts when the page is created. Hide the extras before first paint, wait for the page to settle,
-// and write how many seconds of loading to cut from the start (demo.trim).
-await ctx.addInitScript(`document.addEventListener("DOMContentLoaded", () => { const s = document.createElement("style"); s.textContent = ${JSON.stringify(CSS)}; document.head.appendChild(s); }, { once: true })`);
-const t0 = Date.now();
+// Frames are lossless PNG screenshots at device pixels (2x), taken in a loop (about 30 fps) while typing.
+// Playwright's recordVideo and the CDP screencast both give CSS-pixel frames, and recordVideo adds
+// low-bitrate VP8, which made the README GIF blurry.
+const ctx = await browser.newContext({ viewport: size, deviceScaleFactor: 2 });
 const page = await ctx.newPage();
 await page.goto(url(), { waitUntil: "networkidle" });
 await page.addStyleTag({ content: CSS });
@@ -119,7 +99,27 @@ await page.evaluate("document.fonts.ready.then(() => 0)");
 await page.getByRole("textbox", { name: "Date and time" }).click();
 await page.evaluate("window.scrollTo(0, 0)");
 await sleep(1000);
-await writeFile(`${out}/demo.trim`, String(Math.max(0, (Date.now() - t0) / 1000 - 0.6).toFixed(2)));
+
+const framesDir = `${out}/frames`;
+await mkdir(framesDir, { recursive: true });
+for (const f of await readdir(framesDir)) if (f.endsWith(".png")) await unlink(`${framesDir}/${f}`);
+const frames = []; // [file, seconds since start]; a frame equal to the previous one is skipped
+const writes = [];
+const cdp = await ctx.newCDPSession(page);
+let capturing = true;
+const t0 = Date.now();
+const capture = (async () => {
+  let prev = "";
+  while (capturing) {
+    const t = (Date.now() - t0) / 1000;
+    const { data } = await cdp.send("Page.captureScreenshot", { format: "png", optimizeForSpeed: true, clip: { x: 0, y: 0, ...size, scale: 2 } });
+    if (data === prev) continue;
+    prev = data;
+    const file = `${String(frames.length).padStart(5, "0")}.png`;
+    frames.push([file, t]);
+    writes.push(writeFile(`${framesDir}/${file}`, Buffer.from(data, "base64")));
+  }
+})();
 if (VARY) await applyLook(page, 0);
 for (const [i, p] of phrases.entries()) {
   await type(page, p);
@@ -130,8 +130,15 @@ for (const [i, p] of phrases.entries()) {
   if (VARY && i + 1 < phrases.length) await applyLook(page, i + 1);
   await sleep(VARY ? 750 : 500);
 }
-const video = page.video();
-await ctx.close();
-await rename(await video.path(), `${out}/demo.webm`);
+await sleep(500);
+capturing = false;
+await capture;
+await Promise.all(writes);
+// ffconcat list: each frame lasts until the next one.
+const end = frames[frames.length - 1][1] + 1;
+const lines = ["ffconcat version 1.0"];
+frames.forEach(([file, t], i) => lines.push(`file frames/${file}`, `duration ${((frames[i + 1]?.[1] ?? end) - t).toFixed(4)}`));
+lines.push(`file frames/${frames[frames.length - 1][0]}`);
+await writeFile(`${out}/demo.ffconcat`, lines.join("\n") + "\n");
 await browser.close();
-console.log(`${out}/demo.webm`);
+console.log(`${out}/demo.ffconcat`, frames.length, "frames");
