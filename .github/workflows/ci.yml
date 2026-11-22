@@ -24,6 +24,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       # The dashboard imports @type-date/picker through its package exports (dist), so build it first.
       - run: pnpm --filter @type-date/picker build
+      - run: pnpm --filter @type-date/picker size
       - run: pnpm -r --if-present typecheck
       - run: pnpm -r --if-present test
 

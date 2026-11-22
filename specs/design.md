@@ -64,7 +64,7 @@ Mobile is a hard requirement.
 
 Details in `specs/research/background/animation-and-motion.md`.
 
-- Picker: CSS only (transitions, `grid-template-rows` collapse, `linear()` spring easing, `@starting-style`). Budget about 15kB JS and 4kB CSS gzip.
+- Picker: CSS only (transitions, `grid-template-rows` collapse, `linear()` spring easing, `@starting-style`). Budget 15 KiB JS and 4.5 KiB CSS gzip (CSS was 4 KiB until 2026-11-21), checked in CI by `pnpm --filter @type-date/picker size`.
 - Dashboard: Motion (`LazyMotion`, `m`), `@number-flow/react`, Sonner for toasts, Vaul for drawers.
 - Respect `prefers-reduced-motion`.
 - Patterns: range fill grows and shrinks as text changes; month change slides when the parsed date is in another month; mode change (date only, time only, datetime) collapses and expands panels; time list scrolls to the selected time; updates are debounced so cells do not flicker.

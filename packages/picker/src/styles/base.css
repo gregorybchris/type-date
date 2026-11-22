@@ -59,10 +59,10 @@
     --td-dotted: #3a3a3a;
     --td-hover: #2a2a2a;
     --td-sel: #363636;
-      --td-accent: #c9a45c;
-  --td-on-accent: #1c1c1c;
-  --td-range: color-mix(in srgb, #c9a45c 16%, transparent);
-  --td-today-ring: #f5f5f5;
+    --td-accent: #c9a45c;
+    --td-on-accent: #1c1c1c;
+    --td-range: color-mix(in srgb, #c9a45c 16%, transparent);
+    --td-today-ring: #f5f5f5;
     --td-ring: rgb(201 164 92 / 0.18);
     --td-shadow: 0 16px 40px -8px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.3);
     --td-key: 0 1px 2px rgb(0 0 0 / 0.3);

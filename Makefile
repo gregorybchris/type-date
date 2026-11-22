@@ -27,8 +27,9 @@ js-test:  ## Vitest across workspaces
 js-typecheck:  ## tsc across workspaces
 	pnpm -r --if-present typecheck
 
-js-build:  ## Build @type-date/picker (the dashboard typechecks against its dist)
+js-build:  ## Build @type-date/picker (the dashboard typechecks against its dist) and check its gzip size budget
 	pnpm --filter @type-date/picker build
+	pnpm --filter @type-date/picker size
 
 ci:  ## Run what CI runs: picker build, typecheck, unit tests, browser tests, Python checks and tests
 	$(MAKE) js-build js-typecheck js-test e2e py-check py-test

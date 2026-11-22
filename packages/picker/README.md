@@ -68,7 +68,7 @@ Colors are CSS variables on `.td-root` (`--td-bg`, `--td-fg`, `--td-accent`, and
 |---|---|
 | `pnpm --filter @type-date/picker test` | Vitest and Testing Library |
 | `pnpm --filter @type-date/picker build` | tsup build (ESM, bundled parser, d.ts) and minified CSS in `dist/` |
-| `pnpm --filter @type-date/picker size` | gzip size against the budget (15 kB JS, 4 kB CSS) |
+| `pnpm --filter @type-date/picker size` | gzip size against the budget (15 KiB JS, 4.5 KiB CSS); runs in CI |
 | `pnpm --filter @type-date/picker test:pack` | Build, `npm pack`, install the tarball in a scratch project, bundle an app that uses it and load it in a browser. Does not publish |
 
 The demo app is `apps/demo`. Screenshot scripts (`shots`, `shots:mobile`) live there.

@@ -20,7 +20,7 @@ One method: heuristic parser engines, one generation at a time. Each generation 
 
 1. More families: cover the gaps listed in `specs/research/coverage-taxonomy.md` and `specs/research/dsl-gaps.md`.
 2. Cut `e11` when a coverage gap shown by data justifies it, and score all engines on it first.
-3. Packaging: publish the picker and the default engine as one npm package. Check size against the budget (picker about 15 kB JS and 4 kB CSS, engine about 25 kB gzip).
+3. Packaging: publish the picker and the default engine as one npm package. Check size against the budget (picker 15 KiB JS and 4.5 KiB CSS, engine about 25 kB gzip).
 4. Alternatives and a confidence signal for ambiguous input.
 5. Mobile: check the picker on real phones (see Mobile below).
 6. Demo video: a human-like typist enters examples and the picker updates as they type.
